@@ -13,7 +13,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-The markup in Roots is based off [HTML5 Boilerplate](http://html5boilerplate.com/) with ARIA roles for accessibility and the hNews microformat for posts.
+The markup in Sage is based off [HTML5 Boilerplate](http://html5boilerplate.com/) with ARIA roles for accessibility and the hNews microformat for posts.
 
 The theme root contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
 
