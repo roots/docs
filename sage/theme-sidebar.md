@@ -27,7 +27,7 @@ If you open up `lib/config.php` you can find the default conditional tags checke
 
     [
       is_404(),
-      is_front_page,
+      is_front_page(),
       is_page_template('template-custom.php'),
     ]
 
