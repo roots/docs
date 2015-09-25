@@ -32,3 +32,9 @@ publish_to_discourse:
 <li><p><a href="https://roots.io/r/wpml">WPML</a> &mdash; Build multilingual sites and run them. Sage already has translations for over 35 different languages.</p></li>
 <li><p><a href="https://roots.io/r/gravityforms">Gravity Forms</a> &mdash; Build complex, interactive contact forms in minutes.</p></li>
 </ul>
+
+## Recommended forks
+
+<ul>
+<li><p><a href="https://github.com/schikulski/gromf">Gromf</a> &mdash; Sage with <a href="http://foundation.zurb.com/">Foundation</a></p></li>
+</ul>
