@@ -134,11 +134,6 @@ wordpress_sites:
       db_name: mysite_prod
       db_user: mysite_dbuser
       db_password: mysite_dbpassword
-      auth_key: "{%I[WI!NtN1Oq?Hpc^_zt( 7weXJ9lQtWw!&amp;+jUtTL&amp;54w8$W&gt;C&lt;e=7Eh9cM0 &lt;-)]}&quot;
-      secure_auth_key: &quot;[nCt_B.8w4/,LZPOJzC/m0O0&amp;V}hmw}k]3G;q]L&lt;zD5EUhX+`sR1i2GUL%]dw_M3S|Pxrt|b)D0ae+3q |CP6T(ES32P1}##a&gt;]PLM@)"
-      secure_auth_salt: "(+cTDWkFpkKM}ER!]@pO-%y{NAqw: ]IliLy-(,/a;)^&gt;OB=W|Ne;F)LCAGpgO6{}})"
-      logged_in_salt: "vl/7|)]mn9J]+&lt;mqgOlR,NDJzb4b9s/q- FN0`^xo,tRLA:xVln+1%=)k#;`"
-      nonce_salt: "p=11?jz;!O-@S@g~thpNW1.M-M+^Ml[ojGRKXF-)}@d5|fV..W5Pjrh#m;-O#R:#]"
 ```
 
 Deploy command:
