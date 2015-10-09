@@ -14,5 +14,143 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - "0"
 ---
+Trellis offers one-command deploys out of the box with little configuration needed.
+
+## Configuration
+
+First you need to have at least one WordPress site configured and working on a remote server.
+
+For deploys, there's only one more required setting and an optional one:
+
+* `repo` (required) - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/bedrock.git`)
+* `branch` (optional) - the git branch to deploy (default: `master`)
+
+Those variables should be added to the corresponding site in `group_vars//wordpress_sites.yml`.
+
+## Deploying
+
+Deploy with a single command: `./deploy.sh  `
+
+`deploy.sh` is a very simply Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
+
+The actual command looks like this: `ansible-playbook -i hosts/ deploy.yml --extra-vars="site-"`.
+
+You can always use this command itself since it can take any additional `ansible-playbook` options.
+
+## Hooks
+
+Trellis deploys let you customize what happens at each step of the deploy process. A single deploy has the following steps in order:
+
+1. `initialize` - creates the site directory structure (or ensures it exists)
+2. `update` - clones the Git repo onto the remote server
+3. `prepare` - prepares the files/directories in the new release path (such as moving the subtree if one exists)
+4. `build` - builds the new release by copying templates, files, and folders
+5. `share` - symlinks shared files/folders to new release
+6. `finalize` - finalizes the deploy by updating the `current` symlink
+
+Each step has a `before` and `after` hook. The hooks are variables that you can define to point to a custom task files. The tasks within that file will be run when the hook fires.
+
+The hook variables available are:
+
+* `deploy_initialize_before`
+* `deploy_initialize_after`
+* `deploy_update_before`
+* `deploy_update_after`
+* `deploy_prepare_before`
+* `deploy_prepare_after`
+* `deploy_build_before`
+* `deploy_build_after`
+* `deploy_share_before`
+* `deploy_share_after`
+* `deploy_finalize_before`
+* `deploy_finalize_after`
+
+### Default hooks
+
+By default, Trellis only defines and uses two hooks: `deploy_build_after` and `deploy_finalize_after`.
+
+* `deploy_build_after` is used to run `composer install`.
+* `deploy_finalize_after` is used to restart services like php5-fpm.
+
+### Custom tasks
+
+To use a hook, define/override the variable in the `deploy.yml` playbook file:
+
+```yml
+vars:
+  deploy_build_after: "{{ playbook_dir }}/roles/deploy/hooks/build-after.yml"
+  deploy_finalize_after: "{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml"
+```
+
+Those are the two default hooks that Trellis already uses. If you want to use the same hooks as we do and override them, we suggest copying the existing file and modifying it.
+
+We also suggest keeping your hooks in a top level `deploy-hooks` folder in your Ansible folder like this:
+
+```yml
+vars:
+  deploy_build_after: "{{ playbook_dir }}/deploy-hooks/build-after.yml"
+  deploy_share_before: "{{ playbook_dir }}/deploy-hooks/share-before.yml"
+  deploy_finalize_after: "{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml"
+```
+
+### SSH Keys
+
+Before you can deploy a site to a remote server, your SSH keys need to be working. Trellis takes advantage of SSH forwarding so your remote server does need to generate an SSH key and add it to GitHub/Bitbucket.
+
+The chain works like this: `local machine` -&gt; SSH via Ansible -&gt; `remote server` -&gt; Git clone -&gt; `remote Git repository`
+
+See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/) on how to get your SSH key added to the `web` user which is the user Trellis deploys with.
+
+### Example
+
+Here's an example of all the configuration needed to deploy a site and what the commands would look like.
+
+Configuration:
+```yaml
+# group_vars/production/wordpress_sites.yml
+
+wordpress_sites:
+  mysite.com:
+    site_hosts:
+      - mysite.com
+    local_path: ../site
+    repo: git@github.com:me/mysite.git
+    subtree_path: site
+    multisite:
+      enabled: false
+      subdomains: false
+    ssl:
+      enabled: false
+    cache:
+      enabled: false
+      duration: 30s
+    system_cron: true
+    env:
+      wp_home: http://mysite.com
+      wp_siteurl: http://mysite.com/wp
+      wp_env: production
+      db_name: mysite_prod
+      db_user: mysite_dbuser
+      db_password: mysite_dbpassword
+      auth_key: "{%I[WI!NtN1Oq?Hpc^_zt( 7weXJ9lQtWw!&amp;+jUtTL&amp;54w8$W&gt;C&lt;e=7Eh9cM0 &lt;-)]}&quot;
+      secure_auth_key: &quot;[nCt_B.8w4/,LZPOJzC/m0O0&amp;V}hmw}k]3G;q]L&lt;zD5EUhX+`sR1i2GUL%]dw_M3S|Pxrt|b)D0ae+3q |CP6T(ES32P1}##a&gt;]PLM@)"
+      secure_auth_salt: "(+cTDWkFpkKM}ER!]@pO-%y{NAqw: ]IliLy-(,/a;)^&gt;OB=W|Ne;F)LCAGpgO6{}})"
+      logged_in_salt: "vl/7|)]mn9J]+&lt;mqgOlR,NDJzb4b9s/q- FN0`^xo,tRLA:xVln+1%=)k#;`"
+      nonce_salt: "p=11?jz;!O-@S@g~thpNW1.M-M+^Ml[ojGRKXF-)}@d5|fV..W5Pjrh#m;-O#R:#]"
+```
+
+Deploy command:
+```
+./deploy.sh production mysite.com
+```
+
+Or alternatively:
+```
+ansible-playbook -i hosts/production deploy.yml --extra-vars="site-mysite.com"
+```
+
+## Rollbacks
+
+To rollback a deploy, run `ansible-playbook -i hosts/ rollback.yml --extra-vars="site="`
