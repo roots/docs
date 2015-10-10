@@ -15,7 +15,7 @@ publish_to_discourse:
 ---
 ## Displaying the sidebar
 
-Some pages absolutely need a sidebar to function properly, whereas others will have their aesthetic ruined by superfluous asides. The `display_sidebar` function in `lib/config.php` gives you full control over this behavior.
+Some pages absolutely need a sidebar to function properly, whereas others will have their aesthetic ruined by superfluous asides. The `display_sidebar` function in `lib/setup.php` gives you full control over this behavior.
 
 ## Conditional tags
 
@@ -23,7 +23,7 @@ When you first start developing with WordPress you'll quickly become familiar wi
 
 #### The default config
 
-If you open up `lib/config.php` you can find the default conditional tags checked:
+If you open up `lib/setup.php` you can find the default conditional tags checked:
 
     [
       is_404(),
