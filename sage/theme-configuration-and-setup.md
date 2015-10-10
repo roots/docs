@@ -13,9 +13,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-## Theme configuration
-
-`lib/config.php` is used to enable/disable theme features and set configuration values. The theme features that can be disabled include:
+`lib/setup.php` is used to enable/disable theme features and set configuration values. The theme features that can be disabled include:
 
 Clean up from [Soil](/plugins/soil):
 
@@ -37,9 +35,7 @@ Enable loading jQuery from [Soil](/plugins/soil):
 
     add_theme_support('soil-jquery-cdn');
 
-## Theme setup
-
-`lib/config.php` is also used to register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup.
+`lib/setup.php` is also used to register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup.
 
 ### Translations
 
