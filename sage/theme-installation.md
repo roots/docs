@@ -18,9 +18,3 @@ From your WordPress themes directory, clone the [git repo](https://github.com/ro
 ```
 git clone https://github.com/roots/sage.git theme-name
 ```
-
-If you don't use [Bedrock](https://roots.io/bedrock/), you'll want to add the following to your `wp-config.php` on your development installation:
-
-```php
-define('WP_ENV', 'development');
-```
