@@ -20,16 +20,16 @@ Since Sage is a starter theme, it’s okay for you to modify files within `lib/`
 The PHP code in Sage is namespaced, so make sure to [use namespaced functions and classes](https://roots.io/upping-php-requirements-in-your-wordpress-themes-and-plugins/).
 
 <dl class="dl-horizontal">
-  <dt><code>lib/config.php</code></dt>
-  <dd>Enable/disable theme features, set configuration values, register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup. See <a href="/sage/docs/theme-configuration/"><b>Theme Configuration and Setup</b></a>.</dd>
-</dl>
-<dl class="dl-horizontal">
   <dt><code>lib/assets.php</code></dt>
   <dd>Enqueue stylesheets and scripts. See <a href="/sage/docs/theme-development/"><b>Theme Development and Building</b></a>.</dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><code>lib/extras.php</code></dt>
   <dd>Contains a function for adding classes to <code>&lt;body&gt;</code> and a function that adds a 'Continued' link to excerpts.</dd>
+</dl>
+<dl class="dl-horizontal">
+  <dt><code>lib/setup.php</code></dt>
+  <dd>Enable/disable theme features, set configuration values, register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup. See <a href="/sage/docs/theme-configuration/"><b>Theme Configuration and Setup</b></a>.</dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><code>lib/titles.php</code></dt>
