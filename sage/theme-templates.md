@@ -80,10 +80,6 @@ The theme root contains files that you can further extend with the normal [WordP
   <dd>Page title markup included from most of the files in the theme root</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>searchform.php</code></dt>
-  <dd>Search form markup</dd>
-</dl>
-<dl class="dl-horizontal">
   <dt><code>sidebar.php</code></dt>
   <dd>Sidebar markup included from <code>base.php</code></dd>
 </dl>
