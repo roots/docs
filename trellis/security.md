@@ -14,7 +14,7 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - "0"
 ---
 ## Locking down root
 
@@ -34,7 +34,7 @@ With `root` login disabled, the `admin_user` will need to run commands using `su
 ```
 ansible-playbook -i hosts/production server.yml --ask-become-pass
 ```
-This prompts you to enter the sudoer password described in the "Admin User Sudoer Password" section below. See the [SSH Keys wiki](https://github.com/roots/trellis/wiki/SSH-Keys) for more information about Trellis SSH users.
+This prompts you to enter the sudoer password described in the "Admin User Sudoer Password" section below. See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/) for more information about Trellis SSH users.
 
 ## Admin user sudoer password
 
