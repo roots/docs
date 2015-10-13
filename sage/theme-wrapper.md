@@ -52,7 +52,7 @@ Even though we know that every template will take this base format and render th
 
 So whilst we have a base format for our pages, this "knowledge" is written countless times, spread across numerous files and has no authoritative representation. This is the opposite of **DRY** code and it's usually described as being **WET**, meaning that you **W**rite **E**verything **T**wice. 
 
-As you can see from the wrapperless template, WordPress goes beyond writing everything just twice, which is why we prefer the term **CRY** or **C**ontinously **R**epeating **Y**ourself <sup class="footnote">[[2]](#rf2)</sup>. Whatever you want to call it, it wastes your time when creating the code, when reading the code and when editing the code; it's a lose-lose-lose situation (plus repetition is only fun in rhetoric) but it's easy enough to avoid.
+As you can see from the wrapperless template, WordPress goes beyond writing everything just twice, which is why we prefer the term **CRY** or **C**ontinously **R**epeating **Y**ourself <sup>[[2]](#rf2)</sup>. Whatever you want to call it, it wastes your time when creating the code, when reading the code and when editing the code; it's a lose-lose-lose situation (plus repetition is only fun in rhetoric) but it's easy enough to avoid.
 
 ## Wrap up and stay DRY
 
