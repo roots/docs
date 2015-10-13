@@ -14,7 +14,7 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - "0"
 ---
 Trellis offers one-command deploys out of the box with little configuration needed.
 
@@ -27,15 +27,15 @@ For deploys, there's only one more required setting and an optional one:
 * `repo` (required) - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/bedrock.git`)
 * `branch` (optional) - the git branch to deploy (default: `master`)
 
-Those variables should be added to the corresponding site in `group_vars//wordpress_sites.yml`.
+Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml`.
 
 ## Deploying
 
-Deploy with a single command: `./deploy.sh  `
+Deploy with a single command: `./deploy.sh <environment> <domain>`
 
 `deploy.sh` is a very simply Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
 
-The actual command looks like this: `ansible-playbook -i hosts/ deploy.yml --extra-vars="site-"`.
+The actual command looks like this: `ansible-playbook -i hosts/<environment> deploy.yml --extra-vars="site=<domain>"`.
 
 You can always use this command itself since it can take any additional `ansible-playbook` options.
 
@@ -148,4 +148,4 @@ ansible-playbook -i hosts/production deploy.yml --extra-vars="site-mysite.com"
 
 ## Rollbacks
 
-To rollback a deploy, run `ansible-playbook -i hosts/ rollback.yml --extra-vars="site="`
+To rollback a deploy, run `ansible-playbook -i hosts/<environment> rollback.yml --extra-vars="site=<domain>"`
