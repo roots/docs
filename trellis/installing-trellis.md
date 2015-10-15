@@ -19,7 +19,7 @@ publish_to_discourse:
 
 You should now have the following directories at the same level somewhere:
 
-```txt
+```plain
 example.com/    - Primary folder for the project
 ├── trellis/    - Your clone of the Trellis repository
 └── site/       - A Bedrock-based site
