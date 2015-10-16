@@ -39,4 +39,4 @@ Our SSL implementation uses all performance optimizations possible to ensure you
 * 1400 byte TLS records
 * Longer keepalives
 
-See https://istlsfastyet.com/ for more information on fast TLS (SSL).
+See [Is TLS Fast Yet?](https://istlsfastyet.com/) for more information on fast TLS (SSL).
