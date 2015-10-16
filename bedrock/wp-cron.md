@@ -9,6 +9,8 @@ permalink: https://roots.io/bedrock/docs/wp-cron/
 published: true
 docs_project:
   - "18"
+publish_to_discourse:
+  - "0"
 ---
 Bedrock allows you to disable the internal WP Cron via the `DISABLE_WP_CRON` environment variable. If you enable this setting and disable WP Cron, you'll need to manually set a cron job like the following in your crontab file:
 
