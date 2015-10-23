@@ -32,7 +32,7 @@ When you set `sshd_permit_root_login: false` and run the `server.yml` playbook, 
 
 With `root` login disabled, the `admin_user` will need to run commands using `sudo` with a password, so you will need to add the option [`--ask-become-pass`](http://docs.ansible.com/ansible/become.html#new-ansible-variables) when running `server.yml`.
 ```
-ansible-playbook -i hosts/production server.yml --ask-become-pass
+ansible-playbook server.yml -e env=production --ask-become-pass
 ```
 This prompts you to enter the sudoer password described in the "Admin User Sudoer Password" section below. See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/) for more information about Trellis SSH users.
 

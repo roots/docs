@@ -35,7 +35,7 @@ Deploy with a single command: `./deploy.sh <environment> <domain>`
 
 `deploy.sh` is a very simple Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
 
-The actual command looks like this: `ansible-playbook -i hosts/<environment> deploy.yml --extra-vars="site=<domain>"`.
+The actual command looks like this: `ansible-playbook deploy.yml -e "site=<domain> env=<environment>"`.
 
 You can always use this command itself since it can take any additional `ansible-playbook` options.
 
@@ -143,9 +143,9 @@ Deploy command:
 
 Or alternatively:
 ```
-ansible-playbook -i hosts/production deploy.yml --extra-vars="site-mysite.com"
+ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ```
 
 ## Rollbacks
 
-To rollback a deploy, run `ansible-playbook -i hosts/<environment> rollback.yml --extra-vars="site=<domain>"`
+To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"`

@@ -22,4 +22,4 @@ Setting up remote servers (staging/production) is similar to the [local developm
 2. Add your server IP/hostnames to `hosts/<environment>`.
 3. Specify public SSH keys for `users` in `group_vars/all/users.yml`. See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/).
 4. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](https://roots.io/trellis/docs/security/).
-5. Run `ansible-playbook -i hosts/<environment> server.yml`.
+5. Run `ansible-playbook server.yml -e env=<environment>`.
