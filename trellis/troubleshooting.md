@@ -13,6 +13,18 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
+## Unresponsive machines or 404s
+
+Halt all VMs and remove VM-related entries from your `/etc/hosts` file, particularly entries similar to the example below. You may want to backup the hosts file before editing.
+
+```
+192.168.50.5  example.dev  # VAGRANT: 22c9...
+```
+
+Then `vagrant up` any VMs you need running and double-check that appropriate entries appear in your hosts file.
+
+A tidy hosts file would reduce the likelihood of 404s, although it's not a guarantee.
+
 ## There was an error while executing `VBoxManage`, a CLI used by Vagrant
 
 Error message looks something like:
