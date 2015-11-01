@@ -9,4 +9,6 @@ permalink: https://roots.io/trellis/docs/vault/
 published: true
 docs_project:
   - "19"
+publish_to_discourse:
+  - "0"
 ---
