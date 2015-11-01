@@ -33,7 +33,7 @@ Those variables should be added to the corresponding site in `group_vars/<enviro
 
 Deploy with a single command: `./deploy.sh <environment> <domain>`
 
-`deploy.sh` is a very simply Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
+`deploy.sh` is a very simple Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
 
 The actual command looks like this: `ansible-playbook -i hosts/<environment> deploy.yml --extra-vars="site=<domain>"`.
 
