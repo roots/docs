@@ -17,7 +17,7 @@ The root `web/wp-config.php` is required by WordPress and is only used to load t
 
 `config/application.php` is the main config file that contains what `wp-config.php` usually would. Base options should be set in there.
 
-For environment specific configuration, use the files under `config/environments`. By default there's is `development`, `staging`, and `production` but these can be whatever you require.
+For environment specific configuration, use the files under `config/environments`. By default there are `development`, `staging`, and `production` but these can be whatever you require.
 
 The environment configs are required **before** the main `application` config so anything in an environment config takes precedence over `application`.
 
