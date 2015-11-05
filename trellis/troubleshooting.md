@@ -13,7 +13,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-## Unresponsive machines or 404s
+#### Unresponsive machines or 404s
 
 Halt all VMs and remove VM-related entries from your `/etc/hosts` file, particularly entries similar to the example below. You may want to backup the hosts file before editing.
 
@@ -25,7 +25,17 @@ Then `vagrant up` any VMs you need running and double-check that appropriate ent
 
 A tidy hosts file would reduce the likelihood of 404s, although it's not a guarantee.
 
-## There was an error while executing `VBoxManage`, a CLI used by Vagrant
+<hr>
+
+#### Sequel Pro permission denied error
+
+Are you getting `Permission denied (publickey)` when trying to connect to your Vagrant box with Sequel Pro?
+
+Use the insecure private key inside the `.vagrant` folder. [See thread on Roots Discourse](https://discourse.roots.io/t/sequel-pro-ssh-to-vagrant/4683/26).
+
+<hr>
+
+#### There was an error while executing `VBoxManage`, a CLI used by Vagrant
 
 Error message looks something like:
 
