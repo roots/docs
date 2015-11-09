@@ -50,4 +50,4 @@ Configure the sites on your Vagrant development VM by editing `group_vars/develo
 
 After your WordPress sites have been configured, run `vagrant up`.
 
-Test
+Hello
