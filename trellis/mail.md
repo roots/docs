@@ -53,7 +53,7 @@ All of these offer around 10k+ emails for free per month. Once you have SMTP cre
 
 ### Example
 
-* `mail_smtp_server`: `smtp.mandrillapp.com:587`
+* `mail_smtp_server`: `smtp.example.com:587`
 * `mail_hostname`: `example.com`
 * `mail_user`: `admin@example.com`
 * `mail_password`: `password`
