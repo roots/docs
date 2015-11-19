@@ -38,6 +38,7 @@ publish_to_discourse:
 <ul>
 <li><p><a href="https://github.com/schikulski/gromf">Gromf</a> &mdash; Sage with <a href="http://foundation.zurb.com/">Foundation</a></p></li>
 <li><p><a href="https://github.com/peiche/sage-mdl">sage-mdl</a> &mdash; Sage with <a href="http://www.getmdl.io/">Material Design Lite</a></p></li>
+<li><p><a href="https://github.com/oompt/sage-lost-stylus">sage-lost-stylus</a> &mdash; Sage with <a href="https://github.com/corysimmons/lost">Lost Grid</a> and Stylus</p></li>
 </ul>
 
 ## Extending Sage
