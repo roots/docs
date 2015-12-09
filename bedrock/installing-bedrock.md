@@ -1,18 +1,28 @@
 ---
 ID: 7767
 post_title: Installing Bedrock
-author: Ben Word
-post_date: 2015-10-15 12:29:33
-post_excerpt: ""
+author:
+  - Ben Word
+post_date:
+  - 2015-10-15 12:29:33
+post_excerpt:
+  - ""
 layout: doc
-permalink: >
-  https://roots.io/bedrock/docs/installing-bedrock/
+permalink:
+  - /bedrock/docs/installing-bedrock/
 published: true
 docs_project:
   - "18"
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
+## Requirements
+
+* PHP >= 5.5
+* Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+
+## Installation
+
 1. Clone the git repo - `git clone https://github.com/roots/bedrock.git`
 2. Run `composer install`
 3. Copy `.env.example` to `.env` and update environment variables:
