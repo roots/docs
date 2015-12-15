@@ -1,19 +1,22 @@
 ---
 ID: 6136
 post_title: Theme Templates
-author: Ben Word
-post_date: 2015-09-01 19:12:53
-post_excerpt: ""
+author:
+  - Ben Word
+post_date:
+  - 2015-09-01 19:12:53
+post_excerpt:
+  - ""
 layout: doc
-permalink: >
-  https://roots.io/sage/docs/theme-templates/
+permalink:
+  - /sage/docs/theme-templates/
 published: true
 docs_project:
   - "17"
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
-The markup in Sage is based off [HTML5 Boilerplate](http://html5boilerplate.com/) with ARIA roles for accessibility and the hNews microformat for posts.
+The markup in Sage is based on [HTML5 Boilerplate](http://html5boilerplate.com/) with ARIA roles for accessibility and the hNews microformat for posts.
 
 The theme root contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
 
@@ -94,4 +97,4 @@ Even with the [theme wrapper](/sage/docs/theme-wrapper/), the normal [WordPress 
 * Copy `page.php` to `front-page.php` for customizing the static front page
 * Copy `page.php` to `page-about.php` for customizing a page called About
 
-The [theme wrapper documentation](/sage/docs/theme-wrapper/) goes into depth about creating new `base.php` files, but if you’d like to have a customized `base.php` based off a certain template, just copy it to `base-<template name>.php`. You can add conditional statements to `base.php` whenever possible and should generally aim to not have multiple theme wrappers in your theme.
+The [theme wrapper documentation](/sage/docs/theme-wrapper/) goes into depth about creating new `base.php` files, but if you’d like to have a customized `base.php` based on a certain template, just copy it to `base-<template name>.php`. You can add conditional statements to `base.php` whenever possible and should generally aim to not have multiple theme wrappers in your theme.
