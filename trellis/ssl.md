@@ -1,16 +1,20 @@
 ---
 ID: 6149
 post_title: SSL
-author: Ben Word
-post_date: 2015-09-03 17:44:10
-post_excerpt: ""
+author:
+  - Ben Word
+post_date:
+  - 2015-09-03 17:44:10
+post_excerpt:
+  - ""
 layout: doc
-permalink: https://roots.io/trellis/docs/ssl/
+permalink:
+  - /trellis/docs/ssl/
 published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 SSL/HTTPS can be enabled on a per-site basis. However, by default, enabling SSL on a site will make that site HTTPS **only**. Meaning that all HTTP requests will be redirected to HTTPS with the proper HSTS headers set as well.
 
@@ -33,7 +37,7 @@ ssl:
 
 Our SSL implementation uses all performance optimizations possible to ensure your sites remain fast despite the small overhead of SSL. This includes the following features:
 
-* SPDY protocol
+* HTTP/2 support (fallback to HTTP/1.1 for older browsers)
 * SSL session cache
 * OCSP stapling
 * 1400 byte TLS records
