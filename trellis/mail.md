@@ -49,11 +49,13 @@ All of these offer around 10k+ emails for free per month. Once you have SMTP cre
 * `mail_smtp_server`: hostname:port
 * `mail_hostname`: hostname for mail delivery
 * `mail_user`: username
-* `mail_password`: password (or API key)
+* `mail_password`: password or API key (define in `group_vars/all/vault.yml`)
 
 ### Example
 
-* `mail_smtp_server`: `smtp.example.com:587`
-* `mail_hostname`: `example.com`
-* `mail_user`: `admin@example.com`
-* `mail_password`: `password`
+```yml
+mail_smtp_server: smtp.example.com:587
+mail_hostname: example.com
+mail_user: admin@example.com
+mail_password: "{{ vault_mail_password }}" # Define this in group_vars/all/vault.yml
+```
