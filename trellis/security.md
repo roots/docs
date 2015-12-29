@@ -21,7 +21,7 @@ publish_to_discourse:
 The `sshd` role heightens your server's security by providing better SSH defaults, disabling password authentication for SSH access, and optionally disabling SSH `root` login. To disable `root` login:
 
 * Set `sshd_permit_root_login: false` in `group_vars/all/security.yml`
-* Set a password for the `admin_user` user (see below)
+* Set a sudoer password for the `admin_user` user (see below)
 * Run the `server.yml` playbook (see note about `--ask-become-pass` in "Admin User" section below)
 
 You may toggle `sshd_permit_root_login` between `true` or `false` on a server that is already provisioned.
@@ -38,12 +38,12 @@ This prompts you to enter the sudoer password described in the "Admin User Sudoe
 
 ## Admin user sudoer password
 
-While `server.yml` provisions your server as the `admin_user`, it will perform some operations using `sudo` with a password. You will need to set the sudoer password for `admin` in the list of `sudoer_passwords` defined in `vars/sudoer_passwords.yml`. Here is an example:
+While `server.yml` provisions your server as the `admin_user`, it will perform some operations using `sudo` with a password. You will need to set the sudoer password for `admin` in the list of `vault_sudoer_passwords` defined in `group_vars/<environment>/vault.yml`. Here is an example:
 
 ```yaml
-sudoer_passwords:
+vault_sudoer_passwords:
   admin: $6$rounds=100000$JUkj1d3hCa6uFp6R$3rZ8jImyCpTP40e4I5APx7SbBvDCM8fB6GP/IGOrsk/GEUTUhl1i/Q2JNOpj9ashLpkgaCxqMqbFKdZdmAh26/
   another_user: $6$rounds=100000$r3ZZsk/uc31cAxQT$YHMkmKrwgXr3u1YgrSvg0wHZg5IM6MLEzqOraIXqh5o7aWshxD.QaNeCcUX3KInqzTqaqN3qzo9nvc/QI0M1C.
 ```
 
-The passwords were generated using the python command [found here](http://docs.ansible.com/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module). The passwords generated here are `example_password` and `another_password`, respectively. The ansible user module doesn't handle any encryption and passwords must be encrypted beforehand. It's also recommended `vars/sudoer_passwords.yml` be encrypted using one of the encryption methods described on the [passwords](https://roots.io/trellis/docs/passwords/) page in the docs. Passwords are stored separately in order to ease the separation of encrypted var files and are looked up based on the user name.
+The passwords were generated using the python command [found here](http://docs.ansible.com/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module). The passwords generated here are `example_password` and `another_password`, respectively. The ansible user module doesn't handle any encryption and passwords must be encrypted beforehand. It's also recommended `group_vars/<environment>/vault.yml` be encrypted using [Ansible Vault](https://roots.io/trellis/docs/vault/).

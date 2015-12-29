@@ -95,7 +95,7 @@ vars:
   deploy_finalize_after: "{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml"
 ```
 
-### SSH Keys
+### SSH keys
 
 Before you can deploy a site to a remote server, your SSH keys need to be working. Trellis takes advantage of SSH forwarding so your remote server does need to generate an SSH key and add it to GitHub/Bitbucket.
 
@@ -133,7 +133,8 @@ wordpress_sites:
       wp_env: production
       db_name: mysite_prod
       db_user: mysite_dbuser
-      db_password: mysite_dbpassword
+      # Define the following variables in group_vars/production/vault.yml
+      # db_password:
 ```
 
 Deploy command:

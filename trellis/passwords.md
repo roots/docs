@@ -12,19 +12,15 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-There a few places you'll want to set/change passwords:
+There are a few places you'll want to set/change passwords:
 
-* `group_vars/<environment>/main.yml` - `mysql_root_password`
-* `group_vars/<environment>/wordpress_sites.yml` - `wordpress_sites.admin_password`
-* `group_vars/<environment>/wordpress_sites.yml` - `wordpress_sites.env.db_password`
+* `group_vars/<environment>/vault.yml` - `vault_mysql_root_password`
+* `group_vars/<environment>/vault.yml` - `vault_sudoer_passwords`
+* `group_vars/development/vault.yml` - `vault_wordpress_sites.admin_password`
+* `group_vars/<environment>/vault.yml` - `vault_wordpress_sites.env.db_password`
 
 For staging/production environments, it's best to randomly generate longer passwords using something like [random.org](http://www.random.org/passwords/).
 
-You may be concerned about setting plaintext passwords in a Git repository, and you should be. Any type of server configs such as this playbook should always be in a **private** Git repository.
+You may be concerned about setting plaintext passwords in a Git repository, and you should be. We strongly recommend you encrypt these passwords before committing them to your repo. Trellis is structured to make it easy to enable [Ansible Vault](https://roots.io/trellis/docs/vault/) to encrypt select files. Alternatively, you could try an option such as [Git Encrypt](https://github.com/shadowhand/git-encrypt).
 
-Even then it's still best to try avoid it if possible, so you have few options:
-
-* Use [Ansible Vault](http://docs.ansible.com/playbooks_vault.html)
-* Use [Git Encrypt](https://github.com/shadowhand/git-encrypt)
-
-Note: if you're mostly using this for development environments only, you probably don't need to worry about any of this as everything is just run locally.
+Note: Any type of server configs such as this playbook should always be in a **private** Git repository.
