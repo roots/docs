@@ -45,7 +45,7 @@ Trellis deploys let you customize what happens at each step of the deploy proces
 
 1. `initialize` - creates the site directory structure (or ensures it exists)
 2. `update` - clones the Git repo onto the remote server
-3. `prepare` - prepares the files/directories in the new release path (such as moving the subtree if one exists)
+3. `prepare` - prepares the files/directories in the new release path (such as moving the repo subtree if one exists)
 4. `build` - builds the new release by copying templates, files, and folders
 5. `share` - symlinks shared files/folders to new release
 6. `finalize` - finalizes the deploy by updating the `current` symlink
@@ -117,7 +117,7 @@ wordpress_sites:
       - mysite.com
     local_path: ../site
     repo: git@github.com:me/mysite.git
-    subtree_path: site
+    repo_subtree_path: site
     multisite:
       enabled: false
       subdomains: false
