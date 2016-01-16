@@ -2,23 +2,23 @@
 ID: 7761
 post_title: Installing Trellis
 author:
-  - Ben Word
+  - 'a:1:{i:0;s:8:"Ben Word";}'
 post_date:
-  - 2015-10-15 12:20:35
+  - 'a:1:{i:0;s:19:"2015-10-15 12:20:35";}'
 post_excerpt:
-  - ""
+  - 'a:1:{i:0;s:0:"";}'
 layout: doc
 permalink:
-  - /trellis/docs/installing-trellis/
+  - 'a:1:{i:0;s:33:"/trellis/docs/installing-trellis/";}'
 published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 ## Requirements
 
-* Ansible >= 1.9.2 (**not** 2.0 which is in alpha) - [Install](http://docs.ansible.com/intro_installation.html) • [Docs](http://docs.ansible.com/) • [Windows docs](https://roots.io/trellis/docs/windows/)
+* Ansible 1.9.2 to 1.9.4 (not 2.x - see [bug](https://github.com/roots/trellis/issues/469)) - [Install](http://docs.ansible.com/intro_installation.html) • [Docs](http://docs.ansible.com/) • [Windows docs](https://roots.io/trellis/docs/windows/)
 * Virtualbox >= 4.3.10 - [Install](https://www.virtualbox.org/wiki/Downloads)
 * Vagrant >= 1.5.4 - [Install](http://www.vagrantup.com/downloads.html) • [Docs](https://docs.vagrantup.com/v2/)
 * vagrant-bindfs >= 0.3.1 - [Install](https://github.com/gael-ian/vagrant-bindfs#installation) • [Docs](https://github.com/gael-ian/vagrant-bindfs) (Windows users may skip this)
