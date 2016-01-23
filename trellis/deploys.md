@@ -2,19 +2,19 @@
 ID: 7587
 post_title: Deploys
 author:
-  - 'a:1:{i:0;s:34:"a:1:{i:0;s:16:"Scott Walkinshaw";}";}'
+  - 'a:1:{i:0;s:52:"a:1:{i:0;s:34:"a:1:{i:0;s:16:"Scott Walkinshaw";}";}";}'
 post_date:
-  - 'a:1:{i:0;s:37:"a:1:{i:0;s:19:"2015-10-10 20:00:00";}";}'
+  - 'a:1:{i:0;s:55:"a:1:{i:0;s:37:"a:1:{i:0;s:19:"2015-10-10 20:00:00";}";}";}'
 post_excerpt:
-  - 'a:1:{i:0;s:17:"a:1:{i:0;s:0:"";}";}'
+  - 'a:1:{i:0;s:35:"a:1:{i:0;s:17:"a:1:{i:0;s:0:"";}";}";}'
 layout: doc
 permalink:
-  - 'a:1:{i:0;s:0:"";}'
+  - 'a:1:{i:0;s:17:"a:1:{i:0;s:0:"";}";}'
 published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 Trellis offers one-command deploys out of the box with little configuration needed.
 
@@ -54,6 +54,7 @@ Each step has a `before` and `after` hook. The hooks are variables that you can 
 
 The hook variables available are:
 
+* `deploy_before`
 * `deploy_initialize_before`
 * `deploy_initialize_after`
 * `deploy_update_before`
@@ -66,6 +67,7 @@ The hook variables available are:
 * `deploy_share_after`
 * `deploy_finalize_before`
 * `deploy_finalize_after`
+* `deploy_after`
 
 ### Default hooks
 
