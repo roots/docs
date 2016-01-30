@@ -47,3 +47,9 @@ vault_sudoer_passwords:
 ```
 
 The passwords were generated using the python command [found here](http://docs.ansible.com/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module). The passwords generated here are `example_password` and `another_password`, respectively. The ansible user module doesn't handle any encryption and passwords must be encrypted beforehand. It's also recommended `group_vars/<environment>/vault.yml` be encrypted using [Ansible Vault](https://roots.io/trellis/docs/vault/).
+
+## Known hosts
+
+The target machine must connect to other hosts in order to clone your Bedrock-based project or to run `composer install`. Trellis will enable this connection by automatically retrieving these hosts' keys via `ssh-keyscan` and adding them to `known_hosts`. Although convenient, `ssh-keyscan` is vulnerable to a man-in-the-middle attack in which a third-party intercepts the host key request and returns a key not belonging to the intended host.
+
+We recommend that you set `accept_hostkeys: no` in `group_vars/all/security.yml` to disable the the `ssh-keyscan`. You will need to manually list host keys in `group_vars/all/known_hosts.yml` so Trellis can load them into `known_hosts`. Keys for GitHub and Bitbucket are already listed by default. Entries in the `known_hosts` list use the [known_hosts module](http://docs.ansible.com/ansible/known_hosts_module.html) parameters. Trellis uses the default `path: "/home/{{ web_user }}/.ssh/known_hosts` (default `web_user`: `vagrant` on development VM, `web` on staging/production remote).
