@@ -14,7 +14,7 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+  - "0"
 ---
 ## Requirements
 
@@ -39,6 +39,5 @@ example.com/    - Primary folder for the project
 ```
 
 - You **do not** need a configured `.env` file. Trellis will automatically create and configure one.
-- The full paths to these directories must not contain spaces or else [Ansible will fail](https://github.com/ansible/ansible/issues/8555).
 
 You can find a complete working example in the [Roots Example Project](https://github.com/roots/roots-example-project.com) repository.
