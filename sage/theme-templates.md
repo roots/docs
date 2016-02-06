@@ -89,7 +89,7 @@ The theme root contains files that you can further extend with the normal [WordP
 
 ## Extending templates
 
-Even with the [theme wrapper](/sage/docs/theme-wrapper/), the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy) is still in tact. Here’s some examples:
+Even with the [theme wrapper](/sage/docs/theme-wrapper/), the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy) is still intact. Here’s some examples:
 
 * Copy `index.php` to `author.php` for customizing author archives
 * Copy `index.php` to `home.php` for customizing the Home page if you’re showing the latest posts (under Reading Settings) instead of a static front page
