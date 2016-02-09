@@ -1,11 +1,15 @@
 ---
 ID: 6155
 post_title: Mail
-author: Ben Word
-post_date: 2015-09-03 18:10:25
-post_excerpt: ""
+author:
+  - Ben Word
+post_date:
+  - 2015-09-03 18:10:25
+post_excerpt:
+  - ""
 layout: doc
-permalink: https://roots.io/trellis/docs/mail/
+permalink:
+  - /trellis/docs/mail/
 published: true
 docs_project:
   - "19"
@@ -32,7 +36,7 @@ Another benefit of using MailHog is that if are using real SMTP credentials in d
 
 Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/list#/roles/2434). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
 
-## Staging/Production
+## Remote servers (staging/production)
 
 Outgoing mail is done by the sSMTP role. sSMTP is a lightweight SMTP mail relay basically. In order to send external emails, you'll need to configure an SMTP server.
 
@@ -59,3 +63,11 @@ mail_hostname: example.com
 mail_user: admin@example.com
 mail_password: "{{ vault_mail_password }}" # Define this in group_vars/all/vault.yml
 ```
+
+If your SMTP settings are invalid, WordPress will return the following error message:
+
+```txt
+Could not instantiate mail function.
+```
+
+To fix this error, update your SMTP settings so that they're valid and then re-provision the remote server.
