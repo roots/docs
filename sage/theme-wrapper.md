@@ -149,7 +149,7 @@ Let's say you wanted your base markup to change depending on what CPT WordPress 
 
 ```php
 <?php
-  add_filter('sage/wrap_base', __NAMESPACE__ . '\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
+  add_filter('sage/wrap_base', __NAMESPACE__ . '\\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
 
   function sage_wrap_base_cpts($templates) {
     $cpt = get_post_type(); // Get the current post type
