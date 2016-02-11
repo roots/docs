@@ -2,19 +2,19 @@
 ID: 5347
 post_title: Windows
 author:
-  - Ben Word
+  - 'a:1:{i:0;s:8:"Ben Word";}'
 post_date:
-  - 2015-09-03 17:33:07
+  - 'a:1:{i:0;s:19:"2015-09-03 17:33:07";}'
 post_excerpt:
-  - ""
+  - 'a:1:{i:0;s:0:"";}'
 layout: doc
 permalink:
-  - /trellis/docs/windows/
+  - 'a:1:{i:0;s:22:"/trellis/docs/windows/";}'
 published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 ## Installing Ansible
 
@@ -38,7 +38,7 @@ With Ansible installed on your Vagrant VM, you must run Ansible commands on the 
 
 SSH forwarding requires that you use an authentication agent combined with an SSH client that can read and forward keys from the agent. On Windows, this is typically done with Pageant (agent) and PuTTY (client). On most Unix-based systems, the OpenSSH suite provides `ssh-agent` (agent) and `ssh` (client). Vagrant uses [Net::SSH](https://github.com/net-ssh/net-ssh), which expects `ssh-agent` to be used.
 
-If you're already using Pageant, then you can [install `ssh-pageant`](https://github.com/cuviper/ssh-pageant#installation) to act as a proxy between Pageant and `ssh` (or `vagrant ssh`), otherwise [Github provides an excellent guide](https://help.github.com/articles/working-with-ssh-key-passphrases/#auto-launching-ssh-agent-on-msysgit) for automatically starting `ssh-agent` in [Babun](http://babun.github.io/)/[Cygwin](https://cygwin.com/index.html), [Git for Windows](https://git-for-windows.github.io/), or any other Unix shell emulation on Windows. If you use [cmder](http://cmder.net/), then simply type [`agent`](https://github.com/cmderdev/cmder/blob/master/bin/agent.cmd) in your console, and it will automatically load your keys and start the ssh-agent.
+If you're already using Pageant, then you can [install `ssh-pageant`](https://github.com/cuviper/ssh-pageant#installation) to act as a proxy between Pageant and `ssh` (or `vagrant ssh`), otherwise [GitHub provides an excellent guide](https://help.github.com/articles/working-with-ssh-key-passphrases/#auto-launching-ssh-agent-on-msysgit) for automatically starting `ssh-agent` in [Babun](http://babun.github.io/)/[Cygwin](https://cygwin.com/index.html), [Git for Windows](https://git-for-windows.github.io/), or any other Unix shell emulation on Windows. If you use [cmder](http://cmder.net/), then simply type [`agent`](https://github.com/cmderdev/cmder/blob/master/bin/agent.cmd) in your console, and it will automatically load your keys and start the ssh-agent.
 
 ## Other notes
 There may also be issues with permissions/UAC and symlinks. See this [comment](https://github.com/roots/trellis/issues/8#issuecomment-43346116).
