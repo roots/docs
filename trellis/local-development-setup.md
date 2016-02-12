@@ -31,7 +31,6 @@ Configure the sites on your Vagrant development VM by editing `group_vars/develo
 * `site_title` - WP site title (*development* only, default: project name)
 * `db_create` - whether to auto create a database or not (default: `true`)
 * `db_import` - Path to local `sql` dump file which will be imported (optional)
-* `system_cron` - Disable WP cron and use system's (default: `true`)
 * `admin_user` - WP admin user name (*development* only, required)
 * `admin_email` - WP admin email address (*development* only, required)
 * `admin_password` - WP admin user password (*development* only, required, in `vault.yml`)
@@ -44,6 +43,7 @@ Configure the sites on your Vagrant development VM by editing `group_vars/develo
   * `enabled` - Cache enabled flag (required, set to `false`)
   * `duration` - Duration of the cache (default: `30s`)
 * `env` - environment variables
+  * `disable_wp_cron` - Disable WP cron and use system's (default: `true`)
   * `wp_home` - `WP_HOME` constant (required)
   * `wp_siteurl` - `WP_SITEURL` constant (required)
   * `wp_env` - environment (required, matches group name: `development`, `staging`, `production`)
