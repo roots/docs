@@ -128,8 +128,8 @@ wordpress_sites:
     cache:
       enabled: false
       duration: 30s
-    system_cron: true
     env:
+      disable_wp_cron: true
       wp_home: http://mysite.com
       wp_siteurl: http://mysite.com/wp
       wp_env: production
