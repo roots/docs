@@ -96,4 +96,4 @@ It is not recommended to disable Ansible Vault but you can disable it at any tim
 
 ## Additional resources
 
-[ansible-toolkit](https://github.com/dellis23/ansible-toolkit#atk-git-diff) provides a `atk-git-diff` command that allows you to do a `git diff` on on encrypted files.
+[ansible-toolkit](https://github.com/dellis23/ansible-toolkit#atk-git-diff) provides a `atk-git-diff` command that allows you to do a `git diff` on encrypted files.
