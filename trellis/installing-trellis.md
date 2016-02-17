@@ -1,15 +1,12 @@
 ---
 ID: 7761
 post_title: Installing Trellis
-author:
-  - 'a:1:{i:0;s:25:"a:1:{i:0;s:8:"Ben Word";}";}'
-post_date:
-  - 'a:1:{i:0;s:37:"a:1:{i:0;s:19:"2015-10-15 12:20:35";}";}'
-post_excerpt:
-  - 'a:1:{i:0;s:17:"a:1:{i:0;s:0:"";}";}'
+author: Ben Word
+post_date: 2015-10-15 12:20:35
+post_excerpt: ""
 layout: doc
-permalink:
-  - 'a:1:{i:0;s:51:"a:1:{i:0;s:33:"/trellis/docs/installing-trellis/";}";}'
+permalink: >
+  https://roots.io/trellis/docs/installing-trellis/
 published: true
 docs_project:
   - "19"
@@ -18,26 +15,32 @@ publish_to_discourse:
 ---
 ## Requirements
 
-* Ansible >= 2.0.0.2 - [Install](http://docs.ansible.com/intro_installation.html) • [Docs](http://docs.ansible.com/) • [Windows docs](https://roots.io/trellis/docs/windows/)
-* Virtualbox >= 4.3.10 - [Install](https://www.virtualbox.org/wiki/Downloads)
-* Vagrant >= 1.5.4 - [Install](http://www.vagrantup.com/downloads.html) • [Docs](https://docs.vagrantup.com/v2/)
-* vagrant-bindfs >= 0.3.1 - [Install](https://github.com/gael-ian/vagrant-bindfs#installation) • [Docs](https://github.com/gael-ian/vagrant-bindfs) (Windows users may skip this)
-* vagrant-hostmanager - [Install](https://github.com/smdahlen/vagrant-hostmanager#installation) • [Docs](https://github.com/smdahlen/vagrant-hostmanager)
+Make sure all dependencies have been installed before moving on:
+
+* [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) >= 2.0.0.2
+* [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
+* [Vagrant](http://www.vagrantup.com/downloads.html) >= 1.5.4
+* [vagrant-bindfs](https://github.com/gael-ian/vagrant-bindfs#installation) >= 0.3.1 (Windows users may skip this)
+* [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager#installation)
 
 ## Installation
 
-1. Download/fork/clone the [Trellis repository](https://github.com/roots/trellis) to your local machine
-2. Run `ansible-galaxy install -r requirements.yml` inside your Trellis directory to install external Ansible roles/packages
-3. Download/fork/clone [Bedrock](https://github.com/roots/bedrock) or have an existing Bedrock-based site ready
+The recommended directory structure for a Trellis project looks like:
 
-You should now have the following directories at the same level somewhere:
-
-```plain
-example.com/    - Primary folder for the project
-├── trellis/    - Your clone of the Trellis repository
-└── site/       - A Bedrock-based site
+```shell
+example.com/      # → Root folder for the project
+├── trellis/      # → Your clone of this repository
+└── site/         # → A Bedrock-based WordPress site
+    └── web/
+        ├── app/  # → WordPress content directory (themes, plugins, etc.)
+        └── wp/   # → WordPress core (don't touch!)
 ```
 
-- You **do not** need a configured `.env` file. Trellis will automatically create and configure one.
+See a complete working example in the [roots-example-project.com repo](https://github.com/roots/roots-example-project.com).
 
-You can find a complete working example in the [Roots Example Project](https://github.com/roots/roots-example-project.com) repository.
+1. Create a new project directory: `$ mkdir example.com && cd example.com`
+2. Clone Trellis: `$ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git`
+3. Clone Bedrock: `$ git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git`
+4. Install the Ansible Galaxy roles: `$ cd trellis && ansible-galaxy install -r requirements.yml`
+
+Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions. VirtualBox is known to have poor performance in Windows — use VMware or [see some possible solutions](https://discourse.roots.io/t/virtualbox-performance-in-windows/3932).
