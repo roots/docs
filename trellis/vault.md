@@ -1,20 +1,16 @@
 ---
 ID: 8780
 post_title: Vault
-author:
-  - Ben Word
-post_date:
-  - 2015-11-01 14:32:38
-post_excerpt:
-  - ""
+author: Ben Word
+post_date: 2015-11-01 14:32:38
+post_excerpt: ""
 layout: doc
-permalink:
-  - /trellis/docs/vault/
+permalink: https://roots.io/trellis/docs/vault/
 published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - "0"
 ---
 Some Ansible variables contain sensitive data such as passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) to avoid exposing sensitive data in your project repo. Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
 
@@ -97,3 +93,7 @@ Your repo with vault-encrypted files is secure from anyone being able to see or 
 ## Disabling Ansible Vault
 
 It is not recommended to disable Ansible Vault but you can disable it at any time. Simply run `ansible-vault decrypt <file1> <file2> <etc>`. If you then commit the unencrypted files to your repo, the sensitive data will be in your repo in plain text and will be difficult to remove from the git history. If you re-enable vault in the future, you may want to change all the sensitive data, encrypt with vault, then commit the revised and encrypted `vault.yml` files to your repo.
+
+## Additional resources
+
+[ansible-toolkit](https://github.com/dellis23/ansible-toolkit#atk-git-diff) provides a `atk-git-diff` command that allows you to do a `git diff` on on encrypted files.
