@@ -50,7 +50,7 @@ To hide the sidebar you need just one `true` returned from any of your condition
 
 Unfortunately it's not so easy to hide the sidebar for a large number of pages, but display it on just one. This is where the filter comes in. Overriding the output of the function means you can force the sidebar to be shown, even when your configured conditional tags would otherwise hide it.
 
-Let's say you wanted the sidebar hidden on every page, so you add `is_page()` to the array. Later in development you suddenly realize that on you need a sidebar on just one of the pages:
+Let's say you wanted the sidebar hidden on every page, so you add `is_page()` to the array. Later in development you suddenly realize that you need a sidebar on just one of the pages:
 
 ```php
 add_filter('sage/display_sidebar', __NAMESPACE__ . '\\sage_sidebar_on_special_page');
@@ -63,6 +63,6 @@ function sage_sidebar_on_special_page($sidebar) {
 }
 ```
 
-The first line adds our function to the filter, and the function simply uses the `is_page()` conditional tag to determine if we're on the special page. Is so we force a `true` response, overriding the setting determined by the first two arrays.
+The first line adds our function to the filter, and the function simply uses the `is_page()` conditional tag to determine if we're on the special page. If so we force a `true` response, overriding the setting determined by the first two arrays.
 
 Note that at this point the logic has switched, with a return value of `true` displaying the sidebar and `false` being used to hide it. This is because we are not performing an individual check, but instead returning a definitive yes or no to the sidebar.
