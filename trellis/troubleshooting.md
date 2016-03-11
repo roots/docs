@@ -13,7 +13,16 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-#### Unresponsive machines or 404s
+## Debugging
+
+Golden rule to debugging anything with Ansible:
+
+1. Run the command in `verbose` mode: `ansible-playbook deploy.yml -vvvv -e "site=<domain> env=<environment>`
+2. If necessary, SSH into your server and run the command that Ansible did above but manually (in the same directory).
+
+<hr>
+
+### Unresponsive machines or 404s
 
 Halt all VMs and remove VM-related entries from your `/etc/hosts` file, particularly entries similar to the example below. You may want to backup the hosts file before editing.
 
@@ -27,7 +36,7 @@ A tidy hosts file would reduce the likelihood of 404s, although it's not a guara
 
 <hr>
 
-#### Sequel Pro permission denied error
+### Sequel Pro permission denied error
 
 Are you getting `Permission denied (publickey)` when trying to connect to your Vagrant box with Sequel Pro?
 
@@ -35,7 +44,7 @@ Use the insecure private key inside the `.vagrant` folder. [See thread on Roots 
 
 <hr>
 
-#### There was an error while executing `VBoxManage`, a CLI used by Vagrant
+### There was an error while executing `VBoxManage`, a CLI used by Vagrant
 
 Error message looks something like:
 
