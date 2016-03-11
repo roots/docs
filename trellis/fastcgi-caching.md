@@ -13,7 +13,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-You can enable caching for you site by changing the cache settings under each site key. Using caching provide substantial speed improvement once the page are cached. The full settings looks like this: 
+You can enable caching for your site by changing the cache settings under each site key. Using caching provide substantial speed improvement once the page are cached. The full settings looks like this: 
 
 ```yml
 cache:
