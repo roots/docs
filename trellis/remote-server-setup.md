@@ -15,13 +15,21 @@ publish_to_discourse:
 ---
 Setting up remote servers (staging/production) is similar to the [local development setup](https://roots.io/trellis/docs/local-development-setup/).
 
-Don't attempt to provision a shared host with Trellis. Make sure you're working off a base server that's running Ubuntu 14.04 Trusty LTS.
+There are two requirements for using Trellis on a remote server:
+
+1. You need a server running a bare/stock version of Ubuntu 14.04 Trusty. If you're using a host such as DigitalOcean, then just select their Ubuntu 14.04 option.
+
+**You can't run Trellis on a shared host**.
+
+2. You need to be able to connect to your server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
+
+Now that you have a working Ubuntu 14.04 server that you can easily SSH into, you need to configure a few things:
 
 1. Configure your WordPress sites in `group_vars/<environment>/wordpress_sites.yml` and `group_vars/<environment>/vault.yml`. Also see the [Passwords docs](https://roots.io/trellis/docs/passwords/). `wordpress_sites.yml` for remote servers have a few more settings than your local development server:
   * `repo` - URL of the Git repo of your Bedrock project (required, used when deploying)
   * `branch` - the branch name, tag name, or commit SHA1 you want to deploy (default: `master`)
   * `repo_subtree_path` - relative path to your Bedrock/WP directory in your repo (above) if its not the root (like `site/` in [roots-example-project](https://github.com/roots/roots-example-project.com))
-2. Add your server IP/hostnames to `hosts/<environment>`.
+2. Add your server IP/hostname to `hosts/<environment>` (replacing `your_server_ip`).
 3. Specify public SSH keys for `users` in `group_vars/all/users.yml`. See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/).
 4. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](https://roots.io/trellis/docs/security/).
 5. Run `ansible-playbook server.yml -e env=<environment>`.
