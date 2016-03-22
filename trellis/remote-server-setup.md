@@ -17,7 +17,7 @@ Setting up remote servers (staging/production) is similar to the [local developm
 
 Don't attempt to provision a shared host with Trellis. Make sure you're working off a base server that's running Ubuntu 14.04 Trusty LTS.
 
-1. Configure your WordPress sites in `group_vars/<environment>/wordpress_sites.yml` and `group_vars/development/vault.yml`. Also see the [Passwords docs](https://roots.io/trellis/docs/passwords/). `wordpress_sites.yml` for remote servers have a few more settings than your local development server:
+1. Configure your WordPress sites in `group_vars/<environment>/wordpress_sites.yml` and `group_vars/<environment>/vault.yml`. Also see the [Passwords docs](https://roots.io/trellis/docs/passwords/). `wordpress_sites.yml` for remote servers have a few more settings than your local development server:
   * `repo` - URL of the Git repo of your Bedrock project (required, used when deploying)
   * `branch` - the branch name, tag name, or commit SHA1 you want to deploy (default: `master`)
   * `repo_subtree_path` - relative path to your Bedrock/WP directory in your repo (above) if its not the root (like `site/` in [roots-example-project](https://github.com/roots/roots-example-project.com))
