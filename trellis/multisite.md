@@ -12,7 +12,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` before running the `wordpress-sites` role:
+Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` before provisioning your server:
 
 ```php
 /* Multisite */
