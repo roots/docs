@@ -12,7 +12,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in `wp-config.php` (or `config/application.php` if you're using [Bedrock](https://roots.io/bedrock/)) *before running the `wordpress-sites` role*:
+Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` before running the `wordpress-sites` role:
 
 ```php
 /* Multisite */
@@ -24,8 +24,6 @@ define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
 ```
-
-If you are using bedrock: you need to make sure you remove the WP-CLI output from `wp-config.php` and move it to your `config/application.php`.
 
 You'll also need to edit the `wordpress_sites.yml` vars file and update the multisite settings under your environment directory (`group_vars/<environment>/wordpress_sites.yml`):
 
@@ -59,8 +57,8 @@ Make the following changes to your `Vagrantfile`:
 ```
 
 ```diff
--  config.vm.network :private_network, ip: '192.168.50.5'
-+  config.vm.network :private_network, ip: PRIVATE_IP
+-  config.vm.network :private_network, ip: ip, hostsupdater: 'skip' 
++  config.vm.network :private_network, ip: PRIVATE_IP, hostsupdater: 'skip'
 ```
 
 ```diff
