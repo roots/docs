@@ -1,20 +1,16 @@
 ---
 ID: 6149
 post_title: SSL
-author:
-  - Ben Word
-post_date:
-  - 2015-09-03 17:44:10
-post_excerpt:
-  - ""
+author: Ben Word
+post_date: 2015-09-03 17:44:10
+post_excerpt: ""
 layout: doc
-permalink:
-  - /trellis/docs/ssl/
+permalink: https://roots.io/trellis/docs/ssl/
 published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.
 
@@ -195,7 +191,7 @@ example.com:
   # rest of site config
   ssl:
     enabled: true
-  provider: self-signed
+    provider: self-signed
 ```
 
 ## HSTS
