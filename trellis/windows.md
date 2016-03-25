@@ -40,5 +40,16 @@ SSH forwarding requires that you use an authentication agent combined with an SS
 
 If you're already using Pageant, then you can [install `ssh-pageant`](https://github.com/cuviper/ssh-pageant#installation) to act as a proxy between Pageant and `ssh` (or `vagrant ssh`), otherwise [GitHub provides an excellent guide](https://help.github.com/articles/working-with-ssh-key-passphrases/#auto-launching-ssh-agent-on-msysgit) for automatically starting `ssh-agent` in [Babun](http://babun.github.io/)/[Cygwin](https://cygwin.com/index.html), [Git for Windows](https://git-for-windows.github.io/), or any other Unix shell emulation on Windows. If you use [cmder](http://cmder.net/), then simply type [`agent`](https://github.com/cmderdev/cmder/blob/master/bin/agent.cmd) in your console, and it will automatically load your keys and start the ssh-agent.
 
+## Improving performance with VirtualBox
+VirtualBox on Windows is known to have poor performance when using synced directories with many files (for example - when developing with Sage)
+
+This can be mitigated by installing the `vagrant-winnfsd` and `vagrant-bindfs` plugins.  If both of these are installed, Trellis will detect and use them.  No other software is required as the vagrant-winnfsd plugin comes bundled with WinNFSD.
+
+Before running the initial `vagrant up`, make sure that both of these plugins are installed.
+
+In addition, `vagrant-winnfsd` requires Administrator privileges when doing the initial provisioning.  If UAC is enabled, make sure the initial `vagrant up` is run from a command prompt with elevated privileges (Run as Administrator).
+
+WinNFSD is no longer being actively maintained, and there is currently no good replacement for Vagrant on Windows.  If the `vagrant-winnfsd` plugin is not working in your environment, you can revert to the default VirtualBox folder sync method by doing a `vagrant halt` and uninstalling the `vagrant-winnfsd` plugin.
+
 ## Other notes
 There may also be issues with permissions/UAC and symlinks. See this [comment](https://github.com/roots/trellis/issues/8#issuecomment-43346116).
