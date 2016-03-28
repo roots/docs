@@ -26,7 +26,7 @@ ansible-playbook server.yml -e "env=production wrap_width=50"
 ```
 
 ## Output color
-Trellis applies Ansible's built-in colors to the output formatting described above. Your terminal emulator likely has options to further adjust these colors (e.g., to adjust contrast, etc.). The optional environment variables have priority over parameters defined in `trellis.cfg`).
+Trellis applies Ansible's built-in colors to the output formatting described above. Your terminal emulator likely has options to further adjust these colors (e.g., to adjust contrast, etc.). The optional environment variables have priority over parameters defined in `trellis.cfg`.
 
 ### Color examples
 To help you see all available colors (Ansible's [`codeCodes`](https://github.com/ansible/ansible/blob/devel/lib/ansible/utils/color.py)) and customize your color settings, copy the code below to a file named `output_colors.yml` in the root of your Trellis project and run `ansible-playbook output_colors.yml`. If desired, adjust colors in `trellis.cfg` and run the playbook again to see how the change looks.
@@ -173,7 +173,7 @@ When `custom_output = True` in `trellis.cfg`, Trellis will apply the colors from
   * `C_BOLD` just prepends 'bright' onto the color name, or changes 'dark gray' to 'bright gray'. Thus `C_BOLD` will not work for colors whose names start with 'bright' or for the colors 'black', 'normal', or 'white'.
 * Code strings
   * Code strings are `strings wrapped in backticks`.
-  * You may nest code strings inside code blocks or inside color strings.
+  * You may only nest code strings inside code blocks.
 * Code blocks
   * A code block is text fenced off before and after by a new line with ```.
   * You may not nest code blocks inside any other elements.
