@@ -98,7 +98,7 @@ For a complete working example of a real-life WordPress site, you can view the c
 * `admin_password` - WP admin user password (*required* in `vault.yml`)
 * `initial_permalink_structure` - permalink structure applied at time of WP install (default: `/%postname%/`)
 
-#### Remove servers
+#### Remote servers
 
 * `repo` - URL of the Git repo of your Bedrock project (*required*)
 * `repo_subtree_path` - relative path to your Bedrock/WP directory in your repo (above) if its not the root (like site/ in roots-example-project)
