@@ -9,45 +9,20 @@ permalink: >
   https://roots.io/trellis/docs/local-development-setup/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"19";}'
+  - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - "0"
 ---
-Configure the sites on your Vagrant development VM by editing `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault`.
+Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
 
-`wordpress_sites` is the top-level dictionary used to define the WordPress sites, databases, Nginx vhosts, etc that will be created. Each site's variables are nested under a site "key" (e.g., `example.com`). This key is just a descriptive name and serves as the default value for some variables. See our [example project](https://github.com/roots/roots-example-project.com/blob/master/trellis/group_vars/development/wordpress_sites.yml) for a complete working example.
+1. Configure your site(s) based on the [WordPress Sites docs](https://roots.io/trellis/docs/wordpress-sites/) and read the [development specific](https://roots.io/trellis/docs/wordpress-sites/#development) ones.
+2. Make sure you've edited both `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault`.
+3. Run `vagrant up`.
 
-* `site_hosts` - array of hosts that Nginx will listen on (required, include main domain at least)
-* `www_redirect` - whether to redirect `www/non-www` counterparts of `site_hosts` (default: `true`)
-* `local_path` - path targeting Bedrock-based site directory (required for development)
-* `ssl` - enable SSL and set paths
-  * `enabled` - `true` or `false` (required, set to `false`. Set to `true` without the `key` and `cert` options [to generate a *self-signed* certificate](https://roots.io/trellis/docs/ssl/) )
-  * `key` - local relative path to private key
-  * `cert` - local relative path to certificate
-* `site_install` - whether to install WordPress or not (*development* only, required)
-* `site_title` - WP site title (*development* only, default: project name)
-* `db_create` - whether to auto create a database or not (default: `true`)
-* `db_import` - Path to local `sql` dump file which will be imported (optional)
-* `admin_user` - WP admin user name (*development* only, required)
-* `admin_email` - WP admin email address (*development* only, required)
-* `admin_password` - WP admin user password (*development* only, required, in `vault.yml`)
-* `initial_permalink_structure` - permalink structure applied at time of WP install (*development* only, default: `/%postname%/`)
-* `multisite` - hash of multisite options. See the [Multisite docs](https://roots.io/trellis/docs/multisite/).
-  * `enabled` - Multisite enabled flag (required, set to `false`)
-  * `subdomains` - subdomains option
-  * `base_path` - base path/current site path
-* `cache` - hash of cache options
-  * `enabled` - Cache enabled flag (required, set to `false`)
-  * `duration` - Duration of the cache (default: `30s`)
-* `env` - environment variables
-  * `disable_wp_cron` - Disable WP cron and use system's (default: `true`)
-  * `wp_home` - `WP_HOME` constant (required)
-  * `wp_siteurl` - `WP_SITEURL` constant (required)
-  * `wp_env` - environment (required, matches group name: `development`, `staging`, `production`)
-  * `db_name` - database name (required)
-  * `db_user` - database username (required)
-  * `db_password` - database password (required, in `vault.yml`)
-  * `db_host` - database hostname (default: `localhost`)
-  * `domain_current_site` (required if multisite.enabled is `true`)
+Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a server running and a WordPress site automatically installed and configured.
 
-After your WordPress sites have been configured, run `vagrant up`.
+To access the VM, run `vagrant ssh`. Sites can be found at `/srv/www/<site name>`. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
+
+Note that each WP site you configured is synced between your local machine (the host) and the Vagrant VM. Any changes made on your host will be synced to the VM.
+
+Windows users have a slightly different workflow. See the [docs](https://roots.io/trellis/docs/windows/).
