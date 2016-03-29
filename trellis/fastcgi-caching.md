@@ -9,9 +9,9 @@ permalink: >
   https://roots.io/trellis/docs/fastcgi-caching/
 published: true
 docs_project:
-  - "19"
+  - 'a:1:{i:0;s:2:"19";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 You can enable caching for your site by changing the cache settings under each site key. Using caching provide substantial speed improvement once the page are cached. The full settings looks like this: 
 
