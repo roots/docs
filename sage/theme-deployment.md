@@ -9,9 +9,9 @@ permalink: >
   https://roots.io/sage/docs/theme-deployment/
 published: true
 docs_project:
-  - "17"
+  - 'a:1:{i:0;s:2:"17";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 ## Generating production ready assets
 
