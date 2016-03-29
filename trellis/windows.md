@@ -28,7 +28,7 @@ With Ansible installed on your Vagrant VM, you must run Ansible commands on the 
 
 **Development server.** The Ansible commands for the development machine are run for you automatically when you run `vagrant up`.
 
-**Remote servers (staging/production).** To run the `ansible-playbook` commands to provision remote servers, you'll need to SSH in to the VM, `cd` to the directory with your trellis files, then run the [setup](https://github.com/roots/trellis#remote-server-setup-stagingproduction) and [deployment](https://github.com/roots/trellis#deploying-to-remote-servers) commands.
+**Remote servers (staging/production).** To run the `ansible-playbook` commands to provision remote servers, you'll need to SSH in to the VM, `cd` to the directory with your trellis files (`/vagrant`), then run the [setup](https://github.com/roots/trellis#remote-server-setup-stagingproduction) and [deployment](https://github.com/roots/trellis#deploying-to-remote-servers) commands.
 
 ## SSH Forwarding
 
