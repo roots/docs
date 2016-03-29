@@ -1,20 +1,17 @@
 ---
 ID: 7767
 post_title: Installing Bedrock
-author:
-  - Ben Word
-post_date:
-  - 2015-10-15 12:29:33
-post_excerpt:
-  - ""
+author: Ben Word
+post_date: 2015-10-15 12:29:33
+post_excerpt: ""
 layout: doc
-permalink:
-  - /bedrock/docs/installing-bedrock/
+permalink: >
+  https://roots.io/bedrock/docs/installing-bedrock/
 published: true
 docs_project:
-  - "18"
+  - 'a:1:{i:0;s:2:"18";}'
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 ## Requirements
 
