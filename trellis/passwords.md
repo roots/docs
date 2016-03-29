@@ -8,9 +8,9 @@ layout: doc
 permalink: https://roots.io/trellis/docs/passwords/
 published: true
 docs_project:
-  - "19"
+  - 'a:1:{i:0;s:2:"19";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 There are a few places you'll want to set/change passwords:
 
