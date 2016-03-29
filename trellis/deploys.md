@@ -1,20 +1,16 @@
 ---
 ID: 7587
 post_title: Deploys
-author:
-  - 'a:1:{i:0;s:52:"a:1:{i:0;s:34:"a:1:{i:0;s:16:"Scott Walkinshaw";}";}";}'
-post_date:
-  - 'a:1:{i:0;s:55:"a:1:{i:0;s:37:"a:1:{i:0;s:19:"2015-10-10 20:00:00";}";}";}'
-post_excerpt:
-  - 'a:1:{i:0;s:35:"a:1:{i:0;s:17:"a:1:{i:0;s:0:"";}";}";}'
+author: Scott Walkinshaw
+post_date: 2015-10-09 17:53:28
+post_excerpt: ""
 layout: doc
-permalink:
-  - 'a:1:{i:0;s:17:"a:1:{i:0;s:0:"";}";}'
+permalink: https://roots.io/trellis/docs/deploys/
 published: true
 docs_project:
-  - "19"
+  - 'a:1:{i:0;s:2:"19";}'
 publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 Trellis offers one-command deploys out of the box with little configuration needed.
 
