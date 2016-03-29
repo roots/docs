@@ -1,20 +1,16 @@
 ---
 ID: 5347
 post_title: Windows
-author:
-  - 'a:1:{i:0;s:8:"Ben Word";}'
-post_date:
-  - 'a:1:{i:0;s:19:"2015-09-03 17:33:07";}'
-post_excerpt:
-  - 'a:1:{i:0;s:0:"";}'
+author: Ben Word
+post_date: 2015-09-03 17:33:07
+post_excerpt: ""
 layout: doc
-permalink:
-  - 'a:1:{i:0;s:22:"/trellis/docs/windows/";}'
+permalink: https://roots.io/trellis/docs/windows/
 published: true
 docs_project:
-  - "19"
+  - 'a:1:{i:0;s:2:"19";}'
 publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 ## Installing Ansible
 
