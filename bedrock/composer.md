@@ -8,9 +8,9 @@ layout: doc
 permalink: https://roots.io/bedrock/docs/composer/
 published: true
 docs_project:
-  - "18"
+  - 'a:1:{i:0;s:2:"18";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 [Composer](http://getcomposer.org) is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
 
