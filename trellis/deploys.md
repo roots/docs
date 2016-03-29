@@ -8,7 +8,7 @@ layout: doc
 permalink: https://roots.io/trellis/docs/deploys/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"19";}'
+  - "19"
 publish_to_discourse:
   - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
@@ -16,14 +16,17 @@ Trellis offers one-command deploys out of the box with little configuration need
 
 ## Configuration
 
-First you need to have at least one WordPress site configured and working on a remote server.
+First you need to have at least one [WordPress site](https://roots.io/trellis/docs/wordpress-sites/) configured and your remote server provisioned and working according to the [remote server setup](https://roots.io/trellis/docs/remote-server-setup/).
 
-For deploys, there's only one more required setting and an optional one:
+For deploys, there's a couple more settings needed:
 
 * `repo` (required) - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/bedrock.git`)
+* `repo_subtree_path` (optional) - relative path to your Bedrock/WP directory in your repo if its not the root (like `site` in [roots-example-project](https://github.com/roots/roots-example-project.com))
 * `branch` (optional) - the git branch to deploy (default: `master`)
 
-Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml`.
+Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml` as detailed in the [docs](https://roots.io/trellis/docs/wordpress-sites/#remote-servers).
+
+At this point you should also generate your salts and keys and save them to your `vault.yml` file.
 
 ## Deploying
 
@@ -34,6 +37,12 @@ Deploy with a single command: `./deploy.sh <environment> <domain>`
 The actual command looks like this: `ansible-playbook deploy.yml -e "site=<domain> env=<environment>"`.
 
 You can always use this command itself since it can take any additional `ansible-playbook` options.
+
+**Trellis does not automatically install WordPress on remote servers**. It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
+
+## Default flow
+
+By default, Trellis deploys are configured for Bedrock-based sites and take care of everything needed. The hooks below are for more advanced customization purposes.
 
 ## Hooks
 
@@ -118,21 +127,10 @@ wordpress_sites:
     repo_subtree_path: site
     multisite:
       enabled: false
-      subdomains: false
     ssl:
       enabled: false
     cache:
       enabled: false
-      duration: 30s
-    env:
-      disable_wp_cron: true
-      wp_home: http://mysite.com
-      wp_siteurl: http://mysite.com/wp
-      wp_env: production
-      db_name: mysite_prod
-      db_user: mysite_dbuser
-      # Define the following variables in group_vars/production/vault.yml
-      # db_password:
 ```
 
 Deploy command:
