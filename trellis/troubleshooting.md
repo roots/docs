@@ -9,16 +9,20 @@ permalink: >
   https://roots.io/trellis/docs/troubleshooting/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"19";}'
+  - "19"
 publish_to_discourse:
   - 'a:1:{i:0;s:1:"0";}'
 ---
 ## Debugging
 
-Golden rule to debugging anything with Ansible:
+Golden rule to debugging any failed command with Ansible:
 
-1. Run the command in `verbose` mode: `ansible-playbook deploy.yml -vvvv -e "site=<domain> env=<environment>`
-2. If necessary, SSH into your server and run the command that Ansible did above but manually (in the same directory).
+1. Read the output logs and find the failed task.
+2. Read through error message for the exact issue.
+3. Re-run the command in `verbose` mode `ansible-playbook deploy.yml -vvvv -e "site=<domain> env=<environment>"` if necessary to get more details.
+4. SSH into your server and manually run the command where Ansible failed.
+
+Example: if a Git clone task failed during deploys, then SSH into the server as the `web` user (which is what deploys use) and run the manual command such as `git clone <repo>`. This will give you a much better clue as to what's going wrong.
 
 <hr>
 
