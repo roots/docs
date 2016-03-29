@@ -9,9 +9,9 @@ permalink: >
   https://roots.io/bedrock/docs/configuration-files/
 published: true
 docs_project:
-  - "18"
+  - 'a:1:{i:0;s:2:"18";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 The root `web/wp-config.php` is required by WordPress and is only used to load the other main configs. Nothing else should be added to it.
 
