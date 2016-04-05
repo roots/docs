@@ -13,15 +13,15 @@ docs_project:
 publish_to_discourse:
   - 'a:1:{i:0;s:1:"0";}'
 ---
-`functions.php` is used to include files from the `lib/` directory which contains all of the theme functionality. Don’t place any custom code in this file — use it only for includes. 
+`functions.php` is used to include files from the `src/` directory which contains all of the theme functionality. Don’t place any custom code in this file — use it only for includes.
 
-Since Sage is a starter theme, it’s okay for you to modify files within `lib/` to meet the needs of the site you’re building. 
+Since Sage is a starter theme, it’s okay for you to modify files within `src/` to meet the needs of the site you’re building.
 
 The PHP code in Sage is namespaced, so make sure to [use namespaced functions and classes](https://roots.io/upping-php-requirements-in-your-wordpress-themes-and-plugins/).
 
 <dl class="dl-horizontal">
-  <dt><code>lib/assets.php</code></dt>
-  <dd>Enqueue stylesheets and scripts. See <a href="/sage/docs/theme-development/"><b>Theme Development and Building</b></a>.</dd>
+  <dt><code>src/setup.php</code></dt>
+  <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars</dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><code>lib/extras.php</code></dt>

@@ -46,6 +46,72 @@ You now have all the necessary dependencies to run the build process.
 * `npm run watch` — Compile assets when file changes are made, start BrowerSync session
 * `npm run build:production` — Compile assets for production
 
+## Theme assets
+
+The `config.json` file in the `assets` directory controls the different theme assets that get built. By default, Sage builds two JS files and one CSS file:
+
+* `assets/stylesheets/main.scss` — primary theme CSS, barebones partials are imported to help get your styling started
+* `assets/scripts/main.js` — primary theme JS
+* `assets/scripts/customizer.js` — theme customizer JS, used only in the customizer
+
+Look at `entry` in `config.json` to see how they're built:
+
+```json
+"entry": {
+  "main": [
+    "./scripts/main.js",
+    "./styles/main.scss"
+  ],
+  "customizer": [
+    "./scripts/customizer.js"
+  ]
+}
+```
+
+To create additional CSS or JS files, you'll need to:
+
+1. Create the files within the `assets/scripts/` or `assets/styles/` directories
+
+2. Open `assets/config.json` and add the new files to `entry` in a new array. In the example below we've added `scripts/checkout.js`:
+
+    ```json
+    "entry": {
+      "main": [
+        "./scripts/main.js",
+        "./styles/main.scss"
+      ],
+      "customizer": [
+        "./scripts/customizer.js"
+      ],
+      "checkout": [
+        "./scripts/checkout.js"
+      ]
+    }
+    ```
+
+3. Enqueue the new file in `src/setup.php` In the example below we've added a conditional to only enqueue `scripts/checkout.js` on the checkout page:
+
+    ```php
+    /**
+     * Theme assets
+     */
+    add_action('wp_enqueue_scripts', function () {
+        wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+        wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+
+        if (is_page('checkout')) {
+            wp_enqueue_script('sage/checkout.js', asset_path('scripts/checkout.js'), ['jquery'], null, true);
+        }
+    }, 100);
+    ```
+
+4. From the theme directory, run the build script:
+
+    ```sh
+    # web/app/themes/sage/
+    $ npm run build
+    ```
+
 ## 3rd party packages
 
 Example of how to add 3rd party packages and have them included in the theme:
@@ -98,69 +164,3 @@ $ npm install --save font-awesome
 // Import Font Awesome from node_modules
 @import "~font-awesome/scss/font-awesome.scss";
 ```
-
-## Theme stylesheets and scripts
-
-The `config.json` file in the `assets` directory handles the different theme assets that get built. By default, Sage builds two JS files and one CSS file:
-
-* `main.scss` — primary theme CSS, barebones partials are imported to help get your styling started
-* `main.js` — primary theme JS
-* `customizer.js` — theme customizer JS, used only in the customizer
-
-These are controlled by `entry` in `config.json`:
-
-```json
-"entry": {
-  "main": [
-    "./scripts/main.js",
-    "./styles/main.scss"
-  ],
-  "customizer": [
-    "./scripts/customizer.js"
-  ]
-}
-```
-
-To create additional CSS or JS files, you'll need to:
-
-1. Create the files within the `assets/scripts/` or `assets/styles/` directories
-
-2. Open `assets/config.json` and add the new files to `entry` in a new array. In the example below we've added `scripts/checkout.js`:
-
-    ```json
-    "entry": {
-      "main": [
-        "./scripts/main.js",
-        "./styles/main.scss"
-      ],
-      "customizer": [
-        "./scripts/customizer.js"
-      ],
-      "checkout": [
-        "./scripts/checkout.js"
-      ]
-    }
-    ```
-
-3. Enqueue the new file in `src/setup.php` In the example below we've added a conditional to only enqueue `scripts/checkout.js` on the checkout page:
-
-    ```php
-    /**
-    * Theme assets
-    */
-    add_action('wp_enqueue_scripts', function () {
-        wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-        wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-
-        if (is_page('checkout')) {
-            wp_enqueue_script('sage/checkout.js', asset_path('scripts/checkout.js'), ['jquery'], null, true);
-        }
-    }, 100);
-    ```
-
-4. From the theme directory, run the build script:
-
-    ```sh
-    # web/app/themes/sage/
-    $ npm run build
-    ```

@@ -13,33 +13,37 @@ docs_project:
 publish_to_discourse:
   - 'a:1:{i:0;s:1:"0";}'
 ---
-`lib/setup.php` is used to enable/disable theme features and set configuration values. The theme features that can be disabled include:
+`src/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
 
-Clean up from [Soil](/plugins/soil):
+## Stylesheets and scripts
 
-    add_theme_support('soil-clean-up');
+Manage your front-end theme assets at the top of the `src/setup.php` file:
 
-Cleaner nav walker from [Soil](/plugins/soil):
+```php
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+}, 100);
+```
 
-    add_theme_support('soil-nav-walker');
+See [theme assets](/sage/docs/theme-development-and-building/#theme-assets) for more on how these assets are built. `asset_path` is a helper function that returns versioned asset filenames from the `dist/` directory.
 
-Relative URLs from [Soil](/plugins/soil):
+## Theme features
 
-    add_theme_support('soil-relative-urls');
+### Soil
 
-Nice search from [Soil](/plugins/soil):
+We recommend using [Soil](/plugins/soil) for every WordPress install for additional features:
 
-    add_theme_support('soil-nice-search');
+* Load jQuery from the jQuery CDN*
+* Cleaner WordPress markup*
+* Cleaner HTML output of navigation menus*
+* Root relative URLs*
+* Nice search*
+* Google Analytics snippet from HTML5 Boilerplate*
+* Move all JS to the footer
+* Disable trackbacks and pingbacks
 
-Enable loading jQuery from [Soil](/plugins/soil):
-
-    add_theme_support('soil-jquery-cdn');
-
-`lib/setup.php` is also used to register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup.
-
-### Translations
-
-The first part of the theme setup is making the theme translation available. Sage has [over 35 community translations](https://github.com/roots/sage-translations) available thanks to our contributors.
+<small>&lowast;If Soil is installed and activated on your WordPress install, Sage will enable this feature by default</small>
 
 ### Title tag support
 
@@ -56,6 +60,10 @@ Post thumbnails are enabled with `add_theme_support('post-thumbnails')`, but the
 ### Post formats
 
 Some WordPress post formats are enabled by default, but Sage doesn't provide any styling or templates for different post formats.
+
+### HTML5 markup
+
+Sage enables HTML5 markup for captions, comment forms, comment lists, galleries, and the search form.
 
 ### Editor stylesheet
 
