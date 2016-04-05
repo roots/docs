@@ -21,21 +21,38 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
 
 <dl class="dl-horizontal">
   <dt><code>src/setup.php</code></dt>
-  <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars</dd>
+  <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars See <a href="/sage/docs/theme-configuration-and-setup/">Theme Configuration and Setup</a>.</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>lib/extras.php</code></dt>
-  <dd>Contains a function for adding classes to <code>&lt;body&gt;</code> and a function that adds a 'Continued' link to excerpts.</dd>
+  <dt><code>src/admin.php</code></dt>
+  <dd>Placeholder code for the WordPress theme customizer. You can also use this file for anything related to the WordPress admin.</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>lib/setup.php</code></dt>
-  <dd>Enable/disable theme features, set configuration values, register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup. See <a href="/sage/docs/theme-configuration/"><b>Theme Configuration and Setup</b></a>.</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt><code>lib/titles.php</code></dt>
-  <dd>Control the output of page titles.</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt><code>lib/wrapper.php</code></dt>
-  <dd>The theme wrapper. See <a href="/sage/docs/theme-wrapper/"><b>Theme Wrapper</b></a>.</dd>
+  <dt><code>src/filters.php</code></dt>
+  <dd>
+    <p>Add WordPress filters in this file. Filters included by default:</p>
+    <ul>
+      <li><code>sage/display_sidebar</code> &mdash; determine which pages should NOT display the sidebar</li>
+      <li><code>body_class</code> &mdash; add <code>&lt;body&gt;</code> classes</li>
+      <li><code>excerpt_more</code> &mdash; add "… Continued" to excerpts</li>
+      <li><code>template_include</code> &mdash; enable the theme wrapper</li>
+    </ul>
+  </dd>
+  <dl class="dl-horizontal">
+    <dt><code>src/helpers.php</code></dt>
+    <dd>
+      <p>Helper functions used throughout the theme:</p>
+      <ul>
+        <li><code>template_wrap</code> &mdash; used by the theme wrapper</li>
+        <li><code>template_unwrap</code> &mdash; used by the theme wrapper</li>
+        <li><code>asset_path</code> &mdash; used when enqueueing theme assets to provide the correct versioned asset filenames</li>
+        <li><code>display_sidebar</code> &mdash; used to control displaying the sidebar</li>
+        <li><code>title</code> &mdash; used to return page titles</li>
+      </ul>
+    </dd>
+  </dl>
+  <dl class="dl-horizontal">
+    <dt><code>src/lib/</code></dt>
+    <dd>This directory contains the theme wrapper code along with the code used to parse <code>dist/assets.json</code> and enqueue assets with the versioned filenames</dd>
+  </dl>
 </dl>
