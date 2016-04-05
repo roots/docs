@@ -13,9 +13,14 @@ docs_project:
 publish_to_discourse:
   - 'a:1:{i:0;s:1:"0";}'
 ---
-## Generating production ready assets
+To deploy a Sage theme you'll need to make sure two things are covered:
 
-Generate production ready assets with `gulp --production`, which will build your assets without the source maps. 
+1. Run `composer install` from the theme directory on the remote server
+2. Copy over production theme assets
+
+## Generating production ready theme assets
+
+Generate production ready assets with `npm run build:production`, which will build your assets with versioned filenames.
 
 If you use [Trellis](/trellis/), you can build your assets locally, then copy them to the remote server during deployment. [See the `build-before.yml` example hook](https://github.com/roots/trellis/blob/master/deploy-hooks/build-before.yml) in Trellis.
 
