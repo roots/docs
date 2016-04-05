@@ -13,8 +13,16 @@ docs_project:
 publish_to_discourse:
   - 'a:1:{i:0;s:1:"0";}'
 ---
-From your WordPress themes directory, clone the [git repo](https://github.com/roots/sage) to a new folder named after your theme:
+From the command line, run the following commands from the root of your WordPress site (where `composer.json` exists). These instructions assume you're using a [Bedrock](https://roots.io/bedrock/)-based WordPress setup. If you're using Vagrant, make sure to run these commands from the Vagrant box (`vagrant ssh`). Create a new theme based on Sage by using Composer's [`create-project`](https://getcomposer.org/doc/03-cli.md#create-project):
 
+```shell
+# @ example.com/site
+$ composer create-project roots/sage web/app/themes/your-theme-name dev-sage-9
 ```
-git clone https://github.com/roots/sage.git theme-name
+
+Then activate the theme via [wp-cli](http://wp-cli.org/commands/theme/activate/):
+
+```shell
+# @ example.com/site
+$ wp theme activate your-theme-name
 ```
