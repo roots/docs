@@ -8,9 +8,9 @@ layout: doc
 permalink: https://roots.io/trellis/docs/multisite/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"19";}'
+  - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` before provisioning your server:
 
@@ -33,12 +33,16 @@ multisite:
   subdomain: false   # Set to true if you're using a subdomain multisite install
 ```
 
-And set the `domain_current_site` variable under `env`:
+You'll also need to define the `env` dictionary for multisite installs with these three settings:
 
 ```yaml
 env:
   domain_current_site: example.com
+  wp_home: http://example.com
+  wp_siteurl: http://example.com/wp
 ```
+
+Trellis automatically sets `wp_home` and `wp_siteurl` but with multisite they needs to be manually set.
 
 ## Subdomain installs and hosts
 
