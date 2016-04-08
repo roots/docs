@@ -16,31 +16,16 @@ publish_to_discourse:
 <p class="lead">These are the primary projects that make up the Sage workflow:</p>
 
 <ul class="lead">
-<li><h4><a href="https://webpack.github.io/">Webpack</a></h4><p><small>is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and gulp as our build tools.</small></p></li>
-<li><h4><a href="https://www.npmjs.com/">npm</a></h4><p><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap as a dependency.</small></p></li>
-<li><h4><a href="http://www.browsersync.io">BrowserSync</a></h4><p><small>BrowserSync keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS. In previous versions of the theme we used LiveReload for injecting assets.</small></p></li>
+<li><h4><a href="https://webpack.github.io/">Webpack</a></h4><p><small>is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.</small></p></li>
+<li><h4><a href="https://www.npmjs.com/">npm</a></h4><p><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap and jQuery as dependencies.</small></p></li>
+<li><h4><a href="http://www.browsersync.io">BrowserSync</a> with Webpack Hot Module Replacement</h4><p><small>BrowserSync with WHR keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS. In previous versions of the theme we used LiveReload for injecting assets.</small></p></li>
 </ul>
 
 <div class="cta-product cta-product-sage well well-sage module"><a href="https://roots.io/books/theme-development-with-sage/" class="media"><div class="media-left"><img class="media-object" src="/app/uploads/theme-development-with-sage-cover-800x1035.png" alt="Sage book cover"></div><div class="media-body"><h4><span class="badge bg-white text-sage">Get the book</span> <br> <span class="text-sage">Theme Development with Sage</span></h4><p class="lead">A step-by-step guide to setting up a custom Sage starter theme.</p><p class="visible-md visible-lg">Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.</p><p class="text-right"><button class="btn btn-primary">Buy</button></p></div></a></div>
 
-## Installing project dependencies
-
-Make sure all dependencies have been installed before moving on:
-
-* [PHP](http://php.net/manual/en/install.php) >= 5.5.x
-* [Composer](https://getcomposer.org/download/)
-* [Node.js](http://nodejs.org/) >= 0.12.x
-
-From the command line on your host machine (not on your Vagrant development box), navigate to the theme directory then run `npm install`:
-
-```shell
-# @ example.com/site/web/app/themes/your-theme-name
-$ npm install
-```
-
-You now have all the necessary dependencies to run the build process.
-
 ## Available build commands
+
+Run these script commands within your theme directory:
 
 * `npm run build` — Compile and optimize the files in your assets directory
 * `npm run watch` — Compile assets when file changes are made, start BrowerSync session
@@ -54,7 +39,7 @@ The `config.json` file in the `assets` directory controls the different theme as
 * `assets/scripts/main.js` — primary theme JS
 * `assets/scripts/customizer.js` — theme customizer JS, used only in the customizer
 
-Look at `entry` in `config.json` to see how they're built:
+Look at `entry` in `assets/config.json` to see how they're built:
 
 ```json
 "entry": {
@@ -108,18 +93,18 @@ To create additional CSS or JS files, you'll need to:
 4. From the theme directory, run the build script:
 
     ```sh
-    # web/app/themes/sage/
+    # web/app/themes/your-theme-name/
     $ npm run build
     ```
 
 ## 3rd party packages
 
-Example of how to add 3rd party packages and have them included in the theme:
+Example of how to add 3rd party packages* and have them included in the theme:
 
 1. From the theme directory, run:
 
     ```shell
-    # web/app/themes/sage/
+    # web/app/themes/your-theme-name/
     $ npm install --save <package name>
 
     # Install Slick carousel:
@@ -147,6 +132,8 @@ Example of how to add 3rd party packages and have them included in the theme:
     ```
 
 3. After running `npm run build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
+
+<small>&lowast;Note: Wordpress Plugins are installed elsewhere or with Composer when using [Bedrock](/bedrock/docs/composer)</small>
 
 ### Additional examples
 
