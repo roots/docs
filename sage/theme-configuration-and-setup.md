@@ -32,18 +32,18 @@ See [theme assets](/sage/docs/theme-development-and-building/#theme-assets) for 
 
 ### Soil
 
-We recommend using [Soil](/plugins/soil) for every WordPress install for additional features:
+We recommend using the [Soil](/plugins/soil) Plugin with every WordPress install for additional features:
 
 * Load jQuery from the jQuery CDN*
 * Cleaner WordPress markup*
 * Cleaner HTML output of navigation menus*
 * Root relative URLs*
 * Nice search*
-* Google Analytics snippet from HTML5 Boilerplate*
+* Google Analytics snippet from HTML5 Boilerplate
 * Move all JS to the footer
 * Disable trackbacks and pingbacks
 
-<small>&lowast;If Soil is installed and activated on your WordPress install, Sage will enable this feature by default</small>
+<small>&lowast;If Soil is installed and activated on your WordPress install, Sage will enable these features by default.</small>
 
 ### Title tag support
 
@@ -72,3 +72,32 @@ The TinyMCE editor in WordPress allows loading a custom stylesheet which is regi
 ### Register sidebars
 
 Sage registers two sidebars by default: Primary & Footer. Add additional sidebars with `register_sidebar()`.
+
+## Theme structure
+
+```shell
+themes/theme-name/        # → Root of your Sage based theme
+├── assets                # → Front-end assets
+│   ├── config.json       # → Settings for compiled assets
+│   ├── fonts/            # → Theme fonts
+│   ├── images/           # → Theme images
+│   ├── scripts/          # → Theme JS
+│   └── styles/           # → Theme stylesheets
+├── composer.json         # → Autoloading for `src/` files
+├── composer.lock         # → Composer lock file (never manually edit)
+├── dist/                 # → Built theme assets (never manually edit)
+├── functions.php         # → Never manually edit
+├── index.php             # → Never manually edit
+├── node_modules/         # → Node.js packages (never manually edit)
+├── package.json          # → Node.js dependencies and scripts
+├── screenshot.png        # → Theme screenshot for WP admin
+├── src/                  # → Theme PHP
+├── style.css             # → Theme meta information
+├── templates/            # → Theme templates
+│   ├── layouts/          # → Base templates
+│   └── partials/         # → Partial templates
+├── vendor/               # → Composer packages (never manually edit)
+├── watch.js              # → Webpack/BrowserSync watch config
+└── webpack.config.js     # → Webpack config
+```
+
