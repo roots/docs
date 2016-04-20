@@ -10,9 +10,9 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+  - "0"
 ---
-Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` before provisioning your server:
+Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` **before** provisioning your server:
 
 ```php
 /* Multisite */
@@ -30,7 +30,7 @@ You'll also need to edit the `wordpress_sites.yml` vars file and update the mult
 ```yaml
 multisite:
   enabled: true
-  subdomain: false   # Set to true if you're using a subdomain multisite install
+  subdomains: false   # Set to true if you're using a subdomain multisite install
 ```
 
 You'll also need to define the `env` dictionary for multisite installs with these three settings:
