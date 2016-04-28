@@ -16,14 +16,14 @@ publish_to_discourse:
 After reading through this guide, you will:
 
 * Understand the Sage Wrapper and recognize how it extends and complements the WordPress template hierarchy.
-* Know what is meant by the DRY Principle, why being DRY bests being WET, and see how most WordPress themes are WET.
+* Know what is meant by the DRY Principle, why being DRY beats being WET, and see how most WordPress themes are WET.
 * Be able to filter the Sage Wrapper and create a new base template for a Custom Post Type.
 
 ## Template Hierarchy
 
-WordPress is pretty smart. Every time you load up a request it will search for the most relevant template available in your theme and load it. This is the [Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy) in action and it enables us to easily customize the appearance of our sites. 
+WordPress is pretty smart. Every time you load up a request it will search for the most relevant template available in your theme and load it. This is the [Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy) in action and it enables us to easily customize the appearance of our sites.
 
-Want to customize a specific page named "About"? Just copy `page.php`, to `page-about.php` and edit away to your heart's content. You only need to look at the success of WordPress to realize that this system works because of its simplicity and accessibility. But it doesn't work perfectly. 
+Want to customize a specific page named "About"? Just copy `page.php`, to `page-about.php` and edit away to your heart's content. You only need to look at the success of WordPress to realize that this system works because of its simplicity and accessibility. But it doesn't work perfectly.
 
 To prevent each new template from having a duplicate header, footer and sidebar, WordPress encourages you to separate that code into other templates and include them with the `get_header()`, `get_footer()` and `get_sidebar()` functions (all of which are based on [`get_template_part`](http://codex.wordpress.org/Function_Reference/get_template_part)). Whilst this makes your code more manageable, with only one edit needed to implement a change across all templates, it still duplicates code that simply doesn't need to be duplicated; the code which calls each of those templates.
 
@@ -50,7 +50,7 @@ Even though we know that every template will take this base format and render th
 
 > Every piece of knowledge must have a single, unambiguous, authoritative representation within a system. <sup>[[1]](#rf1)</sup>
 
-So whilst we have a base format for our pages, this "knowledge" is written countless times, spread across numerous files and has no authoritative representation. This is the opposite of **DRY** code and it's usually described as being **WET**, meaning that you **W**rite **E**verything **T**wice. 
+So whilst we have a base format for our pages, this "knowledge" is written countless times, spread across numerous files and has no authoritative representation. This is the opposite of **DRY** code and it's usually described as being **WET**, meaning that you **W**rite **E**verything **T**wice.
 
 As you can see from the wrapperless template, WordPress goes beyond writing everything just twice, which is why we prefer the term **CRY** or **C**ontinously **R**epeating **Y**ourself <sup>[[2]](#rf2)</sup>. Whatever you want to call it, it wastes your time when creating the code, when reading the code and when editing the code; it's a lose-lose-lose situation (plus repetition is only fun in rhetoric) but it's easy enough to avoid.
 
@@ -66,7 +66,7 @@ It's neat. It's tidy. You never need to make calls to `get_header()`, `get_foote
 
 ### Step 1: WordPress figures out which template to use
 
-This is done using the standard WordPress Template Hierarchy, which, as mentioned before, selects the most relevant template as our starting point. Once this template has been chosen, but before it's loaded, WordPress runs the `template_include($template)` filter. 
+This is done using the standard WordPress Template Hierarchy, which, as mentioned before, selects the most relevant template as our starting point. Once this template has been chosen, but before it's loaded, WordPress runs the `template_include($template)` filter.
 
 We use this filter to run our `wrap` function that saves the `$main_template` path and `$base` as static variables in our `SageWrapping` class found in `lib/wrapper.php`:
 
@@ -98,7 +98,7 @@ The `wrap` function also checks to see if the `$base` is `index` (in which case 
 
 ### Step 2: The theme wrapper selects which base to use
 
-During the construction of our new `SageWrapping` instance, we set a variable for the `$slug` (which defaults to base) and create a new `$templates` array with the fallback template `base.php` as the first item. 
+During the construction of our new `SageWrapping` instance, we set a variable for the `$slug` (which defaults to base) and create a new `$templates` array with the fallback template `base.php` as the first item.
 
 We then check to see if the `$base` exists (i.e. confirming we're not starting on `index.php`) and shift a more specific template to the front of the `$templates` array:
 
