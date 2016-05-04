@@ -16,7 +16,7 @@ publish_to_discourse:
 Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
 
 1. Configure your site(s) based on the [WordPress Sites docs](https://roots.io/trellis/docs/wordpress-sites/) and read the [development specific](https://roots.io/trellis/docs/wordpress-sites/#development) ones.
-2. Make sure you've edited both `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault`.
+2. Make sure you've edited both `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault.yml`.
 3. Run `vagrant up`.
 
 Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a server running and a WordPress site automatically installed and configured.
