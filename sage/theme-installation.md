@@ -18,3 +18,9 @@ From your WordPress themes directory, clone the [git repo](https://github.com/ro
 ```
 git clone https://github.com/roots/sage.git theme-name
 ```
+
+At this point it is a good idea to create a new git branch for your project, so you can keep the master branch of the repository clean and later on merge updates from upstream more easy:
+
+```
+git checkout -b my_branch_name
+```
