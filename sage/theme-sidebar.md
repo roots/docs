@@ -9,9 +9,11 @@ permalink: >
   https://roots.io/sage/docs/theme-sidebar/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"17";}'
+  - "17"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+saved_flag:
+  - "1"
 ---
 ## Displaying the sidebar
 
@@ -53,7 +55,7 @@ Unfortunately it's not so easy to hide the sidebar for a large number of pages, 
 Let's say you wanted the sidebar hidden on every page, so you add `is_page()` to the array. Later in development you suddenly realize that you need a sidebar on just one of the pages:
 
 ```php
-add_filter('sage/display_sidebar', __NAMESPACE__ . '\sage_sidebar_on_special_page');
+add_filter('sage/display_sidebar', __NAMESPACE__ . 'sage_sidebar_on_special_page');
 
 function sage_sidebar_on_special_page($sidebar) {
   if (is_page('special-page')) {
