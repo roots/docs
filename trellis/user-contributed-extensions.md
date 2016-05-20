@@ -9,9 +9,11 @@ permalink: >
   https://roots.io/trellis/docs/user-contributed-extensions/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"19";}'
+  - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+saved_flag:
+  - "1"
 ---
 <p class="lead">Extensions (or roles), developed by the community, that complement Trellis.</p> 
 
