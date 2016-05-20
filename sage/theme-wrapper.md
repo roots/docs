@@ -10,10 +10,10 @@ permalink: >
 published: true
 docs_project:
   - "17"
-publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 saved_flag:
   - "1"
+publish_to_discourse:
+  - "0"
 ---
 After reading through this guide, you will:
 
