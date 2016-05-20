@@ -9,9 +9,11 @@ permalink: >
   https://roots.io/sage/docs/theme-installation/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"17";}'
+  - "17"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - "0"
+saved_flag:
+  - "1"
 ---
 From your WordPress themes directory, clone the [git repo](https://github.com/roots/sage) to a new folder named after your theme:
 
