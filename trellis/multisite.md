@@ -10,7 +10,9 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
+saved_flag:
+  - "1"
 ---
 Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` **before** provisioning your server:
 
