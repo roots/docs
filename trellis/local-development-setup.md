@@ -11,7 +11,9 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
+saved_flag:
+  - "1"
 ---
 Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
 
