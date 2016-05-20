@@ -9,9 +9,11 @@ permalink: >
   https://roots.io/bedrock/docs/environment-variables/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"18";}'
+  - "18"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+saved_flag:
+  - "1"
 ---
 Bedrock tries to separate config from code as much as possible and environment variables are used to achieve this. The benefit is there's a single place (`.env`) to keep settings like database or other 3rd party credentials that isn't committed to your repository.
 
