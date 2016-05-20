@@ -8,9 +8,11 @@ layout: doc
 permalink: https://roots.io/trellis/docs/ssh-keys/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"19";}'
+  - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+saved_flag:
+  - "1"
 ---
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).
 
