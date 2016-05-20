@@ -9,9 +9,11 @@ permalink: >
   https://roots.io/sage/docs/theme-functionality/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"17";}'
+  - "17"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+saved_flag:
+  - "1"
 ---
 `functions.php` is used to include files from the `lib/` directory which contains all of the theme functionality. Don’t place any custom code in this file — use it only for includes. 
 
