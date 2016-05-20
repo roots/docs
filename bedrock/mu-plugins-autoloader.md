@@ -9,9 +9,11 @@ permalink: >
   https://roots.io/bedrock/docs/mu-plugins-autoloader/
 published: true
 docs_project:
-  - 'a:1:{i:0;s:2:"18";}'
+  - "18"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+saved_flag:
+  - "1"
 ---
 Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins. The autoloaded plugins are included after all mu-plugins and standard plugins have been loaded. An asterisk (*) next to the name of the plugin designates the plugins that have been autoloaded. To remove this functionality, just delete `web/app/mu-plugins/bedrock-autoloader.php`.
 
