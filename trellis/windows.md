@@ -10,7 +10,9 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:54:"a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}";}'
+  - 'a:1:{i:0;s:72:"a:1:{i:0;s:54:"a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}";}";}'
+saved_flag:
+  - "1"
 ---
 ## Installing Ansible
 
