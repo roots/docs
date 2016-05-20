@@ -11,7 +11,9 @@ published: true
 docs_project:
   - "19"
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
+saved_flag:
+  - "1"
 ---
 Setting up remote servers (staging/production) is similar to the [local development setup](https://roots.io/trellis/docs/local-development-setup/) with a couple differences.
 
