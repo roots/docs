@@ -10,13 +10,11 @@ permalink: >
 published: true
 docs_project:
   - "19"
-publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
 saved_flag:
   - "1"
+publish_to_discourse:
+  - "0"
 ---
-# WordPress Sites
-
 Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
 
 Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support 1 or more WP sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc.
@@ -28,7 +26,7 @@ There are two components and places to configure sites:
 * Normal settings in `group_vars/development/wordpress_sites.yml`
 * Passwords/secrets in `group_vars/development/vault.yml`
 
-### Normal settings
+## Normal settings
 
 `wordpress_sites` is a top-level dictionary used to define all the sites you want. Here's an absolute bare-minimum site as an example for development:
 
@@ -52,7 +50,7 @@ Each site starts with a "key" (`example.com` in this case). Trellis uses the key
 
 Nested under the name/key are the site's variables which are for that site only. You only need to define a variable/setting if you want to overwrite the default value which can be found below.
 
-### Passwords/secrets
+## Passwords/secrets
 
 When you add/edit a site in`wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` exists to make easy to use Ansible's Vault feature to encrypt certain files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](https://roots.io/trellis/docs/vault/) for more information on this.
 
@@ -69,9 +67,9 @@ Notice the matching site keys in both `wordpress_sites` and `vault_wordpress_sit
 
 For a complete working example of a real-life WordPress site, you can view the config files for [roots-example-project.com](https://github.com/roots/roots-example-project.com).
 
-### Options
+## Options
 
-#### Common
+### Common
 
 * `site_hosts` - array of hosts that Nginx will listen on (*required*, include main domain at least)
 * `www_redirect` - whether to redirect `www/non-www` counterparts of `site_hosts` (default: `true`)
@@ -91,7 +89,7 @@ For a complete working example of a real-life WordPress site, you can view the c
   * `db_password` - database password (*required*, in `vault.yml`)
   * `db_host` - database hostname (default: `localhost`)
   
-#### Development
+### Development
 
 * `site_install` - whether to install WordPress or not (default: `true`)
 * `site_title` - WP site title (default: site name)
@@ -100,7 +98,7 @@ For a complete working example of a real-life WordPress site, you can view the c
 * `admin_password` - WP admin user password (*required* in `vault.yml`)
 * `initial_permalink_structure` - permalink structure applied at time of WP install (default: `/%postname%/`)
 
-#### Remote servers
+### Remote servers
 
 * `repo` - URL of the Git repo of your Bedrock project (*required*)
 * `repo_subtree_path` - relative path to your Bedrock/WP directory in your repo (above) if its not the root (like site/ in roots-example-project)
