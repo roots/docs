@@ -9,10 +9,10 @@ permalink: https://roots.io/trellis/docs/ssh-keys/
 published: true
 docs_project:
   - "19"
-publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 saved_flag:
-  - "1"
+  - 'a:1:{i:0;s:1:"1";}'
+publish_to_discourse:
+  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).
 
@@ -138,7 +138,7 @@ users:
 
 The example above also demonstrates the option of creating `another_user` whose primary group is `some_group`, but who is also in `some_other_group`, and who has public SSH keys for `swalkinshaw`.
 
-## Cloning Remote Repo Using SSH Agent Forwarding
+## Cloning remote repo using SSH agent forwarding
 
 All the SSH connections discussed above apply to Trellis connecting from your local machine to your server. It is a different type of connection, however, when Trellis clones a remote private repo during deployment. In this case, your remote server is allowed to forward your local machine's SSH credentials to the remote repo to authorize the connection.
 
