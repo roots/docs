@@ -11,9 +11,9 @@ published: true
 docs_project:
   - "17"
 saved_flag:
-  - "1"
+  - 'a:1:{i:0;s:1:"1";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 After reading through this guide, you will:
 
@@ -151,7 +151,7 @@ Let's say you wanted your base markup to change depending on what CPT WordPress 
 
 ```php
 <?php
-  add_filter('sage/wrap_base', __NAMESPACE__ . '\\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
+  add_filter('sage/wrap_base', __NAMESPACE__ . '\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
 
   function sage_wrap_base_cpts($templates) {
     $cpt = get_post_type(); // Get the current post type
