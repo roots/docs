@@ -10,10 +10,10 @@ permalink: >
 published: true
 docs_project:
   - "17"
-publish_to_discourse:
-  - "0"
 saved_flag:
-  - "1"
+  - 'a:1:{i:0;s:1:"1";}'
+publish_to_discourse:
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 From your WordPress themes directory, clone the [git repo](https://github.com/roots/sage) to a new folder named after your theme:
 
