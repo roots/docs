@@ -10,10 +10,10 @@ permalink: >
 published: true
 docs_project:
   - "19"
-publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 saved_flag:
-  - "1"
+  - 'a:1:{i:0;s:1:"1";}'
+publish_to_discourse:
+  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 You can enable caching for your site by changing the cache settings under each site key. Using caching provide substantial speed improvement once the page are cached. The full settings looks like this: 
 
