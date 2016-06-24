@@ -11,9 +11,9 @@ published: true
 docs_project:
   - "18"
 saved_flag:
-  - "1"
+  - 'a:1:{i:0;s:1:"1";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 ## Requirements
 
