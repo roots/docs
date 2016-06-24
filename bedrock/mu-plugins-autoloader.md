@@ -10,12 +10,14 @@ permalink: >
 published: true
 docs_project:
   - "18"
-publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 saved_flag:
-  - "1"
+  - 'a:1:{i:0;s:1:"1";}'
+publish_to_discourse:
+  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
-Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins. The autoloaded plugins are included after all mu-plugins and standard plugins have been loaded. An asterisk (*) next to the name of the plugin designates the plugins that have been autoloaded. To remove this functionality, just delete `web/app/mu-plugins/bedrock-autoloader.php`.
+Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins. 
+
+The autoloaded plugins are included after all mu-plugins and standard plugins have been loaded. An asterisk (*) next to the name of the plugin designates the plugins that have been autoloaded. To remove this functionality, just delete `web/app/mu-plugins/bedrock-autoloader.php`.
 
 This enables the use of mu-plugins through Composer if their package type is `wordpress-muplugin`. You can also override a plugin's type like the following example:
 
