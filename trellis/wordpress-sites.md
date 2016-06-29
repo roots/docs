@@ -88,12 +88,12 @@ For a complete working example of a real-life WordPress site, you can view the c
   * `db_user` - database username (default: `<site name>`)
   * `db_password` - database password (*required*, in `vault.yml`)
   * `db_host` - database hostname (default: `localhost`)
-  
+
 ### Development
 
 * `site_install` - whether to install WordPress or not (default: `true`)
 * `site_title` - WP site title (default: site name)
-* `admin_user` - WP admin user name (default: `admin`)
+* `admin_user` - WP admin user name (default: `admin_email`)
 * `admin_email` - WP admin email address (*required*)
 * `admin_password` - WP admin user password (*required* in `vault.yml`)
 * `initial_permalink_structure` - permalink structure applied at time of WP install (default: `/%postname%/`)
