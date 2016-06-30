@@ -19,7 +19,7 @@ publish_to_discourse:
 
 Make sure all dependencies have been installed before moving on:
 
-* [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) 2.0.2.0
+* [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) 2.0.2.0 (Be sure to install this version and not later ones, as versions >=2.1 currently have a [bug](https://discourse.roots.io/t/taskinclude-object-has-no-attribute-has-triggered/6834))
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 * [Vagrant](http://www.vagrantup.com/downloads.html) <= 1.8.1
 * [vagrant-bindfs](https://github.com/gael-ian/vagrant-bindfs#installation) >= 0.3.1 (Windows users may skip this if not using vagrant-winnfsd for folder sync)
