@@ -11,9 +11,9 @@ published: true
 docs_project:
   - "19"
 saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}'
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 ## Requirements
 
@@ -21,7 +21,7 @@ Make sure all dependencies have been installed before moving on:
 
 * [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) 2.0.2.0
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
-* [Vagrant](http://www.vagrantup.com/downloads.html) <= 1.8.1
+* [Vagrant](https://releases.hashicorp.com/vagrant/1.8.1/) <= 1.8.1
 * [vagrant-bindfs](https://github.com/gael-ian/vagrant-bindfs#installation) >= 0.3.1 (Windows users may skip this if not using vagrant-winnfsd for folder sync)
 * [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager#installation)
 
