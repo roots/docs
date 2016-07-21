@@ -97,6 +97,20 @@ To create additional CSS or JS files, you'll need to:
     $ npm run build
     ```
 
+### Images in template files
+
+Add images used in any template files to the main entry point in the internal dependencies config. Open `assets/config.json` and add the filenames to `entry` in the `main` array. In the example below we've added `images/logo.svg`:
+
+```json
+"entry": {
+  "main": [
+    "./scripts/main.js",
+    "./styles/main.scss",
+    "./images/logo.svg"
+  ]
+}
+```
+
 ## 3rd party packages
 
 Example of how to add 3rd party packages* and have them included in the theme:
