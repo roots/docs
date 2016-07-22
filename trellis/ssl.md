@@ -134,12 +134,14 @@ ansible-playbook server.yml -e env=<environment>
 
 However, if you try the Trellis update above on a server that has already been provisioned with the prior version of Trellis (i.e., the server already has an Nginx conf set up from previous provisioning), you should first run:
 
-```ansible-playbook server.yml -e env=<environment> --tags wordpress
+```
+ansible-playbook server.yml -e env=<environment> --tags wordpress
 ```
 
 That sets up an Nginx conf that will help with the next step of running the letsencrypt role:
 
-```ansible-playbook server.yml -e env=<environment> --tags letsencrypt
+```
+ansible-playbook server.yml -e env=<environment> --tags letsencrypt
 ```
 
 #### Challenges
