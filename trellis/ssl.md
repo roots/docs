@@ -122,7 +122,7 @@ mydomain.com:
     provider: letsencrypt
 ```
 
-#### New Servers
+#### Installing on New Servers
 
 Once your configuration is all setup, you can proceed to provision the server as you normally would:
 
@@ -130,7 +130,7 @@ Once your configuration is all setup, you can proceed to provision the server as
 ansible-playbook server.yml -e env=<environment>
 ```
 
-#### Existing Servers
+#### Installing on Existing Servers
 
 However, if you try the Trellis update above on a server that has already been provisioned with the prior version of Trellis (i.e., the server already has an Nginx conf set up from previous provisioning), you should first run:
 
