@@ -34,7 +34,7 @@ There are three supported certificate *providers* in Trellis:
 
 HTTPS can be enabled on a per-site basis. However, by default, enabling SSL on a site will make that site HTTPS **only**. Meaning that all HTTP requests will be redirected to HTTPS with the proper HSTS headers set as well. Unless you have a good reason to change this default, you shouldn't. See the section on [HSTS](#hsts) for more details.
 
-## Configuration
+## Configuration & Installation
 
 Any SSL provider starts with the same basic configuration. Add the following to a WP site:
 
@@ -120,6 +120,26 @@ mydomain.com:
   ssl:
     enabled: true
     provider: letsencrypt
+```
+
+#### New Servers
+
+Once your configuration is all setup, you can proceed to provision the server as you normally would:
+
+```
+ansible-playbook server.yml -e env=<environment>
+```
+
+#### Existing Servers
+
+However, if you try the Trellis update above on a server that has already been provisioned with the prior version of Trellis (i.e., the server already has an Nginx conf set up from previous provisioning), you should first run:
+
+```ansible-playbook server.yml -e env=<environment> --tags wordpress
+```
+
+That sets up an Nginx conf that will help with the next step of running the letsencrypt role:
+
+```ansible-playbook server.yml -e env=<environment> --tags letsencrypt
 ```
 
 #### Challenges
