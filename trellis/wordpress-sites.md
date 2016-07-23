@@ -74,6 +74,7 @@ For a complete working example of a real-life WordPress site, you can view the c
 * `site_hosts` - array of hosts that Nginx will listen on (*required*, include main domain at least)
 * `www_redirect` - whether to redirect `www/non-www` counterparts of `site_hosts` (default: `true`)
 * `local_path` - path targeting Bedrock-based site directory (*required*)
+* `current_path` - symlink to latest release (default: `current`)
 * `db_create` - whether to auto create a database or not (default: `true`)
 * `db_import` - Path to local `sql` dump file which will be imported (optional)
 * `ssl` - SSL options. See the [SSL docs](https://roots.io/trellis/docs/ssl/)
@@ -88,7 +89,7 @@ For a complete working example of a real-life WordPress site, you can view the c
   * `db_user` - database username (default: `<site name>`)
   * `db_password` - database password (*required*, in `vault.yml`)
   * `db_host` - database hostname (default: `localhost`)
-  
+
 ### Development
 
 * `site_install` - whether to install WordPress or not (default: `true`)
