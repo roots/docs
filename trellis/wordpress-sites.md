@@ -35,7 +35,7 @@ There are two components and places to configure sites:
 wordpress_sites:
   example.com:
     site_hosts:
-      - example.dev
+      - canonical: example.dev
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
     admin_email: admin@example.dev
     multisite:
@@ -71,8 +71,26 @@ For a complete working example of a real-life WordPress site, you can view the c
 
 ### Common
 
-* `site_hosts` - array of hosts that Nginx will listen on (*required*, include main domain at least)
-* `www_redirect` - whether to redirect `www/non-www` counterparts of `site_hosts` (default: `true`)
+* `site_hosts` - List of hosts that Nginx will listen on. At least one is required. Each host item must specify a `canonical` host and may optionally specify a list of corresponding `redirects` (hosts). Remember to set up DNS for every host listed. (*required*)
+
+```
+# minimum required
+example.com:
+  site_hosts:
+    - canonical: example.com
+
+# multiple hosts and redirects are possible
+example.com:
+  site_hosts:
+    - canonical: example.com
+      redirects:
+        - www.example.com
+        - site.com
+    - canonical: example.co.uk
+      redirects:
+        - www.example.co.uk
+```
+
 * `local_path` - path targeting Bedrock-based site directory (*required*)
 * `current_path` - symlink to latest release (default: `current`)
 * `db_create` - whether to auto create a database or not (default: `true`)
