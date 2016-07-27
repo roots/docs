@@ -123,7 +123,7 @@ Configuration:
 wordpress_sites:
   mysite.com:
     site_hosts:
-      - mysite.com
+      - canonical: mysite.com
     local_path: ../site
     repo: git@github.com:me/mysite.git
     repo_subtree_path: site
