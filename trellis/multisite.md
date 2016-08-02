@@ -74,7 +74,7 @@ Make the following changes to your `Vagrantfile`:
 +    config.landrush.enabled = true
 +    config.landrush.tld = config.vm.hostname
 +
-+    aliases.each do |host|
++    hostnames.each do |host|
 +      config.landrush.host host, PRIVATE_IP
 +    end
    else
