@@ -11,13 +11,13 @@ published: true
 docs_project:
   - "18"
 saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}'
 publish_to_discourse:
-  - 'a:1:{i:0;s:1:"0";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 ## Requirements
 
-* PHP >= 5.5
+* PHP >= 5.6
 * Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
 ## Installation
