@@ -94,33 +94,21 @@ This means you need valid and working DNS records for every site host/domain you
 
 mydomain.com:
   site_hosts:
-    - mydomain.com
-    - mydomaintoredirect.com
+    - canonical: mydomain.com
+      redirects:
+        - www.mydomain.com
+        - mydomaintoredirect.com
+        - www.mydomaintoredirect.com
   ssl:
     enabled: true
     provider: letsencrypt
 ```
 
-In the example above, Trellis will try to automatically create 1 certificate with the following hosts: `mydomain.com`, `mydomaintoredirect.com`, `www.mydomain.com` and `www.mydomaintoredirect.com`.
+In the example above, Trellis will try to automatically create 1 certificate with the following hosts: `mydomain.com`, `www.mydomain.com`, `mydomaintoredirect.com` and `www.mydomaintoredirect.com`.
 
 All you need to do is make sure those DNS records exist and point to the web server's IP. Trellis takes care of the rest.
 
-Where do the `www` subdomains come from? Trellis has an auto `www` redirect feature since you'll want both the `www` and non-`www` domains to redirect to the same place.
-
-This can be disabled by setting `www_redirect` to `false` on your WP site:
-
-```yaml
-# group_vars/production/wordpress_sites.yml (example)
-
-mydomain.com:
-  site_hosts:
-    - mydomain.com
-    - mydomaintoredirect.com
-  www_redirect: false
-  ssl:
-    enabled: true
-    provider: letsencrypt
-```
+If you want "www" subdomains to redirect to your canonical domain, they MUST be included in redirects.
 
 #### Challenges
 
