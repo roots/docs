@@ -11,24 +11,17 @@ published: true
 docs_project:
   - "17"
 saved_flag:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}'
+  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}";}'
 publish_to_discourse:
   - "0"
 ---
 Install Sage by copying the project into a new folder within your WordPress themes directory.
 
-We recommend using [Composer](https://getcomposer.org/) to create your new project with Sage. From the command line, run the following commands from the root of your WordPress site (where `composer.json` exists).
+Make sure [Composer](https://getcomposer.org/download/) has been installed before moving on.
 
-These instructions assume you're using a [Bedrock](https://roots.io/bedrock/)-based WordPress setup. If you're using Vagrant, make sure to run these commands from the Vagrant box (`vagrant ssh`). Create a new theme based on Sage by using Composer's [`create-project`](https://getcomposer.org/doc/03-cli.md#create-project):
-
-```shell
-# @ example.com/site
-$ composer create-project roots/sage web/app/themes/your-theme-name 8.4.2
-```
-
-Then activate the theme via [wp-cli](http://wp-cli.org/commands/theme/activate/):
+Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
-# @ example.com/site
-$ wp theme activate your-theme-name
+# @ example.com/site/web/app/themes/
+$ composer create-project roots/sage your-theme-name 8.4.2
 ```
