@@ -44,7 +44,7 @@ From the command line on your host machine (not on your Vagrant box), navigate t
 $ npm install
 ```
 
-You now have all the necessary dependencies to run the [build process](/sage/docs/theme-development-and-building/#available-build-commands).
+You now have all the necessary dependencies to run the [build process](/sage/theme-development-and-building/#available-build-commands).
 
 ### Getting ready for BrowserSync
 
