@@ -28,7 +28,7 @@ publish_to_discourse:
 Run these script commands within your theme directory:
 
 * `npm run build` — Compile and optimize the files in your assets directory
-* `npm run watch` — Compile assets when file changes are made, start BrowerSync session
+* `npm start` — Compile assets when file changes are made, start BrowerSync session
 * `npm run build:production` — Compile assets for production
 
 ## Theme assets
