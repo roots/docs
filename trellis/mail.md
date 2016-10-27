@@ -32,7 +32,7 @@ Note that mail will be automatically captured but you won't ever see it unless y
 
 Another benefit of using MailHog is that if are using real SMTP credentials in development, you can ensure you don’t accidentally send emails to real email addresses which might exist in your database.
 
-Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/list#/roles/2434). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
+Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
 
 ## Remote servers (staging/production)
 
