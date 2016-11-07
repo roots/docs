@@ -9,11 +9,11 @@ permalink: >
   https://roots.io/sage/docs/theme-installation/
 published: true
 docs_project:
-  - "17"
+  - 'a:1:{i:0;s:2:"17";}'
 saved_flag:
-  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}";}'
+  - 'a:1:{i:0;s:54:"a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}";}";}'
 publish_to_discourse:
-  - "0"
+  - 'a:1:{i:0;s:1:"0";}'
 ---
 Install Sage by copying the project into a new folder within your WordPress themes directory.
 
