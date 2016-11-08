@@ -67,11 +67,11 @@ The argument `status` can be `open` or `close` and `host` is the hostname, IP, o
 
 Provided this hosts file:
 ```
-# let's pretend hosts/prodlike
+# let's pretend hosts/staging
 
 some_inventory_hostname ansible_ssh_host=12.34.56.78
 
-[prodlike]
+[staging]
 some_inventory_hostname
 
 [web]
@@ -97,7 +97,7 @@ This will remove the `/etc/php/7.0/fpm/conf.d/20-xdebug.ini` symlink, effectivel
 If you don't use inventory aliases in your host files, you can also use an ip address directly instead of the alias. For example, if your hosts file looks like this:
 
 ```
-[prodlike]
+[staging]
 12.34.56.78
 
 [web]
