@@ -13,7 +13,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-There are many ways to go about debugging a PHP application, and one of the more effective ways is using a debugger. One of the tools in the PHP community to go about doing this is [Xdebug](https://en.wikipedia.org/wiki/Xdebug). Xdebug is a tool that allows you to see _into_ the state of your application.
+There are many ways to go about debugging a PHP application, and one of the most effective ways is using a debugger. One of the most powerful tools in the PHP community to go about doing this is [Xdebug](https://en.wikipedia.org/wiki/Xdebug).
 
 ### What is Xdebug?
 
@@ -22,6 +22,7 @@ Xdebug enables you to do the following:
 - debug and profile PHP applications and scripts
 - interactively debug running code
 - measure the performance of your application
+- see the state of your application at a point in time
 
 Xdebug gives you all sorts of visibility into the internals of your application, like what variable values are at a certain point in time, what functions are taking a long time to execute, as well as what the return values of functions are. It gives you the ability to step through the execution of your application function by function, or even line by line if you really want to.
 
