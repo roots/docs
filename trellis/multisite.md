@@ -68,7 +68,7 @@ Make the following changes to your `Vagrantfile`:
 ```
 
 ```diff
--  if Vagrant.has_plugin? 'vagrant-hostsupdater'
+-  if Vagrant.has_plugin? 'vagrant-hostmanager'
 -    config.hostsupdater.aliases = aliases
 +  if Vagrant.has_plugin? 'landrush'
 +    config.landrush.enabled = true
