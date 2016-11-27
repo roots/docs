@@ -13,7 +13,7 @@ docs_project:
 publish_to_discourse:
   - "0"
 ---
-Accessing your databases with a tools such as [Sequel Pro](https://www.sequelpro.com/) and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) just requires some initial configuration.
+Accessing your databases with tools such as [Sequel Pro](https://www.sequelpro.com/) and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) just requires some initial configuration.
 
 ## Development (Vagrant box)
 
