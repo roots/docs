@@ -1,4 +1,13 @@
 ---
+ID: 17469
+post_title: Database Access
+author: Ben Word
+post_date: 2016-11-27 12:34:29
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/trellis/docs/database-access/
+published: true
 ---
 Accessing your databases with tools such as [Sequel Pro](https://www.sequelpro.com/) and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) just requires some initial configuration.
 
