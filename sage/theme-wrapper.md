@@ -1,19 +1,4 @@
 ---
-ID: 5332
-post_title: Theme Wrapper
-author: Ben Word
-post_date: 2015-09-01 19:14:17
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/theme-wrapper/
-published: true
-docs_project:
-  - 'a:1:{i:0;s:2:"17";}'
-saved_flag:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 After reading through this guide, you will:
 

@@ -1,19 +1,4 @@
 ---
-ID: 7765
-post_title: Remote Server Setup
-author: Ben Word
-post_date: 2015-10-15 12:27:00
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/trellis/docs/remote-server-setup/
-published: true
-docs_project:
-  - "19"
-saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 Setting up remote servers (staging/production) is similar to the [local development setup](https://roots.io/trellis/docs/local-development-setup/) with a couple differences.
 

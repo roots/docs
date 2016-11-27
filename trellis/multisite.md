@@ -1,18 +1,4 @@
 ---
-ID: 6154
-post_title: Multisite
-author: Ben Word
-post_date: 2015-09-03 18:09:24
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/multisite/
-published: true
-docs_project:
-  - "19"
-saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}'
 ---
 Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` **before** provisioning your server:
 

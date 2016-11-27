@@ -1,18 +1,4 @@
 ---
-ID: 6149
-post_title: SSL
-author: Ben Word
-post_date: 2015-09-03 17:44:10
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/ssl/
-published: true
-docs_project:
-  - "19"
-saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:72:"a:1:{i:0;s:54:"a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}";}";}'
 ---
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.
 

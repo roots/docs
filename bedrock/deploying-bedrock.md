@@ -1,19 +1,4 @@
 ---
-ID: 7782
-post_title: Deploying Bedrock
-author: Ben Word
-post_date: 2015-10-15 16:17:33
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/bedrock/docs/deploying-bedrock/
-published: true
-docs_project:
-  - "18"
-saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 There are two methods to deploy Bedrock sites out of the box:
 

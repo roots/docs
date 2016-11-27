@@ -1,18 +1,4 @@
 ---
-ID: 8780
-post_title: Vault
-author: Ben Word
-post_date: 2015-11-01 14:32:38
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/vault/
-published: true
-docs_project:
-  - "19"
-saved_flag:
-  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:54:"a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}";}'
 ---
 Some Ansible variables contain sensitive data such as passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) to avoid exposing sensitive data in your project repo. Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
 

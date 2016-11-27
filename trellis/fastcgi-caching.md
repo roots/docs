@@ -1,19 +1,4 @@
 ---
-ID: 6156
-post_title: FastCGI Caching
-author: Ben Word
-post_date: 2015-09-03 18:11:08
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/trellis/docs/fastcgi-caching/
-published: true
-docs_project:
-  - "19"
-saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 You can enable caching for your site by changing the cache settings under each site key. Using caching provide substantial speed improvement once the page are cached. The full settings looks like this: 
 

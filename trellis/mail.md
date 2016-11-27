@@ -1,18 +1,4 @@
 ---
-ID: 6155
-post_title: Mail
-author: Ben Word
-post_date: 2015-09-03 18:10:25
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/mail/
-published: true
-docs_project:
-  - "19"
-saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
-publish_to_discourse:
-  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
 ---
 Trellis' mail functionality is separated between development and staging/production since you usually want different behaviour out of them.
 
