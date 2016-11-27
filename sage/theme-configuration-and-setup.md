@@ -9,11 +9,11 @@ permalink: >
   https://roots.io/sage/docs/theme-configuration-and-setup/
 published: true
 docs_project:
-  - "17"
+  - 'a:1:{i:0;s:2:"17";}'
 saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}'
 publish_to_discourse:
-  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
+  - 'a:1:{i:0;s:54:"a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}";}'
 ---
 `lib/setup.php` is used to enable/disable theme features and set configuration values. The theme features that can be disabled include:
 
