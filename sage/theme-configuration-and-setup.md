@@ -1,4 +1,13 @@
 ---
+ID: 6134
+post_title: Theme Configuration and Setup
+author: Ben Word
+post_date: 2015-09-01 19:02:19
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/sage/docs/theme-configuration-and-setup/
+published: true
 ---
 `lib/setup.php` is used to enable/disable theme features and set configuration values. The theme features that can be disabled include:
 

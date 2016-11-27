@@ -1,4 +1,13 @@
 ---
+ID: 6132
+post_title: Theme Installation
+author: Ben Word
+post_date: 2015-08-29 18:09:28
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/sage/docs/theme-installation/
+published: true
 ---
 Install Sage by copying the project into a new folder within your WordPress themes directory.
 

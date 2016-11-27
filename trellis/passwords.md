@@ -1,4 +1,12 @@
 ---
+ID: 6152
+post_title: Passwords
+author: Ben Word
+post_date: 2015-09-03 17:50:15
+post_excerpt: ""
+layout: doc
+permalink: https://roots.io/trellis/docs/passwords/
+published: true
 ---
 There are a few places you'll want to set/change passwords:
 

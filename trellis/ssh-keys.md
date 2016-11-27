@@ -1,4 +1,12 @@
 ---
+ID: 6150
+post_title: SSH Keys
+author: Ben Word
+post_date: 2015-09-03 17:44:44
+post_excerpt: ""
+layout: doc
+permalink: https://roots.io/trellis/docs/ssh-keys/
+published: true
 ---
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).
 

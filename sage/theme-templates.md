@@ -1,4 +1,13 @@
 ---
+ID: 6136
+post_title: Theme Templates
+author: Ben Word
+post_date: 2015-09-01 19:12:53
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/sage/docs/theme-templates/
+published: true
 ---
 The markup in Sage is based on [HTML5 Boilerplate](http://html5boilerplate.com/) with ARIA roles for accessibility and the hNews microformat for posts.
 

@@ -1,4 +1,13 @@
 ---
+ID: 6139
+post_title: 'Extending &#038; Customizing Sage'
+author: Ben Word
+post_date: 2015-09-01 19:30:13
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/sage/docs/extending-customizing-sage/
+published: true
 ---
 <p class="lead">Here is some useful advice for how you can make your project with Sage even better. We don't want to include it all by default, as not everything fits with everyone's needs.</p>
 

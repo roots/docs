@@ -1,4 +1,13 @@
 ---
+ID: 7761
+post_title: Installing Trellis
+author: Ben Word
+post_date: 2015-10-15 12:20:35
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/trellis/docs/installing-trellis/
+published: true
 ---
 ## Requirements
 

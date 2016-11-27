@@ -1,4 +1,13 @@
 ---
+ID: 5322
+post_title: Theme Development and Building
+author: Ben Word
+post_date: 2015-09-01 18:19:21
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/sage/docs/theme-development-and-building/
+published: true
 ---
 <p class="lead">These are the primary projects that make up the Sage workflow:</p>
 

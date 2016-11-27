@@ -1,4 +1,13 @@
 ---
+ID: 6133
+post_title: Environment Variables
+author: Ben Word
+post_date: 2015-08-30 19:45:01
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/bedrock/docs/environment-variables/
+published: true
 ---
 Bedrock tries to separate config from code as much as possible and environment variables are used to achieve this. The benefit is there's a single place (`.env`) to keep settings like database or other 3rd party credentials that isn't committed to your repository.
 

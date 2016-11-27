@@ -1,4 +1,13 @@
 ---
+ID: 5332
+post_title: Theme Wrapper
+author: Ben Word
+post_date: 2015-09-01 19:14:17
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/sage/docs/theme-wrapper/
+published: true
 ---
 After reading through this guide, you will:
 

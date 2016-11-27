@@ -1,4 +1,13 @@
 ---
+ID: 7763
+post_title: Local Development Setup
+author: Ben Word
+post_date: 2015-10-15 12:24:41
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/trellis/docs/local-development-setup/
+published: true
 ---
 Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
 

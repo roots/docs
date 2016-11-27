@@ -1,4 +1,13 @@
 ---
+ID: 13266
+post_title: WordPress Sites
+author: Scott Walkinshaw
+post_date: 2016-03-28 21:10:17
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/trellis/docs/wordpress-sites/
+published: true
 ---
 Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
 

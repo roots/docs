@@ -1,4 +1,13 @@
 ---
+ID: 17270
+post_title: Debugging PHP
+author: Nathaniel Schweinberg
+post_date: 2016-11-07 14:25:43
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/trellis/docs/debugging-php/
+published: true
 ---
 There are many ways to go about debugging a PHP application, and one of the most effective ways is using a debugger. One of the most powerful tools in the PHP community to go about doing this is [Xdebug](https://en.wikipedia.org/wiki/Xdebug).
 

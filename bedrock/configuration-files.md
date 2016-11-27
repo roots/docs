@@ -1,4 +1,13 @@
 ---
+ID: 6141
+post_title: Configuration Files
+author: Ben Word
+post_date: 2015-09-03 17:16:50
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/bedrock/docs/configuration-files/
+published: true
 ---
 The root `web/wp-config.php` is required by WordPress and is only used to load the other main configs. Nothing else should be added to it.
 

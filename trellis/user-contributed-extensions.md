@@ -1,4 +1,13 @@
 ---
+ID: 6147
+post_title: User Contributed Extensions
+author: Ben Word
+post_date: 2015-09-03 17:39:55
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/trellis/docs/user-contributed-extensions/
+published: true
 ---
 <p class="lead">Extensions (or roles), developed by the community, that complement Trellis.</p> 
 

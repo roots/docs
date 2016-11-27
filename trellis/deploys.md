@@ -1,4 +1,12 @@
 ---
+ID: 7587
+post_title: Deploys
+author: Scott Walkinshaw
+post_date: 2015-10-09 17:53:28
+post_excerpt: ""
+layout: doc
+permalink: https://roots.io/trellis/docs/deploys/
+published: true
 ---
 Trellis offers one-command deploys out of the box with little configuration needed.
 

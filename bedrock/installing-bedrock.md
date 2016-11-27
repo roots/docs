@@ -1,4 +1,13 @@
 ---
+ID: 7767
+post_title: Installing Bedrock
+author: Ben Word
+post_date: 2015-10-15 12:29:33
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/bedrock/docs/installing-bedrock/
+published: true
 ---
 ## Requirements
 

@@ -1,4 +1,12 @@
 ---
+ID: 6151
+post_title: Security
+author: Ben Word
+post_date: 2015-09-03 17:49:35
+post_excerpt: ""
+layout: doc
+permalink: https://roots.io/trellis/docs/security/
+published: true
 ---
 ## Locking down root
 

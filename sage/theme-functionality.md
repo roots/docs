@@ -1,4 +1,13 @@
 ---
+ID: 6135
+post_title: Theme Functionality
+author: Ben Word
+post_date: 2015-09-01 19:05:16
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/sage/docs/theme-functionality/
+published: true
 ---
 `functions.php` is used to include files from the `lib/` directory which contains all of the theme functionality. Don’t place any custom code in this file — use it only for includes. 
 

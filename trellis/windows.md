@@ -1,4 +1,12 @@
 ---
+ID: 5347
+post_title: Windows
+author: Ben Word
+post_date: 2015-09-03 17:33:07
+post_excerpt: ""
+layout: doc
+permalink: https://roots.io/trellis/docs/windows/
+published: true
 ---
 ## Installing Ansible
 

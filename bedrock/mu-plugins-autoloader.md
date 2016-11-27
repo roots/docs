@@ -1,4 +1,13 @@
 ---
+ID: 6143
+post_title: mu-plugins Autoloader
+author: Ben Word
+post_date: 2015-09-03 17:18:35
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/bedrock/docs/mu-plugins-autoloader/
+published: true
 ---
 Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins. 
 

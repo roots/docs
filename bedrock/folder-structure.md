@@ -1,4 +1,13 @@
 ---
+ID: 6142
+post_title: Folder Structure
+author: Ben Word
+post_date: 2015-09-03 17:17:56
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/bedrock/docs/folder-structure/
+published: true
 ---
 ```
 ├── composer.json

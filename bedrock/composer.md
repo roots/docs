@@ -1,4 +1,12 @@
 ---
+ID: 6140
+post_title: Composer
+author: Ben Word
+post_date: 2015-09-03 17:15:57
+post_excerpt: ""
+layout: doc
+permalink: https://roots.io/bedrock/docs/composer/
+published: true
 ---
 [Composer](http://getcomposer.org) is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
 

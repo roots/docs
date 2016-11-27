@@ -1,4 +1,13 @@
 ---
+ID: 6148
+post_title: Troubleshooting
+author: Ben Word
+post_date: 2015-09-03 17:43:33
+post_excerpt: ""
+layout: doc
+permalink: >
+  https://roots.io/trellis/docs/troubleshooting/
+published: true
 ---
 ## Debugging
 
