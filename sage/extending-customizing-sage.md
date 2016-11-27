@@ -9,11 +9,11 @@ permalink: >
   https://roots.io/sage/docs/extending-customizing-sage/
 published: true
 docs_project:
-  - "17"
+  - 'a:1:{i:0;s:2:"17";}'
 saved_flag:
-  - 'a:1:{i:0;s:1:"1";}'
+  - 'a:1:{i:0;s:18:"a:1:{i:0;s:1:"1";}";}'
 publish_to_discourse:
-  - 'a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}'
+  - 'a:1:{i:0;s:54:"a:1:{i:0;s:36:"a:1:{i:0;s:18:"a:1:{i:0;s:1:"0";}";}";}";}'
 ---
 <p class="lead">Here is some useful advice for how you can make your project with Sage even better. We don't want to include it all by default, as not everything fits with everyone's needs.</p>
 
