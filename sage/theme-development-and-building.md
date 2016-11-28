@@ -23,10 +23,9 @@ published: true
 
 ## Installing project dependencies
 
-Your development machine must meet the following two requirements to get started:
+Your development machine must meet the following requirements to get started:
 
-* Node >= 0.12.x
-* npm >=2.1.5
+* Node.js >= 4.5.0
 
 After installing [Node.js](http://nodejs.org/download/), we recommend that you update to the latest version of npm:
 
