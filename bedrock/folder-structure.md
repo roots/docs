@@ -9,24 +9,24 @@ permalink: >
   https://roots.io/bedrock/docs/folder-structure/
 published: true
 ---
-```
-├── composer.json
-├── config
-│   ├── application.php
-│   └── environments
-│       ├── development.php
-│       ├── staging.php
-│       └── production.php
-├── vendor
-└── web
-    ├── app
-    │   ├── mu-plugins
-    │   ├── plugins
-    │   ├── themes
-    │   └── uploads
-    ├── wp-config.php
-    ├── index.php
-    └── wp
+```shell
+├── composer.json             # → Manage versions of WordPress, plugins & dependencies
+├── config                    # → WordPress configuration files
+│   ├── application.php       # → Primary WP config file (wp-config.php equivalent)
+│   └── environments          # → Environment specific configs
+│       ├── development.php   # → Development config
+│       ├── staging.php       # → Staging config
+│       └── production.php    # → Production config
+├── vendor                    # → Composer packages (never edit)
+└── web                       # → Web root (vhost document root)
+    ├── app                   # → wp-content equivalent
+    │   ├── mu-plugins        # → Must use plugins
+    │   ├── plugins           # → Plugins
+    │   ├── themes            # → Themes
+    │   └── uploads           # → Uploads
+    ├── wp-config.php         # → Required by WP (never edit)
+    ├── index.php             # → WordPress view bootstrapper
+    └── wp                    # → WordPress core (never edit)
 ```
 
 The organization of Bedrock is similar to putting WordPress in its own subdirectory but with some improvements.
