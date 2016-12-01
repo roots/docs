@@ -17,7 +17,7 @@ This includes Red Hat, Debian, CentOS, OS X, any of the BSDs, and so on.
 
 If your host machine is running Windows, the workaround is to run Ansible *on the VM* (since it's running Ubuntu) and not locally. You do not need to install Ansible manually.
 
-When you run `vagrant up`, the Vagrantfile will detect Windows and run the `windows.sh` script. The script installs Ansible and the external Ansible roles/packages on the VM (so you can also skip manually running the `ansible-galaxy install` command).
+When you run `vagrant up`, the Vagrantfile will detect Windows and run the `bin/windows.sh` script. The script installs Ansible and the external Ansible roles/packages on the VM (so you can also skip manually running the `ansible-galaxy install` command).
 
 ## Running Ansible commands
 

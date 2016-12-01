@@ -26,7 +26,7 @@ At this point you should also generate your salts and keys and save them to your
 
 ## Deploying
 
-Deploy with a single command: `./deploy.sh <environment> <domain>`
+Deploy with a single command: `./bin/deploy.sh <environment> <domain>`
 
 `deploy.sh` is a very simple Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
 
@@ -131,7 +131,7 @@ wordpress_sites:
 
 Deploy command:
 ```
-./deploy.sh production mysite.com
+./bin/deploy.sh production mysite.com
 ```
 
 Or alternatively:
