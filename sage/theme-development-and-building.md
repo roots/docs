@@ -23,9 +23,9 @@ published: true
 
 Run these script commands within your theme directory:
 
-* `npm run build` — Compile and optimize the files in your assets directory
-* `npm start` — Compile assets when file changes are made, start BrowerSync session
-* `npm run build:production` — Compile assets for production
+* `yarn run build` — Compile and optimize the files in your assets directory
+* `yarn run build:production` — Compile assets for production
+* `yarn run start` — Compile assets when file changes are made, start Browersync session
 
 ## Theme assets
 
@@ -90,7 +90,7 @@ To create additional CSS or JS files, you'll need to:
 
     ```sh
     # web/app/themes/your-theme-name/
-    $ npm run build
+    $ yarn run build
     ```
 
 ### Images in template files
@@ -108,11 +108,11 @@ Example of how to add 3rd party packages* and have them included in the theme:
 1. From the theme directory, run:
 
     ```shell
-    # web/app/themes/your-theme-name/
-    $ npm install --save <package name>
+    # @ themes/your-theme-name/
+    $ yarn add <package name>
 
     # Install Slick carousel:
-    $ npm install --save slick-carousel
+    $ yarn add slick-carousel
     ```
 
 2. Open up `main.js` and `main.css` to add the entry points for the package. If you're using the Slick Carousel then your theme JS and CSS would look like:
@@ -135,7 +135,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
     @import "~slick-carousel/slick/slick-theme.scss";
     ```
 
-3. After running `npm run build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
+3. After running `yarn run build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
 
 <small>&lowast;Note: Wordpress Plugins are installed elsewhere or with Composer when using [Bedrock](/bedrock/docs/composer)</small>
 
@@ -144,8 +144,8 @@ Example of how to add 3rd party packages* and have them included in the theme:
 #### Font Awesome
 
 ```sh
-# web/app/themes/sage/
-$ npm install --save font-awesome
+# @ themes/your-theme-name/
+$ yarn add font-awesome
 ```
 
 ```scss

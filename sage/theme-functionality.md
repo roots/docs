@@ -28,10 +28,10 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
   <dd>
     <p>Add WordPress filters in this file. Filters included by default:</p>
     <ul>
-      <li><code>sage/display_sidebar</code> &mdash; determine which pages should NOT display the sidebar</li>
       <li><code>body_class</code> &mdash; add <code>&lt;body&gt;</code> classes</li>
       <li><code>excerpt_more</code> &mdash; add "… Continued" to excerpts</li>
       <li><code>template_include</code> &mdash; enable the theme wrapper</li>
+      <li>Various filters for the Blade implementation</li>
     </ul>
   </dd>
   <dl class="dl-horizontal">
@@ -39,8 +39,6 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
     <dd>
       <p>Helper functions used throughout the theme:</p>
       <ul>
-        <li><code>template_wrap</code> &mdash; used by the theme wrapper</li>
-        <li><code>template_unwrap</code> &mdash; used by the theme wrapper</li>
         <li><code>asset_path</code> &mdash; used when enqueueing theme assets to provide the correct versioned asset filenames</li>
         <li><code>display_sidebar</code> &mdash; used to control displaying the sidebar</li>
         <li><code>title</code> &mdash; used to return page titles</li>
@@ -49,6 +47,6 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
   </dl>
   <dl class="dl-horizontal">
     <dt><code>src/lib/</code></dt>
-    <dd>This directory contains the theme wrapper code along with the code used to parse <code>dist/assets.json</code> and enqueue assets with the versioned filenames</dd>
+    <dd>This directory contains the Blade implementation code along with the code used to parse <code>dist/assets.json</code> and enqueue assets with the versioned filenames</dd>
   </dl>
 </dl>

@@ -13,7 +13,7 @@ published: true
 
 ## Stylesheets and scripts
 
-Manage your front-end theme assets at the top of the `src/setup.php` file:
+Manage your front-end theme assets from the `src/setup.php` file:
 
 ```php
 add_action('wp_enqueue_scripts', function () {
@@ -53,10 +53,6 @@ Sage registers a navigation menu called Primary Navigation. Additional menus sho
 
 Post thumbnails are enabled with `add_theme_support('post-thumbnails')`, but they aren't output on any of the default templates. Add custom post thumbnail sizes with `add_image_size()`.
 
-### Post formats
-
-Some WordPress post formats are enabled by default, but Sage doesn't provide any styling or templates for different post formats.
-
 ### HTML5 markup
 
 Sage enables HTML5 markup for captions, comment forms, comment lists, galleries, and the search form.
@@ -72,27 +68,31 @@ Sage registers two sidebars by default: Primary & Footer. Add additional sidebar
 ## Theme structure
 
 ```shell
-themes/theme-name/        # → Root of your Sage based theme
+themes/your-theme-name/   # → Root of your Sage based theme
 ├── assets                # → Front-end assets
-│   ├── config.json       # → Settings for compiled assets
-│   ├── fonts/            # → Theme fonts
-│   ├── images/           # → Theme images
-│   ├── scripts/          # → Theme JS
-│   └── styles/           # → Theme stylesheets
+│   ├── config.json       # → Settings for compiled assets
+│   ├── build/            # → Webpack and ESLint config
+│   ├── fonts/            # → Theme fonts
+│   ├── images/           # → Theme images
+│   ├── scripts/          # → Theme JS
+│   └── styles/           # → Theme stylesheets
 ├── composer.json         # → Autoloading for `src/` files
-├── composer.lock         # → Composer lock file (never manually edit)
-├── dist/                 # → Built theme assets (never manually edit)
-├── functions.php         # → Never manually edit
+├── composer.lock         # → Composer lock file (never edit)
+├── dist/                 # → Built theme assets (never edit)
+├── functions.php         # → Composer autoloader, theme includes
 ├── index.php             # → Never manually edit
-├── node_modules/         # → Node.js packages (never manually edit)
+├── node_modules/         # → Node.js packages (never edit)
 ├── package.json          # → Node.js dependencies and scripts
 ├── screenshot.png        # → Theme screenshot for WP admin
 ├── src/                  # → Theme PHP
+│   ├── lib/Sage/         # → Blade implementation, asset manifest
+│   ├── admin.php         # → Theme customizer setup
+│   ├── filters.php       # → Theme filters
+│   ├── helpers.php       # → Helper functions
+│   └── setup.php         # → Theme setup
 ├── style.css             # → Theme meta information
 ├── templates/            # → Theme templates
-│   ├── layouts/          # → Base templates
-│   └── partials/         # → Partial templates
-├── vendor/               # → Composer packages (never manually edit)
-├── watch.js              # → Webpack/BrowserSync watch config
-└── webpack.config.js     # → Webpack config
+│   ├── layouts/          # → Base templates
+│   └── partials/         # → Partial templates
+└── vendor/               # → Composer packages (never edit)
 ```
