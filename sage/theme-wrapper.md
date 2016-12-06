@@ -12,7 +12,7 @@ published: true
 After reading through this guide, you will:
 
 * Understand the Sage Wrapper and recognize how it extends and complements the WordPress template hierarchy.
-* Know what is meant by the DRY Principle, why being DRY beats being WET, and see how most WordPress themes are WET.
+* Know what is meant by the DRY Principle, why being DRY bests being WET, and see how most WordPress themes are WET.
 * Be able to filter the Sage Wrapper and create a new base template for a Custom Post Type.
 
 ## Template Hierarchy
@@ -145,7 +145,7 @@ Let's say you wanted your base markup to change depending on what CPT WordPress 
 
 ```php
 <?php
-  add_filter('sage/wrap_base', __NAMESPACE__ . 'sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
+  add_filter('sage/wrap_base', __NAMESPACE__ . '\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
 
   function sage_wrap_base_cpts($templates) {
     $cpt = get_post_type(); // Get the current post type
