@@ -38,7 +38,7 @@ env:
   wp_siteurl: http://example.com/wp
 ```
 
-Trellis automatically sets `wp_home` and `wp_siteurl` but with multisite they needs to be manually set.
+Trellis automatically sets `wp_home` and `wp_siteurl` but with multisite they need to be manually set.
 
 ## Subdomain installs and hosts
 
