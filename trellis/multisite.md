@@ -57,13 +57,15 @@ Make the following changes to your `Vagrantfile`:
 ```
 
 ```diff
--  config.vm.network :private_network, ip: ip, hostsupdater: 'skip' 
+-  config.vm.network :private_network, ip: ip, hostsupdater: 'skip'
 +  config.vm.network :private_network, ip: PRIVATE_IP, hostsupdater: 'skip'
 ```
 
 ```diff
 -  if Vagrant.has_plugin? 'vagrant-hostmanager'
--    config.hostsupdater.aliases = aliases
+-    config.hostmanager.enabled = true
+-    config.hostmanager.manage_host = true
+-    config.hostmanager.aliases = hostnames + redirects
 +  if Vagrant.has_plugin? 'landrush'
 +    config.landrush.enabled = true
 +    config.landrush.tld = config.vm.hostname
@@ -72,10 +74,8 @@ Make the following changes to your `Vagrantfile`:
 +      config.landrush.host host, PRIVATE_IP
 +    end
    else
--    puts 'vagrant-hostsupdater missing, please install the plugin:'
--    puts 'vagrant plugin install vagrant-hostsupdater'
-+    puts 'landrush missing, please install the plugin:'
-+    puts 'vagrant plugin install landrush'
+-    fail_with_message "vagrant-hostmanager missing, please install the plugin with this command:\nvagrant plugin install vagrant-hostmanager"
++    fail_with_message "landrush missing, please install the plugin:\nvagrant plugin install landrush"
    end
 ```
 
