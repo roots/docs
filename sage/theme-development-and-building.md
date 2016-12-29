@@ -95,10 +95,10 @@ To create additional CSS or JS files, you'll need to:
 
 ### Images in template files
 
-Use the `asset_path` helper function to call images from template files:
+Use the `@asset` directive to call images from template files:
 
 ```php
-<img src="<?= App\asset_path('images/logo.png');  ?>">
+<img src="@asset('images/example.jpg')">
 ```
 
 ## 3rd party packages
