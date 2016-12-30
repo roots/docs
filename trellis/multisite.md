@@ -71,14 +71,6 @@ Landrush spins up a small DNS server that allows us to use wildcard subdomains, 
 
 Make the following changes to your `Vagrantfile`:
 
-```diff
-+ PRIVATE_IP = '192.168.50.5'
-```
-
-```diff
--  config.vm.network :private_network, ip: ip, hostsupdater: 'skip'
-+  config.vm.network :private_network, ip: PRIVATE_IP, hostsupdater: 'skip'
-```
 
 ```diff
 -  if Vagrant.has_plugin? 'vagrant-hostmanager'
