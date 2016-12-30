@@ -61,7 +61,7 @@ wordpress_sites:
 
 ## Subdomain installs and hosts
 
-Install the [Landrush](https://github.com/phinze/landrush) Vagrant plugin:
+For subdomains in development, you'll need DNS entries for every subdomain/host. The [Landrush](https://github.com/phinze/landrush) Vagrant plugin is how you can do this. Install it via:
 
 ```
 vagrant plugin install landrush
@@ -69,26 +69,6 @@ vagrant plugin install landrush
 
 Landrush spins up a small DNS server that allows us to use wildcard subdomains, a requirement for subdomain multisite installs.
 
-Make the following changes to your `Vagrantfile`:
-
-
-```diff
--  if Vagrant.has_plugin? 'vagrant-hostmanager'
--    config.hostmanager.enabled = true
--    config.hostmanager.manage_host = true
--    config.hostmanager.aliases = hostnames + redirects
-+  if Vagrant.has_plugin? 'landrush'
-+    config.landrush.enabled = true
-+    config.landrush.tld = config.vm.hostname
-+
-+    hostnames.each do |host|
-+      config.landrush.host host, PRIVATE_IP
-+    end
-   else
--    fail_with_message "vagrant-hostmanager missing, please install the plugin with this command:nvagrant plugin install vagrant-hostmanager"
-+    fail_with_message "landrush missing, please install the plugin:nvagrant plugin install landrush"
-   end
-```
 
 ### Debugging Landrush
 
