@@ -222,6 +222,27 @@ example.com:
     hsts_max_age: 0
 ```
 
+### `hsts_include_subdomains`
+
+HSTS should ideally be applied to all subdomains as well which is why `hsts_include_subdomains` defaults to `true`. This means that if you have HSTS enabled on `example.com`, then *all* its subdomains (`*.example.com`) will also be forced over HTTPS.
+
+If you have a WordPress site on `example.com` and you also serve another application from a subdomain such as `internalapp.example.com`, you may need to remove the "include subdomains" header option if it can't be served via HTTPS.
+
+```yaml
+# group_vars/production/wordpress_sites.yml (example)
+
+example.com:
+  # rest of site config
+  ssl:
+    enabled: true
+    provider: letsencrypt
+    hsts_max_age: 31536000
+    hsts_include_subdomains: false
+    hsts_preload: true
+```
+
+Note you should try very hard to support SSL/HTTPS on all subdomains. Only disable this option if you have no other options as a last resort.
+
 ## Performance
 
 Our HTTPS implementation uses all performance optimizations possible to ensure your sites remain fast despite the small overhead of SSL. This includes the following features:
