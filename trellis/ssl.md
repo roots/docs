@@ -186,7 +186,7 @@ There are a few defaults set which you can override if need be:
 
 * `hsts_max_age` - how long the header lasts (default: `31536000` (1 year))
 * `hsts_include_subdomains` - also make *all* subdomains be served over HTTPS (default: `true`)
-* `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `true`)
+* `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `false`)
 
 These variables are configured on a site's `ssl` object:
 
@@ -205,7 +205,29 @@ example.com:
 
 ### Preload lists
 
-To take full advantage of the `preload` feature, you need to manually submit your site/domain to browser HSTS preload lists here: [https://hstspreload.appspot.com/](https://hstspreload.appspot.com/)
+What is HSTS Preloading?
+
+> HSTS Preloading is a mechanism whereby a list of hosts that wish to enforce the use of SSL/TLS on their site is built into a browser. This list is compiled by Google and is utilised by Chrome, Firefox and Safari. These sites do not depend on the issuing of the HSTS response header to enforce the policy, instead the browser is aleady aware that the host requires the use of SSL/TLS before any connection or communication even takes place. This removes the opportunity an attacker has to intercept and tamper with redirects that take place over HTTP. This isn't to say that the host needs to stop issuing the HSTS response header, this must be left in place for those browsers that don't use preloaded HSTS lists.
+>
+> \- https://scotthelme.co.uk/hsts-preloading/
+
+Using preloading is a two-step process:
+
+1. Enable the `preload` option shown above by setting `hsts_preload: true`
+2. Submit your site/domain to the official browser preload list: [https://hstspreload.org/](https://hstspreload.org/)
+
+More information:
+
+- [https://hstspreload.org/](https://hstspreload.org/)
+- [HSTS Preloading](https://scotthelme.co.uk/hsts-preloading/)
+
+### `max-age`
+
+Trellis defaults to a long `max-age` of `31536000` seconds (1 year).
+
+You may want to test out HSTS with much shorter max-ages and then ramp up the value in stages until you're confident everything works.
+
+This deployment ramp up process is detailed here: https://hstspreload.org/#deployment-recommendations
 
 ### Disabling HSTS
 
