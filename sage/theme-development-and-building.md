@@ -118,19 +118,22 @@ Example of how to add 3rd party packages* and have them included in the theme:
 2. Open up `main.js` and `main.css` to add the entry points for the package. If you're using the Slick Carousel then your theme JS and CSS would look like:
 
     ```js
-    /* sage/assets/scripts/main.js */
-    import $ from 'jquery';
-    import Router from './util/router';
-
+    /** import external dependencies */
+    import 'jquery';
+    import 'bootstrap/dist/js/bootstrap';
+    
     // Import Slick
-    import 'slick-carousel/slick/slick.min.js';
+    import 'slick-carousel/slick/slick.min';
     ```
 
     ```scss
     /* sage/assets/styles/main.scss */
     @import "common/variables";
 
-    // Import Slick from node_modules
+    // Import npm dependencies
+    @import "~bootstrap/scss/bootstrap";
+    @import "~font-awesome/scss/font-awesome";
+    // Import Slick
     @import "~slick-carousel/slick/slick.scss";
     @import "~slick-carousel/slick/slick-theme.scss";
     ```
