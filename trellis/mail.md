@@ -32,7 +32,7 @@ Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com
 
 Outgoing mail is done by the sSMTP role. sSMTP is a lightweight SMTP mail relay basically. In order to send external emails, you'll need to configure an SMTP server.
 
-We always suggest using an external email service rather than your own because it's very difficult to setup a proper email server.
+We always suggest using an external email service rather than your own because it's very difficult to set up a proper email server.
 
 Some suggested services:
 
