@@ -136,10 +136,20 @@ Example of how to add 3rd party packages* and have them included in the theme:
     // Import Slick
     @import "~slick-carousel/slick/slick.scss";
     @import "~slick-carousel/slick/slick-theme.scss";
-    ```
-
+    ```
 3. After running `yarn run build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
 
+4. Running `yarn run build:production` will fail if 3rd party package's relative paths are not configured before imported. In example to load Slick Carousel's paths add the following line in your common/_variables.scss file:
+
+  ``scss
+  /* sage/assets/styles/common/_variables.scss */
+  // Slick Carousel font path
+	$slick-font-path: "~slick-carousel/slick/fonts/" !default;
+		
+  // Slick Carousel ajax-loader.gif path
+  $slick-loader-path: "~slick-carousel/slick/" !default;
+  
+  
 <small>&lowast;Note: Wordpress Plugins are installed elsewhere or with Composer when using [Bedrock](/bedrock/docs/composer)</small>
 
 ### Additional examples
