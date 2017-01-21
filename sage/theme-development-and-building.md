@@ -141,14 +141,14 @@ Example of how to add 3rd party packages* and have them included in the theme:
 
 4. Running `yarn run build:production` will fail if 3rd party package's relative paths are not configured before imported. In example to load Slick Carousel's paths add the following line in your common/_variables.scss file:
 
-  ``scss
+  ```scss
   /* sage/assets/styles/common/_variables.scss */
   // Slick Carousel font path
 	$slick-font-path: "~slick-carousel/slick/fonts/" !default;
 		
   // Slick Carousel ajax-loader.gif path
   $slick-loader-path: "~slick-carousel/slick/" !default;
-  
+  ```
   
 <small>&lowast;Note: Wordpress Plugins are installed elsewhere or with Composer when using [Bedrock](/bedrock/docs/composer)</small>
 
