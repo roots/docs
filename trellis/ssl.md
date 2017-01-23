@@ -61,7 +61,7 @@ example.com:
 
 [Let's Encrypt](https://letsencrypt.org/) (LE) is a new Certificate Authority that is free, automated, and open.
 
-Unless you already have an SSL certificate purchased, Let's Encrypt should be your provider choice.
+Unless you already have an SSL certificate purchased, Let's Encrypt should be your provider choice. Let's Encrypt is appropriate for your production and staging environments, but not for development (see [DNS records](#dns-records)).
 
 Trellis has complete automated integration. The only required setting is the `provider` itself:
 
@@ -143,6 +143,18 @@ Just set the following variable:
 # in a group_vars file
 letsencrypt_ca: "https://acme-staging.api.letsencrypt.org"
 ```
+
+#### Troubleshooting Let's Encrypt
+
+Trellis versions prior to [Jan 2017](https://github.com/roots/trellis/pull/630) did not detect some changes that should have triggered Let's Encrypt certificate regeneration. The most common example was users adding domain(s) to `site_hosts` (in `wordpress_sites`) and reporting that browsers gave privacy warnings for the new domains. Similar problems occurred for users switching from manual certificates to Let's Encrypt certificates.
+
+If you see similar privacy warnings after adjusting your SSL configuration in some way, these troubleshooting steps may help.
+
+1. Update trellis to include [`roots/trellis#630`](https://github.com/roots/trellis/pull/630)
+2. Set ssl `enabled: false` for affected sites in `group_vars/<environment>/wordpress_sites.yml`
+3. Run `ansible-playbook server.yml -e env=<environment> --tags wordpress`
+4. Reset ssl `enabled: true` for applicable sites in `group_vars/<environment>/wordpress_sites.yml`
+5. Run `ansible-playbook server.yml -e env=<environment> --tags letsencrypt`
 
 ### Manual
 
