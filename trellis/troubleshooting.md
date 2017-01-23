@@ -44,6 +44,12 @@ Use the insecure private key inside the `.vagrant` folder. [See thread on Roots 
 
 <hr>
 
+### Let's Encrypt SSL Certificates
+
+See [Troubleshooting Let's Encrypt](https://roots.io/trellis/docs/ssl/#troubleshooting-lets-encrypt).
+
+<hr>
+
 ### There was an error while executing `VBoxManage`, a CLI used by Vagrant
 
 Error message looks something like:
