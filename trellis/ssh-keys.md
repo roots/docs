@@ -41,7 +41,7 @@ Each Trellis playbook uses a specific SSH user to connect to your remote machine
   </tbody>
 </table>
 
-This wiki reviews how to configure SSH users for the `server.yml` and `deploy.yml` playbooks.
+This page reviews how to configure SSH users for the `server.yml` and `deploy.yml` playbooks. If you are looking for general SSH configuration options, see the [`sshd` role `README.md`](https://github.com/roots/trellis/tree/master/roles/sshd) .
 
 If you will be the only person provisioning and deploying, and your SSH public key is available at `~/.ssh/id_rsa.pub`, you will probably not need to modify the Trellis defaults for `users`.
 
@@ -65,7 +65,7 @@ If needed, you may redefine the `users` in any given `group_vars` environment fi
 ## `server.yml`: `root` or `admin`
 We assume that when you first create your server you've already added your SSH key to the `root` account. Digital Ocean will add this for you when you create a droplet. If you don't want to use an SSH key, you will need to add the `--ask-pass` option each time you run the `server.yml` playbook.
 
-`server.yml` will try to connect to your server as `root`. If the connection fails, `server.yml` will try to connect as the `admin_user` defined in `group_vars/all/users.yml` (default `admin`). If `root` login will be disabled on your server, it is critical for the `admin_user` to be defined in your list of `users`, with `sudo` first in this user's list of groups (see the [Security wiki](https://github.com/roots/trellis/wiki/Security)). The default definition for the `admin_user` is shown below.
+`server.yml` will try to connect to your server as `root`. If the connection fails, `server.yml` will try to connect as the `admin_user` defined in `group_vars/all/users.yml` (default `admin`). If `root` login will be disabled on your server, it is critical for the `admin_user` to be defined in your list of `users`, with `sudo` first in this user's list of groups (see the [Security docs](https://roots.io/trellis/docs/security/)). The default definition for the `admin_user` is shown below.
 
 ```yaml
 users:
@@ -105,7 +105,7 @@ You may enable colleagues to run `deploy.yml` by adding their public SSH `keys` 
 
 ## Example `users`
 
-The example below adds the SSH keys of GitHub users `swalkinshaw` and `retlehs` to `~/.ssh/authorized_keys` for `admin_user`. This enables `swalkinshaw` and `retlehs` to run `server.yml` to provision the servers. The example also adds their keys, and the keys of of GitHub user `austinpray`, to `web_user`. This enables each of them to run `deploy.yml` to deploy sites. 
+The example below adds the SSH keys of GitHub users `swalkinshaw` and `retlehs` to `~/.ssh/authorized_keys` for `admin_user`. This enables `swalkinshaw` and `retlehs` to run `server.yml` to provision the servers. The example also adds their keys, and the keys of GitHub user `austinpray`, to `web_user`. This enables each of them to run `deploy.yml` to deploy sites.
 
 ```yaml
 users:
