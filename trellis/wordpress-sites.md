@@ -107,6 +107,12 @@ example.com:
   * `db_user` - database username (default: `<site name>`)
   * `db_password` - database password (*required*, in `vault.yml`)
   * `db_host` - database hostname (default: `localhost`)
+  * `db_user_host` - hostname or ip range used to restrict connections to database (default: `localhost`)
+
+#### `db_user_host`
+
+This site env parameter isn't commonly used and used only in more advanced configurations outside of a typical Trellis installation. If you're using an external database and want to restrict access to the database, this is used when creating the MySQL user. It restricts the user to being able to connect from only the supplied  host or ip range. For example, if your IP is `192.168.10.5`, you could pass that as `db_user_host` and the `db_user` will only be allowed to connect from that IP. Another example is when you don't know what the exact IP of the server will be, but you do know its range (like in the case of an AWS AutoScaling group). If the subnet the instance is being deployed to has a CIDR range of `10.30.0.0/16`, you could pass `10.30.%` as the `db_user_host` and the `db_user` will be allowed to connect from any ip within the `10.30.0.0/16` CIDR range. For more info on the rules of this field, read the documentation on [MariaDB Host Names](https://mariadb.com/kb/en/mariadb/create-user/#host-names).
+
 
 ### Development
 
