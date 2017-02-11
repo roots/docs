@@ -101,6 +101,7 @@ example.com:
   * `db_user` - database username (default: `<site name>`)
   * `db_password` - database password (*required*, in `vault.yml`)
   * `db_host` - database hostname (default: `localhost`)
+  * `db_user_host` - hostname or ip range used to restrict connections to database (default: `localhost`)
 
 ### Development
 
