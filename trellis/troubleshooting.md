@@ -63,3 +63,9 @@ VBoxManage: error: Context: "LockMachine(a->session, LockType_Write)" at line 47
 ```
 
 The solution is to open up your Activity Monitor and quit any `vagrant` or `ruby` processes.
+
+<hr>
+
+### Composer install: host key verification failed
+
+Sometimes a task that installs Composer dependencies gives an error `host key verification failed`. This can happen when the `known_hosts` file on your Vagrant VM or remote host is missing a key for one of the host `repositories` in the related `composer.json` file. Ensure that each host from `composer.json` has a key listed in `group_vars/all/known_hosts.yml` then try your `vagrant provision` or `./bin/deploy.sh` command again.
