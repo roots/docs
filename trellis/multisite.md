@@ -29,11 +29,22 @@ multisite:
   subdomains: false   # Set to true if you're using a subdomain multisite install
 ```
 
-You'll may also want to define the `env` dictionary for more multisite specific settings such as `DOMAIN_CURRENT_SITE` or `PATH_CURRENT_SITE`.
+The `DOMAIN_CURRENT_SITE` environment variable will automatically be generated using the first `site_hosts` cononical value. For example, if we have the following entry in our `wordpress_sites.yml`:
+
+```yaml
+# group_vars/production/wordpress_sites.yml
+wordpress_sites:
+  example.com:
+    site_hosts:
+      - canonical: example.com
+```
+
+`DOMAIN_CURRENT_SITE` will be set to `example.com` in your `.env` file. If the values for `DOMAIN_CURRENT_SITE` or `PATH_CURRENT_SITE` are different, you will need to update their values in the `env` dictionary for the site:
 
 ```yaml
 env:
   domain_current_site: store1.example.com
+  path_current_site: '/shop'
 ```
 
 That `env` will be merged in with Trellis' defaults so you don't need to worry about re-defining all of the properties.
