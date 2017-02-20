@@ -89,6 +89,7 @@ example.com:
 * `current_path` - symlink to latest release (default: `current`)
 * `db_create` - whether to auto create a database or not (default: `true`)
 * `db_import` - Path to local `sql` dump file which will be imported (optional)
+* `packagist_token` - Token to use to authenticate with Packagist.com for private Composer repositories (optional)
 * `ssl` - SSL options. See the [SSL docs](https://roots.io/trellis/docs/ssl/)
 * `multisite` - Multisite options. See the [Multisite docs](https://roots.io/trellis/docs/multisite/)
 * `cache` - Nginx FastCGI cache options. See the [Cache docs](https://roots.io/trellis/docs/fastcgi-caching/)
