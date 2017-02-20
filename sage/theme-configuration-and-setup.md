@@ -22,7 +22,7 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 ```
 
-See [theme assets](/sage/docs/theme-development-and-building/#theme-assets) for more on how these assets are built. `asset_path` is a helper function that returns versioned asset filenames from the `dist/` directory.
+See [theme assets](theme-development-and-building.md#theme-assets) for more on how these assets are built. `asset_path` is a helper function that returns versioned asset filenames from the `dist/` directory.
 
 ## Theme features
 
