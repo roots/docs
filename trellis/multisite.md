@@ -29,22 +29,11 @@ multisite:
   subdomains: false   # Set to true if you're using a subdomain multisite install
 ```
 
-The `DOMAIN_CURRENT_SITE` environment variable will automatically be generated using the first `site_hosts` cononical value. For example, if we have the following entry in our `wordpress_sites.yml`:
-
-```yaml
-# group_vars/production/wordpress_sites.yml
-wordpress_sites:
-  example.com:
-    site_hosts:
-      - canonical: example.com
-```
-
-`DOMAIN_CURRENT_SITE` will be set to `example.com` in your `.env` file. If the values for `DOMAIN_CURRENT_SITE` or `PATH_CURRENT_SITE` are different, you will need to update their values in the `env` dictionary for the site:
+You'll may also want to define the `env` dictionary for more multisite specific settings such as `DOMAIN_CURRENT_SITE` or `PATH_CURRENT_SITE`.
 
 ```yaml
 env:
   domain_current_site: store1.example.com
-  path_current_site: '/shop'
 ```
 
 That `env` will be merged in with Trellis' defaults so you don't need to worry about re-defining all of the properties.
@@ -79,6 +68,14 @@ vagrant plugin install landrush
 ```
 
 Landrush spins up a small DNS server that allows us to use wildcard subdomains, a requirement for subdomain multisite installs.
+
+Some users may have external DNS issues when using Landrush. If you encounter this, add this to your `Vagrantfile`:
+
+```ruby
+config.landrush.guest_redirect_dns = false
+```
+
+See issue [#511](https://github.com/roots/trellis/issues/511) for more details.
 
 
 ### Debugging Landrush
