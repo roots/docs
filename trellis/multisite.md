@@ -29,7 +29,7 @@ multisite:
   subdomains: false   # Set to true if you're using a subdomain multisite install
 ```
 
-You'll may also want to define the `env` dictionary for more multisite specific settings such as `DOMAIN_CURRENT_SITE` or `PATH_CURRENT_SITE`.
+You may also want to define the `env` dictionary for more multisite specific settings such as `DOMAIN_CURRENT_SITE` or `PATH_CURRENT_SITE`.
 
 ```yaml
 env:
