@@ -162,3 +162,11 @@ server {
 ```
 
 You'll notice that these blocks use indentation and [whitespace control](http://jinja.pocoo.org/docs/latest/templates/#whitespace-control) (e.g., `-%}`) parallel to their counterparts in the the base template `wordpress-site.conf.j2`. This will achieve the best formatting of templated conf files on the server.
+
+## Additional sites templates
+
+### Default
+
+### Designate a site template
+
+### Create a site template
