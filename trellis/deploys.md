@@ -100,7 +100,7 @@ vars:
 
 ### SSH keys
 
-Before you can deploy a site to a remote server, your SSH keys need to be working. Trellis takes advantage of SSH forwarding so your remote server does need to generate an SSH key and add it to GitHub/Bitbucket.
+Before you can deploy a site to a remote server, your SSH keys need to be working. Trellis takes advantage of SSH forwarding so your remote server does not need to generate an SSH key and add it to GitHub/Bitbucket.
 
 The chain works like this: `local machine` -&gt; SSH via Ansible -&gt; `remote server` -&gt; Git clone -&gt; `remote Git repository`
 
