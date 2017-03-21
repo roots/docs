@@ -170,3 +170,5 @@ You'll notice that these blocks use indentation and [whitespace control](http://
 ### Designate a site template
 
 ### Create a site template
+
+### File cleanup
