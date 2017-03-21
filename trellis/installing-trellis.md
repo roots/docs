@@ -52,3 +52,8 @@ $ cd trellis && ansible-galaxy install -r requirements.yml
 ```
 
 Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions. VirtualBox is known to have poor performance in Windows — use VMware or [see some possible solutions](https://discourse.roots.io/t/virtualbox-performance-in-windows/3932).
+
+> Note:
+```plain
+- To change the VM name from example.dev to <somename.tld>, change the canonical url to <somename.tld> in trellis/group_vars/development/wordpress_sites.yml
+```
