@@ -72,10 +72,11 @@ The hook variables available are:
 
 ### Default hooks
 
-By default, Trellis only defines and uses two hooks: `deploy_build_after` and `deploy_finalize_after`.
+By default, Trellis only defines and uses three hooks:
 
-* `deploy_build_after` is used to run `composer install`.
-* `deploy_finalize_after` is used to restart services like php-fpm.
+* `deploy_build_after` runs `composer install`.
+* `deploy_finalize_before` checks the WordPress installation.
+* `deploy_finalize_after` refreshes WordPress settings and reloads php-fpm.
 
 ### Custom tasks
 
@@ -84,10 +85,11 @@ To use a hook, define/override the variable in the `deploy.yml` playbook file:
 ```yml
 vars:
   deploy_build_after: "{{ playbook_dir }}/roles/deploy/hooks/build-after.yml"
+  deploy_finalize_before: "{{ playbook_dir }}/roles/deploy/hooks/finalize-before.yml"
   deploy_finalize_after: "{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml"
 ```
 
-Those are the two default hooks that Trellis already uses. If you want to use the same hooks as we do and override them, we suggest copying the existing file and modifying it.
+Those are the three default hooks that Trellis already uses. If you want to use the same hooks as we do and override them, we suggest copying the existing file and modifying it.
 
 We also suggest keeping your hooks in a top level `deploy-hooks` folder in your Ansible folder like this:
 
@@ -95,6 +97,7 @@ We also suggest keeping your hooks in a top level `deploy-hooks` folder in your 
 vars:
   deploy_build_after: "{{ playbook_dir }}/deploy-hooks/build-after.yml"
   deploy_share_before: "{{ playbook_dir }}/deploy-hooks/share-before.yml"
+  deploy_finalize_after: "{{ playbook_dir }}/roles/deploy/hooks/finalize-before.yml"
   deploy_finalize_after: "{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml"
 ```
 
