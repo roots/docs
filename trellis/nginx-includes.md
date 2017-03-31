@@ -163,12 +163,89 @@ server {
 
 You'll notice that these blocks use indentation and [whitespace control](http://jinja.pocoo.org/docs/latest/templates/#whitespace-control) (e.g., `-%}`) parallel to their counterparts in the the base template `wordpress-site.conf.j2`. This will achieve the best formatting of templated conf files on the server.
 
-## Additional sites templates
+## Sites templates
+
+You may use sites templates to add new sites configurations to Nginx, in addition to Wordpress configurations.
+They're also Ansible/Jinja2 templates, and thus can make full use of variables and logic.
+
+Create your sites templates following the guidelines below.
+
+Tip: Once you have set up your sites templates, append `--tags nginx-sites` to your command to run only the Nginx sites portions of the playbook.
 
 ### Default
+By default in Trellis, a default site Nginx conf is included. Its purpose is to drop requests to unknown server names, preventing host header attacks and other potential problems.
+
+The `nginx_sites_confs` variable contains the list of configurations to be templated to the server's `sites-available` folder.
+Its default value only registers the default site (whose template resides in `roles/nginx/templates/no-default.conf.j2`):
+
+```
+nginx_sites_confs:
+  - src: no-default.conf.j2
+```
+
+Each entry to this variable has also an `enabled` parameter, which can be omitted, and defaults to `true`.
+It controls whether the conf is linked to the server's `sites-enabled` folder, and thus activated.
+The above default is equivalent to:
+
+```
+nginx_sites_confs:
+  - src: no-default.conf.j2
+    enabled: true
+```
+
+However, you might want to add other sites for specific purposes.
 
 ### Designate a site template
 
+You will need to inform Trellis of the sites templates you have created.
+
+#### `nginx_sites_confs`
+
+Use the `nginx_sites_confs` variable to designate your new site template. Given that this template applies to all environments, it would be appropriate to define the variable in a `group_vars/<environment>/main.yml` file (including `group_vars/all/main.yml`).
+Remember to keep the default site for security purposes if you don't have a specific reason to override it.
+
+```
+nginx_sites_confs:
+  - src: no-default.conf.j2
+  - src: nginx-includes/example.conf.site.j2
+```
+
+The example above designates a site template in the `nginx-includes` path on your local machine (i.e., the default path for `nginx_includes_templates_path` variable; see [`include` files](#include-files) section above). You may choose a different path and assign the template any name and file extension you wish. When using the `nginx-includes` path, however, avoid using a filename that matches the `*.conf.j2` pattern required for `include` files described above.
+
 ### Create a site template
 
+Create your site templates at the paths you designated in the `nginx_sites_confs` variable described above. Templates should start with an `# {{ ansible_managed }}` statement to indicate that the file is [managed by ansible](http://docs.ansible.com/ansible/intro_configuration.html#ansible-managed).
+
+#### Template example
+
+Here is an example site template that hosts nginx default page, listening on `example.com` non-standard port 8080.
+
+```
+# {{ ansible_managed }}
+
+server {
+  listen 8080;
+  server_name example.com;
+
+  root /var/www/html;
+  index index.html index.htm index.nginx-debian.html;
+
+  location / {
+    # First attempt to serve request as file, then
+    # as directory, then fall back to displaying a 404.
+    try_files $uri $uri/ =404;
+  }
+}
+```
+
 ### File cleanup
+By default, Trellis will remove from the remote's `site-enabled` directory any link to a site conf file that has its `enabled` attribute set to `false`.
+There is no cleanup of the confs in `sites-available`, they're only made mute by being disabled.
+
+This examples shows the addition of the above site template, while also disabling trellis' default site.
+```
+nginx_sites_confs:
+  - src: no-default.conf.j2
+    enabled: false
+  - src: nginx-includes/example.conf.site.j2
+```
