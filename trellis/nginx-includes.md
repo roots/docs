@@ -165,29 +165,29 @@ You'll notice that these blocks use indentation and [whitespace control](http://
 
 ## Sites templates
 
-You may use sites templates to add new sites configurations to Nginx, in addition to Wordpress configurations.
-They're also Ansible/Jinja2 templates, and thus can make full use of variables and logic.
+You may use sites templates to add new sites confs to Nginx in addition to the standard WordPress confs.
+They are also Ansible/Jinja2 templates, and thus can make full use of variables and logic.
 
 Create your sites templates following the guidelines below.
 
 Tip: Once you have set up your sites templates, append `--tags nginx-sites` to your command to run only the Nginx sites portions of the playbook.
 
 ### Default
-By default in Trellis, a default site Nginx conf is included. Its purpose is to drop requests to unknown server names, preventing host header attacks and other potential problems.
+By default in Trellis, a "no-default" site Nginx conf is included. Its purpose is to drop requests to unknown server names, preventing host header attacks and other potential problems.
 
-The `nginx_sites_confs` variable contains the list of configurations to be templated to the server's `sites-available` folder.
+The `nginx_sites_confs` variable contains the list of confs to be templated to the server's `sites-available` folder.
 Its default value only registers the default site (whose template resides in `roles/nginx/templates/no-default.conf.j2`):
 
-```
+```yaml
 nginx_sites_confs:
   - src: no-default.conf.j2
 ```
 
-Each entry to this variable has also an `enabled` parameter, which can be omitted, and defaults to `true`.
+Each entry to this variable also has an `enabled` parameter, which can be omitted, and defaults to `true`.
 It controls whether the conf is linked to the server's `sites-enabled` folder, and thus activated.
 The above default is equivalent to:
 
-```
+```yaml
 nginx_sites_confs:
   - src: no-default.conf.j2
     enabled: true
@@ -204,7 +204,7 @@ You will need to inform Trellis of the sites templates you have created.
 Use the `nginx_sites_confs` variable to designate your new site template. Given that this template applies to all environments, it would be appropriate to define the variable in a `group_vars/<environment>/main.yml` file (including `group_vars/all/main.yml`).
 Remember to keep the default site for security purposes if you don't have a specific reason to override it.
 
-```
+```yaml
 nginx_sites_confs:
   - src: no-default.conf.j2
   - src: nginx-includes/example.conf.site.j2
@@ -220,7 +220,7 @@ Create your site templates at the paths you designated in the `nginx_sites_confs
 
 Here is an example site template that hosts nginx default page, listening on `example.com` non-standard port 8080.
 
-```
+```nginx
 # {{ ansible_managed }}
 
 server {
@@ -242,8 +242,8 @@ server {
 By default, Trellis will remove from the remote's `site-enabled` directory any link to a site conf file that has its `enabled` attribute set to `false`.
 There is no cleanup of the confs in `sites-available`, they're only made mute by being disabled.
 
-This examples shows the addition of the above site template, while also disabling trellis' default site.
-```
+This examples shows the addition of the above site template, while also disabling Trellis' default site.
+```yaml
 nginx_sites_confs:
   - src: no-default.conf.j2
     enabled: false
