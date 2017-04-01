@@ -138,4 +138,4 @@ All the SSH connections discussed above apply to Trellis connecting from your lo
 
 The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args = -o ForwardAgent=yes`. You should not need auth tokens or private keys for the `web_user`. If you run into trouble cloning a remote repo during deploy, see https://developer.github.com/guides/using-ssh-agent-forwarding/ for tips and troubleshooting.
 
-**OSX users.** Remember to import your SSH key password into Keychain by running `ssh-add -K`.
+**OSX users.** Remember to import your SSH key password into Keychain by running `ssh-add -k`.
