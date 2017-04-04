@@ -22,7 +22,7 @@ For remote servers, the workflow is a little different with two new concepts:
 
 Provisioning a server means to set it up with the necessary software and configuration to run a WordPress site. For Trellis this means things like: installing MariaDB, installing Nginx, configuring Nginx, creating a database, etc.
 
-In Trellis, you provision a server by running the `server.yml` playbook. This leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet.
+In Trellis, you provision a server by running the `server.yml` Playbook from your [Local Development Setup](https://roots.io/trellis/docs/local-development-setup/). It then connects to your remote server and leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet (such as Bedrock).
 
 ## Deploy
 
