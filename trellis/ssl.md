@@ -42,21 +42,6 @@ example.com:
     provider: <name>
 ```
 
-You'll also need to set your `wp_home` and `wp_siteurl` variables to use `https` URLs:
-
-```yaml
-# group_vars/production/wordpress_sites.yml (example)
-
-example.com:
-  # rest of site config
-  ssl:
-    enabled: true
-    provider: letsencrypt
-  env:
-    wp_home: https://example.com
-    wp_siteurl: https://example.com/wp
-```
-
 ### Let's Encrypt
 
 [Let's Encrypt](https://letsencrypt.org/) (LE) is a new Certificate Authority that is free, automated, and open.
@@ -221,7 +206,7 @@ What is HSTS Preloading?
 
 > HSTS Preloading is a mechanism whereby a list of hosts that wish to enforce the use of SSL/TLS on their site is built into a browser. This list is compiled by Google and is utilised by Chrome, Firefox and Safari. These sites do not depend on the issuing of the HSTS response header to enforce the policy, instead the browser is aleady aware that the host requires the use of SSL/TLS before any connection or communication even takes place. This removes the opportunity an attacker has to intercept and tamper with redirects that take place over HTTP. This isn't to say that the host needs to stop issuing the HSTS response header, this must be left in place for those browsers that don't use preloaded HSTS lists.
 >
-> \- https://scotthelme.co.uk/hsts-preloading/
+> - https://scotthelme.co.uk/hsts-preloading/
 
 Using preloading is a two-step process:
 
