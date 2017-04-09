@@ -34,7 +34,14 @@ Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your
 
 ## Requirements
 
-There are two requirements for using Trellis on a remote server:
+The Trellis [installation instructions](https://roots.io/trellis/docs/installing-trellis/) skipped a few requirements because Vagrant handles them automatically for us.
+
+To use Trellis for remote servers, we recommend installing Ansible locally on your host machine.
+
+1. Install [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) >= 2.2
+2. Install Galaxy roles: `ansible-galaxy install -r requirements.yml` (in local trellis directory)
+
+Then there are two additional requirements for the remote server itself:
 
 1. You need a server running a bare/stock version of Ubuntu 16.04 Xenial. If you're using a host such as DigitalOcean, then just select their Ubuntu 16.04 option.
 
