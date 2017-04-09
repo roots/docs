@@ -11,7 +11,7 @@ published: true
 ---
 Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
 
-Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support one or more WOrdPress sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc.
+Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support one or more WordPress sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc.
 
 These sites are configured in YAML files for each environment such as `group_vars/development/wordpress_sites.yml`.
 
