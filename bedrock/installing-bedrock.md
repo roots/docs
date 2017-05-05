@@ -16,8 +16,9 @@ published: true
 
 ## Installation
 
-1. Create a new project - `composer create-project roots/bedrock`
-2. Copy `.env.example` to `.env` and update environment variables:
+1. Clone the [bedrock repository](https://github.com/roots/bedrock/) `git clone https://github.com/roots/bedrock.git`
+1. Enter in the cloned repo and run via command `composer install`
+1. Copy `.env.example` to `.env` and update environment variables:
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
   * `DB_PASSWORD` - Database password
