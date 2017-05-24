@@ -13,7 +13,7 @@ published: true
 
 <ul class="lead">
 <li><h4><a href="https://webpack.github.io/">Webpack</a></h4><p><small>is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.</small></p></li>
-<li><h4><a href="https://www.npmjs.com/">npm</a></h4><p><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap and jQuery as dependencies.</small></p></li>
+<li><h4><a href="https://www.npmjs.com/">npm</a></h4><p><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap and jQuery as dependencies. In previous versions of the theme we used Bower as our front-end package manager.</small></p></li>
 <li><h4><a href="http://www.browsersync.io">BrowserSync</a> with Webpack Hot Module Replacement</h4><p><small>BrowserSync with WHR keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS. In previous versions of the theme we used LiveReload for injecting assets.</small></p></li>
 </ul>
 
@@ -121,7 +121,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
     /** import external dependencies */
     import 'jquery';
     import 'bootstrap/dist/js/bootstrap';
-    
+
     // Import Slick
     import 'slick-carousel/slick/slick.min';
     ```
@@ -137,7 +137,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
     @import "~slick-carousel/slick/slick.scss";
     @import "~slick-carousel/slick/slick-theme.scss";
     ```
-    
+
 3. After running `yarn run build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
 
 4. Running `yarn run build:production` will fail if 3rd party package's relative paths are not configured before imported. In example to load Slick Carousel's paths add the following line in your common/_variables.scss file:
@@ -146,11 +146,11 @@ Example of how to add 3rd party packages* and have them included in the theme:
     /* sage/assets/styles/common/_variables.scss */
     // Slick Carousel font path
     $slick-font-path: "~slick-carousel/slick/fonts/";
-		
+
     // Slick Carousel ajax-loader.gif path
     $slick-loader-path: "~slick-carousel/slick/";
     ```
-  
+
 <small>&lowast;Note: Wordpress Plugins are installed elsewhere or with Composer when using [Bedrock](/bedrock/docs/composer)</small>
 
 ### Additional examples
