@@ -14,3 +14,4 @@ published: true
 Issues with extensions should be opened in their respective repositories.
 
 * [Bedrock site protect](https://github.com/louim/bedrock-site-protect) — Add or remove htpasswd protection to your websites
+* [Automated backups](https://galaxy.ansible.com/guilro/trellis-backup/) — Set up automated backups to various locations using duplicity.
