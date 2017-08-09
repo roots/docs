@@ -162,4 +162,5 @@ ansible-playbook deploy.yml -e "site=mysite.com env=production"
 
 ## Rollbacks
 
-To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"`
+To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` . 
+You may manually specify a different release using `--extra-vars='release=12345678901234'` .
