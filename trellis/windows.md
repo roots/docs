@@ -8,6 +8,9 @@ layout: doc
 permalink: https://roots.io/trellis/docs/windows/
 published: true
 ---
+## VirtualBox
+VirtualBox is known to have poor performance in Windows — use VMware or [see some possible solutions](https://discourse.roots.io/t/virtualbox-performance-in-windows/3932).
+
 ## Installing Ansible
 
 From the Ansible docs:

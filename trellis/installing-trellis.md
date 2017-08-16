@@ -9,17 +9,24 @@ permalink: >
   https://roots.io/trellis/docs/installing-trellis/
 published: true
 ---
-## Requirements
+## Install requirements
 
-Make sure all dependencies have been installed before moving on:
+Trellis relies on a few other software tools. Make sure all dependencies have been installed before moving on:
 
-* [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) >= 2.2
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 * [Vagrant](https://www.vagrantup.com/downloads.html) >= 1.8.5
 * [vagrant-bindfs](https://github.com/gael-ian/vagrant-bindfs#installation) >= 0.3.1 (Windows users may skip this if not using vagrant-winnfsd for folder sync)
 * [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager#installation)
 
-## Installation
+<div class="well">
+This is the minimum requirements for a development server. Vagrant automatically takes care of the Ansible dependency for us by default.
+
+To speed up future dev VM provisioning, or for remote servers, you'll need to install Ansible locally on your host machine.
+
+See [Requirements](#https://roots.io/trellis/docs/remote-server-setup/) under Remote Server Setup.
+</div>
+
+## Create a project
 
 The recommended directory structure for a Trellis project looks like:
 
@@ -34,6 +41,8 @@ example.com/      # → Root folder for the project
 
 See a complete working example in the [roots-example-project.com repo](https://github.com/roots/roots-example-project.com).
 
+Pick a descriptive name for your project and use it instead of the default `example.com`. We recommend the domain of the site for convenience.
+
 1. Create a new project directory:
 ```plain
 $ mkdir example.com && cd example.com
@@ -46,9 +55,5 @@ $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
 ```plain
 $ git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git
 ```
-4. Install the Ansible Galaxy roles:
-```plain
-$ cd trellis && ansible-galaxy install -r requirements.yml
-```
 
-Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions. VirtualBox is known to have poor performance in Windows — use VMware or [see some possible solutions](https://discourse.roots.io/t/virtualbox-performance-in-windows/3932).
+Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions.
