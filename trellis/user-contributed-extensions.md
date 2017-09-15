@@ -17,3 +17,4 @@ Issues with extensions should be opened in their respective repositories.
 * [Automated backups](https://galaxy.ansible.com/guilro/trellis-backup/) — Set up automated backups to various locations using duplicity.
 * [Trellis Cloudflare Origin CA](https://www.typist.tech/projects/trellis-cloudflare-origin-ca) — Add Cloudflare Origin CA to Trellis as SSL provider.
 * [Trellis New Relic PHP Agent](https://www.typist.tech/projects/trellis-newrelic-php) - Install New Relic PHP agent on Trellis servers
+* [Vagrant Trellis Sequel](https://www.typist.tech/projects/vagrant-trellis-sequel) - Open Trellis databases in Sequel Pro with a single command
