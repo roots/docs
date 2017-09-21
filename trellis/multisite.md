@@ -59,7 +59,23 @@ wordpress_sites:
       domain_current_site: store1.example.com
 ```
 
-## Subdomain installs and hosts
+After provisioning your remote server and deploying your sites, you'll need to install Wordpress as a final step in your staging and production environments. SSH into your server as the `web` user with `ssh web@<domain>` and in the `/srv/www/<domain>/current/` directories run the following WP-CLI command `wp core multisite-install --title="site title" --admin_user="username" --admin_password="password" --admin_email="you@example.com"` to install Wordpress.
+
+You may notice that your network's main site URLs contain `/wp/` before the post's or page's pathnames. This is a problem in WP core which occurs when Wordpress is located in a subdirectory, as is the case with Bedrock. See issue [#250](https://github.com/roots/bedrock/issues/250) for details, and check WPMS Site URL Fixer Plugin in [Multisite Fixes](https://github.com/felixarntz/multisite-fixes) plugin collection for a solution.
+
+If you use [Let's Encrypt](https://roots.io/trellis/docs/ssl/#lets-encrypt) as your SSL provider and your multisite install uses subdomains, currently you have to generate individual certificates for each of your subdomains, but this may change soon as Let's Encrypt will begin issuing [wildcard certificates in January of 2018](https://letsencrypt.org/2017/07/06/wildcard-certificates-coming-jan-2018.html). You can generate SSL certificates for your subdomains if you know these subdomains in advance while provisioning your server. To do this, define multiple `canonical` entries under `site_hosts` in your corresponding `wordpress_sites.yml` file like this:
+
+```yaml
+site_hosts:
+  - canonical: example.com
+    redirects:
+      - www.example.com
+  - canonical: subdomain.example.com
+    redirects:
+      - www.subdomain.example.com
+```
+
+## Subdomains locally
 
 For subdomains in development, you'll need DNS entries for every subdomain/host. The [Landrush](https://github.com/phinze/landrush) Vagrant plugin is how you can do this. Install it via:
 
