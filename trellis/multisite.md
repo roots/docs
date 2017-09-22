@@ -59,7 +59,11 @@ wordpress_sites:
       domain_current_site: store1.example.com
 ```
 
-After provisioning your remote server and deploying your sites, you'll need to install WordPress as a final step in your staging and production environments. SSH into your server as the `web` user with `ssh web@<domain>` and in the `/srv/www/<domain>/current/` directories run the following WP-CLI command `wp core multisite-install --title="site title" --admin_user="username" --admin_password="password" --admin_email="you@example.com"` to install WordPress.
+After provisioning your remote server and deploying your sites, you'll need to install WordPress as a final step in your staging and production environments. SSH into your server as the `web` user with `ssh web@<domain>` and in the `/srv/www/<domain>/current/` directories run the following WP-CLI command to install WordPress:
+
+```
+wp core multisite-install --title="site title" --admin_user="username" --admin_password="password" --admin_email="you@example.com"
+```
 
 You may notice that your network's main site URLs contain `/wp/` before the post's or page's pathnames. This is a problem in WP core which occurs when WordPress is located in a subdirectory, as is the case with Bedrock. See issue [Bedrock issue #250](https://github.com/roots/bedrock/issues/250) for details, along with the site URL fix plugin in the [Multisite Fixes](https://github.com/felixarntz/multisite-fixes) plugin collection for a solution.
 
