@@ -38,7 +38,7 @@ The Trellis [installation instructions](https://roots.io/trellis/docs/installing
 
 To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](https://roots.io/trellis/docs/windows/)).
 
-1. Install [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) >= 2.2
+1. Install [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) >= 2.4
 2. Install Galaxy roles: `ansible-galaxy install -r requirements.yml` (in local trellis directory)
 
 Then there are two additional requirements for the remote server itself:
