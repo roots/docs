@@ -14,7 +14,8 @@ Install Sage by copying the project into a new folder within your WordPress them
 
 Make sure all dependencies have been installed before moving on:
 
-* [PHP](http://php.net/manual/en/install.php) >= 5.6.4
+* [WordPress](https://wordpress.org/download/) >= 4.7
+* [PHP](http://php.net/manual/en/install.php) >= 7.0
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 6.9.x
 * [Yarn](https://yarnpkg.com/en/docs/install)
@@ -23,7 +24,8 @@ Install Sage using Composer from your WordPress themes directory (replace `your-
 
 ```shell
 # @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name 9.0.0
+# Note: you must append the current version of Sage 9 to the 9.0.0 version number with a hyphen (-). Assuming you want to install **beta-4**: 
+$ composer create-project roots/sage your-theme-name 9.0.0-beta.4
 ```
 
 From the command line on your host machine (not on your Vagrant box), navigate to the theme directory then run `yarn`:
