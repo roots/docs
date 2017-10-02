@@ -2,12 +2,12 @@
 ID: 5332
 post_title: Theme Wrapper
 author: Ben Word
-post_date: 2015-09-01 19:14:17
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/sage/docs/theme-wrapper/
 published: true
+post_date: 2015-09-01 19:14:17
 ---
 After reading through this guide, you will:
 
@@ -145,7 +145,7 @@ Let's say you wanted your base markup to change depending on what CPT WordPress 
 
 ```php
 <?php
-  add_filter('sage/wrap_base', __NAMESPACE__ . 'sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
+  add_filter('sage/wrap_base', __NAMESPACE__ . '\\sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
 
   function sage_wrap_base_cpts($templates) {
     $cpt = get_post_type(); // Get the current post type
