@@ -29,3 +29,6 @@ published: true
 3. Add theme(s) in `web/app/themes` as you would for a normal WordPress site.
 4. Set your site vhost document root to `/path/to/site/web/` (`/path/to/site/current/web/` if using deploys)
 5. Access WP admin at `http://example.com/wp/wp-admin`
+
+### Multisite
+Bedrock works well with WordPress Multisite but needs the [multisite-url-fixer](https://github.com/roots/multisite-url-fixer/) mu-plugin so that all of the admin urls function properly. Run `composer require roots/multisite-url-fixer` to install the package. It will automatically install as an mu-plugin thanks to the [mu-plugins autoloader](https://roots.io/bedrock/docs/mu-plugins-autoloader/).
