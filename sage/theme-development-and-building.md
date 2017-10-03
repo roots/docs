@@ -101,6 +101,14 @@ Use the `@asset` directive to call images from template files:
 <img src="@asset('images/example.jpg')">
 ```
 
+### Images in CSS
+CSS files and images are sibling folders, so you can reference images in CSS:
+```css
+.background {
+  background-image: url(../images/image.jpg);
+}
+```
+
 ## 3rd party packages
 
 Example of how to add 3rd party packages* and have them included in the theme:
