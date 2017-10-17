@@ -31,4 +31,4 @@ published: true
 5. Access WP admin at `http://example.com/wp/wp-admin`
 
 ### Multisite
-Bedrock works well with WordPress Multisite but needs the [multisite-url-fixer](https://github.com/roots/multisite-url-fixer/) mu-plugin so that all of the admin urls function properly. Run `composer require roots/multisite-url-fixer` to install the package. It will automatically install as an mu-plugin thanks to the [mu-plugins autoloader](https://roots.io/bedrock/docs/mu-plugins-autoloader/).
+Bedrock works well with WordPress Multisite but needs the [multisite-url-fixer](https://github.com/roots/multisite-url-fixer/) mu-plugin so that all of the admin urls function properly on multisites with subdomain installs. This plugin is not _needed_ on subdirectory installs but will work well with them. Run `composer require roots/multisite-url-fixer` to install the package. It will automatically install as an mu-plugin thanks to the [mu-plugins autoloader](https://roots.io/bedrock/docs/mu-plugins-autoloader/).
