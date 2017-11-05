@@ -2,11 +2,11 @@
 ID: 6150
 post_title: SSH Keys
 author: Ben Word
-post_date: 2015-09-03 17:44:44
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/trellis/docs/ssh-keys/
 published: true
+post_date: 2015-09-03 17:44:44
 ---
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).
 
@@ -138,4 +138,10 @@ All the SSH connections discussed above apply to Trellis connecting from your lo
 
 The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args = -o ForwardAgent=yes`. You should not need auth tokens or private keys for the `web_user`. If you run into trouble cloning a remote repo during deploy, see https://developer.github.com/guides/using-ssh-agent-forwarding/ for tips and troubleshooting.
 
-**OSX users.** Remember to import your SSH key password into Keychain by running `ssh-add -K`.
+### macOS/OS X users
+
+Remember to import your SSH key password into Keychain by running:
+
+```sh
+ssh-add -K
+```
