@@ -123,7 +123,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
     $ yarn add slick-carousel
     ```
 
-2. Open up `main.js` and `main.css` to add the entry points for the package. If you're using the Slick Carousel then your theme JS and CSS would look like:
+2. Open up `main.js` and `main.scss` to add the entry points for the package. If you're using the Slick Carousel then your theme JS and CSS would look like:
 
     ```js
     /** import external dependencies */
