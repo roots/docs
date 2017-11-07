@@ -136,7 +136,7 @@ The example above also demonstrates the option of creating `another_user` whose 
 
 All the SSH connections discussed above apply to Trellis connecting from your local machine to your server. It is a different type of connection, however, when Trellis clones a remote private repo during deployment. In this case, your remote server is allowed to forward your local machine's SSH credentials to the remote repo to authorize the connection.
 
-The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args = -o ForwardAgent=yes`. You should not need auth tokens or private keys for the `web_user`. If you run into trouble cloning a remote repo during deploy, see https://developer.github.com/guides/using-ssh-agent-forwarding/ for tips and troubleshooting.
+The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args = -o ForwardAgent=yes`. You should not need auth tokens or private keys for the `web_user`. If you run into trouble cloning a remote repo during deploy, see [Using SSH agent forwarding](https://developer.github.com/guides/using-ssh-agent-forwarding/) for tips and troubleshooting.
 
 ### macOS/OS X users
 
