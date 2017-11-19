@@ -2,12 +2,12 @@
 ID: 13266
 post_title: WordPress Sites
 author: Scott Walkinshaw
-post_date: 2016-03-28 21:10:17
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/trellis/docs/wordpress-sites/
 published: true
+post_date: 2016-03-28 21:10:17
 ---
 Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
 
@@ -29,9 +29,9 @@ There are two components and places to configure sites:
 wordpress_sites:
   example.com:
     site_hosts:
-      - canonical: example.dev
+      - canonical: example.test
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
-    admin_email: admin@example.dev
+    admin_email: admin@example.test
     multisite:
       enabled: false
     ssl:
