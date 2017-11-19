@@ -2,12 +2,12 @@
 ID: 6148
 post_title: Troubleshooting
 author: Ben Word
-post_date: 2015-09-03 17:43:33
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/trellis/docs/troubleshooting/
 published: true
+post_date: 2015-09-03 17:43:33
 ---
 ## Debugging
 
@@ -27,7 +27,7 @@ Example: if a Git clone task failed during deploys, then SSH into the server as 
 Halt all VMs and remove VM-related entries from your `/etc/hosts` file, particularly entries similar to the example below. You may want to backup the hosts file before editing.
 
 ```
-192.168.50.5  example.dev  # VAGRANT: 22c9...
+192.168.50.5  example.test  # VAGRANT: 22c9...
 ```
 
 Then `vagrant up` any VMs you need running and double-check that appropriate entries appear in your hosts file.
