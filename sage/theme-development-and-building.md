@@ -159,7 +159,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
     $slick-loader-path: "~slick-carousel/slick/";
     ```
 
-<small>&lowast;Note: Wordpress Plugins are installed elsewhere or with Composer when using [Bedrock](/bedrock/docs/composer)</small>
+<small>&lowast;Note: Wordpress Plugins are installed elsewhere or with Composer when using [Bedrock](https://roots.io/bedrock/docs/composer/)</small>
 
 ### Additional examples
 
