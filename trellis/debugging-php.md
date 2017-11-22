@@ -24,7 +24,7 @@ Xdebug gives you all sorts of visibility into the internals of your application,
 
 ## Installation
 
-Trellis is configured with Xdebug and ready to rock out of the box in development. All you have to do is select a compatible debugger. Xdebug is designed to be used with a DBGP-compatible debugger in order to interface with Xdebug on your site. [PHPStorm](https://www.jetbrains.com/phpstorm/) comes with support for this out of the box and [Sublime Text](https://github.com/martomo/SublimeTextXdebug) and [Vim](https://github.com/joonty/vdebug) have plugins available.
+Trellis is configured with Xdebug and ready to rock out of the box in development. All you have to do is select a compatible debugger. Xdebug is designed to be used with a DBGP-compatible debugger in order to interface with Xdebug on your site. [PHPStorm](https://www.jetbrains.com/phpstorm/) comes with support for this out of the box and [Sublime Text](https://github.com/martomo/SublimeTextXdebug), [Visual Studio Code](https://github.com/felixfbecker/vscode-php-debug), and [Vim](https://github.com/joonty/vdebug) have plugins available.
 
 ## Configuration
 
