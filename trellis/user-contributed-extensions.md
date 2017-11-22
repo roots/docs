@@ -20,3 +20,4 @@ Issues with extensions should be opened in their respective repositories.
 * [trellis-database-uploads-migration](https://github.com/valentinocossar/trellis-database-uploads-migration) — Ansible playbook for Trellis that manages database and uploads migration
 * [trellis-db-push-and-pull](https://github.com/hamedb89/trellis-db-push-and-pull) — Push and pull databases with Trellis and Ansible playbooks
 * [vagrant-trellis-sequel](https://www.typist.tech/projects/vagrant-trellis-sequel) — Open Trellis databases in Sequel Pro with a single command
+* [vagrant-trellis-cert](https://www.typist.tech/projects/vagrant-trellis-cert) — Trust all Trellis self-signed certificates with single command
