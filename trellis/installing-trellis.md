@@ -2,12 +2,12 @@
 ID: 7761
 post_title: Installing Trellis
 author: Ben Word
-post_date: 2015-10-15 12:20:35
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/trellis/docs/installing-trellis/
 published: true
+post_date: 2015-10-15 12:20:35
 ---
 ## Install requirements
 
@@ -15,10 +15,9 @@ Trellis relies on a few other software tools. Make sure all dependencies have be
 
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 * [Vagrant](https://www.vagrantup.com/downloads.html) >= 1.8.5
-* [vagrant-bindfs](https://github.com/gael-ian/vagrant-bindfs#installation) >= 0.3.1 (Windows users may skip this if not using vagrant-winnfsd for folder sync)
-* [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager#installation)
 
-<div class="well">
+<div class="well well-trellis-alt module">
+
 This is the minimum requirements for a development server. Vagrant automatically takes care of the Ansible dependency for us by default.
 
 To speed up future dev VM provisioning, or for remote servers, you'll need to install Ansible locally on your host machine.
