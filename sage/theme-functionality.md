@@ -17,7 +17,7 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
 
 <dl class="dl-horizontal">
   <dt><code>src/setup.php</code></dt>
-  <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars. See <a href="/sage/docs/theme-configuration-and-setup/">Theme Configuration and Setup</a>.</dd>
+  <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars. See <a href="/sage/theme-configuration-and-setup.md">Theme Configuration and Setup</a>.</dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><code>src/admin.php</code></dt>
