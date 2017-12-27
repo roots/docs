@@ -22,7 +22,7 @@ This is the minimum requirements for a development server. Vagrant automatically
 
 To speed up future dev VM provisioning, or for remote servers, you'll need to install Ansible locally on your host machine.
 
-See [Requirements](#https://roots.io/trellis/docs/remote-server-setup/) under Remote Server Setup.
+See [Requirements](https://roots.io/trellis/docs/remote-server-setup/#requirements) under Remote Server Setup.
 </div>
 
 ## Create a project
