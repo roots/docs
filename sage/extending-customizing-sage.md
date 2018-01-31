@@ -16,6 +16,7 @@ post_date: 2015-09-01 19:30:13
 <ul>
 <li><p><a href="http://www.advancedcustomfields.com/">ACF</a> &mdash; Fully customize edit screens with custom fields.</p></li>
 <li><p><a href="https://wordpress.org/plugins/advanced-excerpt/">Advanced Excerpt</a> &mdash; Control the appearance of WordPress post excerpts.</p></li>
+<li><p><a href="https://www.htmlforms.io/">HTML Forms</a> &mdash; Fast & flexible form plugin where you manage the HTML.</p></li>
 <li><p><a href="https://wordpress.org/plugins/safe-redirect-manager/">Safe Redirect Manager</a> &mdash; Safely and easily manage your HTTP redirects.</p></li>
 </ul>
 
@@ -25,7 +26,6 @@ post_date: 2015-09-01 19:30:13
 <li><p><a href="/plugins/soil/"><b>Soil</b></a> &mdash; Use Soil to enable additional features in Sage, including: cleaner output of WordPress markup, root relative URLs, and nice search.</p></li>
 <li><p><a href="https://roots.io/r/wpmigratedbpro">WP Migrate DB Pro</a> &mdash; Copy your database from one WordPress install to another with one click in your dashboard</p></li>
 <li><p><a href="/plugins/roots-share-buttons/">Roots Share Buttons</a> &mdash; Add lightweight social sharing buttons with optional share counts.</p></li>
-<li><p><a href="https://www.htmlforms.io/">HTML Forms</a> &mdash; Fast & flexible form plugin where you manage the HTML.</p></li>
 </ul>
 
 ## Recommended forks
