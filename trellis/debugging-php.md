@@ -24,7 +24,7 @@ Xdebug gives you all sorts of visibility into the internals of your application,
 
 ## Installation
 
-Trellis is configured with Xdebug and ready to rock out of the box in development. All you have to do is select a compatible debugger. Xdebug is designed to be used with a DBGP-compatible debugger in order to interface with Xdebug on your site. [PHPStorm](https://www.jetbrains.com/phpstorm/) comes with support for this out of the box and [Sublime Text](https://github.com/martomo/SublimeTextXdebug) and [Vim](https://github.com/joonty/vdebug) have plugins available.
+Trellis is configured with Xdebug and ready to rock out of the box in development. All you have to do is select a compatible debugger. Xdebug is designed to be used with a DBGP-compatible debugger in order to interface with Xdebug on your site. [PHPStorm](https://www.jetbrains.com/phpstorm/) comes with support for this out of the box and [Sublime Text](https://github.com/martomo/SublimeTextXdebug), [Visual Studio Code](https://github.com/felixfbecker/vscode-php-debug), and [Vim](https://github.com/joonty/vdebug) have plugins available.
 
 ## Configuration
 
@@ -34,7 +34,7 @@ You can see all the available configuration options in `roles/xdebug/defaults/ma
 
 ## Using Xdebug in production
 
-While we default to installing Xdebug in development, installing it in any other environment is "opt-in." **It is not recommended to use Xdebug in production**, but it _can_ be extremely using in debugging production-like environments. For example, if there's an issue you're encountering in Production, but cannot reproduce in Development (aka, your Vagrant environment), it's likely the problem lies with something specific to your VPS provider. Duplicating your production environment and sanitizing the data using something like [WP Hammer](https://github.com/10up/wp-hammer) will allow you to debug your production environmment without affecting it. This is where `bin/xdebug-tunnel.sh` comes in.
+While we default to installing Xdebug in development, installing it in any other environment is "opt-in." **It is not recommended to use Xdebug in production**, but it _can_ be extremely useful in debugging production-like environments. For example, if there's an issue you're encountering in Production, but cannot reproduce in Development (aka, your Vagrant environment), it's likely the problem lies with something specific to your VPS provider. Duplicating your production environment and sanitizing the data using something like [WP Hammer](https://github.com/10up/wp-hammer) will allow you to debug your production environmment without affecting it. This is where `bin/xdebug-tunnel.sh` comes in.
 
 ### `bin/xdebug-tunnel.sh`: Xdebug + SSH tunnels
 

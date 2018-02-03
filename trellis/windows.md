@@ -8,6 +8,9 @@ layout: doc
 permalink: https://roots.io/trellis/docs/windows/
 published: true
 ---
+## VirtualBox
+VirtualBox is known to have poor performance in Windows — use VMware or [see some possible solutions](https://discourse.roots.io/t/virtualbox-performance-in-windows/3932).
+
 ## Installing Ansible
 
 From the Ansible docs:
@@ -17,7 +20,7 @@ This includes Red Hat, Debian, CentOS, OS X, any of the BSDs, and so on.
 
 If your host machine is running Windows, the workaround is to run Ansible *on the VM* (since it's running Ubuntu) and not locally. You do not need to install Ansible manually.
 
-When you run `vagrant up`, the Vagrantfile will detect Windows and run the `bin/windows.sh` script. The script installs Ansible and the external Ansible roles/packages on the VM (so you can also skip manually running the `ansible-galaxy install` command).
+When you run `vagrant up`, the Vagrantfile will detect Windows and run the [`ansible_local`](https://www.vagrantup.com/docs/provisioning/ansible_local.html) provisioner. This provisioner installs Ansible and the external Ansible roles/packages on the VM (so you can also skip manually running the `ansible-galaxy install` command).
 
 ## Running Ansible commands
 
@@ -25,7 +28,7 @@ With Ansible installed on your Vagrant VM, you must run Ansible commands on the 
 
 **Development server.** The Ansible commands for the development machine are run for you automatically when you run `vagrant up`.
 
-**Remote servers (staging/production).** To run the `ansible-playbook` commands to provision remote servers, you'll need to SSH in to the VM, `cd` to the directory with your Trellis files (`/vagrant`), then run the [setup](https://github.com/roots/trellis#remote-server-setup-stagingproduction) and [deployment](https://github.com/roots/trellis#deploying-to-remote-servers) commands.
+**Remote servers (staging/production).** To run the `ansible-playbook` commands to provision remote servers, you'll need to SSH in to the VM, `cd` to the directory with your Trellis files (`~/trellis`), then run the [setup](https://github.com/roots/trellis#remote-server-setup-stagingproduction) and [deployment](https://github.com/roots/trellis#deploying-to-remote-servers) commands.
 
 ## SSH forwarding
 

@@ -2,16 +2,16 @@
 ID: 13266
 post_title: WordPress Sites
 author: Scott Walkinshaw
-post_date: 2016-03-28 21:10:17
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/trellis/docs/wordpress-sites/
 published: true
+post_date: 2016-03-28 21:10:17
 ---
 Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
 
-Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support 1 or more WP sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc.
+Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support one or more WordPress sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc.
 
 These sites are configured in YAML files for each environment such as `group_vars/development/wordpress_sites.yml`.
 
@@ -29,9 +29,9 @@ There are two components and places to configure sites:
 wordpress_sites:
   example.com:
     site_hosts:
-      - canonical: example.dev
+      - canonical: example.test
     local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
-    admin_email: admin@example.dev
+    admin_email: admin@example.test
     multisite:
       enabled: false
     ssl:
@@ -46,7 +46,7 @@ Nested under the name/key are the site's variables which are for that site only.
 
 ## Passwords/secrets
 
-When you add/edit a site in`wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` exists to make easy to use Ansible's Vault feature to encrypt certain files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](https://roots.io/trellis/docs/vault/) for more information on this.
+When you add/edit a site in`wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](https://roots.io/trellis/docs/vault/) for more information on this.
 
 ```yaml
 #  group_vars/development/vault.yml
@@ -88,7 +88,7 @@ example.com:
 * `local_path` - path targeting Bedrock-based site directory (*required*)
 * `current_path` - symlink to latest release (default: `current`)
 * `db_create` - whether to auto create a database or not (default: `true`)
-* `db_import` - Path to local `sql` dump file which will be imported (optional)
+* `packagist_token` - Token to use to authenticate with Packagist.com for private Composer repositories (optional)
 * `ssl` - SSL options. See the [SSL docs](https://roots.io/trellis/docs/ssl/)
 * `multisite` - Multisite options. See the [Multisite docs](https://roots.io/trellis/docs/multisite/)
 * `cache` - Nginx FastCGI cache options. See the [Cache docs](https://roots.io/trellis/docs/fastcgi-caching/)
@@ -101,6 +101,7 @@ example.com:
   * `db_user` - database username (default: `<site name>`)
   * `db_password` - database password (*required*, in `vault.yml`)
   * `db_host` - database hostname (default: `localhost`)
+  * `db_user_host` - hostname or ip range used to restrict connections to database (default: `localhost`)
 
 ### Development
 

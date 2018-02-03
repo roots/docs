@@ -22,7 +22,9 @@ For remote servers, the workflow is a little different with two new concepts:
 
 Provisioning a server means to set it up with the necessary software and configuration to run a WordPress site. For Trellis this means things like: installing MariaDB, installing Nginx, configuring Nginx, creating a database, etc.
 
-In Trellis, you provision a server by running the `server.yml` playbook. This leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet.
+Trellis has two main [playbooks](http://docs.ansible.com/ansible/playbooks.html): `dev.yml` and `server.yml`. As mentioned in local development, Vagrant automatically runs the `dev.yml` playbook for us.
+
+For remote servers, you provision a server via the `server.yml` playbook. This leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet.
 
 ## Deploy
 
@@ -32,7 +34,14 @@ Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your
 
 ## Requirements
 
-There are two requirements for using Trellis on a remote server:
+The Trellis [installation instructions](https://roots.io/trellis/docs/installing-trellis/) skipped a few requirements because Vagrant handles them automatically for us.
+
+To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](https://roots.io/trellis/docs/windows/)).
+
+1. Install [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) >= 2.4
+2. Install Galaxy roles: `ansible-galaxy install -r requirements.yml` (in local trellis directory)
+
+Then there are two additional requirements for the remote server itself:
 
 1. You need a server running a bare/stock version of Ubuntu 16.04 Xenial. If you're using a host such as DigitalOcean, then just select their Ubuntu 16.04 option.
 
@@ -47,6 +56,6 @@ Now that you have a working Ubuntu 16.04 server that you can easily SSH into, yo
 3. Add your server hostname to `hosts/<environment>` (replacing `your_server_hostname`).
 4. Specify public SSH keys for `users` in `group_vars/all/users.yml`. See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/).
 5. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](https://roots.io/trellis/docs/security/).
-6. Run `ansible-playbook server.yml -e env=<environment>`.
+6. Run `ansible-playbook server.yml -e env=<environment>` from your local machine (Ansible connects to your remote server via SSH).
 
 This leaves you with a *provisioned* server. The next step is to [deploy](https://roots.io/trellis/docs/deploys/) your site.

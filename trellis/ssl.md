@@ -42,26 +42,11 @@ example.com:
     provider: <name>
 ```
 
-You'll also need to set your `wp_home` and `wp_siteurl` variables to use `https` URLs:
-
-```yaml
-# group_vars/production/wordpress_sites.yml (example)
-
-example.com:
-  # rest of site config
-  ssl:
-    enabled: true
-    provider: letsencrypt
-  env:
-    wp_home: https://example.com
-    wp_siteurl: https://example.com/wp
-```
-
 ### Let's Encrypt
 
 [Let's Encrypt](https://letsencrypt.org/) (LE) is a new Certificate Authority that is free, automated, and open.
 
-Unless you already have an SSL certificate purchased, Let's Encrypt should be your provider choice.
+Unless you already have an SSL certificate purchased, Let's Encrypt should be your provider choice. Let's Encrypt is appropriate for your production and staging environments, but not for development (see [DNS records](#dns-records)).
 
 Trellis has complete automated integration. The only required setting is the `provider` itself:
 
@@ -144,6 +129,18 @@ Just set the following variable:
 letsencrypt_ca: "https://acme-staging.api.letsencrypt.org"
 ```
 
+#### Troubleshooting Let's Encrypt
+
+Trellis versions prior to [Jan 2017](https://github.com/roots/trellis/pull/630) did not detect some changes that should have triggered Let's Encrypt certificate regeneration. The most common example was users adding domain(s) to `site_hosts` (in `wordpress_sites`) and reporting that browsers gave privacy warnings for the new domains. Similar problems occurred for users switching from manual certificates to Let's Encrypt certificates.
+
+If you see similar privacy warnings after adjusting your SSL configuration in some way, these troubleshooting steps may help.
+
+1. Update trellis to include [`roots/trellis#630`](https://github.com/roots/trellis/pull/630)
+2. Set ssl `enabled: false` for affected sites in `group_vars/<environment>/wordpress_sites.yml`
+3. Run `ansible-playbook server.yml -e env=<environment> --tags wordpress`
+4. Reset ssl `enabled: true` for applicable sites in `group_vars/<environment>/wordpress_sites.yml`
+5. Run `ansible-playbook server.yml -e env=<environment> --tags letsencrypt`
+
 ### Manual
 
 This provider means you're providing both the SSL certificate and private key. This was the original method included in Trellis.
@@ -186,7 +183,7 @@ There are a few defaults set which you can override if need be:
 
 * `hsts_max_age` - how long the header lasts (default: `31536000` (1 year))
 * `hsts_include_subdomains` - also make *all* subdomains be served over HTTPS (default: `true`)
-* `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `true`)
+* `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `false`)
 
 These variables are configured on a site's `ssl` object:
 
@@ -205,7 +202,29 @@ example.com:
 
 ### Preload lists
 
-To take full advantage of the `preload` feature, you need to manually submit your site/domain to browser HSTS preload lists here: [https://hstspreload.appspot.com/](https://hstspreload.appspot.com/)
+What is HSTS Preloading?
+
+> HSTS Preloading is a mechanism whereby a list of hosts that wish to enforce the use of SSL/TLS on their site is built into a browser. This list is compiled by Google and is utilised by Chrome, Firefox and Safari. These sites do not depend on the issuing of the HSTS response header to enforce the policy, instead the browser is aleady aware that the host requires the use of SSL/TLS before any connection or communication even takes place. This removes the opportunity an attacker has to intercept and tamper with redirects that take place over HTTP. This isn't to say that the host needs to stop issuing the HSTS response header, this must be left in place for those browsers that don't use preloaded HSTS lists.
+>
+> - https://scotthelme.co.uk/hsts-preloading/
+
+Using preloading is a two-step process:
+
+1. Enable the `preload` option shown above by setting `hsts_preload: true`
+2. Submit your site/domain to the official browser preload list: [https://hstspreload.org/](https://hstspreload.org/)
+
+More information:
+
+- [https://hstspreload.org/](https://hstspreload.org/)
+- [HSTS Preloading](https://scotthelme.co.uk/hsts-preloading/)
+
+### `max-age`
+
+Trellis defaults to a long `max-age` of `31536000` seconds (1 year).
+
+You may want to test out HSTS with much shorter max-ages and then ramp up the value in stages until you're confident everything works.
+
+This deployment ramp up process is detailed here: https://hstspreload.org/#deployment-recommendations
 
 ### Disabling HSTS
 
@@ -221,6 +240,27 @@ example.com:
     provider: letsencrypt
     hsts_max_age: 0
 ```
+
+### `hsts_include_subdomains`
+
+HSTS should ideally be applied to all subdomains as well which is why `hsts_include_subdomains` defaults to `true`. This means that if you have HSTS enabled on `example.com`, then *all* its subdomains (`*.example.com`) will also be forced over HTTPS.
+
+If you have a WordPress site on `example.com` and you also serve another application from a subdomain such as `internalapp.example.com`, you may need to remove the "include subdomains" header option if it can't be served via HTTPS.
+
+```yaml
+# group_vars/production/wordpress_sites.yml (example)
+
+example.com:
+  # rest of site config
+  ssl:
+    enabled: true
+    provider: letsencrypt
+    hsts_max_age: 31536000
+    hsts_include_subdomains: false
+    hsts_preload: true
+```
+
+Note you should try very hard to support SSL/HTTPS on all subdomains. Only disable this option if you have no other options as a last resort.
 
 ## Performance
 

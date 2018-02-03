@@ -2,11 +2,11 @@
 ID: 6154
 post_title: Multisite
 author: Ben Word
-post_date: 2015-09-03 18:09:24
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/trellis/docs/multisite/
 published: true
+post_date: 2015-09-03 18:09:24
 ---
 Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` **before** provisioning your server:
 
@@ -14,14 +14,14 @@ Trellis assumes your WordPress configuration already has multisite set up. If no
 /* Multisite */
 define('WP_ALLOW_MULTISITE', true);
 define('MULTISITE', true);
-define('SUBDOMAIN_INSTALL', true); // Set to false if using subdirectories
+define('SUBDOMAIN_INSTALL', false); // Set to true if using subdomains
 define('DOMAIN_CURRENT_SITE', env('DOMAIN_CURRENT_SITE'));
-define('PATH_CURRENT_SITE', '/');
-define('SITE_ID_CURRENT_SITE', 1);
-define('BLOG_ID_CURRENT_SITE', 1);
+define('PATH_CURRENT_SITE', env('PATH_CURRENT_SITE') ?: '/');
+define('SITE_ID_CURRENT_SITE', env('SITE_ID_CURRENT_SITE') ?: 1);
+define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 ```
 
-You'll also need to edit the `wordpress_sites.yml` vars file and update the multisite settings under your environment directory (`group_vars/<environment>/wordpress_sites.yml`):
+You'll also need to edit the `_sites.yml` vars file and update the multisite settings under your environment directory (`group_vars/<environment>/wordpress_sites.yml`):
 
 ```yaml
 multisite:
@@ -29,20 +29,59 @@ multisite:
   subdomains: false   # Set to true if you're using a subdomain multisite install
 ```
 
-You'll also need to define the `env` dictionary for multisite installs with these three settings:
+You may also want to define the `env` dictionary for more multisite specific settings such as `DOMAIN_CURRENT_SITE` or `PATH_CURRENT_SITE`.
 
 ```yaml
 env:
-  domain_current_site: example.com
-  wp_home: http://example.com
-  wp_siteurl: http://example.com/wp
+  domain_current_site: store1.example.com
 ```
 
-Trellis automatically sets `wp_home` and `wp_siteurl` but with multisite they needs to be manually set.
+That `env` will be merged in with Trellis' defaults so you don't need to worry about re-defining all of the properties.
 
-## Subdomain installs and hosts
+Here's an example of a complete entry set up for multisite:
 
-Install the [Landrush](https://github.com/phinze/landrush) Vagrant plugin:
+```yaml
+# group_vars/production/wordpress_sites.yml
+wordpress_sites:
+  example.com:
+    site_hosts:
+      - canonical: example.com
+    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
+    admin_email: admin@example.com
+    multisite:
+      enabled: true
+      subdomains: true
+    ssl:
+      enabled: false
+    cache:
+      enabled: false
+    env:
+      domain_current_site: store1.example.com
+```
+
+After provisioning your remote server and deploying your sites, you'll need to install WordPress as a final step in your staging and production environments. SSH into your server as the `web` user with `ssh web@<domain>` and in the `/srv/www/<domain>/current/` directories run the following WP-CLI command to install WordPress:
+
+```
+wp core multisite-install --title="site title" --admin_user="username" --admin_password="password" --admin_email="you@example.com"
+```
+
+You may notice that your network's main site URLs contain `/wp/` before the post's or page's pathnames. This is a problem in WP core which occurs when WordPress is located in a subdirectory, as is the case with Bedrock. See issue [Bedrock issue #250](https://github.com/roots/bedrock/issues/250) for details, along with the site URL fix plugin in the [Multisite Fixes](https://github.com/felixarntz/multisite-fixes) plugin collection for a solution.
+
+If you use [Let's Encrypt](https://roots.io/trellis/docs/ssl/#lets-encrypt) as your SSL provider and your multisite install uses subdomains, currently you have to generate individual certificates for each of your subdomains, but this may change soon as Let's Encrypt will begin issuing [wildcard certificates in January of 2018](https://letsencrypt.org/2017/07/06/wildcard-certificates-coming-jan-2018.html). You can generate SSL certificates for your subdomains if you know these subdomains in advance while provisioning your server. To do this, define multiple `canonical` entries under `site_hosts` in your corresponding `wordpress_sites.yml` file like this:
+
+```yaml
+site_hosts:
+  - canonical: example.com
+    redirects:
+      - www.example.com
+  - canonical: subdomain.example.com
+    redirects:
+      - www.subdomain.example.com
+```
+
+## Subdomains locally
+
+For subdomains in development, you'll need DNS entries for every subdomain/host. The [Landrush](https://github.com/phinze/landrush) Vagrant plugin is how you can do this. Install it via:
 
 ```
 vagrant plugin install landrush
@@ -50,34 +89,14 @@ vagrant plugin install landrush
 
 Landrush spins up a small DNS server that allows us to use wildcard subdomains, a requirement for subdomain multisite installs.
 
-Make the following changes to your `Vagrantfile`:
+Some users may have external DNS issues when using Landrush. If you encounter this, add this to your `Vagrantfile`:
 
-```diff
-+ PRIVATE_IP = '192.168.50.5'
+```ruby
+config.landrush.guest_redirect_dns = false
 ```
 
-```diff
--  config.vm.network :private_network, ip: ip, hostsupdater: 'skip' 
-+  config.vm.network :private_network, ip: PRIVATE_IP, hostsupdater: 'skip'
-```
+See issue [#511](https://github.com/roots/trellis/issues/511) for more details.
 
-```diff
--  if Vagrant.has_plugin? 'vagrant-hostmanager'
--    config.hostsupdater.aliases = aliases
-+  if Vagrant.has_plugin? 'landrush'
-+    config.landrush.enabled = true
-+    config.landrush.tld = config.vm.hostname
-+
-+    hostnames.each do |host|
-+      config.landrush.host host, PRIVATE_IP
-+    end
-   else
--    puts 'vagrant-hostsupdater missing, please install the plugin:'
--    puts 'vagrant plugin install vagrant-hostsupdater'
-+    puts 'landrush missing, please install the plugin:'
-+    puts 'vagrant plugin install landrush'
-   end
-```
 
 ### Debugging Landrush
 
