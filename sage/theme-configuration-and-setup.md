@@ -9,33 +9,37 @@ permalink: >
   https://roots.io/sage/docs/theme-configuration-and-setup/
 published: true
 ---
-`lib/setup.php` is used to enable/disable theme features and set configuration values. The theme features that can be disabled include:
+`src/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
 
-Clean up from [Soil](/plugins/soil):
+## Stylesheets and scripts
 
-    add_theme_support('soil-clean-up');
+Manage your front-end theme assets from the `src/setup.php` file:
 
-Cleaner nav walker from [Soil](/plugins/soil):
+```php
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+}, 100);
+```
 
-    add_theme_support('soil-nav-walker');
+See [theme assets](/sage/docs/theme-development-and-building/#theme-assets) for more on how these assets are built. `asset_path` is a helper function that returns versioned asset filenames from the `dist/` directory.
 
-Relative URLs from [Soil](/plugins/soil):
+## Theme features
 
-    add_theme_support('soil-relative-urls');
+### Soil
 
-Nice search from [Soil](/plugins/soil):
+We recommend using the [Soil](/plugins/soil) Plugin with every WordPress install for additional features:
 
-    add_theme_support('soil-nice-search');
+* Load jQuery from the jQuery CDN*
+* Cleaner WordPress markup*
+* Cleaner HTML output of navigation menus*
+* Root relative URLs*
+* Nice search*
+* Google Analytics snippet from HTML5 Boilerplate
+* Move all JS to the footer
+* Disable trackbacks and pingbacks
 
-Enable loading jQuery from [Soil](/plugins/soil):
-
-    add_theme_support('soil-jquery-cdn');
-
-`lib/setup.php` is also used to register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup.
-
-### Translations
-
-The first part of the theme setup is making the theme translation available. Sage has [over 35 community translations](https://github.com/roots/sage-translations) available thanks to our contributors.
+<small>&lowast;If Soil is installed and activated on your WordPress install, Sage will enable these features by default.</small>
 
 ### Title tag support
 
@@ -49,9 +53,9 @@ Sage registers a navigation menu called Primary Navigation. Additional menus sho
 
 Post thumbnails are enabled with `add_theme_support('post-thumbnails')`, but they aren't output on any of the default templates. Add custom post thumbnail sizes with `add_image_size()`.
 
-### Post formats
+### HTML5 markup
 
-Some WordPress post formats are enabled by default, but Sage doesn't provide any styling or templates for different post formats.
+Sage enables HTML5 markup for captions, comment forms, comment lists, galleries, and the search form.
 
 ### Editor stylesheet
 
@@ -60,3 +64,37 @@ The TinyMCE editor in WordPress allows loading a custom stylesheet which is regi
 ### Register sidebars
 
 Sage registers two sidebars by default: Primary & Footer. Add additional sidebars with `register_sidebar()`.
+
+## Theme structure
+
+```shell
+themes/your-theme-name/   # → Root of your Sage based theme
+├── app/                  # → Theme PHP
+│   ├── lib/Sage/         # → Blade implementation, asset manifest
+│   ├── admin.php         # → Theme customizer setup
+│   ├── filters.php       # → Theme filters
+│   ├── helpers.php       # → Helper functions
+│   └── setup.php         # → Theme setup
+├── composer.json         # → Autoloading for `app/` files
+├── composer.lock         # → Composer lock file (never edit)
+├── dist/                 # → Built theme assets (never edit)
+├── node_modules/         # → Node.js packages (never edit)
+├── package.json          # → Node.js dependencies and scripts
+├── resources/            # → Theme assets and templates
+│   ├── assets/           # → Front-end assets
+│   │   ├── config.json   # → Settings for compiled assets
+│   │   ├── build/        # → Webpack and ESLint config
+│   │   ├── fonts/        # → Theme fonts
+│   │   ├── images/       # → Theme images
+│   │   ├── scripts/      # → Theme JS
+│   │   └── styles/       # → Theme stylesheets
+│   ├── controllers/      # → Controller files
+│   ├── functions.php     # → Composer autoloader, theme includes
+│   ├── index.php         # → Never manually edit
+│   ├── screenshot.png    # → Theme screenshot for WP admin
+│   ├── style.css         # → Theme meta information
+│   └── views/            # → Theme templates
+│       ├── layouts/      # → Base templates
+│       └── partials/     # → Partial templates
+└── vendor/               # → Composer packages (never edit)
+```

@@ -12,7 +12,7 @@ post_date: 2015-09-01 19:14:17
 After reading through this guide, you will:
 
 * Understand the Sage Wrapper and recognize how it extends and complements the WordPress template hierarchy.
-* Know what is meant by the DRY Principle, why being DRY beats being WET, and see how most WordPress themes are WET.
+* Know what is meant by the DRY Principle, why being DRY bests being WET, and see how most WordPress themes are WET.
 * Be able to filter the Sage Wrapper and create a new base template for a Custom Post Type.
 
 ## Template Hierarchy
