@@ -2,12 +2,12 @@
 ID: 5322
 post_title: Theme Development and Building
 author: Ben Word
-post_date: 2015-09-01 18:19:21
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/sage/docs/theme-development-and-building/
 published: true
+post_date: 2015-09-01 18:19:21
 ---
 <p class="lead">These are the primary projects that make up the Sage workflow:</p>
 
@@ -163,17 +163,4 @@ Example of how to add 3rd party packages* and have them included in the theme:
 
 ### Additional examples
 
-#### Font Awesome
-
-```sh
-# @ themes/your-theme-name/
-$ yarn add font-awesome
-```
-
-```scss
-/* sage/assets/styles/main.scss */
-@import "common/variables";
-
-// Import Font Awesome from node_modules
-@import "~font-awesome/scss/font-awesome.scss";
-```
+* [Hamburgers](https://discourse.roots.io/t/how-to-using-hamburgers-package-in-sage/11543)
