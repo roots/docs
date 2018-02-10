@@ -2,18 +2,18 @@
 ID: 6134
 post_title: Theme Configuration and Setup
 author: Ben Word
-post_date: 2015-09-01 19:02:19
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/sage/docs/theme-configuration-and-setup/
 published: true
+post_date: 2015-09-01 19:02:19
 ---
-`src/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
+`app/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
 
 ## Stylesheets and scripts
 
-Manage your front-end theme assets from the `src/setup.php` file:
+Manage your front-end theme assets from the `app/setup.php` file:
 
 ```php
 add_action('wp_enqueue_scripts', function () {
