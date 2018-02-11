@@ -70,7 +70,7 @@ To create additional CSS or JS files, you'll need to:
     }
     ```
 
-3. Enqueue the new file in `src/setup.php` In the example below we've added a conditional to only enqueue `scripts/checkout.js` on the checkout page:
+3. Enqueue the new file in `app/setup.php` In the example below we've added a conditional to only enqueue `scripts/checkout.js` on the checkout page:
 
     ```php
     /**
