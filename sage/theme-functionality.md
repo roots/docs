@@ -2,29 +2,27 @@
 ID: 6135
 post_title: Theme Functionality
 author: Ben Word
-post_date: 2015-09-01 19:05:16
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/sage/docs/theme-functionality/
 published: true
+post_date: 2015-09-01 19:05:16
 ---
-`functions.php` is used to include files from the `src/` directory which contains all of the theme functionality. Don’t place any custom code in this file — use it only for includes.
-
-Since Sage is a starter theme, it’s okay for you to modify files within `src/` to meet the needs of the site you’re building.
+The `app/` directory contains all of the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
 
 The PHP code in Sage is namespaced, so make sure to [use namespaced functions and classes](https://roots.io/upping-php-requirements-in-your-wordpress-themes-and-plugins/).
 
 <dl class="dl-horizontal">
-  <dt><code>src/setup.php</code></dt>
+  <dt><code>app/setup.php</code></dt>
   <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars. See <a href="/sage/docs/theme-configuration-and-setup/">Theme Configuration and Setup</a>.</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>src/admin.php</code></dt>
+  <dt><code>app/admin.php</code></dt>
   <dd>Placeholder code for the WordPress theme customizer. You can also use this file for anything related to the WordPress admin.</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>src/filters.php</code></dt>
+  <dt><code>app/filters.php</code></dt>
   <dd>
     <p>Add WordPress filters in this file. Filters included by default:</p>
     <ul>
@@ -35,7 +33,7 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
     </ul>
   </dd>
   <dl class="dl-horizontal">
-    <dt><code>src/helpers.php</code></dt>
+    <dt><code>app/helpers.php</code></dt>
     <dd>
       <p>Helper functions used throughout the theme:</p>
       <ul>
@@ -44,9 +42,5 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
         <li><code>title</code> &mdash; used to return page titles</li>
       </ul>
     </dd>
-  </dl>
-  <dl class="dl-horizontal">
-    <dt><code>src/lib/</code></dt>
-    <dd>This directory contains the Blade implementation code along with the code used to parse <code>dist/assets.json</code> and enqueue assets with the versioned filenames</dd>
   </dl>
 </dl>
