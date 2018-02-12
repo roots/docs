@@ -40,6 +40,10 @@ post_date: 2015-09-01 19:30:13
 
 ## Extending Sage
 
+### Sage 9
+
+* [Sage + PurgeCSS/UnCSS](https://discourse.roots.io/t/removing-unused-css-with-purgecss-uncss/11586)
+
 ### Sage 8
 
 * [Sage + UnCSS](https://discourse.roots.io/t/sage-uncss/5015) &mdash; UnCSS is a tool that removes unused CSS from your stylesheets
