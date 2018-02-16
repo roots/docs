@@ -224,7 +224,7 @@ Trellis defaults to a long `max-age` of `31536000` seconds (1 year).
 
 You may want to test out HSTS with much shorter max-ages and then ramp up the value in stages until you're confident everything works.
 
-This deployment ramp up process is detailed here: https://hstspreload.org/#deployment-recommendations
+This deployment ramp up process is detailed here: [https://hstspreload.org/#deployment-recommendations](https://hstspreload.org/#deployment-recommendations)
 
 ### Disabling HSTS
 
