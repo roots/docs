@@ -161,4 +161,6 @@ Example of how to add 3rd party packages* and have them included in the theme:
 
 ### Additional examples
 
+* [Animate.css](https://discourse.roots.io/t/how-to-using-animate-css-in-sage/11660)
 * [Hamburgers](https://discourse.roots.io/t/how-to-using-hamburgers-package-in-sage/11543)
+* [js-cookie](https://discourse.roots.io/t/how-to-js-cookie-and-sage/11662)
