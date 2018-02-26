@@ -48,11 +48,11 @@ $ mkdir example.com && cd example.com
 ```
 2. Clone Trellis:
 ```plain
-$ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
+$ git clone --depth=1 https://github.com/roots/trellis && rm -rf trellis/.git
 ```
 3. Clone Bedrock:
 ```plain
-$ git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git
+$ git clone --depth=1 https://github.com/roots/bedrock site && rm -rf site/.git
 ```
 
 Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions.
