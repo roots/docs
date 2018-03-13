@@ -21,3 +21,4 @@ Issues with extensions should be opened in their respective repositories.
 * [trellis-db-push-and-pull](https://github.com/hamedb89/trellis-db-push-and-pull) — Push and pull databases with Trellis and Ansible playbooks
 * [vagrant-trellis-sequel](https://www.typist.tech/projects/vagrant-trellis-sequel) — Open Trellis databases in Sequel Pro with a single command
 * [vagrant-trellis-cert](https://www.typist.tech/projects/vagrant-trellis-cert) — Trust all Trellis self-signed certificates with single command
+* [trellis-redis](https://github.com/jasonsbarr/trellis-redis) — Ansible playbook to install Redis on Trellis servers
