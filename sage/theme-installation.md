@@ -9,13 +9,12 @@ permalink: >
 published: true
 post_date: 2015-08-29 18:09:28
 ---
-
 Install Sage by copying the project into a new folder within your WordPress themes directory.
 
 Make sure all dependencies have been installed before moving on:
 
 * [WordPress](https://wordpress.org/) >= 4.7
-* [PHP](http://php.net/manual/en/install.php) >= 7.0 (with [`php-mbstring`](http://php.net/manual/en/book.mbstring.php) enabled)
+* [PHP](http://php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](http://php.net/manual/en/book.mbstring.php) enabled)
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 6.9.x
 * [Yarn](https://yarnpkg.com/en/docs/install)
