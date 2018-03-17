@@ -40,6 +40,15 @@ trellis/
       rewrites.conf.j2
 ```
 
+You could also have an "all" directory, which would apply conf to all sites:
+
+```
+trellis/
+  nginx-includes/
+    all/
+      rewrites.conf.j2
+```
+
 The above directory structure would be templated to the remote server as follows:
 
 ```
