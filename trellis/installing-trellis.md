@@ -44,15 +44,33 @@ Pick a descriptive name for your project and use it instead of the default `exam
 
 1. Create a new project directory:
 ```plain
-$ mkdir example.com && cd example.com
+mkdir example.com && cd example.com
 ```
-2. Clone Trellis:
+2. Create an empty repo (on Github/Bitbucket/Gitlab/etc) and keep a note of the "remote" URL: 
 ```plain
-$ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
+git@github.com:USERNAME/example-com-trellis.git
 ```
-3. Clone Bedrock:
+3. Clone Trellis:
 ```plain
-$ git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git
+git clone --depth=1 git@github.com:roots/trellis.git
+git remote set-url origin git@github.com:USERNAME/example-com-trellis.git
+git remote set-url roots git@github.com:roots/trellis.git
+```
+4. Create another empty repo for Bedrock: 
+```plain
+git@github.com:USERNAME/example-com-bedrock.git
+```
+5. Clone Trellis:
+```plain
+git clone --depth=1 git@github.com:roots/bedrock.git
+git remote set-url origin git@github.com:USERNAME/example-com-bedrock.git
+git remote set-url roots git@github.com:roots/bedrock.git
+```
+
+Now any time you'd like to update trellis/bedrock:
+```plain
+git fetch
+git rebase roots/master
 ```
 
 Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions.
