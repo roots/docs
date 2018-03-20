@@ -70,7 +70,14 @@ git remote set-url roots git@github.com:roots/bedrock.git
 Now any time you'd like to update trellis/bedrock:
 ```plain
 git fetch
-git rebase roots/master
+git rebase --committer-date-is-author-date roots/master
 ```
+
+Note:
+`--committer-date-is-author-date` goes around git's annoying rewriting of commit dates during a rebase.
+
+Bonus:
+
+If you imagine using Trellis for multiple projects, you should consider forking trellis. Creating a project-template branch would allow you to make general customizations to trellis instead of applying them manually to each project. The only change to your setup would be to set your example-com-trellis upstream/remote as `USERNAME/trellis` instead of `roots/trellis`. To keep all of your repos up-to-date with trellis you would run `git rebase --committer-date-is-author-date roots/trellis` in your `USERNAME/trellis` repo.
 
 Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions.
