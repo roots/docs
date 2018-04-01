@@ -70,7 +70,7 @@ Sage registers two sidebars by default: Primary & Footer. Add additional sidebar
 ```shell
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
-│   ├── lib/Sage/         # → Blade implementation, asset manifest
+│   ├── controllers/      # → Controller files
 │   ├── admin.php         # → Theme customizer setup
 │   ├── filters.php       # → Theme filters
 │   ├── helpers.php       # → Helper functions
@@ -88,7 +88,6 @@ themes/your-theme-name/   # → Root of your Sage based theme
 │   │   ├── images/       # → Theme images
 │   │   ├── scripts/      # → Theme JS
 │   │   └── styles/       # → Theme stylesheets
-│   ├── controllers/      # → Controller files
 │   ├── functions.php     # → Composer autoloader, theme includes
 │   ├── index.php         # → Never manually edit
 │   ├── screenshot.png    # → Theme screenshot for WP admin
