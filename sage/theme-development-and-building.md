@@ -17,7 +17,7 @@ post_date: 2015-09-01 18:19:21
 <li><h4><a href="http://www.browsersync.io">Browsersync</a></h4><p><small>Browsersync keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS.</small></p></li>
 </ul>
 
-<div class="cta-product cta-product-sage well well-sage module"><a href="https://roots.io/books/theme-development-with-sage/" class="media"><div class="media-left"><img class="media-object" src="/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></div><div class="media-body"><h4><span class="badge bg-white text-sage">Get the book</span> <br> <span class="text-sage">Theme Development with Sage</span></h4><p class="lead">A step-by-step guide to setting up a custom Sage starter theme.</p><p class="visible-md visible-lg">Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.</p><p class="text-right"><button class="btn btn-primary">Buy</button></p></div></a></div>
+<div class="cta-product"><a href="https://roots.io/books/theme-development-with-sage/" class="row text-dark"><div class="book-cover col-sm-6"><p class="text-center"><img src="http://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></p></div><div class="col-sm-6"><h4 class="mt-sm-3"><span class="badge bg-white mb-2">Get the book</span> <br> Theme Development with Sage</h4><p class="lead">A step-by-step guide to setting up a custom Sage starter theme.</p><p class="d-none d-lg-block">Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.</p><p><button class="btn btn-primary">Buy the Sage book</button></p></div></a></div>
 
 ## Available build commands
 
