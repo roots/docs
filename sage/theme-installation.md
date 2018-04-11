@@ -33,11 +33,11 @@ From the command line on your host machine (not on your Vagrant box), navigate t
 $ yarn
 ```
 
-You now have all the necessary dependencies to run the [build process](/sage/theme-development-and-building/#available-build-commands).
+You now have all the necessary dependencies to run the [build process](/sage/docs/theme-development-and-building/#available-build-commands).
 
 ### Getting ready for Browsersync
 
-If you later want to use Browsersync during `yarn run start` you need to update `devUrl` at the bottom of `assets/config.json` to reflect your local development hostname.
+If you later want to use Browsersync during `yarn run start` you need to update `devUrl` at the bottom of `resources/assets/config.json` to reflect your local development hostname.
 
 For example, if your local development URL is `https://project-name.test` you would update the file to read:
 ```json
