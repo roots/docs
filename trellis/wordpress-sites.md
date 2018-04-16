@@ -46,7 +46,7 @@ Nested under the name/key are the site's variables which are for that site only.
 
 ## Passwords/secrets
 
-When you add/edit a site in`wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](https://roots.io/trellis/docs/vault/) for more information on this.
+When you add/edit a site in `wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](https://roots.io/trellis/docs/vault/) for more information on this.
 
 ```yaml
 #  group_vars/development/vault.yml
