@@ -42,7 +42,7 @@ post_date: 2015-09-01 19:30:13
 
 ### Sage 9
 
-* [Sage + PurgeCSS/UnCSS](https://discourse.roots.io/t/removing-unused-css-with-purgecss-uncss/11586)
+* [Sage + PurgeCSS/UnCSS](https://roots.io/guides/removing-unused-css-with-purgecss-uncss-in-sage/)
 
 ### Sage 8
 
