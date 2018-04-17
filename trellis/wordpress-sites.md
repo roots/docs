@@ -24,7 +24,7 @@ There are two components and places to configure sites:
 
 `wordpress_sites` is a top-level dictionary used to define all the sites you want. Here's an absolute bare-minimum site as an example for development:
 
-```yaml
+```yml
 # group_vars/development/wordpress_sites.yml
 wordpress_sites:
   example.com:
@@ -48,7 +48,7 @@ Nested under the name/key are the site's variables which are for that site only.
 
 When you add/edit a site in `wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](https://roots.io/trellis/docs/vault/) for more information on this.
 
-```yaml
+```yml
 #  group_vars/development/vault.yml
 vault_wordpress_sites:
   example.com:
