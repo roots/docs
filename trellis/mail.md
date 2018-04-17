@@ -2,11 +2,11 @@
 ID: 6155
 post_title: Mail
 author: Ben Word
-post_date: 2015-09-03 18:10:25
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/trellis/docs/mail/
 published: true
+post_date: 2015-09-03 18:10:25
 ---
 Trellis' mail functionality is separated between development and staging/production since you usually want different behaviour out of them.
 
@@ -20,7 +20,7 @@ Enter [MailHog](https://github.com/mailhog/MailHog). It’s a simple tool which 
 
 ![](https://roots.io/app/uploads/trellis-mailhog-preview.png)
 
-MailHog is automatically set up in development. You can access it at `http://yourdevelopmentdomain.dev:8025` (replacing the domain with yours that you set up for the WP site host).
+MailHog is automatically set up in development. You can access it at `http://yourdevelopmentdomain.test:8025` (replacing the domain with yours that you set up for the WP site host).
 
 Note that mail will be automatically captured but you won't ever see it unless you access the MailHog UI at the address above.
 
