@@ -67,7 +67,7 @@ For a complete working example of a real-life WordPress site, you can view the c
 
 * `site_hosts` - List of hosts that Nginx will listen on. At least one is required. Each host item must specify a `canonical` host and may optionally specify a list of corresponding `redirects` (hosts). Remember to set up DNS for every host listed. (*required*)
 
-```
+```yml
 # minimum required
 example.com:
   site_hosts:
