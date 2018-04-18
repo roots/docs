@@ -25,3 +25,24 @@ Note that each WP site you configured is synced between your local machine (the 
 Mounting an encrypted folder is not possible with Trellis due to an issue with NFS. 
 
 Windows users have a slightly different workflow. See the [docs](https://roots.io/trellis/docs/windows/).
+
+## Re-provisioning
+
+Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision the VM again to apply the changes:
+
+```bash
+vagrant reload --provision
+```
+
+You can also provision with specific tags to only run the relevant roles:
+
+```bash
+SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
+```
+
+Notes on the commands: 
+
+* `SKIP_GALAXY` saves some time because you already have those roles installed
+* `ANSIBLE_TAGS` runs only the relevant roles
+* `reload` is to ensure that vagrant has synced up the two bedrock `site` directories
+* `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
