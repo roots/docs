@@ -2,12 +2,12 @@
 ID: 7765
 post_title: Remote Server Setup
 author: Ben Word
-post_date: 2015-10-15 12:27:00
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/trellis/docs/remote-server-setup/
 published: true
+post_date: 2015-10-15 12:27:00
 ---
 Setting up remote servers (staging/production) is similar to the [local development setup](https://roots.io/trellis/docs/local-development-setup/) with a couple differences.
 
@@ -59,3 +59,17 @@ Now that you have a working Ubuntu 16.04 server that you can easily SSH into, yo
 6. Run `ansible-playbook server.yml -e env=<environment>` from your local machine (Ansible connects to your remote server via SSH).
 
 This leaves you with a *provisioned* server. The next step is to [deploy](https://roots.io/trellis/docs/deploys/) your site.
+
+## Re-provisioning
+
+Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision your remote servers again to apply the changes:
+
+```bash
+ansible-playbook server.yml -e env=<environment>
+```
+
+You can also provision with specific tags to only run the relevant roles:
+
+```bash
+ansible-playbook server.yml -e env=<environment> --tags=users
+```
