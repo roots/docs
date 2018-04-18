@@ -2,12 +2,12 @@
 ID: 6138
 post_title: Theme Deployment
 author: Ben Word
-post_date: 2015-09-01 19:29:19
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/sage/docs/theme-deployment/
 published: true
+post_date: 2015-09-01 19:29:19
 ---
 To deploy a Sage theme you'll need to make sure two things are covered:
 
