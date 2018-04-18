@@ -24,7 +24,11 @@ Note that each WP site you configured is synced between your local machine (the 
 
 Mounting an encrypted folder is not possible with Trellis due to an issue with NFS. 
 
-Windows users have a slightly different workflow. See the [docs](https://roots.io/trellis/docs/windows/).
+Windows users have a slightly different workflow. See the [Windows docs](https://roots.io/trellis/docs/windows/).
+
+## WordPress installation
+
+Trellis installs WordPress on your first `vagrant up` with `admin` as the default user. You can override this by defining `admin_user`, as noted in the [WordPress sites options](https://roots.io/trellis/docs/wordpress-sites/#options).
 
 ## Re-provisioning
 
