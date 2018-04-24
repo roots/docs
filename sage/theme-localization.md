@@ -1,11 +1,11 @@
 ---
 ID: 26300
-post_title: Theme Translation
+post_title: Theme Localization
 author: Ben Word
 post_excerpt: ""
 layout: doc
 permalink: >
-  https://roots.io/sage/docs/theme-translation/
+  https://roots.io/sage/docs/theme-localization/
 published: true
 post_date: 2018-04-24 10:47:48
 ---
