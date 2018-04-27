@@ -18,7 +18,7 @@ Dealing with emails in development is never fun. The two common solutions are:
 
 Enter [MailHog](https://github.com/mailhog/MailHog). It’s a simple tool which captures outgoing email and lets you view them from a web UI. And after that you can optionally "release" them which would actually send the email.
 
-![](https://roots.io/app/uploads/trellis-mailhog-preview.png)
+![](https://cdn.roots.io/app/uploads/trellis-mailhog-preview.png)
 
 MailHog is automatically set up in development. You can access it at `http://yourdevelopmentdomain.test:8025` (replacing the domain with yours that you set up for the WP site host).
 
@@ -32,7 +32,7 @@ Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com
 
 If your WordPress site has SSL enabled with HSTS ([currently a default](https://github.com/roots/trellis/issues/741)), you'll need to disable HSTS in order to reach the MailHog site. In `group_vars/development/wordpress_sites.yml`:
 
-```yml
+```
 ssl:
   enabled: true
   hsts_max_age: 0
