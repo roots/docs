@@ -32,7 +32,7 @@ Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com
 
 If your WordPress site has SSL enabled with HSTS ([currently a default](https://github.com/roots/trellis/issues/741)), you'll need to disable HSTS in order to reach the MailHog site. In `group_vars/development/wordpress_sites.yml`:
 
-```
+```yml
 ssl:
   enabled: true
   hsts_max_age: 0
