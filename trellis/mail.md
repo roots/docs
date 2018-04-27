@@ -28,6 +28,18 @@ Another benefit of using MailHog is that if are using real SMTP credentials in d
 
 Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
 
+### MailHog and SSL with HSTS
+
+If your WordPress site has SSL enabled with HSTS ([currently a default](https://github.com/roots/trellis/issues/741)), you'll need to disable HSTS in order to reach the MailHog site. In `group_vars/development/wordpress_sites.yml`:
+
+```
+ssl:
+  enabled: true
+  hsts_max_age: 0
+```
+
+Then reprovision your Vagrant box in order to reach MailHog at `http://yourdevelopmentdomain.test:8025`.
+
 ## Remote servers (staging/production)
 
 Outgoing mail is done by the sSMTP role. sSMTP is a lightweight SMTP mail relay basically. In order to send external emails, you'll need to configure an SMTP server.
