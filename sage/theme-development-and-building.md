@@ -23,9 +23,9 @@ post_date: 2015-09-01 18:19:21
 
 Run these script commands within your theme directory:
 
-* `yarn run build` — Compile and optimize the files in your assets directory
-* `yarn run build:production` — Compile assets for production
-* `yarn run start` — Compile assets when file changes are made, start Browersync session
+* `yarn build` — Compile and optimize the files in your assets directory
+* `yarn build:production` — Compile assets for production
+* `yarn start` — Compile assets when file changes are made, start Browersync session
 
 ## Theme assets
 
@@ -90,7 +90,7 @@ To create additional CSS or JS files, you'll need to:
 
     ```sh
     # web/app/themes/your-theme-name/
-    $ yarn run build
+    $ yarn build
     ```
 
 ### Images in template files
@@ -218,7 +218,7 @@ As an example, let's add a route that runs when a page with the default template
     });
     ```
 
-After rebuilding your site's assets (`yarn run build`), when you load a page with the default template, your new route should run and you should see 'This is a page with the default template.' printed in your browser's console.
+After rebuilding your site's assets (`yarn build`), when you load a page with the default template, your new route should run and you should see 'This is a page with the default template.' printed in your browser's console.
 
 ## 3rd party packages
 
@@ -257,9 +257,9 @@ Example of how to add 3rd party packages* and have them included in the theme:
     @import "~slick-carousel/slick/slick-theme.scss";
     ```
 
-3. After running `yarn run build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
+3. After running `yarn build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
 
-4. Running `yarn run build:production` will fail if 3rd party package's relative paths are not configured before imported. In example to load Slick Carousel's paths add the following line in your common/_variables.scss file:
+4. Running `yarn build:production` will fail if 3rd party package's relative paths are not configured before imported. In example to load Slick Carousel's paths add the following line in your common/_variables.scss file:
 
     ```scss
     /* sage/assets/styles/common/_variables.scss */
