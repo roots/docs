@@ -109,6 +109,117 @@ CSS files and images are sibling folders, so you can reference images in CSS:
 }
 ```
 
+## JavaScript DOM-based routing
+
+Sage provides DOM-based routing for your JavaScript, enabling you to run specific scripts on specific pages. Routes (and the scripts they include) run when the route name matches a class on the `body` element of the current page.
+
+### How it works
+
+Routes are configured in `assets/scripts/main.js`:
+
+```js
+// import local dependencies
+import Router from './util/Router';
+import common from './routes/common';
+import home from './routes/home';
+import aboutUs from './routes/about';
+
+/** Populate Router instance with DOM routes */
+const routes = new Router({
+  // All pages
+  common,
+  // Home page
+  home,
+  // About Us page, note the change from about-us to aboutUs.
+  aboutUs
+});
+
+// Load Events
+jQuery(document).ready(() => routes.loadEvents());
+```
+
+Out of the box, it comes with three routes:
+
+* common, which fires on all pages
+* home, which fires on the home page (when the body has the class `home`)
+* aboutUs, which would fire on a page named "About Us" (when the page has the body class `about-us`)
+  * Note the syntax change from `about-us` (the HTML body class) to `aboutUs` (the JS route name)
+  * Note also that the route's file name (`about`) doesn't have to match the body class. What's important is that the name used for the import that is registered with the router (`aboutUs`) matches.
+
+Every route is defined in its own file in `assets/scripts/routes/`.
+
+Each route includes two methods: `init()` and `finalize()`:
+
+```js
+export default {
+  init() {
+    // scripts here run on the DOM load event
+  },
+  finalize() {
+    // scripts here fire after init() runs
+  }
+};
+```
+
+The order of execution for routes is:
+
+1.  The `init` scripts in the `common` route (after the browser's DOM load event)
+2.  For each route matching the loaded page (e.g., `home`), the `init` scripts and then the `finalize` scripts
+3.  The `finalize` scripts in the `common` route
+
+More than one page-specific route might can a given page. For example, if you register both a route matching all single posts (`singlePost`) and a route for single posts with the video post format (`singleFormatVideo`), both would fire when a video post is viewed.
+
+To add scripts to an existing route, add the desired JavaScript within the route's `init()` or `finalize()` methods. For example, the `init()` method on the `common` route might contain the code needed to toggle your site's menu when its icon is clicked.
+
+Because all routes run after the browser has fired the DOM load event, you do not need to wrap the code in your routes within an event handler that watches for that event (e.g., `jQuery(document).ready()`).
+
+### Adding a new route
+
+As an example, let's add a route that runs when a page with the default template is viewed. The class for this page is `page-template-default`, so our route will be named `pageTemplateDefault`.
+
+1.  Create the file `assets/scripts/routes/pageTemplateDefault.js` with the following contents:
+
+    ```js
+    export default {
+      init() {
+        // scripts here run on the DOM load event
+        console.log('This is a page with the default template.');
+      },
+      finalize() {
+        // scripts here fire after init() runs
+      }
+    };
+    ```
+
+2.  Import your new route in `main.js`:
+
+    ```js
+    // import local dependencies
+    import Router from './util/Router';
+    import common from './routes/common';
+    import home from './routes/home';
+    import aboutUs from './routes/about';
+    import pageTemplateDefault from './routes/pageTemplateDefault';
+    ```
+
+3.  Also in `main.js`, register your route:
+
+    ```js
+    /** Populate Router instance with DOM routes */
+    const routes = new Router({
+      // All pages
+      common,
+      // Home page
+      home,
+      // About Us page, note the change from about-us to aboutUs.
+      aboutUs,
+      // default page template
+      pageTemplateDefault
+    });
+    ```
+
+After rebuilding your site's assets (`yarn run build`), when you load a page with the default template, your new route should run and you should see 'This is a page with the default template.' printed in your browser's console.
+
 ## 3rd party packages
 
 Example of how to add 3rd party packages* and have them included in the theme:
