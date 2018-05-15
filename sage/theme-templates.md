@@ -9,8 +9,6 @@ permalink: >
 published: true
 post_date: 2015-09-01 19:12:53
 ---
-The markup in Sage is based on [HTML5 Boilerplate](http://html5boilerplate.com/) with ARIA roles for accessibility and the hNews microformat for posts.
-
 The `resources/views/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
 
 <dl class="dl-horizontal">
