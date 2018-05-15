@@ -12,14 +12,20 @@ post_date: 2015-09-01 19:29:19
 To deploy a Sage theme you'll need to make sure two things are covered:
 
 1. Run `composer install` from the theme directory on the remote server
-2. Copy over production theme assets
+2. Copy over production theme assets (the `dist/ folder)
 
-## Generating production ready theme assets
+Generate production ready assets with `yarn build:production`, which will build your assets with versioned filenames to the `dist/` folder.
 
-Generate production ready assets with `yarn build:production`, which will build your assets with versioned filenames.
+## Deploying Sage with Trellis
 
-If you use [Trellis](/trellis/), you can build your assets locally, then copy them to the remote server during deployment. [See the `build-before.yml` example hook](https://github.com/roots/trellis/blob/master/deploy-hooks/build-before.yml) in Trellis.
+If you use [Trellis](/trellis/), you can build your assets locally (or on a CI server), then copy them to the remote server during deployment. [See the `build-before.yml` example hook](https://github.com/roots/trellis/blob/master/deploy-hooks/build-before.yml) in Trellis.
 
-### Additional resources
+## Deploying Sage on Kinsta
 
-[Build Steps and Deployment](http://austinpray.com/ops/2015/01/15/build-steps-and-deployment.html) by Austin Pray
+[Kinsta supports Bedrock and Trellis](https://kinsta.com/blog/bedrock-trellis/?kaid=OFDHAJIXUDIV), so deploying Sage with Trellis on [Kinsta](?kaid=OFDHAJIXUDIV) is possible by following a few extra steps. 
+
+## Deploying Sage on WP Engine
+
+The [Sage 9 on WP Engine](https://discourse.roots.io/t/sage-9-on-wpengine/9090) thread on Roots Discourse covers how to work around limitations on WP Engine to deploy your theme.
+
+We do not officially recommend or support this and suggest using a WordPress host that supports SSH, Git, Composer, and the latest PHP versions.
