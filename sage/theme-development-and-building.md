@@ -27,6 +27,8 @@ Run these script commands within your theme directory:
 * `yarn build:production` — Compile assets for production
 * `yarn start` — Compile assets when file changes are made, start Browersync session
 
+⚠️ **If you are using the Bootstrap navbar and run into issues with missing styles after a production build, see [roots/sage#2017](https://github.com/roots/sage/issues/2017) and the [recommended fix](https://github.com/roots/sage/issues/2017#issuecomment-361054297).**
+
 ## Theme assets
 
 The `config.json` file in the `assets` directory controls the different theme assets that get built. By default, Sage builds two JS files and one CSS file:
