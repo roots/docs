@@ -9,7 +9,7 @@ permalink: >
 published: true
 post_date: 2015-09-01 19:14:17
 ---
-Sage uses [Laravel's Blade](https://laravel.com/docs/5.5/blade) templating engine.
+Sage uses [Laravel's Blade](https://laravel.com/docs/5.6/blade) templating engine.
 
 ## Passing data to templates
 
@@ -22,6 +22,8 @@ add_filter('sage/template/page/data', function (array $data) {
     return $data;
 });
 ```
+
+[Controller](https://github.com/soberwp/controller) can also be used to pass data to templates.
 
 ## WP-CLI utility
 
