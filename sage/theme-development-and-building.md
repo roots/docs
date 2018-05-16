@@ -261,7 +261,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
 
 3. After running `yarn build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
 
-4. Running `yarn build:production` will fail if 3rd party package's relative paths are not configured before imported. In example to load Slick Carousel's paths add the following line in your common/_variables.scss file:
+4. Running `yarn build:production` will fail if 3rd party package's relative paths are not configured before imported. For example, to load Slick Carousel's paths add the following line in your common/_variables.scss file:
 
     ```scss
     /* sage/assets/styles/common/_variables.scss */
