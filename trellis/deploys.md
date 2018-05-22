@@ -2,11 +2,11 @@
 ID: 7587
 post_title: Deploys
 author: Scott Walkinshaw
-post_date: 2015-10-09 17:53:28
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/trellis/docs/deploys/
 published: true
+post_date: 2015-10-09 17:53:28
 ---
 Trellis offers one-command deploys out of the box with little configuration needed.
 
@@ -80,7 +80,7 @@ By default, Trellis defines and uses three hooks:
 
 The default deploy hooks are defined in `roles/deploy/defaults/main.yml`:
 
-```yml
+```yaml
 deploy_build_before:
   - "{{ playbook_dir }}/deploy-hooks/build-before.yml"
 
@@ -103,7 +103,7 @@ To use a deploy hook, define or override the hook variable somewhere within your
 
 Each deploy hook variable is a list of task files to be included and run when the hook fires. We suggest keeping your hooked task files in a top level `deploy-hooks` folder. Here are some example hook variable definitions:
 
-```yml
+```yaml
 # Defining a hook that Trellis does not already use by default
 deploy_before:
   - "{{ playbook_dir }}/deploy-hooks/deploy-before.yml"
@@ -151,12 +151,12 @@ wordpress_sites:
 ```
 
 Deploy command:
-```
+```bash
 ./bin/deploy.sh production mysite.com
 ```
 
 Or alternatively:
-```
+```bash
 ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ```
 
