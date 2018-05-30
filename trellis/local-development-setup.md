@@ -16,6 +16,10 @@ Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our 
 3. Optionally configure the IP address at the top of the `vagrant.default.yml` to allow for multiple boxes to be run concurrently (default is `192.168.50.5`).
 4. Run `vagrant up` (from your trellis directory, usually the `trellis/` subdirectory of your project).
 
+<div class="alert alert-warning" role="alert">
+<p class="mb-0">⚠️ <code>vagrant up</code> will fail <a href="https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes">if you are using encrypted folders/hard drives</a></b></p>
+</div>
+
 Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a server running and a WordPress site automatically installed and configured.
 
 To access the VM, run `vagrant ssh`. Sites can be found at `/srv/www/<site name>`. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
