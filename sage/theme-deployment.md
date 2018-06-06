@@ -12,7 +12,7 @@ post_date: 2015-09-01 19:29:19
 To deploy a Sage theme you'll need to make sure two things are covered:
 
 1. Run `composer install` from the theme directory on the remote server
-2. Copy over production theme assets (the `dist/ folder)
+2. Copy over production theme assets (the `dist/` folder)
 
 Generate production ready assets with `yarn build:production`, which will build your assets with versioned filenames to the `dist/` folder.
 
