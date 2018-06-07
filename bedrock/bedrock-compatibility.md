@@ -19,4 +19,6 @@ These incompatibilities are caused by plugin and theme authors not using proper 
 * assuming WordPress is not in a subdirectory
 * [trying to include wp-load.php](http://ottopress.com/2010/dont-include-wp-load-please/)
 
+If you reach a WordPress error page on a non-development environment that says "Sorry, you are not allowed to access this page.", then the plugin or theme could be conflicting with Bedrock's use of enabling `DISALLOW_FILE_MODS`.
+
 If you run into an issue with a specific theme or plugin, please contact their authors first and link them to this page.
