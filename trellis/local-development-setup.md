@@ -24,7 +24,9 @@ Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll h
 
 To access the VM, run `vagrant ssh`. Sites can be found at `/srv/www/<site name>`. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
 
-Note that each WP site you configured is synced between your local machine (the host) and the Vagrant VM. Any changes made on your host will be synced to the VM. 
+Note that each WP site you configured is synced between your local machine (the host) and the Vagrant VM. Any changes made to your host will be synced to the VM. 
+
+Composer and WP-CLI commands need to be run on the virtual machine for any post-provision modifications. Front-end build tools should be run from your host machine and not the Vagrant VM.
 
 Mounting an encrypted folder is not possible with Trellis due to an issue with NFS. 
 
