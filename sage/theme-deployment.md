@@ -29,3 +29,13 @@ If you use [Trellis](/trellis/), you can build your assets locally (or on a CI s
 The [Sage 9 on WP Engine](https://discourse.roots.io/t/sage-9-on-wpengine/9090) thread on Roots Discourse covers how to work around limitations on WP Engine to deploy your theme.
 
 We do not officially recommend or support this and suggest using a WordPress host that supports SSH, Git, Composer, and the latest PHP versions.
+
+## Deploying Sage via FTP
+
+If you don't have the rights to run `composer install` on the production server and/or are using a shared hosting service, you may want to deploy Sage using FTP. To do so, run the composer installation locally, and then manually copy the following files via FTP:
+
+* app folder
+* config folder
+* dist folder
+* resources folder but not the resources/assets subfolder
+* vendor folder
