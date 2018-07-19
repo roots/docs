@@ -25,7 +25,7 @@ The `skip_cache_uri` is a regex that will be used to tell Nginx **not** cache pa
 
 The `skip_cache_cookie` is a regex that will disable the cache when a cookie match it. Useful for disabling the cache for certain users.
 
-Already cached content will continue be served if your back-end (PHP-FPM) go down.
+Already cached content will continue being served if your back-end (PHP-FPM) goes down.
 
 ## Example cache configurations
 
