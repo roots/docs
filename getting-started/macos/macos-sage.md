@@ -29,7 +29,7 @@ Install nvm from the instructions at [https://github.com/creationix/nvm](https:/
 
 Install node.js < 10.0 from nvm:
 
-    $ nvm install --lts
+    $ nvm install lts/carbon
 
 ## yarn
 
