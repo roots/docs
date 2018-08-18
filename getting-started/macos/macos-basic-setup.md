@@ -14,7 +14,7 @@ Basic macOS 10.13+ development environment for Roots Trellis, Bedrock, and Sage
 
 ## Requirements
 
-Roots Trellis, Bedrock, and Sage development on macOS rely on several libraries and software packages. This guide will show you how to install and configure each of these recommended packages on your computer.
+Roots Trellis, Bedrock, and Sage development on macOS rely on several libraries and software packages. This guide will show you how to install and configure each of these recommended packages on your computer. This guide assumes basic knowledge of command line and terminal usage.
 
 - Xcode Command Line Tools
 - Git
