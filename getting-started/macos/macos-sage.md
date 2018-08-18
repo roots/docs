@@ -19,7 +19,7 @@ Sage relies on a few build tools to manage dependencies and build assets. Instal
 - Node.js < 10.0
 - yarn
 
-## **nvm**
+## nvm
 
 Install nvm from the instructions at [https://github.com/creationix/nvm](https://github.com/creationix/nvm), or with the following command:
 

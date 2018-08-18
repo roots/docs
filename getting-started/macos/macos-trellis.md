@@ -19,11 +19,11 @@ Trellis relies on a few other software tools. Install these tools:
 - Vagrant >= 1.8.5
 - Ansible >= 2.4
 
-## **VirtualBox**
+## VirtualBox
 
 Download and install the "OS X Hosts" version of VirtualBox from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
-## **Vagrant**
+## Vagrant
 
 Install Vagrant from Homebrew:
 
