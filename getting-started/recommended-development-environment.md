@@ -9,7 +9,7 @@ permalink: >
 published: false
 post_date:
 ---
-Roots recommends the following tools and configurations depending on your development environtment's operating system:
+Roots recommends the following tools and configurations depending on your development environment's operating system:
 
 * MacOS
 * Windows
