@@ -29,7 +29,7 @@ Install Xcode Command Line Tools using the built-in command:
 
     $ xcode-select --install
 
-    ## **Git**
+## **Git**
 
 Git is automatically installed as part of the Xcode Command Line tools. Configure Git with your user information:
 
