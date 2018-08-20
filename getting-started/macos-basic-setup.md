@@ -77,13 +77,7 @@ For more details on generating SSH keys, see [GitHub's excellent documentation](
 
 Modify your `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
-Edit your `~/.ssh/config` file
-
-```sh
-$ nano ~/.ssh/config
-```
-
-Add the following lines:
+Edit your `~/.ssh/config` file and add the following lines:
 
 ```
 Host *
