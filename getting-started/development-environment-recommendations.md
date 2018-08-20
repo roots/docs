@@ -13,4 +13,4 @@ We recommend the following tools and configurations depending on your developmen
 
 * [macOS](/getting-started/docs/macos-basic-setup/)
 * Windows (coming soon)
-* Linux (coming soon)
+* Ubuntu Linux (coming soon)
