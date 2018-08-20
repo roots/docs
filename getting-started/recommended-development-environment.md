@@ -12,5 +12,5 @@ post_date:
 Roots recommends the following tools and configurations depending on your development environment's operating system:
 
 * MacOS
-* Windows
-* Ubuntu
+* Windows (Coming Soon)
+* Ubuntu (Coming Soon)
