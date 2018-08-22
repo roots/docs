@@ -36,5 +36,5 @@ $ nvm install --lts/carbon
 Install yarn:
 
 ```sh
-$ sudo apt install yarn
+$ sudo apt-get install yarn
 ```
