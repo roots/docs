@@ -55,10 +55,9 @@ Modify your `~/.ssh/config` file to automatically load keys into the ssh-agent
 
 Edit your `~/.ssh/config` file and add the following lines:
 
-```
+```sh
 Host *
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
-
 ```
