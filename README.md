@@ -2,6 +2,7 @@
 
 This repository is synced with the Roots docs for our primary projects:
 
+* [Getting Started](https://roots.io/getting-started/docs/)
 * [Sage Docs](https://roots.io/sage/docs/)
 * [Bedrock Docs](https://roots.io/bedrock/docs/)
 * [Trellis Docs](https://roots.io/trellis/docs/)
