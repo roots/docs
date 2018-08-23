@@ -44,15 +44,48 @@ Pick a descriptive name for your project and use it instead of the default `exam
 
 1. Create a new project directory:
 ```plain
-$ mkdir example.com && cd example.com
+mkdir example.com && cd example.com
 ```
-2. Clone Trellis:
+2. Create an empty repo (on Github/Bitbucket/Gitlab/etc) and keep a note of the "remote" URL: 
 ```plain
-$ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
+git@github.com:USERNAME/example-com-trellis.git
 ```
-3. Clone Bedrock:
+3. Clone Trellis:
 ```plain
-$ git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git
+git clone --depth=1 git@github.com:roots/trellis.git
+git remote set-url origin git@github.com:USERNAME/example-com-trellis.git
+git remote set-url roots git@github.com:roots/trellis.git
 ```
+4. Create another empty repo for Bedrock: 
+```plain
+git@github.com:USERNAME/example-com-bedrock.git
+```
+5. Clone Trellis:
+```plain
+git clone --depth=1 git@github.com:roots/bedrock.git
+git remote set-url origin git@github.com:USERNAME/example-com-bedrock.git
+git remote set-url roots git@github.com:roots/bedrock.git
+```
+
+Now any time you'd like to update trellis/bedrock:
+```plain
+git fetch
+git rebase --committer-date-is-author-date roots/master
+```
+
+Note:
+`--committer-date-is-author-date` goes around git's annoying rewriting of commit dates during a rebase.
+
+Bonus:
+
+If you imagine using Trellis for multiple projects, you should consider forking trellis. Creating a project-template branch would allow you to make general customizations to trellis instead of applying them manually to each project. The only change to your setup would be to set your example-com-trellis upstream/remote as `USERNAME/trellis` instead of `roots/trellis`. To keep all of your repos up-to-date with trellis you would run `git rebase --committer-date-is-author-date roots/trellis` in your `USERNAME/trellis` repo.
+
+Bonus 2:
+
+For ease of use with bedrock, I suggest adding composer.lock to your gitignore so you don't have to worry about fixing conflicts with that file, and if you are using exact versions in your composer.json you won't get any benefit from a lock file anyway.
+
+Examples:
+ - https://github.com/partounian/trellis
+ - https://github.com/tangrufus/trellis/tree/project-template
 
 Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions.
