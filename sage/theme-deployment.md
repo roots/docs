@@ -32,10 +32,4 @@ We do not officially recommend or support this and suggest using a WordPress hos
 
 ## Deploying Sage via FTP
 
-If you don't have the rights to run `composer install` on the production server and/or are using a shared hosting service, you may want to deploy Sage using FTP. To do so, run the composer installation locally, and then manually copy the following files via FTP:
-
-* app folder
-* config folder
-* dist folder
-* resources folder but not the resources/assets subfolder
-* vendor folder
+If you don't permission to run `composer` on the production server and/or are using a shared hosting service, you may want to deploy Sage with FTP. To do so, [compile your assets for production](https://roots.io/sage/docs/theme-development-and-building/#available-build-commands) and run `composer install --no-dev` in your theme directory. Upload all files and folders in your theme except the `node_modules` directory to your host.
