@@ -36,5 +36,5 @@ $ nvm install lts/carbon
 Install yarn from Homebrew:
 
 ```sh
-$ brew 'yarn --without-node'
+$ brew install yarn --without-node
 ```
