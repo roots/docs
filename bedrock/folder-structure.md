@@ -16,7 +16,6 @@ published: true
 │   └── environments          # → Environment specific configs
 │       ├── development.php   # → Development config
 │       ├── staging.php       # → Staging config
-│       └── production.php    # → Production config
 ├── vendor                    # → Composer packages (never edit)
 └── web                       # → Web root (vhost document root)
     ├── app                   # → wp-content equivalent
