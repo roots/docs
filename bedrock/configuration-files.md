@@ -11,15 +11,19 @@ published: true
 ---
 The root `web/wp-config.php` is required by WordPress and is only used to load the other main configs. Nothing else should be added to it.
 
-The file to modify for configuration options is `config/application.php`. This file that contains what `wp-config.php` usually would.
+The file to modify for configuration options is `config/application.php`. This is the file that contains what `wp-config.php` usually would.
 
 These base configuration options should be production-standard _SAFE SETTINGS_ and will be used in all environments except where specifically overridden.
 
 For environment-specific configuration option **overrides**:
 
-  * Use or create files under `config/environments`. The `config/application.php` code will require any file in the `config/environments` directory with a filename matching the `WP_ENV` assignment. This will either be in a `.env` file at the top of the Bedrock installation or for a Trellis installation, defined in the `wordpress_sites` settings.
+  * Use an existing environment config in `config/environments` or create a new one. Bedrock will `require` any file in the `config/environments` directory with a filename matching the `WP_ENV` environment variable. This environment variable can be set in a few ways:
+	* in the `.env` file as described in our [installation docs](https://roots.io/bedrock/docs/installing-bedrock/#installation)
+	* via [Trellis config](https://roots.io/trellis/docs/wordpress-sites/) if you're using Trellis
+	* or as a last resort, hardcoding it in `config/application.php`
 
-  * Bedrock installs with `development.php` and `staging.php` files. If you want to add have a `WP_ENV=my-foo-bar` environment, you can add those options in `config/environments/my-foo-bar.php`.
+
+  * Bedrock comes with `development.php` and `staging.php` configs included. If you create an additional environment, configure it with a matching php file in `config/environments`.
 
  * The [`development.php` file](https://github.com/roots/bedrock/blob/master/config/environments/development.php) configures `'WP_DEBUG_DISPLAY', true`, so `WP_ENV=development`, wordpress will display php errors in the browser.
 
