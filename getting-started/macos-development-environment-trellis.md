@@ -11,7 +11,7 @@ post_date: 2018-08-20 14:20:52
 ---
 Trellis relies on a few additional software packages to function. Install these packages:
 
-- Virtualbox >= 4.3.10
+- VirtualBox >= 4.3.10
 - Vagrant >= 1.8.5
 - Ansible >= 2.4
 

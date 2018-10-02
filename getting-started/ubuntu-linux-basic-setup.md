@@ -9,7 +9,7 @@ permalink: >
 published: true
 post_date: 2018-08-21 20:37:16
 ---
-Roots Trellis, Bedrock, and Sage development on Ubuntu Linux is supported by several libraries and software packages. This guide describes how to get the following packages installed and configured on your computer:
+Trellis, Bedrock, and Sage development on Ubuntu Linux is supported by several libraries and software packages. This guide describes how to get the following packages installed and configured on your computer:
 
 - Git
 - Composer

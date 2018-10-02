@@ -25,7 +25,7 @@ $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh 
 
 ## Node.js
 
-Install node.js < 10.0 from nvm:
+Install Node.js < 10.0 from nvm:
 
 ```sh
 $ nvm install lts/carbon
