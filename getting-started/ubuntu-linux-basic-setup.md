@@ -26,7 +26,7 @@ Configure Git with your user information:
 
 ```sh
 $ git config --global user.name "Your Name"
-$ git config --global user.name "yourname@example.com"
+$ git config --global user.email "yourname@example.com"
 ```
 
 ## Composer
