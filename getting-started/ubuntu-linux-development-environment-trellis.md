@@ -39,7 +39,7 @@ If you don't already have pip (Python package manager) installed, install it:
 $ sudo apt-get install python-pip
 ```
 
-Install Ansible with Pip:
+Install Ansible with pip:
 ```sh
 $ pip install ansible
 ```
