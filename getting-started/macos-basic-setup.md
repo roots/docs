@@ -9,7 +9,7 @@ permalink: >
 published: true
 post_date: 2018-08-20 13:33:35
 ---
-Basic macOS 10.13+ development environment for Roots Trellis, Bedrock, and Sage
+Basic macOS 10.13+ development environment for Trellis, Bedrock, and Sage
 
 ## Requirements
 
