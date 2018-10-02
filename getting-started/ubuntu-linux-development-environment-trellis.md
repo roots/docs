@@ -11,13 +11,13 @@ post_date: 2018-08-21 20:37:47
 ---
 Trellis relies on a few other software tools. Install these tools:
 
-- Virtualbox >= 4.3.10
+- VirtualBox >= 4.3.10
 - Vagrant >= 1.8.5
 - Ansible >= 2.4
 
-## Virtualbox
+## VirtualBox
 
-Install Virtualbox from the standard Ubuntu software repositories:
+Install VirtualBox from the standard Ubuntu software repositories:
 
 ```sh
 $ sudo apt-get install virtualbox
