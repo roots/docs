@@ -29,6 +29,10 @@ Run these script commands within your theme directory:
 
 ⚠️ **If you are using the Bootstrap navbar and run into issues with missing styles after a production build, see [roots/sage#2017](https://github.com/roots/sage/issues/2017) and the [recommended fix](https://github.com/roots/sage/issues/2017#issuecomment-361054297).**
 
+### Asset generation with `yarn build` vs. `yarn start`
+
+When running `yarn start`, Sage uses [webpack-dev-middleware](https://webpack.github.io/docs/webpack-dev-middleware.html) to generate and insert assets (i.e. CSS, JS) directly into the DOM from memory, without first writing them to disk. The benefit of this technique is that changes you make are reflected very quicky in your BrowserSync session, and they are reflected *without reloading the page* (especially useful when styling things like form submission response templates). The unfortunate downside is that because these files are not written to disk, browsers will return a 404 error for your main stylesheet. Styles will still load: you'll just see an error in your browser console. This is a [known issue](https://github.com/roots/sage/issues/1989) that does not generally affect development. Amelioration of this downside is on the roadmap for future version of Sage.
+
 ## Theme assets
 
 The `config.json` file in the `assets` directory controls the different theme assets that get built. By default, Sage builds two JS files and one CSS file:
