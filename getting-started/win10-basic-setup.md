@@ -4,13 +4,22 @@ Basic Windows 10 development environment for Roots Trellis, Bedrock, and Sage
 
 Roots Trellis, Bedrock, and Sage development on Windows 10 relies on several libraries and software packages. This guide will show you how to install and configure each of these recommended packages on your computer. This guide assumes basic knowledge of the command line (provided commands should work in PowerShell or CMD, unless otherwise specified).
 
+### Everything
+
 - git
+
+### Trellis
+
 - putty (and friends)
-- PHP
-- Composer
+- Vagrant
+- VirtualBox
+
+### Sage
+
 - nvm
 - Node.js
-- Python
+- PHP
+- Composer
 
 ## Git
 
@@ -30,7 +39,27 @@ Once it finishes, close all open CMD/PowerShell sessions, open up a new one and 
 
 Putty is a Windows SSH client, but it also includes a number of utilities that will be useful to us—most notably pageant, which can manage our SSH keys. To install putty and its friends, simply [download and run the installer](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
+## Vagrant
+
+Vagrant provides a nice simple interface for Virtual Machine management. It is used by Trellis, but can also be
+used directly through the CLI. Installing Vagrant is easy: Just [download and run the installer](https://www.vagrantup.com/downloads.html).
+
+> Vagrant supports several different virtualization services, including VMWare and VirtualBox. This documentation
+> will use VirtualBox because it is easy to use and free, but it is not the only option.
+
+## VirtualBox
+
+VirtualBox creates Virtual Machines, or VMs. It is used by Vagrant (and Trellis) to spin up VMs for you to develop
+on.
+
+Installing VirtualBox is easy: Just [download and run the installer](https://www.virtualbox.org/wiki/Downloads).
+The machine running VirtualBox (as opposed to the machine running _on_ VirtualBox) is called the "host," so 
+you'll want to download the "Windows hosts" installer. You may need to restart your computer during installation.
+
 ## PHP
+
+> If you're using the full Roots stack, you don't need to install PHP in Windows--Trellis will install it on the 
+> Virtual Machine, and you can log into the Virtual Machine to do any PHP tasks Roots will require.
 
 You may already have PHP installed. Open up your command line of choice, and run the following command:
 
@@ -59,6 +88,11 @@ Finally, open the "Run" dialog, and enter `SystemPropertiesAdvanced.exe`, then h
 Close all open CMD/PowerShell sessions, then open up a new one and run `php --version`. Now PHP should be installed!
 
 ## Composer
+
+> If you're using the full Roots stack, you don't need to install Composer in Windows--Trellis will install it on the 
+> Virtual Machine, and you can log into the Virtual Machine to do Composer things.
+
+Composer is a PHP application, so you'll have to have PHP installed before you can install Composer.
 
 First, download the [Composer installer](https://getcomposer.org/Composer-Setup.exe). Then, run it. After the installer finishes, close all CMD/Powershell windows, then open a new one and run `composer --version`. You should see the version of Composer you have installed.
 
@@ -94,6 +128,4 @@ nvm use 8.11.4
 
 Now, run `node --version`. It should return `v8.11.4`.
 
-## Python
 
-Trellis uses Ansible, which is turn requires Python—specifically the 2.x branch of Python. You can [download v2.7.14 of Python here](https://www.python.org/ftp/python/2.7.14/python-2.7.14.amd64.msi). Once that download is complete, run the installer. When the installer finished, close all CMD/PowerShell sessions, then open and new one and run `python --version`. It should return `Python 2.7.14`.
