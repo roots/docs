@@ -16,11 +16,11 @@ Roots Trellis, Bedrock, and Sage development on Windows 10 relies on several lib
 
 ### Sage
 
+- PHP
+- Composer
 - nvm
 - Node.js
 - yarn
-- PHP
-- Composer
 
 ## Git
 
