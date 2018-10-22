@@ -18,6 +18,7 @@ Roots Trellis, Bedrock, and Sage development on Windows 10 relies on several lib
 
 - nvm
 - Node.js
+- yarn
 - PHP
 - Composer
 
@@ -128,4 +129,6 @@ nvm use 8.11.4
 
 Now, run `node --version`. It should return `v8.11.4`.
 
+## yarn
 
+Yarn is a package manager for JavaScript that Sage uses to manage it's JavaScript packages. It requires Node.js, so make sure you've installed node first. Once that's done, [download the Windows Stable version of yarn, and run the installer](https://yarnpkg.com/en/docs/install#windows-stable). You may need to restart your computer, or close all open command line windows in order for yarn to be available.
