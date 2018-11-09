@@ -30,7 +30,7 @@ See [Requirements](https://roots.io/trellis/docs/remote-server-setup/#requiremen
 The recommended directory structure for a Trellis project looks like:
 
 ```shell
-example.com/      # → Root folder for the project
+my_project/       # → Root folder for the project
 ├── trellis/      # → Your clone of this repository
 └── site/         # → A Bedrock-based WordPress site
     └── web/
@@ -44,7 +44,7 @@ Pick a descriptive name for your project and use it instead of the default `exam
 
 1. Create a new project directory:
 ```plain
-$ mkdir example.com && cd example.com
+$ mkdir my_project && cd my_project
 ```
 2. Clone Trellis:
 ```plain
