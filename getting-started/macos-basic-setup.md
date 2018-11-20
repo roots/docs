@@ -61,11 +61,11 @@ Install Composer from Homebrew:
 $ brew install composer
 ```
 
-## SSH Keys
+## SSH key
 
-### Create SSH Keys
+### Create SSH key
 
-Trellis and GitHub both use SSH keys to communicate securely without the need to type a username and password each time. Create your SSH keys and add them to your macOS Keychain:
+Trellis and GitHub both use SSH keys to communicate securely without the need to type a username and password each time. Create your SSH key and add them to your macOS Keychain:
 
 ```sh
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -79,7 +79,7 @@ Modify your `~/.ssh/config` file to automatically load keys into the ssh-agent a
 
 Edit your `~/.ssh/config` file and add the following lines:
 
-```
+```sh
 Host *
   AddKeysToAgent yes
   UseKeychain yes
