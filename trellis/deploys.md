@@ -164,3 +164,9 @@ ansible-playbook deploy.yml -e "site=mysite.com env=production"
 
 To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` . 
 You may manually specify a different release using `--extra-vars='release=12345678901234'` .
+
+## Deploying to other hosts
+
+Trellis can deploy to other hosts that support SSH, Composer, and WP-CLI, along with updating the web root path.
+
+* [Deploying to Kinsta with Trellis](https://roots.io/guides/deploying-to-kinsta-with-trellis/)
