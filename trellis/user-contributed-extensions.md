@@ -25,3 +25,6 @@ Issues with extensions should be opened in their respective repositories.
 * [trellis-disable-xml-rpc](https://github.com/ItinerisLtd/trellis-disable-xml-rpc) -  Disable WordPress XML RPC on Trellis sites
 * [vagrant-trellis-sequel](https://www.typist.tech/projects/vagrant-trellis-sequel) — Open Trellis databases in Sequel Pro with a single command
 * [vagrant-trellis-cert](https://www.typist.tech/projects/vagrant-trellis-cert) — Trust all Trellis self-signed certificates with single command
+* [enveigle](https://github.com/ItinerisLtd/enveigle) - Deceive Ansible to template Trellis .env files to local Bedrock
+* [trellis-purge-wp-rocket-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-wp-rocket-cache-during-deploy) - Purge WP Rocket cache when Trellis deploys Bedrock
+* [tiller](https://github.com/ItinerisLtd/tiller) - Deploy Trellis, Bedrock and Sage via AWS CodeBuild
