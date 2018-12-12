@@ -43,7 +43,7 @@ To use Trellis for remote servers, we recommend installing Ansible locally on yo
 
 Then there are two additional requirements for the remote server itself:
 
-1. You need a server running a bare/stock version of Ubuntu 16.04 Xenial. If you're using a host such as DigitalOcean, then just select their Ubuntu 16.04 option.
+1. You need a server running a bare/stock version of Ubuntu 18.04 LTS (Bionic Beaver). If you're using a host such as DigitalOcean, then just select their Ubuntu 18.04 option.
 
 **You can't run Trellis on a shared host**.
 
