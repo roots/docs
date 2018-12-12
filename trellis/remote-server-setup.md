@@ -45,6 +45,8 @@ Then there are two additional requirements for the remote server itself:
 
 1. You need a server running a bare/stock version of Ubuntu 18.04 LTS (Bionic Beaver). If you're using a host such as DigitalOcean, then just select their Ubuntu 18.04 option.
 
+Note: Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migrate yet. See [#992](https://github.com/roots/trellis/pull/992) for details on the minor changes needed to run it.
+
 **You can't run Trellis on a shared host**.
 
 2. You need to be able to connect to your server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
