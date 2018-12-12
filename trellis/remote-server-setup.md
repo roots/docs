@@ -49,7 +49,7 @@ Then there are two additional requirements for the remote server itself:
 
 2. You need to be able to connect to your server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
 
-Now that you have a working Ubuntu 16.04 server that you can easily SSH into, you need to configure a few things:
+Now that you have a working Ubuntu 18.04 server that you can easily SSH into, you need to configure a few things:
 
 1. Copy your `wordpress_sites` from your working development site in `group_vars/development/wordpress_sites.yml` to the remote environment you want (`staging` or `production`) in `group_vars/production/wordpress_sites.yml`.
 2. Modify your site and add the necessary settings for [remote servers](https://roots.io/trellis/docs/wordpress-sites/#remote-servers) since they have a few more settings than local development. Also see the [Passwords docs](https://roots.io/trellis/docs/passwords/).
