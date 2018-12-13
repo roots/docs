@@ -46,13 +46,13 @@ Pick a descriptive name for your project and use it instead of the default `exam
 ```plain
 $ mkdir example.com && cd example.com
 ```
-2. Clone Trellis:
+2. Install Trellis:
 ```plain
 $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
 ```
-3. Clone Bedrock:
+3. Install Bedrock into the `site` directory:
 ```plain
-$ git clone --depth=1 git@github.com:roots/bedrock.git site && rm -rf site/.git
+$ composer create-project roots/bedrock site
 ```
 
 Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions.
