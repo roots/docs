@@ -2,12 +2,12 @@
 ID: 6143
 post_title: mu-plugins Autoloader
 author: Ben Word
-post_date: 2015-09-03 17:18:35
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/bedrock/docs/mu-plugins-autoloader/
 published: true
+post_date: 2015-09-03 17:18:35
 ---
 Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins. 
 
@@ -17,10 +17,10 @@ This enables the use of mu-plugins through Composer if their package type is `wo
 
 ```json
 "installer-paths": {
-  "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "roots/soil"],
+  "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "roots/wp-stage-switcher"],
   "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
   "web/app/themes/{$name}/": ["type:wordpress-theme"]
 },
 ```
 
-[Soil](https://github.com/roots/soil) is a package with its type set to `wordpress-plugin`. Since it implements `composer/installers` we can override its type.
+[wp-stage-switcher](https://github.com/roots/wp-stage-switcher) is a package with its type set to `wordpress-plugin`. Since it implements `composer/installers` we can override its type.
