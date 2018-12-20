@@ -11,7 +11,7 @@ post_date: 2015-10-15 12:29:33
 ---
 ## Requirements
 
-* PHP >= 5.6
+* PHP >= 7.1
 * Composer ([Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos))
 
 ## Installation
