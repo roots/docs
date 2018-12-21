@@ -13,6 +13,7 @@ post_date: 2015-10-15 12:20:35
 
 Trellis relies on a few other software tools. Make sure all dependencies have been installed before moving on:
 
+* [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 * [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
 
