@@ -24,7 +24,15 @@ Install Sage using Composer from your WordPress themes directory (replace `your-
 $ composer create-project roots/sage your-theme-name
 ```
 
-You will have the option to define theme meta information (name, URI, description, version, author) and choose a CSS framework.
+You will have the option to define theme meta information (name, URI, description, version, author) and choose a CSS framework. If you need to change any of these settings after the initial definition, navigate to the theme directory from your host machine and run these commands:
+
+```shell
+# @ themes/your-theme-name/
+$ ./vendor/bin/sage meta
+$ ./vendor/bin/sage config
+$ ./vendor/bin/sage preset
+```
+*If you're using Windows, format the commands as `vendor\bin\sage meta`.*
 
 From the command line on your host machine (not on your Vagrant box), navigate to the theme directory then run `yarn`:
 
