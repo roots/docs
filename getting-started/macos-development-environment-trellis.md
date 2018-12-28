@@ -12,8 +12,8 @@ post_date: 2018-08-20 14:20:52
 Trellis relies on a few additional software packages to function. Install these packages:
 
 - VirtualBox >= 4.3.10
-- Vagrant >= 1.8.5
-- Ansible >= 2.4
+- Vagrant >= 2.1.0
+- Ansible >= 2.5.3
 
 ## VirtualBox
 
@@ -44,5 +44,5 @@ $ pip install ansible
 To install a specific Ansible version:
 
 ```sh
-$ pip install ansible==2.4.0.0
+$ pip install ansible==2.7.5
 ```
