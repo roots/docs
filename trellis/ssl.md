@@ -28,6 +28,8 @@ There are three supported certificate *providers* in Trellis:
 
 HTTPS can be enabled on a per-site basis. However, by default, enabling SSL on a site will make that site HTTPS **only**. Meaning that all HTTP requests will be redirected to HTTPS with the proper HSTS headers set as well. Unless you have a good reason to change this default, you shouldn't. See the section on [HSTS](#hsts) for more details.
 
+CloudFlare Origin CA support can be added with [trellis-cloudflare-origin-ca](https://github.com/TypistTech/trellis-cloudflare-origin-ca).
+
 ## Configuration
 
 Any SSL provider starts with the same basic configuration. Add the following to a WP site:
