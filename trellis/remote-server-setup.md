@@ -75,3 +75,7 @@ You can also provision with specific tags to only run the relevant roles:
 ```bash
 ansible-playbook server.yml -e env=<environment> --tags=users
 ```
+
+## Resources
+
+* [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/guides/using-trellis-to-provision-and-deploy-to-digitalocean-droplets/)
