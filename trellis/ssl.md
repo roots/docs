@@ -206,7 +206,7 @@ example.com:
 
 What is HSTS Preloading?
 
-> HSTS Preloading is a mechanism whereby a list of hosts that wish to enforce the use of SSL/TLS on their site is built into a browser. This list is compiled by Google and is utilised by Chrome, Firefox and Safari. These sites do not depend on the issuing of the HSTS response header to enforce the policy, instead the browser is aleady aware that the host requires the use of SSL/TLS before any connection or communication even takes place. This removes the opportunity an attacker has to intercept and tamper with redirects that take place over HTTP. This isn't to say that the host needs to stop issuing the HSTS response header, this must be left in place for those browsers that don't use preloaded HSTS lists.
+> HSTS Preloading is a mechanism whereby a list of hosts that wish to enforce the use of SSL/TLS on their site is built into a browser. This list is compiled by Google and is utilised by Chrome, Firefox, Opera, Safari, IE11 and Edge. These sites do not depend on the issuing of the HSTS response header to enforce the policy, instead the browser is aleady aware that the host requires the use of SSL/TLS before any connection or communication even takes place. This removes the opportunity an attacker has to intercept and tamper with redirects that take place over HTTP. This isn't to say that the host needs to stop issuing the HSTS response header, this must be left in place for those browsers that don't use preloaded HSTS lists.
 >
 > - https://scotthelme.co.uk/hsts-preloading/
 
