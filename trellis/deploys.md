@@ -2,17 +2,17 @@
 ID: 7587
 post_title: Deploys
 author: Scott Walkinshaw
-post_date: 2015-10-09 17:53:28
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/trellis/docs/deploys/
 published: true
+post_date: 2015-10-09 17:53:28
 ---
-Trellis offers one-command deploys out of the box with little configuration needed.
+Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed.
 
 ## Configuration
 
-First you need to have at least one [WordPress site](https://roots.io/trellis/docs/wordpress-sites/) configured and your remote server provisioned and working according to the [remote server setup](https://roots.io/trellis/docs/remote-server-setup/).
+First, you need to have at least one [WordPress site](https://roots.io/trellis/docs/wordpress-sites/) configured and your remote server provisioned and working according to the [remote server setup](https://roots.io/trellis/docs/remote-server-setup/).
 
 For deploys, there's a couple more settings needed:
 
@@ -22,7 +22,7 @@ For deploys, there's a couple more settings needed:
 
 Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml` as detailed in the [docs](https://roots.io/trellis/docs/wordpress-sites/#remote-servers).
 
-At this point you should also generate your salts and keys and save them to your `vault.yml` file.
+At this point, you should also generate your salts and keys and save them to your `vault.yml` file.
 
 ## Deploying
 
@@ -42,14 +42,14 @@ By default, Trellis deploys are configured for Bedrock-based sites and take care
 
 ## Hooks
 
-Trellis deploys let you customize what happens at each step of the deploy process. A single deploy has the following steps in order:
+Trellis deploys let you customize what happens at each step of the atomic deployment process. A single deploy has the following steps in order:
 
 1. `initialize` - creates the site directory structure (or ensures it exists)
 2. `update` - clones the Git repo onto the remote server
 3. `prepare` - prepares the files/directories in the new release path (such as moving the repo subtree if one exists)
 4. `build` - builds the new release by copying templates, files, and folders
 5. `share` - symlinks shared files/folders to new release
-6. `finalize` - finalizes the deploy by updating the `current` symlink
+6. `finalize` - finalizes the deploy by updating the `current` symlink (atomic deployments)
 
 Each step has a `before` and `after` hook. The hooks are variables that you can define with a list of custom task files to be included and run when the hook fires.
 
@@ -80,7 +80,7 @@ By default, Trellis defines and uses three hooks:
 
 The default deploy hooks are defined in `roles/deploy/defaults/main.yml`:
 
-```yml
+```yaml
 deploy_build_before:
   - "{{ playbook_dir }}/deploy-hooks/build-before.yml"
 
@@ -103,7 +103,7 @@ To use a deploy hook, define or override the hook variable somewhere within your
 
 Each deploy hook variable is a list of task files to be included and run when the hook fires. We suggest keeping your hooked task files in a top level `deploy-hooks` folder. Here are some example hook variable definitions:
 
-```yml
+```yaml
 # Defining a hook that Trellis does not already use by default
 deploy_before:
   - "{{ playbook_dir }}/deploy-hooks/deploy-before.yml"
@@ -151,12 +151,12 @@ wordpress_sites:
 ```
 
 Deploy command:
-```
+```bash
 ./bin/deploy.sh production mysite.com
 ```
 
 Or alternatively:
-```
+```bash
 ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ```
 
@@ -164,3 +164,9 @@ ansible-playbook deploy.yml -e "site=mysite.com env=production"
 
 To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` . 
 You may manually specify a different release using `--extra-vars='release=12345678901234'` .
+
+## Deploying to other hosts
+
+Trellis can deploy to other hosts that support SSH, Composer, and WP-CLI, along with updating the web root path.
+
+* [Deploying to Kinsta with Trellis](https://roots.io/guides/deploying-to-kinsta-with-trellis/)

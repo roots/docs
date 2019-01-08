@@ -12,13 +12,13 @@ Trellis assumes your WordPress configuration already has multisite set up. If no
 
 ```php
 /* Multisite */
-define('WP_ALLOW_MULTISITE', true);
-define('MULTISITE', true);
-define('SUBDOMAIN_INSTALL', false); // Set to true if using subdomains
-define('DOMAIN_CURRENT_SITE', env('DOMAIN_CURRENT_SITE'));
-define('PATH_CURRENT_SITE', env('PATH_CURRENT_SITE') ?: '/');
-define('SITE_ID_CURRENT_SITE', env('SITE_ID_CURRENT_SITE') ?: 1);
-define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
+Config::define('WP_ALLOW_MULTISITE', true);
+Config::define('MULTISITE', true);
+Config::define('SUBDOMAIN_INSTALL', false); // Set to true if using subdomains
+Config::define('DOMAIN_CURRENT_SITE', env('DOMAIN_CURRENT_SITE'));
+Config::define('PATH_CURRENT_SITE', env('PATH_CURRENT_SITE') ?: '/');
+Config::define('SITE_ID_CURRENT_SITE', env('SITE_ID_CURRENT_SITE') ?: 1);
+Config::define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 ```
 
 You'll also need to edit the `_sites.yml` vars file and update the multisite settings under your environment directory (`group_vars/<environment>/wordpress_sites.yml`):

@@ -9,15 +9,40 @@ permalink: >
 published: true
 post_date: 2015-08-29 18:09:28
 ---
-Install Sage by copying the project into a new folder within your WordPress themes directory.
+Make sure all dependencies have been installed before moving on:
 
-Make sure [Composer](https://getcomposer.org/download/) has been installed before moving on.
+* [WordPress](https://wordpress.org/) >= 4.7
+* [PHP](http://php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](http://php.net/manual/en/book.mbstring.php) enabled)
+* [Composer](https://getcomposer.org/download/)
+* [Node.js](http://nodejs.org/) >= 8.0.0
+* [Yarn](https://yarnpkg.com/en/docs/install)
 
 Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```shell
-# @ example.com/site/web/app/themes/
-$ composer create-project roots/sage your-theme-name 8.5.3
+# @ app/themes/ or wp-content/themes/
+$ composer create-project roots/sage your-theme-name
 ```
 
-**Looking for Sage 9 documentation?** View the [Sage 9 README](https://github.com/roots/sage) and the [documentation in progress](https://github.com/roots/docs/pull/30).
+You will have the option to define theme meta information (name, URI, description, version, author) and choose a CSS framework.
+
+From the command line on your host machine (not on your Vagrant box), navigate to the theme directory then run `yarn`:
+
+```shell
+# @ themes/your-theme-name/
+$ yarn
+```
+
+You now have all the necessary dependencies to run the [build process](/sage/docs/theme-development-and-building/#available-build-commands).
+
+### Browsersync configuration
+
+Update `devUrl` at the bottom of `resources/assets/config.json` to reflect your local development hostname.
+
+For example, if your local development URL is `https://project-name.test` you would update the file to read:
+
+```json
+...
+  "devUrl": "https://project-name.test",
+...
+```

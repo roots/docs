@@ -1,12 +1,12 @@
 ---
 ID: 6149
-post_title: SSL
+post_title: SSL/TLS
 author: Ben Word
-post_date: 2015-09-03 17:44:10
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/trellis/docs/ssl/
 published: true
+post_date: 2015-09-03 17:44:10
 ---
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.
 
@@ -27,6 +27,8 @@ There are three supported certificate *providers* in Trellis:
 * [Self-signed](#self-signed)
 
 HTTPS can be enabled on a per-site basis. However, by default, enabling SSL on a site will make that site HTTPS **only**. Meaning that all HTTP requests will be redirected to HTTPS with the proper HSTS headers set as well. Unless you have a good reason to change this default, you shouldn't. See the section on [HSTS](#hsts) for more details.
+
+CloudFlare Origin CA support can be added with [trellis-cloudflare-origin-ca](https://github.com/TypistTech/trellis-cloudflare-origin-ca).
 
 ## Configuration
 
@@ -224,7 +226,7 @@ Trellis defaults to a long `max-age` of `31536000` seconds (1 year).
 
 You may want to test out HSTS with much shorter max-ages and then ramp up the value in stages until you're confident everything works.
 
-This deployment ramp up process is detailed here: https://hstspreload.org/#deployment-recommendations
+This deployment ramp up process is detailed here: [https://hstspreload.org/#deployment-recommendations](https://hstspreload.org/#deployment-recommendations)
 
 ### Disabling HSTS
 

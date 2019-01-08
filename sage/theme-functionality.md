@@ -2,36 +2,45 @@
 ID: 6135
 post_title: Theme Functionality
 author: Ben Word
-post_date: 2015-09-01 19:05:16
 post_excerpt: ""
 layout: doc
 permalink: >
   https://roots.io/sage/docs/theme-functionality/
 published: true
+post_date: 2015-09-01 19:05:16
 ---
-`functions.php` is used to include files from the `lib/` directory which contains all of the theme functionality. Don’t place any custom code in this file — use it only for includes. 
-
-Since Sage is a starter theme, it’s okay for you to modify files within `lib/` to meet the needs of the site you’re building. 
+The `app/` directory contains all of the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
 
 The PHP code in Sage is namespaced, so make sure to [use namespaced functions and classes](https://roots.io/upping-php-requirements-in-your-wordpress-themes-and-plugins/).
 
 <dl class="dl-horizontal">
-  <dt><code>lib/assets.php</code></dt>
-  <dd>Enqueue stylesheets and scripts. See <a href="/sage/docs/theme-development/"><b>Theme Development and Building</b></a>.</dd>
+  <dt><code>app/setup.php</code></dt>
+  <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars. See <a href="/sage/docs/theme-configuration-and-setup/">Theme Configuration and Setup</a>.</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>lib/extras.php</code></dt>
-  <dd>Contains a function for adding classes to <code>&lt;body&gt;</code> and a function that adds a 'Continued' link to excerpts.</dd>
+  <dt><code>app/admin.php</code></dt>
+  <dd>Placeholder code for the WordPress theme customizer. You can also use this file for anything related to the WordPress admin.</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>lib/setup.php</code></dt>
-  <dd>Enable/disable theme features, set configuration values, register navigation menus, sidebars, and define theme support for WordPress core functionality such as post thumbnails, post formats, and HTML5 markup. See <a href="/sage/docs/theme-configuration/"><b>Theme Configuration and Setup</b></a>.</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt><code>lib/titles.php</code></dt>
-  <dd>Control the output of page titles.</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt><code>lib/wrapper.php</code></dt>
-  <dd>The theme wrapper. See <a href="/sage/docs/theme-wrapper/"><b>Theme Wrapper</b></a>.</dd>
+  <dt><code>app/filters.php</code></dt>
+  <dd>
+    <p>Add WordPress filters in this file. Filters included by default:</p>
+    <ul>
+      <li><code>body_class</code> &mdash; add <code>&lt;body&gt;</code> classes</li>
+      <li><code>excerpt_more</code> &mdash; add "… Continued" to excerpts</li>
+      <li><code>template_include</code> &mdash; enable the theme wrapper</li>
+      <li>Various filters for the Blade implementation</li>
+    </ul>
+  </dd>
+  <dl class="dl-horizontal">
+    <dt><code>app/helpers.php</code></dt>
+    <dd>
+      <p>Helper functions used throughout the theme:</p>
+      <ul>
+        <li><code>asset_path</code> &mdash; used when enqueueing theme assets to provide the correct versioned asset filenames</li>
+        <li><code>display_sidebar</code> &mdash; used to control displaying the sidebar</li>
+        <li><code>title</code> &mdash; used to return page titles</li>
+      </ul>
+    </dd>
+  </dl>
 </dl>

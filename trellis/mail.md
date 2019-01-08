@@ -2,11 +2,11 @@
 ID: 6155
 post_title: Mail
 author: Ben Word
-post_date: 2015-09-03 18:10:25
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/trellis/docs/mail/
 published: true
+post_date: 2015-09-03 18:10:25
 ---
 Trellis' mail functionality is separated between development and staging/production since you usually want different behaviour out of them.
 
@@ -18,15 +18,29 @@ Dealing with emails in development is never fun. The two common solutions are:
 
 Enter [MailHog](https://github.com/mailhog/MailHog). It’s a simple tool which captures outgoing email and lets you view them from a web UI. And after that you can optionally "release" them which would actually send the email.
 
-![](https://roots.io/app/uploads/trellis-mailhog-preview.png)
+![](https://cdn.roots.io/app/uploads/trellis-mailhog-preview.png)
 
-MailHog is automatically set up in development. You can access it at `http://yourdevelopmentdomain.dev:8025` (replacing the domain with yours that you set up for the WP site host).
+MailHog is automatically set up in development. You can access it at `http://yourdevelopmentdomain.test:8025` (replacing the domain with yours that you set up for the WP site host).
 
 Note that mail will be automatically captured but you won't ever see it unless you access the MailHog UI at the address above.
 
-Another benefit of using MailHog is that if are using real SMTP credentials in development, you can ensure you don’t accidentally send emails to real email addresses which might exist in your database.
+Another benefit of using MailHog is that if you are using real SMTP credentials in development, you can ensure you don’t accidentally send emails to real email addresses which might exist in your database.
+
+⚠️ **NOTE: This is not the case if you have an active WordPress plugin that is configured to send mail. You'll need to disable the mail plugin on development to ensure you don't accidentally send emails to real email addresses. You could also hook into `phpmailer_init` in WordPress for non-production environments to prevent emails from being sent out. Using a service like [Mailtrap](https://mailtrap.io/) is another option.**
 
 Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
+
+### MailHog and SSL with HSTS
+
+If your WordPress site has SSL enabled with HSTS ([currently a default](https://github.com/roots/trellis/issues/741)), you'll need to disable HSTS in order to reach the MailHog site. In `group_vars/development/wordpress_sites.yml`:
+
+```yml
+ssl:
+  enabled: true
+  hsts_max_age: 0
+```
+
+Then reprovision your Vagrant box in order to reach MailHog at `http://yourdevelopmentdomain.test:8025`.
 
 ## Remote servers (staging/production)
 

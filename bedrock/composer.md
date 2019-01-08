@@ -2,11 +2,11 @@
 ID: 6140
 post_title: Composer
 author: Ben Word
-post_date: 2015-09-03 17:15:57
 post_excerpt: ""
 layout: doc
 permalink: https://roots.io/bedrock/docs/composer/
 published: true
+post_date: 2015-09-03 17:15:57
 ---
 [Composer](http://getcomposer.org) is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
 
@@ -39,6 +39,27 @@ Updating your WordPress version (or any plugin) is just a matter of changing the
 
 Then running `composer update` will pull down the new version.
 
+### Automating updates
+
+[Dependencies.io](https://www.dependencies.io/) is an automated dependency update service that can be used to update WordPress and WordPress plugins. Signup for the service and add a `dependencies.yml` file to your project root:
+
+```yaml
+# dependencies.yml
+# See https://www.dependencies.io/docs/
+version: 2
+dependencies:
+- type: php
+  path: / # /site for a Bedrock & Trellis site
+  manifest_updates:
+    filters:
+    - name: "roots/wordpress"
+      versions: "Y.Y.Y"
+    - name: ".*"
+      versions: "L.Y"
+```
+
+See the [Automate WordPress and Plugin Updates with Composer](https://roots.io/automate-wordpress-and-plugin-updates-with-composer/) post for more details.
+
 ## Themes
 
 Themes can also be managed by Composer but should only be done so under two conditions:
@@ -46,6 +67,6 @@ Themes can also be managed by Composer but should only be done so under two cond
 1. You're using a parent theme that won't be modified at all
 2. You want to separate out your main theme and use that as a standalone package
 
-Under most circumstances we recommend NOT doing #2 and instead keeping your main theme as part of your app's repository.
+Under most circumstances, we recommend NOT doing #2 and instead keeping your main theme as part of your app's repository.
 
 Just like plugins, WPackagist maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wpackagist-theme` namespace.
