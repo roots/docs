@@ -226,6 +226,21 @@ As an example, let's add a route that runs when a page with the default template
 
 After rebuilding your site's assets (`yarn build`), when you load a page with the default template, your new route should run and you should see 'This is a page with the default template.' printed in your browser's console.
 
+### Listening for route events
+
+Every time Sage fires a route, it dispatches a `routed` event. You can react to routes by listening for this event.
+
+```js
+document.addEventListener('routed', e => {
+  // the name of the route that fired (e.g., 'home')
+  const routeName = e.detail.route;
+  // the event that fired on the route (e.g., 'init')
+  const routeEvent = e.detail.fn;
+
+  console.log(routeName, routeEvent);
+});
+```
+
 ## 3rd party packages
 
 Example of how to add 3rd party packages* and have them included in the theme:
