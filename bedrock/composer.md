@@ -10,12 +10,12 @@ post_date: 2015-09-03 17:15:57
 ---
 [Composer](http://getcomposer.org) is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
 
-See these two blogs for more extensive documentation:
+See these resources for more extensive documentation:
 
 * [Using Composer with WordPress](https://roots.io/using-composer-with-wordpress/)
 * [WordPress Plugins with Composer](https://roots.io/wordpress-plugins-with-composer/)
-
-Screencast ($): [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/)
+* [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (paid screencast)
+* [Private or Commercial WordPress Plugins as Composer Dependencies](https://roots.io/guides/private-or-commercial-wordpress-plugins-as-composer-dependencies/)
 
 ## Plugins
 
@@ -32,6 +32,23 @@ Whenever you add a new plugin or update the WP version, run `composer update` to
 `!web/app/plugins/plugin-name`
 
 Note: Some plugins may create files or folders outside of their given scope, or even make modifications to `wp-config.php` and other files in the `app` directory. These files should be added to your `.gitignore` file as they are managed by the plugins themselves, which are managed via Composer. Any modifications to `wp-config.php` that are needed should be moved into `config/application.php`.
+
+### Force plugin to be mu-plugin
+
+To force a regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, you can update the `installer-paths` config to tell Bedrock to install it in the `mu-plugins` directory:
+
+```yaml
+...
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "advanced-custom-fields/advanced-custom-fields-pro"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+...
+```
 
 ## Updating WP and plugin versions
 
