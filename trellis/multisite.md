@@ -61,8 +61,8 @@ wordpress_sites:
 
 After provisioning your remote server and deploying your sites, you'll need to install WordPress as a final step in your staging and production environments. SSH into your server as the `web` user with `ssh web@<domain>` and in the `/srv/www/<domain>/current/` directories run the following WP-CLI command to install WordPress:
 
-```
-wp core multisite-install --title="site title" --admin_user="username" --admin_password="password" --admin_email="you@example.com"
+```bash
+$ wp core multisite-install --title="site title" --admin_user="username" --admin_password="password" --admin_email="you@example.com"
 ```
 
 You may notice that your network's main site URLs contain `/wp/` before the post's or page's pathnames. This is a problem in WP core which occurs when WordPress is located in a subdirectory, as is the case with Bedrock. See issue [Bedrock issue #250](https://github.com/roots/bedrock/issues/250) for details, along with the site URL fix plugin in the [Multisite Fixes](https://github.com/felixarntz/multisite-fixes) plugin collection for a solution.
@@ -83,8 +83,8 @@ site_hosts:
 
 For subdomains in development, you'll need DNS entries for every subdomain/host. The [Landrush](https://github.com/phinze/landrush) Vagrant plugin is how you can do this. Install it via:
 
-```
-vagrant plugin install landrush
+```bash
+$ vagrant plugin install landrush
 ```
 
 Landrush spins up a small DNS server that allows us to use wildcard subdomains, a requirement for subdomain multisite installs.
@@ -103,8 +103,8 @@ See issue [#511](https://github.com/roots/trellis/issues/511) for more details.
 If something goes wrong with Landrush such as not being able to resolve a
 website from the guest:
 
-```
-vagrant landrush list
+```bash
+$ vagrant landrush list
 ```
 
 And remove any extraneous entries and try again.
