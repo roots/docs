@@ -28,4 +28,5 @@ MAMP, XAMPP, and others setups work with Bedrock once the [virtual host is confi
 
 ## Additional resources
 
+* [Local Bedrock Development with Local by Flywheel](https://roots.io/guides/local-bedrock-development-with-local-by-flywheel/)
 * [Local WordPress Development with Docker and Docker Compose](https://urre.me/writings/docker-for-local-wordpress-development/)
