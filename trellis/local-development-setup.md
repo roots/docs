@@ -41,7 +41,7 @@ Trellis installs WordPress on your first `vagrant up` with `admin` as the defaul
 Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision the VM again to apply the changes:
 
 ```bash
-vagrant reload --provision
+vagrant provision
 ```
 
 You can also provision with specific tags to only run the relevant roles:
