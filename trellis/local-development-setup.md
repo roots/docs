@@ -59,5 +59,5 @@ Notes on the commands:
 If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 
 ```bash
-SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
+vagrant reload --provision
 ```
