@@ -47,12 +47,17 @@ vagrant reload --provision
 You can also provision with specific tags to only run the relevant roles:
 
 ```bash
-SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
+SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant provision
 ```
 
 Notes on the commands: 
 
 * `SKIP_GALAXY` saves some time because you already have those roles installed
 * `ANSIBLE_TAGS` runs only the relevant roles
-* `reload` is to ensure that vagrant has synced up the two bedrock `site` directories
 * `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
+
+If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
+
+```bash
+SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
+```
