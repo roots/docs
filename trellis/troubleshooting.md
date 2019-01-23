@@ -22,6 +22,23 @@ Example: if a Git clone task failed during deploys, then SSH into the server as 
 
 <hr>
 
+## ERR_EMPTY_RESPONSE
+
+If you are running into `ERR_EMPTY_RESPONSE` when trying to access your local development site:
+
+Try:
+
+```bash
+$ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
+```
+
+Then run:
+
+```bash
+$ vagrant hostmanager
+```
+
+
 ## Unresponsive machines or 404s
 
 Halt all VMs and remove VM-related entries from your `/etc/hosts` file, particularly entries similar to the example below. You may want to backup the hosts file before editing.
