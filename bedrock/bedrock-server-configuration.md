@@ -24,7 +24,7 @@ server {
   index index.php index.htm index.html;
 
   # Prevent PHP scripts from being executed inside the uploads folder.
-  location ~* /app/uploads/.*\.php$ {
+  location ~* /app/uploads/.*.php$ {
     deny all;
   }
 
@@ -47,11 +47,11 @@ rewrite ^/(wp-(content|admin|includes).*) /wp/$1 last;
 
 #### Subfolder multisite rewrites
 
-```plain
+```raw
 if (!-e $request_filename) {
   rewrite /wp-admin$ $scheme://$host$uri/ permanent;
   rewrite ^(/[^/]+)?(/wp-.*) /wp$2 last;
-  rewrite ^(/[^/]+)?(/.*\.php) /wp$2 last;
+  rewrite ^(/[^/]+)?(/.*.php) /wp$2 last;
 }
 ```
 
@@ -72,7 +72,7 @@ Make sure the `DocumentRoot` is set to the `web` folder:
             <IfModule mod_rewrite.c>
                 RewriteEngine On
                 RewriteBase /
-                RewriteRule ^index\.php$ - [L]
+                RewriteRule ^index.php$ - [L]
                 RewriteCond %{REQUEST_FILENAME} !-f
                 RewriteCond %{REQUEST_FILENAME} !-d
                 RewriteRule . /index.php [L]
@@ -88,7 +88,7 @@ You can also add the suggested `.htaccess` file from WordPress at `web/.htaccess
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-RewriteRule ^index\.php$ - [L]
+RewriteRule ^index.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
