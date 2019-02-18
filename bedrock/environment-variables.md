@@ -16,12 +16,15 @@ Bedrock tries to separate config from code as much as possible and environment v
 However, we use the [env](https://github.com/oscarotero/env) library and its `env` function which handles simple type coercion (such as converting the string `'True'` to the boolean `true`). We recommend you use `env` as well for reading environment variables.
 
 Currently, the following env vars are required:
+* `WP_HOME`
+* `WP_SITEURL`
 
+The following vars are required if `DATABASE_URL` is not set:
 * `DB_USER`
 * `DB_NAME`
 * `DB_PASSWORD`
-* `WP_HOME`
-* `WP_SITEURL`
+
+Note that there is also the `DATABASE_URL` which is optional.
 
 ## WP_ENV
 
