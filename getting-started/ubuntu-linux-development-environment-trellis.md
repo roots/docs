@@ -17,7 +17,7 @@ Trellis relies on a few other software tools. Install these tools:
 
 ## VirtualBox
 
-Install VirtualBox from the standard Ubuntu software repositories:
+Install VirtualBox:
 
 ```sh
 $ sudo apt-get install virtualbox
@@ -25,15 +25,15 @@ $ sudo apt-get install virtualbox
 
 ## Vagrant
 
-Install Vagrant from the standard Ubuntu software repositories:
+[Download the latest version of Vagrant](https://www.vagrantup.com/downloads.html) and install it with `dpkg -i`:
 
 ```sh
-$ sudo apt-get install vagrant
+$ sudo dpkg -i vagrant_2.2.3_x86_64.deb
 ```
 
 ## Ansible
 
-If you don't already have pip (Python package manager) installed, install it:
+Install pip (Python package manager) if you don't already have it:
 
 ```sh
 $ sudo apt-get install python-pip
@@ -42,10 +42,7 @@ $ sudo apt-get install python-pip
 Install Ansible with pip:
 ```sh
 $ pip install ansible
-```
 
-To install a specific Ansible version:
-
-```sh
+# Install a specific Ansible version:
 $ pip install ansible==2.4.0.0
 ```
