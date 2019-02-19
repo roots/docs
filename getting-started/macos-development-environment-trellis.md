@@ -29,7 +29,7 @@ $ brew cask install vagrant
 
 ## Ansible
 
-If you don't already have pip (Python package manager) installed, install it:
+Install pip (Python package manager) if you don't already have it:
 
 ```sh
 $ sudo easy_install pip
@@ -39,10 +39,7 @@ Install Ansible with pip:
 
 ```sh
 $ pip install ansible
-```
 
-To install a specific Ansible version:
-
-```sh
-$ pip install ansible==2.7.5
+# Install a specific Ansible version:
+$ pip install ansible==2.4.0.0
 ```
