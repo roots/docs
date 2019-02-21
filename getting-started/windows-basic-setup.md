@@ -16,6 +16,8 @@ Trellis, Bedrock, and Sage development on Windows is supported by several librar
 - Composer
 - WP-CLI
 
+**⚠️ All commands must be ran from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+
 ## Git
 
 Configure Git with your user information:
