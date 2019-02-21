@@ -12,5 +12,5 @@ post_date: 2018-08-20 13:33:27
 We recommend the following tools and configurations depending on your development environment's operating system:
 
 * [macOS](/getting-started/docs/macos-basic-setup/)
-* Windows (coming soon)
+* [Windows](/getting-started/docs/windows-basic-setup/)
 * [Ubuntu Linux](/getting-started/docs/ubuntu-linux-basic-setup/)
