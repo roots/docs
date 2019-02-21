@@ -26,7 +26,7 @@ Download and install the latest version of [VirtualBox](https://www.virtualbox.o
 
 Then alias `vagrant` in WSL to `vagrant.exe`:
 
-**⚠️ The following commands must be ran from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+**⚠️ The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 
 ```sh
 $ echo 'alias vagrant=vagrant.exe' >> ~/.bashrc
@@ -35,7 +35,7 @@ $ source ~/.bashrc
 
 ## Ansible
 
-**⚠️ The following commands must be ran from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+**⚠️ The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 
 Install pip (Python package manager) if you don't already have it:
 
@@ -66,7 +66,7 @@ $ source ~/.bashrc
 
 If your site loads extremely slowly, try installing the `vagrant-winnfsd` plugin. In some cases this plugin can cause problems, so you may need to uninstall it if things get worse.
 
-**⚠️ The following commands must be ran from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+**⚠️ The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 
 ```sh
 $ vagrant plugin install vagrant-winnfsd
