@@ -17,6 +17,8 @@ Trellis relies on a few other software tools. Make sure all dependencies have be
 * [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 * [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
 
+**Windows user?** [Read the Windows getting started docs](https://roots.io/getting-started/docs/windows-development-environment-trellis/) for slightly different installation instructions.
+
 <div class="well well-trellis-alt module">
 
 This is the minimum requirements for a development server. Vagrant automatically takes care of the Ansible dependency for us by default.
@@ -55,5 +57,3 @@ $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
 ```plain
 $ composer create-project roots/bedrock site
 ```
-
-Windows user? [Read the Windows docs](https://roots.io/trellis/docs/windows/) for slightly different installation instructions.
