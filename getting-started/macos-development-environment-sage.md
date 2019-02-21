@@ -36,5 +36,5 @@ $ nvm install --lts
 Install yarn from Homebrew:
 
 ```sh
-$ brew install yarn --without-node
+$ brew install yarn --ignore-dependencies
 ```
