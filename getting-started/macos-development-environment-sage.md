@@ -33,8 +33,8 @@ $ nvm install --lts
 
 ## yarn
 
-Install yarn from Homebrew:
+Install yarn:
 
 ```sh
-$ brew install yarn --ignore-dependencies
+$ npm install --global yarn
 ```
