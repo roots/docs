@@ -15,7 +15,7 @@ Sage relies on a few build tools to manage dependencies and build assets. Instal
 - Node.js
 - yarn
 
-**⚠️ All commands must be ran from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+**⚠️ All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 
 ## nvm
 
