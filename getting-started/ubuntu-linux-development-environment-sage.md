@@ -36,5 +36,5 @@ $ nvm install --lts
 Install yarn:
 
 ```sh
-$ sudo apt-get install yarn
+$ npm install --global yarn
 ```
