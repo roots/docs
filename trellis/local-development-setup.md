@@ -30,7 +30,7 @@ Composer and WP-CLI commands need to be run on the virtual machine for any post-
 
 Mounting an encrypted folder is not possible with Trellis due to an issue with NFS. 
 
-Windows users have a slightly different workflow. See the [Windows docs](https://roots.io/trellis/docs/windows/).
+Windows users have a slightly different workflow. See the [Windows getting started docs](https://roots.io/getting-started/docs/windows-development-environment-trellis/).
 
 ## WordPress installation
 
