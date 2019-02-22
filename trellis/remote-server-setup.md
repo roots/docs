@@ -36,7 +36,7 @@ Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your
 
 The Trellis [installation instructions](https://roots.io/trellis/docs/installing-trellis/) skipped a few requirements because Vagrant handles them automatically for us.
 
-To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](https://roots.io/trellis/docs/windows/)).
+To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](https://roots.io/getting-started/docs/windows-development-environment-trellis/)).
 
 1. Install [Ansible](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip) >= 2.4
 2. Install Galaxy roles: `ansible-galaxy install -r requirements.yml` (in local trellis directory)
