@@ -108,7 +108,7 @@ $ wp db import example.com.sql
 If the export is not from another development environment, search-and-replace the site's URL with wp-cli:
 
 ```sh
-$ wp search-replace 'http://example.com' 'http://example.test'
+$ wp search-replace http://example.com http://example.test
 ```
 
 ## Import the Uploads
