@@ -53,6 +53,10 @@ $ pip install ansible==2.4.0.0
 
 ### Troubleshooting
 
+#### Maximum recursion depth exceeded
+
+If you run into a "maximum recursion depth exceeded" error while provisioning, try downgrading Ansible to 2.5.1 (`pip install ansible==2.5.1`) and then re-provisioning.
+
 #### `vagrant ssh` doesn't work
 
 Try:
