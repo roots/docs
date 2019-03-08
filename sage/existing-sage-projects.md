@@ -1,11 +1,11 @@
 ---
 ID: 31921
-post_title: Working on an Existing Sage Project
+post_title: Existing Sage Projects
 author: Michael W. Delaney
 post_excerpt: ""
 layout: doc
 permalink: >
-  https://roots.io/sage/docs/working-on-an-existing-sage-project/
+  https://roots.io/sage/docs/existing-sage-projects/
 published: true
 post_date: 2018-12-20 07:56:54
 ---
