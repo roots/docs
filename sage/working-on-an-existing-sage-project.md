@@ -11,11 +11,11 @@ post_date: 2018-12-20 07:56:54
 ---
 The majority of the Sage documentation focuses on setting up new themes. Use this document If you are collaborating on, or taking over an existing theme.
 
-## Getting Started
+## Getting started
 
 If you've never worked on a Sage project before, make sure your local development environment is configured by following the [Getting Started guide(s)](https://roots.io/getting-started/docs/development-environment-recommendations/).
 
-## Gathering Information
+## Gathering information
 
 To work on an existing Sage project you need to know what version of Sage you're working with. You can usually find this by checking the `package.json` file:
 
@@ -29,31 +29,31 @@ To work on an existing Sage project you need to know what version of Sage you're
 
 If your `package.json` file doesn't contain the Sage version number, look for a `bower.json` file. If this file exists, it's safe to assume you're working with Sage 8. Otherwise assume you're working with Sage 9.
 
-## Set Up Your Development Environment
+## Set up your development environment
 
 Prepare your development environment based on what version of Sage you're working with.
 
 ### Sage 9
 
-Set Node.js version < 10.0 with nvm:
+Set Node.js version with nvm:
 
 ```sh
-$ nvm use lts/carbon
+$ nvm install --lts
 ```
 
-Install composer dependencies:
+Install Composer dependencies:
 
 ```sh
 $ composer install
 ```
 
-Install Node dependencies with Yarn:
+Install Node dependencies:
 
 ```sh
 $ yarn
 ```
 
-Build your project with yarn:
+Build your project:
 
 ```sh
 yarn build
@@ -69,7 +69,7 @@ Set Node.js version 4.5 with nvm:
 $ nvm use 4.5
 ```
 
-Install Node dependencies with npm:
+Install Node dependencies:
 
 ```sh
 $ npm install
@@ -81,7 +81,7 @@ Install Bower dependencies:
 $ bower install
 ```
 
-Build your project with Gulp
+Build your project with:
 
 ```sh
 $ gulp
