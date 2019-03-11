@@ -57,11 +57,11 @@ $ pip install ansible==2.4.0.0
 
 If you run into a "maximum recursion depth exceeded" error while provisioning, try downgrading Ansible to 2.5.1 (`pip install ansible==2.5.1`) and then re-provisioning.
 
-You'll also need to update your [`Vagrantfile`](https://github.com/roots/trellis/blob/005577460c9229329ad67157db32c1d35bb6a0eb/Vagrantfile#L124) so that `vagrant_ansible_version` references 2.5.1:
+You'll also need to update your [`vagrant.default.yml`](https://github.com/roots/trellis/blob/19b0ce6da683d7038484e55b6a312776057a04a6/vagrant.default.yml#L7) so that `vagrant_ansible_version` references 2.5.1:
 
 ```diff
--ansible.version = vconfig.fetch('vagrant_ansible_version')
-+ansible.version = 2.5.1
+-vagrant_ansible_version: '2.7.5'
++vagrant_ansible_version: '2.5.1'
 ```
 
 #### `vagrant ssh` doesn't work
