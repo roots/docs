@@ -35,7 +35,7 @@ $ yarn
 
 You now have all the necessary dependencies to run the [build process](/sage/docs/theme-development-and-building/#available-build-commands).
 
-### Browsersync configuration
+## Browsersync configuration
 
 Update `devUrl` at the bottom of `resources/assets/config.json` to reflect your local development hostname.
 
@@ -45,4 +45,30 @@ For example, if your local development URL is `https://project-name.test` you wo
 ...
   "devUrl": "https://project-name.test",
 ...
+```
+
+## Server configuration
+
+⚠️ Sage uses [Laravel's Blade](/sage/docs/blade-templates/) templating engine, and since the `.blade.php` files live in a publicly accessible directory on your webserver, we recommend preventing plain-text access to them.
+
+### Nginx configuration for denying access to Blade files
+
+Add to your server block before the final location directive:
+
+```plain
+location ~* \.(blade.php)$ {
+  deny all;
+}
+```
+
+### Apache configuration for denying access to Blade files
+
+Add to your `.htaccess` file or virtual host configuration:
+
+```plain
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.blade\.php$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
 ```
