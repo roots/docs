@@ -66,9 +66,15 @@ location ~* \.(blade\.php)$ {
 Add to your `.htaccess` file or virtual host configuration:
 
 ```plain
-<IfModule mod_authz_core.c>
-    <FilesMatch "\.blade\.php$">
+<FilesMatch ".+\.(blade\.php)$">
+    <IfModule mod_authz_core.c>
+        # Apache 2.4
         Require all denied
-    </FilesMatch>
-</IfModule>
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        # Apache 2.2
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
 ```
