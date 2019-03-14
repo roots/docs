@@ -56,7 +56,7 @@ For example, if your local development URL is `https://project-name.test` you wo
 Add to your server block before the final location directive:
 
 ```plain
-location ~* \.(blade.php)$ {
+location ~* \.(blade\.php)$ {
   deny all;
 }
 ```
