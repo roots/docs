@@ -21,7 +21,7 @@ Config::define('SITE_ID_CURRENT_SITE', env('SITE_ID_CURRENT_SITE') ?: 1);
 Config::define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 ```
 
-You'll also need to edit the `_sites.yml` vars file and update the multisite settings under your environment directory (`group_vars/<environment>/wordpress_sites.yml`):
+You'll also need to update the multisite settings under your environment directory (`group_vars/<environment>/wordpress_sites.yml`):
 
 ```yaml
 multisite:
