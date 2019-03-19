@@ -94,7 +94,7 @@ example.com:
 * `cache` - Nginx FastCGI cache options. See the [Cache docs](https://roots.io/trellis/docs/fastcgi-caching/)
 * `h5bp` - Nginx config files from [h5bp server config](https://github.com/h5bp/server-configs-nginx) to include
   * `cache_file_descriptors` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/directive-only/cache-file-descriptors.conf) (default: `not_dev`)
-  * `extra_security` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/directive-only/extra-security.conf) (default: `false`)
+  * `extra_security` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/directive-only/extra-security.conf) (default: `true`)
   * `no_transform` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/directive-only/no-transform.conf) (default: `false`)
   * `x_ua_compatible` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/directive-only/x-ua-compatible.conf) (default: `true`)
   * `cache_busting` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/location/cache-busting.conf) (default: `false`)
