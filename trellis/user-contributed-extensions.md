@@ -28,3 +28,4 @@ Issues with extensions should be opened in their respective repositories.
 * [enveigle](https://github.com/ItinerisLtd/enveigle) - Deceive Ansible to template Trellis .env files to local Bedrock
 * [trellis-purge-wp-rocket-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-wp-rocket-cache-during-deploy) - Purge WP Rocket cache when Trellis deploys Bedrock
 * [tiller](https://github.com/ItinerisLtd/tiller) - Deploy Trellis, Bedrock and Sage via AWS CodeBuild
+* [trellis_flush_rewrite_rules_during_deploy](https://github.com/ItinerisLtd/trellis_flush_rewrite_rules_during_deploy) - Resets WordPress' rewrite rules (based on registered post types, etc) during Trellis deploys 
