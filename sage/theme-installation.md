@@ -26,6 +26,12 @@ $ composer create-project roots/sage your-theme-name
 
 You will have the option to define theme meta information (name, URI, description, version, author) and choose a CSS framework.
 
+⚠️ **If you are running on Windows, you will encounter `TTY mode is not supported on Windows platform` warning and unable to define the theme meta and CSS framework. The [suggested fix](https://discourse.roots.io/t/setting-up-sage-9-with-uikit/11652) would be to navigate to the theme directory then run the following:**
+
+* `vendor\bin\sage meta`
+* `vendor\bin\sage config`
+* `vendor\bin\sage preset`
+
 From the command line on your host machine (not on your Vagrant box), navigate to the theme directory then run `yarn`:
 
 ```shell
