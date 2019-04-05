@@ -29,8 +29,8 @@ Then alias `vagrant` in WSL to `vagrant.exe`:
 **⚠️ The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 
 ```sh
-$ echo 'alias vagrant=vagrant.exe' >> ~/.bashrc
-$ source ~/.bashrc
+$ echo 'alias vagrant=vagrant.exe' >> ~/.zshrc
+$ source ~/.zshrc
 ```
 
 ## Ansible
