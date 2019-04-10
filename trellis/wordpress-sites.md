@@ -135,3 +135,4 @@ example.com:
   * `secure_auth_salt` - Generate (*required* in `vault.yml`)
   * `logged_in_salt` - Generate (*required* in `vault.yml`)
   * `nonce_salt` - Generate (*required* in `vault.yml`)
+* `deploy_keep_releases` - number of releases to keep for rollbacks (default: 5)
