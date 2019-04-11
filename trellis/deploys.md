@@ -163,7 +163,7 @@ ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ## Rollbacks
 
 To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` . 
-You may manually specify a different release using `--extra-vars='release=12345678901234'` .
+You may manually specify a different release using `--extra-vars='release=12345678901234'` . By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](https://roots.io/trellis/docs/wordpress-sites/#remote-servers) to change this setting.
 
 ## Deploying to other hosts
 
