@@ -59,13 +59,19 @@ $ sudo mv wp-cli.phar /usr/local/bin/wp
 
 ### Create SSH keys
 
-Trellis and GitHub both use SSH keys to communicate securely without the need to type a username and password each time. Create your SSH keys:
+Trellis and GitHub both use SSH keys to communicate securely without the need to type a username and password each time. Create your SSH key:
 
 ```sh
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
 For more details on generating SSH keys, see [GitHub's excellent documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
+
+[Add your new public SSH key to your GitHub account](https://github.com/settings/ssh/new). To copy your public key from the terminal to the clipboard:
+
+```sh
+$ cat ~/.ssh/id_rsa.pub | clip.exe
+```
 
 ### Add your SSH key to the ssh-agent
 
