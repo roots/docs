@@ -36,7 +36,7 @@ Git is automatically installed as part of the Xcode Command Line tools. Configur
 
 ```sh
 $ git config --global user.name "Your Name"
-$ git config --global user.name "yourname@example.com"
+$ git config --global user.email "yourname@example.com"
 ```
 
 ## Homebrew
