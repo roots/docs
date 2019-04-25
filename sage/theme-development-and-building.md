@@ -241,6 +241,8 @@ document.addEventListener('routed', e => {
 });
 ```
 
+IE <= 11 does not support this. [See the note under Sage Compatibility](/sage/docs/sage-compatibility/#known-issues-with-internet-explorer) for more information.
+
 ## 3rd party packages
 
 Example of how to add 3rd party packages* and have them included in the theme:
