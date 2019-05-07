@@ -25,7 +25,7 @@ There are some custom composer installers which simply download the latest langu
 
 
 ## Using `wp` on trellis deploy
-At the time of writing there is way yet for locking-in languages of core, plugins and themes (for all plugins and themes), so we are stuck with installing the latest language available.
+At the time of writing there is no way yet for locking-in languages of core, plugins and themes (for all plugins and themes), so we are stuck with installing the latest language available.
 The best approach is using the official mechanisms, which would be the `wp language` subcommand:
 
 ### Prerequisites
@@ -35,7 +35,7 @@ If required with your trellis setup, set `wp_cli_version` to at least `2.0.2` or
 ```yml
 wp_cli_version: 2.2.0
 ````
-Run the playbook before deploying so the deploy hooks we will set up can use the right `wp` version!
+Run the playbook (once) before deploying so the deploy hooks we will set up can use the right `wp` version!
 
 ### deploy hook
 We use the [`finalize-after` deploy hook](https://roots.io/trellis/docs/deploys/#default-hooks) for installing, activating and updating the core/plugins/themes languages of a site for the languages `en_GB`, `de_DE_formal` and `de_DE`:
