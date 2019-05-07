@@ -39,6 +39,8 @@ Run the playbook before deploying so the deploy hooks we will set up can use the
 
 ### deploy hook
 We use the [`finalize-after` deploy hook](https://roots.io/trellis/docs/deploys/#default-hooks) for installing, activating and updating the core/plugins/themes languages of a site for the languages `en_GB`, `de_DE_formal` and `de_DE`:
+
+`deploy-hooks/sites/example.com-finalize-after.yml`:
 ```yaml
 # Install + activate languages
 - name: Install core languages en_GB de_DE
