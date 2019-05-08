@@ -82,6 +82,7 @@ Edit your `~/.ssh/config` file and add the following lines:
 ```sh
 Host *
   AddKeysToAgent yes
+  IgnoreUnknown UseKeychain
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
 ```
