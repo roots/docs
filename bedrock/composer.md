@@ -58,24 +58,7 @@ Then running `composer update` will pull down the new version.
 
 ### Automating updates
 
-[Dependencies.io](https://www.dependencies.io/) is an automated dependency update service that can be used to update WordPress and WordPress plugins. Signup for the service and add a `dependencies.yml` file to your project root:
-
-```yaml
-# dependencies.yml
-# See https://www.dependencies.io/docs/
-version: 2
-dependencies:
-- type: php
-  path: / # /site for a Bedrock & Trellis site
-  manifest_updates:
-    filters:
-    - name: "roots/wordpress"
-      versions: "Y.Y.Y"
-    - name: ".*"
-      versions: "L.Y"
-```
-
-See the [Automate WordPress and Plugin Updates with Composer](https://roots.io/automate-wordpress-and-plugin-updates-with-composer/) post for more details.
+[Dependabot](https://dependabot.com/) can be used to automate updates of your Composer dependencies in Bedrock, including WordPress itself.
 
 ## Themes
 
