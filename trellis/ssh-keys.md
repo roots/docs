@@ -132,6 +132,9 @@ users:
 
 The example above also demonstrates the option of creating `another_user` whose primary group is `some_group`, but who is also in `some_other_group`, and who has public SSH keys for `swalkinshaw`.
 
+**Note**
+* Removing a key and re-provisioning the server does not remove the key in the `authorized_keys` file.
+
 ## Cloning remote repo using SSH agent forwarding
 
 All the SSH connections discussed above apply to Trellis connecting from your local machine to your server. It is a different type of connection, however, when Trellis clones a remote private repo during deployment. In this case, your remote server is allowed to forward your local machine's SSH credentials to the remote repo to authorize the connection.
