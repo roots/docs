@@ -11,7 +11,7 @@ post_date: 2015-08-29 18:09:28
 ---
 Make sure all dependencies have been installed before moving on:
 
-* [WordPress](https://wordpress.org/) >= 4.7
+* [WordPress](https://wordpress.org/) >= 5.2
 * [PHP](http://php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](http://php.net/manual/en/book.mbstring.php) enabled)
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 8.0.0
