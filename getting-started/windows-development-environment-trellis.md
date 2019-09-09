@@ -22,16 +22,17 @@ Download and install the latest version of [VirtualBox](https://www.virtualbox.o
 
 ## Vagrant
 
-[Download the latest version of Vagrant](https://www.vagrantup.com/downloads.html) for Windows.
+[Install the latest version of Vagrant](https://www.vagrantup.com/downloads.html) in WSL. This will depend on the Linux distribution you're using; for instance if you're using Ubuntu, you'll want the Debian package.
 
-Then alias `vagrant` in WSL to `vagrant.exe`:
-
-**⚠️ The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+[Follow the instructions on the Vagrant site](https://www.vagrantup.com/docs/other/wsl.html) to configure Vagrant to communicate correctly with Windows and VirtualBox. This will likely involve adding something like the following to `.bashrc` or a similar file executed when your WSL shell boots up:
 
 ```sh
-$ echo 'alias vagrant=vagrant.exe' >> ~/.bashrc
-$ source ~/.bashrc
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 ```
+
+The above should be taken as **examples** and not just copied and pasted into your configuration. Read the linked document and make sure you're configuring your system correctly.
 
 ## Ansible
 
