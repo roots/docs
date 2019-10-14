@@ -53,7 +53,7 @@ Note: Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migr
 
 Now that you have a working Ubuntu 18.04 server that you can easily SSH into, you need to configure a few things:
 
-1. Copy your `wordpress_sites` from your working development site in `group_vars/development/wordpress_sites.yml` to the remote environment you want (`staging` or `production`) in `group_vars/production/wordpress_sites.yml`.
+1. Copy your `wordpress_sites` from your working development site in `group_vars/development/wordpress_sites.yml` to `group_vars/<environment>/wordpress_sites.yml` (`staging` or `production`, whichever you're setting up).
 2. Modify your site and add the necessary settings for [remote servers](https://roots.io/trellis/docs/wordpress-sites/#remote-servers) since they have a few more settings than local development. Also see the [Passwords docs](https://roots.io/trellis/docs/passwords/).
 3. Add your server hostname to `hosts/<environment>` (replacing `your_server_hostname`).
 4. Specify public SSH keys for `users` in `group_vars/all/users.yml`. See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/).
