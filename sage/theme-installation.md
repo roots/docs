@@ -66,7 +66,7 @@ location ~* composer\.(json|lock)$ {
   deny all;
 }
   
-location ~* package\.json$ {
+location ~* package(-lock)?\.json$ {
   deny all;
 }
 
