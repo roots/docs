@@ -51,12 +51,26 @@ For example, if your local development URL is `https://project-name.test` you wo
 
 ⚠️ Sage uses [Laravel's Blade](/sage/docs/blade-templates/) templating engine, and since the `.blade.php` files live in a publicly accessible directory on your webserver, we recommend preventing plain-text access to them.
 
-### Nginx configuration for denying access to Blade files
+⚠️ Sage uses [composer](https://getcomposer.org/) and [yarn](https://yarnpkg.com) to manage dependencies, and since their files might contain private credentials and expose dependency versions, we recommend blocking them as well.
+
+### Nginx configuration for denying access to Blade, composer and yarn files
 
 Add to your server block before the final location directive:
 
 ```plain
 location ~* \.(blade\.php)$ {
+  deny all;
+}
+
+location ~* composer\.(json|lock)$ {
+  deny all;
+}
+  
+location ~* package(-lock)?\.json$ {
+  deny all;
+}
+
+location ~* yarn\.lock$ {
   deny all;
 }
 ```
