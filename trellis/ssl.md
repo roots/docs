@@ -64,6 +64,10 @@ example.com:
 
 There is one main difference between LE and other certificate authorities: their certificates expire every *90 days*. Trellis automates by running a cron-job so you never have to manually renew them or worry about them expiring like a paid certificate.
 
+<div class="alert alert-warning" role="alert">
+<p class="mb-0">⚠️ Let's Encrypt is ending support for v1 of their ACME protocol. If you are using Trellis older than <code>v.1.2.0</code> please see <a href="https://discourse.roots.io/t/trellis-and-lets-encrypt-v1-end-of-life/">here</a> for more details.</p>
+</div>
+
 #### DNS records
 
 Let's Encrypt verifies and creates certificates through a publicly accessible web server for *every* domain you want on the certificate.
