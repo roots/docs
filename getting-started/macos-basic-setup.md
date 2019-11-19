@@ -47,12 +47,6 @@ Install Homebrew from the instructions at [https://brew.sh](https://brew.sh/), o
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Install Cask:
-
-```sh
-$ brew tap caskroom/cask
-```
-
 ## Composer
 
 Install Composer from Homebrew:
