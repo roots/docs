@@ -34,7 +34,7 @@ Install PHP 7.3:
 ```sh
 $ sudo add-apt-repository ppa:ondrej/php
 $ sudo apt-get update
-$ sudo apt-get install php7.3 php7.3-mbstring php7.3-xml php-zip
+$ sudo apt-get install php7.3 php7.3-mbstring php7.3-xml php7.3-zip
 ```
 
 ## Composer
