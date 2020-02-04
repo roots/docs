@@ -1,14 +1,5 @@
----
-ID: 6136
-post_title: Theme Templates
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/theme-templates/
-published: true
-post_date: 2015-09-01 19:12:53
----
+# Theme Templates
+
 The `resources/views/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
 
 <dl class="dl-horizontal">
@@ -94,8 +85,8 @@ The `resources/views/` directory contains files that you can further extend with
 
 The normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy) is still intact. Here’s some examples:
 
-* Copy `index.blade.php` to `author.blade.php` for customizing author archives
-* Copy `index.blade.php` to `home.blade.php` for customizing the Home page if you’re showing the latest posts (under Reading Settings) instead of a static front page
-* Copy `index.blade.php` to `archive-gallery.blade.php` for customizing the archive page for a custom post type registered as `gallery`
-* Copy `page.blade.php` to `front-page.blade.php` for customizing the static front page
-* Copy `page.blade.php` to `page-about.blade.php` for customizing a page called About
+- Copy `index.blade.php` to `author.blade.php` for customizing author archives
+- Copy `index.blade.php` to `home.blade.php` for customizing the Home page if you’re showing the latest posts (under Reading Settings) instead of a static front page
+- Copy `index.blade.php` to `archive-gallery.blade.php` for customizing the archive page for a custom post type registered as `gallery`
+- Copy `page.blade.php` to `front-page.blade.php` for customizing the static front page
+- Copy `page.blade.php` to `page-about.blade.php` for customizing a page called About

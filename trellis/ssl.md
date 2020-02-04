@@ -1,30 +1,22 @@
----
-ID: 6149
-post_title: SSL/TLS
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/ssl/
-published: true
-post_date: 2015-09-03 17:44:10
----
+# SSL
+
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.
 
 Roots believes in security so we've always made SSL/HTTPS a priority in Trellis. Our implementation is designed to score an A+ on the [Qualys SSL Labs Test](https://www.ssllabs.com/ssltest/).
 
 In the past many people avoided going HTTPS for technical and convenience reasons:
 
-* Certificates were expensive
-* Annoying and complicated web-server configuration
-* HTTPS sites were much slower than HTTP
+- Certificates were expensive
+- Annoying and complicated web-server configuration
+- HTTPS sites were much slower than HTTP
 
-Trellis has features to make it as easy, cheap, and painless as possible to use HTTPS giving you no excuse *not* to use it.
+Trellis has features to make it as easy, cheap, and painless as possible to use HTTPS giving you no excuse *not- to use it.
 
-There are three supported certificate *providers* in Trellis:
+There are three supported certificate *providers- in Trellis:
 
-* [Let's Encrypt](#lets-encrypt)
-* [Manual](#manual)
-* [Self-signed](#self-signed)
+- [Let's Encrypt](#lets-encrypt)
+- [Manual](#manual)
+- [Self-signed](#self-signed)
 
 HTTPS can be enabled on a per-site basis. However, by default, enabling SSL on a site will make that site HTTPS **only**. Meaning that all HTTP requests will be redirected to HTTPS with the proper HSTS headers set as well. Unless you have a good reason to change this default, you shouldn't. See the section on [HSTS](#hsts) for more details.
 
@@ -70,7 +62,7 @@ There is one main difference between LE and other certificate authorities: their
 
 #### DNS records
 
-Let's Encrypt verifies and creates certificates through a publicly accessible web server for *every* domain you want on the certificate.
+Let's Encrypt verifies and creates certificates through a publicly accessible web server for *every- domain you want on the certificate.
 
 This means you need valid and working DNS records for every site host/domain you have configured for your WP site.
 
@@ -111,12 +103,12 @@ The above steps is what Trellis handles automatically.
 
 #### Multiple servers
 
-Trellis' LE integration is designed by default for a single server. If you have multiple web servers behind a load balancer, you will *not* want this role/process running on all of them since it would generate different private and account keys for each one.
+Trellis' LE integration is designed by default for a single server. If you have multiple web servers behind a load balancer, you will *not- want this role/process running on all of them since it would generate different private and account keys for each one.
 
 This process is beyond the scope of the documentation right now. However, there are two variables which help for this process:
 
-* `letsencrypt_account_key_source_content`
-* `letsencrypt_account_key_source_file`
+- `letsencrypt_account_key_source_content`
+- `letsencrypt_account_key_source_file`
 
 You can use either of these to manually define an account key's contents or file. If one of these is set, it will be used and none will be automatically generated.
 
@@ -163,7 +155,7 @@ example.com:
     key: ~/ssl/example.com.key
 ```
 
-`cert` and `key` are **local** relative paths to those files. They will be copied to the remote servers. This is done so your private key does not need to be stored in your Git repository for security reasons.
+`cert` and `key` are **local*- relative paths to those files. They will be copied to the remote servers. This is done so your private key does not need to be stored in your Git repository for security reasons.
 
 ### Self-signed
 
@@ -183,7 +175,7 @@ example.com:
 
 You can tell your browsers to trust these self signed certificates by using the vagrant-trellis-cert plugin. This also fixes issues with MacOS Catalina where the 'certificate not trusted' error screens are not possible to bypass. From your trellis folder, run:
 
-```sh
+```bash
 vagrant plugin install vagrant-trellis-cert
 vagrant trellis-cert trust
 ```
@@ -194,9 +186,9 @@ Trellis sets [HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Securi
 
 There are a few defaults set which you can override if need be:
 
-* `hsts_max_age` - how long the header lasts (default: `31536000` (1 year))
-* `hsts_include_subdomains` - also make *all* subdomains be served over HTTPS (default: `true`)
-* `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `false`)
+- `hsts_max_age` - how long the header lasts (default: `31536000` (1 year))
+- `hsts_include_subdomains` - also make *all- subdomains be served over HTTPS (default: `true`)
+- `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `false`)
 
 These variables are configured on a site's `ssl` object:
 
@@ -256,7 +248,7 @@ example.com:
 
 ### `hsts_include_subdomains`
 
-HSTS should ideally be applied to all subdomains as well which is why `hsts_include_subdomains` defaults to `true`. This means that if you have HSTS enabled on `example.com`, then *all* its subdomains (`*.example.com`) will also be forced over HTTPS.
+HSTS should ideally be applied to all subdomains as well which is why `hsts_include_subdomains` defaults to `true`. This means that if you have HSTS enabled on `example.com`, then *all- its subdomains (`*.example.com`) will also be forced over HTTPS.
 
 If you have a WordPress site on `example.com` and you also serve another application from a subdomain such as `internalapp.example.com`, you may need to remove the "include subdomains" header option if it can't be served via HTTPS.
 
@@ -279,11 +271,11 @@ Note you should try very hard to support SSL/HTTPS on all subdomains. Only disab
 
 Our HTTPS implementation uses all performance optimizations possible to ensure your sites remain fast despite the small overhead of SSL. This includes the following features:
 
-* HTTP/2 support (fallback to HTTP/1.1 for older browsers)
-* SSL session cache
-* OCSP stapling
-* 1400 byte TLS records
-* Longer keepalives
+- HTTP/2 support (fallback to HTTP/1.1 for older browsers)
+- SSL session cache
+- OCSP stapling
+- 1400 byte TLS records
+- Longer keepalives
 
 See [Is TLS Fast Yet?](https://istlsfastyet.com/) for more information on fast TLS/SSL.
 

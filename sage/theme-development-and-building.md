@@ -1,14 +1,5 @@
----
-ID: 5322
-post_title: Theme Development and Building
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/theme-development-and-building/
-published: true
-post_date: 2015-09-01 18:19:21
----
+# Theme Development and Building
+
 <p class="lead">These are the primary projects that make up the Sage workflow:</p>
 
 <ul class="lead">
@@ -23,23 +14,23 @@ post_date: 2015-09-01 18:19:21
 
 Run these script commands within your theme directory:
 
-* `yarn build` — Compile and optimize the files in your assets directory
-* `yarn build:production` — Compile assets for production
-* `yarn start` — Compile assets when file changes are made, start Browersync session
+- `yarn build` — Compile and optimize the files in your assets directory
+- `yarn build:production` — Compile assets for production
+- `yarn start` — Compile assets when file changes are made, start Browersync session
 
 ⚠️ **If you are using the Bootstrap navbar and run into issues with missing styles after a production build, see [roots/sage#2017](https://github.com/roots/sage/issues/2017) and the [recommended fix](https://github.com/roots/sage/issues/2017#issuecomment-361054297).**
 
 ### Asset generation with `yarn build` vs. `yarn start`
 
-When running `yarn start`, Sage uses [webpack-dev-middleware](https://webpack.github.io/docs/webpack-dev-middleware.html) to generate and insert assets (i.e. CSS, JS) directly into the DOM from memory, without first writing them to disk. The benefit of this technique is that changes you make are reflected very quicky in your BrowserSync session, and they are reflected *without reloading the page* (especially useful when styling things like form submission response templates). The unfortunate downside is that because these files are not written to disk, browsers will return a 404 error for your main stylesheet. Styles will still load: you'll just see an error in your browser console. This is a [known issue](https://github.com/roots/sage/issues/1989) that does not generally affect development. Amelioration of this downside is on the roadmap for future version of Sage.
+When running `yarn start`, Sage uses [webpack-dev-middleware](https://webpack.github.io/docs/webpack-dev-middleware.html) to generate and insert assets (i.e. CSS, JS) directly into the DOM from memory, without first writing them to disk. The benefit of this technique is that changes you make are reflected very quicky in your BrowserSync session, and they are reflected *without reloading the page- (especially useful when styling things like form submission response templates). The unfortunate downside is that because these files are not written to disk, browsers will return a 404 error for your main stylesheet. Styles will still load: you'll just see an error in your browser console. This is a [known issue](https://github.com/roots/sage/issues/1989) that does not generally affect development. Amelioration of this downside is on the roadmap for future version of Sage.
 
 ## Theme assets
 
 The `config.json` file in the `assets` directory controls the different theme assets that get built. By default, Sage builds two JS files and one CSS file:
 
-* `assets/stylesheets/main.scss` — primary theme CSS, barebones partials are imported to help get your styling started
-* `assets/scripts/main.js` — primary theme JS
-* `assets/scripts/customizer.js` — theme customizer JS, used only in the customizer
+- `assets/stylesheets/main.scss` — primary theme CSS, barebones partials are imported to help get your styling started
+- `assets/scripts/main.js` — primary theme JS
+- `assets/scripts/customizer.js` — theme customizer JS, used only in the customizer
 
 Look at `entry` in `assets/config.json` to see how they're built:
 
@@ -80,7 +71,7 @@ To create additional CSS or JS files, you'll need to:
 
     ```php
     /**
-     * Theme assets
+     - Theme assets
      */
     add_action('wp_enqueue_scripts', function () {
         wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
@@ -94,7 +85,7 @@ To create additional CSS or JS files, you'll need to:
 
 4. From the theme directory, run the build script:
 
-    ```sh
+    ```bash
     # web/app/themes/your-theme-name/
     $ yarn build
     ```
@@ -130,7 +121,7 @@ import common from './routes/common';
 import home from './routes/home';
 import aboutUs from './routes/about';
 
-/** Populate Router instance with DOM routes */
+/*- Populate Router instance with DOM routes */
 const routes = new Router({
   // All pages
   common,
@@ -146,11 +137,11 @@ jQuery(document).ready(() => routes.loadEvents());
 
 Out of the box, it comes with three routes:
 
-* common, which fires on all pages
-* home, which fires on the home page (when the body has the class `home`)
-* aboutUs, which would fire on a page named "About Us" (when the page has the body class `about-us`)
-  * Note the syntax change from `about-us` (the HTML body class) to `aboutUs` (the JS route name)
-  * Note also that the route's file name (`about`) doesn't have to match the body class. What's important is that the name used for the import that is registered with the router (`aboutUs`) matches.
+- common, which fires on all pages
+- home, which fires on the home page (when the body has the class `home`)
+- aboutUs, which would fire on a page named "About Us" (when the page has the body class `about-us`)
+  - Note the syntax change from `about-us` (the HTML body class) to `aboutUs` (the JS route name)
+  - Note also that the route's file name (`about`) doesn't have to match the body class. What's important is that the name used for the import that is registered with the router (`aboutUs`) matches.
 
 Every route is defined in its own file in `assets/scripts/routes/`.
 
@@ -211,7 +202,7 @@ As an example, let's add a route that runs when a page with the default template
 3.  Also in `main.js`, register your route:
 
     ```js
-    /** Populate Router instance with DOM routes */
+    /*- Populate Router instance with DOM routes */
     const routes = new Router({
       // All pages
       common,
@@ -245,11 +236,11 @@ IE <= 11 does not support this. [See the note under Sage Compatibility](/sage/do
 
 ## 3rd party packages
 
-Example of how to add 3rd party packages* and have them included in the theme:
+Example of how to add 3rd party packages- and have them included in the theme:
 
 1. From the theme directory, run:
 
-    ```shell
+    ```bash
     # @ themes/your-theme-name/
     $ yarn add <package name>
 
@@ -260,7 +251,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
 2. Open up `main.js` and `main.scss` to add the entry points for the package. If you're using the Slick Carousel then your theme JS and CSS would look like:
 
     ```js
-    /** import external dependencies */
+    /*- import external dependencies */
     import 'jquery';
     import 'bootstrap/dist/js/bootstrap';
 
@@ -269,7 +260,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
     ```
 
     ```scss
-    /* sage/assets/styles/main.scss */
+    /- sage/assets/styles/main.scss */
     @import "common/variables";
 
     // Import npm dependencies
@@ -285,7 +276,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
 4. Running `yarn build:production` will fail if 3rd party package's relative paths are not configured before imported. For example, to load Slick Carousel's paths add the following line in your common/_variables.scss file:
 
     ```scss
-    /* sage/assets/styles/common/_variables.scss */
+    /- sage/assets/styles/common/_variables.scss */
     // Slick Carousel font path
     $slick-font-path: "~slick-carousel/slick/fonts/";
 
@@ -295,6 +286,6 @@ Example of how to add 3rd party packages* and have them included in the theme:
 
 ### Additional examples
 
-* [Animate.css](https://roots.io/guides/how-to-use-animate-css-in-sage/)
-* [Hamburgers](https://roots.io/guides/how-to-use-hamburgers-in-sage/)
-* [js-cookie](https://discourse.roots.io/t/how-to-js-cookie-and-sage/11662)
+- [Animate.css](https://roots.io/guides/how-to-use-animate-css-in-sage/)
+- [Hamburgers](https://roots.io/guides/how-to-use-hamburgers-in-sage/)
+- [js-cookie](https://discourse.roots.io/t/how-to-js-cookie-and-sage/11662)

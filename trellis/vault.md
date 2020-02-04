@@ -1,13 +1,5 @@
----
-ID: 8780
-post_title: Vault
-author: Ben Word
-post_date: 2015-11-01 14:32:38
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/vault/
-published: true
----
+# Vault
+
 Some Ansible variables contain sensitive data such as passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) to avoid exposing sensitive data in your project repo. Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
 
 To briefly demonstrate what vault does, consider this example `vault.yml` file.
@@ -54,7 +46,7 @@ If you prefer not to set this default in your `ansible.cfg` file, you can add th
 
 ### 3. Encrypt files
 
-**Caution:** If you have unencrypted `vault.yml` files in your project's git history (e.g., passwords in plain text), you will most likely want to change the variable values in your `vault.yml` files before encrypting them and committing them to your repo.
+**Caution:*- If you have unencrypted `vault.yml` files in your project's git history (e.g., passwords in plain text), you will most likely want to change the variable values in your `vault.yml` files before encrypting them and committing them to your repo.
 
 Encrypt your `vault.yml` files with the command `ansible-vault encrypt <file>`. The example below uses the command to encrypt the full list of `vault.yml` files (fileglobs are not supported, see [https://github.com/ansible/ansible/issues/6241](https://github.com/ansible/ansible/issues/6241)):
 
@@ -66,21 +58,21 @@ ansible-vault encrypt group_vars/all/vault.yml group_vars/development/vault.yml 
 
 Here are a few notable commands from the official [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) docs.
 
-* [`ansible-vault encrypt <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#encrypting-unencrypted-files)
-* [`ansible-vault view <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#viewing-encrypted-files)
-* [`ansible-vault edit <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#editing-encrypted-files)
-* [`ansible-vault decrypt <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#decrypting-encrypted-files) -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
-* [`ansible-vault rekey <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#rekeying-encrypted-files)
+- [`ansible-vault encrypt <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#encrypting-unencrypted-files)
+- [`ansible-vault view <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#viewing-encrypted-files)
+- [`ansible-vault edit <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#editing-encrypted-files)
+- [`ansible-vault decrypt <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#decrypting-encrypted-files) -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
+- [`ansible-vault rekey <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#rekeying-encrypted-files)
 
 ## Working with vault variables
 
 Here are a few conceptual tips for working with [variables and vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#variables-and-vaults) in Trellis.
 
-* Variables with sensitive data such as passwords are defined in files named `vault.yml`.
-* Each environment has its own `vault.yml` file: `group_vars/<environment>/vault.yml`.
-* There is also one `vault.yml` file applicable to all environments: `group_vars/all/vault.yml`.
-* Variables named with the `vault_` prefix are defined in the `vault.yml` files.
-* To view or edit an encrypted `vault.yml` file, use either `ansible-vault view <file>` or `ansible-vault edit <file>`. Avoid using the `decrypt` command. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo. You may want to employ a pre-commit hook ([example](https://www.reinteractive.net/posts/167-ansible-real-life-good-practices)) for added prevention.
+- Variables with sensitive data such as passwords are defined in files named `vault.yml`.
+- Each environment has its own `vault.yml` file: `group_vars/<environment>/vault.yml`.
+- There is also one `vault.yml` file applicable to all environments: `group_vars/all/vault.yml`.
+- Variables named with the `vault_` prefix are defined in the `vault.yml` files.
+- To view or edit an encrypted `vault.yml` file, use either `ansible-vault view <file>` or `ansible-vault edit <file>`. Avoid using the `decrypt` command. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo. You may want to employ a pre-commit hook ([example](https://www.reinteractive.net/posts/167-ansible-real-life-good-practices)) for added prevention.
 
 ## Sharing a project with vault-encrypted files
 

@@ -1,14 +1,5 @@
----
-ID: 31921
-post_title: Existing Sage Projects
-author: Michael W. Delaney
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/existing-sage-projects/
-published: true
-post_date: 2018-12-20 07:56:54
----
+# Existing Sage Projects
+
 The majority of the Sage documentation focuses on setting up new themes. Use this document If you are collaborating on, or taking over an existing theme.
 
 ## Getting started
@@ -37,25 +28,25 @@ Prepare your development environment based on what version of Sage you're workin
 
 Set Node.js version with nvm:
 
-```sh
+```bash
 $ nvm install --lts
 ```
 
 Install Composer dependencies:
 
-```sh
+```bash
 $ composer install
 ```
 
 Install Node dependencies:
 
-```sh
+```bash
 $ yarn
 ```
 
 Build your project:
 
-```sh
+```bash
 yarn build
 ```
 
@@ -65,25 +56,25 @@ For complete details on working with Sage 9, see the [Sage 9 documentation](http
 
 Set Node.js version 4.5 with nvm:
 
-```sh
+```bash
 $ nvm use 4.5
 ```
 
 Install Node dependencies:
 
-```sh
+```bash
 $ npm install
 ```
 
 Install Bower dependencies:
 
-```sh
+```bash
 $ bower install
 ```
 
 Build your project with:
 
-```sh
+```bash
 $ gulp
 ```
 

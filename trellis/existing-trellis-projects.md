@@ -1,17 +1,8 @@
----
-ID: 29838
-post_title: Existing Trellis Projects
-author: Michael W. Delaney
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/trellis/docs/existing-trellis-projects/
-published: true
-post_date: 2018-08-23 09:56:13
----
+# Existing Trellis Projects
+
 The majority of the Trellis documentation focuses on setting up new projects. If you are collaborating on, or taking over an existing project, the process is a little different.
 
-**Note:** this documentation presumes your project follows the [Roots Example Project](https://github.com/roots/roots-example-project.com) recommendations.
+**Note:*- this documentation presumes your project follows the [Roots Example Project](https://github.com/roots/roots-example-project.com) recommendations.
 
 ## Getting Started
 
@@ -52,7 +43,7 @@ Review the project's `trellis/group_vars/development/wordpress_sites.yml` and no
 
 ## Clone Your Project
 
-```sh
+```bash
 $ git clone git@github.com:YourOrganization/example.com.git
 ```
 
@@ -75,7 +66,7 @@ If any of the `vault.yml` files look like the example above, follow the [vault i
 
 Run the following from your project's `trellis` directory:
 
-```sh
+```bash
 $ vagrant up
 ```
 
@@ -85,29 +76,29 @@ Confirm you can access the development site at the development URL noted earlier
 
 Retrieve an export of the current project’s database. 
 
-**Note:** for easy access during the import process, place the database export in your local project’s `site` directory. 
+**Note:*- for easy access during the import process, place the database export in your local project’s `site` directory. 
 
 From your project's `trellis` directory, ssh to the vagrant machine:
 
-```sh
+```bash
 $ vagrant ssh
 ```
 
 Navigate to the web root:
 
-```sh
+```bash
 $ cd /srv/www/example.com/current
 ```
 
 Import the database with wp-cli:
 
-```sh
+```bash
 $ wp db import example.com.sql
 ```
 
 If the export is not from another development environment, search-and-replace the site's URL with wp-cli:
 
-```sh
+```bash
 $ wp search-replace http://example.com http://example.test
 ```
 

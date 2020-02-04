@@ -1,13 +1,5 @@
----
-ID: 6151
-post_title: Security
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/security/
-published: true
-post_date: 2015-09-03 17:49:35
----
+# Security
+
 ## Locking down root
 
 The `sshd` role heightens your server's security by providing better SSH defaults. SSH password authentication will be disabled. We encourage you to disable SSH `root` login as well. You may adjust these two particular options in `group_vars/all/security.yml`. See the [`sshd` role `README.md`](https://github.com/roots/trellis/tree/master/roles/sshd) for more configuration options.

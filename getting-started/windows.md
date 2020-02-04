@@ -1,14 +1,116 @@
----
-ID: 33225
-post_title: 'Windows Development Environment: Trellis'
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/getting-started/docs/windows-development-environment-trellis/
-published: true
-post_date: 2019-02-21 16:05:55
----
+# Windows (WSL)
+
+Trellis, Bedrock, and Sage development on Windows is supported by several libraries and software packages. 
+
+**⚠️ All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+
+[[toc]]
+
+## Global Dependencies
+
+### Git
+
+Configure Git with your user information:
+
+```bash
+$ git config --global user.name "Your Name"
+$ git config --global user.email "yourname@example.com"
+```
+
+### PHP
+
+Install PHP 7.3:
+
+```bash
+$ sudo add-apt-repository ppa:ondrej/php
+$ sudo apt-get update
+$ sudo apt-get install php7.3 php7.3-mbstring php7.3-xml php7.3-zip
+```
+
+### Composer
+
+Install Composer:
+
+```bash
+$ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+```
+
+### WP-CLI
+
+Install WP-CLI:
+
+```bash
+$ cd ~ && curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+$ chmod +x wp-cli.phar
+$ sudo mv wp-cli.phar /usr/local/bin/wp
+```
+
+## SSH keys
+
+### Creating an SSH key
+
+Trellis and GitHub both use SSH keys to communicate securely without the need to type a username and password each time. Create your SSH key:
+
+```bash
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+For more details on generating SSH keys, see [GitHub's excellent documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
+
+[Add your new public SSH key to your GitHub account](https://github.com/settings/ssh/new). To copy your public key from the terminal to the clipboard:
+
+```bash
+$ cat ~/.ssh/id_rsa.pub | clip.exe
+```
+
+### Add your SSH key to the ssh-agent
+
+Modify your `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+
+Edit your `~/.ssh/config` file and add the following lines:
+
+```bash
+Host *
+  AddKeysToAgent yes
+  IgnoreUnknown UseKeychain
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+```
+
+## Working with Sage
+
+Sage relies on a few build tools to manage dependencies and build assets.
+
+- nvm
+- Node.js
+- yarn
+
+### nvm
+
+Install nvm from the instructions at [https://github.com/creationix/nvm](https://github.com/creationix/nvm), or with the following command:
+
+```bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+```
+
+### Node.js
+
+Install the latest Node.js LTS release from nvm:
+
+```bash
+$ nvm install --lts
+```
+
+### yarn
+
+Install yarn:
+
+```bash
+$ npm install --global yarn
+```
+
+## Working with Trellis
+
 Trellis relies on a few other software tools. Install these tools:
 
 - VirtualBox >= 4.3.10 (install on Windows)
@@ -16,35 +118,35 @@ Trellis relies on a few other software tools. Install these tools:
 - Ansible >= 2.7, < 2.8 (install in WSL)
 
 
-## VirtualBox
+### VirtualBox
 
 Download and install the latest version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) for Windows.
 
-## Vagrant
+### Vagrant
 
-[Install the latest version of Vagrant](https://www.vagrantup.com/downloads.html) in WSL, and in Windows. The WSL version will depend on the Linux distribution you're using; for instance if you're using Ubuntu, you'll want the Debian package. It is *imperative* that you install *the same version* of Vagrant in both Windows and WSL; even a single patch number difference will prevent it from working. You have to install both versions because VMs cannot exist "within" WSL; they must be created "outside," in Windows. To do this, Vagrant-in-WSL needs to communicate with Vagrant-in-Windows.
+[Install the latest version of Vagrant](https://www.vagrantup.com/downloads.html) in WSL, and in Windows. The WSL version will depend on the Linux distribution you're using; for instance if you're using Ubuntu, you'll want the Debian package. It is *imperative- that you install *the same version- of Vagrant in both Windows and WSL; even a single patch number difference will prevent it from working. You have to install both versions because VMs cannot exist "within" WSL; they must be created "outside," in Windows. To do this, Vagrant-in-WSL needs to communicate with Vagrant-in-Windows.
 
 [Follow the instructions on the Vagrant site](https://www.vagrantup.com/docs/other/wsl.html) to configure Vagrant to communicate correctly with Windows and VirtualBox. This will likely involve adding something like the following to `.bashrc` or a similar file executed when your WSL shell boots up:
 
-```sh
+```bash
 export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 ```
 
-The above should be taken as **examples** and not just copied and pasted into your configuration. Read the linked document and make sure you're configuring your system correctly.
+The above should be taken as **examples*- and not just copied and pasted into your configuration. Read the linked document and make sure you're configuring your system correctly.
 
-## Ansible
+### Ansible
 
 **⚠️ The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 
 Install pip (Python package manager) if you don't already have it:
 
-```sh
+```bash
 $ sudo apt-get install python-pip
 ```
 
 Install Ansible with pip:
-```sh
+```bash
 $ pip install ansible
 
 # Install a specific Ansible version:
@@ -68,7 +170,7 @@ You'll also need to update your [`vagrant.default.yml`](https://github.com/roots
 
 Try:
 
-```sh
+```bash
 $ echo 'alias vssh="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no vagrant@127.0.0.1 -i ./.vagrant/machines/default/virtualbox/private_key -p"' >> ~/.bashrc
 $ source ~/.bashrc
 ```
@@ -79,7 +181,7 @@ If your site loads extremely slowly, try installing the `vagrant-winnfsd` plugin
 
 **⚠️ The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 
-```sh
+```bash
 $ vagrant plugin install vagrant-winnfsd
 $ vagrant reload # if Vagrant was already running
 ```

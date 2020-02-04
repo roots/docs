@@ -1,13 +1,5 @@
----
-ID: 7587
-post_title: Deploys
-author: Scott Walkinshaw
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/deploys/
-published: true
-post_date: 2015-10-09 17:53:28
----
+# Deploys
+
 Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed.
 
 ## Configuration
@@ -16,9 +8,9 @@ First, you need to have at least one [WordPress site](https://roots.io/trellis/d
 
 For deploys, there's a couple more settings needed:
 
-* `repo` (required) - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/bedrock.git`)
-* `repo_subtree_path` (optional) - relative path to your Bedrock/WP directory in your repo if its not the root (like `site` in [roots-example-project](https://github.com/roots/roots-example-project.com))
-* `branch` (optional) - the git branch to deploy (default: `master`)
+- `repo` (required) - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/bedrock.git`)
+- `repo_subtree_path` (optional) - relative path to your Bedrock/WP directory in your repo if its not the root (like `site` in [roots-example-project](https://github.com/roots/roots-example-project.com))
+- `branch` (optional) - the git branch to deploy (default: `master`)
 
 Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml` as detailed in the [docs](https://roots.io/trellis/docs/wordpress-sites/#remote-servers).
 
@@ -55,28 +47,28 @@ Each step has a `before` and `after` hook. The hooks are variables that you can 
 
 The hook variables available are:
 
-* `deploy_before`
-* `deploy_initialize_before`
-* `deploy_initialize_after`
-* `deploy_update_before`
-* `deploy_update_after`
-* `deploy_prepare_before`
-* `deploy_prepare_after`
-* `deploy_build_before`
-* `deploy_build_after`
-* `deploy_share_before`
-* `deploy_share_after`
-* `deploy_finalize_before`
-* `deploy_finalize_after`
-* `deploy_after`
+- `deploy_before`
+- `deploy_initialize_before`
+- `deploy_initialize_after`
+- `deploy_update_before`
+- `deploy_update_after`
+- `deploy_prepare_before`
+- `deploy_prepare_after`
+- `deploy_build_before`
+- `deploy_build_after`
+- `deploy_share_before`
+- `deploy_share_after`
+- `deploy_finalize_before`
+- `deploy_finalize_after`
+- `deploy_after`
 
 ### Default hooks
 
 By default, Trellis defines and uses three hooks:
 
-* `deploy_build_after` runs `composer install`.
-* `deploy_finalize_before` checks the WordPress installation.
-* `deploy_finalize_after` refreshes WordPress settings and reloads php-fpm.
+- `deploy_build_after` runs `composer install`.
+- `deploy_finalize_before` checks the WordPress installation.
+- `deploy_finalize_after` refreshes WordPress settings and reloads php-fpm.
 
 The default deploy hooks are defined in `roles/deploy/defaults/main.yml`:
 
@@ -169,4 +161,4 @@ You may manually specify a different release using `--extra-vars='release=123456
 
 Trellis can deploy to other hosts that support SSH, Composer, and WP-CLI, along with updating the web root path.
 
-* [Deploying to Kinsta with Trellis](https://roots.io/guides/deploying-to-kinsta-with-trellis/)
+- [Deploying to Kinsta with Trellis](https://roots.io/guides/deploying-to-kinsta-with-trellis/)

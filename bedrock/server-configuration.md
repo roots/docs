@@ -1,21 +1,12 @@
----
-ID: 31938
-post_title: Bedrock Server Configuration
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/bedrock/docs/bedrock-server-configuration/
-published: true
-post_date: 2018-12-21 18:24:29
----
+# Server Configuration
+
 Bedrock can run on any webserver that supports Composer and PHP >= 7.1. The document root for your site must be pointed to Bedrock's `web` folder.
 
 ## Nginx configuration for Bedrock
 
 If you aren't using a Nginx-based setup that already supports Bedrock, such as [Valet](https://roots.io/guides/wordpress-local-development-on-os-x-with-valet-and-bedrock/) or [Trellis](https://roots.io/trellis/), you'll need to configure Nginx with the following rules:
 
-```plain
+```
 server {
   listen 80;
   server_name example.com;
@@ -24,7 +15,7 @@ server {
   index index.php index.htm index.html;
 
   # Prevent PHP scripts from being executed inside the uploads folder.
-  location ~* /app/uploads/.*.php$ {
+  location ~- /app/uploads/.*.php$ {
     deny all;
   }
 
@@ -40,14 +31,14 @@ Multisite installations on Nginx need additional rewrites depending on the type 
 
 #### Subdomain multisite rewrites
 
-```plain
+```
 rewrite ^/(wp-.*.php)$ /wp/$1 last;
 rewrite ^/(wp-(content|admin|includes).*) /wp/$1 last;
 ```
 
 #### Subfolder multisite rewrites
 
-```raw
+```
 if (!-e $request_filename) {
   rewrite /wp-admin$ $scheme://$host$uri/ permanent;
   rewrite ^(/[^/]+)?(/wp-.*) /wp$2 last;
@@ -59,7 +50,7 @@ if (!-e $request_filename) {
 
 Make sure the `DocumentRoot` is set to the `web` folder:
 
-```plain
+```
 <VirtualHost *:80>
         DocumentRoot /var/www/html/bedrock/web
 
@@ -83,7 +74,7 @@ Make sure the `DocumentRoot` is set to the `web` folder:
 
 You can also add the suggested `.htaccess` file from WordPress at `web/.htaccess`:
 
-```plain
+```php
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

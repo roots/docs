@@ -1,0 +1,15 @@
+{
+  "name": "Roots Documentation",
+  "short_name": "Root Documentation",
+  "icons": [
+    {
+      "src": "/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#525ddc"
+}

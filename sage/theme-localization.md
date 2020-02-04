@@ -1,14 +1,5 @@
----
-ID: 26300
-post_title: Theme Localization
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/theme-localization/
-published: true
-post_date: 2018-04-24 10:47:48
----
+# Theme Localization
+
 ## Generating language files
 
 1. Open `package.json` and add a script for generating language files:
@@ -41,7 +32,7 @@ Make sure language files exist in the `resources/lang` directory.
 
 ## Polylang and Sage
 
-* Install [BenjaminMedia/wp-polylang-theme-strings](https://github.com/BenjaminMedia/wp-polylang-theme-strings)
-* Replace `__()` with `pll__()` in your templates
+- Install [BenjaminMedia/wp-polylang-theme-strings](https://github.com/BenjaminMedia/wp-polylang-theme-strings)
+- Replace `__()` with `pll__()` in your templates
 
 Need to also translate strings from the `app/` folder? See [`Sage_Polylang_Theme_Translation`](https://github.com/roots/sage/issues/1875#issuecomment-380076482).

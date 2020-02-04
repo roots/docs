@@ -1,14 +1,5 @@
----
-ID: 6135
-post_title: Theme Functionality
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/theme-functionality/
-published: true
-post_date: 2015-09-01 19:05:16
----
+# Theme Functionality
+
 The `app/` directory contains all of the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
 
 The PHP code in Sage is namespaced, so make sure to [use namespaced functions and classes](https://roots.io/upping-php-requirements-in-your-wordpress-themes-and-plugins/).

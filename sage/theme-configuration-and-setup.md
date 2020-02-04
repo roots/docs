@@ -1,14 +1,5 @@
----
-ID: 6134
-post_title: Theme Configuration and Setup
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/theme-configuration-and-setup/
-published: true
-post_date: 2015-09-01 19:02:19
----
+# Theme Configuration and Setup
+
 `app/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
 
 ## Stylesheets and scripts
@@ -30,14 +21,14 @@ See [theme assets](/sage/docs/theme-development-and-building/#theme-assets) for 
 
 We recommend using the [Soil](/plugins/soil) Plugin with every WordPress install for additional features:
 
-* Load jQuery from the jQuery CDN*
-* Cleaner WordPress markup*
-* Cleaner HTML output of navigation menus*
-* Root relative URLs*
-* Nice search*
-* Google Analytics snippet from HTML5 Boilerplate
-* Move all JS to the footer
-* Disable trackbacks and pingbacks
+- Load jQuery from the jQuery CDN*
+- Cleaner WordPress markup*
+- Cleaner HTML output of navigation menus*
+- Root relative URLs*
+- Nice search*
+- Google Analytics snippet from HTML5 Boilerplate
+- Move all JS to the footer
+- Disable trackbacks and pingbacks
 
 <small>&lowast;If Soil is installed and activated on your WordPress install, Sage will enable these features by default.</small>
 
@@ -67,7 +58,7 @@ Sage registers two sidebars by default: Primary & Footer. Add additional sidebar
 
 ## Theme structure
 
-```shell
+```bash
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── controllers/      # → Controller files

@@ -1,14 +1,5 @@
----
-ID: 7763
-post_title: Local Development Setup
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/trellis/docs/local-development-setup/
-published: true
-post_date: 2015-10-15 12:24:41
----
+# Local Development
+
 Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
 
 1. Configure your site(s) based on the [WordPress Sites docs](https://roots.io/trellis/docs/wordpress-sites/) and read the [development specific](https://roots.io/trellis/docs/wordpress-sites/#development) ones.
@@ -52,11 +43,11 @@ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant provision
 
 Notes on the commands: 
 
-* `SKIP_GALAXY` saves some time because you already have those roles installed
-* `ANSIBLE_TAGS` runs only the relevant roles
-* `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
+- `SKIP_GALAXY` saves some time because you already have those roles installed
+- `ANSIBLE_TAGS` runs only the relevant roles
+- `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
 
-If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
+If you added a *new- WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 
 ```bash
 vagrant reload --provision

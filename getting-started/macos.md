@@ -1,15 +1,6 @@
----
-ID: 29648
-post_title: macOS Basic Setup
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/getting-started/docs/macos-basic-setup/
-published: true
-post_date: 2018-08-20 13:33:35
----
-Basic macOS 10.13+ development environment for Trellis, Bedrock, and Sage
+# macOS
+
+Trellis, Bedrock, and Sage development on macOS 10.13+ is supported by several libraries and software packages. 
 
 ## Requirements
 
@@ -26,7 +17,7 @@ Trellis, Bedrock, and Sage development on macOS relies on several libraries and 
 
 Install Xcode Command Line Tools using the built-in command:
 
-```sh
+```bash
 $ xcode-select --install
 ```
 
@@ -34,7 +25,7 @@ $ xcode-select --install
 
 Git is automatically installed as part of the Xcode Command Line tools. Configure Git with your user information:
 
-```sh
+```bash
 $ git config --global user.name "Your Name"
 $ git config --global user.email "yourname@example.com"
 ```
@@ -43,7 +34,7 @@ $ git config --global user.email "yourname@example.com"
 
 Install Homebrew from the instructions at [https://brew.sh](https://brew.sh/), or with the following command:
 
-```sh
+```bash
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
@@ -51,7 +42,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 Install Composer from Homebrew:
 
-```sh
+```bash
 $ brew install composer
 ```
 
@@ -61,7 +52,7 @@ $ brew install composer
 
 Trellis and GitHub both use SSH keys to communicate securely without the need to type a username and password each time. Create your SSH key and add them to your macOS Keychain:
 
-```sh
+```bash
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
@@ -73,9 +64,78 @@ Modify your `~/.ssh/config` file to automatically load keys into the ssh-agent a
 
 Edit your `~/.ssh/config` file and add the following lines:
 
-```sh
+```bash
 Host *
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
+```
+
+## Working with Sage
+
+Sage relies on a few build tools to manage dependencies and build assets. Install these tools:
+
+- nvm
+- Node.js
+- yarn
+
+### nvm
+
+Install nvm from the instructions at [https://github.com/creationix/nvm](https://github.com/creationix/nvm), or with the following command:
+
+```bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+```
+
+### Node.js
+
+Install the latest Node.js LTS release from nvm:
+
+```bash
+$ nvm install --lts
+```
+
+### yarn
+
+Install yarn:
+
+```bash
+$ npm install --global yarn
+```
+
+## Working with Trellis
+
+Trellis relies on a few additional software packages to function. Install these packages:
+
+- VirtualBox >= 4.3.10
+- Vagrant >= 2.1.0
+- Ansible >= 2.5.3
+
+### VirtualBox
+
+Download and install the "OS X Hosts" version of VirtualBox from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+
+### Vagrant
+
+Install Vagrant from Homebrew:
+
+```bash
+$ brew cask install vagrant
+```
+
+### Ansible
+
+Install pip (Python package manager) if you don't already have it:
+
+```bash
+$ sudo easy_install pip
+```
+
+Install Ansible with pip:
+
+```bash
+$ pip install ansible
+
+# Install a specific Ansible version:
+$ pip install ansible==2.4.0.0
 ```

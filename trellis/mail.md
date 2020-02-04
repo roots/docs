@@ -1,20 +1,12 @@
----
-ID: 6155
-post_title: Mail
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/mail/
-published: true
-post_date: 2015-09-03 18:10:25
----
+# Mail
+
 Trellis' mail functionality is separated between development and staging/production since you usually want different behaviour out of them.
 
 ## Development
 Dealing with emails in development is never fun. The two common solutions are:
 
-* Ignore it and hope it works fine on production
-* Set up real SMTP credentials to send emails
+- Ignore it and hope it works fine on production
+- Set up real SMTP credentials to send emails
 
 Enter [MailHog](https://github.com/mailhog/MailHog). It’s a simple tool which captures outgoing email and lets you view them from a web UI. And after that you can optionally "release" them which would actually send the email.
 
@@ -50,16 +42,16 @@ We always suggest using an external email service rather than your own because i
 
 Some suggested services:
 
-* [Sendgrid](https://sendgrid.com/)
-* [Mailgun](http://www.mailgun.com/)
-* [Amazon SES](http://aws.amazon.com/ses/)
+- [Sendgrid](https://sendgrid.com/)
+- [Mailgun](http://www.mailgun.com/)
+- [Amazon SES](http://aws.amazon.com/ses/)
 
 All of these offer around 10k+ emails for free per month. Once you have SMTP credentials, configure them in `group_vars/all/mail.yml`.
 
-* `mail_smtp_server`: hostname:port
-* `mail_hostname`: hostname for mail delivery
-* `mail_user`: username
-* `mail_password`: password or API key (define in `group_vars/all/vault.yml`)
+- `mail_smtp_server`: hostname:port
+- `mail_hostname`: hostname for mail delivery
+- `mail_user`: username
+- `mail_password`: password or API key (define in `group_vars/all/vault.yml`)
 
 ### Example
 
@@ -72,7 +64,7 @@ mail_password: "{{ vault_mail_password }}" # Define this in group_vars/all/vault
 
 If your SMTP settings are invalid, WordPress will return the following error message:
 
-```txt
+```
 Could not instantiate mail function.
 ```
 

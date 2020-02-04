@@ -1,14 +1,5 @@
----
-ID: 17270
-post_title: Debugging PHP
-author: Nathaniel Schweinberg
-post_date: 2016-11-07 14:25:43
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/trellis/docs/debugging-php/
-published: true
----
+# Debugging PHP
+
 There are many ways to go about debugging a PHP application, and one of the most effective ways is using a debugger. One of the most powerful tools in the PHP community to go about doing this is [Xdebug](https://en.wikipedia.org/wiki/Xdebug).
 
 ## What is Xdebug?
@@ -76,7 +67,7 @@ some_inventory_hostname
 
 You would execute:
 
-```sh
+```bash
 ./bin/xdebug-tunnel.sh open some_inventory_hostname
 ```
 
@@ -84,7 +75,7 @@ This script runs the `xdebug-tunnel.yml` playbook with the necessary variables t
 
 To close the tunnel, as well as disable Xdebug, run:
 
-```sh
+```bash
 ./bin/xdebug-tunnel.sh close some_inventory_hostname
 ```
 
@@ -102,12 +93,12 @@ If you don't use inventory aliases in your host files, you can also use an ip ad
 
 You can do this:
 
-```sh
+```bash
 ./bin/xdebug-tunnel.sh open 12.34.56.78
 ```
 
 You must specify the `host` exactly the same when opening and closing the tunnel. It would cause an error to open the tunnel with a `host` of `some_inventory_hostname` then close with a host of `12.34.56.78`. This is because the tunnel socket is created using the host parameter you pass:
 
-```sh
+```bash
 /tmp/trellis-xdebug-{{ provided host }}
 ```

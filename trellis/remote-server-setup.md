@@ -1,22 +1,13 @@
----
-ID: 7765
-post_title: Remote Server Setup
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/trellis/docs/remote-server-setup/
-published: true
-post_date: 2015-10-15 12:27:00
----
+# Remote Server Setup
+
 Setting up remote servers (staging/production) is similar to the [local development setup](https://roots.io/trellis/docs/local-development-setup/) with a couple differences.
 
 In development, Trellis handles everything for you. It automatically creates a server (virtual machine), provisions it, and installs WordPress.
 
 For remote servers, the workflow is a little different with two new concepts:
 
-* Provision
-* Deploy
+- Provision
+- Deploy
 
 ## Provision
 
@@ -24,7 +15,7 @@ Provisioning a server means to set it up with the necessary software and configu
 
 Trellis has two main [playbooks](http://docs.ansible.com/ansible/playbooks.html): `dev.yml` and `server.yml`. As mentioned in local development, Vagrant automatically runs the `dev.yml` playbook for us.
 
-For remote servers, you provision a server via the `server.yml` playbook. This leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet.
+For remote servers, you provision a server via the `server.yml` playbook. This leaves you with a server *prepared- to run a WordPress site, but without the actual codebase yet.
 
 ## Deploy
 
@@ -49,7 +40,7 @@ Note: Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migr
 
 **You can't run Trellis on a shared host**.
 
-2. You need to be able to connect to your server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
+2. You need to be able to connect to your server from your local computer via SSH. We *highly- suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
 
 Now that you have a working Ubuntu 18.04 server that you can easily SSH into, you need to configure a few things:
 
@@ -60,7 +51,7 @@ Now that you have a working Ubuntu 18.04 server that you can easily SSH into, yo
 5. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](https://roots.io/trellis/docs/security/).
 6. Run `ansible-playbook server.yml -e env=<environment>` from your local machine (Ansible connects to your remote server via SSH).
 
-This leaves you with a *provisioned* server. The next step is to [deploy](https://roots.io/trellis/docs/deploys/) your site.
+This leaves you with a *provisioned- server. The next step is to [deploy](https://roots.io/trellis/docs/deploys/) your site.
 
 ## Re-provisioning
 
@@ -78,4 +69,4 @@ ansible-playbook server.yml -e env=<environment> --tags=users
 
 ## Resources
 
-* [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/guides/using-trellis-to-provision-and-deploy-to-digitalocean-droplets/)
+- [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/guides/using-trellis-to-provision-and-deploy-to-digitalocean-droplets/)

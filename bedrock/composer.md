@@ -1,21 +1,13 @@
----
-ID: 6140
-post_title: Composer
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/bedrock/docs/composer/
-published: true
-post_date: 2015-09-03 17:15:57
----
+# Composer
+
 [Composer](http://getcomposer.org) is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
 
 See these resources for more extensive documentation:
 
-* [Using Composer with WordPress](https://roots.io/using-composer-with-wordpress/)
-* [WordPress Plugins with Composer](https://roots.io/wordpress-plugins-with-composer/)
-* [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (paid screencast)
-* [Private or Commercial WordPress Plugins as Composer Dependencies](https://roots.io/guides/private-or-commercial-wordpress-plugins-as-composer-dependencies/)
+- [Using Composer with WordPress](https://roots.io/using-composer-with-wordpress/)
+- [WordPress Plugins with Composer](https://roots.io/wordpress-plugins-with-composer/)
+- [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (paid screencast)
+- [Private or Commercial WordPress Plugins as Composer Dependencies](https://roots.io/guides/private-or-commercial-wordpress-plugins-as-composer-dependencies/)
 
 ## Plugins
 
@@ -27,7 +19,7 @@ Example: `"wpackagist-plugin/akismet": "dev-trunk"`
 
 Whenever you add a new plugin or update the WP version, run `composer update` to install your new packages.
 
-`plugins`, and `mu-plugins` are Git ignored by default since Composer manages them. If you want to add something to those folders that *isn't* managed by Composer, you need to update `.gitignore` to whitelist them:
+`plugins`, and `mu-plugins` are Git ignored by default since Composer manages them. If you want to add something to those folders that *isn't- managed by Composer, you need to update `.gitignore` to whitelist them:
 
 `!web/app/plugins/plugin-name`
 

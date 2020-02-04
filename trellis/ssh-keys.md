@@ -1,13 +1,5 @@
----
-ID: 6150
-post_title: SSH Keys
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: https://roots.io/trellis/docs/ssh-keys/
-published: true
-post_date: 2015-09-03 17:44:44
----
+# SSH Keys
+
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).
 
 <table class="table table-bordered">
@@ -80,9 +72,9 @@ admin_user: admin
 ```
 
 **Notes**
-* You may enable colleagues to run `server.yml` by adding their public SSH `keys` to the `admin_user`.
-* If your hosting provider disables root but provides a default user such as `ubuntu`, specify `admin_user: ubuntu`.
-* If you are trying to override the dynamic selection of `root` or `admin_user`, preferring to manually specify the Ansible remote user, review notes in the section [remote user variable precedence](https://github.com/roots/trellis/pull/274#issuecomment-121455761).
+- You may enable colleagues to run `server.yml` by adding their public SSH `keys` to the `admin_user`.
+- If your hosting provider disables root but provides a default user such as `ubuntu`, specify `admin_user: ubuntu`.
+- If you are trying to override the dynamic selection of `root` or `admin_user`, preferring to manually specify the Ansible remote user, review notes in the section [remote user variable precedence](https://github.com/roots/trellis/pull/274#issuecomment-121455761).
 
 ## `deploy.yml`: `web`
 
@@ -133,7 +125,7 @@ users:
 The example above also demonstrates the option of creating `another_user` whose primary group is `some_group`, but who is also in `some_other_group`, and who has public SSH keys for `swalkinshaw`.
 
 **Note**
-* Removing a key and re-provisioning the server does not remove the key in the `authorized_keys` file.
+- Removing a key and re-provisioning the server does not remove the key in the `authorized_keys` file.
 
 ## Cloning remote repo using SSH agent forwarding
 
@@ -145,6 +137,6 @@ The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args 
 
 Remember to import your SSH key password into Keychain by running:
 
-```sh
+```bash
 ssh-add -K
 ```

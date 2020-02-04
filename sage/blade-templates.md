@@ -1,14 +1,5 @@
----
-ID: 5332
-post_title: Blade Templates
-author: Ben Word
-post_excerpt: ""
-layout: doc
-permalink: >
-  https://roots.io/sage/docs/blade-templates/
-published: true
-post_date: 2015-09-01 19:14:17
----
+# Blade Templates
+
 Sage uses [Laravel's Blade](https://laravel.com/docs/5.6/blade) templating engine.
 
 ## Passing data to templates
@@ -35,6 +26,6 @@ wp package install git@github.com:alwaysblank/blade-generate.git
 
 After installing `blade-generate` you can run the following commands:
 
-* `wp blade compile` 
-* `wp blade clear`
-* `wp blade wipe`
+- `wp blade compile` 
+- `wp blade clear`
+- `wp blade wipe`
