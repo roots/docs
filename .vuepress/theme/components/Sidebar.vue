@@ -36,18 +36,24 @@ export default {
   components: { SidebarLinks, NavLinks },
 
   methods: {
-    // TODO
     onChange: event => {
-      const path = this.$page.path;
-      const current = path.split("/")[1] || false;
+      return console.log(event);
 
-      window.location.href = path.replace(this.current, event.target.value);
+      // TODO
+      // const path = this.$page.path;
+      // const current = path.split("/")[1] || false;
+      //
+      // window.location.href = path.replace(this.current, event.target.value);
     }
   },
 
   computed: {
     versions() {
       const versions = this.$site.themeConfig.versions;
+
+      if (!versions[this.current]) {
+        return;
+      }
 
       return (
         Object.keys(versions[this.current]).map(version => {
