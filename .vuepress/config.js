@@ -1,34 +1,38 @@
 module.exports = {
+  lang: 'en-US',
   title: 'Roots',
-  description: 'Empower your WordPress development workflow.',
-  base: '/',
+  description: 'The official documentation for the WordPress Roots stack.',
 
   serviceWorker: true,
 
   plugins: [
     '@vuepress/pwa',
     '@vuepress/back-to-top',
+    ['vuepress-plugin-redirect', {
+      redirectors: [
+        { base: '/sage/', alternative: ['master/installation', '9.x/installation'] },
+        { base: '/bedrock/', alternative: ['master/installation'] },
+        { base: '/trellis/', alternative: ['master/installation'] },
+      ]
+    }]
   ],
 
   head: [
     [
-      "link",
-      {
-        href: "https://fonts.googleapis.com/css?family=Nunito:300,400,400i,500,600,800",
-        rel: "stylesheet",
-        type: "text/css"
+      'link', {
+        href: 'https://fonts.googleapis.com/css?family=Nunito:300,400,400i,500,600,800',
+        rel: 'stylesheet',
+        type: 'text/css'
       }
     ],
     [
-      "link",
-      {
+      'link', {
         rel: 'manifest',
         href: '/manifest.json'
       }
     ],
     [
-      "link",
-      {
+      'link', {
         rel: 'icon',
         href: 'https://cdn.roots.io/apple-touch-icon.png'
       }
@@ -36,88 +40,34 @@ module.exports = {
   ],
 
   themeConfig: {
-    displayAllHeaders: false,
-    sidebarDepth: 2,
+    repoLabel: 'GitHub',
+    repo: 'roots/docs',
+    editLinks: true,
+    docsBranch: 'master',
+    editLinkText: 'Help us improve this page.',
 
     nav: [
       { text: 'Support', link: 'https://discourse.roots.io' },
-      { text: 'GitHub', link: 'https://github.com/roots' }
+      {
+        text: 'Ecosystem', ariaLabel: 'Ecosystem Menu', items: [
+          { text: 'Sage', link: '/sage/' },
+          { text: 'Bedrock', link: '/bedrock/' },
+          { text: 'Trellis', link: '/trellis/' }
+        ]
+      }
     ],
 
-    sidebar: [
-      {
-        title: 'Getting Started',
-        collapsable: true,
-        children: prefix('getting-started', [
-          'macos',
-          'ubuntu-linux',
-          'windows',
-          'roots-example-project'
-        ]),
-      },
-      {
-        title: 'Trellis',
-        collapsable: true,
-        children: prefix('trellis', [
-          'database-access',
-          'debugging-php',
-          'deploys',
-          'existing-trellis-projects',
-          'fastcgi-caching',
-          'installation',
-          'local-development',
-          'mail',
-          'multisite',
-          'nginx-includes',
-          'passwords',
-          'remote-server-setup',
-          'security',
-          'server-logs',
-          'ssh-keys',
-          'ssl',
-          'troubleshooting',
-          'user-contributed-extensions',
-          'vagrantfile',
-          'vault',
-          'wordpress-sites',
-        ]),
-      },
-      {
-        title: 'Bedrock',
-        collapsable: true,
-        children: prefix('bedrock', [
-          'installation',
-          'compatability',
-          'composer',
-          'configuration-files',
-          'environment-variables',
-          'folder-structure',
-          'server-configuration',
-          'deployment',
-          'local-development',
-          'mu-plugin-autoloader',
-          'wp-cron',
-        ])
-      },
-      {
-        title: 'Sage',
-        collapsable: true,
-        children: prefix('sage', [
-          'blade-templates',
-          'compatibility',
-          'existing-sage-projects',
-          'gutenberg',
-          'theme-configuration-and-setup',
-          'theme-deployment',
-          'theme-development-and-building',
-          'theme-functionality',
-          'theme-installation',
-          'theme-localization',
-          'theme-sidebar',
-          'theme-templates',
-        ]),
-      },
-    ],
+    sidebar: {
+      '/trellis/master': require('../trellis/master'),
+      '/bedrock/master': require('../bedrock/master'),
+      '/sage/9.x': require('../sage/9.x'),
+    },
+
+    versions: {
+      'trellis': ['master'],
+      'bedrock': ['master'],
+      'sage': ['10.x', '9.x', '8.x'],
+    },
   }
 }
 

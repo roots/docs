@@ -27,14 +27,14 @@ h1
     font-weight 500
     font-size 1.1em
 
-    &::after
+    &:after
       content ' Documentation'
       color #999999
 
   .nav-links
     font-size 0.8rem
 
-    a:hover
+    ahover
       color $accentColor
 
 @media (min-width 720px)
@@ -45,7 +45,53 @@ h1
     width 13rem
 
 .sidebar
-  .sidebar-group:not(.collapsable) .sidebar-heading,
+  .sidebar-version
+    margin-top 1rem
+    margin-bottom -0.5rem
+    padding 0.35rem 1.5rem 0.35rem 1.25rem
+
+    label
+      text-transform uppercase
+      opacity 0.65
+      margin-bottom 0.4rem
+      letter-spacing 2px
+      font-size 0.65rem
+      display block
+
+  .sidebar-select
+    display flex
+    align-items center
+    position relative
+
+    select
+      opacity: 0.4
+      font-size 1rem
+      padding-left 0.5rem
+      padding-top 0.25rem
+      padding-bottom 0.25rem
+      display block
+      width 100%
+      background-color transparent
+      appearance none
+
+    .sidebar-select-arrow
+      pointer-events none
+      padding-left 0.5rem
+      padding-right 0.5rem
+      align-items center
+      display flex
+      position absolute
+      top 0
+      bottom 0
+      right 0
+      color #a0aec0
+
+      svg
+        width 1rem
+        height 1rem
+        fill currentColor
+
+  .sidebar-groupnot(.collapsable) .sidebar-heading,
   .sidebar-heading
     color #999999
     font-size 0.7em
@@ -64,8 +110,8 @@ h1
       color #555555
       border-left 0.125rem solid transparent
 
-    .sidebar-link:hover,
-    .sidebar-link:active,
+    .sidebar-linkhover,
+    .sidebar-linkactive,
     .sidebar-link.active
       color $accentColor
       border-left-color $accentColor
@@ -84,10 +130,10 @@ h1
 
   ul, ol
     li
-      padding: 0.5rem 0
+      padding 0.5rem 0
 
       div[class*="language-"]
-        margin-top: 0.75rem
+        margin-top 0.75rem
 
 div[class*="language-"]
   background-color #ffffff
@@ -96,7 +142,7 @@ div[class*="language-"]
   box-shadow 0 2px 4px 0 rgba(0, 0, 0, 0.05)
   border 1px solid rgba(0, 0, 0, 0.05)
 
-  &::before
+  &:before
     color rgba(0, 0, 0, 0.2)
 
 .theme-default-content
@@ -111,35 +157,35 @@ div[class*="language-"]
     color #888
 
     .token
-      &.property,
-      &.class-name,
-      &.function,
-      &.keyword,
-      &.constant,
-      &.double-quoted-string,
-      &.string
+      &:.property,
+      &:.class-name,
+      &:.function,
+      &:.keyword,
+      &:.constant,
+      &:.double-quoted-string,
+      &:.string
         color $accentColor
 
-      &.char,
-      &.attr-value,
-      &.regex,
-      &.variable,
-      &.selector,
-      &.important,
-      &.atrule,
-      &.builtin
+      &:.char,
+      &:.attr-value,
+      &:.regex,
+      &:.variable,
+      &:.selector,
+      &:.important,
+      &:.atrule,
+      &:.builtin
         color lighten($accentColor, 40%)
 
-      &.operator,
-      &.symbol,
-      &.punctuation,
-      &.boolean,
-      &.number
+      &:.operator,
+      &:.symbol,
+      &:.punctuation,
+      &:.boolean,
+      &:.number
         color #888
 
-      &.comment,
-      &.block-comment,
-      &.prolog,
-      &.doctype,
-      &.cdata
+      &:.comment,
+      &:.block-comment,
+      &:.prolog,
+      &:.doctype,
+      &:.cdata
         color #bbb
