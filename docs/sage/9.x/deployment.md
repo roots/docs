@@ -1,4 +1,4 @@
-# Theme Deployment
+# Deployment
 
 To deploy a Sage theme you'll need to make sure two things are covered:
 

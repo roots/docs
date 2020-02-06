@@ -1,4 +1,4 @@
-# Theme Localization
+# Localization
 
 ## Generating language files
 

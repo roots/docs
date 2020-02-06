@@ -1,4 +1,4 @@
-# Theme Development and Building
+# Compiling Assets
 
 <p class="lead">These are the primary projects that make up the Sage workflow:</p>
 

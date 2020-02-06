@@ -1,4 +1,4 @@
-# Theme Configuration and Setup
+# Configuration
 
 `app/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
 

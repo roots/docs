@@ -1,4 +1,4 @@
-# Theme Sidebar
+# Sidebar
 
 ## Displaying the sidebar
 

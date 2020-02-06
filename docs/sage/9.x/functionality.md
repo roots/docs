@@ -1,4 +1,4 @@
-# Theme Functionality
+# Functionality
 
 The `app/` directory contains all of the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
 

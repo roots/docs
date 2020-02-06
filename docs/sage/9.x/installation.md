@@ -1,4 +1,4 @@
-# Theme Installation
+# Installation
 
 Make sure all dependencies have been installed before moving on:
 
