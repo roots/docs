@@ -28,10 +28,12 @@
 export default {
   methods: {
     onChange(item) {
-      window.location.href = this.$withBase(this.path.replace(
+      const path = this.$withBase(this.path.replace(
         this.version,
         event.target.value
       ));
+
+      window.location.href = path.substring(0, path.lastIndexOf('/')) + '/installation.html';
     },
   },
 
