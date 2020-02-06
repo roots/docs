@@ -1,10 +1,87 @@
 @require './palette'
 
 body
-  font-family Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  font-family 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  font-weight 300
+  color #111
 
-a
-  transition color ease-in-out 86ms, background-color ease-in-out 86ms, border-color ease-in-out 86ms
+a, button
+  transition color ease-in-out 86ms, background-color ease-in-out 86ms, border-color ease-in-out 86ms, opacity ease-in-out 86ms
+
+.navbar
+  background-color $accentColor
+  color #fff
+  box-shadow 0 2px 4px 0 rgba(0, 0, 0, 0.05)
+  border-bottom none
+  display: flex !important
+
+  .logo
+    margin-top 0.2rem
+    height: 1.9rem !important
+    min-width 1.9rem !important
+
+  .search-box
+    input
+      color: #555
+
+      &::placeholder
+        opacity: 0.7
+
+    .suggestion a
+      color #555
+      opacity 0.8
+
+      &:hover
+        opacity 1
+
+  .site-name
+    display none
+
+  .nav-links
+    font-size 0.8rem
+
+  .links
+    background-color inherit !important
+
+    .icon.outbound
+      color #fff
+      opacity 0.5
+
+    .nav-item > .nav-link,
+    .repo-link
+      opacity 0.8
+      color #fff
+      font-weight 300
+
+      &:hover
+        opacity 1
+
+    .dropdown-wrapper
+      .dropdown-title
+        color inherit
+        opacity 0.8
+
+      .arrow
+        border-top-color #fff
+        opacity 0.5
+
+      &:hover
+        .dropdown-title
+          opacity 1
+
+      .nav-dropdown
+        color #111
+
+.sidebar .sidebar-heading
+  font-weight 500
+  font-size 1rem
+
+.sidebar .sidebar-current
+  margin-bottom 1rem
+  text-transform uppercase
+  font-weight 100
+  font-size 0.9rem
+  color $accentColor
 
 h1,
 h2,
@@ -17,25 +94,6 @@ h6
 h1
   padding-bottom 16px
   border-bottom 2px solid rgba(0, 0, 0, 0.05)
-
-.navbar
-  box-shadow 0 2px 4px 0 rgba(0, 0, 0, 0.05)
-  border-bottom none
-
-  a > .site-name
-    color $accentColor
-    font-weight 500
-    font-size 1.1em
-
-    &:after
-      content ' Documentation'
-      color #999999
-
-  .nav-links
-    font-size 0.8rem
-
-    ahover
-      color $accentColor
 
 @media (min-width 720px)
   .page
@@ -115,6 +173,15 @@ h1
     .sidebar-link.active
       color $accentColor
       border-left-color $accentColor
+
+.page-edit .edit-link a
+  color #111 !important
+  opacity 0.4
+  font-weight 400
+  font-size 0.9rem
+
+  &:hover
+    opacity 0.6
 
 .theme-default-content
   padding 4rem 2.5rem 1rem

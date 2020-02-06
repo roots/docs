@@ -1,8 +1,6 @@
 module.exports = {
-  title: 'Roots',
-  description: 'The official documentation for the WordPress Roots stack.',
-  base: '/docs/',
-
+  title: 'Roots Documentation',
+  baseDir: '/docs/',
   serviceWorker: true,
 
   plugins: [
@@ -10,17 +8,18 @@ module.exports = {
     '@vuepress/back-to-top',
     ['vuepress-plugin-redirect', {
       redirectors: [
-        { base: '/sage/', alternative: ['master/installation', '9.x/installation'] },
-        { base: '/bedrock/', alternative: ['master/installation'] },
-        { base: '/trellis/', alternative: ['master/installation'] },
-      ]
-    }]
+        { base: '/sage/', storage: true, alternative: ['master/installation', '10.x/installation', '9.x/installation'] },
+        { base: '/bedrock/', storage: true, alternative: ['master/installation'] },
+        { base: '/trellis/', storage: true, alternative: ['master/installation'] },
+        { base: '/', storage: true, alternative: ['getting-started/macos'] },
+      ],
+    }],
   ],
 
   head: [
     [
       'link', {
-        href: 'https://fonts.googleapis.com/css?family=Nunito:300,400,400i,500,600,800',
+        href: 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,400i,500,600,800',
         rel: 'stylesheet',
         type: 'text/css'
       }
@@ -40,15 +39,20 @@ module.exports = {
   ],
 
   themeConfig: {
+    logo: '/logo.svg',
+    searchPlaceholder: 'Search Docs',
+
     repoLabel: 'GitHub',
     repo: 'roots/docs',
+    docsDir: 'docs',
     editLinks: true,
     docsBranch: 'master',
     editLinkText: 'Help us improve this page.',
+    lastUpdated: 'Last Updated',
 
     nav: [
       {
-        text: 'Ecosystem', ariaLabel: 'Ecosystem Menu', items: [
+        text: 'Ecosystem', ariaLabel: 'Ecosystem Menu', link: '/', items: [
           { text: 'Sage', link: '/sage/' },
           { text: 'Bedrock', link: '/bedrock/' },
           { text: 'Trellis', link: '/trellis/' }
@@ -62,6 +66,7 @@ module.exports = {
       '/bedrock/master': require('../bedrock/master'),
       '/sage/8.x': require('../sage/8.x'),
       '/sage/9.x': require('../sage/9.x'),
+      '/': require('./sidebar'),
     },
 
     versions: {
@@ -70,8 +75,4 @@ module.exports = {
       'sage': ['10.x', '9.x', '8.x'],
     },
   }
-}
-
-function prefix(prefix, children) {
-  return children.map(child => `${prefix}/${child}`);
 }

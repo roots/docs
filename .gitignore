@@ -1,2 +1,3 @@
 /node_modules
-/.vuepress/dist
+/yarn-error.log
+/docs/.vuepress/dist

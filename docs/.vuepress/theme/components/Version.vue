@@ -1,5 +1,9 @@
 <template>
-  <div class="sidebar-version">
+  <div class="sidebar-version" v-if="versions">
+    <div class="sidebar-current">
+      {{ this.current }} docs
+    </div>
+
     <label>Version</label>
 
     <div class="sidebar-select">
