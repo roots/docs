@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Roots Documentation',
-  baseDir: '/docs/',
+  base: '/docs/',
   serviceWorker: true,
 
   plugins: [

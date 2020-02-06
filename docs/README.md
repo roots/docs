@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="0;url=/getting-started/macos.html" />
+<meta http-equiv="refresh" content="0;url=/docs/getting-started/macos.html" />
