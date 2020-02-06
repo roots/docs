@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Roots',
   description: 'The official documentation for the WordPress Roots stack.',
-  base: '/dox/',
+  base: '/docs/',
 
   serviceWorker: true,
 
