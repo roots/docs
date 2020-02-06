@@ -1,7 +1,7 @@
 module.exports = {
-  lang: 'en-US',
   title: 'Roots',
   description: 'The official documentation for the WordPress Roots stack.',
+  base: '/dox/',
 
   serviceWorker: true,
 
@@ -47,19 +47,20 @@ module.exports = {
     editLinkText: 'Help us improve this page.',
 
     nav: [
-      { text: 'Support', link: 'https://discourse.roots.io' },
       {
         text: 'Ecosystem', ariaLabel: 'Ecosystem Menu', items: [
           { text: 'Sage', link: '/sage/' },
           { text: 'Bedrock', link: '/bedrock/' },
           { text: 'Trellis', link: '/trellis/' }
         ]
-      }
+      },
+      { text: 'Support', link: 'https://discourse.roots.io' },
     ],
 
     sidebar: {
       '/trellis/master': require('../trellis/master'),
       '/bedrock/master': require('../bedrock/master'),
+      '/sage/8.x': require('../sage/8.x'),
       '/sage/9.x': require('../sage/9.x'),
     },
 
