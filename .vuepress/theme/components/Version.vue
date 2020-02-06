@@ -24,10 +24,10 @@
 export default {
   methods: {
     onChange(item) {
-      window.location.href = this.path.replace(
+      window.location.href = this.$withBase(this.path.replace(
         this.version,
         event.target.value
-      );
+      ));
     },
   },
 
