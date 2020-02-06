@@ -174,14 +174,21 @@ h1
       color $accentColor
       border-left-color $accentColor
 
-.page-edit .edit-link a
-  color #111 !important
-  opacity 0.4
-  font-weight 400
-  font-size 0.9rem
+.page-edit
+  .edit-link a
+    color #111 !important
+    opacity 0.4
+    font-weight 400
+    font-size 0.9rem
 
-  &:hover
-    opacity 0.6
+    &:hover
+      opacity 0.6
+
+  .last-updated
+    opacity: 0.4
+
+    .prefix, .time
+      color #111 !important
 
 .theme-default-content
   padding 4rem 2.5rem 1rem
