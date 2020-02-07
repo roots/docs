@@ -18,21 +18,13 @@ module.exports = {
       'link', {
         href: 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,400i,500,600,800',
         rel: 'stylesheet',
-        type: 'text/css'
-      }
+        type: 'text/css',
+      },
     ],
-    [
-      'link', {
-        rel: 'manifest',
-        href: '/manifest.json'
-      }
-    ],
-    [
-      'link', {
-        rel: 'icon',
-        href: 'https://cdn.roots.io/apple-touch-icon.png'
-      }
-    ]
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['link', { rel: 'icon', href: 'https://cdn.roots.io/apple-touch-icon.png' }],
+    // ['script', { src: 'https://static.getclicky.com/js' }],
+    // ['script', {}, `var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(66406668);`],
   ],
 
   themeConfig: {
