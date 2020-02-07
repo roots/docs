@@ -46,7 +46,7 @@ If you prefer not to set this default in your `ansible.cfg` file, you can add th
 
 ### 3. Encrypt files
 
-**Caution:** If you have unencrypted `vault.yml` files in your project's git history (e.g., passwords in plain text), you will most likely want to change the variable values in your `vault.yml` files before encrypting them and committing them to your repo.
+**warning:** If you have unencrypted `vault.yml` files in your project's git history (e.g., passwords in plain text), you will most likely want to change the variable values in your `vault.yml` files before encrypting them and committing them to your repo.
 
 Encrypt your `vault.yml` files with the command `ansible-vault encrypt <file>`. The example below uses the command to encrypt the full list of `vault.yml` files (fileglobs are not supported, see [https://github.com/ansible/ansible/issues/6241](https://github.com/ansible/ansible/issues/6241)):
 

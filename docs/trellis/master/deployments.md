@@ -30,7 +30,11 @@ The actual command looks like this: `ansible-playbook deploy.yml -e "site=<domai
 
 You can always use this command itself since it can take any additional `ansible-playbook` options.
 
-**Trellis does not automatically install WordPress on remote servers**. It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
+::: warning Note
+**Trellis does not automatically install WordPress on remote servers**. 
+
+It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
+:::
 
 ## Default flow
 

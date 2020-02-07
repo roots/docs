@@ -15,7 +15,9 @@ The following vars are required if `DATABASE_URL` is not set:
 - `DB_NAME`
 - `DB_PASSWORD`
 
-Note that there is also the `DATABASE_URL` which is optional.
+::: tip Note
+There is also the `DATABASE_URL` which is optional.
+:::
 
 ## WP_ENV
 

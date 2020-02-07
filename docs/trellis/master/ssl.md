@@ -118,7 +118,9 @@ It's also up to you to make sure you've manually registered your account key. Se
 
 Let's Encrypt has rate limits for their production/real certificates. While Trellis will prevent these rate limits from being hit, if you want to test out LE integration, you can use their staging server to get a "fake" certificate.
 
+::: warning Note
 Note that browsers will display an error/warning that they don't recognize the Certificate Authority so this should only be used for testing purposes.
+:::
 
 Just set the following variable:
 

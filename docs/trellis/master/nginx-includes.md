@@ -63,7 +63,9 @@ To explicitly walk through the example, consider just the `site1` site key in th
 
 This `include` directive is located inside the primary `server` block, just before the primary `location` block. Explore the [Child templates](#child-templates) section below for more options if this default does not satisfy your needs.
 
-Note that this default `include` directive per site will not recurse subdirectories within `includes.d/site1` so if you place templates in `nginx-includes/site1/somedir/*.conf.j2`, they will be templated to the remote's `includes.d/site1/somedir/*.conf` but will not be included by default. See the [Child templates](#child-templates) section below for how you could include such confs.
+::: warning Note
+This default `include` directive per site will not recurse subdirectories within `includes.d/site1` so if you place templates in `nginx-includes/site1/somedir/*.conf.j2`, they will be templated to the remote's `includes.d/site1/somedir/*.conf` but will not be included by default. See the [Child templates](#child-templates) section below for how you could include such confs.
+:::
 
 ### File cleanup
 

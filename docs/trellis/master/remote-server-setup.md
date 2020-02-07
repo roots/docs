@@ -36,7 +36,9 @@ Then there are two additional requirements for the remote server itself:
 
 1. You need a server running a bare/stock version of Ubuntu 18.04 LTS (Bionic Beaver). If you're using a host such as DigitalOcean, then just select their Ubuntu 18.04 option.
 
-Note: Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migrate yet. See [#992](https://github.com/roots/trellis/pull/992) for details on the minor changes needed to run it.
+::: warning Note
+Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migrate yet. See [#992](https://github.com/roots/trellis/pull/992) for details on the minor changes needed to run it.
+:::
 
 **You can't run Trellis on a shared host**.
 

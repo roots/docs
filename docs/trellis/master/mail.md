@@ -10,11 +10,13 @@ Dealing with emails in development is never fun. The two common solutions are:
 
 Enter [MailHog](https://github.com/mailhog/MailHog). It’s a simple tool which captures outgoing email and lets you view them from a web UI. And after that you can optionally "release" them which would actually send the email.
 
-![](https://cdn.roots.io/app/uploads/trellis-mailhog-preview.png)
+![Mailhog Preview](https://cdn.roots.io/app/uploads/trellis-mailhog-preview.png)
 
 MailHog is automatically set up in development. You can access it at `http://yourdevelopmentdomain.test:8025` (replacing the domain with yours that you set up for the WP site host).
 
-Note that mail will be automatically captured but you won't ever see it unless you access the MailHog UI at the address above.
+::: warning Note
+Mail will be automatically captured but you won't ever see it unless you access the MailHog UI at the address above.
+:::
 
 Another benefit of using MailHog is that if you are using real SMTP credentials in development, you can ensure you don’t accidentally send emails to real email addresses which might exist in your database.
 

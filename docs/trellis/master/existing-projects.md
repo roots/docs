@@ -2,7 +2,9 @@
 
 The majority of the Trellis documentation focuses on setting up new projects. If you are collaborating on, or taking over an existing project, the process is a little different.
 
-**Note:** this documentation presumes your project follows the [Roots Example Project](https://github.com/roots/roots-example-project.com) recommendations.
+::: tip Note
+This documentation presumes your project follows the [Roots Example Project](https://github.com/roots/roots-example-project.com) recommendations.
+:::
 
 ## Getting Started
 
@@ -76,7 +78,9 @@ Confirm you can access the development site at the development URL noted earlier
 
 Retrieve an export of the current project’s database. 
 
-**Note:** for easy access during the import process, place the database export in your local project’s `site` directory. 
+::: tip Note
+For easy access during the import process, place the database export in your local project’s `site` directory. 
+:::
 
 From your project's `trellis` directory, ssh to the vagrant machine:
 

@@ -148,8 +148,14 @@ Out of the box, it comes with three routes:
 - common, which fires on all pages
 - home, which fires on the home page (when the body has the class `home`)
 - aboutUs, which would fire on a page named "About Us" (when the page has the body class `about-us`)
-  - Note the syntax change from `about-us` (the HTML body class) to `aboutUs` (the JS route name)
-  - Note also that the route's file name (`about`) doesn't have to match the body class. What's important is that the name used for the import that is registered with the router (`aboutUs`) matches.
+
+::: tip Note
+Note the syntax change from `about-us` (the HTML body class) to `aboutUs` (the JS route name)
+:::
+
+::: tip Note
+Note also that the route's file name (`about`) doesn't have to match the body class. What's important is that the name used for the import that is registered with the router (`aboutUs`) matches.
+:::
 
 Every route is defined in its own file in `assets/scripts/routes/`.
 
