@@ -21,7 +21,7 @@ Mail will be automatically captured but you won't ever see it unless you access 
 Another benefit of using MailHog is that if you are using real SMTP credentials in development, you can ensure you don’t accidentally send emails to real email addresses which might exist in your database.
 
 ::: warning Note
-:warning: This is not the case if you have an active WordPress plugin that is configured to send mail. You'll need to disable the mail plugin on development to ensure you don't accidentally send emails to real email addresses. You could also hook into `phpmailer_init` in WordPress for non-production environments to prevent emails from being sent out. Using a service like [Mailtrap](https://mailtrap.io/) is another option.**
+This is not the case if you have an active WordPress plugin that is configured to send mail. You'll need to disable the mail plugin on development to ensure you don't accidentally send emails to real email addresses. You could also hook into `phpmailer_init` in WordPress for non-production environments to prevent emails from being sent out. Using a service like [Mailtrap](https://mailtrap.io/) is another option.**
 :::
 
 Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.

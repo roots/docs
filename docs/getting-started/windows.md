@@ -3,7 +3,7 @@
 Trellis, Bedrock, and Sage development on Windows is supported by several libraries and software packages. 
 
 ::: warning Note
-:warning: **All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+**All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 :::
 
 ## Global Dependencies
@@ -138,7 +138,7 @@ The above should be taken as **examples*- and not just copied and pasted into yo
 ### Ansible
 
 ::: warning Note
-:warning: The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).
+The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).
 :::
 
 Install pip (Python package manager) if you don't already have it:
@@ -182,7 +182,7 @@ $ source ~/.bashrc
 If your site loads extremely slowly, try installing the `vagrant-winnfsd` plugin. In some cases this plugin can cause problems, so you may need to uninstall it if things get worse.
 
 ::: warning Note
-:warning: The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).
+The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).
 :::
 
 ```bash

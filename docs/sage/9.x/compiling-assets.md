@@ -25,7 +25,7 @@ Run these script commands within your theme directory:
 - `yarn start` — Compile assets when file changes are made, start Browersync session
 
 ::: warning Note
-:warning: If you are using the Bootstrap navbar and run into issues with missing styles after a production build, see [roots/sage#2017](https://github.com/roots/sage/issues/2017) and the [recommended fix](https://github.com/roots/sage/issues/2017#issuecomment-361054297).
+If you are using the Bootstrap navbar and run into issues with missing styles after a production build, see [roots/sage#2017](https://github.com/roots/sage/issues/2017) and the [recommended fix](https://github.com/roots/sage/issues/2017#issuecomment-361054297).
 :::
 
 ### Asset generation with `yarn build` vs. `yarn start`

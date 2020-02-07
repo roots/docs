@@ -8,7 +8,7 @@ Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our 
 4. Run `vagrant up` (from your trellis directory, usually the `trellis/` subdirectory of your project).
 
 ::: warning Note
-:warning: `vagrant up` will fail [if you are using encrypted folders/hard drives](https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes)
+`vagrant up` will fail [if you are using encrypted folders/hard drives](https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes)
 :::
 
 Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a server running and a WordPress site automatically installed and configured.

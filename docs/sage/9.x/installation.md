@@ -41,11 +41,11 @@ For example, if your local development URL is `https://project-name.test` you wo
 ## Server configuration
 
 ::: warning Note
-:warning: Sage uses [Laravel's Blade](blade-templates.md) templating engine, and since the `.blade.php` files live in a publicly accessible directory on your webserver, we recommend preventing plain-text access to them.
+Sage uses [Laravel's Blade](blade-templates.md) templating engine, and since the `.blade.php` files live in a publicly accessible directory on your webserver, we recommend preventing plain-text access to them.
 :::
 
 ::: warning Note
-:warning: Sage uses [composer](https://getcomposer.org/) and [yarn](https://yarnpkg.com) to manage dependencies, and since their files might contain private credentials and expose dependency versions, we recommend blocking them as well.
+Sage uses [composer](https://getcomposer.org/) and [yarn](https://yarnpkg.com) to manage dependencies, and since their files might contain private credentials and expose dependency versions, we recommend blocking them as well.
 
 ### Nginx configuration for denying access to Blade, composer and yarn files
 
