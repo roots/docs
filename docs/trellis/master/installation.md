@@ -6,13 +6,15 @@ Trellis relies on a few other software tools. Make sure all dependencies have be
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 - [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
 
-**Windows user?** [Read the Windows getting started docs](https://roots.io/getting-started/docs/windows-development-environment-trellis/) for slightly different installation instructions.
+::: tip Windows user?
+[Read the Windows getting started docs](../../getting-started/windows.md) for slightly different installation instructions.
+:::
 
 This is the minimum requirements for a development server. Vagrant automatically takes care of the Ansible dependency for us by default.
 
 To speed up future dev VM provisioning, or for remote servers, you'll need to install Ansible locally on your host machine.
 
-See [Requirements](https://roots.io/trellis/docs/remote-server-setup/#requirements) under Remote Server Setup.
+See [Requirements](remote-server-setup.md/#requirements) under Remote Server Setup.
 
 ## Create a project
 

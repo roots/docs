@@ -54,7 +54,7 @@ Use the insecure private key inside the `.vagrant` folder. [See thread on Roots 
 
 ## Let's Encrypt SSL certificates
 
-See [Troubleshooting Let's Encrypt](https://roots.io/trellis/docs/ssl/#troubleshooting-lets-encrypt).
+See [Troubleshooting Let's Encrypt](ssl.md/#troubleshooting-lets-encrypt).
 
 <hr>
 
@@ -82,14 +82,14 @@ Sometimes a task that installs Composer dependencies gives an error `host key ve
 
 ## SSH connections
 
-If you have trouble with SSH connections to your server, consider the tips below. You may also want to review information about [disabling `root` login](https://roots.io/trellis/docs/security/#locking-down-root) and how to configure your server's SSH settings via the [`sshd` role](https://github.com/roots/trellis/tree/master/roles/sshd).
+If you have trouble with SSH connections to your server, consider the tips below. You may also want to review information about [disabling `root` login](security.md/#locking-down-root) and how to configure your server's SSH settings via the [`sshd` role](https://github.com/roots/trellis/tree/master/roles/sshd).
 
 ### SSH keys
 
 - [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 - [Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
 - [Your local `ssh-agent` must be running](https://developer.github.com/guides/using-ssh-agent-forwarding/#your-local-ssh-agent-must-be-running) (macOS users: remember to run `ssh-add -K`)
-- How to designate [SSH keys](https://roots.io/trellis/docs/ssh-keys/) in Trellis
+- How to designate [SSH keys](ssh-keys.md) in Trellis
 
 SSH will automatically look for and try a default set of SSH keys, along with keys loaded in your `ssh-agent`. However, the SSH server will only let your SSH client try a limited number of keys before disconnecting (default: 6). If you have many SSH keys and the correct key is not being selected, you can force your SSH client to try only the correct key. Add this to your `~/.ssh/config` (with the correct path to your key):
 

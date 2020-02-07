@@ -2,10 +2,10 @@
 
 This repository is synced with the Roots docs for our primary projects:
 
-- [Getting Started](https://roots.io/getting-started/docs/)
-- [Sage Docs](https://roots.io/sage/docs/)
-- [Bedrock Docs](https://roots.io/bedrock/docs/)
-- [Trellis Docs](https://roots.io/trellis/docs/)
+- [Getting Started](https://roots.io/docs/)
+- [Sage Docs](https://roots.io/docs/sage/10.0/installation.html)
+- [Bedrock Docs](https://roots.io/docs/bedrock/master/installation.html)
+- [Trellis Docs](https://roots.io/docs/trellis/master/installation.html)
 
 Please use the [Roots Discourse](https://discourse.roots.io/) to open a discussion about bigger changes before sending a pull request.
 

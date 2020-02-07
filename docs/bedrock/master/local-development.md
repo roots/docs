@@ -12,7 +12,7 @@ Bedrock can be used with most local development setups. Here's a list of some re
 - [Local Bedrock](https://github.com/artifex404/local-bedrock) is a Bedrock site boilerplate for Local by Flywheel
 - [WP-CLI's server command](https://developer.wordpress.org/cli/commands/server/) which uses `php -S` can be used with Bedrock (the `docroot` for the server is set in Bedrock's [`wp-cli.yml`](https://github.com/roots/bedrock/blob/master/wp-cli.yml))
 
-MAMP, XAMPP, and others setups work with Bedrock once the [virtual host is configured](https://roots.io/bedrock/docs/bedrock-server-configuration/).
+MAMP, XAMPP, and others setups work with Bedrock once the [virtual host is configured](configuration.md).
 
 ## Additional resources
 

@@ -9,9 +9,9 @@ These tools include supporting deploying Bedrock out of the box:
 - [Trellis](https://roots.io/trellis/)<br> Recommended if self-hosting WordPress or [hosting with Kinsta](https://kinsta.com/?kaid=OFDHAJIXUDIV)<br><br>
 - [bedrock-capistrano](https://github.com/roots/bedrock-capistrano)<br> Recommended if restricted to a shared webhost ([screencast on deploying WordPress with Capistrano](https://roots.io/screencasts/deploying-wordpress-with-capistrano/))
 
-Other methods need to account for setting the `WP_ENV` [environment variable](https://roots.io/bedrock/docs/environment-variables/) to `production` when your site is in a production environment.
+Other methods need to account for setting the `WP_ENV` [environment variable](environment-variables.md) to `production` when your site is in a production environment.
 
-::: notice Note
+::: warning Note
 :warning: **Bedrock's [Disallow Indexing mu-plugin](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/disallow-indexing.php) will prevent indexing of a site when `WP_ENV` is not set to `production`.**
 :::
 

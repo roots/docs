@@ -1,6 +1,6 @@
 # Remote Server Setup
 
-Setting up remote servers (staging/production) is similar to the [local development setup](https://roots.io/trellis/docs/local-development-setup/) with a couple differences.
+Setting up remote servers (staging/production) is similar to the [local development setup](local-development-setup.md) with a couple differences.
 
 In development, Trellis handles everything for you. It automatically creates a server (virtual machine), provisions it, and installs WordPress.
 
@@ -25,9 +25,9 @@ Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your
 
 ## Requirements
 
-The Trellis [installation instructions](https://roots.io/trellis/docs/installing-trellis/) skipped a few requirements because Vagrant handles them automatically for us.
+The Trellis [installation instructions](installing-trellis.md) skipped a few requirements because Vagrant handles them automatically for us.
 
-To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](https://roots.io/getting-started/docs/windows-development-environment-trellis/)).
+To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](../../getting-started/windows.md)).
 
 1. Install Ansible and other dependencies: `pip install -r requirements.txt`
 2. Install Galaxy roles: `ansible-galaxy install -r galaxy.yml` (in local trellis directory)
@@ -45,13 +45,13 @@ Note: Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migr
 Now that you have a working Ubuntu 18.04 server that you can easily SSH into, you need to configure a few things:
 
 1. Copy your `wordpress_sites` from your working development site in `group_vars/development/wordpress_sites.yml` to `group_vars/<environment>/wordpress_sites.yml` (`staging` or `production`, whichever you're setting up).
-2. Modify your site and add the necessary settings for [remote servers](https://roots.io/trellis/docs/wordpress-sites/#remote-servers) since they have a few more settings than local development. Also see the [Passwords docs](https://roots.io/trellis/docs/passwords/).
+2. Modify your site and add the necessary settings for [remote servers](wordpress-sites.md/#remote-servers) since they have a few more settings than local development. Also see the [Passwords docs](passwords.md).
 3. Add your server hostname to `hosts/<environment>` (replacing `your_server_hostname`).
-4. Specify public SSH keys for `users` in `group_vars/all/users.yml`. See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/).
-5. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](https://roots.io/trellis/docs/security/).
+4. Specify public SSH keys for `users` in `group_vars/all/users.yml`. See the [SSH Keys docs](ssh-keys.md).
+5. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](security.md).
 6. Run `ansible-playbook server.yml -e env=<environment>` from your local machine (Ansible connects to your remote server via SSH).
 
-This leaves you with a *provisioned- server. The next step is to [deploy](https://roots.io/trellis/docs/deploys/) your site.
+This leaves you with a *provisioned- server. The next step is to [deploy](deploys.md) your site.
 
 ## Re-provisioning
 

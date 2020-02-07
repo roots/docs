@@ -6,7 +6,7 @@ The majority of the Trellis documentation focuses on setting up new projects. If
 
 ## Getting Started
 
-If you've never worked on a Trellis project before, make sure your local development environment is configured by following the [Getting Started guide(s)](https://roots.io/getting-started/docs/development-environment-recommendations/).
+If you've never worked on a Trellis project before, make sure your local development environment is configured by following the [Getting Started guide(s)](../../getting-started/macos.md).
 
 ## Gather Information
 
@@ -24,11 +24,11 @@ Roots recommends that Trellis projects be kept in private Git repositories. Make
 
 ### Ansible Vault password
 
-Trellis stores passwords and other sensitive data in [encrypted vault files](https://roots.io/trellis/docs/vault/). Retrieve the project's vault password from someone who already works on the project.
+Trellis stores passwords and other sensitive data in [encrypted vault files](vault.md). Retrieve the project's vault password from someone who already works on the project.
 
 ### Permission for provisioning and deployment
 
-If you need to [provision this project's remote servers](https://roots.io/trellis/docs/remote-server-setup/) or [deploy the project](https://roots.io/trellis/docs/deploys/) to staging or production, add your SSH keys to the necessary remote servers either by accessing the server directly, or by having someone who already has access [add your SSH keys to the Trellis configuration](https://roots.io/trellis/docs/ssh-keys/) and re-provision the server.
+If you need to [provision this project's remote servers](remote-server-setup.md) or [deploy the project](deploys.md) to staging or production, add your SSH keys to the necessary remote servers either by accessing the server directly, or by having someone who already has access [add your SSH keys to the Trellis configuration](ssh-keys.md) and re-provision the server.
 
 ### Your site's development URL
 
@@ -60,7 +60,7 @@ $ANSIBLE_VAULT;1.1;AES256
 6237663637353638653266616562616535623465636265316231613331 etc.
 ```
 
-If any of the `vault.yml` files look like the example above, follow the [vault instructions](https://roots.io/trellis/docs/vault/) to configure your Ansible Vault and vault password.
+If any of the `vault.yml` files look like the example above, follow the [vault instructions](vault.md) to configure your Ansible Vault and vault password.
 
 ## Create Your Development VM
 

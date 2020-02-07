@@ -2,84 +2,30 @@
 
 The `resources/views/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
 
-<dl class="dl-horizontal">
-  <dt>`404.blade.php`</dt>
-  <dd>Error 404 page</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`index.blade.php`</dt>
-  <dd>Archive page (used by blog page, category archives, author archives and more)</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`page.blade.php`</dt>
-  <dd>Single page</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`search.blade.php`</dt>
-  <dd>Search results page</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`single.blade.php`</dt>
-  <dd>Single post page</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`template-custom.blade.php`</dt>
-  <dd>An example single page template</dd>
-</dl>
+- `404.blade.php` – Error 404 page
+- `index.blade.php` – Archive page (used by blog page, category archives, author archives and more)
+- `page.blade.php` – Single page
+- `search.blade.php` – Search results page
+- `single.blade.php` – Single post page
+- `template-custom.blade.php` – An example single page template
 
 All templates are wrapped by a base file in the `layouts/` directory:
 
-<dl class="dl-horizontal">
-  <dt>`app.blade.php`</dt>
-  <dd>The base template which wraps the base markup around all template files</dd>
-</dl>
+- `app.blade.php` – The base template which wraps the base markup around all template files
 
-These files include templates from the `resources/views/partials/` directory which is where you&rsquo;ll be making most of your customizations:
+These files include templates from the `resources/views/partials/` directory which is where you'll be making most of your customizations:
 
-<dl class="dl-horizontal">
-  <dt>`comments.blade.php`</dt>
-  <dd>Markup for comments</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`content-page.blade.php`</dt>
-  <dd>Markup included from `resources/views/page.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`content-search.blade.php`</dt>
-  <dd>Markup included from `resources/views/search.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`content-single.blade.php`</dt>
-  <dd>Markup included from `resources/views/single.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`content.blade.php`</dt>
-  <dd>Markup included from `resources/views/index.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`entry-meta.blade.php`</dt>
-  <dd>Post entry meta information included from `resources/views/content-single.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`footer.blade.php`</dt>
-  <dd>Footer markup included from `layouts/base.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`head.blade.php`</dt>
-  <dd>`&lt;head&gt;` markup included from `layouts/base.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`header.blade.php`</dt>
-  <dd>Header markup included from `layouts/base.blade.php`</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`page-header.blade.php`</dt>
-  <dd>Page title markup included from most of the files in the `resources/views/` directory</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt>`sidebar.blade.php`</dt>
-  <dd>Sidebar markup included from `layouts/base.blade.php`</dd>
-</dl>
+- `comments.blade.php` – Markup for comments
+- `content-page.blade.php` – Markup included from `resources/views/page.blade.php`
+- `content-search.blade.php` – Markup included from `resources/views/search.blade.php`
+- `content-single.blade.php` – Markup included from `resources/views/single.blade.php`
+- `content.blade.php` – Markup included from `resources/views/index.blade.php`
+- `entry-meta.blade.php` – Post entry meta information included from `resources/views/content-single.blade.php`
+`footer.blade.php` – Footer markup included from `layouts/base.blade.php`
+- `head.blade.php` – `&lt;head&gt;` markup included from `layouts/base.blade.php`
+- `header.blade.php` – Header markup included from `layouts/base.blade.php`
+- `page-header.blade.php` – Page title markup included from most of the files in the `resources/views/` directory
+- `sidebar.blade.php` – Sidebar markup included from `layouts/base.blade.php`
 
 ## Extending templates
 

@@ -2,7 +2,7 @@
 
 Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
 
-1. Configure your site(s) based on the [WordPress Sites docs](https://roots.io/trellis/docs/wordpress-sites/) and read the [development specific](https://roots.io/trellis/docs/wordpress-sites/#development) ones.
+1. Configure your site(s) based on the [WordPress Sites docs](wordpress-sites.md) and read the [development specific](wordpress-sites.md/#development) ones.
 2. Make sure you've edited both `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault.yml`.
 3. Optionally configure the IP address at the top of the `vagrant.default.yml` to allow for multiple boxes to be run concurrently (default is `192.168.50.5`).
 4. Run `vagrant up` (from your trellis directory, usually the `trellis/` subdirectory of your project).
@@ -21,11 +21,12 @@ Composer and WP-CLI commands need to be run on the virtual machine for any post-
 
 Mounting an encrypted folder is not possible with Trellis due to an issue with NFS. 
 
-Windows users have a slightly different workflow. See the [Windows getting started docs](https://roots.io/getting-started/docs/windows-development-environment-trellis/).
+::: tip Windows user?
+Windows users have a slightly different workflow. See the [Windows getting started docs](../../getting-started/windows.md).
 
 ## WordPress installation
 
-Trellis installs WordPress on your first `vagrant up` with `admin` as the default user. You can override this by defining `admin_user`, as noted in the [WordPress sites options](https://roots.io/trellis/docs/wordpress-sites/#options).
+Trellis installs WordPress on your first `vagrant up` with `admin` as the default user. You can override this by defining `admin_user`, as noted in the [WordPress sites options](wordpress-sites.md/#options).
 
 ## Re-provisioning
 

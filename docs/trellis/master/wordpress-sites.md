@@ -37,7 +37,7 @@ Nested under the name/key are the site's variables which are for that site only.
 
 ## Passwords/secrets
 
-When you add/edit a site in `wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](https://roots.io/trellis/docs/vault/) for more information on this.
+When you add/edit a site in `wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](vault.md) for more information on this.
 
 ```yaml
 #  group_vars/development/vault.yml
@@ -80,9 +80,9 @@ example.com:
 - `current_path` - symlink to latest release (default: `current`)
 - `db_create` - whether to auto create a database or not (default: `true`)
 - `packagist_token` - Token to use to authenticate with Packagist.com for private Composer repositories (optional)
-- `ssl` - SSL options. See the [SSL docs](https://roots.io/trellis/docs/ssl/)
-- `multisite` - Multisite options. See the [Multisite docs](https://roots.io/trellis/docs/multisite/)
-- `cache` - Nginx FastCGI cache options. See the [Cache docs](https://roots.io/trellis/docs/fastcgi-caching/)
+- `ssl` - SSL options. See the [SSL docs](ssl.md)
+- `multisite` - Multisite options. See the [Multisite docs](multisite.md)
+- `cache` - Nginx FastCGI cache options. See the [Cache docs](fastcgi-caching.md)
 - `h5bp` - Nginx config files from [h5bp server config](https://github.com/h5bp/server-configs-nginx) to include
   - `cache_file_descriptors` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/directive-only/cache-file-descriptors.conf) (default: `not_dev`)
   - `extra_security` - See [h5bp server config](https://github.com/h5bp/server-configs-nginx/blob/2.0.0/h5bp/directive-only/extra-security.conf) (default: `true`)

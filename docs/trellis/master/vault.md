@@ -76,7 +76,7 @@ Here are a few conceptual tips for working with [variables and vault](http://doc
 
 ## Sharing a project with vault-encrypted files
 
-Your repo with vault-encrypted files is secure from anyone being able to see or use the sensitive data in the `vault.yml` files. To grant a colleague access to the data, you will need to give your colleague your vault password to use in repeating the two password steps in the [Steps to Enable Ansible Vault](https://roots.io/trellis/docs/vault/#steps-to-enable-ansible-vault) above. It is still recommended to always keep your project in a private repo.
+Your repo with vault-encrypted files is secure from anyone being able to see or use the sensitive data in the `vault.yml` files. To grant a colleague access to the data, you will need to give your colleague your vault password to use in repeating the two password steps in the [Steps to Enable Ansible Vault](vault.md/#steps-to-enable-ansible-vault) above. It is still recommended to always keep your project in a private repo.
 
 ## Disabling Ansible Vault
 

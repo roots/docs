@@ -4,7 +4,7 @@ Trellis offers zero-downtime WordPress deployment out of the box with little con
 
 ## Configuration
 
-First, you need to have at least one [WordPress site](https://roots.io/trellis/docs/wordpress-sites/) configured and your remote server provisioned and working according to the [remote server setup](https://roots.io/trellis/docs/remote-server-setup/).
+First, you need to have at least one [WordPress site](wordpress-sites.md) configured and your remote server provisioned and working according to the [remote server setup](remote-server-setup.md).
 
 For deploys, there's a couple more settings needed:
 
@@ -12,13 +12,17 @@ For deploys, there's a couple more settings needed:
 - `repo_subtree_path` (optional) - relative path to your Bedrock/WP directory in your repo if its not the root (like `site` in [roots-example-project](https://github.com/roots/roots-example-project.com))
 - `branch` (optional) - the git branch to deploy (default: `master`)
 
-Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml` as detailed in the [docs](https://roots.io/trellis/docs/wordpress-sites/#remote-servers).
+Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml` as detailed in the [docs](wordpress-sites.md).
 
 At this point, you should also generate your salts and keys and save them to your `vault.yml` file.
 
 ## Deploying
 
-Deploy with a single command: `./bin/deploy.sh <environment> <domain>`
+Deploy with a single command: 
+
+```sh
+$ ./bin/deploy.sh <environment> <domain>
+```
 
 `deploy.sh` is a very simple Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
 
@@ -117,7 +121,7 @@ Before you can deploy a site to a remote server, your SSH keys need to be workin
 
 The chain works like this: `local machine` -&gt; SSH via Ansible -&gt; `remote server` -&gt; Git clone -&gt; `remote Git repository`
 
-See the [SSH Keys docs](https://roots.io/trellis/docs/ssh-keys/) on how to get your SSH key added to the `web` user which is the user Trellis deploys with.
+See the [SSH Keys docs](ssh-keys.md) on how to get your SSH key added to the `web` user which is the user Trellis deploys with.
 
 ### Example
 
@@ -155,7 +159,7 @@ $ ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ## Rollbacks
 
 To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` . 
-You may manually specify a different release using `--extra-vars='release=12345678901234'` . By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](https://roots.io/trellis/docs/wordpress-sites/#remote-servers) to change this setting.
+You may manually specify a different release using `--extra-vars='release=12345678901234'` . By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
 
 ## Deploying to other hosts
 

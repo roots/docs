@@ -2,11 +2,17 @@
 
 These are the primary projects that make up the Sage workflow:
 
-<ul class="lead">
-<li><h4><a href="https://webpack.github.io/">Webpack</a></h4><small>is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.</small></li>
-<li><h4><a href="https://www.npmjs.com/">npm</a></h4><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap (or your chosen CSS framework) as dependencies. In previous versions of the theme we used Bower as our front-end package manager.</small></li>
-<li><h4><a href="http://www.browsersync.io">Browsersync</a></h4><small>Browsersync keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS.</small></li>
-</ul>
+[Webpack](https://webpack.github.io/)
+
+Webpack is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.
+
+[npm](https://www.npmjs.com/)
+
+npm is a front-end package manager. Sage uses npm to pull in Bootstrap (or your chosen CSS framework) as dependencies. In previous versions of the theme we used Bower as our front-end package manager.
+
+[Browsersync](http://www.browsersync.io)
+
+Browsersync keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS.
 
 <div class="cta-product"><a href="https://roots.io/books/theme-development-with-sage/" class="row text-dark"><div class="book-cover col-sm-6"><img src="http://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></div><div class="col-sm-6"><h4 class="mt-sm-3"><span class="badge bg-white mb-2">Get the book</span> <br> Theme Development with Sage</h4>A step-by-step guide to setting up a custom Sage starter theme. Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.<button class="btn btn-primary">Buy the Sage book</button></div></a></div>
 
@@ -18,7 +24,9 @@ Run these script commands within your theme directory:
 - `yarn build:production` — Compile assets for production
 - `yarn start` — Compile assets when file changes are made, start Browersync session
 
-⚠️ **If you are using the Bootstrap navbar and run into issues with missing styles after a production build, see [roots/sage#2017](https://github.com/roots/sage/issues/2017) and the [recommended fix](https://github.com/roots/sage/issues/2017#issuecomment-361054297).**
+::: warning Note
+:warning: If you are using the Bootstrap navbar and run into issues with missing styles after a production build, see [roots/sage#2017](https://github.com/roots/sage/issues/2017) and the [recommended fix](https://github.com/roots/sage/issues/2017#issuecomment-361054297).
+:::
 
 ### Asset generation with `yarn build` vs. `yarn start`
 
@@ -232,7 +240,7 @@ document.addEventListener('routed', e => {
 });
 ```
 
-IE <= 11 does not support this. [See the note under Sage Compatibility](/sage/docs/sage-compatibility/#known-issues-with-internet-explorer) for more information.
+IE <= 11 does not support this. [See the note under Sage Compatibility](compatibility.md) for more information.
 
 ## 3rd party packages
 

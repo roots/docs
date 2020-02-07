@@ -1,6 +1,6 @@
 # Blade Templates
 
-Sage uses [Laravel's Blade](https://laravel.com/docs/5.6/blade) templating engine.
+Sage uses [Laravel's Blade](https://laravel.com/docs/5.8/blade) templating engine.
 
 ## Passing data to templates
 
