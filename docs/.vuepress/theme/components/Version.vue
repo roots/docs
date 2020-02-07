@@ -107,6 +107,7 @@ export default {
       width 100%
       background-color transparent
       appearance none
+      cursor pointer
 
     .sidebar-select-arrow
       pointer-events none
@@ -124,4 +125,7 @@ export default {
         width 1rem
         height 1rem
         fill currentColor
+
+    &:hover .sidebar-select-arrow
+      color $accentColor
 </style>
