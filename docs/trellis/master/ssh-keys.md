@@ -13,21 +13,21 @@ Each Trellis playbook uses a specific SSH user to connect to your remote machine
   </thead>
   <tbody>
     <tr>
-      <td><strong><code>dev.yml</code></strong></td>
-      <td><code>vagrant</code></td>
+      <td><strong>`dev.yml`</strong></td>
+      <td>`vagrant`</td>
       <td>-</td>
       <td>create development VMs</td>
     </tr>
     <tr>
-      <td><strong><code>server.yml</code></strong></td>
-      <td><code>root</code> or <code>admin</code></td>
-      <td><code>admin_user</code></td>
+      <td><strong>`server.yml`</strong></td>
+      <td>`root` or `admin`</td>
+      <td>`admin_user`</td>
       <td>provision remote servers</td>
     </tr>
     <tr>
-      <td><strong><code>deploy.yml</code></strong></td>
-      <td><code>web</code></td>
-      <td><code>web_user</code></td>
+      <td><strong>`deploy.yml`</strong></td>
+      <td>`web`</td>
+      <td>`web_user`</td>
       <td>deploy WordPress sites</td>
     </tr>
   </tbody>
@@ -137,6 +137,6 @@ The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args 
 
 Remember to import your SSH key password into Keychain by running:
 
-```sh
+```bash
 ssh-add -K
 ```

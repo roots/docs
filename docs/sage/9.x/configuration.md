@@ -1,6 +1,6 @@
 # Configuration
 
-`app/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
+`app/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with `add_theme_support`, and register navigation menus and sidebars.
 
 ## Stylesheets and scripts
 
@@ -58,7 +58,7 @@ Sage registers two sidebars by default: Primary & Footer. Add additional sidebar
 
 ## Theme structure
 
-```sh
+```bash
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── controllers/      # → Controller files

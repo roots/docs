@@ -43,7 +43,7 @@ Review the project's `trellis/group_vars/development/wordpress_sites.yml` and no
 
 ## Clone Your Project
 
-```sh
+```bash
 $ git clone git@github.com:YourOrganization/example.com.git
 ```
 
@@ -66,7 +66,7 @@ If any of the `vault.yml` files look like the example above, follow the [vault i
 
 Run the following from your project's `trellis` directory:
 
-```sh
+```bash
 $ vagrant up
 ```
 
@@ -80,25 +80,25 @@ Retrieve an export of the current project’s database.
 
 From your project's `trellis` directory, ssh to the vagrant machine:
 
-```sh
+```bash
 $ vagrant ssh
 ```
 
 Navigate to the web root:
 
-```sh
+```bash
 $ cd /srv/www/example.com/current
 ```
 
 Import the database with wp-cli:
 
-```sh
+```bash
 $ wp db import example.com.sql
 ```
 
 If the export is not from another development environment, search-and-replace the site's URL with wp-cli:
 
-```sh
+```bash
 $ wp search-replace http://example.com http://example.test
 ```
 

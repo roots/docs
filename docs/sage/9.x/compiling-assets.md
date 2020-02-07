@@ -1,14 +1,14 @@
 # Compiling Assets
 
-<p class="lead">These are the primary projects that make up the Sage workflow:</p>
+These are the primary projects that make up the Sage workflow:
 
 <ul class="lead">
-<li><h4><a href="https://webpack.github.io/">Webpack</a></h4><p><small>is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.</small></p></li>
-<li><h4><a href="https://www.npmjs.com/">npm</a></h4><p><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap (or your chosen CSS framework) as dependencies. In previous versions of the theme we used Bower as our front-end package manager.</small></p></li>
-<li><h4><a href="http://www.browsersync.io">Browsersync</a></h4><p><small>Browsersync keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS.</small></p></li>
+<li><h4><a href="https://webpack.github.io/">Webpack</a></h4><small>is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.</small></li>
+<li><h4><a href="https://www.npmjs.com/">npm</a></h4><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap (or your chosen CSS framework) as dependencies. In previous versions of the theme we used Bower as our front-end package manager.</small></li>
+<li><h4><a href="http://www.browsersync.io">Browsersync</a></h4><small>Browsersync keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS.</small></li>
 </ul>
 
-<div class="cta-product"><a href="https://roots.io/books/theme-development-with-sage/" class="row text-dark"><div class="book-cover col-sm-6"><p class="text-center"><img src="http://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></p></div><div class="col-sm-6"><h4 class="mt-sm-3"><span class="badge bg-white mb-2">Get the book</span> <br> Theme Development with Sage</h4><p class="lead">A step-by-step guide to setting up a custom Sage starter theme.</p><p class="d-none d-lg-block">Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.</p><p><button class="btn btn-primary">Buy the Sage book</button></p></div></a></div>
+<div class="cta-product"><a href="https://roots.io/books/theme-development-with-sage/" class="row text-dark"><div class="book-cover col-sm-6"><img src="http://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></div><div class="col-sm-6"><h4 class="mt-sm-3"><span class="badge bg-white mb-2">Get the book</span> <br> Theme Development with Sage</h4>A step-by-step guide to setting up a custom Sage starter theme. Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.<button class="btn btn-primary">Buy the Sage book</button></div></a></div>
 
 ## Available build commands
 
@@ -85,7 +85,7 @@ To create additional CSS or JS files, you'll need to:
 
 4. From the theme directory, run the build script:
 
-    ```sh
+    ```bash
     # web/app/themes/your-theme-name/
     $ yarn build
     ```
@@ -240,7 +240,7 @@ Example of how to add 3rd party packages- and have them included in the theme:
 
 1. From the theme directory, run:
 
-    ```sh
+    ```bash
     # @ themes/your-theme-name/
     $ yarn add <package name>
 

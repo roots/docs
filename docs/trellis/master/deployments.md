@@ -143,12 +143,12 @@ wordpress_sites:
 ```
 
 Deploy command:
-```sh
+```bash
 ./bin/deploy.sh production mysite.com
 ```
 
 Or alternatively:
-```sh
+```bash
 ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ```
 

@@ -10,7 +10,7 @@ Make sure all dependencies have been installed before moving on:
 
 Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
-```sh
+```bash
 # @ app/themes/ or wp-content/themes/
 $ composer create-project roots/sage your-theme-name
 ```
@@ -19,7 +19,7 @@ You will have the option to define theme meta information (name, URI, descriptio
 
 From the command line on your host machine (not on your Vagrant box), navigate to the theme directory then run `yarn`:
 
-```sh
+```bash
 # @ themes/your-theme-name/
 $ yarn
 ```

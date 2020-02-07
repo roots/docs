@@ -3,82 +3,82 @@
 The `resources/views/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
 
 <dl class="dl-horizontal">
-  <dt><code>404.blade.php</code></dt>
+  <dt>`404.blade.php`</dt>
   <dd>Error 404 page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>index.blade.php</code></dt>
+  <dt>`index.blade.php`</dt>
   <dd>Archive page (used by blog page, category archives, author archives and more)</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>page.blade.php</code></dt>
+  <dt>`page.blade.php`</dt>
   <dd>Single page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>search.blade.php</code></dt>
+  <dt>`search.blade.php`</dt>
   <dd>Search results page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>single.blade.php</code></dt>
+  <dt>`single.blade.php`</dt>
   <dd>Single post page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>template-custom.blade.php</code></dt>
+  <dt>`template-custom.blade.php`</dt>
   <dd>An example single page template</dd>
 </dl>
 
-<p>All templates are wrapped by a base file in the <code>layouts/</code> directory:</p>
+All templates are wrapped by a base file in the `layouts/` directory:
 
 <dl class="dl-horizontal">
-  <dt><code>app.blade.php</code></dt>
+  <dt>`app.blade.php`</dt>
   <dd>The base template which wraps the base markup around all template files</dd>
 </dl>
 
-<p>These files include templates from the <code>resources/views/partials/</code> directory which is where you&rsquo;ll be making most of your customizations:</p>
+These files include templates from the `resources/views/partials/` directory which is where you&rsquo;ll be making most of your customizations:
 
 <dl class="dl-horizontal">
-  <dt><code>comments.blade.php</code></dt>
+  <dt>`comments.blade.php`</dt>
   <dd>Markup for comments</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content-page.blade.php</code></dt>
-  <dd>Markup included from <code>resources/views/page.blade.php</code></dd>
+  <dt>`content-page.blade.php`</dt>
+  <dd>Markup included from `resources/views/page.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content-search.blade.php</code></dt>
-  <dd>Markup included from <code>resources/views/search.blade.php</code></dd>
+  <dt>`content-search.blade.php`</dt>
+  <dd>Markup included from `resources/views/search.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content-single.blade.php</code></dt>
-  <dd>Markup included from <code>resources/views/single.blade.php</code></dd>
+  <dt>`content-single.blade.php`</dt>
+  <dd>Markup included from `resources/views/single.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content.blade.php</code></dt>
-  <dd>Markup included from <code>resources/views/index.blade.php</code></dd>
+  <dt>`content.blade.php`</dt>
+  <dd>Markup included from `resources/views/index.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>entry-meta.blade.php</code></dt>
-  <dd>Post entry meta information included from <code>resources/views/content-single.blade.php</code></dd>
+  <dt>`entry-meta.blade.php`</dt>
+  <dd>Post entry meta information included from `resources/views/content-single.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>footer.blade.php</code></dt>
-  <dd>Footer markup included from <code>layouts/base.blade.php</code></dd>
+  <dt>`footer.blade.php`</dt>
+  <dd>Footer markup included from `layouts/base.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>head.blade.php</code></dt>
-  <dd><code>&lt;head&gt;</code> markup included from <code>layouts/base.blade.php</code></dd>
+  <dt>`head.blade.php`</dt>
+  <dd>`&lt;head&gt;` markup included from `layouts/base.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>header.blade.php</code></dt>
-  <dd>Header markup included from <code>layouts/base.blade.php</code></dd>
+  <dt>`header.blade.php`</dt>
+  <dd>Header markup included from `layouts/base.blade.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>page-header.blade.php</code></dt>
-  <dd>Page title markup included from most of the files in the <code>resources/views/</code> directory</dd>
+  <dt>`page-header.blade.php`</dt>
+  <dd>Page title markup included from most of the files in the `resources/views/` directory</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>sidebar.blade.php</code></dt>
-  <dd>Sidebar markup included from <code>layouts/base.blade.php</code></dd>
+  <dt>`sidebar.blade.php`</dt>
+  <dd>Sidebar markup included from `layouts/base.blade.php`</dd>
 </dl>
 
 ## Extending templates

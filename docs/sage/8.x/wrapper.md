@@ -2,9 +2,9 @@
 
 After reading through this guide, you will:
 
-* Understand the Sage Wrapper and recognize how it extends and complements the WordPress template hierarchy.
-* Know what is meant by the DRY Principle, why being DRY bests being WET, and see how most WordPress themes are WET.
-* Be able to filter the Sage Wrapper and create a new base template for a Custom Post Type.
+- Understand the Sage Wrapper and recognize how it extends and complements the WordPress template hierarchy.
+- Know what is meant by the DRY Principle, why being DRY bests being WET, and see how most WordPress themes are WET.
+- Be able to filter the Sage Wrapper and create a new base template for a Custom Post Type.
 
 ## Template Hierarchy
 
@@ -150,11 +150,11 @@ Let's say you wanted your base markup to change depending on what CPT WordPress 
 
 Now when the base markup is loaded via `return locate_template($this->templates);` it will load our CPT template if it exists. When a CPT doesn't have its own template WordPress will simply revert to using our standard `base.php` file.
 
-<div class="cta-plugin well well-sage module clearfix">
-<a href="https://roots.io/plugins/roots-wrapper-override/">Get the Roots Wrapper Override plugin to override templates from the WordPress dashboard
-<p class="text-center"><img style="max-width: 250px;" src="https://roots.io/app/uploads/roots-wrapper-override-admin.png" alt="Roots Wrapper Override admin" /></p>
-</a>
-</div>
+::: tip Roots Wrapper Override Plugin
+Get the [Roots Wrapper Override](https://roots.io/plugins/roots-wrapper-override/) plugin to override templates from the WordPress dashboard.
+
+![Roots Wrapper Override Screenshot](https://roots.io/app/uploads/roots-wrapper-override-admin.png)
+:::
 
 * * *
 

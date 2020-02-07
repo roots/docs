@@ -2,8 +2,6 @@
 
 Trellis, Bedrock, and Sage development on Ubuntu Linux is supported by several libraries and software packages. 
 
-[[toc]]
-
 ## Global Dependencies
 
 ### Git

@@ -2,9 +2,9 @@
 
 Trellis, Bedrock, and Sage development on Windows is supported by several libraries and software packages. 
 
-**⚠️ All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
-
-[[toc]]
+::: warning Note
+:warning: **All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+:::
 
 ## Global Dependencies
 

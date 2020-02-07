@@ -6,38 +6,33 @@ Since Sage is a starter theme, it’s okay for you to modify files within `src/`
 
 The PHP code in Sage is namespaced, so make sure to [use namespaced functions and classes](https://roots.io/upping-php-requirements-in-your-wordpress-themes-and-plugins/).
 
-<dl class="dl-horizontal">
-  <dt><code>src/setup.php</code></dt>
-  <dd>Enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, register navigation menus and sidebars. See <a href="/sage/docs/theme-configuration-and-setup/">Theme Configuration and Setup</a>.</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt><code>src/admin.php</code></dt>
-  <dd>Placeholder code for the WordPress theme customizer. You can also use this file for anything related to the WordPress admin.</dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt><code>src/filters.php</code></dt>
-  <dd>
-    <p>Add WordPress filters in this file. Filters included by default:</p>
-    <ul>
-      <li><code>body_class</code> &mdash; add <code>&lt;body&gt;</code> classes</li>
-      <li><code>excerpt_more</code> &mdash; add "… Continued" to excerpts</li>
-      <li><code>template_include</code> &mdash; enable the theme wrapper</li>
-      <li>Various filters for the Blade implementation</li>
-    </ul>
-  </dd>
-  <dl class="dl-horizontal">
-    <dt><code>src/helpers.php</code></dt>
-    <dd>
-      <p>Helper functions used throughout the theme:</p>
-      <ul>
-        <li><code>asset_path</code> &mdash; used when enqueueing theme assets to provide the correct versioned asset filenames</li>
-        <li><code>display_sidebar</code> &mdash; used to control displaying the sidebar</li>
-        <li><code>title</code> &mdash; used to return page titles</li>
-      </ul>
-    </dd>
-  </dl>
-  <dl class="dl-horizontal">
-    <dt><code>src/lib/</code></dt>
-    <dd>This directory contains the Blade implementation code along with the code used to parse <code>dist/assets.json</code> and enqueue assets with the versioned filenames</dd>
-  </dl>
-</dl>
+## Configuration
+
+### `src/setup.php`
+
+Enqueue stylesheets and scripts, register support for theme features with `add_theme_support`, register navigation menus and sidebars. See [Theme Configuration and Setup](theme-configuration-and-setup.md).
+
+### `src/admin.php`
+
+Placeholder code for the WordPress theme customizer. You can also use this file for anything related to the WordPress admin.
+
+### `src/filters.php`
+
+Add WordPress filters in this file. Filters included by default:
+
+- `body_class` – add `<body>` classes
+- `excerpt_more` – add "… Continued" to excerpts
+- `template_include` – enable the theme wrapper
+- Various filters for the Blade implementation
+
+### `src/helpers.php`
+
+Helper functions used throughout the theme:
+
+- `asset_path` – used when enqueueing theme assets to provide the correct versioned asset filenames
+- `display_sidebar` – used to control displaying the sidebar
+- `title` – used to return page titles
+
+### `src/lib/`
+
+This directory contains the Blade implementation code along with the code used to parse `dist/assets.json` and enqueue assets with the versioned filenames.

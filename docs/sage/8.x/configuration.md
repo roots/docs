@@ -1,6 +1,6 @@
 # Configuration
 
-`src/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with <code>add_theme_support</code>, and register navigation menus and sidebars.
+`src/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with `add_theme_support`, and register navigation menus and sidebars.
 
 ## Stylesheets and scripts
 
@@ -21,16 +21,18 @@ See [theme assets](/sage/docs/theme-development-and-building/#theme-assets) for 
 
 We recommend using the [Soil](/plugins/soil) Plugin with every WordPress install for additional features:
 
-* Load jQuery from the jQuery CDN*
-* Cleaner WordPress markup*
-* Cleaner HTML output of navigation menus*
-* Root relative URLs*
-* Nice search*
-* Google Analytics snippet from HTML5 Boilerplate
-* Move all JS to the footer
-* Disable trackbacks and pingbacks
+- Load jQuery from the jQuery CDN *
+- Cleaner WordPress markup *
+- Cleaner HTML output of navigation menus*
+- Root relative URLs *
+- Nice search *
+- Google Analytics snippet from HTML5 Boilerplate
+- Move all JS to the footer
+- Disable trackbacks and pingbacks
 
-<small>&lowast;If Soil is installed and activated on your WordPress install, Sage will enable these features by default.</small>
+::: tip
+If Soil is installed and activated on your WordPress install, Sage will enable these features by default.
+:::
 
 ### Title tag support
 
@@ -58,7 +60,7 @@ Sage registers two sidebars by default: Primary & Footer. Add additional sidebar
 
 ## Theme structure
 
-```shell
+```bash
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── lib/Sage/         # → Blade implementation, asset manifest

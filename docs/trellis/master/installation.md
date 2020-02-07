@@ -18,7 +18,7 @@ See [Requirements](https://roots.io/trellis/docs/remote-server-setup/#requiremen
 
 The recommended directory structure for a Trellis project looks like:
 
-```sh
+```bash
 example.com/      # → Root folder for the project
 ├── trellis/      # → Your clone of this repository
 └── site/         # → A Bedrock-based WordPress site
@@ -32,14 +32,14 @@ See a complete working example in the [roots-example-project.com repo](https://g
 Pick a descriptive name for your project and use it instead of the default `example.com`. We recommend the domain of the site for convenience.
 
 1. Create a new project directory:
-```sh
+```bash
 $ mkdir example.com && cd example.com
 ```
 2. Install Trellis:
-```sh
+```bash
 $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
 ```
 3. Install Bedrock into the `site` directory:
-```sh
+```bash
 $ composer create-project roots/bedrock site
 ```

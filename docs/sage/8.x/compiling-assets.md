@@ -1,30 +1,48 @@
 # Compiling Assets
 
-<p class="lead">These are the primary projects that make up the Sage workflow:</p>
+## Dependencies
 
-<ul class="lead">
-<li><h4><a href="https://webpack.github.io/">Webpack</a></h4><p><small>is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.</small></p></li>
-<li><h4><a href="https://www.npmjs.com/">npm</a></h4><p><small>npm is a front-end package manager. Sage uses npm to pull in Bootstrap and jQuery as dependencies. In previous versions of the theme we used Bower as our front-end package manager.</small></p></li>
-<li><h4><a href="http://www.browsersync.io">BrowserSync</a> with Webpack Hot Module Replacement</h4><p><small>BrowserSync with WHR keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS. In previous versions of the theme we used LiveReload for injecting assets.</small></p></li>
-</ul>
+These are the primary dependencies that make up the Sage workflow:
 
-<div class="cta-product cta-product-sage well well-sage module"><a href="https://roots.io/books/theme-development-with-sage/" class="media"><div class="media-left"><img class="media-object" src="/app/uploads/theme-development-with-sage-cover-800x1035.png" alt="Sage book cover"></div><div class="media-body"><h4><span class="badge bg-white text-sage">Get the book</span> <br> <span class="text-sage">Theme Development with Sage</span></h4><p class="lead">A step-by-step guide to setting up a custom Sage starter theme.</p><p class="visible-md visible-lg">Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.</p><p class="text-right"><button class="btn btn-primary">Buy</button></p></div></a></div>
+### [Webpack](https://webpack.github.io/)
+
+Webpack is used as a build tool for compiling stylesheets, checking for JavaScript errors, optimizing images, and concatenating and minifying files. In previous versions of the theme we used Grunt and Gulp as our build tools.
+
+### [npm](https://www.npmjs.com/)
+
+npm is a front-end package manager. Sage uses npm to pull in Bootstrap and jQuery as dependencies. In previous versions of the theme we used Bower as our front-end package manager.
+
+### [BrowserSync](http://www.browsersync.io) 
+
+BrowserSync with WHR keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS. In previous versions of the theme we used LiveReload for injecting assets.
+
+::: tip Get the Book
+![Sage 8 Book](https://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png)
+
+**Theme Development with Sage 8**
+
+A step-by-step guide to setting up a custom Sage starter theme. 
+
+Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.
+
+[Buy Now](https://roots.io/books/theme-development-with-sage/)
+:::
 
 ## Available build commands
 
 Run these script commands within your theme directory:
 
-* `yarn run build` — Compile and optimize the files in your assets directory
-* `yarn run build:production` — Compile assets for production
-* `yarn run start` — Compile assets when file changes are made, start Browersync session
+- `yarn run build` — Compile and optimize the files in your assets directory
+- `yarn run build:production` — Compile assets for production
+- `yarn run start` — Compile assets when file changes are made, start Browersync session
 
 ## Theme assets
 
 The `config.json` file in the `assets` directory controls the different theme assets that get built. By default, Sage builds two JS files and one CSS file:
 
-* `assets/stylesheets/main.scss` — primary theme CSS, barebones partials are imported to help get your styling started
-* `assets/scripts/main.js` — primary theme JS
-* `assets/scripts/customizer.js` — theme customizer JS, used only in the customizer
+- `assets/stylesheets/main.scss` — primary theme CSS, barebones partials are imported to help get your styling started
+- `assets/scripts/main.js` — primary theme JS
+- `assets/scripts/customizer.js` — theme customizer JS, used only in the customizer
 
 Look at `entry` in `assets/config.json` to see how they're built:
 
@@ -79,7 +97,7 @@ To create additional CSS or JS files, you'll need to:
 
 4. From the theme directory, run the build script:
 
-    ```sh
+    ```bash
     # web/app/themes/your-theme-name/
     $ yarn run build
     ```
@@ -89,14 +107,14 @@ To create additional CSS or JS files, you'll need to:
 Use the `@asset` directive to call images from template files:
 
 ```php
-<img src="@asset('images/example.jpg')">
+<img alt="example" src="@asset('images/example.jpg')" />
 ```
 
 ### Images in CSS
 CSS files and images are sibling folders, so you can reference images in CSS:
 ```css
 .background {
-  background-image: url(../images/image.jpg);
+  background-image: url('../images/image.jpg');
 }
 ```
 
@@ -106,7 +124,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
 
 1. From the theme directory, run:
 
-    ```shell
+    ```bash
     # @ themes/your-theme-name/
     $ yarn add <package name>
 
@@ -156,7 +174,7 @@ Example of how to add 3rd party packages* and have them included in the theme:
 
 #### Font Awesome
 
-```sh
+```bash
 # @ themes/your-theme-name/
 $ yarn add font-awesome
 ```

@@ -4,7 +4,7 @@ Bedrock can be used with most local development setups. Here's a list of some re
 
 - [Trellis](https://roots.io/trellis/) is our WordPress LEMP stack that supports Bedrock and deployment out of the box
 - [Laravel Valet](https://roots.io/guides/wordpress-local-development-on-os-x-with-valet-and-bedrock/) with [wp-cli-valet-command](https://github.com/aaemnnosttv/wp-cli-valet-command) can be used to spin up a Bedrock site in seconds:
-    ```sh
+    ```bash
     $ wp package install aaemnnosttv/wp-cli-valet-command:^1.2
     $ wp valet new my-project --project=bedrock
     ```

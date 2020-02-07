@@ -1,6 +1,6 @@
 # User Contributed Extensions
 
-<p class="lead">Extensions (or roles), developed by the community, that complement Trellis.</p> 
+Extensions (or roles), developed by the community, that complement Trellis.
 
 Issues with extensions should be opened in their respective repositories.
 

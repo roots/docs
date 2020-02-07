@@ -57,13 +57,13 @@ This leaves you with a *provisioned- server. The next step is to [deploy](https:
 
 Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision your remote servers again to apply the changes:
 
-```sh
+```bash
 ansible-playbook server.yml -e env=<environment>
 ```
 
 You can also provision with specific tags to only run the relevant roles:
 
-```sh
+```bash
 ansible-playbook server.yml -e env=<environment> --tags=users
 ```
 

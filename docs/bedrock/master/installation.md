@@ -10,7 +10,7 @@
 ## Getting Started
 
 1. Create a new project: 
-    ```sh
+    ```bash
     $ composer create-project roots/bedrock
     ```
 2. Update environment variables in the `.env` file:
@@ -34,6 +34,6 @@
 
 Bedrock is multisite network compatible, but needs the [roots/multisite-url-fixer](https://github.com/roots/multisite-url-fixer) mu-plugin on subdomain installs to make sure admin URLs function properly. This plugin is not _needed_ on subdirectory installs but will work well with them. From your Bedrock directory: 
 
-```sh
+```bash
 $ composer require roots/multisite-url-fixer
 ```

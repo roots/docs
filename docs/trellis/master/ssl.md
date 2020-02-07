@@ -56,9 +56,9 @@ example.com:
 
 There is one main difference between LE and other certificate authorities: their certificates expire every *90 days*. Trellis automates by running a cron-job so you never have to manually renew them or worry about them expiring like a paid certificate.
 
-<div class="alert alert-warning" role="alert">
-<p class="mb-0">⚠️ Let's Encrypt is ending support for v1 of their ACME protocol. If you are using Trellis older than <code>v.1.2.0</code> please see <a href="https://discourse.roots.io/t/trellis-and-lets-encrypt-v1-end-of-life/">here</a> for more details.</p>
-</div>
+::: warning Note
+:warning: Let's Encrypt is ending support for v1 of their ACME protocol. If you are using a Trellis version older than `v1.2.0`, please see [here](https://discourse.roots.io/t/trellis-and-lets-encrypt-v1-end-of-life/) for more details.
+:::
 
 #### DNS records
 
@@ -175,7 +175,7 @@ example.com:
 
 You can tell your browsers to trust these self signed certificates by using the vagrant-trellis-cert plugin. This also fixes issues with MacOS Catalina where the 'certificate not trusted' error screens are not possible to bypass. From your trellis folder, run:
 
-```sh
+```bash
 vagrant plugin install vagrant-trellis-cert
 vagrant trellis-cert trust
 ```

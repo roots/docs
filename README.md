@@ -11,7 +11,7 @@ Please use the [Roots Discourse](https://discourse.roots.io/) to open a discussi
 
 ## Build Documentation
 
-```sh
+```bash
 $ yarn install
 $ yarn run docs:build
 ```

@@ -12,7 +12,9 @@ Accessing your databases with tools such as [Sequel Pro](https://www.sequelpro.c
 - SSH User: `vagrant`
 - SSH Key: Select the following file from your Trellis directory: `.vagrant/machines/default/virtualbox/private_key`
 
-**macOS users:** [vagrant-trellis-sequel](https://github.com/TypistTech/vagrant-trellis-sequel) allows for opening Trellis databases in Sequel Pro with a single command.
+::: tip macOS Users
+[vagrant-trellis-sequel](https://github.com/TypistTech/vagrant-trellis-sequel) allows for opening Trellis databases in Sequel Pro with a single command.
+:::
 
 ## Remote servers
 

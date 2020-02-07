@@ -20,7 +20,7 @@ add_filter('sage/template/page/data', function (array $data) {
 
 [`blade-generate`](https://github.com/alwaysblank/blade-generate) is a WP-CLI package that can be used to compile, wipe, and clear Blade templates. Install `blade-generate` by running:
 
-```sh
+```bash
 wp package install git@github.com:alwaysblank/blade-generate.git
 ```
 

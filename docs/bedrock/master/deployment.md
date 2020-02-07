@@ -11,11 +11,13 @@ These tools include supporting deploying Bedrock out of the box:
 
 Other methods need to account for setting the `WP_ENV` [environment variable](https://roots.io/bedrock/docs/environment-variables/) to `production` when your site is in a production environment.
 
-⚠️ **NOTE: Bedrock's [Disallow Indexing mu-plugin](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/disallow-indexing.php) will prevent indexing of a site when `WP_ENV` is not set to `production`.**
+::: notice Note
+:warning: **Bedrock's [Disallow Indexing mu-plugin](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/disallow-indexing.php) will prevent indexing of a site when `WP_ENV` is not set to `production`.**
+:::
 
 ## Supported WordPress hosts
 
 The following is a list of known hosts that support Bedrock:
 
-- [**Kinsta**](https://roots.io/guides/deploying-to-kinsta-with-trellis/) (supports Bedrock and Trellis and  [sponsors us on Patreon](https://patreon.com/rootsdev))
+- [Kinsta](https://roots.io/guides/deploying-to-kinsta-with-trellis/) supports Bedrock and Trellis and [sponsors us on Patreon](https://patreon.com/rootsdev)
 - [fortrabbit](https://help.fortrabbit.com/install-wordpress-4-pro#toc-install)

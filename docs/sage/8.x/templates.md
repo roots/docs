@@ -5,92 +5,92 @@ The markup in Sage is based on [HTML5 Boilerplate](http://html5boilerplate.com/)
 The `templates/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
 
 <dl class="dl-horizontal">
-  <dt><code>404.php</code></dt>
+  <dt>`404.php`</dt>
   <dd>Error 404 page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>index.php</code></dt>
+  <dt>`index.php`</dt>
   <dd>Archive page (used by blog page, category archives, author archives and more)</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>page.php</code></dt>
+  <dt>`page.php`</dt>
   <dd>Single page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>search.php</code></dt>
+  <dt>`search.php`</dt>
   <dd>Search results page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>single.php</code></dt>
+  <dt>`single.php`</dt>
   <dd>Single post page</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>template-custom.php</code></dt>
+  <dt>`template-custom.php`</dt>
   <dd>An example single page template</dd>
 </dl>
 
-<p>All templates are wrapped by a base file in the <code>layouts/</code> directory:</p>
+All templates are wrapped by a base file in the `layouts/` directory:
 
 <dl class="dl-horizontal">
-  <dt><code>base.php</code></dt>
+  <dt>`base.php`</dt>
   <dd>The <a href="/sage/docs/theme-wrapper/">theme wrapper</a> which wraps the base markup around all template files</dd>
 </dl>
 
-<p>These files include templates from the <code>templates/partials/</code> directory which is where you&rsquo;ll be making most of your customizations:</p>
+These files include templates from the `templates/partials/` directory which is where you&rsquo;ll be making most of your customizations:
 
 <dl class="dl-horizontal">
-  <dt><code>comments.php</code></dt>
+  <dt>`comments.php`</dt>
   <dd>Markup for comments</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content-page.php</code></dt>
-  <dd>Markup included from <code>templates/page.php</code></dd>
+  <dt>`content-page.php`</dt>
+  <dd>Markup included from `templates/page.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content-search.php</code></dt>
-  <dd>Markup included from <code>templates/search.php</code></dd>
+  <dt>`content-search.php`</dt>
+  <dd>Markup included from `templates/search.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content-single.php</code></dt>
-  <dd>Markup included from <code>templates/single.php</code></dd>
+  <dt>`content-single.php`</dt>
+  <dd>Markup included from `templates/single.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>content.php</code></dt>
-  <dd>Markup included from <code>templates/index.php</code></dd>
+  <dt>`content.php`</dt>
+  <dd>Markup included from `templates/index.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>entry-meta.php</code></dt>
-  <dd>Post entry meta information included from <code>templates/content-single.php</code></dd>
+  <dt>`entry-meta.php`</dt>
+  <dd>Post entry meta information included from `templates/content-single.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>footer.php</code></dt>
-  <dd>Footer markup included from <code>layouts/base.php</code></dd>
+  <dt>`footer.php`</dt>
+  <dd>Footer markup included from `layouts/base.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>head.php</code></dt>
-  <dd><code>&lt;head&gt;</code> markup included from <code>layouts/base.php</code></dd>
+  <dt>`head.php`</dt>
+  <dd>`&lt;head&gt;` markup included from `layouts/base.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>header.php</code></dt>
-  <dd>Header markup included from <code>layouts/base.php</code></dd>
+  <dt>`header.php`</dt>
+  <dd>Header markup included from `layouts/base.php`</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>page-header.php</code></dt>
-  <dd>Page title markup included from most of the files in the <code>templates/</code> directory</dd>
+  <dt>`page-header.php`</dt>
+  <dd>Page title markup included from most of the files in the `templates/` directory</dd>
 </dl>
 <dl class="dl-horizontal">
-  <dt><code>sidebar.php</code></dt>
-  <dd>Sidebar markup included from <code>layouts/base.php</code></dd>
+  <dt>`sidebar.php`</dt>
+  <dd>Sidebar markup included from `layouts/base.php`</dd>
 </dl>
 
 ## Extending templates
 
 Even with the [theme wrapper](/sage/docs/theme-wrapper/), the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy) is still intact. Here’s some examples:
 
-* Copy `index.php` to `author.php` for customizing author archives
-* Copy `index.php` to `home.php` for customizing the Home page if you’re showing the latest posts (under Reading Settings) instead of a static front page
-* Copy `index.php` to `archive-gallery.php` for customizing the archive page for a custom post type registered as `gallery`
-* Copy `page.php` to `front-page.php` for customizing the static front page
-* Copy `page.php` to `page-about.php` for customizing a page called About
+- Copy `index.php` to `author.php` for customizing author archives
+- Copy `index.php` to `home.php` for customizing the Home page if you’re showing the latest posts (under Reading Settings) instead of a static front page
+- Copy `index.php` to `archive-gallery.php` for customizing the archive page for a custom post type registered as `gallery`
+- Copy `page.php` to `front-page.php` for customizing the static front page
+- Copy `page.php` to `page-about.php` for customizing a page called About
 
 The [theme wrapper documentation](/sage/docs/theme-wrapper/) goes into depth about creating new `base.php` files, but if you’d like to have a customized `base.php` based on a certain template, just copy it to `templates/layouts/base-<template name>.php`. You can add conditional statements to `base.php` whenever possible and should generally aim to not have multiple theme wrappers in your theme.

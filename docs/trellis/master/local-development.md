@@ -7,9 +7,9 @@ Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our 
 3. Optionally configure the IP address at the top of the `vagrant.default.yml` to allow for multiple boxes to be run concurrently (default is `192.168.50.5`).
 4. Run `vagrant up` (from your trellis directory, usually the `trellis/` subdirectory of your project).
 
-<div class="alert alert-warning" role="alert">
-<p class="mb-0">⚠️ <code>vagrant up</code> will fail <a href="https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes">if you are using encrypted folders/hard drives</a></b></p>
-</div>
+::: warning Note
+:warning: `vagrant up` will fail [if you are using encrypted folders/hard drives](https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes)
+:::
 
 Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a server running and a WordPress site automatically installed and configured.
 
@@ -31,13 +31,13 @@ Trellis installs WordPress on your first `vagrant up` with `admin` as the defaul
 
 Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision the VM again to apply the changes:
 
-```sh
+```bash
 vagrant provision
 ```
 
 You can also provision with specific tags to only run the relevant roles:
 
-```sh
+```bash
 SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant provision
 ```
 
@@ -49,6 +49,6 @@ Notes on the commands:
 
 If you added a *new- WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 
-```sh
+```bash
 vagrant reload --provision
 ```
