@@ -2,36 +2,11 @@
 
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Default User</th>
-      <th>User Variable</th>
-      <th>Task</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>`dev.yml`</strong></td>
-      <td>`vagrant`</td>
-      <td>-</td>
-      <td>create development VMs</td>
-    </tr>
-    <tr>
-      <td><strong>`server.yml`</strong></td>
-      <td>`root` or `admin`</td>
-      <td>`admin_user`</td>
-      <td>provision remote servers</td>
-    </tr>
-    <tr>
-      <td><strong>`deploy.yml`</strong></td>
-      <td>`web`</td>
-      <td>`web_user`</td>
-      <td>deploy WordPress sites</td>
-    </tr>
-  </tbody>
-</table>
+|                | Default User       | User Variable  | Task                     |
+|----------------|--------------------|----------------|--------------------------|
+| `dev.yml`    | `vagrant`         | -             | create development VMs   |
+| `server.yml` | `root` or `admin` | `admin_user` | provision remote servers |
+| `deploy.yml` | `web`             | `web_user`   | deploy WordPress sites   |
 
 This page reviews how to configure SSH users for the `server.yml` and `deploy.yml` playbooks. If you are looking for general SSH configuration options, see the [`sshd` role `README.md`](https://github.com/roots/trellis/tree/master/roles/sshd) .
 
