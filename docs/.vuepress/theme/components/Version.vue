@@ -69,3 +69,59 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus">
+.sidebar
+  .sidebar-current
+    margin-bottom 1rem
+    text-transform uppercase
+    font-weight 100
+    font-size 0.9rem
+    color $accentColor
+
+  .sidebar-version
+    margin-top 1rem
+    margin-bottom -0.5rem
+    padding 0.35rem 1.5rem 0.35rem 1.25rem
+
+    label
+      text-transform uppercase
+      opacity 0.65
+      margin-bottom 0.4rem
+      letter-spacing 2px
+      font-size 0.65rem
+      display block
+
+  .sidebar-select
+    display flex
+    align-items center
+    position relative
+
+    select
+      opacity: 0.4
+      font-size 1rem
+      padding-left 0.5rem
+      padding-top 0.25rem
+      padding-bottom 0.25rem
+      display block
+      width 100%
+      background-color transparent
+      appearance none
+
+    .sidebar-select-arrow
+      pointer-events none
+      padding-left 0.5rem
+      padding-right 0.5rem
+      align-items center
+      display flex
+      position absolute
+      top 0
+      bottom 0
+      right 0
+      color #a0aec0
+
+      svg
+        width 1rem
+        height 1rem
+        fill currentColor
+</style>

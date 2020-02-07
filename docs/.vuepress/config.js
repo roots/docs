@@ -6,14 +6,11 @@ module.exports = {
   plugins: [
     '@vuepress/pwa',
     '@vuepress/back-to-top',
-    ['vuepress-plugin-redirect', {
-      redirectors: [
-        { base: '/sage/', storage: true, alternative: ['master/installation', '10.x/installation', '9.x/installation'] },
-        { base: '/bedrock/', storage: true, alternative: ['master/installation'] },
-        { base: '/trellis/', storage: true, alternative: ['master/installation'] },
-        { base: '/', storage: true, alternative: ['getting-started/macos'] },
-      ],
+    ['autometa', {
+      site: 'Roots Documentation',
+      twitter: 'rootswp'
     }],
+    // ['minimal-analytics', { ga: 'UA-71591-42' }],
   ],
 
   head: [
@@ -49,6 +46,11 @@ module.exports = {
     docsBranch: 'master',
     editLinkText: 'Help us improve this page.',
     lastUpdated: 'Last Updated',
+
+    // algolia: {
+    //   indexName: 'roots',
+    //   apiKey: '16a75919d4869134bee2b3237330a2e0',
+    // },
 
     nav: [
       {

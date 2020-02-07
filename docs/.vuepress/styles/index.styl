@@ -3,7 +3,6 @@
 body
   font-family 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
   font-weight 300
-  color #111
 
 a, button
   transition color ease-in-out 86ms, background-color ease-in-out 86ms, border-color ease-in-out 86ms, opacity ease-in-out 86ms
@@ -72,84 +71,12 @@ a, button
       .nav-dropdown
         color #111
 
-.sidebar .sidebar-heading
-  font-weight 500
-  font-size 1rem
-
-.sidebar .sidebar-current
-  margin-bottom 1rem
-  text-transform uppercase
-  font-weight 100
-  font-size 0.9rem
-  color $accentColor
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-  font-weight 300
-
-h1
-  padding-bottom 16px
-  border-bottom 2px solid rgba(0, 0, 0, 0.05)
-
-@media (min-width 720px)
-  .page
-    padding-left 13rem
-
-  .sidebar
-    width 13rem
-
 .sidebar
-  .sidebar-version
-    margin-top 1rem
-    margin-bottom -0.5rem
-    padding 0.35rem 1.5rem 0.35rem 1.25rem
+  .sidebar-heading
+    font-weight 500
+    font-size 1rem
 
-    label
-      text-transform uppercase
-      opacity 0.65
-      margin-bottom 0.4rem
-      letter-spacing 2px
-      font-size 0.65rem
-      display block
-
-  .sidebar-select
-    display flex
-    align-items center
-    position relative
-
-    select
-      opacity: 0.4
-      font-size 1rem
-      padding-left 0.5rem
-      padding-top 0.25rem
-      padding-bottom 0.25rem
-      display block
-      width 100%
-      background-color transparent
-      appearance none
-
-    .sidebar-select-arrow
-      pointer-events none
-      padding-left 0.5rem
-      padding-right 0.5rem
-      align-items center
-      display flex
-      position absolute
-      top 0
-      bottom 0
-      right 0
-      color #a0aec0
-
-      svg
-        width 1rem
-        height 1rem
-        fill currentColor
-
-  .sidebar-groupnot(.collapsable) .sidebar-heading,
+  .sidebar-group:not(.collapsable) .sidebar-heading,
   .sidebar-heading
     color #999999
     font-size 0.7em
@@ -189,6 +116,25 @@ h1
 
     .prefix, .time
       color #111 !important
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-weight 300
+
+h1
+  padding-bottom 16px
+  border-bottom 2px solid rgba(0, 0, 0, 0.05)
+
+@media (min-width 720px)
+  .page
+    padding-left 13rem
+
+  .sidebar
+    width 13rem
 
 .theme-default-content
   padding 4rem 2.5rem 1rem
