@@ -1,10 +1,15 @@
 module.exports = {
   title: 'Roots Documentation',
   base: '/docs/',
-  serviceWorker: true,
 
   plugins: [
-    '@vuepress/pwa',
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      updatePopup: {
+        message: "New content is available.",
+        buttonText: "Refresh",
+      },
+    }],
     '@vuepress/back-to-top',
     ['autometa', {
       site: 'Roots Documentation',
