@@ -45,7 +45,7 @@ Because your debugger is located on your computer and not the server, Xdebug wou
 
 First, let's look at the command we'll be using to create the tunnel:
 
-```
+```sh
 ./bin/xdebug-tunnel.sh <action> <host>
 ```
 
@@ -68,7 +68,7 @@ some_inventory_hostname
 You would execute:
 
 ```bash
-./bin/xdebug-tunnel.sh open some_inventory_hostname
+$ ./bin/xdebug-tunnel.sh open some_inventory_hostname
 ```
 
 This script runs the `xdebug-tunnel.yml` playbook with the necessary variables to install Xdebug on the environment as well as establish the tunnel.
@@ -76,7 +76,7 @@ This script runs the `xdebug-tunnel.yml` playbook with the necessary variables t
 To close the tunnel, as well as disable Xdebug, run:
 
 ```bash
-./bin/xdebug-tunnel.sh close some_inventory_hostname
+$ ./bin/xdebug-tunnel.sh close some_inventory_hostname
 ```
 
 This will remove the `/etc/php/7.0/fpm/conf.d/20-xdebug.ini` symlink, effectively disabling it for that environment while leaving xdebug installed. It also closes the SSH connection.
@@ -94,7 +94,7 @@ If you don't use inventory aliases in your host files, you can also use an ip ad
 You can do this:
 
 ```bash
-./bin/xdebug-tunnel.sh open 12.34.56.78
+$ ./bin/xdebug-tunnel.sh open 12.34.56.78
 ```
 
 You must specify the `host` exactly the same when opening and closing the tunnel. It would cause an error to open the tunnel with a `host` of `some_inventory_hostname` then close with a host of `12.34.56.78`. This is because the tunnel socket is created using the host parameter you pass:

@@ -103,7 +103,7 @@ Host example.com
 
 Your server may occasionally offer a different host key than what your local machine has on record in `known_hosts`. This could happen if you rebuild your server or if the `sshd` role configures your server to offer a stronger key.
 
-Example 1
+**Example 1**
 
 ```bash
 TASK [setup] *******************************************************************
@@ -117,7 +117,7 @@ fatal: [xxx.xxx.xxx.xxx]: UNREACHABLE! => {"changed": false, "unreachable": true
     to retry, use: --limit @/Users/yourname/sites/example.com/trellis/deploy.retry
 ```
 
-Example 2
+**Example 2**
 
 ```bash
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -133,7 +133,7 @@ SHA256:lv86hFykjn8pnOWE2WDWJo8Mzf6FTDMx/yWXOqzK5PU.
 If this change in host keys is expected, then clear the old host key from your `known_hosts` by running the following command (with your real IP or host name).
 
 ```bash
-ssh-keygen -R 12.34.56.78
+$ ssh-keygen -R 12.34.56.78
 ```
 
 Then try your Trellis playbook or SSH connection again.
@@ -151,13 +151,13 @@ Similarly, the `sshd` role may cause your server's SSH client to require stronge
 SSH connection issues are often difficult to resolve without verbose output. Use the `-vvvv` option with your `ansible-playbook` command:
 
 ```bash
-ansible-playbook server.yml -e env=production -vvvv
+$ ansible-playbook server.yml -e env=production -vvvv
 ```
 
 You may also use `-v`, `-vv`, and `-vvv` with manual SSH connections:
 
 ```bash
-ssh -v root@12.34.56.78
+$ ssh -v root@12.34.56.78
 ```
 
 ### Manual SSH
@@ -165,7 +165,7 @@ ssh -v root@12.34.56.78
 If your `ansible-playbook` command is failing its SSH connection, it can be helpful to try a manual SSH connection to narrow down the problem. If manual SSH fails, try again with `-v` for [verbose output](#verbose-output).
 
 ```bash
-ssh -v root@12.34.56.78
+$ ssh -v root@12.34.56.78
 ```
 
 ### `Ciphers`, `KexAlgorithms`, or `MACs`

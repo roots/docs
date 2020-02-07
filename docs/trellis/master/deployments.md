@@ -144,12 +144,12 @@ wordpress_sites:
 
 Deploy command:
 ```bash
-./bin/deploy.sh production mysite.com
+$ ./bin/deploy.sh production mysite.com
 ```
 
 Or alternatively:
 ```bash
-ansible-playbook deploy.yml -e "site=mysite.com env=production"
+$ ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ```
 
 ## Rollbacks

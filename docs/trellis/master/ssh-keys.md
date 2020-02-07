@@ -138,5 +138,5 @@ The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args 
 Remember to import your SSH key password into Keychain by running:
 
 ```bash
-ssh-add -K
+$ ssh-add -K
 ```
