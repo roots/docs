@@ -139,3 +139,13 @@ $ pip install ansible
 # Install a specific Ansible version:
 $ pip install ansible==2.4.0.0
 ```
+
+### NFS
+
+For macOS Catalina or later, you will have to grant full disk access to `/sbin/nfsd`.
+
+1. Navigate to **System Preferences** → **Security & Privacy** → **Privacy** → **Full Disk Access**
+2. Click `+`
+3. Press <kbd>Command</kbd> <kbd>Shift</kbd> <kbd>G</kbd> at the same time.
+4. Enter the `/sbin` directory.
+5. Double click the `nfsd` file.
