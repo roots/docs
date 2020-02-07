@@ -14,7 +14,7 @@ This is the minimum requirements for a development server. Vagrant automatically
 
 To speed up future dev VM provisioning, or for remote servers, you'll need to install Ansible locally on your host machine.
 
-See [Requirements](remote-server-setup.md/#requirements) under Remote Server Setup.
+See [Requirements](remote-server-setup.md#requirements) under Remote Server Setup.
 
 ## Create a project
 

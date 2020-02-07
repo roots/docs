@@ -25,11 +25,17 @@ users:
       - "{{ lookup('file', '/path/to/local/file') }}"
       - https://github.com/username.keys
 ```
-Specify the user's primary group first in the list in the list of `groups`. List `keys` for anyone who will need to make an SSH connection as that user. `server.yml` can `lookup` keys in local files or retrieve them from remote host URLs. Here's an example of my public keys I have hosted on GitHub: https://github.com/swalkinshaw.keys
+
+Specify the user's primary group first in the list in the list of `groups`. List `keys` for anyone who will need to make an SSH connection as that user. `server.yml` can `lookup` keys in local files or retrieve them from remote host URLs. 
+
+::: tip Example
+Here's an example of my public keys I have hosted on GitHub: https://github.com/swalkinshaw.keys
+:::
 
 If needed, you may redefine the `users` in any given `group_vars` environment file, overriding the `users` list in `group_vars/all/users.yml`.
 
 ## `server.yml`: `root` or `admin`
+
 We assume that when you first create your server you've already added your SSH key to the `root` account. Digital Ocean will add this for you when you create a droplet. If you don't want to use an SSH key, you will need to add the `--ask-pass` option each time you run the `server.yml` playbook.
 
 `server.yml` will try to connect to your server as `root`. If the connection fails, `server.yml` will try to connect as the `admin_user` defined in `group_vars/all/users.yml` (default `admin`). If `root` login will be disabled on your server, it is critical for the `admin_user` to be defined in your list of `users`, with `sudo` first in this user's list of groups (see the [Security docs](security.md)). The default definition for the `admin_user` is shown below.

@@ -89,4 +89,4 @@ RewriteRule . /index.php [L]
 
 ## Managed WordPress hosts and Bedrock
 
-If you're using a [supported WordPress host](deployment.md/#supported-wordpress-hosts) such as Kinsta, then contact support and ask them to set your document root to the `web` folder.
+If you're using a [supported WordPress host](deployment.md#supported-wordpress-hosts) such as Kinsta, then contact support and ask them to set your document root to the `web` folder.

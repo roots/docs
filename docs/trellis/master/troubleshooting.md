@@ -54,7 +54,7 @@ Use the insecure private key inside the `.vagrant` folder. [See thread on Roots 
 
 ## Let's Encrypt SSL certificates
 
-See [Troubleshooting Let's Encrypt](ssl.md/#troubleshooting-lets-encrypt).
+See [Troubleshooting Let's Encrypt](ssl.md#troubleshooting-lets-encrypt).
 
 <hr>
 
@@ -82,7 +82,7 @@ Sometimes a task that installs Composer dependencies gives an error `host key ve
 
 ## SSH connections
 
-If you have trouble with SSH connections to your server, consider the tips below. You may also want to review information about [disabling `root` login](security.md/#locking-down-root) and how to configure your server's SSH settings via the [`sshd` role](https://github.com/roots/trellis/tree/master/roles/sshd).
+If you have trouble with SSH connections to your server, consider the tips below. You may also want to review information about [disabling `root` login](security.md#locking-down-root) and how to configure your server's SSH settings via the [`sshd` role](https://github.com/roots/trellis/tree/master/roles/sshd).
 
 ### SSH keys
 

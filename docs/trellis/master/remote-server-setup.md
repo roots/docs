@@ -47,7 +47,7 @@ Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migrate ye
 Now that you have a working Ubuntu 18.04 server that you can easily SSH into, you need to configure a few things:
 
 1. Copy your `wordpress_sites` from your working development site in `group_vars/development/wordpress_sites.yml` to `group_vars/<environment>/wordpress_sites.yml` (`staging` or `production`, whichever you're setting up).
-2. Modify your site and add the necessary settings for [remote servers](wordpress-sites.md/#remote-servers) since they have a few more settings than local development. Also see the [Passwords docs](passwords.md).
+2. Modify your site and add the necessary settings for [remote servers](wordpress-sites.md#remote-servers) since they have a few more settings than local development. Also see the [Passwords docs](passwords.md).
 3. Add your server hostname to `hosts/<environment>` (replacing `your_server_hostname`).
 4. Specify public SSH keys for `users` in `group_vars/all/users.yml`. See the [SSH Keys docs](ssh-keys.md).
 5. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](security.md).
