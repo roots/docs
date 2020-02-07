@@ -45,8 +45,8 @@ Because your debugger is located on your computer and not the server, Xdebug wou
 
 First, let's look at the command we'll be using to create the tunnel:
 
-```sh
-./bin/xdebug-tunnel.sh <action> <host>
+```bash
+$ ./bin/xdebug-tunnel.sh <action> <host>
 ```
 
 The argument `action` can be `open` or `close` and `host` is the hostname, IP, or inventory alias in your `hosts/<environment>` file.

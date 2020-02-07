@@ -144,7 +144,7 @@ The path for your base template – referenced in your `extends` statement – m
 
 #### Child Template Example – Complex
 
-The first block in the example child template below augments the content of the `fastcgi_basic` block from the `wordpress-site.conf.j2` base template. It inserts `&#123; super() &#125;`, which represents the original block content from the base template, then adds an extra `fastcgi_param`. The second block in the example rewrites the `redirects_https` block, omitting the `ssl_enabled` conditional and adding a new `listen 8080` directive.
+The first block in the example child template below augments the content of the `fastcgi_basic` block from the `wordpress-site.conf.j2` base template. It inserts <code pre-v>{{ super() }}</code>, which represents the original block content from the base template, then adds an extra `fastcgi_param`. The second block in the example rewrites the `redirects_https` block, omitting the `ssl_enabled` conditional and adding a new `listen 8080` directive.
 
 ```
 {% extends 'roles/wordpress-setup/templates/wordpress-site.conf.j2' %}
