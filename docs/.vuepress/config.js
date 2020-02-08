@@ -2,24 +2,20 @@ module.exports = {
   title: 'Roots Documentation',
   base: '/docs/',
 
-  plugins: [
-    ['@vuepress/pwa', {
+  plugins: {
+    '@vuepress/pwa': {
       serviceWorker: true,
       updatePopup: {
         message: 'New content is available.',
         buttonText: 'Refresh',
       },
-    }],
-    '@vuepress/back-to-top',
-    ['autometa', {
-      site: 'Roots Documentation',
-      twitter: 'rootswp'
-    }],
-    // ['minimal-analytics', { ga: 'UA-71591-42' }],
-    ['@silvanite/tailwind', {
+    },
+    '@vuepress/back-to-top': true,
+    // 'minimal-analytics': { ga: 'UA-71591-42' },
+    '@silvanite/tailwind': {
       purgecss: { enabled: true },
-    }],
-  ],
+    },
+  },
 
   head: [
     ['link', {

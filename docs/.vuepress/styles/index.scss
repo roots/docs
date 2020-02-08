@@ -12,7 +12,7 @@
 
   @screen lg {
     .page {
-      @apply .pl-64;
+      @apply .pl-52;
     }
 
     .sidebar {
@@ -100,7 +100,11 @@
     }
 
     .sidebar-links > li {
-      @apply .my-0 .mt-0 .mb-1;
+      @apply .mx-0 .mt-0 .mb-1;
+    }
+
+    & > .sidebar-links > li:not(:first-child) {
+      @apply .mt-3;
     }
 
     .sidebar-group {
