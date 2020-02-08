@@ -16,6 +16,9 @@ module.exports = {
       twitter: 'rootswp'
     }],
     // ['minimal-analytics', { ga: 'UA-71591-42' }],
+    ['@silvanite/tailwind', {
+      purgecss: { enabled: true },
+    }],
   ],
 
   head: [

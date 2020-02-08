@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar-version" v-if="versions">
     <div class="sidebar-current">
-      {{ this.current }} docs
+      {{ this.current }} <span>docs</span>
     </div>
 
     <label>Version</label>
@@ -70,62 +70,42 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-.sidebar
-  .sidebar-current
-    margin-bottom 1rem
-    text-transform uppercase
-    font-weight 100
-    font-size 0.9rem
-    color $accentColor
+<style lang="scss">
+.sidebar {
+  .sidebar-current {
+    @apply .mb-4 .uppercase .font-thin .tracking-wide .text-md .text-brand-500;
 
-  .sidebar-version
-    margin-top 1rem
-    margin-bottom -0.5rem
-    padding 0.35rem 1.5rem 0.35rem 1.25rem
+    span {
+      @apply .text-gray-600;
+    }
+  }
 
-    label
-      text-transform uppercase
-      opacity 0.65
-      margin-bottom 0.4rem
-      letter-spacing 2px
-      font-size 0.65rem
-      display block
+  .sidebar-version {
+    @apply .mt-4 .-mb-2 .py-2 .pr-6 .pl-5;
 
-  .sidebar-select
-    display flex
-    align-items center
-    position relative
+    label {
+      @apply .uppercase .opacity-75 .mb-2 .tracking-widest .text-xxs .block;
+    }
+  }
 
-    select
-      opacity: 0.4
-      font-size 1rem
-      padding-left 0.5rem
-      padding-top 0.25rem
-      padding-bottom 0.25rem
-      display block
-      width 100%
-      background-color transparent
-      appearance none
-      cursor pointer
+  .sidebar-select {
+    @apply .flex .items-center .relative;
 
-    .sidebar-select-arrow
-      pointer-events none
-      padding-left 0.5rem
-      padding-right 0.5rem
-      align-items center
-      display flex
-      position absolute
-      top 0
-      bottom 0
-      right 0
-      color #a0aec0
+    select {
+      @apply .opacity-50 .text-md .pl-2 .py-1 .block .w-full .bg-transparent .appearance-none .cursor-pointer .border .border-gray-400;
+    }
 
-      svg
-        width 1rem
-        height 1rem
-        fill currentColor
+    .sidebar-select-arrow {
+      @apply .pointer-events-none .pr-1 .flex .items-center .absolute .inset-y-0 .right-0 .text-gray-500;
 
-    &:hover .sidebar-select-arrow
-      color $accentColor
+      svg {
+        @apply .w-4 .h-4 .fill-current;
+      }
+    }
+
+    &:hover .sidebar-select-arrow {
+      @apply .text-brand-500;
+    }
+  }
+}
 </style>

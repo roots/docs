@@ -1,5 +1,4 @@
 // const path = require('path');
-const { startCase, toLower } = require('lodash');
 
 module.exports = (options, ctx) => ({
   // alias() {
@@ -20,6 +19,7 @@ module.exports = (options, ctx) => ({
 
   extendPageData(page) {
     const { _context, path, frontmatter, title } = page;
+    const { startCase, toLower } = require('lodash');
 
     if (!path || !title) {
       return;
@@ -37,5 +37,6 @@ module.exports = (options, ctx) => ({
 
     frontmatter.metaTitle = `${prefix}: ${(frontmatter.metaTitle || title)} | ${_context.siteConfig.title}`;
   },
-  extend: '@vuepress/theme-default'
+
+  extend: '@vuepress/theme-default',
 });
