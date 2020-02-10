@@ -25,13 +25,17 @@
 </template>
 
 <script>
+import { Route } from '@theme/utils';
+
 export default {
   methods: {
     onChange(item) {
-      const path = this.$withBase(this.path.replace(
-        this.version,
-        event.target.value
-      ));
+      const path = this.$withBase(
+        Route(this.$page).path.replace(
+          Route(this.$page).version,
+          event.target.value
+        )
+      );
 
       window.location.href = path.substring(0, path.lastIndexOf('/')) + '/installation.html';
     },
@@ -41,30 +45,18 @@ export default {
     versions() {
       const versions = this.$site.themeConfig.versions;
 
-      if (!versions[this.current]) {
+      if (!versions[Route(this.$page).current]) {
         return;
       }
 
       return (
-        Object.keys(versions[this.current]).map(version => {
+        Object.keys(versions[Route(this.$page).current]).map(version => {
           return {
-            label: versions[this.current][version],
-            active: versions[this.current][version] === this.version
+            label: versions[Route(this.$page).current][version],
+            active: versions[Route(this.$page).current][version] === Route(this.$page).version
           };
         }) || false
       );
-    },
-
-    path() {
-      return this.$page.path;
-    },
-
-    current() {
-      return this.path.split('/')[1] || false;
-    },
-
-    version() {
-      return this.path.split('/')[2] || false;
     },
   },
 };

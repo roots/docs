@@ -1,4 +1,4 @@
-const { startCase, toLower } = require('lodash');
+import { Category } from './utils';
 
 module.exports = (options, ctx) => ({
   // alias() {
@@ -22,14 +22,7 @@ module.exports = (options, ctx) => ({
       return;
     }
 
-    const category = page.path.split('/')[1] || false;
-    const version = page.path.split('/')[2] || false;
-    const current = page.path.split('/')[3] || false;
-    const versions = page._context.themeConfig.versions[category] || false;
-
-    const prefix = !current || !version || version === 'master' ? startCase(toLower(category)) : `${startCase(toLower(category))} ${version}`;
-
-    page.frontmatter.metaTitle = `${prefix}: ${page.title} | ${page._context.siteConfig.title}`;
+    page.frontmatter.metaTitle = `${Category(page)}: ${page.title} | ${page._context.siteConfig.title}`;
   },
 
   plugins: {
@@ -39,14 +32,12 @@ module.exports = (options, ctx) => ({
           return page.title;
         }
 
-        const current = page.path.split('/')[1] || false;
-        const version = page.path.split('/')[2] || false;
-        const versions = page._context.themeConfig.versions[current] || false;
-
-        const prefix = !version || version === 'master' ? startCase(toLower(current)) : `${startCase(toLower(current))} ${version}`;
-
-        return `${prefix}: ${page.title}`;
+        return `${Category(page)}: ${page.title}`;
       },
+    },
+
+    '@silvanite/tailwind': {
+      purgecss: { enabled: true },
     },
   },
 
