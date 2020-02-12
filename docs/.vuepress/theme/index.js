@@ -49,6 +49,9 @@ module.exports = (options, context) => ({
       },
     }, themeConfig.seo || {});
 
+    page.excerpt = meta.excerpt;
+    page.routes = route(page);
+
     page.frontmatter.metaTitle = meta.title;
     page.frontmatter.description = meta.description;
     page.frontmatter.meta = [
@@ -71,9 +74,6 @@ module.exports = (options, context) => ({
       { name: 'twitter:card', content: meta.twitter.card },
       { name: 'twitter:image', content: meta.image },
     ].filter(item => item.content);
-
-    page.excerpt = meta.excerpt;
-    page.routes = route(page);
   },
 
   plugins: {

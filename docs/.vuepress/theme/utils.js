@@ -1,3 +1,9 @@
+/**
+ * Returns an object containing the split route paths.
+ *
+ * @param  {object} page
+ * @return {object}
+ */
 const route = page => {
   if (!page.path) {
     return;
@@ -11,6 +17,12 @@ const route = page => {
   };
 }
 
+/**
+ * Returns a title-cased category and version.
+ *
+ * @param  {object} page
+ * @return {string}
+ */
 const category = page => {
   const { startCase, toLower } = require('lodash');
 
@@ -25,8 +37,14 @@ const category = page => {
   return `${category} ${route(page).version}`;
 }
 
+/**
+ * Converts a timestamp into an ISO string.
+ *
+ * @param  {mixed} value
+ * @return {string}
+ */
 const date = value => {
-  return value && (new Date(value)).toISOString;
+  return value && (new Date(value)).toISOString();
 }
 
 module.exports = {
