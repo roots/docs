@@ -43,7 +43,7 @@ export default {
    versions() {
      const versions = this.$site.themeConfig.versions;
 
-     if (!versions[this.route.category]) {
+     if (!this.route || !versions[this.route.category]) {
        return;
      }
 
