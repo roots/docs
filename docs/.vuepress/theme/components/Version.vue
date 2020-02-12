@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar-version" v-if="versions">
     <div class="sidebar-current">
-      {{ this.current }} <span>docs</span>
+      {{ this.route.category }} <span>docs</span>
     </div>
 
     <label>Version</label>
@@ -25,38 +25,40 @@
 </template>
 
 <script>
-import { Route } from '@theme/utils';
-
 export default {
   methods: {
     onChange(item) {
       const path = this.$withBase(
-        Route(this.$page).path.replace(
-          Route(this.$page).version,
+        this.route.path.replace(
+          this.route.version,
           event.target.value
         )
       );
-
+      
       window.location.href = path.substring(0, path.lastIndexOf('/')) + '/installation.html';
     },
   },
 
   computed: {
-    versions() {
-      const versions = this.$site.themeConfig.versions;
+   versions() {
+     const versions = this.$site.themeConfig.versions;
 
-      if (!versions[Route(this.$page).current]) {
-        return;
-      }
+     if (!versions[this.route.category]) {
+       return;
+     }
 
-      return (
-        Object.keys(versions[Route(this.$page).current]).map(version => {
-          return {
-            label: versions[Route(this.$page).current][version],
-            active: versions[Route(this.$page).current][version] === Route(this.$page).version
-          };
-        }) || false
-      );
+     return (
+       Object.keys(versions[this.route.category]).map(version => {
+         return {
+           label: versions[this.route.category][version],
+           active: versions[this.route.category][version] === this.route.version
+         };
+       }) || false
+     );
+   },
+
+    route() {
+      return this.$page.routes;
     },
   },
 };

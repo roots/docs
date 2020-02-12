@@ -1,4 +1,3 @@
-
 <template>
   <ParentLayout>
     <template #sidebar-top>

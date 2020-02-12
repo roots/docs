@@ -10,7 +10,6 @@ module.exports = {
         buttonText: 'Refresh',
       },
     },
-    '@vuepress/back-to-top': true,
     // 'minimal-analytics': { ga: 'UA-71591-42' },
   },
 

@@ -1,5 +1,3 @@
-import { startCase, toLower } from 'lodash';
-
 const Route = page => {
   if (!page.path) {
     return;
@@ -14,6 +12,8 @@ const Route = page => {
 }
 
 const Category = page => {
+  const { startCase, toLower } = require('lodash');
+
   const category = startCase(
     toLower(Route(page).category)
   );
@@ -25,4 +25,7 @@ const Category = page => {
   return `${category} ${Route(page).version}`;
 }
 
-export { Route, Category }
+module.exports = {
+  Category,
+  Route
+}
