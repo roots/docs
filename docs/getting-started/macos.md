@@ -46,7 +46,7 @@ Install Composer from Homebrew:
 $ brew install composer
 ```
 
-## SSH key
+## SSH keys
 
 ### Create SSH key
 
