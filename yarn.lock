@@ -8164,11 +8164,6 @@ vuepress-plugin-minimal-analytics@^0.1.4:
   resolved "https://registry.yarnpkg.com/vuepress-plugin-minimal-analytics/-/vuepress-plugin-minimal-analytics-0.1.4.tgz#c6bcfc33330c65c669111df625b63a3b585fc254"
   integrity sha512-f+Y4FYiafmxrhwQjaMeu6CFZo0BrKetMpF3X/wLMK7Sp5n7dWk0s8pBowgY82jgWZmn63PjYeaX+MTJhCqnmRg==
 
-vuepress-plugin-seo@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-seo/-/vuepress-plugin-seo-0.1.2.tgz#132e656274bfaffce72e816fb8450951f3f6cc13"
-  integrity sha512-Tv3ihNl3pDX5krqq9r2X9rFKUVR8ssLvcKcu1P4ABP8/b3vC06St/UTe5QucgKzuphlIJkbRSOQ7n7yf6jMCRw==
-
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.3.tgz#6eff2d4c186cca917cc9f7df2b0af7de7c8c6438"

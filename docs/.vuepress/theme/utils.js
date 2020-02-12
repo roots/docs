@@ -1,4 +1,4 @@
-const Route = page => {
+const route = page => {
   if (!page.path) {
     return;
   }
@@ -11,21 +11,26 @@ const Route = page => {
   };
 }
 
-const Category = page => {
+const category = page => {
   const { startCase, toLower } = require('lodash');
 
   const category = startCase(
-    toLower(Route(page).category)
+    toLower(route(page).category)
   );
 
-  if (!Route(page).current || Route(page).version === 'master') {
+  if (!route(page).current || route(page).version === 'master') {
     return category;
   }
 
-  return `${category} ${Route(page).version}`;
+  return `${category} ${route(page).version}`;
+}
+
+const date = value => {
+  return value && (new Date(value)).toISOString;
 }
 
 module.exports = {
-  Category,
-  Route
+  category,
+  route,
+  date,
 }

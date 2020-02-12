@@ -14,18 +14,20 @@ module.exports = {
   },
 
   head: [
+    ['link', { rel: 'icon', href: 'https://cdn.roots.io/favicon.ico' }],
+    ['link', { rel: 'apple-touch-icon', href: 'https://cdn.roots.io/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['link', {
       href: 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,400i,500,600,800',
       rel: 'stylesheet',
       type: 'text/css',
     }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['link', { rel: 'icon', href: 'https://cdn.roots.io/apple-touch-icon.png' }],
     // ['script', { src: 'https://static.getclicky.com/js' }],
     // ['script', {}, `var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(66406668);`],
   ],
 
   themeConfig: {
+    domain: 'https://roots.io/docs',
     logo: '/logo.svg',
     searchPlaceholder: 'Search Docs',
 
@@ -36,6 +38,20 @@ module.exports = {
     docsBranch: 'master',
     editLinkText: 'Help us improve this page.',
     lastUpdated: 'Last Updated',
+
+    seo: {
+      locale: 'en_US',
+      type: 'article',
+      image: 'https://cdn.roots.io/app/uploads/roots-og-updated.png',
+      twitter: {
+        username: '@rootswp',
+        card: 'summary_large_image',
+      },
+      facebook: {
+        url: 'https://www.facebook.com/rootswp',
+        appId: '1022828784420871',
+      },
+    },
 
     // algolia: {
     //   indexName: 'roots',
@@ -67,5 +83,9 @@ module.exports = {
       'bedrock': ['master'],
       'sage': ['10.x', '9.x', '8.x'],
     },
-  }
+  },
+
+  extraWatchFiles: [
+    '.vuepress/theme',
+  ]
 }
