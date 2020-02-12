@@ -39,7 +39,7 @@ module.exports = (options, ctx) => ({
     },
 
     '@silvanite/tailwind': {
-      purgecss: { enabled: true },
+      purgecss: { enabled: false },
     },
 
     '@vuepress/back-to-top': true,
