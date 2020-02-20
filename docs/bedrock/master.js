@@ -4,7 +4,7 @@ module.exports = [
     collapsable: false,
     children: [
       'master/installation',
-      'master/compatability',
+      'master/compatibility',
       'master/configuration',
       'master/deployment',
     ],
