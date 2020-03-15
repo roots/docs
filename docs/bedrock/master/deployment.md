@@ -1,3 +1,7 @@
+---
+description: Deploy Bedrock with Trellis, bedrock-capistrano, or any other method as long as `composer install` is run as part of the deployment process.
+---
+
 # Deployment
 
 Running `composer install` from the Bedrock folder must be part of your deployment process.

@@ -1,3 +1,7 @@
+---
+description: A list of currently known compatibility issues with any WordPress plugins and the Sage starter theme.
+---
+
 # Compatibility
 
 ## Adding support for plugins

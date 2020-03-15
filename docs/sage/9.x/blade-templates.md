@@ -1,3 +1,7 @@
+---
+description: Want to use Laravel's Blade templating engine in a WordPress theme? Sage's theme templates use Blade, allowing for DRY templates.
+---
+
 # Blade Templates
 
 Sage uses [Laravel's Blade](https://laravel.com/docs/5.8/blade) templating engine.
@@ -26,6 +30,6 @@ $ wp package install git@github.com:alwaysblank/blade-generate.git
 
 After installing `blade-generate` you can run the following commands:
 
-- `wp blade compile` 
+- `wp blade compile`
 - `wp blade clear`
 - `wp blade wipe`

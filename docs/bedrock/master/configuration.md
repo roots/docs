@@ -1,3 +1,7 @@
+---
+description: Bedrock has a main configuration file that contains what wp-config.php usually world. There's also environment specific configuration files.
+---
+
 # Configuration
 
 The file to modify for configuration options is `config/application.php`. This is the file that contains what `wp-config.php` usually would.

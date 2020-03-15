@@ -1,3 +1,7 @@
+---
+description: Bedrock separates config from code with environment variables. There's a single place (.env) for settings that aren't committed to your repository.
+---
+
 # Environment Variables
 
 Bedrock tries to separate config from code as much as possible and environment variables are used to achieve this. The benefit is there's a single place (`.env`) to keep settings like database or other 3rd party credentials that aren't committed to your repository.

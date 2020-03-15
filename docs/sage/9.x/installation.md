@@ -1,3 +1,7 @@
+---
+description: Install Sage with Composer (composer create-project roots/sage), which allows you to define theme meta information and choose your front-end framework.
+---
+
 # Installation
 
 Make sure all dependencies have been installed before moving on:
@@ -59,7 +63,7 @@ location ~- \.(blade\.php)$ {
 location ~- composer\.(json|lock)$ {
   deny all;
 }
-  
+
 location ~- package(-lock)?\.json$ {
   deny all;
 }

@@ -3,7 +3,7 @@
 This repository is synced with the Roots docs for our primary projects:
 
 - [Getting Started](https://roots.io/docs/)
-- [Sage Docs](https://roots.io/docs/sage/10.0/installation.html)
+- [Sage Docs](https://roots.io/docs/sage/9.x/installation.html)
 - [Bedrock Docs](https://roots.io/docs/bedrock/master/installation.html)
 - [Trellis Docs](https://roots.io/docs/trellis/master/installation.html)
 

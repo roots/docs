@@ -1,6 +1,10 @@
+---
+description: Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins which enables using mu-plugins through Composer.
+---
+
 # Must-use Plugin Autoloader
 
-Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins. 
+Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins.
 
 The autoloaded plugins are included after all mu-plugins and standard plugins have been loaded. An asterisk (*) next to the name of the plugin designates the plugins that have been autoloaded. To remove this functionality, just delete `web/app/mu-plugins/bedrock-autoloader.php`.
 

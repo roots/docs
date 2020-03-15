@@ -1,3 +1,7 @@
+---
+description: The document root for your site must be pointed to Bedrock's web folder. See example server configurations for running Bedrock on Nginx or Apache.
+---
+
 # Server Configuration
 
 Bedrock can run on any webserver that supports Composer and PHP >= 7.1. The document root for your site must be pointed to Bedrock's `web` folder.

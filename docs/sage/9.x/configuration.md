@@ -1,3 +1,7 @@
+---
+description: Use setup.php in Sage to enable/disable theme features and set configuration values. Register navigation menus, sidebars, define theme support and more.
+---
+
 # Configuration
 
 `app/setup.php` is used to enqueue stylesheets and scripts, register support for theme features with `add_theme_support`, and register navigation menus and sidebars.

@@ -1,3 +1,7 @@
+---
+description: Sage uses npm, Webpack, Browsersync, and other modern front-end tools for theme development. Stylesheets and JavaScript files are automatically linted.
+---
+
 # Compiling Assets
 
 These are the primary projects that make up the Sage workflow:

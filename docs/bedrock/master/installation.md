@@ -1,3 +1,7 @@
+---
+description: Installing Bedrock requires PHP 7.1+ and Composer. After setting environment variables and the document root you can access your WordPress installation.
+---
+
 # Installation
 
 [[toc]]
@@ -9,7 +13,7 @@
 
 ## Getting Started
 
-1. Create a new project: 
+1. Create a new project:
     ```bash
     $ composer create-project roots/bedrock
     ```
@@ -27,12 +31,12 @@
     - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
     - Generate with [our WordPress salts generator](https://roots.io/salts.html)
 3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
-4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/` 
+4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
 5. Access WordPress admin at `https://example.com/wp/wp-admin/`
 
 ### Multisite
 
-Bedrock is multisite network compatible, but needs the [roots/multisite-url-fixer](https://github.com/roots/multisite-url-fixer) mu-plugin on subdomain installs to make sure admin URLs function properly. This plugin is not _needed_ on subdirectory installs but will work well with them. From your Bedrock directory: 
+Bedrock is multisite network compatible, but needs the [roots/multisite-url-fixer](https://github.com/roots/multisite-url-fixer) mu-plugin on subdomain installs to make sure admin URLs function properly. This plugin is not _needed_ on subdirectory installs but will work well with them. From your Bedrock directory:
 
 ```bash
 $ composer require roots/multisite-url-fixer

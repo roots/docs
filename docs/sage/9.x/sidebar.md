@@ -1,3 +1,7 @@
+---
+description: The `sage/display_sidebar` filter can be used to define which conditions to enable the primary sidebar on.
+---
+
 # Sidebar
 
 ## Displaying the sidebar

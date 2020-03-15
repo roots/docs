@@ -1,3 +1,7 @@
+---
+description: The `app/` directory contains all of the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
+---
+
 # Functionality
 
 The `app/` directory contains all of the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
@@ -13,7 +17,7 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
   - `excerpt_more` – add "… Continued" to excerpts
   - `template_include` – enable the theme wrapper
   - Various filters for the Blade implementation
-    
+
 - `app/helpers.php` – Helper functions used throughout the theme:
   - `asset_path` – used when enqueueing theme assets to provide the correct versioned asset filenames
   - `display_sidebar` – used to control displaying the sidebar

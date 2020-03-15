@@ -1,3 +1,7 @@
+---
+description: The `resources/views/` directory contains files that you can further extend with the normal WordPress template hierarchy.
+---
+
 # Theme Templates
 
 The `resources/views/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
