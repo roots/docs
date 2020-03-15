@@ -1,6 +1,7 @@
 module.exports = {
   title: 'Roots Documentation',
   base: '/docs/',
+  dest: './docs/.vuepress/dist/docs',
 
   plugins: {
     '@vuepress/pwa': {
