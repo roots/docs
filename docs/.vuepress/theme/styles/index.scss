@@ -1,3 +1,7 @@
+body {
+  -webkit-font-smoothing: auto;
+}
+
 *, ::before, ::after {
   @apply .border-0 .border-solid .border-gray-300;
 }
