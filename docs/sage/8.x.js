@@ -7,6 +7,7 @@ module.exports = [
       '8.x/configuration',
       '8.x/functionality',
       '8.x/deployment',
+      '8.x/existing-projects',
     ],
   },
   {

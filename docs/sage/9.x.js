@@ -8,6 +8,7 @@ module.exports = [
       '9.x/functionality',
       '9.x/deployment',
       '9.x/compatibility',
+      '9.x/existing-projects',
     ],
   },
   {
