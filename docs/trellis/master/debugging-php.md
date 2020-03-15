@@ -25,15 +25,15 @@ You can see all the available configuration options in `roles/xdebug/defaults/ma
 
 ## Using Xdebug in production
 
-While we default to installing Xdebug in development, installing it in any other environment is "opt-in." **It is not recommended to use Xdebug in production**, but it _can_ be extremely useful in debugging production-like environments. 
+While we default to installing Xdebug in development, installing it in any other environment is "opt-in." **It is not recommended to use Xdebug in production**, but it _can_ be extremely useful in debugging production-like environments.
 
-For example, if there's an issue you're encountering in Production, but cannot reproduce in Development (aka, your Vagrant environment), it's likely the problem lies with something specific to your VPS provider. 
+For example, if there's an issue you're encountering in Production, but cannot reproduce in Development (aka, your Vagrant environment), it's likely the problem lies with something specific to your VPS provider.
 
 Duplicating your production environment and sanitizing the data using something like [WP Hammer](https://github.com/10up/wp-hammer) will allow you to debug your production environmment without affecting it. This is where `bin/xdebug-tunnel.sh` comes in.
 
 ### `bin/xdebug-tunnel.sh`: Xdebug + SSH tunnels
 
-Xdebug gives a lot of visibility into your application that you do not want to give to anyone. Because of this, you want to restrict access to who is allowed to initiate a debugging session. 
+Xdebug gives a lot of visibility into your application that you do not want to give to anyone. Because of this, you want to restrict access to who is allowed to initiate a debugging session.
 
 The way we go about doing that is by creating a remote SSH tunnel from the VPS to your local computer. `bin/xdebug-tunnel.sh` makes it trivial to set up the connection by installing Xdebug if it is not already on the remote host as well as establishing the SSH tunnel between your server and your computer.
 
@@ -106,5 +106,5 @@ $ ./bin/xdebug-tunnel.sh open 12.34.56.78
 You must specify the `host` exactly the same when opening and closing the tunnel. It would cause an error to open the tunnel with a `host` of `some_inventory_hostname` then close with a host of `12.34.56.78`. This is because the tunnel socket is created using the host parameter you pass:
 
 ```bash
-/tmp/trellis-xdebug-{{ provided host }}
+/tmp/trellis-xdebug-[provided host]
 ```
