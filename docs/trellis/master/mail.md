@@ -3,6 +3,7 @@
 Trellis' mail functionality is separated between development and staging/production since you usually want different behaviour out of them.
 
 ## Development
+
 Dealing with emails in development is never fun. The two common solutions are:
 
 - Ignore it and hope it works fine on production
@@ -21,7 +22,7 @@ Mail will be automatically captured but you won't ever see it unless you access 
 Another benefit of using MailHog is that if you are using real SMTP credentials in development, you can ensure you don’t accidentally send emails to real email addresses which might exist in your database.
 
 ::: warning Note
-This is not the case if you have an active WordPress plugin that is configured to send mail. You'll need to disable the mail plugin on development to ensure you don't accidentally send emails to real email addresses. You could also hook into `phpmailer_init` in WordPress for non-production environments to prevent emails from being sent out. Using a service like [Mailtrap](https://mailtrap.io/) is another option.**
+This is not the case if you have an active WordPress plugin that is configured to send mail. You'll need to disable the mail plugin on development to ensure you don't accidentally send emails to real email addresses. You could also hook into `phpmailer_init` in WordPress for non-production environments to prevent emails from being sent out. Using a service like [Mailtrap](https://mailtrap.io/) is another option.\*\*
 :::
 
 Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
@@ -59,12 +60,16 @@ All of these offer around 10k+ emails for free per month. Once you have SMTP cre
 
 ### Example
 
+::: v-pre
+
 ```yml
 mail_smtp_server: smtp.example.com:587
 mail_hostname: example.com
 mail_user: admin@example.com
-mail_password: "{{ vault_mail_password }}" # Define this in group_vars/all/vault.yml
+mail_password: '{{ vault_mail_password }}' # Define this in group_vars/all/vault.yml
 ```
+
+:::
 
 If your SMTP settings are invalid, WordPress will return the following error message:
 

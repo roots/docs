@@ -57,8 +57,8 @@ $ ./bin/xdebug-tunnel.sh <action> <host>
 
 The argument `action` can be `open` or `close` and `host` is the hostname, IP, or inventory alias in your `hosts/<environment>` file.
 
-
 Provided this hosts file:
+
 ```
 # let's pretend hosts/staging
 
@@ -105,6 +105,10 @@ $ ./bin/xdebug-tunnel.sh open 12.34.56.78
 
 You must specify the `host` exactly the same when opening and closing the tunnel. It would cause an error to open the tunnel with a `host` of `some_inventory_hostname` then close with a host of `12.34.56.78`. This is because the tunnel socket is created using the host parameter you pass:
 
+::: v-pre
+
 ```bash
 /tmp/trellis-xdebug-{{ provided host }}
 ```
+
+:::

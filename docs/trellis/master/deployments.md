@@ -18,7 +18,7 @@ At this point, you should also generate your salts and keys and save them to you
 
 ## Deploying
 
-Deploy with a single command: 
+Deploy with a single command:
 
 ```sh
 $ ./bin/deploy.sh <environment> <domain>
@@ -31,7 +31,7 @@ The actual command looks like this: `ansible-playbook deploy.yml -e "site=<domai
 You can always use this command itself since it can take any additional `ansible-playbook` options.
 
 ::: warning Note
-**Trellis does not automatically install WordPress on remote servers**. 
+**Trellis does not automatically install WordPress on remote servers**.
 
 It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
 :::
@@ -80,20 +80,24 @@ By default, Trellis defines and uses three hooks:
 
 The default deploy hooks are defined in `roles/deploy/defaults/main.yml`:
 
+::: v-pre
+
 ```yaml
 deploy_build_before:
-  - "{{ playbook_dir }}/deploy-hooks/build-before.yml"
+  - '{{ playbook_dir }}/deploy-hooks/build-before.yml'
 
 deploy_build_after:
-  - "{{ playbook_dir }}/roles/deploy/hooks/build-after.yml"
+  - '{{ playbook_dir }}/roles/deploy/hooks/build-after.yml'
   # - "{{ playbook_dir }}/deploy-hooks/sites/{{ site }}-build-after.yml"
 
 deploy_finalize_before:
-  - "{{ playbook_dir }}/roles/deploy/hooks/finalize-before.yml"
+  - '{{ playbook_dir }}/roles/deploy/hooks/finalize-before.yml'
 
 deploy_finalize_after:
-  - "{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml"
+  - '{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml'
 ```
+
+:::
 
 The `deploy_build_before` definition and the commented path under `deploy_build-after` offer examples of using hooks for custom tasks, as described below.
 
@@ -103,21 +107,25 @@ To use a deploy hook, define or override the hook variable somewhere within your
 
 Each deploy hook variable is a list of task files to be included and run when the hook fires. We suggest keeping your hooked task files in a top level `deploy-hooks` folder. Here are some example hook variable definitions:
 
+::: v-pre
+
 ```yaml
 # Defining a hook that Trellis does not already use by default
 deploy_before:
-  - "{{ playbook_dir }}/deploy-hooks/deploy-before.yml"
+  - '{{ playbook_dir }}/deploy-hooks/deploy-before.yml'
 
 # Overriding a hook that Trellis already uses by default
 deploy_build_after:
-  - "{{ playbook_dir }}/roles/deploy/hooks/build-after.yml"
-  - "{{ playbook_dir }}/deploy-hooks/build-after.yml"
-  - "{{ playbook_dir }}/deploy-hooks/sites/{{ site }}-build-after.yml"
+  - '{{ playbook_dir }}/roles/deploy/hooks/build-after.yml'
+  - '{{ playbook_dir }}/deploy-hooks/build-after.yml'
+  - '{{ playbook_dir }}/deploy-hooks/sites/{{ site }}-build-after.yml'
 ```
+
+:::
 
 The second example above demonstrates overriding the `deploy_build_after` hook that Trellis already uses by default. The first include file in this hook's list is `roles/deploy/hooks/build-after.yml`, which is the task file Trellis usually executes. If you omit a hook's default file when overriding an existing hook variable, the default file's tasks will no longer execute.
 
-The second include file in the `deploy_build_after` example above, `deploy-hooks/build-after.yml`, is an example of adding a custom task file that would run on every deploy, regardless the site being deployed. The third include file, `deploy-hooks/sites/{{ site }}-build-after.yml`, demonstrates how you could use a `{{ site }}` variable to include a file based on the name of the site being deployed, e.g., `example.com-build-after.yml`.
+The second include file in the `deploy_build_after` example above, `deploy-hooks/build-after.yml`, is an example of adding a custom task file that would run on every deploy, regardless the site being deployed. The third include file, <code v-pre>deploy-hooks/sites/{{ site }}-build-after.yml</code>, demonstrates how you could use a `{{ site }}` variable to include a file based on the name of the site being deployed, e.g., `example.com-build-after.yml`.
 
 ### SSH keys
 
@@ -132,6 +140,7 @@ See the [SSH Keys docs](ssh-keys.md) on how to get your SSH key added to the `we
 Here's an example of all the configuration needed to deploy a site and what the commands would look like.
 
 Configuration:
+
 ```yaml
 # group_vars/production/wordpress_sites.yml
 
@@ -151,18 +160,20 @@ wordpress_sites:
 ```
 
 Deploy command:
+
 ```bash
 $ ./bin/deploy.sh production mysite.com
 ```
 
 Or alternatively:
+
 ```bash
 $ ansible-playbook deploy.yml -e "site=mysite.com env=production"
 ```
 
 ## Rollbacks
 
-To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` . 
+To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` .
 You may manually specify a different release using `--extra-vars='release=12345678901234'` . By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
 
 ## Deploying to other hosts
