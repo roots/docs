@@ -10,7 +10,7 @@ module.exports = {
         buttonText: 'Refresh',
       },
     },
-    // 'minimal-analytics': { ga: 'UA-71591-42' },
+    'minimal-analytics': { ga: 'UA-71591-42' },
   },
 
   head: [
@@ -22,8 +22,8 @@ module.exports = {
       rel: 'stylesheet',
       type: 'text/css',
     }],
-    // ['script', { src: 'https://static.getclicky.com/js' }],
-    // ['script', {}, `var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(66406668);`],
+    ['script', { src: 'https://static.getclicky.com/js' }],
+    ['script', {}, `var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(66406668);`],
   ],
 
   themeConfig: {
