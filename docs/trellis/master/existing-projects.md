@@ -53,7 +53,7 @@ $ git clone git@github.com:YourOrganization/example.com.git
 
 Determine whether your vault files are encrypted by looking at the `vault.yml` files in `trellis/group_vars/`
 
-```yaml    
+```yaml
 $ANSIBLE_VAULT;1.1;AES256
 343163646662643438323831343332626234333233386666333162383265663
 3132306538383762336332376165383530633838643937320a6363343238643
@@ -76,10 +76,10 @@ Confirm you can access the development site at the development URL noted earlier
 
 ## Import the database
 
-Retrieve an export of the current project’s database. 
+Retrieve an export of the current project’s database.
 
 ::: tip Note
-For easy access during the import process, place the database export in your local project’s `site` directory. 
+For easy access during the import process, place the database export in your local project’s `site` directory.
 :::
 
 From your project's `trellis` directory, ssh to the vagrant machine:

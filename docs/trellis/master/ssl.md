@@ -1,3 +1,7 @@
+---
+description: Trellis offers SSL/HTTPS with Let's Encrypt, along with manually provided certificates and self-signed certificates for local development environments.
+---
+
 # SSL
 
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.

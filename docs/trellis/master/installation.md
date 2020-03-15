@@ -1,3 +1,7 @@
+---
+description: Before installing Trellis the requirements must be met. After installing Ansible, Virtualbox, and Vagrant, setup your Trellis directory structure.
+---
+
 # Installation
 
 Trellis relies on a few other software tools. Make sure all dependencies have been installed before moving on:

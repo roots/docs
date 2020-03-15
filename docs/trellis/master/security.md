@@ -1,3 +1,7 @@
+---
+description: Trellis can optionally disable the SSH root login, and setup an admin user and admin user sudoer password for connecting and running commands.
+---
+
 # Security
 
 ## Locking down root

@@ -1,3 +1,7 @@
+---
+description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 18.04 LTS. You can't run Trellis on a shared host.
+---
+
 # Remote Server Setup
 
 Setting up remote servers (staging/production) is similar to the [local development setup](local-development-setup.md) with a couple differences.

@@ -1,3 +1,7 @@
+---
+description: Trellis uses Vagrant for local development environments. Our Vagrantfile uses Ansible to provision a virtual machine running your WordPress site.
+---
+
 # Local Development
 
 Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
@@ -15,11 +19,11 @@ Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll h
 
 To access the VM, run `vagrant ssh`. Sites can be found at `/srv/www/<site name>`. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
 
-Note that each WP site you configured is synced between your local machine (the host) and the Vagrant VM. Any changes made to your host will be synced to the VM. 
+Note that each WP site you configured is synced between your local machine (the host) and the Vagrant VM. Any changes made to your host will be synced to the VM.
 
 Composer and WP-CLI commands need to be run on the virtual machine for any post-provision modifications. Front-end build tools should be run from your host machine and not the Vagrant VM.
 
-Mounting an encrypted folder is not possible with Trellis due to an issue with NFS. 
+Mounting an encrypted folder is not possible with Trellis due to an issue with NFS.
 
 ::: tip Windows user?
 Windows users have a slightly different workflow. See the [Windows getting started docs](../../getting-started/windows.md).
@@ -42,7 +46,7 @@ You can also provision with specific tags to only run the relevant roles:
 $ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant provision
 ```
 
-Notes on the commands: 
+Notes on the commands:
 
 - `SKIP_GALAXY` saves some time because you already have those roles installed
 - `ANSIBLE_TAGS` runs only the relevant roles

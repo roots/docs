@@ -1,3 +1,7 @@
+---
+description: Documentation on using SSH keys in Trellis for connecting to remote machines or the guest VM. Use SSH keys from GitHub users to quickly add keys.
+---
+
 # SSH Keys
 
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).

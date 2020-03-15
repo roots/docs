@@ -1,3 +1,7 @@
+---
+description: Use Xdebug in Trellis to debug your PHP. Trellis is configured with Xdebug and ready to rock out of the box in development.
+---
+
 # Debugging PHP
 
 There are many ways to go about debugging a PHP application, and one of the most effective ways is using a debugger. One of the most powerful tools in the PHP community to go about doing this is [Xdebug](https://en.wikipedia.org/wiki/Xdebug).

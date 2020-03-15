@@ -1,3 +1,7 @@
+---
+description: Accessing your WordPress databases in Trellis with Sequel Pro or MySQL Workbench just requires some initial configuration. phpMyAdmin not necessary.
+---
+
 # Database Access
 
 Accessing your databases with tools such as [Sequel Pro](https://www.sequelpro.com/) and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) just requires some initial configuration.
