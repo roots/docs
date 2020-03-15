@@ -108,7 +108,7 @@ You must specify the `host` exactly the same when opening and closing the tunnel
 ::: v-pre
 
 ```bash
-/tmp/trellis-xdebug-{{ provided host }}
+/tmp/trellis-xdebug-'{{ provided host }}'
 ```
 
 :::
