@@ -4,6 +4,13 @@ module.exports = {
   dest: './docs/.vuepress/dist/docs',
 
   plugins: {
+    'sitemap': {
+      hostname: 'https://roots.io/docs',
+      changefreq: 'weekly',
+    },
+    'vuepress-plugin-canonical': {
+      baseURL: 'https://roots.io/docs',
+    },
     '@vuepress/pwa': {
       serviceWorker: true,
       updatePopup: {
