@@ -75,14 +75,13 @@ module.exports = {
       '/bedrock/master': require('../bedrock/master'),
       '/sage/8.x': require('../sage/8.x'),
       '/sage/9.x': require('../sage/9.x'),
-      '/sage/10.x': require('../sage/10.x'),
       '/': require('./sidebar'),
     },
 
     versions: {
       'trellis': ['master'],
       'bedrock': ['master'],
-      'sage': ['10.x', '9.x', '8.x'],
+      'sage': ['9.x', '8.x'],
     },
   },
 
