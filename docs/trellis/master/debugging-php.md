@@ -106,5 +106,5 @@ $ ./bin/xdebug-tunnel.sh open 12.34.56.78
 You must specify the `host` exactly the same when opening and closing the tunnel. It would cause an error to open the tunnel with a `host` of `some_inventory_hostname` then close with a host of `12.34.56.78`. This is because the tunnel socket is created using the host parameter you pass:
 
 ```bash
-/tmp/trellis-xdebug-[provided host]
+/tmp/trellis-xdebug-{{ provided host }}
 ```
