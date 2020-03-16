@@ -4,6 +4,11 @@ module.exports = {
   dest: './docs/.vuepress/dist/docs',
 
   plugins: {
+    'vuepress-plugin-clean-urls': {
+      normalSuffix: '/',
+      indexSuffix: '/',
+      notFoundPath: '/404.html',
+    },
     'sitemap': {
       hostname: 'https://roots.io/docs',
       changefreq: 'weekly',
