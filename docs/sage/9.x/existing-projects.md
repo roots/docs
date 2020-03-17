@@ -1,3 +1,5 @@
+# Existing Projects
+
 The majority of the Sage documentation focuses on setting up new themes. Use this document If you are collaborating on, or taking over an existing theme.
 
 ## Getting started
