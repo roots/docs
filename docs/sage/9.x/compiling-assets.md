@@ -18,7 +18,7 @@ npm is a front-end package manager. Sage uses npm to pull in Bootstrap (or your 
 
 Browsersync keeps multiple browsers and devices synchronized while developing, along with injecting updated CSS and JS.
 
-<div class="cta-product"><a href="https://roots.io/books/theme-development-with-sage/" class="row text-dark"><div class="book-cover col-sm-6"><img src="http://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></div><div class="col-sm-6"><h4 class="mt-sm-3"><span class="badge bg-white mb-2">Get the book</span> <br> Theme Development with Sage</h4>A step-by-step guide to setting up a custom Sage starter theme. Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.<button class="btn btn-primary">Buy the Sage book</button></div></a></div>
+<div class="cta-product"><a href="https://roots.io/books/theme-development-with-sage/" class="row text-dark"><div class="book-cover col-sm-6"><img src="https://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></div><div class="col-sm-6"><h4 class="mt-sm-3"><span class="badge bg-white mb-2">Get the book</span> <br> Theme Development with Sage</h4>A step-by-step guide to setting up a custom Sage starter theme. Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.<button class="btn btn-primary">Buy the Sage book</button></div></a></div>
 
 ## Available build commands
 
