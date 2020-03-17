@@ -18,6 +18,7 @@ module.exports = [
       'master/local-development',
       'master/remote-server-setup',
       'master/database-access',
+      'master/server-logs',
       'master/vagrantfile',
     ],
   },
