@@ -48,7 +48,7 @@ module.exports = {
     repo: 'roots/docs',
     docsDir: 'docs',
     editLinks: true,
-    docsBranch: 'master',
+    docsBranch: 'docs',
     editLinkText: 'Help us improve this page.',
     lastUpdated: 'Last Updated',
 
