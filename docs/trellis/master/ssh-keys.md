@@ -45,7 +45,9 @@ If needed, you may redefine the `users` in any given `group_vars` environment fi
 
 ## `server.yml`: `root` or `admin`
 
-We assume that when you first create your server you've already added your SSH key to the `root` account. Digital Ocean will add this for you when you create a droplet. If you don't want to use an SSH key, you will need to add the `--ask-pass` option each time you run the `server.yml` playbook.
+We assume that when you first create your server you've already added your SSH key to the `root` account. Digital Ocean will add this for you when you create a droplet. If you don't want to use an SSH key, you will need to add the `--ask-pass` option each time you run the `server.yml` playbook. 
+
+(Note to AWS users: AWS provides a `pem` file. You need to convert it to a `pub` file for it to work with Ansible. [See this thread](https://discourse.roots.io/t/trellis-ssh-permission-denied-aws/4857/14?u=pixeline) to find out how.)
 
 `server.yml` will try to connect to your server as `root`. If the connection fails, `server.yml` will try to connect as the `admin_user` defined in `group_vars/all/users.yml` (default `admin`). If `root` login will be disabled on your server, it is critical for the `admin_user` to be defined in your list of `users`, with `sudo` first in this user's list of groups (see the [Security docs](security.md)). The default definition for the `admin_user` is shown below.
 
