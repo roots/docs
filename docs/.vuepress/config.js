@@ -76,7 +76,8 @@ module.exports = {
         text: 'Ecosystem', ariaLabel: 'Ecosystem Menu', link: '/', items: [
           { text: 'Sage', link: '/sage/' },
           { text: 'Bedrock', link: '/bedrock/' },
-          { text: 'Trellis', link: '/trellis/' }
+          { text: 'Trellis', link: '/trellis/' },
+          { text: 'Bud', link: '/bud/' }
         ]
       },
       { text: 'Support', link: 'https://discourse.roots.io' },
@@ -87,6 +88,7 @@ module.exports = {
       '/bedrock/master': require('../bedrock/master'),
       '/sage/8.x': require('../sage/8.x'),
       '/sage/9.x': require('../sage/9.x'),
+      '/bud/master': require('../bud/master'),
       '/': require('./sidebar'),
     },
 
@@ -94,6 +96,7 @@ module.exports = {
       'trellis': ['master'],
       'bedrock': ['master'],
       'sage': ['9.x', '8.x'],
+      'bud': ['master'],
     },
   },
 
