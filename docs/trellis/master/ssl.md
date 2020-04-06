@@ -14,9 +14,9 @@ In the past many people avoided going HTTPS for technical and convenience reason
 - Annoying and complicated web-server configuration
 - HTTPS sites were much slower than HTTP
 
-Trellis has features to make it as easy, cheap, and painless as possible to use HTTPS giving you no excuse *not- to use it.
+Trellis has features to make it as easy, cheap, and painless as possible to use HTTPS giving you no excuse *not* to use it.
 
-There are three supported certificate *providers- in Trellis:
+There are three supported certificate *providers* in Trellis:
 
 - [Let's Encrypt](#lets-encrypt)
 - [Manual](#manual)
@@ -66,7 +66,7 @@ Let's Encrypt is ending support for v1 of their ACME protocol. If you are using 
 
 #### DNS records
 
-Let's Encrypt verifies and creates certificates through a publicly accessible web server for *every- domain you want on the certificate.
+Let's Encrypt verifies and creates certificates through a publicly accessible web server for *every* domain you want on the certificate.
 
 This means you need valid and working DNS records for every site host/domain you have configured for your WP site.
 
@@ -107,7 +107,7 @@ The above steps is what Trellis handles automatically.
 
 #### Multiple servers
 
-Trellis' LE integration is designed by default for a single server. If you have multiple web servers behind a load balancer, you will *not- want this role/process running on all of them since it would generate different private and account keys for each one.
+Trellis' LE integration is designed by default for a single server. If you have multiple web servers behind a load balancer, you will *not* want this role/process running on all of them since it would generate different private and account keys for each one.
 
 This process is beyond the scope of the documentation right now. However, there are two variables which help for this process:
 
@@ -193,7 +193,7 @@ Trellis sets [HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Securi
 There are a few defaults set which you can override if need be:
 
 - `hsts_max_age` - how long the header lasts (default: `31536000` (1 year))
-- `hsts_include_subdomains` - also make *all- subdomains be served over HTTPS (default: `true`)
+- `hsts_include_subdomains` - also make *all* subdomains be served over HTTPS (default: `true`)
 - `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `false`)
 
 These variables are configured on a site's `ssl` object:

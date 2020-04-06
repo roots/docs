@@ -23,7 +23,7 @@ Example: `"wpackagist-plugin/akismet": "dev-trunk"`
 
 Whenever you add a new plugin or update the WP version, run `composer update` to install your new packages.
 
-`plugins`, and `mu-plugins` are Git ignored by default since Composer manages them. If you want to add something to those folders that *isn't- managed by Composer, you need to update `.gitignore` to whitelist them:
+`plugins`, and `mu-plugins` are Git ignored by default since Composer manages them. If you want to add something to those folders that *isn't* managed by Composer, you need to update `.gitignore` to whitelist them:
 
 `!web/app/plugins/plugin-name`
 

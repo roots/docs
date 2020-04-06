@@ -124,7 +124,7 @@ Download and install the latest version of [VirtualBox](https://www.virtualbox.o
 
 ### Vagrant
 
-[Install the latest version of Vagrant](https://www.vagrantup.com/downloads.html) in WSL, and in Windows. The WSL version will depend on the Linux distribution you're using; for instance if you're using Ubuntu, you'll want the Debian package. It is *imperative- that you install *the same version- of Vagrant in both Windows and WSL; even a single patch number difference will prevent it from working. You have to install both versions because VMs cannot exist "within" WSL; they must be created "outside," in Windows. To do this, Vagrant-in-WSL needs to communicate with Vagrant-in-Windows.
+[Install the latest version of Vagrant](https://www.vagrantup.com/downloads.html) in WSL, and in Windows. The WSL version will depend on the Linux distribution you're using; for instance if you're using Ubuntu, you'll want the Debian package. It is *imperative* that you install *the same version* of Vagrant in both Windows and WSL; even a single patch number difference will prevent it from working. You have to install both versions because VMs cannot exist "within" WSL; they must be created "outside," in Windows. To do this, Vagrant-in-WSL needs to communicate with Vagrant-in-Windows.
 
 [Follow the instructions on the Vagrant site](https://www.vagrantup.com/docs/other/wsl.html) to configure Vagrant to communicate correctly with Windows and VirtualBox. This will likely involve adding something like the following to `.bashrc` or a similar file executed when your WSL shell boots up:
 
@@ -133,7 +133,7 @@ export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 ```
 
-The above should be taken as **examples*- and not just copied and pasted into your configuration. Read the linked document and make sure you're configuring your system correctly.
+The above should be taken as **examples** and not just copied and pasted into your configuration. Read the linked document and make sure you're configuring your system correctly.
 
 ### Ansible
 
