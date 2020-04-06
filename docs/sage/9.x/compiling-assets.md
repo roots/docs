@@ -34,7 +34,7 @@ If you are using the Bootstrap navbar and run into issues with missing styles af
 
 ### Asset generation with `yarn build` vs. `yarn start`
 
-When running `yarn start`, Sage uses [webpack-dev-middleware](https://webpack.github.io/docs/webpack-dev-middleware.html) to generate and insert assets (i.e. CSS, JS) directly into the DOM from memory, without first writing them to disk. The benefit of this technique is that changes you make are reflected very quicky in your BrowserSync session, and they are reflected *without reloading the page- (especially useful when styling things like form submission response templates). The unfortunate downside is that because these files are not written to disk, browsers will return a 404 error for your main stylesheet. Styles will still load: you'll just see an error in your browser console. This is a [known issue](https://github.com/roots/sage/issues/1989) that does not generally affect development. Amelioration of this downside is on the roadmap for future version of Sage.
+When running `yarn start`, Sage uses [webpack-dev-middleware](https://webpack.github.io/docs/webpack-dev-middleware.html) to generate and insert assets (i.e. CSS, JS) directly into the DOM from memory, without first writing them to disk. The benefit of this technique is that changes you make are reflected very quicky in your BrowserSync session, and they are reflected *without reloading the page* (especially useful when styling things like form submission response templates). The unfortunate downside is that because these files are not written to disk, browsers will return a 404 error for your main stylesheet. Styles will still load: you'll just see an error in your browser console. This is a [known issue](https://github.com/roots/sage/issues/1989) that does not generally affect development. Amelioration of this downside is on the roadmap for future version of Sage.
 
 ## Theme assets
 
@@ -291,7 +291,7 @@ Example of how to add 3rd party packages- and have them included in the theme:
 
 3. After running `yarn build` from the theme directory, your package will be built with your theme assets. The `dist` folder will contain a `_/node_modules/` directory that has any assets referenced from your packages. The compiled CSS and JS will reference these assets without having to manually edit paths. ✨
 
-4. Running `yarn build:production` will fail if 3rd party package's relative paths are not configured before imported. For example, to load Slick Carousel's paths add the following line in your common/_variables.scss file:
+4. Running `yarn build:production` will fail if 3rd party package's relative paths are not configured before imported. For example, to load Slick Carousel's paths add the following line in your `common/_variables.scss file`:
 
     ```scss
     /* sage/assets/styles/common/_variables.scss */

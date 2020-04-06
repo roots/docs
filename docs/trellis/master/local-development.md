@@ -52,7 +52,7 @@ Notes on the commands:
 - `ANSIBLE_TAGS` runs only the relevant roles
 - `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
 
-If you added a *new- WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
+If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 
 ```bash
 $ vagrant reload --provision
