@@ -5,7 +5,6 @@ module.exports = [
     children: [
       'master/installation',
       'master/existing-projects',
-      'master/deployments',
     ],
   },
   {
@@ -13,22 +12,14 @@ module.exports = [
     collapsable: false,
     children: [
       'master/wordpress-sites',
-      'master/multisite',
-      'master/passwords',
       'master/local-development',
       'master/remote-server-setup',
+      'master/deployments',
+      'master/multisite',
+      'master/passwords',
       'master/database-access',
       'master/server-logs',
       'master/vagrantfile',
-    ],
-  },
-  {
-    title: 'Digging Deeper',
-    collapsable: false,
-    children: [
-      'master/mail',
-      'master/nginx-includes',
-      'master/fastcgi-caching',
     ],
   },
   {
@@ -39,6 +30,15 @@ module.exports = [
       'master/vault',
       'master/ssh-keys',
       'master/ssl',
+    ],
+  },
+  {
+    title: 'Digging Deeper',
+    collapsable: false,
+    children: [
+      'master/mail',
+      'master/nginx-includes',
+      'master/fastcgi-caching',
     ],
   },
   {
