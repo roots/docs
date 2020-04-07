@@ -9,7 +9,7 @@ Extensions (or roles), developed by the community, that complement Trellis.
 Issues with extensions should be opened in their respective repositories.
 
 - [bedrock-site-protect](https://github.com/louim/bedrock-site-protect) — Add or remove htpasswd protection to your websites
-- [trellis-backup](https://galaxy.ansible.com/guilro/trellis-backup/) — Set up automated backups to various locations using duplicity.
+- [trellis-backup](https://discourse.roots.io/t/trellis-backup-an-ansible-role-for-local-backups/6497) — Set up automated backups to various locations using duplicity.
 - [trellis-cloudflare-origin-ca](https://typist.tech/portfolio-item/trellis-cloudflare-origin-ca/) — Add Cloudflare Origin CA to Trellis as SSL provider.
 - [trellis-newrelic-php](https://typist.tech/portfolio-item/trellis-newrelic-php/) — Install New Relic PHP agent on Trellis servers
 - [trellis-database-uploads-migration](https://github.com/valentinocossar/trellis-database-uploads-migration) — Ansible playbook for Trellis that manages database and uploads migration
@@ -27,4 +27,4 @@ Issues with extensions should be opened in their respective repositories.
 - [trellis-slack-webhook-notify-during-deploy
 ](https://github.com/ItinerisLtd/trellis-slack-webhook-notify-during-deploy) - Sends a deployment complete message to a Slack channel when Trellis deploys Bedrock
 - [trellis_install_wp_cli_via_composer](https://github.com/ItinerisLtd/trellis_install_wp_cli_via_composer) - Install WP-CLI via composer on Trellis servers
-- [cognomen](https://github.com/ItinerisLtd/cognomen) (archived, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Generate WP CLI aliases for Trellis projects
+- [cognomen](https://github.com/ItinerisLtd/cognomen) (abandoned, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Generate WP CLI aliases for Trellis projects
