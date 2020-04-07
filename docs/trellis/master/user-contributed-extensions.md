@@ -27,4 +27,4 @@ Issues with extensions should be opened in their respective repositories.
 - [trellis-slack-webhook-notify-during-deploy
 ](https://github.com/ItinerisLtd/trellis-slack-webhook-notify-during-deploy) - Sends a deployment complete message to a Slack channel when Trellis deploys Bedrock
 - [trellis_install_wp_cli_via_composer](https://github.com/ItinerisLtd/trellis_install_wp_cli_via_composer) - Install WP-CLI via composer on Trellis servers
-- [cognomen](https://github.com/ItinerisLtd/cognomen)(archived, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Generate WP CLI aliases for Trellis projects
+- [cognomen](https://github.com/ItinerisLtd/cognomen) (archived, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Generate WP CLI aliases for Trellis projects
