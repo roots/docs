@@ -39,6 +39,7 @@ module.exports = [
       'master/mail',
       'master/nginx-includes',
       'master/fastcgi-caching',
+      'master/sage-integration',
     ],
   },
   {
