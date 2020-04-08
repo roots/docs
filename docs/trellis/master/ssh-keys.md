@@ -4,9 +4,9 @@ description: Documentation on using SSH keys in Trellis for connecting to remote
 
 # SSH Keys
 
-Each Trellis playbook uses a specific SSH user to connect to your remote machines (or guest VM).
+Each Trellis playbook uses a specific SSH user to connect to your remote machines (or virtual machine in development).
 
-|              | Default User      | User Variable | Task                     |
+| Playbook     | Default User      | User Variable | Task                     |
 | ------------ | ----------------- | ------------- | ------------------------ |
 | `dev.yml`    | `vagrant`         | -             | create development VMs   |
 | `server.yml` | `root` or `admin` | `admin_user`  | provision remote servers |
@@ -14,7 +14,7 @@ Each Trellis playbook uses a specific SSH user to connect to your remote machine
 
 This page reviews how to configure SSH users for the `server.yml` and `deploy.yml` playbooks. If you are looking for general SSH configuration options, see the [`sshd` role `README.md`](https://github.com/roots/trellis/tree/master/roles/sshd) .
 
-If you will be the only person provisioning and deploying, and your SSH public key is available at `~/.ssh/id_rsa.pub`, you will probably not need to modify the Trellis defaults for `users`.
+If you will be the only person provisioning and deploying, and your SSH public key is available at `~/.ssh/id_rsa.pub`, you probably won't need to modify the Trellis defaults for `users`.
 
 ## The `users` Dictionary
 
@@ -37,17 +37,18 @@ users:
 
 Specify the user's primary group first in the list in the list of `groups`. List `keys` for anyone who will need to make an SSH connection as that user. `server.yml` can `lookup` keys in local files or retrieve them from remote host URLs.
 
-::: tip Example
-Here's an example of my public keys I have hosted on GitHub: https://github.com/swalkinshaw.keys
+::: tip GitHub example
+Using `https://github.com/<username>.keys` is a quick way to get all the public SSH keys you have on your GitHub account added onto the server.
 :::
 
-If needed, you may redefine the `users` in any given `group_vars` environment file, overriding the `users` list in `group_vars/all/users.yml`.
+If needed, you can define different users *per* environment by redefining `users` in any `group_vars/<environment>/users.yml` file.
 
-## `server.yml`: `root` or `admin`
+## `server.yml`
 
-We assume that when you first create your server you've already added your SSH key to the `root` account. Digital Ocean will add this for you when you create a droplet. If you don't want to use an SSH key, you will need to add the `--ask-pass` option each time you run the `server.yml` playbook. 
+Trellis assumes that when you first create your server you've already added your SSH key to the `root` account. How this happens depends on your cloud provider but here's a few common ones:
 
-(Note to AWS users: AWS provides a `pem` file. You need to convert it to a `pub` file for it to work with Ansible. [See this thread](https://discourse.roots.io/t/trellis-ssh-permission-denied-aws/4857/14?u=pixeline) to find out how.)
+- *Digital Ocean*: gives you the option to automatically add your SSH key when creating your droplet
+- *AWS*: provides a `pem` file which needs to be converted to a `pub` file for use with Ansible (example: `ssh-keygen -y -f private_key1.pem > public_key1.pub `)
 
 `server.yml` will try to connect to your server as `root`. If the connection fails, `server.yml` will try to connect as the `admin_user` defined in `group_vars/all/users.yml` (default `admin`). If `root` login will be disabled on your server, it is critical for the `admin_user` to be defined in your list of `users`, with `sudo` first in this user's list of groups (see the [Security docs](security.md)). The default definition for the `admin_user` is shown below.
 
@@ -74,7 +75,7 @@ admin_user: admin
 - If you are trying to override the dynamic selection of `root` or `admin_user`, preferring to manually specify the Ansible remote user, review notes in the section [remote user variable precedence](https://github.com/roots/trellis/pull/274#issuecomment-121455761).
   :::
 
-## `deploy.yml`: `web`
+## `deploy.yml`
 
 The `deploy.yml` playbook deploys your site while connecting as the `web_user` (default `web`) because this user owns files in the web root, the deploy destination. The `web_group` must come first in the list of groups for the web_user. The default definition for the `web_user` is shown below.
 
