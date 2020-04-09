@@ -10,8 +10,10 @@ Issues with extensions should be opened in their respective repositories.
 
 - [bedrock-site-protect](https://github.com/louim/bedrock-site-protect) — Add or remove htpasswd protection to your websites
 - [trellis-backup](https://discourse.roots.io/t/trellis-backup-an-ansible-role-for-local-backups/6497) — Set up automated backups to various locations using duplicity.
+- [trellis-backup](https://github.com/Xilonz/trellis-backup-role) — Set up automated backups to various locations using duply.
 - [trellis-cloudflare-origin-ca](https://typist.tech/portfolio-item/trellis-cloudflare-origin-ca/) — Add Cloudflare Origin CA to Trellis as SSL provider.
 - [trellis-newrelic-php](https://typist.tech/portfolio-item/trellis-newrelic-php/) — Install New Relic PHP agent on Trellis servers
+- [trellis-nixstats](https://github.com/Xilonz/trellis-nixstats/) — Install NIXStats agent on Trellis servers
 - [trellis-database-uploads-migration](https://github.com/valentinocossar/trellis-database-uploads-migration) — Ansible playbook for Trellis that manages database and uploads migration
 - [trellis-db-push-and-pull](https://github.com/hamedb89/trellis-db-push-and-pull) — Push and pull databases with Trellis and Ansible playbooks
 - [trellis-backup-during-deploy](https://github.com/ItinerisLtd/trellis-backup-during-deploy) - Backup WordPress database during Trellis deploys
