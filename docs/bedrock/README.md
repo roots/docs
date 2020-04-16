@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="0;url=/docs/bedrock/master/installation.html" />
+<meta http-equiv="refresh" content="0;url=https://roots.io/docs/bedrock/master/installation/" />

@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="0;url=/docs/trellis/master/installation.html" />
+<meta http-equiv="refresh" content="0;url=https://roots.io/docs/trellis/master/installation/" />

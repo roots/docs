@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="0;url=/docs/sage/9.x/installation.html" />
+<meta http-equiv="refresh" content="0;url=https://roots.io/docs/sage/9.x/installation/" />
