@@ -42,3 +42,8 @@
   from = "/docs/examples/"
   to = "/docs/examples/roots-example-project/"
   status = 302
+
+[[redirects]]
+  from = "/test1/"
+  to = "/test2/"
+  status = 302
