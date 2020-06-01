@@ -17,7 +17,7 @@ If you use [Trellis](/trellis/), you can build your assets locally (or on a CI s
 
 ## Deploying Sage on Kinsta
 
-[Kinsta supports Bedrock and Trellis](https://kinsta.com/blog/bedrock-trellis/?kaid=OFDHAJIXUDIV), so deploying Sage with Trellis on [Kinsta](?kaid=OFDHAJIXUDIV) is possible by following a few extra steps.
+[Kinsta supports Bedrock and Trellis](https://kinsta.com/blog/bedrock-trellis/?kaid=OFDHAJIXUDIV), so deploying Sage with Trellis on [Kinsta](https://kinsta.com/?kaid=OFDHAJIXUDIV) is possible by following a few extra steps.
 
 ## Deploying Sage on WP Engine
 
