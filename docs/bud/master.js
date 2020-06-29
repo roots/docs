@@ -1,19 +1,12 @@
 module.exports = [
   {
-    title: 'Installation',
-    collapsable: false,
-    children: [
-      'master/installation',
-      'master/using-the-init-command',
-      'master/using-a-preset',
-      'master/installing-manually',
-    ],
-  },
-  {
     title: 'Getting started',
     collapsable: false,
     children: [
-      'master/project-structure',
+      'master/installation',
+      'master/bud-preset',
+      'master/bud-generate',
+      'master/bud-list',
     ],
   },
   {
