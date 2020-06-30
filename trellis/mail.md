@@ -80,4 +80,4 @@ To fix this error, update your SMTP settings so that they're valid and then re-p
 
 ### Revaliases
 
-By default some system daemons, like `cron` send email from the hostname like this: `root@mydroplet-ubuntu-s-1cpu-1gb-nyc3`. To avoid blocked or spammed messages, configure sSMTP "revaliases" in `trellis/roles/ssmtp/defaults/main.yml`, and deploy the `mail` tasks, which will populate a `/etc/ssmtp/revaliases` a file on the server.
+By default some system daemons, like `cron` send email from the hostname like this: `root@mydroplet-ubuntu-s-1cpu-1gb-nyc3`. To avoid blocked or spammed messages, configure sSMTP "revaliases" in `trellis/roles/ssmtp/defaults/main.yml`, and deploy the `mail` tasks, which will populate the `/etc/ssmtp/revaliases` file on the server.
