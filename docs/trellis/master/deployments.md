@@ -103,7 +103,7 @@ deploy_finalize_after:
 
 :::
 
-The `deploy_build_before` definition and the commented path under `deploy_build-after` offer examples of using hooks for custom tasks, as described below.
+The `deploy_build_before` definition and the commented path under `deploy_build_after` offer examples of using hooks for custom tasks, as described below.
 
 ### Custom tasks
 
