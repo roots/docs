@@ -56,19 +56,19 @@ Sage uses [composer](https://getcomposer.org/) and [yarn](https://yarnpkg.com) t
 Add to your server block before the final location directive:
 
 ```
-location ~- \.(blade\.php)$ {
+location ~* \.(blade\.php)$ {
   deny all;
 }
 
-location ~- composer\.(json|lock)$ {
+location ~* composer\.(json|lock)$ {
   deny all;
 }
 
-location ~- package(-lock)?\.json$ {
+location ~* package(-lock)?\.json$ {
   deny all;
 }
 
-location ~- yarn\.lock$ {
+location ~* yarn\.lock$ {
   deny all;
 }
 ```
