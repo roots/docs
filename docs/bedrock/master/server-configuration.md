@@ -19,7 +19,7 @@ server {
   index index.php index.htm index.html;
 
   # Prevent PHP scripts from being executed inside the uploads folder.
-  location ~- /app/uploads/.*.php$ {
+  location ~* /app/uploads/.*.php$ {
     deny all;
   }
 
