@@ -4,7 +4,7 @@ description: Steps to running a multisite WordPress installation on Trellis. Mul
 
 # Multisite
 
-Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere in Bedrock's `config/application.php` **before** provisioning your server:
+Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere before calling `Config::apply()` in Bedrock's `config/application.php` and **before** provisioning your server:
 
 ```php
 /* Multisite */
