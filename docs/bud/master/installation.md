@@ -1,17 +1,17 @@
 ---
-description: Installing Bud requires node 12 and yarn.
+description: Installing Bud requires node 12.
 ---
 
 # Installation
 
-Bud is best installed into a project using npx.
+Install using [yarn](https://classic.yarnpkg.com).
 
 ```sh
-npx @roots/bud@1.0.0-rc.7 init .
+yarn add -D @roots/bud
 ```
 
-Installing Bud globally is not recommended or supported.
+Install using [npm](https://npmjs.com).
 
-::: tip Bud requires the use of yarn
-While there are plans to support `npm` in the near future, Bud currently only officially supports `yarn`.
-:::
+```sh
+npm install @roots/bud --save-dev
+```
