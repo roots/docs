@@ -61,7 +61,7 @@ bud
 
 Were there need for additional extensions, they could be added to the [bud.use](config-use.md) array alongside `sass`.
 
-```js{5}
+```js{3,8}
 const bud = require('@roots/bud')
 const sass = require('@roots/bud-sass')
 const typescript = require('@roots/bud-typescript')

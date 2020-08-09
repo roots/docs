@@ -16,6 +16,15 @@ The root path used by this function is set by [bud.distPath](config-distPath.md)
 bud.dist('scripts/app.js')
 ```
 
+## Signature
+
+```ts
+function (
+  name: string,
+  entries: string[]
+): Bud
+```
+
 ## Arguments
 
 Name | Type |

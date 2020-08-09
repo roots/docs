@@ -13,7 +13,7 @@ The build config file is the keystone of Bud. In this guide we'll look at a simp
 Assuming the following project structure:
 
 ```sh
-.
+root
 ├── bud.config.js
 ├── dist
 ├── package.json
@@ -129,10 +129,10 @@ __The second argument__ is an `array` of source files to include in the bundle.
 It is totally fine to specify more than one source file per bundle (hence, the name: `bundle`). You can even use files of different types.
 
 ```js{3-4}
-/** Bundle includes js and scss assets and that's OK */
+/** Bundle includes js and css assets and that's OK */
 bud.bundle('app', [
   bud.src('scripts/app.js'),
-  bud.src('styles/app.scss'),
+  bud.src('styles/app.css'),
 ])
 ```
 
