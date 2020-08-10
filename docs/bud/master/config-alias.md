@@ -16,7 +16,7 @@ bud.alias({
 })
 ```
 
-You may now reference scripts against that alias in your application source:
+You may now reference scripts against that alias in your application:
 
 ```js
 import 'scripts/myScript' // replacing '../../myScript'
