@@ -6,7 +6,7 @@
 
 ▸ **config**(`this`: any, `settings?`: DependencyExtractionOptions): *any*
 
-Defined in index.ts:18
+Defined in index.ts:19
 
 ## bud.dependencyManifest
 

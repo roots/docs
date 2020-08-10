@@ -27,5 +27,5 @@ node bud.config.js --env development
 Alternatively, you can generate the configuration and pass it to Webpack yourself. The simplest way is to export the config from a file named `webpack.config.js`.
 
 ```js
-module.exports = bud.makeConfig()
+module.exports = bud.config()
 ```

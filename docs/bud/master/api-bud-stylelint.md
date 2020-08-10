@@ -6,7 +6,7 @@
 
 ▸ **adapter**(): *object*
 
-*Defined in [adapter.ts:8](https://github.com/roots/bud-support/blob/f0e631c/packages/bud-stylelint/src/adapter.ts#L8)*
+*Defined in [adapter.ts:8](https://github.com/roots/bud-support/blob/f2da518/packages/bud-stylelint/src/adapter.ts#L8)*
 
 Adapter: Stylelint Webpack Plugin
 
@@ -24,12 +24,16 @@ ___
 
 ### `Const` stylelint
 
-▸ **stylelint**(): *object*
+▸ **stylelint**(`bud`: Bud): *ExtensionInterface*
 
 Defined in index.ts:9
 
 Bud extension: Stylelint support.
 
-**Returns:** *object*
+**Parameters:**
 
-* **make**(`this`: any): *void*
+Name | Type |
+------ | ------ |
+`bud` | Bud |
+
+**Returns:** *ExtensionInterface*

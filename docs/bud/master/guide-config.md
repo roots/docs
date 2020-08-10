@@ -25,7 +25,7 @@ root
 Our minimal config file might look something like this:
 
 ```js
-const bud = require('@roots/bud')
+const bud = require('@roots/bud')()
 
 bud
   .srcPath('resources')
@@ -40,7 +40,7 @@ bud
 ## Set project paths
 
 ```js{4-5}
-const bud = require('@roots/bud')
+const bud = require('@roots/bud')()
 
 bud
   .srcPath('resources')

@@ -36,9 +36,9 @@ There are a number of Roots maintained extensions available to kickstart your pr
 
 | Extension | Description | Usage |
 |------|-------------|-------|
-| @roots/bud-dependency-extraction | Adds @wordpress/dependency-extraction-webpack-plugin support. | [↗](/bud/master/bud-dependency-extraction.md)
-| @roots/bud-eslint | Adds eslint support. | [↗](/bud/master/bud-eslint.md) |
-| @roots/sass | Adds sass support. | [↗](/bud/master/bud-sass.md) |
-| @roots/bud-stylelint | Adds stylelint support. | [↗](/bud/master/bud-stylelint.md) |
-| @roots/bud-tailwind | Adds tailwindcss support. | [↗](/bud/master/bud-tailwind.md) |
-| @roots/bud-vue | Adds Vue framework support. | [↗](/bud/master/bud-vue.md) |
+| @roots/bud-dependency-extraction | Adds @wordpress/dependency-extraction-webpack-plugin support. | [↗](bud-dependency-extraction.md)
+| @roots/bud-eslint | Adds eslint support. | [↗](bud-eslint.md) |
+| @roots/sass | Adds sass support. | [↗](bud-sass.md) |
+| @roots/bud-stylelint | Adds stylelint support. | [↗](bud-stylelint.md) |
+| @roots/bud-tailwind | Adds tailwindcss support. | [↗](bud-tailwind.md) |
+| @roots/bud-vue | Adds Vue framework support. | [↗](bud-vue.md) |

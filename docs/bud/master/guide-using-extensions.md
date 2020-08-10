@@ -32,7 +32,9 @@ npm install @roots/bud-sass --save-dev
 const bud = require('@roots/bud')
 const sass = require('@roots/bud-sass')
 
-bud
+const project = bud()
+
+project
   .srcPath('resources')
   .distPath('dist')
   .bundle('app', [
@@ -44,12 +46,13 @@ bud
 
 ## Register the extension with Bud
 
-```js{5}
+```js{4}
 const bud = require('@roots/bud')
 const sass = require('@roots/bud-sass')
 
-bud
-  .use([sass])
+const project = bud().use([sass])
+
+project
   .srcPath('resources')
   .distPath('dist')
   .bundle('app', [
@@ -61,16 +64,14 @@ bud
 
 Were there need for additional extensions, they could be added to the [bud.use](config-use.md) array alongside `sass`.
 
-```js{3,8}
+```js{3,5}
 const bud = require('@roots/bud')
 const sass = require('@roots/bud-sass')
 const typescript = require('@roots/bud-typescript')
 
-bud
-  .use([
-    sass,
-    typescript,
-  ])
+const project = bud().use([sass, typescript])
+
+project
   .srcPath('resources')
   .distPath('dist')
   .bundle('app', [
