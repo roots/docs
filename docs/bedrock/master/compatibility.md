@@ -8,7 +8,7 @@ Bedrock does certain things a bit differently than the default WordPress install
 
 If a plugin or theme works with a vanilla WordPress install and not with Bedrock, the plugin or theme is likely at fault:
 In most cases, it is hard-coding assumptions about directory structure or file location and ignoring the systems WordPress has in place to determine those things dynamically.
-This type of issue will often arise not only on Bedrock, but also on sites that have installed WordPress in [its own directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory).
+This type of issue will often arise not only on Bedrock, but also on sites that have [installed WordPress in its own directory](https://wordpress.org/support/article/giving-wordpress-its-own-directory/) or [moved the wp-content folder](https://wordpress.org/support/article/editing-wp-config-php/#moving-wp-content-folder).
 
 Common issues include:
 
