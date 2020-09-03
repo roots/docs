@@ -25,11 +25,11 @@ These files include templates from the `resources/views/partials/` directory whi
 - `content-single.blade.php` – Markup included from `resources/views/single.blade.php`
 - `content.blade.php` – Markup included from `resources/views/index.blade.php`
 - `entry-meta.blade.php` – Post entry meta information included from `resources/views/content-single.blade.php`
-`footer.blade.php` – Footer markup included from `layouts/base.blade.php`
-- `head.blade.php` – `&lt;head&gt;` markup included from `layouts/base.blade.php`
-- `header.blade.php` – Header markup included from `layouts/base.blade.php`
+- `footer.blade.php` – Footer markup included from `layouts/app.blade.php`
+- `head.blade.php` – `<head>` markup included from `layouts/app.blade.php`
+- `header.blade.php` – Header markup included from `layouts/app.blade.php`
 - `page-header.blade.php` – Page title markup included from most of the files in the `resources/views/` directory
-- `sidebar.blade.php` – Sidebar markup included from `layouts/base.blade.php`
+- `sidebar.blade.php` – Sidebar markup included from `layouts/app.blade.php`
 
 ## Extending templates
 
