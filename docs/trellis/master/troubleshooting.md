@@ -176,8 +176,8 @@ $ ssh -v root@12.34.56.78
 
 The `sshd` role will most likely cause your SSH server to discontinue using some older and weaker protocols. If your connections involve older systems that do not support the stronger protocols configured by the `sshd` role, see [`Ciphers`, `KexAlgorithms`, and `MACs`](https://github.com/roots/trellis/tree/master/roles/sshd#ciphers-kexalgorithms-and-macs) for how to add back in any protocols you need.
 
-### NET::ERR_CERT_INVALID
-If you are receiving a `NET::ERR_CERT_INVALID` error on your local dev domain, you may want to try using the `vagrant-trellis-cert` plugin using the following commands:
+### NET::ERR_CERT_INVALID for Mac Users
+If you are running Trellis on MacOS and receiving a `NET::ERR_CERT_INVALID` error on your local dev domain, you may want to try using the `vagrant-trellis-cert` plugin using the following commands:
 ```bash
 cd trellis
 vagrant plugin install vagrant-trellis-cert
