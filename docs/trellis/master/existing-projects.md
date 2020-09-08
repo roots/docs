@@ -108,4 +108,4 @@ $ wp search-replace http://example.com http://example.test
 
 ## Import the Uploads
 
-Retrieve a copy of the current project’s `uploads` directory and place it in your local project's `site/app` directory.
+Retrieve a copy of the current project’s `uploads` directory and place it in your local project's `site/web/app` directory.
