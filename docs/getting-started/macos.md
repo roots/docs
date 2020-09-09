@@ -35,7 +35,7 @@ $ git config --global user.email "yourname@example.com"
 Install Homebrew from the instructions at [https://brew.sh](https://brew.sh/), or with the following command:
 
 ```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 ## Composer
