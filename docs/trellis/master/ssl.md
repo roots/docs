@@ -91,6 +91,18 @@ All you need to do is make sure those DNS records exist and point to the web ser
 
 If you want "www" subdomains to redirect to your canonical domain, they MUST be included in redirects.
 
+#### Setting the contact email
+
+LE requires at least one email address be provided as a contact email. Contact emails are used by LE to send expiry notices when a certificate is coming up for renewal.
+
+```yaml
+# groups_vars/all/main.yml (example)
+
+letsencrypt_contact_emails:
+  - changeme@example.com
+  - "{{ mail_admin }}" # defined in groups_vars/all/mail.yml
+```
+
 #### Challenges
 
 Let's Encrypt certificate process looks roughly like:
