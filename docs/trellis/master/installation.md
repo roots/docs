@@ -45,7 +45,7 @@ $ mkdir example.com && cd example.com
 ```bash
 $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
 ```
-3. Install Bedrock into the `site` directory:
+3. Install Bedrock into the `site` directory outside of the trellis folder:
 ```bash
 $ composer create-project roots/bedrock site
 ```
