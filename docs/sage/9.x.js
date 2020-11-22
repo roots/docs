@@ -23,4 +23,4 @@ module.exports = [
       '9.x/compiling-assets',
     ],
   },
-];
+]

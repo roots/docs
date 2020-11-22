@@ -21,4 +21,4 @@ module.exports = [
       '8.x/customization',
     ],
   },
-];
+]

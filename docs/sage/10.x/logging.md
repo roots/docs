@@ -1,0 +1,5 @@
+# Logging
+
+[[toc]]
+
+## Intrroduxtion
