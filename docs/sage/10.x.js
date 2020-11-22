@@ -32,14 +32,19 @@ module.exports = [
     ],
   },
   {
-    title: 'Features',
-    children: ['10.x/acorn', '10.x/composers', '10.x/components'],
+    title: 'Digging Deeper',
+    children: [
+      '10.x/acorn',
+      '10.x/wp-cli',
+      '10.x/composers',
+      '10.x/components',
+    ],
   },
   {
     title: 'Packages',
     children: [
       '10.x/installing-packages',
-      '10.x/creating-package',
+      '10.x/package-development',
       '10.x/available-packages',
     ],
   },

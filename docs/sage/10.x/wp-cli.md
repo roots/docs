@@ -1,0 +1,5 @@
+# WP-CLI
+
+[[toc]]
+
+## Introduction
