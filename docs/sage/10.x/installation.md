@@ -1,92 +1,91 @@
 ---
-description: Install Sage with Composer (composer create-project roots/sage), which allows you to define theme meta information and choose your front-end framework.
+description: Installing Sage 10 is as simple as cloning the repo and running `composer install`
 ---
 
 # Installation
 
-Make sure all dependencies have been installed before moving on:
+[[toc]]
 
-- [WordPress](https://wordpress.org/) >= 5.4
-- [PHP](http://php.net/manual/en/install.php) >= 7.2.5 (with [`php-mbstring`](http://php.net/manual/en/book.mbstring.php) enabled)
-- [Composer](https://getcomposer.org/download/)
-- [Node.js](http://nodejs.org/) >= 12.0.0
-- [Yarn](https://yarnpkg.com/en/docs/install)
+## Installation
 
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+### Server Requirements
 
-```bash
-# @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name
-```
+Sage 10 has a few system requirements necessary for development as well as production. All of these requirements are satisfied out of the box by [Trellis](https://github.com/roots/trellis), [Laravel Valet](https://github.com/laravel/valet), and most modern WordPress hosting solutions.
 
-You will have the option to define theme meta information (name, URI, description, version, author) and choose a CSS framework.
+If it is unclear to you whether the host you plan to use is compatible with Sage, you will need to ensure their server meets the following requirements:
 
-From the command line on your host machine (not on your Vagrant box), navigate to the theme directory then run `yarn`:
+- WordPress >= 5.4
+- PHP >= 7.3
+- BCMath PHP Extension
+- Ctype PHP Extension
+- Fileinfo PHP Extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
 
-```bash
-# @ themes/your-theme-name/
-$ yarn
-```
+### Installing Sage
 
-You now have all the necessary dependencies to run the [build process](compiling-assets.md#available-build-commands).
+Sage utilizies [Composer](https://getcomposer.org/) for managing theme packages and dependencies.
 
-## Browsersync configuration
+Before moving on, ensure that Composer is [installed](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) on the current machine.
 
-In `webpack.mix.js`, pass your local development URL to the [`browserSync` call](https://github.com/roots/sage/blob/a54a2a12213422466b359a9d913787c68f8b95b1/webpack.mix.js#L19).
+#### Sage Installer
 
-For example, if your local development URL is `https://project-name.test` you would update the file to read:
-
-```javascript
-mix
-  .setPublicPath('./dist')
-  .browserSync('https://project-name.test');
-```
-
-## Server configuration
-
-::: warning Note
-Sage uses [Laravel's Blade](blade-templates.md) templating engine, and since the `.blade.php` files live in a publicly accessible directory on your webserver, we recommend preventing plain-text access to them.
+::: warning
+This feature isn't quite ready yet!
 :::
 
-::: warning Note
-Sage uses [composer](https://getcomposer.org/) and [yarn](https://yarnpkg.com) to manage dependencies, and since their files might contain private credentials and expose dependency versions, we recommend blocking them as well.
+#### Cloning The Repository
 
-### Nginx configuration for denying access to Blade, composer and yarn files
+Alternatively, you may also install Sage by simply cloning down the repository and running `composer install`:
 
-Add to your server block before the final location directive:
-
-```
-location ~* \.(blade\.php)$ {
-  deny all;
-}
-
-location ~* composer\.(json|lock)$ {
-  deny all;
-}
-
-location ~* package(-lock)?\.json$ {
-  deny all;
-}
-
-location ~* yarn\.lock$ {
-  deny all;
-}
+```sh
+# app/themes or wp-content/themes
+$ git clone git@github.com:roots/sage.git your-theme-name
+$ cd your-theme-name
+$ composer install
 ```
 
-### Apache configuration for denying access to Blade files
+## Web Server Configuration
 
-Add to your `.htaccess` file or virtual host configuration:
+::: tip Using Trellis?
+If you are using Trellis to provision your production environment, you can **skip** this section.
+:::
 
-```
+### Securing Blade Templates
+
+Due to the nature of WordPress, any file residing in the theme folder is publicly accessible. By default, webservers will return any requests made to a `*.blade.php` template as plain-text.
+
+**This can create an opening for potential security riskes as well as unwanted snooping.**
+
+To prevent this from happening, we will need to add configuration to the web server to deny access to the file extension.
+
+#### Apache
+
+If you are using Apache, add the following to your virtual host configuration or the `.htaccess` file at the root of your web application:
+
+```php
 <FilesMatch ".+\.(blade\.php)$">
+    # Apache 2.4
     <IfModule mod_authz_core.c>
-        # Apache 2.4
         Require all denied
     </IfModule>
+
+    # Apache 2.2
     <IfModule !mod_authz_core.c>
-        # Apache 2.2
         Order deny,allow
         Deny from all
     </IfModule>
 </FilesMatch>
+```
+
+#### Nginx
+
+If you are using Nginx, add the following to your site configuration before the final location directive:
+
+```php
+location ~* \.(blade\.php)$ {
+    deny all;
+}
 ```
