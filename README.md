@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/roots/docs)
+
 # Getting Started
 
 This repository is synced with the Roots docs for our primary projects:
