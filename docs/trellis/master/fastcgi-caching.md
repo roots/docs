@@ -10,7 +10,7 @@ You can enable caching for your site by changing the cache settings under each s
 cache:
   enabled: false
   duration: 30s
-  skip_cache_uri: /wp-admin/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml
+  skip_cache_uri: /wp-admin/|/wp-json/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml
   skip_cache_cookie: comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in
 ```
 
@@ -26,12 +26,12 @@ Already cached content will continue being served if your back-end (PHP-FPM) goe
 
 ### WooCommerce
 
-Disable the cache for `/store/`, `/cart/`, `/my-account/`, `/checkout/`, `/addons/`,  and when items are in the cart:
+Disable the cache for `/store/`, `/cart/`, `/my-account/`, `/checkout/`, `/addons/`, and when items are in the cart:
 
 ```yml
 cache:
   enabled: true
-  skip_cache_uri: /wp-admin/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml|/store.*|/cart.*|/my-account.*|/checkout.*|/addons.*
+  skip_cache_uri: /wp-admin/|/wp-json/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml|/store.*|/cart.*|/my-account.*|/checkout.*|/addons.*
   skip_cache_cookie: comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in|woocommerce_cart_hash|woocommerce_items_in_cart|wp_woocommerce_session_
 ```
 
@@ -42,6 +42,6 @@ Disable the cache for `/checkout/` and when items are in the cart:
 ```yml
 cache:
   enabled: true
-  skip_cache_uri: /wp-admin/|/checkout/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml
+  skip_cache_uri: /wp-admin/|/wp-json/|/checkout/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml
   skip_cache_cookie: comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in|edd_items_in_cart
 ```
