@@ -28,6 +28,6 @@ Issues with extensions should be opened in their respective repositories.
 ](https://github.com/ItinerisLtd/trellis-slack-webhook-notify-during-deploy) - Sends a deployment complete message to a Slack channel when Trellis deploys Bedrock
 - [trellis_install_wp_cli_via_composer](https://github.com/ItinerisLtd/trellis_install_wp_cli_via_composer) - Install WP-CLI via composer on Trellis servers
 - [tiller-circleci-orb](https://github.com/ItinerisLtd/tiller-circleci-orb/) - Deploy Trellis, Bedrock and Sage(optional) via CircleCI
-- tiller (abandoned, functionality was merged into [tiller-circleci-orb](https://github.com/ItinerisLtd/tiller-circleci-orb/)) - Deploy Trellis, Bedrock and Sage via AWS CodeBuild
+- tiller (abandoned, functionality was replaced by [tiller-circleci-orb](https://github.com/ItinerisLtd/tiller-circleci-orb/)) - Deploy Trellis, Bedrock and Sage via AWS CodeBuild
 - enveigle (abandoned, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Deceive Ansible to template Trellis .env files to local Bedrock
 - cognomen (abandoned, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Generate WP CLI aliases for Trellis projects
