@@ -12,7 +12,7 @@ The `debug` opion in your `config/app.php` is solely responsible for whether or 
 
 During local development, it is highly advised to ensure this variable is set to `true` to properly render exceptions thrown by Blade views and other errors further down the stack.
 
-::: caution Warning
+::: warning Warning
 This should be set to `false` during production.
 :::
 

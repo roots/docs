@@ -18,4 +18,4 @@ For example:
 @endsection
 ```
 
-For more information on how to use sections, see the [Blade documentation](https://laravel.com/docs/7.x/blade).
+For more information on how to use sections, see the [Blade documentation](https://laravel.com/docs/8.x/blade).

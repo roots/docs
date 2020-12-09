@@ -20,7 +20,7 @@ description: How to generate language files for your WordPress theme created wit
 
 2. Run `yarn pot` from your theme directory to generate the language files. In case of an error, install/update `coreutils`, `findutils` and/or `gettext` on homebrew.
 
-3. Open the generated `.pot` file with Poedit, select "Create new translation", save `.mo` & `.po` files in the `resources/lang` folder with the correct name syntax (eg. `fr_FR`, `en_US`)
+3. Open the generated `.pot` file with [Poedit](https://poedit.net/), select "Create new translation", save `.mo` & `.po` files in the `resources/lang` folder with the correct name syntax (eg. `fr_FR`, `en_US`)
 
 When adding/removing translations in templates, run `yarn pot` again, then select "Catalog > Update from a POT file" in Poedit.
 
