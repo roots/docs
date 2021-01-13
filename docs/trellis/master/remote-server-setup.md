@@ -57,7 +57,7 @@ Now that you have a working Ubuntu 18.04 server that you can easily SSH into, yo
 5. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](security.md).
 6. Run `ansible-playbook server.yml -e env=<environment>` from your local machine (Ansible connects to your remote server via SSH).
 
-This leaves you with a *provisioned* server. The next step is to [deploy](deploys.md) your site.
+This leaves you with a *provisioned* server. The next step is to [deploy](deployments.md) your site.
 
 ## Re-provisioning
 
