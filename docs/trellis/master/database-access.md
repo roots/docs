@@ -6,6 +6,12 @@ description: Accessing your WordPress databases in Trellis with Sequel Pro or My
 
 Accessing your databases with tools such as [Sequel Pro](https://www.sequelpro.com/) and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) just requires some initial configuration.
 
+Alternately, [Trellis-cli](https://github.com/roots/trellis-cli) can configure popular database clients automatically from the command line. For example, to open a site's production database with Sequel Pro type:
+
+```sh
+$ trellis db open --app=sequel-pro production example.com
+```
+
 ## Development (Vagrant box)
 
 - Connection type: SSH
@@ -29,5 +35,6 @@ Accessing your databases with tools such as [Sequel Pro](https://www.sequelpro.c
 - SSH Host: `example.com`
 - SSH User: `web`
 
-NOTE: If you have provisioned your server to include local or remote ssh keys (see `group_vars/all/users.yml`), you can leave the SSH User password blank  in your DB Application, because SSH already knows about it. (In Sequel Pro the "key" icon toggles a browse field for SSH Key.) Additionally, [Trellis-cli](https://github.com/roots/trellis-cli) provides a one-liner to configure your connection via Sequel Pro or Table Plus.
+**NOTE:** Because Trellis provisions remote environments to use [SSH keys](https://roots.io/docs/trellis/master/ssh-keys/) rather than passwords, the password field or prompt is left blank.
+
 
