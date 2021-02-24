@@ -28,3 +28,6 @@ Accessing your databases with tools such as [Sequel Pro](https://www.sequelpro.c
 - Password: `example_dbpassword` (use the value of `db_password` from `group_vars/<environment>/vault.yml`)
 - SSH Host: `example.com`
 - SSH User: `web`
+
+NOTE: If you have provisioned your server to include local or remote ssh keys (see `group_vars/all/users.yml`), you can leave the SSH User password blank in your DB Applications. Additionally, [Trellis-cli](https://github.com/roots/trellis-cli) provides a one-liner to configure you connection via Sequel Pro or Table Plus.
+
