@@ -37,6 +37,12 @@ See a complete working example in the [roots-example-project.com repo](https://g
 
 Pick a descriptive name for your project and use it instead of the default `example.com`. We recommend the domain of the site for convenience.
 
+### With Trellis CLI
+```bash
+$ trellis new example.com
+```
+### Without Trellis CLI
+
 1. Create a new project directory:
 ```bash
 $ mkdir example.com && cd example.com
