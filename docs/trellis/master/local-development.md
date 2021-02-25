@@ -44,7 +44,7 @@ Re-provisioning is always assumed to be a safe operation. When you make changes 
 Run the following from any directory within your project:
 
 ```bash
-$ trellis provision development
+$ trellis up --with-galaxy
 ```
 
 </template>
