@@ -66,11 +66,28 @@ If any of the `vault.yml` files look like the example above, follow the [vault i
 
 ## Create Your Development VM
 
+
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
+```bash
+$ trellis up
+```
+
+</template>
+<template v-slot:manual>
+
 Run the following from your project's `trellis` directory:
 
 ```bash
 $ vagrant up
 ```
+
+</template>
+</CodeSwitcher>
+
 
 Confirm you can access the development site at the development URL noted earlier.
 
@@ -82,11 +99,26 @@ Retrieve an export of the current project’s database.
 For easy access during the import process, place the database export in your local project’s `site` directory.
 :::
 
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
+```bash
+$ trellis ssh development
+```
+
+</template>
+<template v-slot:manual>
+
 From your project's `trellis` directory, ssh to the vagrant machine:
 
 ```bash
 $ vagrant ssh
 ```
+
+</template>
+</CodeSwitcher>
 
 Navigate to the web root:
 
