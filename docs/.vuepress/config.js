@@ -24,6 +24,7 @@ module.exports = {
       },
     },
     'minimal-analytics': { ga: 'UA-71591-42' },
+    'code-switcher': {},
   },
 
   head: [

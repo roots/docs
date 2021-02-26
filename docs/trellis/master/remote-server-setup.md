@@ -21,34 +21,17 @@ Trellis has two main [playbooks](http://docs.ansible.com/ansible/playbooks.html)
 
 For remote servers, you provision a server via the `server.yml` playbook. This leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet.
 
-## Deploy
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
 
-In development it's easy to get your site/codebase onto the VM through synced folders. However for remote servers, we need to deploy first.
+Run the following from any directory within your project:
 
-Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your codebase onto the server by cloning it from a Git repository. It also takes cares of things like: running Composer, creating config files, reloading Nginx, etc.
+```bash
+$ trellis provision <environment>
+```
 
-## Requirements
-
-The Trellis [installation instructions](installing-trellis.md) skipped a few requirements because Vagrant handles them automatically for us.
-
-To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](../../getting-started/windows.md)).
-
-1. Install Ansible and other dependencies: `pip install -r requirements.txt`
-2. Install Galaxy roles: `ansible-galaxy install -r galaxy.yml` (in local trellis directory)
-
-Then there are two additional requirements for the remote server itself:
-
-1. You need a server running a bare/stock version of Ubuntu 18.04 LTS (Bionic Beaver). If you're using a host such as DigitalOcean, then just select their Ubuntu 18.04 option.
-
-::: warning Note
-Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migrate yet. See [#992](https://github.com/roots/trellis/pull/992) for details on the minor changes needed to run it.
-:::
-
-**You can't run Trellis on a shared host**.
-
-2. You need to be able to connect to your server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
-
-Now that you have a working Ubuntu 18.04 server that you can easily SSH into, you need to configure a few things:
+</template>
+<template v-slot:manual>
 
 1. Copy your `wordpress_sites` from your working development site in `group_vars/development/wordpress_sites.yml` to `group_vars/<environment>/wordpress_sites.yml` (`staging` or `production`, whichever you're setting up).
 2. Modify your site and add the necessary settings for [remote servers](wordpress-sites.md#remote-servers) since they have a few more settings than local development. Also see the [Passwords docs](passwords.md).
@@ -57,21 +40,116 @@ Now that you have a working Ubuntu 18.04 server that you can easily SSH into, yo
 5. Consider setting `sshd_permit_root_login: false` in `group_vars/all/security.yml`. See the [Security docs](security.md).
 6. Run `ansible-playbook server.yml -e env=<environment>` from your local machine (Ansible connects to your remote server via SSH).
 
+Run the following from your project's `trellis` directory:
+
+```bash
+$ ansible-playbook server.yml -e env=<environment>
+```
+
+</template>
+</CodeSwitcher>
+
+## Deploy
+
+In development it's easy to get your site/codebase onto the VM through synced folders. However for remote servers, we need to deploy first.
+
+Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your codebase onto the server by cloning it from a Git repository. It also takes cares of things like: running Composer, creating config files, reloading Nginx, etc.
+
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
+```bash
+$ trellis deploy <environment>
+```
+
+</template>
+<template v-slot:manual>
+
+Run the following from your project's `trellis` directory:
+
+```bash
+$ ./bin/deploy.sh <environment> example.com
+```
+
+</template>
+</CodeSwitcher>
+
+## Requirements
+
+The Trellis [installation instructions](installing-trellis.md) skipped a few requirements because Vagrant handles them automatically for us.
+
+To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](../../getting-started/windows.md)).
+
+If you're not using `trellis-cli` to provision your servers, install Ansible dependencies and Galaxy roles:
+1. Install Ansible and other dependencies: `pip install -r requirements.txt`
+2. Install Galaxy roles: `ansible-galaxy install -r galaxy.yml` (in local trellis directory)
+
+Then there are two additional requirements for the remote server itself:
+
+1. You need a server running a bare/stock version of Ubuntu 18.04 LTS (Bionic Beaver). If you're using a host such as DigitalOcean, then select their Ubuntu 18.04 option.
+
+::: warning Note
+Ubuntu 16.04 (Xenial) is still supported as well so you don't need to migrate yet. See [#992](https://github.com/roots/trellis/pull/992) for details on the minor changes needed to run it.
+:::
+
+**You cannot run Trellis on a shared host**.
+
+2. You need to be able to connect to your server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
+
+Now that you have a working Ubuntu 18.04 server that you can easily SSH into, you need to configure a few things:
+
 This leaves you with a *provisioned* server. The next step is to [deploy](deployments.md) your site.
 
 ## Re-provisioning
 
 Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision your remote servers again to apply the changes:
 
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
+```bash
+$ trellis provision <environment>
+```
+
+</template>
+<template v-slot:manual>
+
+Run the following from your project's `trellis` directory:
+
 ```bash
 $ ansible-playbook server.yml -e env=<environment>
 ```
 
+</template>
+</CodeSwitcher>
+
 You can also provision with specific tags to only run the relevant roles:
+
+
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
+```bash
+$ trellis provision --tags users <environment>
+```
+
+</template>
+<template v-slot:manual>
+
+Run the following from your project's `trellis` directory:
 
 ```bash
 $ ansible-playbook server.yml -e env=<environment> --tags=users
 ```
+
+</template>
+</CodeSwitcher>
 
 ## Resources
 

@@ -37,6 +37,17 @@ See a complete working example in the [roots-example-project.com repo](https://g
 
 Pick a descriptive name for your project and use it instead of the default `example.com`. We recommend the domain of the site for convenience.
 
+
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+```bash
+$ trellis new example.com
+```
+
+</template>
+<template v-slot:manual>
+
 1. Create a new project directory:
 ```bash
 $ mkdir example.com && cd example.com
@@ -49,3 +60,6 @@ $ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
 ```bash
 $ composer create-project roots/bedrock site
 ```
+
+</template>
+</CodeSwitcher>

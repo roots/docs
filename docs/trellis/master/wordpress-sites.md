@@ -1,8 +1,11 @@
 ---
 description: Everything in Trellis is built around the concept of "sites". Trellis will automatically configure everything needed to host a WordPress site.
 ---
-
 # WordPress Sites
+
+::: tip Note
+If you used `trellis-cli` to create your project these values will already be set.
+:::
 
 Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
 
