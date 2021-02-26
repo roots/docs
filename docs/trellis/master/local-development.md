@@ -37,41 +37,13 @@ Trellis installs WordPress on your first `vagrant up` with `admin` as the defaul
 
 Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision the VM again to apply the changes:
 
-
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
-Run the following from any directory within your project:
-
-```bash
-$ trellis up --with-galaxy
-```
-
-</template>
-<template v-slot:manual>
-
 Run the following from your project's `trellis` directory:
 
 ```bash
 $ vagrant provision
 ```
 
-</template>
-</CodeSwitcher>
-
 You can also provision with specific tags to only run the relevant roles:
-
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
-Run the following from any directory within your project:
-
-```bash
-$ trellis provision --tags users development
-```
-
-</template>
-<template v-slot:manual>
 
 Run the following from your project's `trellis` directory:
 
@@ -84,9 +56,6 @@ Notes on the commands:
 - `SKIP_GALAXY` saves some time because you already have those roles installed
 - `ANSIBLE_TAGS` runs only the relevant roles
 - `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
-
-</template>
-</CodeSwitcher>
 
 If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 
