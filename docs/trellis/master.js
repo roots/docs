@@ -40,6 +40,7 @@ module.exports = [
       'master/nginx-includes',
       'master/fastcgi-caching',
       'master/sage-integration',
+      'master/fail2ban',
     ],
   },
   {
