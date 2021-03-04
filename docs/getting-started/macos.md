@@ -120,7 +120,7 @@ Download and install the "OS X Hosts" version of VirtualBox from [https://www.vi
 Install Vagrant from Homebrew:
 
 ```bash
-$ brew install -cask vagrant
+$ brew install --cask vagrant
 ```
 
 ### Ansible
