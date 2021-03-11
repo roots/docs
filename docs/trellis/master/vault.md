@@ -123,6 +123,23 @@ Your repo with vault-encrypted files is secure from anyone being able to see or 
 
 It is not recommended to disable Ansible Vault but you can disable it at any time. Simply run `ansible-vault decrypt <file1> <file2> <etc>`. If you then commit the unencrypted files to your repo, the sensitive data will be in your repo in plain text and will be difficult to remove from the git history. If you re-enable vault in the future, you may want to change all the sensitive data, encrypt with vault, then commit the revised and encrypted `vault.yml` files to your repo.
 
+## Storing your password
+
+Without your password, either entered as a string, or stored in your `vault_password_file` file (typicalls `.vault-pass` and configured in the `ansible.cfg` file), you will not be able to access the encrypted files. The `vault_password_file` should not ever be publicly accessible, or commited to version control. It's a good practice to backup this file on another physical or virtual drive, ideally also enctypted.
+
+## Access Recovery
+
+Should you lose access to your vault password, you you can either spin up a new server, or recreate or regenerate the `group_vars/(environment)/vault.yml` files and, on the servers, manually update the following to match new vault strings:
+
+  * admin root (sudo) password
+    * `sudo passwd admin`
+  * root mysql password
+    * `UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='root' AND Host='localhost';`
+    * `flush privileges;`
+  * wordpress database passwords
+    * `UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='example_com' AND Host='localhost';`
+    * `flush privileges;`
+
 ## Additional resources
 
 [ansible-toolkit](https://github.com/dellis23/ansible-toolkit#atk-git-diff) provides a `atk-git-diff` command that allows you to do a `git diff` on encrypted files.
