@@ -125,7 +125,7 @@ It is not recommended to disable Ansible Vault but you can disable it at any tim
 
 ## Storing your password
 
-Without your password, either entered as a string or stored in your `vault_password_file` file (usually `.vault-pass` and configured in the `ansible.cfg` file), you will not be able to access the encrypted files. The `vault_password_file` should not ever be publicly accessible, or commited to version control. It's a good practice to backup this file on another physical or virtual drive, ideally also enctypted.
+Without your password, either entered as a string or stored in your `vault_password_file` file (usually `.vault_pass` and configured in the `ansible.cfg` file), you will not be able to access the encrypted files. The `vault_password_file` should not ever be publicly accessible, or commited to version control. It's a good practice to backup this file on another physical or virtual drive, ideally also enctypted.
 
 ## Access Recovery
 
