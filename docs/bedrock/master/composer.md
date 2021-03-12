@@ -10,7 +10,7 @@ See these resources for more extensive documentation:
 
 - [Using Composer with WordPress](https://roots.io/using-composer-with-wordpress/)
 - [WordPress Plugins with Composer](https://roots.io/wordpress-plugins-with-composer/)
-- [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (paid screencast)
+- [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (screencast)
 - [Private or Commercial WordPress Plugins as Composer Dependencies](https://roots.io/guides/private-or-commercial-wordpress-plugins-as-composer-dependencies/)
 
 ## Plugins
