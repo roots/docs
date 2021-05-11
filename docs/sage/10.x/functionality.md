@@ -22,7 +22,7 @@ The PHP code in Sage is [namespaced](https://roots.io/namespacing-and-autoloadin
 - `app/helpers.php` – A place for you to put functions used throughout your theme.
     Does not ship with any code.
 
-- `app/Providers` - The place for any [Service Providers](https://laravel.com/docs/7.x/providers) you care to define for your theme.
+- `app/Providers` - The place for any [Service Providers](https://laravel.com/docs/8.x/providers) you care to define for your theme.
     Comes with `ThemeServiceProvider` that adds no functionality but provides a template for your own Service Providers.
     
 - `app/View` - The place for view-related code, i.e. Composers and Components.

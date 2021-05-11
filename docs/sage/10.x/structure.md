@@ -60,7 +60,7 @@ The `app` directory contains the core code and functionality of your theme. Almo
 
 ### The Config Directory
 
-The `config` directory contains configuration pertaining directly to Sage and it's functionality with Acorn. Here you will not find much confugration related to WordPress but instead configuration for things such as modifying Blade view paths, registering directives, changing the asset path, and configuration for packages built for Sage.
+The `config` directory contains configuration pertaining directly to Sage and it's functionality with Acorn. Here you will not find much configration related to WordPress but instead configuration for things such as modifying Blade view paths, registering directives, changing the asset path, and configuration for packages built for Sage.
 
 ### The Dist Directory
 
@@ -68,10 +68,10 @@ The `dist` directory contains the compiled assets for your theme. This directory
 
 ### The Node Modules Directory
 
-The `node_modules` directory contains your [Node](#) dependencies used to build your assets during development or for production. This folder is automatically generated and should not be modified.
+The `node_modules` directory contains your [Node](https://nodejs.org/) dependencies used to build your assets during development or for production. This folder is automatically generated and should not be modified.
 
 ::: danger Do Not Upload
-Not under any circumstance should there ever be a need to upload this folder or any of it's contents to a live production server. Not only is it a huge waste of time, it is a security risk.
+Not under any circumstance should there ever be a need to upload this folder or any of its contents to a live production server. It's a security risk, and a waste of time.
 :::
 
 ### The Resources Directory
@@ -84,11 +84,11 @@ The `storage` directory contains your compiled Blade templates as well as Sage's
 
 ### The Vendor Directory
 
-The `vendor` directory contains your [Composer](#) dependencies and autoloader. This directory is automatically generated and should not be modified.
+The `vendor` directory contains your [Composer](https://getcomposer.org/) dependencies and autoloader. This directory is automatically generated and should not be modified.
 
 ## The App Directory
 
-The majority of your theme functionality lives in the `app` directory. By default, this directory is namespaced under `App` and is automaticaally loaded by Composer using the [PSR-4 autoloading standard](#).
+The majority of your theme functionality lives in the `app` directory. By default, this directory is namespaced under `App` and is automaticaally loaded by Composer using the [PSR-4 autoloading standard](https://www.php-fig.org/psr/psr-4/).
 
 The `app` directory contains multiple additional directories such as `View` and `Providers` as well as configuration (`setup.php`) and filters (`filters.php`).
 
