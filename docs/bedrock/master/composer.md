@@ -48,6 +48,23 @@ To force a regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, y
 ...
 ```
 
+**Configuring multiple mu-plugins**
+
+To configure more than one regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, add additional strings to the same array value for the `web/app/mu-plugins/{$name}/` json key, for example:
+
+```yaml
+...
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin", 
+        "advanced-custom-fields/advanced-custom-fields-pro",
+        "wpackagist-plugin/gutenberg",
+        "wpackagist-plugin/wordpress-seo",
+        "wpackagist-plugin/wp-ses"
+      ],
+...
+```
+
+
 ## Updating WP and plugin versions
 
 Updating your WordPress version (or any plugin) is just a matter of changing the version number in the `composer.json` file.
