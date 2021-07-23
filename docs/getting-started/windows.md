@@ -19,12 +19,12 @@ $ git config --global user.email "yourname@example.com"
 
 ### PHP
 
-Install PHP 7.3:
+Install PHP 7.4:
 
 ```bash
 $ sudo add-apt-repository ppa:ondrej/php
 $ sudo apt-get update
-$ sudo apt-get install php7.3 php7.3-mbstring php7.3-xml php7.3-zip
+$ sudo apt-get install php7.4 php7.4-mbstring php7.4-xml php7.4-zip
 ```
 
 ### Composer
@@ -164,7 +164,7 @@ If you run into a "maximum recursion depth exceeded" error while provisioning, t
 You'll also need to update your [`vagrant.default.yml`](https://github.com/roots/trellis/blob/19b0ce6da683d7038484e55b6a312776057a04a6/vagrant.default.yml#L7) so that `vagrant_ansible_version` references 2.5.1:
 
 ```diff
--vagrant_ansible_version: '2.7.5'
+-vagrant_ansible_version: '2.9.10'
 +vagrant_ansible_version: '2.5.1'
 ```
 
