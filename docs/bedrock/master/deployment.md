@@ -16,7 +16,7 @@ These tools include supporting deploying Bedrock out of the box:
 Other methods need to account for setting the `WP_ENV` [environment variable](environment-variables.md) to `production` when your site is in a production environment.
 
 ::: warning Note
-Bedrock's [Disallow Indexing mu-plugin](https://github.com/roots/bedrock/blob/master/web/app/mu-plugins/disallow-indexing.php) will prevent indexing of a site when `WP_ENV` is not set to `production`.
+Bedrock's [Disallow Indexing mu-plugin](https://github.com/roots/bedrock-disallow-indexing) will prevent indexing of a site when `WP_ENV` is not set to `production`.
 :::
 
 ## Supported WordPress hosts
