@@ -2,19 +2,15 @@
 description: Configuring composer HTTP basic authentication for private packages.
 ---
 
-# Bedrock Integration
+# Composer HTTP Basic Authentication
 
-If you want to manage your WordPress project configuration using Composer, we recommend using the [Bedrock Boilerplate](https://roots.io/docs/bedrock/master/installation/). Bedrock's [Composer](https://roots.io/docs/bedrock/master/composer/) support allows you to install plugins and themes from the WordPress.org repositories, via [WPackagist](https://wpackagist.org/).
-
-## Composer HTTP basic authentication
-
-Many paid WordPress plugins also offer Composer support. Typically this is accomplished by adding the plugin repository to your composer.json file:
+Many paid WordPress plugins also offer Composer support. Typically, this is accomplished by adding the plugin repository to your composer.json file:
 
 ```
 "repositories": [
     {
         "type":"composer",
-        "url":"https://composer.pluginrepostory.com"
+        "url":"https://example.com"
     }
 ]
 ```
@@ -24,7 +20,7 @@ The actual plugin download is protected behind a basic HTTP authentication layer
 ```
 {
     "http-basic": {
-        "composer.pluginrepostory.com": {
+        "example.com": {
             "username": "{COMPOSER_HTTP_USERNAME}",
             "password": "{COMPOSER_HTTP_PASSWORD}"
         }
@@ -40,9 +36,9 @@ Trellis now supports HTTP basic authentication for multiple Composer repositorie
 # group_vars/<env>/vault.yml
 
 vault_wordpress_sites:
-  composer.pluginrepostory.com:
+  example.com:
     composer_authentications:
-      - { hostname: composer.pluginrepostory.com, username: COMPOSER_HTTP_USERNAME, password: COMPOSER_HTTP_USERNAME }
+      - { hostname: example.com, username: COMPOSER_HTTP_USERNAME, password: COMPOSER_HTTP_USERNAME }
 
 ```
 
