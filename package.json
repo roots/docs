@@ -15,5 +15,8 @@
     "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-minimal-analytics": "^0.1.4",
     "vuepress-plugin-sitemap": "^2.3.1"
+  },
+  "dependencies": {
+    "vuepress-plugin-code-switcher": "^1.0.5"
   }
 }

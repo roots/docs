@@ -36,6 +36,7 @@ module.exports = [
     title: 'Digging Deeper',
     collapsable: false,
     children: [
+      'master/composer-http-basic-authentication',
       'master/mail',
       'master/nginx-includes',
       'master/fastcgi-caching',

@@ -10,7 +10,7 @@ See these resources for more extensive documentation:
 
 - [Using Composer with WordPress](https://roots.io/using-composer-with-wordpress/)
 - [WordPress Plugins with Composer](https://roots.io/wordpress-plugins-with-composer/)
-- [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (paid screencast)
+- [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (screencast)
 - [Private or Commercial WordPress Plugins as Composer Dependencies](https://roots.io/guides/private-or-commercial-wordpress-plugins-as-composer-dependencies/)
 
 ## Plugins
@@ -47,6 +47,23 @@ To force a regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, y
   },
 ...
 ```
+
+**Configuring multiple mu-plugins**
+
+To configure more than one regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, add additional strings to the same array value for the `web/app/mu-plugins/{$name}/` json key, for example:
+
+```yaml
+...
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin", 
+        "advanced-custom-fields/advanced-custom-fields-pro",
+        "wpackagist-plugin/gutenberg",
+        "wpackagist-plugin/wordpress-seo",
+        "wpackagist-plugin/wp-ses"
+      ],
+...
+```
+
 
 ## Updating WP and plugin versions
 

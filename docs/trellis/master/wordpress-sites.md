@@ -1,8 +1,11 @@
 ---
 description: Everything in Trellis is built around the concept of "sites". Trellis will automatically configure everything needed to host a WordPress site.
 ---
-
 # WordPress Sites
+
+::: tip Note
+If you used `trellis-cli` to create your project these values will already be set.
+:::
 
 Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
 
@@ -105,6 +108,7 @@ example.com:
   - `db_user` - database username (default: `<site name>`)
   - `db_password` - database password (*required*, in `vault.yml`)
   - `db_host` - database hostname (default: `localhost`)
+  - `db_prefix` - database table prefix (defaults to `wp_` if not set)
   - `db_user_host` - hostname or ip range used to restrict connections to database (default: `localhost`)
 
 ### Development

@@ -17,7 +17,7 @@ Enter [MailHog](https://github.com/mailhog/MailHog). It’s a simple tool which 
 
 ![Mailhog Preview](https://cdn.roots.io/app/uploads/trellis-mailhog-preview.png)
 
-MailHog is automatically set up in development. You can access it at `http://yourdevelopmentdomain.test:8025` (replacing the domain with yours that you set up for the WP site host).
+MailHog is automatically set up in development. You can access it at `http://example.test:8025` (replacing the domain with yours that you set up for the WP site host).
 
 ::: warning Note
 Mail will be automatically captured but you won't ever see it unless you access the MailHog UI at the address above.
@@ -41,7 +41,7 @@ ssl:
   hsts_max_age: 0
 ```
 
-Then reprovision your Vagrant box in order to reach MailHog at `http://yourdevelopmentdomain.test:8025`.
+Then reprovision your Vagrant box in order to reach MailHog at `http://example.test:8025`.
 
 ## Remote servers (staging/production)
 
@@ -86,4 +86,3 @@ To fix this error, update your SMTP settings so that they're valid and then re-p
 ### Revaliases
 
 By default some system daemons, like `cron` send email from the hostname like this: `root@mydroplet-ubuntu-s-1cpu-1gb-nyc3`. To avoid blocked or spammed messages, configure sSMTP "revaliases" in `trellis/roles/ssmtp/defaults/main.yml`, and deploy the `mail` tasks, which will populate the `/etc/ssmtp/revaliases` file on the server.
-

@@ -24,6 +24,20 @@ At this point, you should also generate your salts and keys and save them to you
 
 Deploy with a single command:
 
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
+```bash
+$ trellis deploy <environment>
+```
+
+</template>
+<template v-slot:manual>
+
+Run the following from your project's `trellis` directory:
+
 ```sh
 $ ./bin/deploy.sh <environment> <domain>
 ```
@@ -33,6 +47,9 @@ $ ./bin/deploy.sh <environment> <domain>
 The actual command looks like this: `ansible-playbook deploy.yml -e "site=<domain> env=<environment>"`.
 
 You can always use this command itself since it can take any additional `ansible-playbook` options.
+
+</template>
+</CodeSwitcher>
 
 ::: warning Note
 **Trellis does not automatically install WordPress on remote servers**.
@@ -129,7 +146,11 @@ deploy_build_after:
 
 The second example above demonstrates overriding the `deploy_build_after` hook that Trellis already uses by default. The first include file in this hook's list is `roles/deploy/hooks/build-after.yml`, which is the task file Trellis usually executes. If you omit a hook's default file when overriding an existing hook variable, the default file's tasks will no longer execute.
 
+::: v-pre
+
 The second include file in the `deploy_build_after` example above, `deploy-hooks/build-after.yml`, is an example of adding a custom task file that would run on every deploy, regardless the site being deployed. The third include file, <code v-pre>deploy-hooks/sites/{{ site }}-build-after.yml</code>, demonstrates how you could use a `{{ site }}` variable to include a file based on the name of the site being deployed, e.g., `example.com-build-after.yml`.
+
+:::
 
 ### SSH keys
 
@@ -165,20 +186,61 @@ wordpress_sites:
 
 Deploy command:
 
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
 ```bash
-$ ./bin/deploy.sh production mysite.com
+$ trellis deploy <environment>
+```
+
+</template>
+<template v-slot:manual>
+
+Run the following from your project's `trellis` directory:
+
+```bash
+$ ./bin/deploy.sh production example.com
 ```
 
 Or alternatively:
 
 ```bash
-$ ansible-playbook deploy.yml -e "site=mysite.com env=production"
+$ ansible-playbook deploy.yml -e "site=example.com env=production"
 ```
+
+</template>
+</CodeSwitcher>
 
 ## Rollbacks
 
-To rollback a deploy, run `ansible-playbook rollback.yml -e "site=<domain> env=<environment>"` .
-You may manually specify a different release using `--extra-vars='release=12345678901234'` . By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+Run the following from any directory within your project:
+
+```bash
+$ trellis rollback <environment>
+```
+
+You may manually specify a different release using `--release=12345678901234`.
+
+</template>
+<template v-slot:manual>
+
+Run the following from your project's `trellis` directory:
+
+```bash
+$ ansible-playbook rollback.yml -e "site=<domain> env=<environment>
+```
+
+You may manually specify a different release using `--extra-vars='release=12345678901234'`.
+
+</template>
+</CodeSwitcher>
+
+By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
 
 ## Deploying to other hosts
 
