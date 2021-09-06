@@ -12,6 +12,7 @@ Bedrock can be used with most local development setups. Here's a list of some re
     $ wp package install aaemnnosttv/wp-cli-valet-command:^1.2
     $ wp valet new my-project --project=bedrock
     ```
+- [Docksal](https://docksal.io/) is a Docker based local environment that supports Bedrock (see [Dockerize Bedrock with Docksal](https://github.com/docksal/boilerplate-bedrock)
 - [Lando](https://docs.devwithlando.io/) is a Docker based local environment that supports Bedrock (see [Dockerize Bedrock with Lando](https://roots.io/guides/dockerize-local-bedrock-and-sage-development-with-lando/))
 - [DDEV](https://ddev.readthedocs.io/) is a Docker based local environment that supports Bedrock (see [Composer Setup Example Using roots/bedrock](https://ddev.readthedocs.io/en/stable/users/cli-usage/#wordpress-quickstart))
 - [Local Bedrock](https://github.com/artifex404/local-bedrock) is a Bedrock site boilerplate for Local by Flywheel
@@ -22,4 +23,4 @@ MAMP, XAMPP, and others setups work with Bedrock once the [virtual host is confi
 ## Additional resources
 
 - [Local Bedrock Development with Local by Flywheel](https://roots.io/guides/local-bedrock-development-with-local-by-flywheel/)
-- [Local WordPress Development with Docker and Docker Compose](https://urre.me/writings/docker-for-local-wordpress-development/)
+

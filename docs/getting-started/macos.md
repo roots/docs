@@ -84,7 +84,7 @@ Sage relies on a few build tools to manage dependencies and build assets. Instal
 Install nvm from the instructions at [https://github.com/creationix/nvm](https://github.com/creationix/nvm), or with the following command:
 
 ```bash
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.38.0/install.sh | bash
 ```
 
 ### Node.js
@@ -120,7 +120,7 @@ Download and install the "OS X Hosts" version of VirtualBox from [https://www.vi
 Install Vagrant from Homebrew:
 
 ```bash
-$ brew cask install vagrant
+$ brew install --cask vagrant
 ```
 
 ### Ansible

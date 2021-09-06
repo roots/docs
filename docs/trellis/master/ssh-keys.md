@@ -35,7 +35,7 @@ users:
 
 :::
 
-Specify the user's primary group first in the list in the list of `groups`. List `keys` for anyone who will need to make an SSH connection as that user. `server.yml` can `lookup` keys in local files or retrieve them from remote host URLs.
+Specify the user's primary group first in the list of `groups`. List `keys` for anyone who will need to make an SSH connection as that user. `server.yml` can `lookup` keys in local files or retrieve them from remote host URLs.
 
 ::: tip GitHub example
 Using `https://github.com/<username>.keys` is a quick way to get all the public SSH keys you have on your GitHub account added onto the server.

@@ -142,7 +142,7 @@ Just set the following variable:
 
 ```yaml
 # in a group_vars file
-letsencrypt_ca: "https://acme-staging.api.letsencrypt.org"
+letsencrypt_ca: "https://acme-staging-v02.api.letsencrypt.org"
 ```
 
 #### Troubleshooting Let's Encrypt

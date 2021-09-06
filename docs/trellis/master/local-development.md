@@ -9,15 +9,15 @@ Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our 
 1. Configure your site(s) based on the [WordPress Sites docs](wordpress-sites.md) and read the [development specific](wordpress-sites.md#development) ones.
 2. Make sure you've edited both `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault.yml`.
 3. Optionally configure the IP address at the top of the `vagrant.default.yml` to allow for multiple boxes to be run concurrently (default is `192.168.50.5`).
-4. Run `vagrant up` (from your trellis directory, usually the `trellis/` subdirectory of your project).
+4. Run `trellis up` from anywhere in your project (or `vagrant up` from your trellis directory, usually the `trellis/` subdirectory of your project).
 
 ::: warning Note
-`vagrant up` will fail [if you are using encrypted folders/hard drives](https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes)
+`trellis up` will fail [if you are using encrypted folders/hard drives](https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes)
 :::
 
 Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a server running and a WordPress site automatically installed and configured.
 
-To access the VM, run `vagrant ssh`. Sites can be found at `/srv/www/<site name>`. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
+To access the VM, run `trellis ssh development` (or`vagrant ssh` from your `trellis` directory). Sites can be found at `/srv/www/<site name>`. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
 
 Note that each WP site you configured is synced between your local machine (the host) and the Vagrant VM. Any changes made to your host will be synced to the VM.
 
@@ -27,6 +27,7 @@ Mounting an encrypted folder is not possible with Trellis due to an issue with N
 
 ::: tip Windows user?
 Windows users have a slightly different workflow. See the [Windows getting started docs](../../getting-started/windows.md).
+:::
 
 ## WordPress installation
 
@@ -36,14 +37,18 @@ Trellis installs WordPress on your first `vagrant up` with `admin` as the defaul
 
 Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision the VM again to apply the changes:
 
+Run the following from your project's `trellis` directory:
+
 ```bash
 $ vagrant provision
 ```
 
 You can also provision with specific tags to only run the relevant roles:
 
+Run the following from your project's `trellis` directory:
+
 ```bash
-$ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant provision
+$ SKIP_GALAXY=true ANSIBLE_TAGS=users vagrant provision
 ```
 
 Notes on the commands:

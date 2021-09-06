@@ -105,7 +105,7 @@ $ sudo apt-get install virtualbox
 [Download the latest version of Vagrant](https://www.vagrantup.com/downloads.html) and install it with `dpkg -i`:
 
 ```bash
-$ sudo dpkg -i vagrant_2.2.3_x86_64.deb
+$ sudo dpkg -i vagrant_2.2.14_x86_64.deb
 ```
 
 ### Ansible

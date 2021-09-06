@@ -4,7 +4,7 @@ description: Steps to enable and use Ansible Vault with a Trellis project. Trell
 
 # Vault
 
-Some Ansible variables contain sensitive data such as passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) to avoid exposing sensitive data in your project repo. Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
+Some Ansible variables contain sensitive data such as passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html#vault) to avoid exposing sensitive data in your project repo. Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
 
 To briefly demonstrate what vault does, consider this example `vault.yml` file.
 
@@ -26,6 +26,24 @@ $ANSIBLE_VAULT;1.1;AES256
 ```
 
 ## Steps to enable Ansible Vault
+
+::: danger
+If you have unencrypted `vault.yml` files in your project's git history (e.g., passwords in plain text), you will most likely want to change the variable values in your `vault.yml` files before encrypting them and committing them to your repo.
+:::
+
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+### Encrypt files
+`trellis-cli` automatically generates your vault files and a vault password, but does not encrypt your vaults. To encrypt vaults created by `trellis-cli` run the following from any directory within your project:
+
+
+```bash
+$ trellis vault encrypt --files=group_vars/all/vault.yml group_vars/development/vault.yml group_vars/staging/vault.yml group_vars/production/vault.yml
+```
+
+</template>
+<template v-slot:manual>
 
 ### 1. Set vault password
 
@@ -50,17 +68,31 @@ If you prefer not to set this default in your `ansible.cfg` file, you can add th
 
 ### 3. Encrypt files
 
-::: danger
-If you have unencrypted `vault.yml` files in your project's git history (e.g., passwords in plain text), you will most likely want to change the variable values in your `vault.yml` files before encrypting them and committing them to your repo.
-:::
-
 Encrypt your `vault.yml` files with the command `ansible-vault encrypt <file>`. The example below uses the command to encrypt the full list of `vault.yml` files (fileglobs are not supported, see [https://github.com/ansible/ansible/issues/6241](https://github.com/ansible/ansible/issues/6241)):
+
+Run the following from your project's `trellis` directory:
 
 ```bash
 $ ansible-vault encrypt group_vars/all/vault.yml group_vars/development/vault.yml group_vars/staging/vault.yml group_vars/production/vault.yml
 ```
 
+</template>
+</CodeSwitcher>
+
 ## Other vault commands
+
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+`trellis-cli` provides a few notable commands that coincide with the official [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) docs.
+
+- `trellis vault encrypt <file>`
+- `trellis vault view <file>`
+- `trellis vault edit <file>`
+- `trellis vault decrypt <file>` -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
+
+</template>
+<template v-slot:manual>
 
 Here are a few notable commands from the official [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) docs.
 
@@ -69,6 +101,9 @@ Here are a few notable commands from the official [Ansible Vault](http://docs.an
 - [`ansible-vault edit <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#editing-encrypted-files)
 - [`ansible-vault decrypt <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#decrypting-encrypted-files) -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
 - [`ansible-vault rekey <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#rekeying-encrypted-files)
+
+</template>
+</CodeSwitcher>
 
 ## Working with vault variables
 
@@ -87,6 +122,23 @@ Your repo with vault-encrypted files is secure from anyone being able to see or 
 ## Disabling Ansible Vault
 
 It is not recommended to disable Ansible Vault but you can disable it at any time. Simply run `ansible-vault decrypt <file1> <file2> <etc>`. If you then commit the unencrypted files to your repo, the sensitive data will be in your repo in plain text and will be difficult to remove from the git history. If you re-enable vault in the future, you may want to change all the sensitive data, encrypt with vault, then commit the revised and encrypted `vault.yml` files to your repo.
+
+## Storing your password
+
+Without your password, either entered as a string or stored in your `vault_password_file` file (usually `.vault_pass` and configured in the `ansible.cfg` file), you will not be able to access the encrypted files. The `vault_password_file` should not ever be publicly accessible, or commited to version control. It's a good practice to backup this file on another physical or virtual drive, ideally also enctypted.
+
+## Access Recovery
+
+Should you lose access to your vault password, you you can either spin up a new server, or recreate or regenerate the `group_vars/(environment)/vault.yml` files and, on the servers, manually update the following to match new vault strings:
+
+  * admin root (sudo) password
+    * `sudo passwd admin`
+  * root mysql password
+    * `UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='root' AND Host='localhost';`
+    * `flush privileges;`
+  * wordpress database passwords
+    * `UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='example_com' AND Host='localhost';`
+    * `flush privileges;`
 
 ## Additional resources
 
