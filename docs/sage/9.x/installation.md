@@ -7,7 +7,7 @@ description: Install Sage with Composer (composer create-project roots/sage), wh
 Make sure all dependencies have been installed before moving on:
 
 - [WordPress](https://wordpress.org/) >= 4.7
-- [PHP](http://php.net/manual/en/install.php) >= 7.1.3 (with [`php-mbstring`](http://php.net/manual/en/book.mbstring.php) enabled). *Not compatible with PHP 8*
+- [PHP](http://php.net/manual/en/install.php) >= 7.2.5 (with [`php-mbstring`](http://php.net/manual/en/book.mbstring.php) enabled). *Not compatible with PHP 8*
 - [Composer](https://getcomposer.org/download/)
 - [Node.js](http://nodejs.org/) >= 8.0.0
 - [Yarn](https://yarnpkg.com/en/docs/install)
