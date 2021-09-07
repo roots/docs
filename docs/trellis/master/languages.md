@@ -1,4 +1,4 @@
----
+---
 description: Approach for installing (and updating) core/plugins/themes languages on a Trellis/Bedrock WordPress site.
 ---
 
