@@ -1,0 +1,62 @@
+[build]
+  base = ""
+  command = "yarn docs:build"
+  publish = "docs/.vuepress/dist"
+
+[[redirects]]
+  from = "/docs/"
+  to = "/docs/getting-started/macos/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/getting-started/"
+  to = "/docs/getting-started/macos/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/bedrock/"
+  to = "/docs/bedrock/master/installation/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/trellis/"
+  to = "/docs/trellis/master/installation/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/sage/"
+  to = "/docs/sage/9.x/installation/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/sage/9.x/"
+  to = "/docs/sage/9.x/installation/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/sage/8.x/"
+  to = "/docs/sage/8.x/installation/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/docs/examples/"
+  to = "/docs/examples/roots-example-project/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/test1/"
+  to = "/test2/"
+  status = 302
+
+[[redirects]]
+  from = "/docs/test1/"
+  to = "/test2/"
+  status = 302
