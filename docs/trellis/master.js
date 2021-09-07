@@ -57,4 +57,10 @@ module.exports = [
       'master/user-contributed-extensions'
     ],
   },
+  {
+    title: 'Guides',
+    children: [
+      'master/languages'
+    ],
+  },
 ];
