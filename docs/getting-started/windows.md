@@ -144,7 +144,7 @@ The following commands must be run from WSL ([Windows Subsystem for Linux](https
 Install pip (Python package manager) if you don't already have it:
 
 ```bash
-$ sudo apt-get install python-pip
+$ sudo apt-get install python3-pip
 ```
 
 Install Ansible with pip:
