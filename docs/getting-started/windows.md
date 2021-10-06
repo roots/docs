@@ -170,7 +170,15 @@ You'll also need to update your [`vagrant.default.yml`](https://github.com/roots
 
 #### `vagrant ssh` doesn't work
 
-Try:
+Try to install virtualbox_WSL2 plugin if you are not able to connect:
+
+```bash
+vagrant plugin install virtualbox_WSL2
+```
+
+Also check if there is any firewall on Windows with is blocking connection to port 2222
+
+You can also try:
 
 ```bash
 $ echo 'alias vssh="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no vagrant@127.0.0.1 -i ./.vagrant/machines/default/virtualbox/private_key -p"' >> ~/.bashrc
