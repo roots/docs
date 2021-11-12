@@ -6,7 +6,12 @@ module.exports = [
   },
   {
     title: 'The Basics',
-    children: ['2.x/what-is-acorn', '2.x/wp-cli', '2.x/blade'],
+    children: [
+      '2.x/what-is-acorn',
+      '2.x/use-in-sage',
+      '2.x/wp-cli',
+      '2.x/blade',
+    ],
   },
   {
     title: 'Digging Deeper',
