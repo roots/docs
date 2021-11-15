@@ -42,7 +42,7 @@ Other popular website frameworks have long separated logic from views, but WordP
 namespace App\View\Composers;
 use Roots\Acorn\View\Composer;
 
-class Post extends Composer
+class Single extends Composer
 {
   public function with()
   {
