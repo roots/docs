@@ -2,7 +2,7 @@ module.exports = [
   {
     title: 'Getting Started',
     collapsable: false,
-    children: ['2.x/installation'],
+    children: ['2.x/installation', '2.x/directory-structure'],
   },
   {
     title: 'The Basics',
