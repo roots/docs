@@ -15,7 +15,10 @@ tba
 Composers are used to compose data before it's passed to a Blade. If you
 use [Controllers](https://github.com/soberwp/controller) then you're familiar with a similar concept, although Composers
 are somewhat more flexible. One of the major benefits of Composers in a WordPress context is that they allow you to
-extract the logic from your views. Here is a trivial example:
+extract the logic from your views. As with many other Acorn features, it's worth reading through the documentation for
+the Laravel feature they're built on: [View Composers](https://laravel.com/docs/8.x/views#view-composers).
+
+Here is a trivial example:
 
 ```php
 <?php
@@ -44,8 +47,8 @@ foreach ($children => $child) : ?>
 echo '</ul>';
 endif; ?>
 ```
-*Using normal WordPress templates.*
 
+*Using normal WordPress templates.*
 
 ```php
 <?php
@@ -97,36 +100,68 @@ class Page extends Composer
     }
 }
 ```
+
 ```html
 <!-- views/page.blade.php -->
 <h1>{{ $title }}</h1>
 <div>@php the_content() @endphp</div>
 @if($children)
-    <ul>
-        @foreach($children as ['url' => $url, 'title' => $title])
-            <li><a href="{{ $url }}">{{ $title }}</a></li>
-        @endforeach
-    </ul>
+<ul>
+  @foreach($children as ['url' => $url, 'title' => $title])
+  <li><a href='{{ $url }}'>{{ $title }}</a></li>
+  @endforeach
+</ul>
 @endif
 ```
+
 *Using Blade views and Composers.*
 
-This separation of concerns has many benefits, such as allowing for easier collaboration and allowing for easier re-use of components.
+This separation of concerns has many benefits, such as allowing for easier collaboration and allowing for easier re-use
+of components.
 
 ### Creating a Composer
 
-Composers need to be included in your script in some way. In Sage, they're autoloaded by Composer, and we recommend using this mechanism to load them if at all possible. Sage is preconfigured to load Composers from the `app/Views` directory in your theme, but you can load them from wherever you like by 
+Composers need to be included in your script in some way. In Sage, they're autoloaded by Composer, and we recommend
+using this mechanism to load them if at all possible. Sage is preconfigured to load Composers from
+the `app/Views/Composers/` directory in your theme, but you can load them from wherever you like by specifying the
+appropriate mapping in `composer.json`:
+
+```json
+"autoload": {
+"psr-4": {
+"App\\": "some/other/directory/"
+}
+}
+```
+
+You'd then create your Composers in `some/other/directory/Views/Composers/`.
+
+Say you want to create a composer for your generic page template. You would create a php file called `Page.php` and add
+the following:
+
+```php
+// The namespace must align with the directory and file structure.
+namespace App\View\Composers;
+// This is the base Composer class provided by Acorn that we will extend.
+use Roots\Acorn\View\Composer;
+// Here we create the actual Composer, although for the moment it does nothing.
+class Page extends Composer {}
+```
+
+This Composer will now be loaded by Acorn, but it won't actually do anything.
 
 ### Attachment to Views
 
-In order for Composers to provide data to views, however, they need to know which view (or views) they are attached to. Acorn provides two ways to do this:
+In order for Composers to provide data to views, they need to know which view (or views) they are attached to. Acorn
+provides two ways to do this:
 
 - Autoloading
 - The `views` property
 
 #### Autoloading
 
-In short, autoloading determines what Composer to associate with a view by matching their filenames and paths. For instance:
+In short, autoloading determines what Composer to associate with a view by matching their filenames and paths. For
+instance:
 
 | View | Composer |
 |------|----------|
@@ -134,6 +169,168 @@ In short, autoloading determines what Composer to associate with a view by match
 | `single-event.blade.php` | `SingleEvent.php` |
 | `partials/author/meta.blade.php` | `Partials/Author/Meta.php` |
 
-The kebab-case naming convention for views is largely just that—convention—but Composers and their paths must be names in accordance with [PSR-4](https://www.php-fig.org/psr/psr-4/), regardless of whether you're using autoloading to match Composers and views or not.
+> The kebab-case naming convention for views is largely just that—convention—but Composers and their paths must be names in accordance with [PSR-4](https://www.php-fig.org/psr/psr-4/).
+
+Autoloading is the simplest and easiest way to associate Composers and views, and it requires the least boilerplate, but
+it does have one major weakness: It can only be used to associate a Composer with a single view.
 
 #### The `views` Property
+
+The `views` property on a Composer allows for a much more declarative system of association: You tell Acorn which
+specific files to associate with, rather than relying on an interpolated assumption.
+
+```php
+class ExcitingStuff extends Composer {
+    protected static $views = [
+        // views/partials/content-modal.blade.php
+        'partials.content-modal',
+        // views/page.blade.php
+        'page',
+        // Any views in views/partials/ beginning with 'content-'
+        'partials.content-*',
+        // All views
+        '*',
+    ]
+}
+```
+
+The data in the Composer will be passed to all the views identified by this array. In this example, many of these views are redundant: `partials.content-*` will include `partials.content-modal` and `*` will include all the other files.
+
+This can be used interchangeably with the Autoloading technique. Usually, Autoloading is quicker and simpler, but this can be useful—and in some cases necessary, as when you need to load a Composer for a view that has a name that would be illegal as a class, such as `404.blade.php`.
+
+### Passing Data
+
+Data moves through Composers and views in Acorn like a waterfall. Or a set of nesting dolls. Or boxes within boxes within boxes. Pick whichever metaphor appeals to you, but the basic idea is this:
+
+- Each view establishes its own scope
+- Each view inherits data from any views "above" it (that is, views that use it via `@include` or a similar mechanism)
+- Data from a view cannot move "up" (i.e. to views that use it)
+- ...It can only move "down" (i.e. to views that _it_ uses)
+
+You can think of each view as a PHP function: It can receive data (function arguments) and it can create its own internal variables, which it can pass to other functions it calls, but anything outside that function cannot access its internal variables.
+
+Composers aren't necessary for any of these: Blade itself establishes this scope and data flow. A composer allows you to modify this flow in two important ways:
+
+- Modify data that the view is receiving
+- Pass new data to the view
+
+Inside a Composer you send data to the view with one of two methods:
+
+- `with()`
+- `override()`
+
+They work in exactly the same way: The method returns a keyed array, and each key in the array will be passed to the view as a variable of the same name, with its value as the contents of the variable. 
+
+```php
+// app/View/Composer/Partials/Litany.php
+public function with() {
+    return [
+        'fear' => 'the mind-killer',
+    ];
+}
+
+// resources/views/partials/litany.blade.php
+{{ $fear }} // the mind-killer
+```
+
+The only difference is when this data is added:
+
+- `with()` is added _before_ inherited data is merged in, meaning that data passed in from another view will override data with the same key.
+- `override()` is added _after_ inherited data is merged in, meaning that it will override data passed in with the same key.
+
+To use the above example:
+
+```html
+<!-- Composer using with() -->
+@include('partials.litany', [
+  'fear' => 'the little death that brings total obliteration'
+])
+<!-- the little death that brings total obliteration -->
+
+
+<!-- Composer using override() -->
+@include('partials.litany', [
+  'fear' => 'the little death that brings total obliteration'
+])
+<!-- the mind-killer -->
+```
+
+## Components
+
+We suggested thinking of views as, metaphorically, functions, to illustrate how scoping and data flow works, but Components take that metaphor even further, creating a construct that behaves even more like function-ized version of a template. Like Composers, Components are built on a [Laravel feature of the same name](https://laravel.com/docs/8.x/blade#components).
+
+To illustrate, here is an example:
+
+
+```php
+namespace App\View\Components;
+use Roots\Acorn\View\Component;
+class Heighliner extends Component
+{
+    public $navigators;
+    public $captain;
+    
+    public function __construct($navigators, $captain)
+    {
+        $this->navigators = (int) $navigators;
+        $this->captain = get_post($captain)->post_content;
+    }
+    
+    public function render()
+    {
+        return $this->view('components.heighliner');
+    }
+}
+```
+*Component class*
+
+```html
+<div {{ $attributes->merge([ 'class' => 'border-2' ]) }}>
+  <h1>{{ $captain }}</h1>
+  <div>Number of Navigators: {{ $navigators }}</div>
+  <h2>Content</h2>
+  <div>{{ $content }}</div>
+</div>
+```
+*Component Blade view*
+
+```html
+<x-heighliner navigators="4" :captain="$id" class="padding-md margin-md">
+  <ul>
+      <li>10 Frigates</li>
+      <li>20 Lighters</li>
+      <li>3 Legions of Sardaukar</li>
+  </ul>
+</x-heighliner>
+```
+*Component usage in view*
+
+```html
+<div class="border-2 padding-md margin-md">
+  <h1>Xerxes</h1>
+  <div>Number of Navigators: 4</div>
+  <h2>Content</h2>
+  <div>
+    <ul>
+      <li>10 Frigates</li>
+      <li>20 Lighters</li>
+      <li>3 Legions of Sardaukar</li>
+    </ul> 
+  </div>
+</div>
+```
+*Output*
+
+A component is represented in a Blade template as a custom HTML element, the name of which is prefixed with `x-`. Attributes on the element when it is used in a template are passed to the Component's class, which receives them as arguments to its `__construct()` method. Prefixing an attribute with `:` allows you to pass variables and PHP expressions to it. Any public properties on the class are available to the Component's view as variables.
+
+
+### Components vs Composers
+
+You may have noticed that a Component just seems like a fancy Composers, and you'd be correct: At the end of the day, there's not really anything a Component does that you couldn't do with some creative use of a Composers (except maybe the way you call them like they're HTML elements). But in addition to the syntactic sugar Components provide, the also offer a useful metal model to look at reusable parts of your views. They're easy to re-use, and their interface makes a lot of sense in the context of certain re-usable view elements. A particularly good use-case for Components is for re-usable partials that get or generate content internally, but have sections where you want to provide rich-tech content:
+
+```html
+<x-post-preview :post-id="$latest_post">
+  <p>Checkout out the <b>latest post</b> from our blog.</p>
+  <a href="{{ $blog_url }}">Read More</a>
+</x-post-preview>
+```
