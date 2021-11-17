@@ -4,11 +4,70 @@ description: What is Blade and how does it work?
 
 # Blade Templates
 
-tba
+Sage uses [Laravel's Blade](https://laravel.com/docs/8.x/blade) templating engine. This gives you access to the Blade templating language, which includes a number of useful features.
 
-> In the parlance of Laravel, Acorn, and MVC frameworks in general, what WordPress calls a "template" or "template part" is called a "view." In these documents, we'll be using the term "view," except when specifically referring to something that WordPress would load as a template for something it recognizes as part of the template hierarchy, like an archive, single page, etc. These templates are implemented as views through Acorn, so a file like `archive.blade.php` is both a view and a template, whereas something like `partials/author-meta.blade.php` is just a view because it will only be loaded if another view includes it.
+
+:::tip Terminology
+In the parlance of Laravel, Acorn, and MVC frameworks in general, what WordPress calls a "template" or "template part" is called a "view." In these documents, we'll be using the term "view," except when specifically referring to something that WordPress would load as a template for something it recognizes as part of the template hierarchy, like an archive, single page, etc. These templates are implemented as views through Acorn, so a file like `archive.blade.php` is both a view and a template, whereas something like `partials/author-meta.blade.php` is just a view because it will only be loaded if another view includes it.
+:::
 
 [[toc]]
+
+## Templating Language
+
+The Blade templating language is described in much more depth in the [Laravel docs](https://laravel.com/docs/8.x/blade), which we recommend you read for a full understanding of how it works. Nearly everything described there should work in Acorn.
+
+The following are some of the Blade features you're liking to find yourself using regularly.
+
+### Including
+
+One of the primary features of Blade is the `@include` directive (which also has a few useful variants). `@include` allows you to us a Blade file in any other Blade file, and creates a new scope for each included file.
+
+Variables define in a given view will cascade down to views that it `@includes`, but you can also pass data directly to Blade templates by passing a keyed array as the second argument to the `@include()` directive.
+The key names will become the variable names that their values are assigned to.
+
+```html
+@include('partials.example-partial', ['variableName' => 'Variable Value']
+
+<!-- /resources/views/partials/example-partial.blade.php -->
+
+<h1>{{ $variableName }}</h1>
+<!-- <h1>Variable Value</h1> -->
+```
+
+### Layouts
+
+A layout is a special kind of template that can be extended. It's useful when you have a lot of HTML content surrounding something you want to be dynamic—for instance the header and footer of a site.
+
+```html
+<!-- resources/views/layouts/app.blade.php -->
+<html>
+  <body>
+    <header>
+    @section('header')
+      @include('partials.nav.primary')
+    @show
+    </header>
+    <main>
+      @yield('content')
+    </main>
+  </body>
+</html>
+
+<!-- resources/views/page.blade.php -->
+@extends('layouts.app')
+@section('header')
+  @parent
+  @include('partials.nav.page')
+@endsection
+
+@section('content')
+  <h1>{{ $title }}</h1>
+  <div>{!! $content !!}}</div>
+@endsection
+```
+
+The extending view (`page.blade.php` in this case) can then "insert" its content into these sections to be rendered.
 
 ## Composers
 
@@ -254,6 +313,31 @@ To use the above example:
 ])
 <!-- the mind-killer -->
 ```
+#### WordPress
+
+Composers are executed in a context where WordPress functions like `get_the_ID()` and `the_post()` will return expected values, so you can retrieve data from WordPress much like you normally would.
+
+#### Accessing Inherited Data
+
+The data passed down to a view is also available inside the Composer for you to view and manipulate. To do, this access the `data` property of the Composer instance:
+
+```php
+public function with() {
+    return [
+        'power_type' => $this->powerType(),
+    ];
+}
+
+public function powerType()
+{
+    $planet = $this->data->get('planet');
+    if ($planet === 'caladan') {
+        return 'sea and air';
+    } elseif ($planet === 'arrakis') {
+        return 'desert';
+    }
+}
+```
 
 ## Components
 
@@ -321,7 +405,19 @@ class Heighliner extends Component
 ```
 *Output*
 
-A component is represented in a Blade template as a custom HTML element, the name of which is prefixed with `x-`. Attributes on the element when it is used in a template are passed to the Component's class, which receives them as arguments to its `__construct()` method. Prefixing an attribute with `:` allows you to pass variables and PHP expressions to it. Any public properties on the class are available to the Component's view as variables.
+A component is represented in a Blade template as a custom HTML element, the tag name of which is prefixed with `x-`. Attributes on the element when it is used in a template are passed to the Component's class, which receives them as arguments to its `__construct()` method. Prefixing an attribute with `:` allows you to pass variables and PHP expressions to it. Any public properties on the class are available to the Component's view as variables.
+
+In the Component tag, you use attributes to pass data to your component, but you can also add other, arbitrary attributes as well.
+These attributes will be put in an "attribute bag" which you can then access in your Component view with the special `$attributes` variable.
+If you echo the variable it will print out each attribute and its value, which can be very useful if you want to dynamically set particular HTML attributes on the rendered Component. You can also use the `merge()` method on the `$attributes` variable to set some values that will be merged with any that are passed in—as demonstrated above with `class`.
+
+:::warning Note
+Because attributes prefixed with `:` will be evaluated a PHP, you _don't_ want to pass a simple string to them, or PHP will try and evaluate it:
+```html
+<x-example-component :title="Uh oh"/>
+```
+This will throw an error when it tries to evaluate `Uh oh` as PHP.
+:::
 
 
 ### Components vs Composers
