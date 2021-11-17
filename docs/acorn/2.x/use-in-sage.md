@@ -1,5 +1,5 @@
 ---
-description: How doe the Sage starter theme leverage Acorn?
+description: How does the Sage starter theme leverage Acorn?
 ---
 
 # How is Acorn used in Sage?
