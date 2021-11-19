@@ -39,7 +39,7 @@ If you have unencrypted `vault.yml` files in your project's git history (e.g., p
 
 
 ```bash
-$ trellis vault encrypt --files=group_vars/all/vault.yml group_vars/development/vault.yml group_vars/staging/vault.yml group_vars/production/vault.yml
+$ trellis vault encrypt
 ```
 
 </template>
@@ -47,7 +47,7 @@ $ trellis vault encrypt --files=group_vars/all/vault.yml group_vars/development/
 
 ### 1. Set vault password
 
-Generate a long random password and save it as a string on a single line in a new file. Name the file `.vault_pass` and save it at the root of this project (e.g., next to `ansible.cfg`). You will probably want to run `chmod 600 .vault_pass` to restrict access to this file. This `.vault_pass` file will remain in plain text and should _not_ be committed to your repo, so be sure that it is included in your `.gitignore` file.
+Generate a long random password and save it as a string on a single line in a new file. Name the file `.vault_pass` and save it at the root of this project (e.g., next to `ansible.cfg`). You will probably want to run `chmod 600 .vault_pass` to restrict access to this file. This `.vault_pass` file will remain in plain text and should _not_ be committed to your repo, so be sure that it is included in your `.gitignore` file (which Trellis does by default).
 
 If you prefer not to create a file with your vault password, you can add the `--ask-vault-pass` flag to your `ansible-playbook` commands, which will prompt you to enter your password via the command line.
 
@@ -84,22 +84,24 @@ $ ansible-vault encrypt group_vars/all/vault.yml group_vars/development/vault.ym
 <CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
 <template v-slot:cli>
 
-`trellis-cli` provides a few notable commands that coincide with the official [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) docs.
+`trellis-cli` provides a few basic commands that mirror with the official [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) ones.
 
-- `trellis vault encrypt <file>`
-- `trellis vault view <file>`
-- `trellis vault edit <file>`
-- `trellis vault decrypt <file>` -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
+- `trellis vault encrypt <args>`
+- `trellis vault view <args>`
+- `trellis vault edit <args>`
+- `trellis vault decrypt <args>` -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
+
+Run `trellis vault` to see usage details.  
 
 </template>
 <template v-slot:manual>
 
-Here are a few notable commands from the official [Ansible Vault](http://docs.ansible.com/ansible/playbooks_vault.html) docs.
+Here are a few common commands from the official [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) docs.
 
-- [`ansible-vault encrypt <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#encrypting-unencrypted-files)
-- [`ansible-vault view <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#viewing-encrypted-files)
-- [`ansible-vault edit <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#editing-encrypted-files)
-- [`ansible-vault decrypt <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#decrypting-encrypted-files) -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
+- [`ansible-vault encrypt <file>`](https://docs.ansible.com/ansible/latest/user_guide/vault.html#encrypting-files-with-ansible-vault)
+- [`ansible-vault view <file>`](https://docs.ansible.com/ansible/latest/user_guide/vault.html#viewing-encrypted-files)
+- [`ansible-vault edit <file>`](https://docs.ansible.com/ansible/latest/user_guide/vault.html#editing-encrypted-files)
+- [`ansible-vault decrypt <file>`](https://docs.ansible.com/ansible/latest/user_guide/vault.html#decrypting-encrypted-files) -- Avoid using the `decrypt` command. If your intention is to view or edit an encrypted file, use the `view` or `edit` commands instead. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo.
 - [`ansible-vault rekey <file>`](http://docs.ansible.com/ansible/playbooks_vault.html#rekeying-encrypted-files)
 
 </template>
@@ -107,13 +109,13 @@ Here are a few notable commands from the official [Ansible Vault](http://docs.an
 
 ## Working with vault variables
 
-Here are a few conceptual tips for working with [variables and vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#variables-and-vaults) in Trellis.
+Here are a few tips for working with [variables and vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#variables-and-vaults) in Trellis.
 
 - Variables with sensitive data such as passwords are defined in files named `vault.yml`.
 - Each environment has its own `vault.yml` file: `group_vars/<environment>/vault.yml`.
 - There is also one `vault.yml` file applicable to all environments: `group_vars/all/vault.yml`.
 - Variables named with the `vault_` prefix are defined in the `vault.yml` files.
-- To view or edit an encrypted `vault.yml` file, use either `ansible-vault view <file>` or `ansible-vault edit <file>`. Avoid using the `decrypt` command. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo. You may want to employ a pre-commit hook ([example](https://www.reinteractive.net/posts/167-ansible-real-life-good-practices)) for added prevention.
+- To view or edit an encrypted `vault.yml` file, use either `trellis vault view <file>` or `trellis vault edit <file>`. Avoid using the `decrypt` command. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo. You may want to employ a pre-commit hook ([example](https://www.reinteractive.net/posts/167-ansible-real-life-good-practices)) for added prevention.
 
 ## Sharing a project with vault-encrypted files
 
