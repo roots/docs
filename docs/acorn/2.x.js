@@ -2,7 +2,10 @@ module.exports = [
   {
     title: 'Getting Started',
     collapsable: false,
-    children: ['2.x/installation', '2.x/directory-structure'],
+    children: [
+      '2.x/installation', 
+      '2.x/directory-structure',
+    ],
   },
   {
     title: 'The Basics',
@@ -15,14 +18,16 @@ module.exports = [
   },
   {
     title: 'Digging Deeper',
-    children: ['2.x/tbd'],
+    children: [
+      '2.x/assets-management',
+    ],
   },
   {
     title: 'Packages',
     children: [
-      '10.x/installing-packages',
-      '10.x/package-development',
-      '10.x/available-packages',
+      '2.x/installing-packages',
+      '2.x/package-development',
+      '2.x/available-packages',
     ],
   },
-]
+];
