@@ -4,7 +4,7 @@ The majority of the Sage documentation focuses on setting up new themes. Use thi
 
 ## Getting started
 
-If you've never worked on a Sage project before, make sure your local development environment is configured by following the [Getting Started guide(s)](https://roots.io/docs/getting-started/index.html).
+If you've never worked on a Sage project before, make sure your local development environment is configured by following the [Getting Started guide(s)](https://docs.roots.io/getting-started/index.html).
 
 ## Gathering information
 
