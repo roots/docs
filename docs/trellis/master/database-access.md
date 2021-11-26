@@ -4,14 +4,14 @@ description: Accessing your WordPress databases in Trellis with Sequel Pro or Ta
 
 # Database Access
 
-Accessing your databases with client software like [Sequel Pro](https://www.sequelpro.com/) and [TablePlus](http://tableplus.com/) is straight forward with `trellis-cli`:
+Accessing your databases with client software like [Sequel Pro](https://www.sequelpro.com/), [Sequel Ace](https://sequel-ace.com/) and [TablePlus](http://tableplus.com/) is straight forward with `trellis-cli`:
 
 <CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
 <template v-slot:cli>
 
 Run the following from any directory within your project:
 
-For Sequel Pro:
+For Sequel Pro (or Sequel Ace):
 ```bash
 $ trellis db open --app=sequel-pro production example.com
 ```
