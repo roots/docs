@@ -16,8 +16,8 @@
   force = true
 
 [[redirects]]
-  from = "/getting-started/"
-  to = "/getting-started/macos/"
+  from = "/acorn/"
+  to = "/acorn/2.x/installation/"
   status = 301
   force = true
 
@@ -28,8 +28,14 @@
   force = true
 
 [[redirects]]
-  from = "/trellis/"
-  to = "/trellis/master/installation/"
+  from = "/examples/"
+  to = "/examples/roots-example-project/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/getting-started/"
+  to = "/getting-started/macos/"
   status = 301
   force = true
 
@@ -40,26 +46,20 @@
   force = true
 
 [[redirects]]
-  from = "/sage/9.x/"
-  to = "/sage/9.x/installation/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/sage/8.x/"
   to = "/sage/8.x/installation/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/examples/"
-  to = "/examples/roots-example-project/"
+  from = "/sage/9.x/"
+  to = "/sage/9.x/installation/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/acorn/"
-  to = "/acorn/2.x/installation/"
+  from = "/trellis/"
+  to = "/trellis/master/installation/"
   status = 301
   force = true
 
