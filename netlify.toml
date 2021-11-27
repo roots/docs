@@ -4,8 +4,8 @@
   publish = "docs/.vuepress/dist"
 
 [[redirects]]
-  from = "/docs/"
-  to = "/"
+  from = "/docs/*"
+  to = "/:splat"
   status = 301
   force = true
 
