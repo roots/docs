@@ -5,48 +5,66 @@
 
 [[redirects]]
   from = "/docs/"
-  to = "/getting-started/macos/"
-  status = 302
+  to = "/"
+  status = 301
   force = true
 
 [[redirects]]
-  from = "/docs/getting-started/"
+  from = "/"
   to = "/getting-started/macos/"
-  status = 302
+  status = 301
   force = true
 
 [[redirects]]
-  from = "/docs/bedrock/"
+  from = "/getting-started/"
+  to = "/getting-started/macos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bedrock/"
   to = "/bedrock/master/installation/"
-  status = 302
+  status = 301
   force = true
 
 [[redirects]]
-  from = "/docs/trellis/"
+  from = "/trellis/"
   to = "/trellis/master/installation/"
-  status = 302
+  status = 301
   force = true
 
 [[redirects]]
-  from = "/docs/sage/"
+  from = "/sage/"
   to = "/sage/10.x/installation/"
   status = 302
   force = true
 
 [[redirects]]
-  from = "/docs/sage/9.x/"
+  from = "/sage/9.x/"
   to = "/sage/9.x/installation/"
-  status = 302
+  status = 301
   force = true
 
 [[redirects]]
-  from = "/docs/sage/8.x/"
+  from = "/sage/8.x/"
   to = "/sage/8.x/installation/"
-  status = 302
+  status = 301
   force = true
 
 [[redirects]]
-  from = "/docs/examples/"
+  from = "/examples/"
   to = "/examples/roots-example-project/"
-  status = 302
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/acorn/"
+  to = "/acorn/2.x/installation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trellis-cli/"
+  to = "/trellis-cli/master/installation/"
+  status = 301
   force = true
