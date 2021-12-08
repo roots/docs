@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Roots Documentation',
-  base: '/docs/',
-  dest: './docs/.vuepress/dist/docs',
+  base: '/',
+  dest: './docs/.vuepress/dist',
 
   plugins: {
     'vuepress-plugin-clean-urls': {
@@ -10,11 +10,11 @@ module.exports = {
       notFoundPath: '/404.html',
     },
     'sitemap': {
-      hostname: 'https://roots.io/docs',
+      hostname: 'https://docs.roots.io',
       changefreq: 'weekly',
     },
     'vuepress-plugin-canonical': {
-      baseURL: 'https://roots.io/docs',
+      baseURL: 'https://docs.roots.io',
     },
     '@vuepress/pwa': {
       serviceWorker: true,
@@ -41,7 +41,7 @@ module.exports = {
   ],
 
   themeConfig: {
-    domain: 'https://roots.io/docs',
+    domain: 'https://docs.roots.io',
     logo: '/logo.svg',
     searchPlaceholder: 'Search Docs',
 
@@ -60,10 +60,6 @@ module.exports = {
       twitter: {
         username: '@rootswp',
         card: 'summary_large_image',
-      },
-      facebook: {
-        url: 'https://www.facebook.com/rootswp',
-        appId: '1022828784420871',
       },
     },
 
