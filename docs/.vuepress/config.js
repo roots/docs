@@ -69,11 +69,13 @@ module.exports = {
     // },
 
     nav: [
+      { text: 'Getting Started', link: '/getting-started/' },
       {
-        text: 'Ecosystem', ariaLabel: 'Ecosystem Menu', link: '/', items: [
+        text: 'Projects', ariaLabel: 'Projects Menu', link: '/', items: [
           { text: 'Sage', link: '/sage/' },
           { text: 'Bedrock', link: '/bedrock/' },
-          { text: 'Trellis', link: '/trellis/' }
+          { text: 'Trellis', link: '/trellis/' },
+          { text: 'Acorn', link: '/acorn/' },
         ]
       },
       { text: 'Support', link: 'https://discourse.roots.io' },
