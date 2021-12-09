@@ -16,13 +16,6 @@ module.exports = {
     'vuepress-plugin-canonical': {
       baseURL: 'https://docs.roots.io',
     },
-    '@vuepress/pwa': {
-      serviceWorker: true,
-      updatePopup: {
-        message: 'New content is available.',
-        buttonText: 'Refresh',
-      },
-    },
     'minimal-analytics': { ga: 'UA-71591-42' },
     'code-switcher': {},
   },
