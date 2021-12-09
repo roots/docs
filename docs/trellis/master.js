@@ -5,6 +5,7 @@ module.exports = [
     children: [
       'master/installation',
       'master/existing-projects',
+      'master/python',
     ],
   },
   {
