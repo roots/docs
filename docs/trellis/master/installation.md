@@ -6,9 +6,14 @@ description: Before installing Trellis the requirements must be met. After insta
 
 Trellis relies on a few other software tools. Make sure all dependencies have been installed before moving on:
 
+- [Python](python.md) >= 2.x (3.x recommended)
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 - [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
 - *Recommended* [trellis-cli](https://github.com/roots/trellis-cli)
+
+::: tip
+After installing trellis-cli, run `trellis check` to see if your system meets the dependency requirements above.
+:::
 
 ::: tip Windows user?
 [Read the Windows getting started docs](../../getting-started/windows.md) for slightly different installation instructions.
