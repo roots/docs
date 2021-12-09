@@ -4,17 +4,14 @@ description: Guide to installing and using Python with Trellis
 
 # Python and Trellis
 
-Trellis' main requirement is Python because Ansible is built with Python. We
-know from experience that issues with Python are the most common problem with
-setting up or using Trellis.
-
+Trellis' main requirement is Python because Ansible is built with Python.
 This page documents the best way to install Python on your computer, how to
 manage Python package dependencies (like Ansible), common issues to avoid, and
 using trellis-cli to make your life easier.
 
 When dealing with Trellis and Python, there's three key points:
 
-1. Make sure you have a stable version of Python installed
+1. Make sure you have a stable version of Python and pip installed
 2. Use [trellis-cli](https://github.com/roots/trellis-cli) since it handles
    dependencies for you
 3. **Never** use `sudo` when installing packages with `pip`
@@ -53,6 +50,12 @@ surprising since it goes against most guides and recommendations but we believe
 using Python from Homebrew will cause more problems long-term due to its newer 
 "feature" of auto-upgrading packaages as described in [this article](https://justinmayer.com/posts/homebrew-python-is-not-for-you/).
 
+After Python is installed and working, you'll also need to ensure pip is installed. If `pip` or `pip3` does not exist, it can be installed like this:
+
+```bash
+sudo easy_install pip
+```
+
 ### Ubuntu
 
 Ubuntu 20.04 comes default with Python 3 available as `python3`
@@ -63,7 +66,7 @@ The [`python-is-python3`])(https://packages.ubuntu.com/focal/python-is-python3) 
 exists solely as an easy way to symlink `/usr/bin/python` to `python3`.
 
 ```bash
-sudo apt-get install -y python-is-python3
+sudo apt-get install -y python3 python-is-python3 python3-pip
 ```
 
 ### Windows
@@ -111,6 +114,4 @@ If you do need to run `pip` manually to install Ansible, here's a few tips:
 1. **Never** use `sudo` with `pip`. It will only cause problems.
 2. Make sure you're using the version of pip that corresponds to your Python
    version. If you're using Python 3, then you might need to use `pip3`.
-3. Avoid installing `ansible` directly with pip. Instead run `pip install -r
-   requirements.txt` within a Trellis project to ensure you're getting the
-   proper supported version of Ansible.
+3. Avoid installing `ansible` directly with pip. Instead run `pip install -r requirements.txt` within a Trellis project to ensure you're getting a supported version of Ansible.

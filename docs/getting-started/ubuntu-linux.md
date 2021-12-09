@@ -88,9 +88,10 @@ $ npm install --global yarn
 
 Trellis relies on a few other software tools. Install these tools:
 
-- VirtualBox >= 4.3.10
-- Vagrant >= 1.8.5
-- Ansible >= 2.4
+- [Python](../trellis/master/python.md) >= 2.x (3.x recommended)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
+- [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
+- *Recommended* [trellis-cli](https://github.com/roots/trellis-cli)
 
 ### VirtualBox
 
@@ -108,18 +109,6 @@ $ sudo apt-get install virtualbox
 $ sudo dpkg -i vagrant_2.2.14_x86_64.deb
 ```
 
-### Ansible
+### Python and Ansible
 
-Install pip (Python package manager) if you don't already have it:
-
-```bash
-$ sudo apt-get install python-pip
-```
-
-Install Ansible with pip:
-```bash
-$ pip install ansible
-
-# Install a specific Ansible version:
-$ pip install ansible==2.4.0.0
-```
+See [Trellis and Python](../trellis/master/python.md) for the best way to manage Python and Ansible for Trellis projects.

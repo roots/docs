@@ -113,9 +113,10 @@ $ npm install --global yarn
 
 Trellis relies on a few other software tools. Install these tools:
 
-- VirtualBox >= 4.3.10 (install on Windows)
-- Vagrant >= 1.8.5 (install on Windows and WSL)
-- Ansible >= 2.7, < 2.8 (install in WSL)
+- [Python](../trellis/master/python.md) >= 2.x (3.x recommended)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
+- [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
+- *Recommended* [trellis-cli](https://github.com/roots/trellis-cli)
 
 
 ### VirtualBox
@@ -135,25 +136,9 @@ export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 
 The above should be taken as **examples** and not just copied and pasted into your configuration. Read the linked document and make sure you're configuring your system correctly.
 
-### Ansible
+### Python and Ansible
 
-::: warning Note
-The following commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).
-:::
-
-Install pip (Python package manager) if you don't already have it:
-
-```bash
-$ sudo apt-get install python3-pip
-```
-
-Install Ansible with pip:
-```bash
-$ pip install ansible
-
-# Install a specific Ansible version:
-$ pip install ansible==2.4.0.0
-```
+See [Trellis and Python](../trellis/master/python.md) for the best way to manage Python and Ansible for Trellis projects.
 
 ### Troubleshooting
 
