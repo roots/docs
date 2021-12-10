@@ -48,7 +48,7 @@ to install specific versions globally (or even per project if that's needed).
 We **do not recommend** installing Python from Homebrew. This might be
 surprising since it goes against most guides and recommendations but we believe
 using Python from Homebrew will cause more problems long-term due to its newer 
-"feature" of auto-upgrading packaages as described in [this article](https://justinmayer.com/posts/homebrew-python-is-not-for-you/).
+"feature" of auto-upgrading packages as described in [this article](https://justinmayer.com/posts/homebrew-python-is-not-for-you/).
 
 After Python is installed and working, you'll also need to ensure pip is installed. If `pip` or `pip3` does not exist, it can be installed like this:
 
