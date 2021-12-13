@@ -41,9 +41,7 @@ export default {
           {
             inputSelector: '#algolia-search-input',
             // #697 Make docsearch work well at i18n mode.
-            algoliaOptions: Object.assign({
-              'facetFilters': [`lang:${lang}`].concat(algoliaOptions.facetFilters || [])
-            }, algoliaOptions),
+            algoliaOptions: {},
             handleSelected: (input, event, suggestion) => {
               // MODIFICATION_FROM_THEME - old
               // this.$router.push(new URL(suggestion.url).pathname)
