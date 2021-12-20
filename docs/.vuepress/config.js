@@ -56,10 +56,10 @@ module.exports = {
       },
     },
 
-    // algolia: {
-    //   indexName: 'roots',
-    //   apiKey: '16a75919d4869134bee2b3237330a2e0',
-    // },
+    algolia: {
+      indexName: 'roots',
+      apiKey: '16a75919d4869134bee2b3237330a2e0',
+    },
 
     nav: [
       { text: 'Getting Started', link: '/getting-started/' },
