@@ -42,6 +42,7 @@ export default {
             inputSelector: '#algolia-search-input',
             // #697 Make docsearch work well at i18n mode.
             algoliaOptions: {},
+            // 'facetFilters': [`area:${area}`].concat(algoliaOptions.facetFilters || [])
             handleSelected: (input, event, suggestion) => {
               // MODIFICATION_FROM_THEME - old
               // this.$router.push(new URL(suggestion.url).pathname)
@@ -120,6 +121,10 @@ export default {
         font-weight 600
         margin-bottom 0
         color $textColor
+      .aa-suggestion-title-separator
+        display inline-block
+        margin-left 3px
+        margin-right 3px
       .algolia-docsearch-suggestion--subcategory-column
         vertical-align top
         padding 5px 7px 5px 5px
