@@ -16,8 +16,6 @@ module.exports = [
     title: 'The Basics',
     children: [
       '10.x/views',
-      '10.x/error-handling',
-      '10.x/logging',
       '10.x/sidebar',
       '10.x/gutenberg',
     ],

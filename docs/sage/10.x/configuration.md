@@ -8,7 +8,7 @@ description: Use setup.php in Sage to enable/disable theme features and set conf
 
 ## Introduction
 
-All of the configuration for Sage lives inside of the `config` directory as well as `app/setup.php`. Each option is documented allowing for you to easily familiarize yourself with the options configured out of the box.
+All of the configuration for Sage lives inside of `app/setup.php`. Each option is documented allowing for you to easily familiarize yourself with the options configured out of the box.
 
 ## Theme Configuration
 
@@ -35,9 +35,3 @@ Also seen in `setup.php` is out of the box theme support for [Soil](https://root
 - Cleaner NavWalker for navigation menus
 - Prettier search URLs converting from `/?s=query` to `/search/query/`
 - Root relative URLs
-
-## Sage Configuration
-
-Found in the `config` directory is configuration specific to Sage and it's functionality with Acorn. By default, you will find a set of configuration files that closely resemble that of [Laravel](https://laravel.com/docs/8.x/configuration).
-
-This configuration controls the underlying functionality of views, logging, errors, and the strategy of which assets load the manifest.

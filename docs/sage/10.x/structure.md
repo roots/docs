@@ -14,42 +14,32 @@ Where a file or class is located is ultimately decided by you. As long as Compos
 
 ```php
 themes/your-theme-name/   # → Root of your Sage based theme
-├── app/                  # → Theme functionality
-│   ├── View/             # → View logic
+├── app/                  # → Theme PHP
 │   ├── Providers/        # → Service providers
-│   ├── admin.php         # → Theme customizer setup
+│   ├── View/             # → View models
 │   ├── filters.php       # → Theme filters
 │   ├── helpers.php       # → Helper functions
 │   └── setup.php         # → Theme setup
-├── config/               # → Config files
-│   ├── app.php           # → Application configuration
-│   ├── assets.php        # → Asset configuration
-│   ├── filesystems.php   # → Filesystems configuration
-│   ├── logging.php       # → Logging configuration
-│   └── view.php          # → View configuration
-├── composer.json         # → Composer packages
-├── composer.lock         # → Composer lock file
-├── dist/                 # → Built theme assets
+├── composer.json         # → Autoloading for `app/` files
+├── public/               # → Built theme assets (never edit)
 ├── functions.php         # → Theme bootloader
 ├── index.php             # → Theme template wrapper
-├── node_modules/         # → Node.js packages
+├── node_modules/         # → Node.js packages (never edit)
 ├── package.json          # → Node.js dependencies and scripts
 ├── resources/            # → Theme assets and templates
-│   ├── assets/           # → Front-end assets
-│   │   ├── fonts/        # → Theme fonts
-│   │   ├── images/       # → Theme images
-│   │   ├── scripts/      # → Theme javascript
-│   │   └── styles/       # → Theme stylesheets
+│   ├── fonts/            # → Theme fonts
+│   ├── images/           # → Theme images
+│   ├── scripts/          # → Theme javascript
+│   ├── styles/           # → Theme stylesheets
 │   └── views/            # → Theme templates
 │       ├── components/   # → Component templates
-│       ├── form/         # → Form templates
+│       ├── forms/        # → Form templates
 │       ├── layouts/      # → Base templates
 │       └── partials/     # → Partial templates
-├── screenshot.png        # → Theme screenshot
-├── storage/              # → Storage location for cache
+├── screenshot.png        # → Theme screenshot for WP admin
 ├── style.css             # → Theme meta information
-├── vendor/               # → Composer vendor packages
-└── webpack.mix.js        # → Laravel Mix configuration
+├── vendor/               # → Composer packages (never edit)
+└── bud.config.js         # → Bud configuration
 ```
 
 ## The Root Directory
@@ -58,13 +48,9 @@ themes/your-theme-name/   # → Root of your Sage based theme
 
 The `app` directory contains the core code and functionality of your theme. Almost everything other than your views and assets will take place in this directory.
 
-### The Config Directory
+### The Public Directory
 
-The `config` directory contains configuration pertaining directly to Sage and it's functionality with Acorn. Here you will not find much configration related to WordPress but instead configuration for things such as modifying Blade view paths, registering directives, changing the asset path, and configuration for packages built for Sage.
-
-### The Dist Directory
-
-The `dist` directory contains the compiled assets for your theme. This directory will never be manually modified.
+The `public` directory contains the compiled assets for your theme. This directory will never be manually modified.
 
 ### The Node Modules Directory
 
@@ -77,10 +63,6 @@ Not under any circumstance should there ever be a need to upload this folder or 
 ### The Resources Directory
 
 The `resources` directory contains your Blade views as well as the un-compiled assets of your theme such as CSS, JavaScript, images, and fonts.
-
-### The Storage Directory
-
-The `storage` directory contains your compiled Blade templates as well as Sage's cache and logging files. This directory will typically never be modified, but instead contain useful theme log files located in the `logs` directory.
 
 ### The Vendor Directory
 
