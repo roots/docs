@@ -1,10 +1,14 @@
+---
+description: Acorn automatically registers an exception handler, which is passed to whoops in the browser.
+---
+
 # Error Handling
 
 [[toc]]
 
 ## Introduction
 
-When working on Sage in a development environment, Acorn automatically registers an exception handler configured to handle logging as well as the rendering of thrown exceptions. This can be especially useful when diagnosing errors thrown by Blade views.
+When working in a development environment, Acorn automatically registers an exception handler configured to handle logging as well as the rendering of thrown exceptions. This can be especially useful when diagnosing errors thrown by Blade views.
 
 ## Configuration
 

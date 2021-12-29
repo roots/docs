@@ -9,8 +9,11 @@ description: Acorn is a framework that brings Laravel into WordPress, allowing y
 In Sage specifically, it's used for Blade templates, Composers, Components, and a number of other helpers.
 
 Acorn also includes a powerful set of WP-CLI commands that can help you manage your site and develop new features.
+
 To see what it can do, run `wp acorn`.
 
 ::: tip
-View the [Acorn docs](/docs/acorn/) to find out more information 
+Out of the box, Acorn will use its own configs, and it will keep the application cache and logs in the standard WordPress cache directory.
+
+View the [Acorn docs](/acorn/2.x/directory-structure/#zero-config) to find out more information
 :::
