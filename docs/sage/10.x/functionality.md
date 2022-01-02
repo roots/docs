@@ -12,15 +12,9 @@ The PHP code in Sage is [namespaced](https://roots.io/namespacing-and-autoloadin
 - `app/setup.php` – Enqueue stylesheets and scripts, register support for theme features with `add_theme_support`, register navigation menus and sidebars. 
     See [Theme Configuration and Setup](configuration.md).
 
-- `app/admin.php` – Placeholder code for the WordPress theme customizer. 
-    You can also use this file for anything related to the WordPress admin.
-
 - `app/filters.php` – Add WordPress filters in this file. 
     Filters included by default:
   - `excerpt_more` – add "… Continued" to excerpts.
-
-- `app/helpers.php` – A place for you to put functions used throughout your theme.
-    Does not ship with any code.
 
 - `app/Providers` - The place for any [Service Providers](https://laravel.com/docs/8.x/providers) you care to define for your theme.
     Comes with `ThemeServiceProvider` that adds no functionality but provides a template for your own Service Providers.
