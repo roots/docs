@@ -14,7 +14,7 @@ Each Trellis playbook uses a specific SSH user to connect to your remote machine
 
 This page reviews how to configure SSH users for the `server.yml` and `deploy.yml` playbooks. If you are looking for general SSH configuration options, see the [`sshd` role `README.md`](https://github.com/roots/trellis/tree/master/roles/sshd) .
 
-If you will be the only person provisioning and deploying, and your SSH public key is available at `~/.ssh/id_rsa.pub`, you probably won't need to modify the Trellis defaults for `users`.
+If you will be the only person provisioning and deploying, and your SSH public key is available at `~/.ssh/id_ed25519.pub`, you probably won't need to modify the Trellis defaults for `users`.
 
 ## The `users` Dictionary
 
@@ -60,7 +60,8 @@ users:
     groups:
       - sudo
     keys:
-      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+      - "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
+      # - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
       # - https://github.com/username.keys
 
 admin_user: admin
@@ -90,7 +91,8 @@ users:
     groups:
       - "{{ web_group }}"
     keys:
-      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+      - "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
+      # - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
       # - https://github.com/username.keys
 ```
 

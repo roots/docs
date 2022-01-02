@@ -100,7 +100,7 @@ SSH will automatically look for and try a default set of SSH keys, along with ke
 ```bash
 Host example.com
   IdentitiesOnly yes
-  IdentityFile /users/username/.ssh/id_rsa
+  IdentityFile /users/username/.ssh/id_ed25519
 ```
 
 ### Host key change
