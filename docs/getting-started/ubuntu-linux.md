@@ -34,7 +34,7 @@ $ sudo apt-get install composer
 Trellis and GitHub both use SSH keys to communicate securely without the need to type a username and password each time. Create your SSH keys:
 
 ```bash
-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 For more details on generating SSH keys, see [GitHub's excellent documentation](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/).
@@ -49,7 +49,7 @@ Edit your `~/.ssh/config` file and add the following lines:
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 ```
 
 ## Working with Sage
