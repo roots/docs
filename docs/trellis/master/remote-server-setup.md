@@ -78,13 +78,32 @@ $ ./bin/deploy.sh <environment> example.com
 
 ## Requirements
 
-The Trellis [installation instructions](installing-trellis.md) skipped a few requirements because Vagrant handles them automatically for us.
+### Dependencies
 
-To use Trellis for remote servers, we recommend installing Ansible locally on your host machine ([except for Windows users](../../getting-started/windows.md)).
+The Trellis [installation instructions](installation.md) are optimized for a quick start using Vagrant. For deploying and provisioning remote servers, we need to ensure all of Trellis' dependencies (mainly Ansible) are installed on your local/host machine ([except for Windows users](../../getting-started/windows.md)).
 
-If you're not using `trellis-cli` to provision your servers, install Ansible dependencies and Galaxy roles:
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+If you're using trellis-cli, just re-run the following command to ensure your
+project is initialized and the dependencies are installed:
+
+```bash
+$ trellis init
+```
+
+</template>
+<template v-slot:manual>
+
+Run both the following commands in your local trellis project directory:
+
 1. Install Ansible and other dependencies: `pip install -r requirements.txt`
-2. Install Galaxy roles: `ansible-galaxy install -r galaxy.yml` (in local trellis directory)
+2. Install Galaxy roles: `ansible-galaxy install -r galaxy.yml`
+
+</template>
+</CodeSwitcher>
+
+### Server
 
 Then there are two additional requirements for the remote server itself:
 
