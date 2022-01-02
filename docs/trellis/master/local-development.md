@@ -8,7 +8,7 @@ Development is handled by [Vagrant](https://www.vagrantup.com/) in Trellis. Our 
 
 1. Configure your site(s) based on the [WordPress Sites docs](wordpress-sites.md) and read the [development specific](wordpress-sites.md#development) ones.
 2. Make sure you've edited both `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault.yml`.
-3. Optionally configure the IP address at the top of the `vagrant.default.yml` to allow for multiple boxes to be run concurrently (default is `192.168.50.5`).
+3. Optionally configure the IP address at the top of the `vagrant.default.yml` to allow for multiple boxes to be run concurrently (default is `192.168.56.5`).
 4. Run `trellis up` from anywhere in your project (or `vagrant up` from your trellis directory, usually the `trellis/` subdirectory of your project).
 
 ::: warning Note
@@ -39,13 +39,35 @@ Re-provisioning is always assumed to be a safe operation. When you make changes 
 
 Run the following from your project's `trellis` directory:
 
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+```bash
+$ trellis provision development
+```
+
+</template>
+<template v-slot:manual>
+
 ```bash
 $ vagrant provision
 ```
+</template>
+</CodeSwitcher>
 
 You can also provision with specific tags to only run the relevant roles:
 
 Run the following from your project's `trellis` directory:
+
+<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
+<template v-slot:cli>
+
+```bash
+$ trellis provision --tags=users development
+```
+
+</template>
+<template v-slot:manual>
 
 ```bash
 $ SKIP_GALAXY=true ANSIBLE_TAGS=users vagrant provision
@@ -56,9 +78,11 @@ Notes on the commands:
 - `SKIP_GALAXY` saves some time because you already have those roles installed
 - `ANSIBLE_TAGS` runs only the relevant roles
 - `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
+</template>
+</CodeSwitcher>
 
 If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 
 ```bash
-$ vagrant reload --provision
+$ vagrant reload
 ```
