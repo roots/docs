@@ -80,4 +80,4 @@ for full details on this process.
 
 ### TablePlus
   
-In TablePlus, you need to manually select the private key from `.vagrant/machines/default/virtualbox/private_key`.
+For TablePlus and VirtualBox, you need to manually select the private key from `.vagrant/machines/default/virtualbox/private_key`.
