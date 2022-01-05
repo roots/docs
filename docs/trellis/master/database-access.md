@@ -79,6 +79,5 @@ post](https://discourse.roots.io/t/advice-for-trellis-db-open-with-vagrant-dev-b
 for full details on this process.
 
 ### TablePlus
-
-We're missing full instructions for now, but the process should be similar to
-Sequel Ace's above.
+  
+In TablePlus, you need to manually select the private key from `.vagrant/machines/default/virtualbox/private_key`.
