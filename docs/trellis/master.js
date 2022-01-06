@@ -19,7 +19,7 @@ module.exports = [
       'master/passwords',
       'master/database-access',
       'master/server-logs',
-      'master/vagrantfile',
+      'master/vagrant',
     ],
   },
   {

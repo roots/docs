@@ -1,13 +1,15 @@
 ---
-description: Before installing Trellis the requirements must be met. After installing Ansible, Virtualbox, and Vagrant, setup your Trellis directory structure.
+description: Trellis installation and new project instructions.
 ---
 
 # Installation
 
 Trellis relies on a few other software tools. Make sure all dependencies have been installed before moving on:
 
-- [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
 - [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
+- a Vagrant [provider](https://www.vagrantup.com/docs/providers):
+  - x86 (Intel based Macs, Linux, Windows PCs): [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
+  - Apple Silicon (M1 based Macs): See our [Parallels page](./vagrant.md#Parallels)
 - *Recommended* [trellis-cli](https://github.com/roots/trellis-cli)
 
 ::: tip Windows user?
