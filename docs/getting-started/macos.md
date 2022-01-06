@@ -107,20 +107,32 @@ $ npm install --global yarn
 
 Trellis relies on a few additional software packages to function. Install these packages:
 
-- VirtualBox >= 4.3.10
-- Vagrant >= 2.1.0
+- [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
+- a Vagrant [provider](https://www.vagrantup.com/docs/providers):
+  - Intel based Macs: [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
+  - Apple Silicon (M1) based Macs: [Parallels Pro](../trellis/master/vagrant.md) >= v17
 - Ansible >= 2.5.3
 
-### VirtualBox
+### VirtualBox (Intel Macs)
 
 Download and install the "OS X Hosts" version of VirtualBox from [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
+### Parallels (Apple Silicon (M1) Macs)
+See our [Vagrant docs](../trellis/master/vagrant.md) for details.
+
 ### Vagrant
 
-Install Vagrant from Homebrew:
+We recommend installing Vagrant through their official installers: [Vagrant
+downloads](https://www.vagrantup.com/downloads)
+
+We _don't recommend_ Homebrew for two reasons:
+1. brew automatically upgrades packages now by default which can cause issues
+2. it's very hard to downgrade to an older specific version of Vagrant if need be
+
+If you really want to use Homebrew to manage Vagrant, then run the following:
 
 ```bash
-$ brew install --cask vagrant
+$ brew install vagrant
 ```
 
 ### Ansible
