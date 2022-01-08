@@ -68,3 +68,15 @@
   to = "/trellis-cli/master/installation/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/sage/10.x/error-handling/"
+  to = "/acorn/2.x/error-handling/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sage/10.x/logging/"
+  to = "/acorn/2.x/logging/"
+  status = 301
+  force = true
