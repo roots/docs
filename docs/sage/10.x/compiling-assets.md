@@ -52,7 +52,7 @@ The configuration will generate the following files:
 - `customizer.js` - JavaScript for the WordPress Customizer.
 - `editor.js` - JavaScript for the admin editor, i.e. custom Gutenberg blocks.
 
-It will also copy any files in the `images` or `fonts` directories under `/resources/assets/` into the `dist` directory with the other compiled files, but does not optimize or compress them.
+It will also copy any files in the `images` or `fonts` directories under `/resources/assets/` into the `public` directory with the other compiled files, but does not optimize or compress them.
 
 ### Adding new styles or scripts
 
@@ -69,7 +69,7 @@ It will also copy any files in the `images` or `fonts` directories under `/resou
      .extract();
     ...
     ```
-   This will generate `/dist/scripts/example.js` when the site is built.
+   This will generate `/public/scripts/example.js` when the site is built.
 3) Add the new file to `/app/setup.php`:
     ```php
     add_action('wp_enqueue_scripts', function () {
@@ -184,7 +184,7 @@ Mix can automatically copy those assets, but you need to remove the following li
 If you want to know what that command does, read the Mix documentation on CSS [url rewriting](https://github.com/JeffreyWay/laravel-mix/blob/v5.0.4/docs/css-preprocessors.md#css-url-rewriting)
 :::
 
-4. Run `yarn build` (or `yarn build:production`) and all of your assets will be compiled into `dist`.
+4. Run `yarn build` (or `yarn build:production`) and all of your assets will be compiled into `public`.
 
 ### Additional examples
 
