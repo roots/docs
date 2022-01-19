@@ -15,7 +15,7 @@ subscription price of
 $99 USD.
 
 ::: tip
-If you'd like to support Roots, please [purchase Parallels Pro through our affiliate link](https://prf.hn/l/KzkNLZB">https://prf.hn/l/KzkNLZB)
+If you'd like to support Roots, please [purchase Parallels Pro through our affiliate link](https://prf.hn/l/KzkNLZB)
 :::
 
 Installation:
