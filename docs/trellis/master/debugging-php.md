@@ -33,13 +33,13 @@ While we default to installing Xdebug in development, installing it in any other
 
 For example, if there's an issue you're encountering in Production, but cannot reproduce in Development (aka, your Vagrant environment), it's likely the problem lies with something specific to your VPS provider.
 
-Duplicating your production environment and sanitizing the data using something like [WP Hammer](https://github.com/10up/wp-hammer) will allow you to debug your production environmment without affecting it. This is where `bin/xdebug-tunnel.sh` comes in.
+Duplicating your production environment and sanitizing the data using something like [WP Hammer](https://github.com/10up/wp-hammer) will allow you to debug your production environmment without affecting it. This is where trellis-cli's `xdebug-tunnel` commands comes in.
 
-### `bin/xdebug-tunnel.sh`: Xdebug + SSH tunnels
+### `trellis xdebug-tunnel`: Xdebug + SSH tunnels
 
 Xdebug gives a lot of visibility into your application that you do not want to give to anyone. Because of this, you want to restrict access to who is allowed to initiate a debugging session.
 
-The way we go about doing that is by creating a remote SSH tunnel from the VPS to your local computer. `bin/xdebug-tunnel.sh` makes it trivial to set up the connection by installing Xdebug if it is not already on the remote host as well as establishing the SSH tunnel between your server and your computer.
+The way we go about doing that is by creating a remote SSH tunnel from the VPS to your local computer. `trellis xdebug-tunnel` makes it trivial to set up the connection by installing Xdebug if it is not already on the remote host as well as establishing the SSH tunnel between your server and your computer.
 
 By default, Trellis configures Xdebug to look for a debugging session on the server's localhost port 9000:
 
@@ -49,14 +49,14 @@ xdebug_remote_host: localhost
 xdebug_remote_port: 9000
 ```
 
-Because your debugger is located on your computer and not the server, Xdebug would attempt to communicate with `localhost:9000` unsuccessfully and proceed with the request as normal. Using `bin/xdebug-tunnel.sh` creates a tunnel from the server's `localhost:9000` to your computer's `localhost:9000`, bridging the gap and allowing the two to communicate.
+Because your debugger is located on your computer and not the server, Xdebug would attempt to communicate with `localhost:9000` unsuccessfully and proceed with the request as normal. Using `trellis xdebug-tunnel open` creates a tunnel from the server's `localhost:9000` to your computer's `localhost:9000`, bridging the gap and allowing the two to communicate.
 
 ### Establishing the tunnel
 
 First, let's look at the command we'll be using to create the tunnel:
 
 ```bash
-$ ./bin/xdebug-tunnel.sh <action> <host>
+$ trellis xdebug-tunnel <action> <host>
 ```
 
 The argument `action` can be `open` or `close` and `host` is the hostname, IP, or inventory alias in your `hosts/<environment>` file.
@@ -78,7 +78,7 @@ some_inventory_hostname
 You would execute:
 
 ```bash
-$ ./bin/xdebug-tunnel.sh open some_inventory_hostname
+$ trellis xdebug-tunnel open some_inventory_hostname
 ```
 
 This script runs the `xdebug-tunnel.yml` playbook with the necessary variables to install Xdebug on the environment as well as establish the tunnel.
@@ -86,10 +86,10 @@ This script runs the `xdebug-tunnel.yml` playbook with the necessary variables t
 To close the tunnel, as well as disable Xdebug, run:
 
 ```bash
-$ ./bin/xdebug-tunnel.sh close some_inventory_hostname
+$ trellis xdebug-tunnel close some_inventory_hostname
 ```
 
-This will remove the `/etc/php/7.0/fpm/conf.d/20-xdebug.ini` symlink, effectively disabling it for that environment while leaving xdebug installed. It also closes the SSH connection.
+This will remove the `/etc/php/8.0/fpm/conf.d/20-xdebug.ini` symlink, effectively disabling it for that environment while leaving xdebug installed. It also closes the SSH connection.
 
 If you don't use inventory aliases in your host files, you can also use an ip address directly instead of the alias. For example, if your hosts file looks like this:
 
@@ -104,7 +104,7 @@ If you don't use inventory aliases in your host files, you can also use an ip ad
 You can do this:
 
 ```bash
-$ ./bin/xdebug-tunnel.sh open 12.34.56.78
+$ trellis xdebug-tunnel open 12.34.56.78
 ```
 
 You must specify the `host` exactly the same when opening and closing the tunnel. It would cause an error to open the tunnel with a `host` of `some_inventory_hostname` then close with a host of `12.34.56.78`. This is because the tunnel socket is created using the host parameter you pass:

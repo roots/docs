@@ -38,15 +38,9 @@ $ trellis deploy <environment>
 
 Run the following from your project's `trellis` directory:
 
-```sh
-$ ./bin/deploy.sh <environment> <domain>
+```bash
+$ ansible-playbook deploy.yml -e "site=<domain> env=<environment>"
 ```
-
-`deploy.sh` is a very simple Bash script which just runs the actual `ansible-playbook` command which can be a little annoying to type out.
-
-The actual command looks like this: `ansible-playbook deploy.yml -e "site=<domain> env=<environment>"`.
-
-You can always use this command itself since it can take any additional `ansible-playbook` options.
 
 </template>
 </CodeSwitcher>
@@ -199,12 +193,6 @@ $ trellis deploy <environment>
 <template v-slot:manual>
 
 Run the following from your project's `trellis` directory:
-
-```bash
-$ ./bin/deploy.sh production example.com
-```
-
-Or alternatively:
 
 ```bash
 $ ansible-playbook deploy.yml -e "site=example.com env=production"

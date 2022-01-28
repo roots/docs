@@ -70,7 +70,7 @@ $ trellis deploy <environment>
 Run the following from your project's `trellis` directory:
 
 ```bash
-$ ./bin/deploy.sh <environment> example.com
+$ ansible-playbook deploy.yml -e "site=<site name> env=<environment>"
 ```
 
 </template>
