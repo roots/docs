@@ -29,6 +29,7 @@ module.exports = {
       rel: 'stylesheet',
       type: 'text/css',
     }],
+    ['script', { src: 'https://b.roots.io/script.js', 'data-spa': 'auto', 'data-site': 'ZMCIAVOI', defer: true }],
     ['script', {}, `var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(66406668);`],
     ['script', { src: 'https://static.getclicky.com/js' }],
   ],
