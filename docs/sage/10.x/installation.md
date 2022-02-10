@@ -14,7 +14,7 @@ Sage 10 has a few system requirements necessary for development as well as produ
 
 If it is unclear to you whether the host you plan to use is compatible with Sage, you will need to ensure their server meets the following requirements:
 
-- WordPress >= 5.4
+- WordPress >= 5.9
 - PHP >= 7.4
 - BCMath PHP Extension
 - Ctype PHP Extension

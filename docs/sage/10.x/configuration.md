@@ -35,3 +35,12 @@ Also seen in `setup.php` is out of the box theme support for [Soil](https://root
 - Cleaner NavWalker for navigation menus
 - Prettier search URLs converting from `/?s=query` to `/search/query/`
 - Root relative URLs
+
+### `theme.json`
+
+Sage ships with a starter `theme.json` for you to start customizing.
+
+#### `theme.json` guides
+
+- https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/
+- https://fullsiteediting.com/lessons/adding-full-site-editing-features-to-classic-themes/
