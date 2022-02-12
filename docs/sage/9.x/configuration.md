@@ -23,7 +23,7 @@ See [theme assets](compiling-assets.md#theme-assets) for more on how these asset
 
 ### Soil
 
-We recommend using the [Soil](/plugins/soil) Plugin with every WordPress install for additional features:
+We recommend using the [Soil](https://roots.io/plugins/soil) Plugin with every WordPress install for additional features:
 
 - Load jQuery from the jQuery CDN*
 - Cleaner WordPress markup*

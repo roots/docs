@@ -5,7 +5,7 @@ Use this document If you are collaborating on, or taking over an existing theme.
 
 ## Getting started
 
-If you've never worked on a Sage project before, make sure your local development environment is configured correctly by following the [Getting Started guide(s)](/docs/getting-started/index.html).
+If you've never worked on a Sage project before, make sure your local development environment is configured correctly by following the [Getting Started guide(s)](../../getting-started/macos.md).
 
 ## Gathering information
 

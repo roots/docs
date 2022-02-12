@@ -58,7 +58,7 @@ Use the insecure private key inside the `.vagrant` folder. [See thread on Roots 
 
 ## Let's Encrypt SSL certificates
 
-See [Troubleshooting Let's Encrypt](ssl.md#troubleshooting-lets-encrypt).
+See [Troubleshooting Let's Encrypt](ssl.md#troubleshooting-let-s-encrypt).
 
 <hr>
 

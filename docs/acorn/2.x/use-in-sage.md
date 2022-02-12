@@ -69,7 +69,7 @@ In this case, the Composer is automatically associated with the view because the
 - The Composer class/file name should be a CamelCase version of the view's kebab-case name.
 - The Composer file should have the same directory path from its "root" as the view does from its "root". The Composer root is `app/View/Composers/` and the view root is `resources/views/`.
 
-For a more in-depth discussion of Composers and their interaction with Blades, see the [Composers](/acorn/2.x/blade/composer) section of these docs.
+For a more in-depth discussion of Composers and their interaction with Blades, see the [Composers](../../sage/10.x/composers.md) section of these docs.
 
 It's a little outdated (we've since renamed "View Composers" to just "Composers"), but this article also has some useful in-depth discussion of Composers: [Working With View Composers in Sage 10](https://roots.io/working-with-composers-in-sage-10/).
 

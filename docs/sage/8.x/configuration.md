@@ -13,13 +13,13 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 ```
 
-See [theme assets](theme-assets.md) for more on how these assets are built. `asset_path` is a helper function that returns versioned asset filenames from the `dist/` directory.
+See [theme assets](compiling-assets.md) for more on how these assets are built. `asset_path` is a helper function that returns versioned asset filenames from the `dist/` directory.
 
 ## Theme features
 
 ### Soil
 
-We recommend using the [Soil](/plugins/soil) Plugin with every WordPress install for additional features:
+We recommend using the [Soil](https://roots.io/plugins/soil) Plugin with every WordPress install for additional features:
 
 - Load jQuery from the jQuery CDN *
 - Cleaner WordPress markup *
