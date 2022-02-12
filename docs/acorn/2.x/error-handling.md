@@ -24,7 +24,7 @@ This should be set to `false` during production.
 
 ### Whoops
 
-When an exception gets thrown in the browser, it is passed to [whoops](#), an error handler framework. If you are familiar with Laravel, you will more than likely recognize the exception page prior to the adaption of Ignition.
+When an exception gets thrown in the browser, it is passed to [whoops](https://github.com/filp/whoops), an error handler framework. If you are familiar with Laravel, you will more than likely recognize the exception page prior to the adaption of Ignition.
 
 ### Reporting Exceptions
 

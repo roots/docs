@@ -10,7 +10,7 @@ The PHP code in Sage is namespaced, so make sure to [use namespaced functions an
 
 ### `src/setup.php`
 
-Enqueue stylesheets and scripts, register support for theme features with `add_theme_support`, register navigation menus and sidebars. See [Theme Configuration and Setup](theme-configuration-and-setup.md).
+Enqueue stylesheets and scripts, register support for theme features with `add_theme_support`, register navigation menus and sidebars. See [Theme Configuration and Setup](configuration.md).
 
 ### `src/admin.php`
 

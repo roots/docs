@@ -18,7 +18,7 @@ Trellis has features to make it as easy, cheap, and painless as possible to use 
 
 There are three supported certificate *providers* in Trellis:
 
-- [Let's Encrypt](#lets-encrypt)
+- [Let's Encrypt](#let-s-encrypt)
 - [Manual](#manual)
 - [Self-signed](#self-signed)
 

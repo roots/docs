@@ -13,7 +13,7 @@ Generate production ready assets with `yarn build:production`, which will build 
 
 ## Deploying Sage with Trellis
 
-If you use [Trellis](/trellis/), you can build your assets locally (or on a CI server), then copy them to the remote server during deployment. 
+If you use [Trellis](https://roots.io/trellis/), you can build your assets locally (or on a CI server), then copy them to the remote server during deployment. 
 [See the `build-before.yml` example hook](https://github.com/roots/trellis/blob/master/deploy-hooks/build-before.yml) in Trellis.
 
 ## Deploying Sage on Kinsta

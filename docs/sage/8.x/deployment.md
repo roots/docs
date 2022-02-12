@@ -9,7 +9,7 @@ To deploy a Sage theme you'll need to make sure two things are covered:
 
 Generate production ready assets with `yarn run build:production`, which will build your assets with versioned filenames.
 
-If you use [Trellis](/trellis/), you can build your assets locally, then copy them to the remote server during deployment. [See the `build-before.yml` example hook](https://github.com/roots/trellis/blob/master/deploy-hooks/build-before.yml) in Trellis.
+If you use [Trellis](https://roots.io/trellis/), you can build your assets locally, then copy them to the remote server during deployment. [See the `build-before.yml` example hook](https://github.com/roots/trellis/blob/master/deploy-hooks/build-before.yml) in Trellis.
 
 ### Additional resources
 

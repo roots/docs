@@ -30,7 +30,7 @@ Trellis stores passwords and other sensitive data in [encrypted vault files](vau
 
 ### Permission for provisioning and deployment
 
-If you need to [provision this project's remote servers](remote-server-setup.md) or [deploy the project](deploys.md) to staging or production, add your SSH keys to the necessary remote servers either by accessing the server directly, or by having someone who already has access [add your SSH keys to the Trellis configuration](ssh-keys.md) and re-provision the server.
+If you need to [provision this project's remote servers](remote-server-setup.md) or [deploy the project](deployments.md) to staging or production, add your SSH keys to the necessary remote servers either by accessing the server directly, or by having someone who already has access [add your SSH keys to the Trellis configuration](ssh-keys.md) and re-provision the server.
 
 ### Your site's development URL
 
