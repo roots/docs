@@ -27,7 +27,7 @@ Acorn's server requirements are minimal, and mostly come from WordPress and [Lar
 To install Acorn in a Bedrock environment, navigate to your Bedrock directory and run the following command:
 
 ```sh
-$ composer require roots/acorn v2.0.0-beta.9.1
+$ composer require roots/acorn
 ```
 
 We recommend adding Acorn's `postAutoloadDump` function to Composer's `post-autoload-dump` event in `composer.json`:
