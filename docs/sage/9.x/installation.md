@@ -26,7 +26,7 @@ $ composer create-project roots/sage your-theme-name 9.x-dev
 ```
 
 ::: warning
-At this time we recommend using either [Sage 10](./sage/10.x/installation.md), or the latest development version of Sage 9.
+At this time we recommend using either [Sage 10](../10.x/installation.md), or the latest development version of Sage 9.
 :::
 
 You will have the option to define theme meta information (name, URI, description, version, author) and choose a CSS framework.
