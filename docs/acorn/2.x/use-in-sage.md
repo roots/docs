@@ -76,18 +76,3 @@ It's a little outdated (we've since renamed "View Composers" to just "Composers"
 ## Asset Handling
 
 Acorn provides a [system for handling various assets](https://github.com/roots/acorn/tree/main/src/Roots/Acorn/Assets), but in most cases you'll be using it to handle things like CSS, JS, and image files. The asset system integrates with Sage's build process to allow easy access to hashed assets via their original filename. 
-
-```php
-wp_enqueue_script('sage/vendor.js', 
-  // Get the potentially-hashed URL for `scripts/vendor.js`.
-  asset('scripts/vendor.js')->uri(), 
-['jquery'], null, true);
-
-wp_add_inline_script('sage/vendor.js', 
-  // Get the contents of `scripts/manifest.js`.
-  asset('scripts/manifest.js')->contents(), 
-'before');
-```
-
-This will work for any file output by Sage's build process.
-
