@@ -12,12 +12,22 @@ Make sure all dependencies have been installed before moving on:
 - [Node.js](http://nodejs.org/) >= 8.0.0
 - [Yarn](https://yarnpkg.com/en/docs/install)
 
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+Install the latest Sage 9 release using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
 ```bash
 # @ app/themes/ or wp-content/themes/
 $ composer create-project roots/sage your-theme-name
 ```
+
+To install the latest development version of Sage 9, add 9.x-dev to the end of the command:
+
+```bash
+$ composer create-project roots/sage your-theme-name 9.x-dev
+```
+
+::: warning
+At this time we recommend using either [Sage 10](./sage/10.x/installation.md), or the latest development version of Sage 9.
+:::
 
 You will have the option to define theme meta information (name, URI, description, version, author) and choose a CSS framework.
 
