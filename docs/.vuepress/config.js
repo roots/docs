@@ -74,6 +74,7 @@ module.exports = {
         ]
       },
       { text: 'Support', link: 'https://discourse.roots.io' },
+      { text: 'Sponsor', link: 'https://github.com/sponsors/roots' },
     ],
 
     sidebar: {
