@@ -27,6 +27,7 @@ module.exports = [
       '10.x/theme-templates',
       '10.x/localization',
       '10.x/compiling-assets',
+      '10.x/css-frameworks',
     ],
   },
   {
