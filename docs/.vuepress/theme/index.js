@@ -26,11 +26,14 @@ module.exports = (options, context) => ({
       return;
     }
 
+    const page_category = category(page);
     const meta = merge({
       image: page.frontmatter.image && ((themeConfig.domain || '') + page.frontmatter.image),
       locale: 'en_US',
       type: 'article',
-      title: `${category(page)}: ${page.title} | ${siteConfig.title}`,
+      title: page_category
+        ? `${page_category}: ${page.title} | ${siteConfig.title}`
+        : `${page.title} | ${siteConfig.title}`,
       description: page.frontmatter.description,
       excerpt: page.frontmatter.excerpt,
       url: (themeConfig.domain || siteConfig.base) + page.path,

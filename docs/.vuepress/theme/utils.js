@@ -26,9 +26,13 @@ const route = page => {
 const category = page => {
   const { startCase, toLower } = require('lodash');
 
-  const category = startCase(
-    toLower(route(page).category)
-  );
+  let category = route(page).category;
+
+  if (! category) {
+    return null;
+  }
+
+  category = startCase(toLower(category));
 
   if (!route(page).current || route(page).version === 'master') {
     return category;
