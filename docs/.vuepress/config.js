@@ -66,10 +66,11 @@ module.exports = {
       { text: 'Getting Started', link: '/getting-started/' },
       {
         text: 'Projects', ariaLabel: 'Projects Menu', link: '/', items: [
-          { text: 'Sage', link: '/sage/' },
-          { text: 'Bedrock', link: '/bedrock/' },
-          { text: 'Trellis', link: '/trellis/' },
           { text: 'Acorn', link: '/acorn/' },
+          { text: 'Bedrock', link: '/bedrock/' },
+          { text: 'Bud', link: 'https://bud.js.org/' },
+          { text: 'Sage', link: '/sage/' },
+          { text: 'Trellis', link: '/trellis/' },
         ]
       },
       { text: 'Support', link: 'https://discourse.roots.io' },
@@ -82,7 +83,7 @@ module.exports = {
       '/sage/9.x': require('../sage/9.x'),
       '/sage/10.x': require('../sage/10.x'),
       '/acorn/2.x': require('../acorn/2.x'),
-      '/': require('./sidebar'),
+      '/getting-started': require('./sidebar'),
     },
 
     versions: {
