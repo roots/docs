@@ -73,7 +73,7 @@ import 'bootstrap';
 
 In your theme's `resources/styles` directory rename `app.css` to `app.scss` and rename `editor.css` to `editor.scss`.
 
-Open your theme's `resources/styles/app.css` and add the following lines:
+Open your theme's newly renamed `resources/styles/app.scss` and add the following lines:
 
 ```css
 @import "bootstrap";
