@@ -47,6 +47,7 @@ Edit your `~/.ssh/config` file and add the following lines:
 
 ```bash
 Host *
+  IgnoreUnknown UseKeychain 
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
