@@ -6,7 +6,6 @@ export default ({ router }) => {
     { path: '/bedrock/', redirect: '/bedrock/master/installation/' },
     { path: '/examples/', redirect: '/examples/roots-example-project/' },
     { path: '/getting-started/', redirect: '/getting-started/macos/' },
-    { path: '/', redirect: '/getting-started/macos/' },
     { path: '/sage/', redirect: '/sage/10.x/installation/' },
     { path: '/sage/8.x', redirect: '/sage/8.x/installation/' },
     { path: '/sage/9.x', redirect: '/sage/9.x/installation/' },

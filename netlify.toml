@@ -10,15 +10,9 @@
   force = true
 
 [[redirects]]
-  from = "/"
-  to = "/getting-started/macos/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/acorn/"
   to = "/acorn/2.x/installation/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
