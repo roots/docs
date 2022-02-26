@@ -1,5 +1,5 @@
 ---
-description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over production theme assets built with `yarn build:production`.
+description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over theme assets built with `yarn build`.
 ---
 
 # Deployment
@@ -7,9 +7,64 @@ description: To deploy a Sage theme you'll need to run `composer install` on the
 To deploy a Sage theme you'll need to make sure two things are covered:
 
 1. Run `composer install` from the theme directory on the remote server
-2. Copy over production theme assets (the `public/` folder)
+2. Copy over built theme assets (the `public/` folder)
 
-Generate production ready assets with `yarn build:production`, which will build your assets with versioned filenames to the `public/` folder.
+Generate production ready assets with `yarn build`.
+
+## Server Requirements
+
+- WordPress >= 5.9
+- PHP >= 7.4
+- BCMath PHP Extension
+- Ctype PHP Extension
+- Fileinfo PHP Extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+
+## Server Configuration
+
+::: tip Using Trellis?
+If you are using Trellis to provision your production environment, you can **skip** this section.
+:::
+
+### Securing Blade Templates
+
+Due to the nature of WordPress, any file residing in the theme folder is publicly accessible. By default, webservers will return any requests made to a `*.blade.php` template as plain-text.
+
+**This can create an opening for potential security riskes as well as unwanted snooping.**
+
+To prevent this from happening, we will need to add configuration to the web server to deny access to the file extension.
+
+#### Apache
+
+If you are using Apache, add the following to your virtual host configuration or the `.htaccess` file at the root of your web application:
+
+```php
+<FilesMatch ".+\.(blade\.php)$">
+    # Apache 2.4
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+
+    # Apache 2.2
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+```
+
+#### Nginx
+
+If you are using Nginx, add the following to your site configuration before the final location directive:
+
+```php
+location ~* \.(blade\.php)$ {
+    deny all;
+}
+```
 
 ## Deploying Sage with Trellis
 
@@ -24,7 +79,6 @@ If you use [Trellis](https://roots.io/trellis/), you can build your assets local
 
 We do not officially recommend or support this and suggest using a WordPress host that supports SSH, Git, Composer, and the latest PHP versions.
 There is no current guidance for how to run Sage 10 on WP Engine, but the [Sage 9 on WP Engine](https://discourse.roots.io/t/sage-9-on-wpengine/9090) thread on Roots Discourse may point you in the right direction.
-
 
 ## Deploying Sage via FTP
 
