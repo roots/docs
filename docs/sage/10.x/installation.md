@@ -37,7 +37,7 @@ Sage requires Acorn but doesn't ship with it included. This is to give you the f
 
 ::: tab "Install Acorn with Composer"
 
-Install Sage on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
+Install Acorn on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
 
 ```sh
 $ composer require roots/acorn
