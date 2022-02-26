@@ -19,17 +19,17 @@ Sage is a [WordPress starter theme](https://roots.io/sage/).
 
 ## Getting Started
 
-Sage relies on Node.js based tools to manage dependencies and build assets. We recommend using [nvm](https://github.com/creationix/nvm) to install and manage Node.js. We also recommend using [Yarn](https://yarnpkg.com/).
+Sage relies on Node.js based tools to manage dependencies and build assets. We recommend using [nvm](https://github.com/creationix/nvm) to install and manage Node.js. We also recommend using [Yarn](https://yarnpkg.com/). [After installing nvm](https://github.com/nvm-sh/nvm#installing-and-updating):
 
 ```bash
-# Install the latest LTS version of Node.js
+# Install the latest Node.js LTS release
 $ nvm install --lts
 
 # Globally install Yarn
 $ npm install --global yarn
 ```
 
-## Acorn
+## Installing Acorn
 
 Sage requires Acorn but doesn't ship with it included. This is to give you the flexibility to include it in a way that works best for your environment.
 
