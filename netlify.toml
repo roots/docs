@@ -28,12 +28,6 @@
   force = true
 
 [[redirects]]
-  from = "/getting-started/"
-  to = "/getting-started/macos/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/sage/"
   to = "/sage/10.x/installation/"
   status = 302
@@ -78,5 +72,29 @@
 [[redirects]]
   from = "/acorn/2.x/what-is-acorn/"
   to = "/acorn/2.x/installation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/getting-started/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/getting-started/macos/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/getting-started/ubuntu-linux/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/getting-started/windows/"
+  to = "/"
   status = 301
   force = true

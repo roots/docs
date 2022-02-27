@@ -2,10 +2,6 @@
 
 The majority of the Sage documentation focuses on setting up new themes. Use this document If you are collaborating on, or taking over an existing theme.
 
-## Getting started
-
-If you've never worked on a Sage project before, make sure your local development environment is configured by following the [Getting Started guide(s)](https://docs.roots.io/getting-started/index.html).
-
 ## Gathering information
 
 To work on an existing Sage project you need to know what version of Sage you're working with. You can usually find this by checking the `package.json` file:

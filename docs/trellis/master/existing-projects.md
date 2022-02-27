@@ -6,10 +6,6 @@ The majority of the Trellis documentation focuses on setting up new projects. If
 This documentation presumes your project follows the [Roots Example Project](https://github.com/roots/roots-example-project.com) recommendations.
 :::
 
-## Getting Started
-
-If you've never worked on a Trellis project before, make sure your local development environment is configured by following the [Getting Started guide(s)](../../getting-started/macos.md).
-
 ## Gather Information
 
 To work on an existing Trellis project you need the following:

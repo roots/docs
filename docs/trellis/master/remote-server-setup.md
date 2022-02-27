@@ -80,7 +80,7 @@ $ ansible-playbook deploy.yml -e "site=<site name> env=<environment>"
 
 ### Dependencies
 
-The Trellis [installation instructions](installation.md) are optimized for a quick start using Vagrant. For deploying and provisioning remote servers, we need to ensure all of Trellis' dependencies (mainly Ansible) are installed on your local/host machine ([except for Windows users](../../getting-started/windows.md)).
+The Trellis [installation instructions](installation.md) are optimized for a quick start using Vagrant. For deploying and provisioning remote servers, we need to ensure all of Trellis' dependencies (mainly Ansible) are installed on your local/host machine.
 
 <CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
 <template v-slot:cli>
