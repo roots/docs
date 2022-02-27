@@ -74,3 +74,9 @@
   to = "/acorn/2.x/logging/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/acorn/2.x/what-is-acorn/"
+  to = "/acorn/2.x/installation/"
+  status = 301
+  force = true
