@@ -4,17 +4,51 @@ description: Trellis installation and new project instructions.
 
 # Installation
 
+[[toc]]
+
+## What is Trellis?
+
+Trellis is a [WordPress LEMP stack](https://roots.io/trellis/).
+
+### Why use Trellis?
+
+You’ll get a complete WordPress server running all the software you need configured according to the best practices. All of this is powered by Ansible for configuration management. You don’t have to use brittle and confusing Bash scripts or worry about commands you found to copy and paste.
+
+- Local development environment with Vagrant
+- High-performance production servers
+- Zero-downtime deploys for your [Bedrock](https://roots.io/bedrock/)-based WordPress sites
+- [trellis-cli](https://github.com/roots/trellis-cli) for easier management
+
+## Requirements
+
 Trellis relies on a few other software tools. Make sure all dependencies have been installed before moving on:
 
 - [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0, < 2.2.19
 - a Vagrant [provider](https://www.vagrantup.com/docs/providers):
   - x86 (Intel based Macs, Linux, Windows PCs): [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
   - Apple Silicon (M1 based Macs): See our [Parallels page](vagrant.md#parallels-apple-silicon-m1-macs)
-- *Recommended* [trellis-cli](https://github.com/roots/trellis-cli)
+- [trellis-cli](https://github.com/roots/trellis-cli)
 
-::: tip Windows user?
-[Read the Windows getting started docs](../../getting-started/windows.md) for slightly different installation instructions.
+## Getting started
+
+:::: tabs
+
+::: tab "Getting started on macOS"
+#### NFS
+
+For macOS Catalina or later, you will have to grant full disk access to `/sbin/nfsd`.
+
+1. Navigate to **System Preferences** → **Security & Privacy** → **Privacy** → **Full Disk Access**
+2. Click `+`
+3. Press <kbd>Command</kbd> <kbd>Shift</kbd> <kbd>G</kbd> at the same time.
+4. Enter the `/sbin` directory.
+5. Double click the `nfsd` file.
 :::
+
+::: tab "Getting started on Windows"
+**All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+:::
+::::
 
 ## Create a project
 

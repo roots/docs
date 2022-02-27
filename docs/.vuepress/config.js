@@ -64,7 +64,6 @@ module.exports = {
     },
 
     nav: [
-      { text: 'Getting Started', link: '/getting-started/' },
       {
         text: 'Projects', ariaLabel: 'Projects Menu', link: '/', items: [
           { text: 'Acorn', link: '/acorn/' },
@@ -85,7 +84,6 @@ module.exports = {
       '/sage/9.x': require('../sage/9.x'),
       '/sage/10.x': require('../sage/10.x'),
       '/acorn/2.x': require('../acorn/2.x'),
-      '/getting-started': require('./sidebar'),
     },
 
     versions: {

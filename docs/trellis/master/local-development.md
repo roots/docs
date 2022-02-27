@@ -25,10 +25,6 @@ Composer and WP-CLI commands need to be run on the virtual machine for any post-
 
 Mounting an encrypted folder is not possible with Trellis due to an issue with NFS.
 
-::: tip Windows user?
-Windows users have a slightly different workflow. See the [Windows getting started docs](../../getting-started/windows.md).
-:::
-
 ## WordPress installation
 
 Trellis installs WordPress on your first `vagrant up` with `admin` as the default user. You can override this by defining `admin_user`, as noted in the [WordPress sites options](wordpress-sites.md#options).
