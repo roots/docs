@@ -29,26 +29,9 @@ Trellis relies on a few other software tools. Make sure all dependencies have be
   - Apple Silicon (M1 based Macs): See our [Parallels page](vagrant.md#parallels-apple-silicon-m1-macs)
 - [trellis-cli](https://github.com/roots/trellis-cli)
 
-## Getting started
-
-:::: tabs
-
-::: tab "Getting started on macOS"
-#### NFS
-
-For macOS Catalina or later, you will have to grant full disk access to `/sbin/nfsd`.
-
-1. Navigate to **System Preferences** → **Security & Privacy** → **Privacy** → **Full Disk Access**
-2. Click `+`
-3. Press <kbd>Command</kbd> <kbd>Shift</kbd> <kbd>G</kbd> at the same time.
-4. Enter the `/sbin` directory.
-5. Double click the `nfsd` file.
-:::
-
-::: tab "Getting started on Windows"
+::: warning Note for Windows users
 **All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 :::
-::::
 
 ## Create a project
 
