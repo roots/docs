@@ -1,5 +1,5 @@
 ---
-description: Acorn allows Laravel components to be used in WordPress plugins and themes.
+description: Install Acorn by running `composer require roots/acorn` to start using Laravel components in WordPress.
 ---
 
 # Installation
