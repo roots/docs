@@ -98,3 +98,21 @@
   to = "/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/trellis-cli/master/installation/"
+  to = "/trellis/master/installation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trellis-cli/master/shell-integration/"
+  to = "/trellis/master/installation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trellis-cli/master/virtualenv/"
+  to = "/trellis/master/installation/"
+  status = 301
+  force = true
