@@ -10,7 +10,6 @@ module.exports = [
   {
     title: 'The Basics',
     children: [
-      '2.x/what-is-acorn',
       '2.x/error-handling',
       '2.x/logging',
       '2.x/use-in-sage',
