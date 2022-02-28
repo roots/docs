@@ -3,22 +3,21 @@ description: Everything in Trellis is built around the concept of "sites". Trell
 ---
 # WordPress Sites
 
-::: tip Note
-If you used `trellis-cli` to create your project these values will already be set.
-:::
-
-Now that you have Trellis' requirements installed and a local project set up, the next thing to do is configure a WordPress site.
-
-Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support one or more WordPress sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc.
+Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support one or more WordPress sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc based on the sites configuration.
 
 These sites are configured in YAML files for each environment such as `group_vars/development/wordpress_sites.yml`.
 
 There are two components and places to configure sites:
 
-- Normal settings in `group_vars/development/wordpress_sites.yml`
+- Basic settings in `group_vars/development/wordpress_sites.yml`
 - Passwords/secrets in `group_vars/development/vault.yml`
 
-## Normal settings
+::: tip Note
+If you used Trellis CLI to create your project, the basic configuration settings
+will already be set for your main site.
+:::
+
+## Site configuration
 
 `wordpress_sites` is a top-level dictionary used to define all the sites you want. Here's an absolute bare-minimum site as an example for development:
 
@@ -40,7 +39,7 @@ wordpress_sites:
 
 Each site starts with a "key" (`example.com` in this case). Trellis uses the key internally as the name of the site and as a default value in a lot of variables. We recommend naming your sites after their domain so it's descriptive.
 
-Nested under the name/key are the site's variables which are for that site only. You only need to define a variable/setting if you want to overwrite the default value which can be found below.
+Nested under the name/key are the site specific configuration settings. You only need to define a variable/setting if you want to overwrite the default value which can be found below.
 
 ## Passwords/secrets
 
