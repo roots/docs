@@ -39,12 +39,4 @@ module.exports = [
       '10.x/components',
     ],
   },
-  {
-    title: 'Packages',
-    children: [
-      '10.x/installing-packages',
-      '10.x/package-development',
-      '10.x/available-packages',
-    ],
-  },
 ]

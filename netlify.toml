@@ -116,3 +116,21 @@
   to = "/trellis/master/installation/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/sage/10.x/installing-packages/"
+  to = "/acorn/2.x/installing-packages/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sage/10.x/available-packages/"
+  to = "/acorn/2.x/available-packages/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sage/10.x/package-development/"
+  to = "/acorn/2.x/package-development/"
+  status = 301
+  force = true

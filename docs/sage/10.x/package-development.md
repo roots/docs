@@ -1,5 +1,0 @@
-# Package Development
-
-[[toc]]
-
-## Introduction
