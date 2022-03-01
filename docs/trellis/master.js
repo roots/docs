@@ -4,7 +4,6 @@ module.exports = [
     collapsable: false,
     children: [
       'master/installation',
-      'master/existing-projects',
     ],
   },
   {
@@ -15,11 +14,12 @@ module.exports = [
       'master/local-development',
       'master/remote-server-setup',
       'master/deployments',
-      'master/multisite',
       'master/passwords',
       'master/database-access',
       'master/server-logs',
+      'master/multisite',
       'master/vagrant',
+      'master/existing-projects',
     ],
   },
   {
@@ -36,6 +36,7 @@ module.exports = [
     title: 'Digging Deeper',
     collapsable: false,
     children: [
+      'master/ansible',
       'master/composer-http-basic-authentication',
       'master/mail',
       'master/nginx-includes',
@@ -47,6 +48,7 @@ module.exports = [
     title: 'Troubleshooting',
     collapsable: false,
     children: [
+      'master/python',
       'master/troubleshooting',
       'master/debugging-php',
     ],
