@@ -20,6 +20,7 @@ module.exports = {
     'code-switcher': {},
     'check-md': {},
     'tabs': {},
+    'authors': {},
   },
 
   head: [

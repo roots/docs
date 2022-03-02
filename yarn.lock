@@ -7723,6 +7723,13 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
+vuepress-plugin-authors@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/vuepress-plugin-authors/-/vuepress-plugin-authors-0.0.2.tgz#f3442b3ebb330e0020b964118cc978dcb8da6c9d"
+  integrity sha512-07opP9BM323RPnBnZMGdEV2bv/ulswP68iBeC3ml4HjsxTjMfQtLNSTynBtsgUaycS9BEpkh7xXEpLcnMVUfIA==
+  dependencies:
+    cross-spawn "^6.0.5"
+
 vuepress-plugin-canonical@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/vuepress-plugin-canonical/-/vuepress-plugin-canonical-1.0.0.tgz"
