@@ -1,3 +1,4 @@
+@import 'common/fonts';
 @import 'tabs';
 
 body {
@@ -218,4 +219,11 @@ body {
       }
     }
   }
+}
+
+kbd,
+.line-number,
+pre,
+code {
+  font-family: "dm", monospace !important;
 }
