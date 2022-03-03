@@ -30,7 +30,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          '"Work Sans"',
+          '"Public Sans"',
           'system-ui',
           '-apple-system',
           'BlinkMacSystemFont',
