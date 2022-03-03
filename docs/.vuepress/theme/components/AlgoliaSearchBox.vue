@@ -15,47 +15,43 @@
 <script>
 export default {
   name: 'AlgoliaSearchBox',
-
   props: ['options'],
-
   data () {
     return {
       placeholder: undefined
     }
   },
-
   watch: {
-    $lang (newValue) {
+    $page (newValue) {
       this.update(this.options, newValue)
     },
-
     options (newValue) {
-      this.update(newValue, this.$lang)
+      this.update(newValue, this.$page)
     }
   },
-
   mounted () {
-    this.initialize(this.options, this.$lang)
+    this.initialize(this.options, this.$page)
     this.placeholder = this.$site.themeConfig.searchPlaceholder || ''
   },
-
   methods: {
-    initialize (userOptions, lang) {
+    initialize (userOptions, page) {
       Promise.all([
         import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.js'),
         import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.css')
       ]).then(([docsearch]) => {
         docsearch = docsearch.default
         const { algoliaOptions = {}} = userOptions
+        let area = window.location.pathname.split('/')[1]
+
         docsearch(Object.assign(
           {},
           userOptions,
           {
             inputSelector: '#algolia-search-input',
-            // #697 Make docsearch work well at i18n mode.
+            debug: true,
             algoliaOptions: {
               ...algoliaOptions,
-              facetFilters: [`lang:${lang}`].concat(algoliaOptions.facetFilters || [])
+              facetFilters: [`area:${area}`].concat(algoliaOptions.facetFilters || [])
             },
             handleSelected: (input, event, suggestion) => {
               const { pathname, hash } = new URL(suggestion.url)
@@ -67,10 +63,9 @@ export default {
         ))
       })
     },
-
-    update (options, lang) {
+    update (options, page) {
       this.$el.innerHTML = '<input id="algolia-search-input" class="search-query">'
-      this.initialize(options, lang)
+      this.initialize(options, page)
     }
   }
 }
@@ -132,7 +127,6 @@ export default {
     .ds-cursor .algolia-docsearch-suggestion--content
       background-color #e7edf3 !important
       color $textColor
-
 @media (min-width: $MQMobile)
   .algolia-search-wrapper
     .algolia-autocomplete
@@ -149,7 +143,6 @@ export default {
           vertical-align top
         .ds-dropdown-menu
           min-width 515px !important
-
 @media (max-width: $MQMobile)
   .algolia-search-wrapper
     .ds-dropdown-menu
@@ -168,5 +161,4 @@ export default {
       width 5px
       margin -3px 3px 0
       vertical-align middle
-
 </style>
