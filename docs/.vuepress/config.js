@@ -1,3 +1,5 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
 module.exports = {
   title: 'Roots Documentation',
   base: '/',
@@ -97,5 +99,18 @@ module.exports = {
 
   extraWatchFiles: [
     '.vuepress/theme',
-  ]
+  ],
+
+  devServer: {
+    proxy: {
+      '/discourse-lookup-username.php': {
+        target: 'https://roots.io',
+        changeOrigin: true,
+        secure: false,
+        headers: {
+          'Connection': 'keep-alive'
+        },
+      }
+    }
+  }
 }
