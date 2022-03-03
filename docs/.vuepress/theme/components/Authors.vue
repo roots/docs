@@ -3,12 +3,26 @@
     <p>Page authors:</p>
     <ul>
       <li v-for="author in $page.authors">
-        <img
-          :alt="author.username"
-          :key="author.email"
-          :src="'https://www.gravatar.com/avatar/' + md5(author.email)"
-        />
-        <span v-text="author.username"></span>
+        <template v-if="author.discourse">
+          <a :href="'https://discourse.roots.io/u/' + author.discourse">
+            <img
+              :alt="author.username"
+              :key="author.email"
+              :src="'https://www.gravatar.com/avatar/' + md5(author.email)"
+            />
+            <span v-text="author.username"></span>
+          </a>
+        </template>
+        <template v-else>
+          <div>
+            <img
+              :alt="author.username"
+              :key="author.email"
+              :src="'https://www.gravatar.com/avatar/' + md5(author.email)"
+            />
+            <span v-text="author.username"></span>
+          </div>
+        </template>
       </li>
     </ul>
   </div>
@@ -66,6 +80,8 @@ export default {
               // console.log(this.$page.authors)
             }
           })
+
+          this.$forceUpdate()
         })();
       })
     }
@@ -82,6 +98,11 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+}
+.page-authors div,
+.page-authors a {
+  display: flex;
+  align-items: center;
 }
 .page-authors img {
   border-radius: 50%;
