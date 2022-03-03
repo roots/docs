@@ -160,10 +160,6 @@ body {
       @apply .my-2 .mx-0;
     }
 
-    code {
-      @apply .text-brand-500;
-    }
-
     div[class*="language-"] {
       @apply .bg-white .shadow .border .my-6;
 
