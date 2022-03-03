@@ -58,8 +58,8 @@ export default {
         })
       })
 
-      // let url = `https://roots.io/discourse-lookup-username.php`
-      let url = `/discourse-lookup-username.php`
+      let url = `https://roots.io/discourse-lookup-username.php`
+      // let url = `/discourse-lookup-username.php`
       authors.forEach((author, index) => {
         (async () => {
           let response = await axios({
@@ -76,8 +76,6 @@ export default {
             if (discourse.username) {
               author.discourse = discourse.username
               this.$page.authors[index].discourse = discourse.username
-
-              // console.log(this.$page.authors)
             }
           })
 
