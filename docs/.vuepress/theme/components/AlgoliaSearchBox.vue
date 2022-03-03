@@ -14,11 +14,23 @@
 
 <script>
 export default {
+  name: 'AlgoliaSearchBox',
+
   props: ['options'],
 
-  data() {
+  data () {
     return {
       placeholder: undefined
+    }
+  },
+
+  watch: {
+    $lang (newValue) {
+      this.update(this.options, newValue)
+    },
+
+    options (newValue) {
+      this.update(newValue, this.$lang)
     }
   },
 
@@ -41,20 +53,15 @@ export default {
           {
             inputSelector: '#algolia-search-input',
             // #697 Make docsearch work well at i18n mode.
-            algoliaOptions: {},
-            // 'facetFilters': [`area:${area}`].concat(algoliaOptions.facetFilters || [])
+            algoliaOptions: {
+              ...algoliaOptions,
+              facetFilters: [`lang:${lang}`].concat(algoliaOptions.facetFilters || [])
+            },
             handleSelected: (input, event, suggestion) => {
-              // MODIFICATION_FROM_THEME - old
-              // this.$router.push(new URL(suggestion.url).pathname)
-              // issue: this will redirect the page with duplicate site base
-              // MODIFICATION_FROM_THEME - new
-              let { pathname, hash } = new URL(suggestion.url)
-              const baseUrl = this.$site.base;
-              if (baseUrl && pathname.substr(0, baseUrl.length) === baseUrl) {
-                pathname = pathname.substr(baseUrl.length - 1)
-              }
-              this.$router.push(`${pathname}${hash}`)
-              // MODIFICATION_FROM_THEME - end
+              const { pathname, hash } = new URL(suggestion.url)
+              const routepath = pathname.replace(this.$site.base, '/')
+              const _hash = decodeURIComponent(hash)
+              this.$router.push(`${routepath}${_hash}`)
             }
           }
         ))
@@ -64,16 +71,6 @@ export default {
     update (options, lang) {
       this.$el.innerHTML = '<input id="algolia-search-input" class="search-query">'
       this.initialize(options, lang)
-    }
-  },
-
-  watch: {
-    $lang (newValue) {
-      this.update(this.options, newValue)
-    },
-
-    options (newValue) {
-      this.update(newValue, this.$lang)
     }
   }
 }
@@ -121,10 +118,6 @@ export default {
         font-weight 600
         margin-bottom 0
         color $textColor
-      .aa-suggestion-title-separator
-        display inline-block
-        margin-left 3px
-        margin-right 3px
       .algolia-docsearch-suggestion--subcategory-column
         vertical-align top
         padding 5px 7px 5px 5px
