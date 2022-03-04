@@ -31,7 +31,7 @@ These would need to be created manually
 A Component in action in a Blade template will look something like this:
 
 ```html
-<x-example-component title="Example Component" :image_id="$image"/>
+<x-example-component title="Example Component" :image-id="$image"/>
 ```
 
 The template for that Component might look like this:
@@ -57,21 +57,21 @@ class ExampleComponent extends Component
     public $title;
     public $imageElement;
 
-    protected $image_id;
+    protected $imageId;
 
-    public function __construct($title, $image_id = null) {
+    public function __construct($title, $imageId = null) {
         $this->title = $title;
-        $this->image_id = $image_id;
+        $this->imageId = $imageId;
         $this->imageElement = $this->getImage();
     }
 
     protected function getImage()
     {
-        if (!is_numeric($this->image_id)) {
+        if (!is_numeric($this->imageId)) {
             return false;
         }
         
-        return wp_get_attachment_image($this->image_id, 'medium_large');
+        return wp_get_attachment_image($this->imageId, 'medium_large');
     }
 }
 ```
@@ -79,6 +79,12 @@ class ExampleComponent extends Component
 ## Argument and attribute names
 
 The names of the arguments in the definition of your Component's `__construct()` method must match the names of the attributes you use to pass data to your Component tag.
+
+:::warning Note
+Component constructor arguments should be specified using `camelCase`, while `kebab-case` should be used when referencing the argument names in your HTML attributes. [Laravel documentation](https://laravel.com/docs/9.x/blade#casing)
+:::
+
+
 In the above example
 ```html
 <x-example-component title="A Component"/>
@@ -92,8 +98,8 @@ will throw an error.
 The attributes used to pass data to your Component tag can be in any order, so long as the names are correct:
 
 ```html
-<x-example-component title="The Title" :image_id="$image"/>
-<x-example-component :image_id="$image" title="The Title"/>
+<x-example-component title="The Title" :image-id="$image"/>
+<x-example-component :image-id="$image" title="The Title"/>
 ```
 
 These are equivalent.
