@@ -76,3 +76,26 @@ To install the latest development version of Sage, add `dev-main` to the end of 
 ```sh
 $ composer create-project roots/sage your-theme-name dev-main
 ```
+
+## Build assets
+
+You must build theme assets in order to access your site. Failing to build the assets will result in the error:
+
+```
+The manifest [/path/to/sage/public/manifest.json] cannot be found.
+```
+
+### Running the first build
+
+- Run `yarn` from the theme directory to install dependencies
+- Update `bud.config.js` with your local dev URL
+- `yarn build` — Compile assets
+
+::: warning Local dev on VMs
+If your local dev environment is on a virtual machine then you will want to remove the last line of the Bud config:
+
+```diff
+# @ bud.config.js
+-.serve('http://example.test:3000');
+```
+:::
