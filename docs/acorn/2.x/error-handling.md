@@ -12,7 +12,7 @@ When working in a development environment, Acorn automatically registers an exce
 
 ## Configuration
 
-The `debug` opion in your `config/app.php` is solely responsible for whether or not an exception is handled by Acorn. By default, this option is set to respect the value of `wp_get_environment_type() === 'development'`.
+The `debug` option in your `config/app.php` is solely responsible for whether or not an exception is handled by Acorn. By default, this option is set to respect the value of `wp_get_environment_type() === 'development'`.
 
 During local development, it is highly advised to ensure this variable is set to `true` to properly render exceptions thrown by Blade views and other errors further down the stack.
 
