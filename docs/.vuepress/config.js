@@ -74,7 +74,7 @@ module.exports = {
           { text: 'Trellis', link: '/trellis/' },
         ]
       },
-      { text: 'Support', link: 'https://discourse.roots.io' },
+      { text: 'Community', link: 'https://discourse.roots.io' },
       { text: 'Sponsor', link: 'https://github.com/sponsors/roots' },
     ],
 
