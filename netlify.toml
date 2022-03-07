@@ -119,7 +119,13 @@
 
 [[redirects]]
   from = "/sage/10.x/installing-packages/"
-  to = "/acorn/2.x/installing-packages/"
+  to = "/acorn/2.x/available-packages/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/acorn/2.x/installing-packages/"
+  to = "/acorn/2.x/available-packages/"
   status = 301
   force = true
 

@@ -1,5 +1,0 @@
-# Installing Packages
-
-[[toc]]
-
-## Introduction

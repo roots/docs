@@ -26,7 +26,6 @@ module.exports = [
   {
     title: 'Packages',
     children: [
-      '2.x/installing-packages',
       '2.x/package-development',
       '2.x/available-packages',
     ],
