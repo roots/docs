@@ -4,31 +4,22 @@ description: Sage uses Bud to compile and optimize assets, and to provide a simp
 
 # Compiling Assets
 
-These are the primary projects that make up the Sage workflow:
-
-[Bud](https://github.com/roots/bud)
+[Bud](https://github.com/roots/bud) is the primary project responsible for the asset workflow in Sage.
 
 Bud is a wrapper for [Webpack](https://webpack.github.io/), and handles compiling stylesheets, checking for JavaScript errors, copying images and fonts, and concatenating and minifying files.
+
 It also provides a fluent API that some find to be easier to interact with than Webpack itself.
-
-[npm](https://www.npmjs.com/)
-
-npm is a JavaScript package manager. 
-Sage uses npm to pull in Tailwind CSS and any other JavaScript packages you want to use as dependencies.
-
-<div class="cta-product"><a href="https://roots.io/books/theme-development-with-sage/" class="row text-dark"><div class="book-cover col-sm-6"><img src="https://cdn.roots.io/app/uploads/theme-development-with-sage-third-edition-cover.png" alt="Sage book cover"></div><div class="col-sm-6"><h4 class="mt-sm-3"><span class="mb-2 bg-white badge">Get the book</span> <br> Theme Development with Sage</h4>A step-by-step guide to setting up a custom Sage starter theme. Build well organized &amp; easily maintained WordPress themes using a modern web development workflow.<button class="btn btn-primary">Buy the Sage book</button></div></a></div>
 
 ## Available build commands
 
-Run these script commands within your theme directory:
-
-- `yarn build` — Compile and optimize the files in your assets directory
-- `yarn start` — Compile assets when file changes are made, start dev session
+- `yarn build` — Build assets
+- `yarn dev` — Build assets when file changes are made, start dev session
 
 ## Theme assets
 
-What files are compiled and how is controlled from the `bud.config.js` file in the root of the theme.
-In-depth discussion of how to configure Bud can be found in the [Bud documentation](https://bud.js.org/), but Sage ships with a configuration that should provide a sufficient starting point--and depending on your use case, may not need any additional configuration.
+What files are built and how is controlled from the `bud.config.js` file in the root of the theme.
+
+In-depth discussion of how to configure Bud can be found in the [Bud documentation](https://bud.js.org/), but Sage ships with a configuration that should provide a sufficient starting point—and depending on your use case, may not need any additional configuration.
 
 The configuration will generate the following files:
 
@@ -71,3 +62,77 @@ echo $asset->path();
 // The contents of the asset 
 echo $asset->contents();
 ```
+
+## Linting
+
+::: tip We recommend enabling linting
+Sage 10 no longer includes linting styles or scripts out of the box. We highly recommend adding and configuring ESLint, Prettier, and Stylelint based on your needs.
+:::
+
+Bud has several extensions that can be added to your theme dependencies to help with linting. To add ESLint, Prettier, and Stylelint to your theme, run:
+
+```
+yarn add @roots/bud-eslint -D
+yarn add @roots/bud-prettier -D 
+yarn add @roots/bud-stylelint -D
+yarn add @roots/eslint-config -D
+```
+
+Add `scripts` to `package.json` for better access to linting your scripts and styles:
+
+```json
+...
+"scripts": {
+  "lint": "npm run lint:js && npm run lint:css",
+  "lint:js": "eslint resources/scripts",
+  "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
+  "test": "npm run lint",
+}
+...
+```
+
+Then create `.eslintrc.js`, `.prettierrc`, and `.stylelintrc`:
+
+:::: tabs
+
+::: tab ".eslintrc.js"
+
+```js
+module.exports = {
+  root: true,
+  extends: ['@roots/eslint-config/sage'],
+};
+```
+
+:::
+
+::: tab ".prettierrc"
+
+```json
+{
+  "bracketSpacing": false,
+  "jsxBracketSameLine": true,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false
+}
+```
+
+:::
+
+::: tab ".stylelintrc"
+
+```json
+{
+  "extends": [
+    "@roots/sage/stylelint-config",
+    "@roots/bud-tailwindcss/stylelint-config"
+  ]
+}
+```
+
+:::
+
+::::
