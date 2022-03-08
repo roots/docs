@@ -76,6 +76,7 @@ Notes on the commands:
 - `SKIP_GALAXY` saves some time because you already have those roles installed
 - `ANSIBLE_TAGS` runs only the relevant roles
 - `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
+
 </template>
 </CodeSwitcher>
 
