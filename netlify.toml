@@ -143,6 +143,6 @@
 
 [[redirects]]
   from = "/trellis/master/languages/"
-  to = "/trellis/guides/install-wordpress-language-files/"
+  to = "/trellis/master/guides/install-wordpress-language-files/"
   status = 301
   force = true
