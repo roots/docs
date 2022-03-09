@@ -62,7 +62,8 @@ module.exports = [
   {
     title: 'Guides',
     children: [
-      'master/languages'
+      'master/guides/deploy-to-digitalocean',
+      'master/languages',
     ],
   },
 ];
