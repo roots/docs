@@ -1,35 +1,36 @@
 ---
-description: Approach for installing (and updating) core/plugins/themes languages on a Trellis/Bedrock WordPress site.
+description: How to install WordPress language files on a Trellis site.
 ---
 
+# How to Install WordPress Languages Files
+
 ## Current state of language management
+
 ### Locking in language versions?
-With composer (Bedrock site) the plugin versions are already locked-in. So it naturally makes sense to also lock-in the plugin languages.
+
+With Composer (Bedrock site) the plugin versions are already locked-in. So it naturally makes sense to also lock-in the plugin languages.
+
 The [Composer WordPress language packs project](https://wp-languages.github.io/) by Koodimonni offers composer packages for plugin languages.
+
 However, providing all languages for each plugin version results in a very large amount of packages.
 Because of this practical issue, the site offers language packages for only a subset of plugins, so chances are, that languages for some plugins your site is using are not available there (e.g. [Redirection plugin](https://wordpress.org/plugins/redirection/))
 
-### Using custom composer installers
-There are some custom composer installers which simply download the latest languages for core, plugins and themes. However, this approach doesn't allow any locking-in of language versions. One may end up with different translations for same site release.
+### Using custom Composer installers
+There are some custom Composer installers which simply download the latest languages for core, plugins and themes. However, this approach doesn't allow any locking-in of language versions. One may end up with different translations for same site release.
+
 - [wplang](https://github.com/bjornjohansen/wplang)
 - [Composer Auto Language Updates](https://github.com/Angrycreative/composer-plugin-language-update)
 
 
-## Using `wp` on trellis deploy
+## Using `wp language` command on Trellis deploys
+
 At the time of writing there is no way yet for locking-in languages of core, plugins and themes (for all plugins and themes), so we are stuck with installing the latest language available.
-The best approach is using the official mechanisms, which would be the `wp language` subcommand:
 
-### Prerequisites
-`wp` starting at `2.0.1` is required with the [`--all ` feature introduced](https://github.com/wp-cli/language-command/pull/64).
-If required with your trellis setup, set `wp_cli_version` to at least `2.0.2` or recent version (at time of writing this was `2.2.0` which worked as expected):
-`groups_vars/all/main.yml`:
-```yml
-wp_cli_version: 2.2.0
-````
-Run the playbook (once) before deploying so the deploy hooks we will set up can use the right `wp` version!
+The best approach is using the official mechanisms, which would be the `wp language` subcommandwp` version!
 
-### deploy hook
-We use the [`finalize-after` deploy hook](https://roots.io/trellis/docs/deploys/#default-hooks) for installing, activating and updating the core/plugins/themes languages of a site for the languages `en_GB`, `de_DE_formal` and `de_DE`:
+### Setup deploy hooks
+
+We use the [`finalize-after` deploy hook](https://docs.roots.io/trellis/master/deployments/#hooks) for installing, activating and updating the core/plugins/themes languages of a site for the languages `en_GB`, `de_DE_formal` and `de_DE`:
 
 `deploy-hooks/sites/example.com-finalize-after.yml`:
 ```yaml
@@ -71,7 +72,7 @@ We use the [`finalize-after` deploy hook](https://roots.io/trellis/docs/deploys/
   command: wp language theme --all update
   args:
     chdir: "{{ deploy_helper.current_path }}"
-````
+```
 (All these `wp` commands are idempotent, they only install/update when it is required.)
 
 In the first part the required languages are installed for core, plugins and themes.
@@ -86,14 +87,14 @@ Ideally the language is removed before updating as this removes an unnecessary u
 
 ### Initial deploy (non-setup site)
 Many `wp` commands including `wp language` don't work on a WordPress site that is installed but not had been set up yet.
-````
+```
 Error: The site you have requested is not installed.
 Run `wp core install` to create database tables.
-````
+```
 For making an initial deploy possible, the WordPress site has to be setup at the beginning of deploy. You may overwrite everything using a transfer script or backup/restore plugin, etc. This is only important here for being able to install/update the languages on initial deploy.
 
 `deploy-hooks/finalize-after.yml`:
-````
+```yaml
 - name: Install WP (required for installing languages on non-transferred site)
   command: wp core {{ project.multisite.enabled | default(false) | ternary('multisite-install', 'install') }}
            --allow-root
@@ -110,7 +111,7 @@ For making an initial deploy possible, the WordPress site has to be setup at the
     chdir: "{{ deploy_helper.current_path }}"
   register: wp_install
   changed_when: "'WordPress is already installed.' not in wp_install.stdout and 'The network already exists.' not in wp_install.stdout"
-````
+```
 
 ### Add deploy hooks
 For making trellis actually using these new deploy hooks, they need to be added:
@@ -145,5 +146,6 @@ project_copy_folders:
 ````
 
 ## Language fallback
+
 By experience, for languages with a formal and non-formal variation, plugins are often only translated for one of these variations. It is possible to fall back at least to the non-formal variation by using a [language fallback plugin](https://wordpress.org/plugins/language-fallback/).
 With such a plugin installed and enabled, when a string is not translated in current language, it is looked up from the fallback language first, instead of falling back immediately to English.

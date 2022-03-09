@@ -140,3 +140,9 @@
   to = "/acorn/2.x/package-development/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/trellis/master/languages/"
+  to = "/trellis/guides/install-wordpress-language-files/"
+  status = 301
+  force = true

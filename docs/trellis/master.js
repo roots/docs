@@ -63,7 +63,7 @@ module.exports = [
     title: 'Guides',
     children: [
       'master/guides/deploy-to-digitalocean',
-      'master/languages',
+      'master/guides/install-wordpress-language-files',
     ],
   },
 ];
