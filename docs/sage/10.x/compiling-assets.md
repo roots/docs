@@ -42,7 +42,7 @@ Use the `@asset` directive to call images from template files:
 CSS files and images are sibling folders, so you can reference images in CSS:
 ```css
 .background {
-  background-image: url(../images/image.jpg);
+  background-image: url("../images/image.jpg");
 }
 ```
 
