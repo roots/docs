@@ -39,4 +39,10 @@ module.exports = [
       '10.x/components',
     ],
   },
+  {
+    title: 'Guides',
+    children: [
+      '10.x/guides/use-blade-icons',
+    ],
+  },
 ]
