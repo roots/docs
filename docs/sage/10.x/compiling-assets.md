@@ -54,7 +54,7 @@ In your PHP, you can make use of the `\Roots\asset()` function, which is what po
 $asset = \Roots\asset('images/example.jpg');
 // The public URI of the asset
 echo $asset;
-echo $asset->url();
+echo $asset->uri();
 
 // The server path of the asset
 echo $asset->path();
