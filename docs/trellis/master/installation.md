@@ -113,6 +113,14 @@ following as well:
 **All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 :::
 
+## Install trellis-cli
+
+Install [trellis-cli](https://github.com/roots/trellis-cli) via [Homebrew](https://brew.sh/):
+
+```bash
+$ brew install roots/tap/trellis-cli
+```
+
 ## Create a project
 
 To create a new project, first pick a descriptive name (and use it place of the default `example.com`).
