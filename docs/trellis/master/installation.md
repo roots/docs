@@ -14,6 +14,8 @@ Trellis lets you create and manage servers that are production ready, performanc
 ### Why use Trellis?
 You’ll get a complete WordPress server [running all the software](#software-installed) you need configured according to the best practices that is fully customizable.
 
+::: details Trellis features
+
 #### Ansible
 Trellis is powered by [Ansible](https://docs.ansible.com/ansible/latest/index.html) for configuration management. You don’t have to use brittle and confusing Bash scripts or worry about commands you found to copy and paste.
 
@@ -73,6 +75,7 @@ GitHub action for continuous deploys.
 Trellis has atomic, zero-downtime deploys built-in that are completely
 configurable with a powerful hook system. You can deploy and rollback releases
 with a single command thanks to trellis-cli too.
+:::
 
 ### Software installed
 Trellis provisions a base Ubuntu 20.04 server by installing and configuring the following software:
@@ -109,6 +112,14 @@ following as well:
 ::: warning Note for Windows users
 **All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
 :::
+
+## Install trellis-cli
+
+Install [trellis-cli](https://github.com/roots/trellis-cli) via [Homebrew](https://brew.sh/):
+
+```bash
+$ brew install roots/tap/trellis-cli
+```
 
 ## Create a project
 
