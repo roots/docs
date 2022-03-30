@@ -60,7 +60,7 @@ python3 -m ensurepip
 Ubuntu 20.04 comes default with Python 3 available as `python3`
 only. There's no "unversioned" `python`.
 
-The [`python-is-python3`])(https://packages.ubuntu.com/focal/python-is-python3) package
+The [`python-is-python3`](https://packages.ubuntu.com/focal/python-is-python3) package
 exists solely as an easy way to symlink `/usr/bin/python` to `python3`.
 
 ```bash
