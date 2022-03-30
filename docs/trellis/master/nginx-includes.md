@@ -180,11 +180,11 @@ server {
 
 :::
 
-You'll notice that these blocks use indentation and [whitespace control](http://jinja.pocoo.org/docs/latest/templates/#whitespace-control) (e.g., `-%}`) parallel to their counterparts in the the base template `wordpress-site.conf.j2`. This will achieve the best formatting of templated conf files on the server.
+You'll notice that these blocks use indentation and [whitespace control](http://jinja.pocoo.org/docs/latest/templates/#whitespace-control) (e.g., `-%}`) parallel to their counterparts in the base template `wordpress-site.conf.j2`. This will achieve the best formatting of templated conf files on the server.
 
 ## Sites templates
 
-You may use sites templates to add new sites confs to Nginx in addition to the standard WordPress confs. They are also Ansible/Jinja2 templates, and thus can make full use of variables and logic.
+You may use sites templates to add new sites confs to Nginx in addition to the standard WordPress confs. They are also Ansible/Jinja2 templates and thus can make full use of variables and logic.
 
 Create your sites templates following the guidelines below.
 
@@ -271,7 +271,7 @@ server {
 By default, Trellis will remove from the remote's `site-enabled` directory any link to a site conf file that has its `enabled` attribute set to `false`.
 There is no cleanup of the confs in `sites-available`, they're only made mute by being disabled.
 
-This examples shows the addition of the above site template, while also disabling Trellis' default site.
+This example shows the addition of the above site template, while also disabling Trellis' default site.
 
 ```yaml
 nginx_sites_confs:
