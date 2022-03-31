@@ -9,10 +9,10 @@ description: Trellis installation and new project instructions.
 ## What is Trellis?
 [Trellis](https://roots.io/trellis/) is a tool to create WordPress web servers and deploy WordPress sites.
 
-Trellis lets you create and manage servers that are production ready, performance optimized, and based on best practices that are continously improved. Trellis is self-hosting done right since you benefit from the community and experience of Roots.
+Trellis lets you create and manage servers that are production ready, performance optimized and based on best practices that are continuously improved. Trellis is self-hosting done right since you benefit from the community and experience of Roots.
 
 ### Why use Trellis?
-You’ll get a complete WordPress server [running all the software](#software-installed) you need configured according to the best practices that is fully customizable.
+You’ll get a complete WordPress server [running all the software](#software-installed) you need configured according to the best practices that are fully customizable.
 
 ::: details Trellis features
 
@@ -24,7 +24,7 @@ You get the benefit of Ansible [documentation](https://docs.ansible.com/ansible/
 #### Local development
 Trellis comes with [Vagrant](https://www.vagrantup.com/) support for local
 development environments that run on isolated virtual machines. This means you
-don't have to worry about poluting your local OS with software that might break
+don't have to worry about polluting your local OS with software that might break
 or conflict with other tools you use.
 
 However, using Vagrant is optional and you're free to use other local dev tools
@@ -59,12 +59,12 @@ and even supports running multiple sites on a single server for more efficiency.
 
 #### Community backed
 Since Trellis is open-source, we get the leverage of Roots and our community to
-continously improve the defaults over time. We are constantly learning better
+continuously improve the defaults over time. We are constantly learning better
 settings and defaults for WordPress servers, and then we apply them to Trellis.
 
 #### Development and production parity
 Unlike many other solutions for WordPress server hosting, Trellis aims to have
-[parity between your development and production environments](https://roots.io/twelve-factor-10-dev-prod-parity/). Trellis comes setup to run locally with Vagrant so you can test our your WordPress sites with full confidence that they'll work once you deploy to production.
+[parity between your development and production environments](https://roots.io/twelve-factor-10-dev-prod-parity/). Trellis comes setup to run locally with Vagrant so you can test your WordPress sites with full confidence that they'll work once you deploy to production.
 
 #### CLI
 Trellis has its own [CLI](https://github.com/roots/trellis-cli) that makes managing your local and remote servers much
@@ -123,7 +123,7 @@ $ brew install roots/tap/trellis-cli
 
 ## Create a project
 
-To create a new project, first pick a descriptive name (and use it place of the default `example.com`).
+To create a new project, first, pick a descriptive name (and use it in place of the default `example.com`).
 We recommend the domain of the site for convenience.
 
 <CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
