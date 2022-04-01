@@ -10,7 +10,7 @@ Although you can interact directly with the [underlying systems](https://github.
 
 `asset(string $asset, ?string $manifest): Asset` - This returns an Asset object, which you can chain off of in several ways. `Roots\asset()` is the function to use if you want to deal with a single file, such as an image in your theme.
   
-```
+```php
 $name = 'sandwich.png';
 
 echo asset($name)->uri(); // https://tasty.food/theme/kitchen/assets/sandwich.png
@@ -37,7 +37,7 @@ Asset has many methods:
 
 `bundle(string $bundle, ?string $manifest = null): Bundle` - This returns a Bundle object, which you can use to enqueue and interact with your JS and CSS depencencies.
 
-```
+```php
 $name = 'app';
 
 // Enqueues all of the JS and CSS dependencies in the `app` bundle.
@@ -74,7 +74,7 @@ In this extremely contrived example, you might think to created the following en
 
 Then you have some enquing logic that looks like this pseudo-code:
 
-```
+```php
 bundle('app')->enqueue();
 
 if (is_home()) {
@@ -87,7 +87,7 @@ This means that on your Home page, you'll be enquing two entrypoints. Because of
 - `app` - This includes generalized code used across the site
 - `home` - The imports/requires `app`, and also includes the accordion library, some code to activate it on the homepage, and some code to acivate the carousel on the homepage
 
-```
+```php
 if (is_home()) {
   bundle('home')->enqueue();
 } else {
