@@ -41,7 +41,7 @@ Asset has many methods:
 $name = 'app';
 
 // Enqueues all of the JS and CSS dependencies in the `app` bundle.
-add_action('wp_enqueue_scripts, function() {
+add_action('wp_enqueue_scripts', function() {
   bundle($name)->enqueue();
 }, 100);
 
