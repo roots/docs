@@ -47,7 +47,7 @@ add_action('wp_enqueue_scripts', function() {
 
 // Enqueues only the CSS dependencies in the `app` bundle.
 add_action('wp_enqueue_scripts' function() {
-  bundle($app)->enqueueCss();
+  bundle($name)->enqueueCss();
 }, 100);
 ```
   
