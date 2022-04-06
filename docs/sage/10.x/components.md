@@ -154,4 +154,4 @@ If you echo the variable it will print out each attribute and its value, which i
 ...
 ```
 
-You can do many other things will attributes that are described in the [Laravel documentation](https://laravel.com/docs/7.x/blade#managing-attributes).
+You can do many other things with attributes that are described in the [Laravel documentation](https://laravel.com/docs/7.x/blade#managing-attributes).
