@@ -49,7 +49,7 @@ Add the `@roots/bud-sass` extension:
 yarn add @roots/bud-sass --dev
 ```
 
-### 2) Install Boostrap
+### 2) Install Bootstrap
 
 Add Bootstrap as a dependency:
 
