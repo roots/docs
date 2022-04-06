@@ -190,4 +190,3 @@ class Example extends Composer
 ## Additional Resources
 
 - [Working with View Composers in Sage 10](https://roots.io/working-with-composers-in-sage-10/) - This is from an earlier version and some of the terminology and code is outdated, but the concepts and explanations are still relevant.
-- ???
