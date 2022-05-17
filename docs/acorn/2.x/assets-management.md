@@ -79,6 +79,8 @@ add_action('wp_enqueue_scripts', function () {
 ```
 [`app/setup.php`](https://github.com/roots/sage/blob/03921768f3f690045b397aa0d679ce08b3fa843a/app/setup.php#L11-L18)
 
+This enqueues that `app` bundle, loading your CSS and JS.
+
 If you need to handle multiple bundles, that might look something like this:
 
 ```js
