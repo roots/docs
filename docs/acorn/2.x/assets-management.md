@@ -55,6 +55,53 @@ add_action('wp_enqueue_scripts' function() {
   
 The above is pretty standard--what you might be used to doing with core functions like `wp_enqueue_style()`, albeit somewhat more concise.
 
+## Usage
+
+If you're using Sage 10, loading of basic assets is already set up for you:
+
+```js
+module.exports = async (app) => {
+  app
+    .entry({
+      app: ['@scripts/app', '@styles/app'],
+    })
+    .assets('images')
+};
+```
+[`bud.config.js`](https://github.com/roots/sage/blob/03921768f3f690045b397aa0d679ce08b3fa843a/bud.config.js#L6-L41)
+
+This configures Bud to load your JS entrypoint (`resources/scripts/app.js`) and your CSS entrypoint (`resources/styles/app.css`) and compile them into the `app` bundle, which will be 
+
+```php
+add_action('wp_enqueue_scripts', function () {
+    bundle('app')->enqueue();
+}, 100);
+```
+[`app/setup.php`](https://github.com/roots/sage/blob/03921768f3f690045b397aa0d679ce08b3fa843a/app/setup.php#L11-L18)
+
+If you need to handle multiple bundles, that might look something like this:
+
+```js
+// bud.config.js
+module.exports = async (app) => {
+  app
+    .entry({
+      app: ['@scripts/app', '@styles/app'],
+      editor: ['@scripts/editor', '@styles/editor'],
+      gallery: ['@scripts/gallery', '@scripts/app', '@styles/gallery', '@styles/app'],
+    })
+    .assets('images')
+};
+```
+
+```php
+add_action('wp_enqueue_scripts', function () {
+    bundle(is_page_template('gallery.blade.php') ? 'gallery' : 'app')->enqueue();
+}, 100);
+add_action('enqueue_block_editor_assets', function () {
+    bundle('editor')->enqueue();
+}, 100);
+```
 
 ## A Note About Runtimes
 
