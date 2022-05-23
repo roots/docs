@@ -9,13 +9,13 @@ Although you can interact directly with the [underlying systems](https://github.
 
 ### asset()
 
-`asset(string $asset, ?string $manifest): Asset` - This returns an Asset object, which you can chain off of in several ways. `Roots\asset()` is the function to use if you want to deal with a single file, such as an image in your theme.
+`asset(string $asset, ?string $manifest): Asset` - This returns an Asset object, which you can chain off of in several ways. `\Roots\asset()` is the function to use if you want to deal with a single file, such as an image in your theme.
   
 ```php
 $name = 'sandwich.png';
 
-echo asset($name)->uri(); // https://tasty.food/theme/kitchen/assets/sandwich.png
-echo asset($name)->path(); // /srv/www/site/app/themes/kitchent/assets/sandwich.ong
+echo asset($name)->uri(); // https://tasty.food/themes/kitchen/assets/sandwich.png
+echo asset($name)->path(); // /srv/www/site/app/themes/kitchen/assets/sandwich.png
 
 // When treated as a string, and Asset will return the URI of its asset:
 echo asset($name); // https://tasty.food/theme/kitchen/assets/sandwich.png
@@ -32,7 +32,7 @@ Asset has many methods:
 - `dataUri(): string` - Alias of `dataUrl()`.
 - `contentType(): string|false` - The data type of the asset if it can be determined; `false` otherwise.
 - `mimeType(): string|false` - The MIME type of the asset, if it can be determined; `false` otherwise.
-- `file(): SplFileInfo` - An [SplFileInfo](https://www.php.net/manual/en/class.splfileinfo.php) instance of the asset.
+- `file(): \SplFileInfo` - An [SplFileInfo](https://www.php.net/manual/en/class.splfileinfo.php) instance of the asset.
   If you don't know what that is, you probably don't need it.
 
 ### bundle()
