@@ -2,7 +2,7 @@
 
 This repository is synced with the Roots docs for our primary projects:
 
-- [Acorn Docs](https://docs.roots.io/acorn/2x.x/installation.html)
+- [Acorn Docs](https://docs.roots.io/acorn/2.x/installation.html)
 - [Bedrock Docs](https://docs.roots.io/bedrock/master/installation.html)
 - [Sage Docs](https://docs.roots.io/sage/10.x/installation.html)
 - [Trellis Docs](https://docs.roots.io/trellis/master/installation.html)
