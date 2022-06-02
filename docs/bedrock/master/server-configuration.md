@@ -94,3 +94,12 @@ RewriteRule . /index.php [L]
 ## Managed WordPress hosts and Bedrock
 
 If you're using a [supported WordPress host](deployment.md#supported-wordpress-hosts) such as Kinsta, then contact support and ask them to set your document root to the `web` folder.
+
+If your host uses Apache web server you may create `.htaccess` file at the root of your project with the following content
+
+```php
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !web/
+RewriteRule ^(.*)$ /web/$1 [L]
+```
