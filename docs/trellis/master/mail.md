@@ -42,18 +42,6 @@ mhsendmail_binary_url: "https://github.com/evertiro/mhsendmail/releases/download
 Note: This aren't official MailHog binaries because there don't exist official binaries to date.
 :::
 
-### MailHog and SSL with HSTS
-
-If your WordPress site has SSL enabled with HSTS ([currently a default](https://github.com/roots/trellis/issues/741)), you'll need to disable HSTS in order to reach the MailHog site. In `group_vars/development/wordpress_sites.yml`:
-
-```yml
-ssl:
-  enabled: true
-  hsts_max_age: 0
-```
-
-Then reprovision your Vagrant box in order to reach MailHog at `http://example.test:8025`.
-
 ## Remote servers (staging/production)
 
 Outgoing mail is done by the sSMTP role. sSMTP is a lightweight SMTP mail relay basically. In order to send external emails, you'll need to configure an SMTP server.
