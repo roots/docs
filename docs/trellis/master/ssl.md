@@ -200,12 +200,12 @@ $ vagrant trellis-cert trust
 
 ## HSTS
 
-Trellis sets [HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security) headers for better security. HSTS will ensure all traffic to your site is being served over HTTPS automatically.
+Trellis sets [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) headers for better security. HSTS will ensure all traffic to your site is being served over HTTPS automatically.
 
 There are a few defaults set which you can override if need be:
 
 - `hsts_max_age` - how long the header lasts (default: `31536000` (1 year))
-- `hsts_include_subdomains` - also make *all* subdomains be served over HTTPS (default: `true`)
+- `hsts_include_subdomains` - also make *all* subdomains be served over HTTPS (default: `false`)
 - `hsts_preload` - indicates the site owner's consent to have their domain preloaded (default: `false`)
 
 These variables are configured on a site's `ssl` object:
@@ -266,10 +266,26 @@ example.com:
 
 ### `hsts_include_subdomains`
 
-HSTS should ideally be applied to all subdomains as well which is why `hsts_include_subdomains` defaults to `true`. This means that if you have HSTS enabled on `example.com`, then *all- its subdomains (`*.example.com`) will also be forced over HTTPS.
+HSTS should ideally be applied to all subdomains as well when possible. This means that if you have HSTS enabled on `example.com`, then *all- its subdomains (`*.example.com`) will also be forced over HTTPS.
 
-If you have a WordPress site on `example.com` and you also serve another application from a subdomain such as `internalapp.example.com`, you may need to remove the "include subdomains" header option if it can't be served via HTTPS.
+However, it's a common enough scenario for a subdomain to host another non-HTTPS
+site for various reasons (maybe it's externally managed and out of your
+control). For example, you might deploy a Trellis based WordPress site to `example.com` but also host another application from a subdomain such as `internalapp.example.com` which isn't secured by HTTPS.
 
+Since HSTS' `includeSubdomains` option would break any subdomains in those
+situations, Trellis _disables_ the `hsts_include_subdomains` option by default.
+
+::: tip
+If you are in control of your domain and all its subdomains, we **highly
+recommend** you consider enabling the `includeSubdomains` option since it does
+provide stricter guarantees and security for your users.
+:::
+
+This can be done by setting the `hsts_include_subdomains` option to `true`
+(either globally or a per-site basis).
+
+
+Per-site:
 ```yaml
 # group_vars/production/wordpress_sites.yml (example)
 
@@ -278,12 +294,15 @@ example.com:
   ssl:
     enabled: true
     provider: letsencrypt
-    hsts_max_age: 31536000
-    hsts_include_subdomains: false
-    hsts_preload: true
+    hsts_include_subdomains: true
 ```
 
-Note you should try very hard to support SSL/HTTPS on all subdomains. Only disable this option if you have no other options as a last resort.
+Globally:
+```yaml
+# group_vars/production/main.yml
+
+nginx_hsts_include_subdomains: true
+```
 
 ## Performance
 
