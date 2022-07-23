@@ -15,7 +15,7 @@ Many paid WordPress plugins also offer Composer support. Typically, this is acco
 ]
 ```
 
-The actual plugin download is protected behind a basic HTTP authentication layer. This allows the plugin developer to restrict access to the plugin via Composer by a username/password combination. The basic authentication credentials are stored in an auth.json file. 
+The actual plugin download is protected behind a basic HTTP authentication layer. This allows the plugin developer to restrict access to the plugin via Composer by a username/password combination. The basic authentication credentials are stored in an auth.json file.
 
 ```yaml
 {
@@ -43,7 +43,7 @@ vault_wordpress_sites:
 ```
 
 If the private repository doesn't use a password (because the username contains
-an API key for example), you'll need to set an empty password like this:
+an API key for example), you'll need to omit `password` like this:
 
 ```yaml
 # group_vars/<env>/vault.yml
@@ -51,7 +51,7 @@ an API key for example), you'll need to set an empty password like this:
 vault_wordpress_sites:
   example.com:
     composer_authentications:
-      - { hostname: example.com, username: apikey, password: "''" }
+      - { hostname: example.com, username: apikey }
 
 ```
 
@@ -61,4 +61,3 @@ This functionality does have a few requirements:
 
  - The passwords should not be stored as plain text, as described in the [Vault](https://docs.roots.io/trellis/master/vault/) documentation
  - Currently, only HTTP basic authentication is supported
-
