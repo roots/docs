@@ -285,6 +285,20 @@ example.com:
 
 Note you should try very hard to support SSL/HTTPS on all subdomains. Only disable this option if you have no other options as a last resort.
 
+## Client certificates
+
+You may want to set up TLS Client Authentication, especially when using [Cloudflare Authenticated Origin Pulls](https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/). To enable, simply set the `client_cert_url` variable to the URL of the certificate authority (CA) that will be used to verify clients with.
+
+```yaml
+# group_vars/production/wordpress_sites.yml (example)
+
+example.com:
+  # rest of site config
+  ssl:
+    # rest of ssl config
+    client_cert_url: https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem
+```
+
 ## Performance
 
 Our HTTPS implementation uses all performance optimizations possible to ensure your sites remain fast despite the small overhead of SSL. This includes the following features:
