@@ -3,11 +3,13 @@ description: Trellis uses Vagrant for local development environments. Our Vagran
 ---
 
 # Local Development
-Development environments are handled by [Vagrant](https://www.vagrantup.com/) in Trellis. For other options, see [below](#other-none-vagrant-options)
+Development environments are handled by [Vagrant](https://www.vagrantup.com/) in Trellis. For other options, see [below](#other-non-vagrant-options).
 
 ## Vagrant
-Trellis' `Vagrantfile` automatically uses the Ansible provisioner to run the `dev.yml` playbook and you'll get a virtual machine running your WordPress site.
+Trellis integrates with Vagrant to automatically run the [Ansible provisioner](https://www.vagrantup.com/docs/provisioning/ansible) via the default [`Vagrantfile`](https://github.com/roots/trellis/blob/master/Vagrantfile). Provisioning in development uses the `dev.yml` Ansible playbook to create a Vagrant virtual machine running your WordPress site.
 
+
+Follow these steps to get a development server running:
 1. Configure your site(s) based on the [WordPress Sites docs](wordpress-sites.md) and read the [development specific](wordpress-sites.md#development) ones.
 2. Make sure you've edited both `group_vars/development/wordpress_sites.yml` and `group_vars/development/vault.yml`.
 3. Optionally configure the IP address at the top of the `vagrant.default.yml` to allow for multiple boxes to be run concurrently (default is `192.168.56.5`).
@@ -17,15 +19,13 @@ Trellis' `Vagrantfile` automatically uses the Ansible provisioner to run the `de
 `trellis up` will fail [if you are using encrypted folders/hard drives](https://www.vagrantup.com/docs/synced-folders/nfs.html#other-notes)
 :::
 
-Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a server running and a WordPress site automatically installed and configured.
+Then let Vagrant and Ansible do their thing. After roughly 5-10 minutes you'll have a virtual machine running and a WordPress site automatically installed and configured.
 
-To access the VM, run `trellis ssh development` (or`vagrant ssh` from your `trellis` directory). Sites can be found at `/srv/www/<site name>`. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
+To access the VM, run `trellis ssh development` (or`vagrant ssh` from your `trellis` directory). Sites can be found at `/srv/www/<site name>` on the Ubuntu VM. See the [Vagrant docs](https://www.vagrantup.com/docs/cli/) for more commands.
 
 Note that each WP site you configured is synced between your local machine (the host) and the Vagrant VM. Any changes made to your host will be synced to the VM.
 
 Composer and WP-CLI commands need to be run on the virtual machine for any post-provision modifications. Front-end build tools should be run from your host machine and not the Vagrant VM.
-
-Mounting an encrypted folder is not possible with Trellis due to an issue with NFS.
 
 ### WordPress installation
 
