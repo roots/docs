@@ -3,7 +3,7 @@ description: Everything in Trellis is built around the concept of "sites". Trell
 ---
 # WordPress Sites
 
-Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support one or more WordPress sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx vhosts, folder directories, etc based on the sites configuration.
+Everything in Trellis is built around the concept of "sites". Each Trellis managed server (local virtual machine or remote server) can support one or more WordPress sites. Trellis will automatically configure everything needed to host a WordPress site such as databases, Nginx confs, folder directories, etc based on the site's configuration.
 
 These sites are configured in YAML files for each environment such as `group_vars/development/wordpress_sites.yml`.
 
@@ -19,7 +19,7 @@ will already be set for your main site.
 
 ## Site configuration
 
-`wordpress_sites` is a top-level dictionary used to define all the sites you want. Here's an absolute bare-minimum site as an example for development:
+`wordpress_sites` is a top-level dictionary (object/hash) used to define all the sites you want. Here's an absolute bare-minimum site as an example for development:
 
 ```yaml
 # group_vars/development/wordpress_sites.yml
@@ -37,13 +37,13 @@ wordpress_sites:
       enabled: false
 ```
 
-Each site starts with a "key" (`example.com` in this case). Trellis uses the key internally as the name of the site and as a default value in a lot of variables. We recommend naming your sites after their domain so it's descriptive.
+Each site is defined by a "key" (`example.com` in this case). Trellis uses the key internally as the name of the site and as a default value in a lot of variables. We recommend naming your sites after their domain so it's descriptive.
 
 Nested under the name/key are the site specific configuration settings. You only need to define a variable/setting if you want to overwrite the default value which can be found below.
 
 ## Passwords/secrets
 
-When you add/edit a site in `wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](vault.md) for more information on this.
+When you add or edit a site in `wordpress_sites.yml`, you also need to edit `vault.yml` for the accompanying site/key. `vault.yml` simplifies the use of the Ansible Vault encryption feature for specific files. You never want to include plain-text passwords in a Git repository so we make it easier to optionally encrypt the `vault.yml` file while leaving the normal settings separate. See [Vault](vault.md) for more information on this.
 
 ```yaml
 #  group_vars/development/vault.yml
@@ -54,9 +54,7 @@ vault_wordpress_sites:
       db_password: example_dbpassword
 ```
 
-Notice the matching site keys in both `wordpress_sites` and `vault_wordpress_sites` for `example.com`.
-
-For a complete working example of a real-life WordPress site, you can view the config files for [roots-example-project.com](https://github.com/roots/roots-example-project.com).
+Notice the matching site keys in both `wordpress_sites` and `vault_wordpress_sites` for `example.com` which ties together these site settings.
 
 ## Options
 
