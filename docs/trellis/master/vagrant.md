@@ -26,7 +26,7 @@ Installation:
 See the [Parallels site](https://parallels.github.io/vagrant-parallels/docs/) for
 more details.
 
-As of January 2022, the Vagrant box needs to changed as well since the default one doesn't support Ubuntu for ARM yet.
+As of January 2022, the Vagrant box needs to be changed as well since the default one doesn't support Ubuntu for ARM yet.
 
 Update the following two settings in `vagrant.default.yml` (or
    `vagrant.local.yml`)
