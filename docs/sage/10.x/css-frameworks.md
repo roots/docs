@@ -40,6 +40,7 @@ Add the `@roots/bud-sass` extension:
 ```sh
 yarn add @roots/bud-sass --dev
 ```
+**Note:** Verify that all Bud packages and the `@roots/sage` package versions are the same in your `package.json` to prevent build errors.
 
 ### 2) Install Bootstrap
 
