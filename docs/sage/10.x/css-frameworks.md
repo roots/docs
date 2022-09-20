@@ -16,15 +16,7 @@ Remove the `@roots/bud-tailwindcss` extension:
 yarn remove @roots/bud-tailwindcss
 ```
 
-### 2) Remove Tailwind linting from from `.stylelintrc`
-
-Open `.stylelintrc` and **delete** the following line:
-
-```json
-    "@roots/bud-tailwindcss/stylelint-config"
-```
-
-### 3) Remove Tailwind from your CSS entry-point
+### 2) Remove Tailwind from your CSS entry-point
 
 Open `resources/styles/app.css` and **delete** the following lines:
 
@@ -34,9 +26,9 @@ Open `resources/styles/app.css` and **delete** the following lines:
 @import 'tailwindcss/utilities';
 ```
 
-### 4) Delete Tailwind config file
+### 3) Delete Tailwind config file
 
-Delete `tailwind.config.js` from your theme.
+Delete `tailwind.config.cjs` from your theme.
 
 
 ## Add Bootstrap
