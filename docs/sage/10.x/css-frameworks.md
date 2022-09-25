@@ -30,6 +30,16 @@ Open `resources/styles/app.css` and **delete** the following lines:
 
 Delete `tailwind.config.cjs` from your theme.
 
+### 4) Remove the Tailwind `theme.json` generator from the Bud config
+
+Open `bud.config.mjs` from your theme and remove the following lines:
+
+```diff
+-      .useTailwindColors()
+-      .useTailwindFontFamily()
+-      .useTailwindFontSize()
+```
+
 
 ## Add Bootstrap
 
