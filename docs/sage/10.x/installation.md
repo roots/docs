@@ -27,7 +27,7 @@ Sage relies on Node.js based tools to manage dependencies and build assets. We r
 
 ```bash
 # Install the latest Node.js LTS release
-$ nvm install --lts
+$ nvm install lts
 
 # Globally install Yarn
 $ npm install --global yarn
