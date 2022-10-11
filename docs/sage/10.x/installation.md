@@ -92,5 +92,5 @@ The manifest [/path/to/sage/public/manifest.json] cannot be found.
 ### Running the first build
 
 - Run `yarn` from the theme directory to install dependencies
-- Update `bud.config.js` with your local dev URL
+- Update `bud.config.mjs` with your local dev URL
 - `yarn build` — Compile assets
