@@ -6,9 +6,7 @@ description: A list of currently known compatibility issues with any WordPress p
 
 ## Adding support for plugins
 
-- No current official support for WooCommerce, but there are a number of options from the community that may be helpful:
-    - [https://github.com/ptrckvzn/sage-woocommerce](https://github.com/ptrckvzn/sage-woocommerce)
-    - [https://github.com/generoi/sage-woocommerce](https://github.com/generoi/sage-woocommerce)
+- WooCommerce: [https://github.com/generoi/sage-woocommerce](https://github.com/generoi/sage-woocommerce)
 
 ## Known issues with plugins
 
