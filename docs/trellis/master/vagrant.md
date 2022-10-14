@@ -26,17 +26,6 @@ Installation:
 See the [Parallels site](https://parallels.github.io/vagrant-parallels/docs/) for
 more details.
 
-As of September 2022, the Vagrant box needs to be changed as well since the default one doesn't support Ubuntu for ARM yet.
-
-Update the following setting in `vagrant.default.yml` (or
-   `vagrant.local.yml`)
-```yaml
-vagrant_box: 'bento/ubuntu-20.04-arm64'
-```
-
-Follow the [GitHub issue](https://github.com/roots/trellis/issues/1253) for
-updates and discussion.
-
 ## Configuration
 Editing the `Vagrantfile` directly should be avoided unless necessary. Instead,
 you can easily set common settings in `vagrant.default.yml`.
