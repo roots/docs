@@ -33,10 +33,10 @@ Someone on the [forums](https://discourse.roots.io/) may be able to help you.
 Prepare your development environment based on what version of Sage you're working with. 
 For Sage 10:
 
-Set Node.js version with nvm:
+Install latest Node.js LTS version with [Volta](https://docs.volta.sh/guide/getting-started):
 
 ```sh
-$ nvm install --lts
+$ volta install node
 ```
 
 Install Composer dependencies:
