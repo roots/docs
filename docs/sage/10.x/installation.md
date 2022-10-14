@@ -23,11 +23,11 @@ Sage is a [WordPress starter theme](https://roots.io/sage/).
 WSL is required in order to use Sage. Build commands must be ran from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
 :::
 
-Sage relies on Node.js based tools to manage dependencies and build assets. We recommend using [nvm](https://github.com/creationix/nvm) to install and manage Node.js. We also recommend using [Yarn](https://yarnpkg.com/). [After installing nvm](https://github.com/nvm-sh/nvm#installing-and-updating):
+Sage relies on Node.js based tools to manage dependencies and build assets. We recommend using [Volta](https://github.com/volta-cli/volta) to install and manage Node.js. We also recommend using [Yarn](https://yarnpkg.com/). [After installing Volta](https://docs.volta.sh/guide/getting-started):
 
 ```bash
 # Install the latest Node.js LTS release
-$ nvm install --lts
+$ volta install node
 
 # Globally install Yarn
 $ npm install --global yarn
