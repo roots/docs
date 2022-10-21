@@ -15,7 +15,7 @@ You can also pass data directly to Blade templates when `@include`ing them by pa
 The key names will become the variable names that their values are assigned to.
 
 ```html
-@include('partials.example-partial', ['variableName' => 'Variable Value']
+@include('partials.example-partial', ['variableName' => 'Variable Value'])
 
 <!-- /resources/views/partials/example-partial.blade.php -->
 
