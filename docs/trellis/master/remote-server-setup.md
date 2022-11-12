@@ -6,7 +6,7 @@ description: Using Trellis on a remote server requires a server running a bare/s
 
 Setting up remote servers (usually staging or production environments) is similar to the [local development setup](local-development.md) with a few additional requirements and steps.
 
-In development, Trellis handles everything for you. It automatically creates a server (Vagrant virtual machine), provisions it, and installs WordPress.
+In development, Trellis handles everything for you. It automatically creates a server (Vagrant virtual machine), provisions it, installs WordPress, and syncs your local files to the VM.
 For remote servers, the workflow is a little different with two new separate concepts:
 
 - [Provision](#provision)
