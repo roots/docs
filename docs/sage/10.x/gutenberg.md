@@ -6,7 +6,7 @@ Included in that file is a simple example to get you on the right track.
 
 ## theme.json generator
 
-Sage includes a `theme.json` file for configuring the WordPress editor. It's generated during [compiling-assets.md](asset builds) automatically and accounts for settings from the Tailwind config (`tailwind.config.js`).
+Sage includes a `theme.json` file for configuring the WordPress editor. It's generated during [asset-builds](compiling-assets.md) automatically and accounts for settings from the Tailwind config (`tailwind.config.js`).
 
 ::: tip theme.json spec
 Reference [the `theme.json` documentation](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) for the full specification.
