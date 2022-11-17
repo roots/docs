@@ -31,17 +31,6 @@ This is not the case if you have an active WordPress plugin that is configured t
 
 Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
 
-::: warning Note for ARM-Users
-In order to make MailHog work for ARM based CPUs (like Apple Silicon) you have to provide the correct binary URLs. This is because the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/) doesn't provide platform agnostic binaries. To accomplish this you have to add the following configuration to `group_vars/development/main.yml`:
-```yml
-mailhog_version: 1.0.1
-mailhog_binary_url: "https://github.com/jcalonso/MailHog/releases/download/v1.0.1-arm/MailHog.linux.arm64"
-mhsendmail_version: 0.2.0
-mhsendmail_binary_url: "https://github.com/evertiro/mhsendmail/releases/download/v0.2.0-M1/mhsendmail_linux_arm64"
-```
-Note: This aren't official MailHog binaries because there don't exist official binaries to date.
-:::
-
 ## Remote servers (staging/production)
 
 Outgoing mail is done by the sSMTP role. sSMTP is a lightweight SMTP mail relay basically. In order to send external emails, you'll need to configure an SMTP server.
