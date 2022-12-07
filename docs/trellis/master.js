@@ -30,6 +30,7 @@ module.exports = [
       'master/vault',
       'master/ssh-keys',
       'master/ssl',
+      'master/fail2ban'
     ],
   },
   {
