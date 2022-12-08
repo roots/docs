@@ -104,7 +104,7 @@ Trellis relies on a few other software tools. Make sure all dependencies have be
 If you want to use Trellis' built-in Vagrant integration, you'll need the
 following as well:
 
-- [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0, < 2.2.19
+- [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.3.0
 - a Vagrant [provider](https://www.vagrantup.com/docs/providers):
   - x86 (Intel based Macs, Linux, Windows PCs): [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
   - Apple Silicon (M1 based Macs): See our [Parallels page](vagrant.md#parallels-apple-silicon-m1-macs)
