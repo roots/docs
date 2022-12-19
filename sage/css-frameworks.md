@@ -72,7 +72,7 @@ yarn add @popperjs/core --dev
 
 Open `resources/scripts/app.js` and add:
 
-```js
+```javascript
 // Import Bootstrap
 import 'bootstrap';
 ```

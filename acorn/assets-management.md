@@ -59,7 +59,7 @@ The above is pretty standard--what you might be used to doing with core function
 
 If you're using Sage 10, loading of basic assets is already set up for you:
 
-```js
+```javascript
 module.exports = async (app) => {
   app
     .entry({
@@ -83,7 +83,7 @@ This enqueues that `app` bundle, loading your CSS and JS.
 
 If you need to handle multiple bundles, that might look something like this:
 
-```js
+```javascript
 // bud.config.js
 module.exports = async (app) => {
   app
