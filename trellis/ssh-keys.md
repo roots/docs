@@ -20,8 +20,6 @@ If you will be the only person provisioning and deploying, and your SSH public k
 
 While provisioning, `server.yml` will create the `users` defined in `group_vars/all/users.yml`, assigning their `groups` and public SSH `keys`. The example below defines a single user.
 
-::: v-pre
-
 ```yaml
 users:
   - name: username
@@ -32,8 +30,6 @@ users:
       - "{{ lookup('file', '/path/to/local/file') }}"
       - https://github.com/username.keys
 ```
-
-:::
 
 Specify the user's primary group first in the list of `groups`. List `keys` for anyone who will need to make an SSH connection as that user. `server.yml` can `lookup` keys in local files or retrieve them from remote host URLs.
 
@@ -52,8 +48,6 @@ Trellis assumes that when you first create your server you've already added your
 
 `server.yml` will try to connect to your server as `root`. If the connection fails, `server.yml` will try to connect as the `admin_user` defined in `group_vars/all/users.yml` (default `admin`). If `root` login will be disabled on your server, it is critical for the `admin_user` to be defined in your list of `users`, with `sudo` first in this user's list of groups (see the [Security docs](security.md)). The default definition for the `admin_user` is shown below.
 
-::: v-pre
-
 ```yaml
 users:
   - name: '{{ admin_user }}'
@@ -67,8 +61,6 @@ users:
 admin_user: admin
 ```
 
-:::
-
 - You may enable colleagues to run `server.yml` by adding their public SSH `keys` to the `admin_user`.
 - If your hosting provider disables root but provides a default user such as `ubuntu`, specify `admin_user: ubuntu`.
 - If you are trying to override the dynamic selection of `root` or `admin_user`, preferring to manually specify the Ansible remote user, review notes in the section [remote user variable precedence](https://github.com/roots/trellis/pull/274#issuecomment-121455761).
@@ -76,8 +68,6 @@ admin_user: admin
 ## `deploy.yml`
 
 The `deploy.yml` playbook deploys your site while connecting as the `web_user` (default `web`) because this user owns files in the web root, the deploy destination. The `web_group` must come first in the list of groups for the web_user. The default definition for the `web_user` is shown below.
-
-::: v-pre
 
 ```yaml
 web_user: web
@@ -93,15 +83,11 @@ users:
       # - https://github.com/username.keys
 ```
 
-:::
-
 You may enable colleagues to run `deploy.yml` by adding their public SSH `keys` to the `web_user`. See the example below.
 
 ## Example `users`
 
 The example below adds the SSH keys of GitHub users `swalkinshaw` and `retlehs` to `~/.ssh/authorized_keys` for `admin_user`. This enables `swalkinshaw` and `retlehs` to run `server.yml` to provision the servers. The example also adds their keys, and the keys of GitHub user `austinpray`, to `web_user`. This enables each of them to run `deploy.yml` to deploy sites.
-
-::: v-pre
 
 ```yaml
 users:
@@ -125,8 +111,6 @@ users:
     keys:
       - https://github.com/swalkinshaw.keys
 ```
-
-:::
 
 The example above also demonstrates the option of creating `another_user` whose primary group is `some_group`, but who is also in `some_other_group`, and who has public SSH keys for `swalkinshaw`.
 

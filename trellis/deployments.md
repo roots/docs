@@ -95,8 +95,6 @@ By default, Trellis defines and uses three hooks:
 
 The default deploy hooks are defined in `roles/deploy/defaults/main.yml`:
 
-::: v-pre
-
 ```yaml
 deploy_build_before:
   - '{{ playbook_dir }}/deploy-hooks/build-before.yml'
@@ -112,8 +110,6 @@ deploy_finalize_after:
   - '{{ playbook_dir }}/roles/deploy/hooks/finalize-after.yml'
 ```
 
-:::
-
 The `deploy_build_before` definition and the commented path under `deploy_build_after` offer examples of using hooks for custom tasks, as described below.
 
 ### Custom tasks
@@ -121,8 +117,6 @@ The `deploy_build_before` definition and the commented path under `deploy_build_
 To use a deploy hook, define or override the hook variable somewhere within your `group_vars` directory, such as in `group_vars/all/main.yml`. If you end up defining many hooks, you may want to create a new file such as `group_vars/all/deploy-hooks.yml`.
 
 Each deploy hook variable is a list of task files to be included and run when the hook fires. We suggest keeping your hooked task files in a top level `deploy-hooks` folder. Here are some example hook variable definitions:
-
-::: v-pre
 
 ```yaml
 # Defining a hook that Trellis does not already use by default
@@ -136,15 +130,9 @@ deploy_build_after:
   - '{{ playbook_dir }}/deploy-hooks/sites/{{ site }}-build-after.yml'
 ```
 
-:::
-
 The second example above demonstrates overriding the `deploy_build_after` hook that Trellis already uses by default. The first include file in this hook's list is `roles/deploy/hooks/build-after.yml`, which is the task file Trellis usually executes. If you omit a hook's default file when overriding an existing hook variable, the default file's tasks will no longer execute.
 
-::: v-pre
-
-The second include file in the `deploy_build_after` example above, `deploy-hooks/build-after.yml`, is an example of adding a custom task file that would run on every deploy, regardless the site being deployed. The third include file, <code v-pre>deploy-hooks/sites/{{ site }}-build-after.yml</code>, demonstrates how you could use a `{{ site }}` variable to include a file based on the name of the site being deployed, e.g., `example.com-build-after.yml`.
-
-:::
+The second include file in the `deploy_build_after` example above, `deploy-hooks/build-after.yml`, is an example of adding a custom task file that would run on every deploy, regardless the site being deployed. The third include file, <code>deploy-hooks/sites/{{ site }}-build-after.yml</code>, demonstrates how you could use a `{{ site }}` variable to include a file based on the name of the site being deployed, e.g., `example.com-build-after.yml`.
 
 ### SSH keys
 

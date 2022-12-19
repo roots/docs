@@ -148,9 +148,7 @@ The path for your base template – referenced in your `extends` statement – m
 
 #### Child Template Example – Complex
 
-The first block in the example child template below augments the content of the `fastcgi_basic` block from the `wordpress-site.conf.j2` base template. It inserts <code v-pre>{{ super() }}</code>, which represents the original block content from the base template, then adds an extra `fastcgi_param`. The second block in the example rewrites the `redirects_https` block, omitting the `ssl_enabled` conditional and adding a new `listen 8080` directive.
-
-::: v-pre
+The first block in the example child template below augments the content of the `fastcgi_basic` block from the `wordpress-site.conf.j2` base template. It inserts <code>{{ super() }}</code>, which represents the original block content from the base template, then adds an extra `fastcgi_param`. The second block in the example rewrites the `redirects_https` block, omitting the `ssl_enabled` conditional and adding a new `listen 8080` directive.
 
 ```
 {% extends 'roles/wordpress-setup/templates/wordpress-site.conf.j2' %}
@@ -177,8 +175,6 @@ server {
 
 {% endblock -%}
 ```
-
-:::
 
 You'll notice that these blocks use indentation and [whitespace control](http://jinja.pocoo.org/docs/latest/templates/#whitespace-control) (e.g., `-%}`) parallel to their counterparts in the base template `wordpress-site.conf.j2`. This will achieve the best formatting of templated conf files on the server.
 
@@ -238,13 +234,11 @@ The example above designates a site template in the `nginx-includes` path on you
 
 ### Create a site template
 
-Create your site templates at the paths you designated in the `nginx_sites_confs` variable described above. Templates should start with an <code v-pre># {{ ansible_managed }}</code> statement to indicate that the file is [managed by ansible](http://docs.ansible.com/ansible/intro_configuration.html#ansible-managed).
+Create your site templates at the paths you designated in the `nginx_sites_confs` variable described above. Templates should start with an <code># {{ ansible_managed }}</code> statement to indicate that the file is [managed by ansible](http://docs.ansible.com/ansible/intro_configuration.html#ansible-managed).
 
 #### Template example
 
 Here is an example site template that hosts nginx default page, listening on `example.com` non-standard port 8080.
-
-::: v-pre
 
 ```
 # {{ ansible_managed }}
@@ -263,8 +257,6 @@ server {
   }
 }
 ```
-
-:::
 
 ### File cleanup
 

@@ -52,16 +52,12 @@ All of these offer around 10k+ emails for free per month. Once you have SMTP cre
 
 ### Example
 
-::: v-pre
-
 ```yml
 mail_smtp_server: smtp.example.com:587
 mail_hostname: example.com
 mail_user: admin@example.com
 mail_password: '{{ vault_mail_password }}' # Define this in group_vars/all/vault.yml
 ```
-
-:::
 
 If your SMTP settings are invalid, WordPress will return the following error message:
 
