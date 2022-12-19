@@ -69,12 +69,9 @@ admin_user: admin
 
 :::
 
-::: tip Notes
-
 - You may enable colleagues to run `server.yml` by adding their public SSH `keys` to the `admin_user`.
 - If your hosting provider disables root but provides a default user such as `ubuntu`, specify `admin_user: ubuntu`.
 - If you are trying to override the dynamic selection of `root` or `admin_user`, preferring to manually specify the Ansible remote user, review notes in the section [remote user variable precedence](https://github.com/roots/trellis/pull/274#issuecomment-121455761).
-  :::
 
 ## `deploy.yml`
 
@@ -85,7 +82,7 @@ The `deploy.yml` playbook deploys your site while connecting as the `web_user` (
 ```yaml
 web_user: web
 web_group: www-data
-⋮
+
 users:
   - name: "{{ web_user }}"
     groups:
