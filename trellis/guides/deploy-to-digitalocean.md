@@ -44,7 +44,9 @@ The command help file can be accessed by passing the `--help` flag:
 $ trellis droplet create --help
 ```
 
-::: details trellis droplet create --help
+<details>
+<summary>trellis droplet create --help</summary>
+
 ```
 Usage: trellis droplet create [options] ENVIRONMENT
 
@@ -86,7 +88,8 @@ Options:
       --ssh-key         (default: ~/.ssh/id_rsa.pub) path to SSH public key to be added on the server
   -h, --help            show this help
 ```
-:::
+
+</details>
 
 ## Changes made after running the command
 
