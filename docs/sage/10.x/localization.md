@@ -30,7 +30,7 @@ Add the following to `app/setup.php`:
 
 ```php
 add_action('after_setup_theme', function () {
-    load_theme_textdomain('sage', get_template_directory() . '/lang');
+    load_theme_textdomain('sage', get_template_directory() . '/resources/lang');
 });
 ```
 
