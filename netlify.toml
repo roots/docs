@@ -1,7 +1,7 @@
 [build]
   base = ""
-  command = "yarn docs:build"
-  publish = "docs/.vuepress/dist"
+  command = ""
+  publish = ""
 
 [[redirects]]
   from = "/docs/*"
