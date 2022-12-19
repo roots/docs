@@ -83,30 +83,26 @@ Add `scripts` to `package.json` for better access to linting your scripts and st
 ```json
 ...
 "scripts": {
-  "lint": "npm run lint:js && npm run lint:css",
+  "lint": "yarn lint:js && yarn lint:css",
   "lint:js": "eslint resources/scripts",
   "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
-  "test": "npm run lint",
+  "test": "yarn lint",
 }
 ...
 ```
 
-Then create `.eslintrc.js`, `.prettierrc`, and `.stylelintrc`:
+Then create new files for `.eslintrc.js`, `.prettierrc`, and `.stylelintrc`.
 
-:::: tabs
+`.eslintrc.js`:
 
-::: tab ".eslintrc.js"
-
-```js
+```javascript
 module.exports = {
   root: true,
   extends: ['@roots/eslint-config/sage'],
 };
 ```
 
-:::
-
-::: tab ".prettierrc"
+`.prettierrc`:
 
 ```json
 {
@@ -120,9 +116,7 @@ module.exports = {
 }
 ```
 
-:::
-
-::: tab ".stylelintrc"
+`.stylelintrc`:
 
 ```json
 {
@@ -132,7 +126,3 @@ module.exports = {
   ]
 }
 ```
-
-:::
-
-::::

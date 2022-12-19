@@ -35,36 +35,9 @@ $ npm install --global yarn
 
 ## Installing Acorn
 
-Sage requires Acorn but doesn't ship with it included. This is to give you the flexibility to include it in a way that works best for your environment.
+Sage requires Acorn but doesn't ship with it included. This is to give you the flexibility to include it in a way that works best for your environment. There's a few different ways to install Acorn.
 
-:::: tabs
-
-::: tab "Install Acorn with Composer"
-
-Install Acorn on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
-
-```sh
-$ composer require roots/acorn
-```
-
-:::
-
-::: tab "Install Acorn as a mu-plugin"
-
-Download the [most recent version of Acorn](https://github.com/roots/acorn/releases/latest) and extract it to your `mu-plugins` directory. Make sure you have a mechanism in place to autoload it.
-
-:::
-
-::: tab "Install Acorn as a plugin"
-
-Download the [most recent version of Acorn](https://github.com/roots/acorn/releases/latest) and extract to your `plugins` directory. Make sure to activate the plugin or it won't work.
-
-:::
-
-::::
-
-
-See the [Acorn installation](../../acorn/2.x/installation.md) docs for additional details.
+See the [Acorn installation](/acorn/docs/installation/) docs for additional details.
 
 ## Installing Sage with Composer
 
