@@ -12,7 +12,7 @@ Bedrock's base configuration options are production-standard safe settings and u
 
 - Use an existing environment config in `config/environments` or create a new one. Bedrock will `require` any file in the `config/environments` directory with a filename matching the `WP_ENV` environment variable. This environment variable can be set in a few ways:
   - in the `.env` file as described in our [installation docs](installation.md)
-  - via [Trellis config](../../trellis/master/wordpress-sites.md) if you're using Trellis
+  - via [Trellis config](/trellis/docs/wordpress-sites/) if you're using Trellis
   - or as a last resort, hardcoding it in `config/application.php`
 
 - Bedrock comes with `development.php` and `staging.php` configs included. If you create an additional environment, configure it with a matching PHP file in `config/environments`.
