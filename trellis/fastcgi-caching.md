@@ -6,7 +6,7 @@ description: Trellis offers built-in caching with FastCGI and Nginx microcaching
 
 You can enable caching for your site by changing the cache settings under each site key. Using caching provides substantial speed improvement once pages are cached. The full settings looks like this:
 
-```yml
+```yaml
 cache:
   enabled: false
   duration: 30s
@@ -28,7 +28,7 @@ Already cached content will continue being served if your back-end (PHP-FPM) goe
 
 Disable the cache for `/store/`, `/cart/`, `/my-account/`, `/checkout/`, `/addons/`, and when items are in the cart:
 
-```yml
+```yaml
 cache:
   enabled: true
   skip_cache_uri: /wp-admin/|/wp-json/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml|/store.*|/cart.*|/my-account.*|/checkout.*|/addons.*
@@ -39,7 +39,7 @@ cache:
 
 Disable the cache for `/checkout/` and when items are in the cart:
 
-```yml
+```yaml
 cache:
   enabled: true
   skip_cache_uri: /wp-admin/|/wp-json/|/checkout/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml

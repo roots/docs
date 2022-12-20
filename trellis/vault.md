@@ -8,14 +8,14 @@ Some Ansible variables contain sensitive data such as passwords. Trellis keeps t
 
 To briefly demonstrate what vault does, consider this example `vault.yml` file.
 
-```yml
+```yaml
 # example vault.yml file -- unencrypted plain text
 my_password: example_password
 ```
 
 You should replace the `example_password` then encrypt the file with Ansible Vault before committing it to your repo. The data would be safe in your repo because the encrypted file would look like this:
 
-```yml
+```yaml
 # example vault.yml file -- encrypted
 $ANSIBLE_VAULT;1.1;AES256
 343163646662643438323831343332626234333233386666333162383265663
