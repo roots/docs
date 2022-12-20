@@ -32,7 +32,7 @@ If the `DIGITALOCEAN_ACCESS_TOKEN` environment variable is not set, the command 
 $ trellis droplet create production
 ```
 
-![Screenshot of trellis droplet create example](./deploy-to-digitalocean-trellis-droplet-create.png)
+![Screenshot of trellis droplet create example](https://cdn.roots.io/app/uploads/deploy-to-digitalocean-trellis-droplet-create.png)
 
 The remote server playbook will run and provision your droplet with PHP, Nginx, and everything else included in Trellis.
 

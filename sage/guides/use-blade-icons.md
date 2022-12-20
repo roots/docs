@@ -13,7 +13,7 @@ Besides being able to use your own SVG's, you can also add one of the many third
 * [Blade Heroicons](https://github.com/blade-ui-kit/blade-heroicons)
 * [Blade Simple Icons](https://github.com/ublabs/blade-simple-icons)
 
-[![Screenshot of blade-icons home page](./use-blade-icons.png)](https://blade-ui-kit.com/blade-icons)
+[![Screenshot of blade-icons home page](https://cdn.roots.io/app/uploads/use-blade-icons.png)](https://blade-ui-kit.com/blade-icons)
 
 ## Installation
 
