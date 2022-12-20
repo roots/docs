@@ -1,7 +1,8 @@
-[build]
-  base = ""
-  command = "yarn docs:build"
-  publish = "docs/.vuepress/dist"
+[[redirects]]
+  from = "/"
+  to = "https://roots.io/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/docs/*"
@@ -11,144 +12,115 @@
 
 [[redirects]]
   from = "/acorn/"
-  to = "/acorn/2.x/installation/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/bedrock/"
-  to = "/bedrock/master/installation/"
+  to = "https://roots.io/acorn/docs/installation/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/examples/"
-  to = "/examples/roots-example-project/"
+  from = "/acorn/2.x/*"
+  to = "https://roots.io/acorn/docs/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bedrock/"
+  to = "https://roots.io/bedrock/docs/installation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bedrock/master/*"
+  to = "https://roots.io/bedrock/docs/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/examples/*"
+  to = "https://roots.io/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/sage/"
-  to = "/sage/10.x/installation/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/sage/8.x/"
-  to = "/sage/8.x/installation/"
+  to = "https://roots.io/sage/docs/installation/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/sage/9.x/"
-  to = "/sage/9.x/installation/"
+  from = "/sage/10.x/*"
+  to = "https://roots.io/sage/docs/:splat"
   status = 301
   force = true
+
 
 [[redirects]]
   from = "/trellis/"
-  to = "/trellis/master/installation/"
+  to = "https://roots.io/trellis/docs/installation/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/trellis-cli/"
-  to = "/trellis-cli/master/installation/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/sage/10.x/error-handling/"
-  to = "/acorn/2.x/error-handling/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/sage/10.x/logging/"
-  to = "/acorn/2.x/logging/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/acorn/2.x/what-is-acorn/"
-  to = "/acorn/2.x/installation/"
+  from = "/trellis/master/*"
+  to = "https://roots.io/trellis/docs/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "/getting-started/"
-  to = "/"
+  to = "https://roots.io/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/getting-started/macos/"
-  to = "/"
+  to = "https://roots.io/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/getting-started/ubuntu-linux/"
-  to = "/"
+  to = "https://roots.io/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/getting-started/windows/"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/trellis-cli/master/installation/"
-  to = "/trellis/master/installation/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/trellis-cli/master/shell-integration/"
-  to = "/trellis/master/installation/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/trellis-cli/master/virtualenv/"
-  to = "/trellis/master/installation/"
+  to = "https://roots.io/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/sage/10.x/installing-packages/"
-  to = "/acorn/2.x/available-packages/"
+  to = "https://roots.io/acorn/docs/available-packages/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/acorn/2.x/installing-packages/"
-  to = "/acorn/2.x/available-packages/"
+  to = "https://roots.io/acorn/docs/available-packages/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/sage/10.x/available-packages/"
-  to = "/acorn/2.x/available-packages/"
+  to = "https://roots.io/acorn/docs/available-packages/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/sage/10.x/package-development/"
-  to = "/acorn/2.x/package-development/"
+  to = "https://roots.io/acorn/docs/package-development/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/trellis/master/languages/"
-  to = "/trellis/master/guides/install-wordpress-language-files/"
+  to = "https://roots.io/trellis/docs/guides/install-wordpress-language-files/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/trellis/master/deploys/"
-  to = "/trellis/master/deployments/"
+  to = "https://roots.io/trellis/docs/deployments/"
   status = 301
   force = true
