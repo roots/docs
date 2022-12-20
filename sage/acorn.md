@@ -15,5 +15,5 @@ To see what it can do, run `wp acorn`.
 ::: tip
 Out of the box, Acorn will use its own configs, and it will keep the application cache and logs in the standard WordPress cache directory.
 
-View the [Acorn docs](/acorn/docs/directory-structure.md#zero-config) to find out more information
+View the [Acorn docs](/acorn/docs/directory-structure/#zero-config) to find out more information
 :::
