@@ -4,7 +4,7 @@ description: How does the Sage starter theme leverage Acorn?
 
 # How is Acorn used in Sage?
 
-[Sage](https://roots.io/sage/) is a WordPress starter theme that provides you with tools for a modern, satisfying development workflow. One of those tools is Acorn. Now that you know [what Acorn is](/acorn/2.x/what-is-acorn), you may be wondering: How does Sage use it?
+[Sage](https://roots.io/sage/) is a WordPress starter theme that provides you with tools for a modern, satisfying development workflow. One of those tools is Acorn. Now that you know what Acorn is, you may be wondering: How does Sage use it?
 
 [[toc]]
 
@@ -31,7 +31,7 @@ One of the simplest but most useful features of blade is the ability to include 
 >
 > The core WordPress function `get_template_part()` has, since 5.5.0, allowed passing a third `$args` parameter, which is made available to included template parts. This is superficially similar to some of Blade's template-including functionality, but Blade's integration with Composers, as well as built-in scoping and variable generation inside of scoped templates, and many other features, make it much more powerful. In other words, if you've liked the new `get_template_part()` you're going to love `@include()`.
 
-For a more in-depth discussion of Blade and what it can offer, see the [Blade](/acorn/2.x/blade) section of these docs.
+For a more in-depth discussion of Blade and what it can offer, see the [Blade](/acorn/docs/blade/) section of these docs.
 
 ## View Data Composition
 

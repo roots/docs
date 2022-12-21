@@ -116,7 +116,7 @@ For making an initial deploy possible, the WordPress site has to be setup at the
 ### Add deploy hooks
 For making trellis actually using these new deploy hooks, they need to be added:
 `groups_vars/all/main.yml`:
-```yml
+```yaml
 # Deploy hooks
 deploy_build_before:
   - "{{ playbook_dir }}/deploy-hooks/sites/{{ site }}-build-before.yml" # build + upload theme assets

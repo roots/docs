@@ -52,7 +52,7 @@ All of these offer around 10k+ emails for free per month. Once you have SMTP cre
 
 ### Example
 
-```yml
+```yaml
 mail_smtp_server: smtp.example.com:587
 mail_hostname: example.com
 mail_user: admin@example.com

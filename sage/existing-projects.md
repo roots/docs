@@ -56,5 +56,3 @@ Build your project:
 ```sh
 yarn build
 ```
-
-For previous versions of Sage, see the docs for [Sage 9](/sage/9.x/) or [Sage 8](/sage/8.x/).

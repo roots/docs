@@ -43,7 +43,7 @@ The way we go about doing that is by creating a remote SSH tunnel from the VPS t
 
 By default, Trellis configures Xdebug to look for a debugging session on the server's localhost port 9000:
 
-```yml
+```yaml
 # roles/xdebug/defaults/main.yml
 xdebug_remote_host: localhost
 xdebug_remote_port: 9000
