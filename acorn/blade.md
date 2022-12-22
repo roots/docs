@@ -7,7 +7,7 @@ description: What is Blade and how does it work?
 Sage uses [Laravel's Blade](https://laravel.com/docs/8.x/blade) templating engine. This gives you access to the Blade templating language, which includes a number of useful features.
 
 
-:::tip Terminology
+::: tip Terminology
 In the parlance of Laravel, Acorn, and MVC frameworks in general, what WordPress calls a "template" or "template part" is called a "view." In these documents, we'll be using the term "view," except when specifically referring to something that WordPress would load as a template for something it recognizes as part of the template hierarchy, like an archive, single page, etc. These templates are implemented as views through Acorn, so a file like `archive.blade.php` is both a view and a template, whereas something like `partials/author-meta.blade.php` is just a view because it will only be loaded if another view includes it.
 :::
 
@@ -411,7 +411,7 @@ In the Component tag, you use attributes to pass data to your component, but you
 These attributes will be put in an "attribute bag" which you can then access in your Component view with the special `$attributes` variable.
 If you echo the variable it will print out each attribute and its value, which can be very useful if you want to dynamically set particular HTML attributes on the rendered Component. You can also use the `merge()` method on the `$attributes` variable to set some values that will be merged with any that are passed in—as demonstrated above with `class`.
 
-:::warning Note
+::: warning Note
 Because attributes prefixed with `:` will be evaluated a PHP, you _don't_ want to pass a simple string to them, or PHP will try and evaluate it:
 ```html
 <x-example-component :title="Uh oh"/>

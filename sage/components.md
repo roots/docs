@@ -20,7 +20,7 @@ $ wp acorn make:component ExampleComponent
 
 Sage also ships with some examples.
 
-:::tip 
+::: tip
 You can also create [inline](https://laravel.com/docs/7.x/blade#inline-component-views) and [anonymous](https://laravel.com/docs/7.x/blade#anonymous-components) components, which forgo the template or class respectively.
 These would need to be created manually
 (the WP-CLI command only creates "traditional" components).
@@ -80,7 +80,7 @@ class ExampleComponent extends Component
 
 The names of the arguments in the definition of your Component's `__construct()` method must match the names of the attributes you use to pass data to your Component tag.
 
-:::warning Note
+::: warning Note
 Component constructor arguments should be specified using `camelCase`, while `kebab-case` should be used when referencing the argument names in your HTML attributes. [Laravel documentation](https://laravel.com/docs/9.x/blade#casing)
 :::
 
@@ -123,7 +123,7 @@ If you need to pass non-string data, just prefix your attribute with a colon, an
 <x-example-component :title="TITLE_CONSTANT"/>
 ```
 
-:::warning Note
+::: warning Note
 Because your argument is now evaluated as PHP, you _don't_ want to pass a simple string, or PHP will try and evaluate it:
 ```html
 <x-example-component :title="Uh oh"/>
