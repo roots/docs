@@ -45,7 +45,7 @@ Configure your Sequel client as follows:
 - SSH User: `web`
 
 ::: tip SSH Password?
-Because Trellis provisions remote environments to use [SSH keys](https://docs.roots.io/trellis/master/ssh-keys/) rather than passwords, the password field or prompt is left blank.
+Because Trellis provisions remote environments to use [SSH keys](/trellis/docs/ssh-keys/) rather than passwords, the password field or prompt is left blank.
 :::
 
 </template>
