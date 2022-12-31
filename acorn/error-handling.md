@@ -1,5 +1,5 @@
 ---
-description: Acorn automatically registers an exception handler, which is passed to whoops in the browser.
+description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs` folder.
 ---
 
 # Error Handling

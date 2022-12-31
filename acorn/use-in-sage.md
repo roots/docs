@@ -1,5 +1,5 @@
 ---
-description: How does the Sage starter theme leverage Acorn?
+description: Sage, a WordPress starter theme, uses Acorn to provide a robust templating system and view data composition capabilities.
 ---
 
 # How is Acorn used in Sage?

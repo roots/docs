@@ -1,3 +1,7 @@
+---
+description: Acorn can either be setup with zero-config or with the traditional Laravel-style structure. Use `wp acorn vendor:publish` to set up the traditional structure.
+---
+
 # Directory Structure
 
 The directory structure is quite flexible. This document will cover two typical scenarios and guidance on how to change them.

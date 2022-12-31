@@ -117,7 +117,7 @@ After the first deploy is done, you can now either install WordPress by visiting
 
 ## $5 droplet performance
 
-If you enable the [FastCGI caching in Trellis](/trellis/docs/fastcgi-caching/) then you’ll be able to squeeze quite a bit of performance out of a $5 DigitalOcean droplet.
+If you enable the [FastCGI caching in Trellis](https://docs.roots.io/trellis/master/fastcgi-caching/) then you’ll be able to squeeze quite a bit of performance out of a $5 DigitalOcean droplet.
 
 <p><iframe src="https://share.loader.io/reports/19a5726e5f296a96c431f8609dd427cd/widget/results/6ebcd76c5963361fc0acf413364709e1" frameborder="0" style="width: 100%; height: 300px;"></iframe></p>
 <p><a href="http://loader.io/reports/19a5726e5f296a96c431f8609dd427cd/results/6ebcd76c5963361fc0acf413364709e1">View on loader.io</a></p>

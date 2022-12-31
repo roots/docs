@@ -1,3 +1,7 @@
+---
+description: Server logs for Trellis sites can be found at `/srv/www/example.com/logs/`.
+---
+
 # Server Logs
 
 Server logs for Trellis sites can be found at `/srv/www/example.com/logs/`:

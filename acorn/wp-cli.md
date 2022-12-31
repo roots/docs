@@ -1,3 +1,7 @@
+---
+description: A list of available WP-CLI commands provided by Acorn. Similar to Laravel's `artisan` CLI.
+---
+
 # WP-CLI
 
 ## Available commands

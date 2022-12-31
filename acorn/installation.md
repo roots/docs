@@ -1,5 +1,5 @@
 ---
-description: Install Acorn by running `composer require roots/acorn` to start using Laravel components in WordPress.
+description: Install Acorn by running `composer require roots/acorn` in the root of your Composer-based WordPress project.
 ---
 
 # Installation

@@ -1,3 +1,7 @@
+---
+description: A list of known community packages for the Acorn and Sage ecosystem, such as adding WooCommerce support to Sage.
+---
+
 # Available Packages
 
 ## Community Packages

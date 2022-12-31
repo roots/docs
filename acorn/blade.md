@@ -1,5 +1,5 @@
 ---
-description: What is Blade and how does it work?
+description: Blade is a templating engine included in Acorn that offers features like `@include`, `@extends`, `@section`, and Composers for data composition. Composers allow you to extract logic from views and share data across multiple views.
 ---
 
 # Blade Templates

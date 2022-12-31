@@ -30,7 +30,7 @@ The actual plugin download is protected behind a basic HTTP authentication layer
 
 However, when using such plugins in a Trellis project, it is generally considered bad practice to implement this via [deploy hooks](https://discourse.roots.io/t/interactive-console-authentication-for-3rd-party-repository-on-deploy/8592/2) or adding the `auth.json` to your version control.
 
-Trellis now supports HTTP basic authentication for multiple Composer repositories, via the Ansible [Vault](/trellis/docs/vault/#steps-to-enable-ansible-vault) functionality, on a per environment configuration.
+Trellis now supports HTTP basic authentication for multiple Composer repositories, via the Ansible [Vault](https://docs.roots.io/trellis/master/vault/#steps-to-enable-ansible-vault) functionality, on a per environment configuration.
 
 ```yaml
 # group_vars/<env>/vault.yml
@@ -59,5 +59,5 @@ Multiple private Composer repositories can be configured in this way.
 
 This functionality does have a few requirements:
 
- - The passwords should not be stored as plain text, as described in the [Vault](/trellis/docs/vault/) documentation
+ - The passwords should not be stored as plain text, as described in the [Vault](https://docs.roots.io/trellis/master/vault/) documentation
  - Currently, only HTTP basic authentication is supported

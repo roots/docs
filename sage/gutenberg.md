@@ -1,3 +1,7 @@
+---
+description: Sage includes a `theme.json` file that is based on the Tailwind config and includes the default color palette, font families, and font sizes from Tailwind.
+---
+
 # Gutenberg
 
 An in-depth framework for working with Gutenberg is largely beyond the scope of Sage, but it does ship with `/resources/scripts/editor.js` which can be used to register, modify, etc, Gutenberg block styles.
