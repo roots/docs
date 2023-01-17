@@ -128,9 +128,6 @@ $ brew install roots/tap/trellis-cli
 To create a new project, first, pick a descriptive name (and use it in place of the default `example.com`).
 We recommend the domain of the site for convenience.
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
 ```bash
 $ trellis new example.com
 ```
@@ -140,25 +137,6 @@ Or to explicitly set the site name and host, use the following:
 ```bash
 trellis new --name example.com --host www.example.com ~/path/to/my/project
 ```
-
-</template>
-<template v-slot:manual>
-
-1. Create a new project directory:
-```bash
-$ mkdir example.com && cd example.com
-```
-2. Install Trellis:
-```bash
-$ git clone --depth=1 git@github.com:roots/trellis.git && rm -rf trellis/.git
-```
-3. Install Bedrock into the `site` directory:
-```bash
-$ composer create-project roots/bedrock site
-```
-
-</template>
-</CodeSwitcher>
 
 After you've created a project, the folder structure for a Trellis project will look like this:
 

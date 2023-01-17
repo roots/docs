@@ -18,27 +18,12 @@ Before getting to those, there's some additional requirements as well.
 
 The Trellis [installation instructions](installation.md) are optimized for a quick start using Vagrant. For deploying and provisioning remote servers, we need to ensure all of Trellis' dependencies (mainly Ansible) are installed on your local/host machine.
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
 If you're using trellis-cli, just re-run the following command to ensure your
 project is initialized and the dependencies are installed:
 
 ```bash
 $ trellis init
 ```
-
-</template>
-<template v-slot:manual>
-
-Run both the following commands in your local trellis project directory:
-
-1. Install Ansible and other dependencies: `pip install -r requirements.txt`
-2. Install Galaxy roles: `ansible-galaxy install -r galaxy.yml`
-
-</template>
-</CodeSwitcher>
-
 
 ## Server requirements
 
@@ -76,29 +61,14 @@ you'll likely be creating a `production` or `staging` environment.
 Now you're ready to provision your server. Ansible connects to the remote server
 via SSH so run the following command from your local machine:
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
 
 ```bash
 $ trellis provision <environment>
 ```
 
-</template>
-<template v-slot:manual>
-
-```bash
-$ ansible-playbook server.yml -e env=<environment>
-```
-
-</template>
-</CodeSwitcher>
-
 ### Re-provisioning
 
 Re-provisioning is always assumed to be a safe operation. When you make changes to your Trellis configuration, you should provision your remote servers again to apply the changes:
-
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
 
 Run the following from any directory within your project:
 
@@ -106,23 +76,7 @@ Run the following from any directory within your project:
 $ trellis provision <environment>
 ```
 
-</template>
-<template v-slot:manual>
-
-Run the following from your project's `trellis` directory:
-
-```bash
-$ ansible-playbook server.yml -e env=<environment>
-```
-
-</template>
-</CodeSwitcher>
-
 You can also provision with specific tags to only run the relevant roles:
-
-
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
 
 Run the following from any directory within your project:
 
@@ -130,45 +84,17 @@ Run the following from any directory within your project:
 $ trellis provision --tags users <environment>
 ```
 
-</template>
-<template v-slot:manual>
-
-Run the following from your project's `trellis` directory:
-
-```bash
-$ ansible-playbook server.yml -e env=<environment> --tags=users
-```
-
-</template>
-</CodeSwitcher>
-
-
 ## Deploy
 
 In development it's easy to get your site/codebase onto the VM through synced folders. However for remote servers, we need to deploy first.
 
 Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your codebase onto the server by cloning it from a Git repository. It also takes cares of things like: running Composer, creating config files, reloading Nginx, etc.
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
 Run the following from any directory within your project:
 
 ```bash
 $ trellis deploy <environment>
 ```
-
-</template>
-<template v-slot:manual>
-
-Run the following from your project's `trellis` directory:
-
-```bash
-$ ansible-playbook deploy.yml -e "site=<site name> env=<environment>"
-```
-
-</template>
-</CodeSwitcher>
 
 ## Resources
 

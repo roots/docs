@@ -37,48 +37,17 @@ Re-provisioning is always assumed to be a safe operation. When you make changes 
 
 Run the following from your project's `trellis` directory:
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
 ```bash
 $ trellis provision development
 ```
-
-</template>
-<template v-slot:manual>
-
-```bash
-$ vagrant provision
-```
-</template>
-</CodeSwitcher>
 
 You can also provision with specific tags to only run the relevant roles:
 
 Run the following from your project's `trellis` directory:
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
 ```bash
 $ trellis provision --tags=users development
 ```
-
-</template>
-<template v-slot:manual>
-
-```bash
-$ SKIP_GALAXY=true ANSIBLE_TAGS=users vagrant provision
-```
-
-Notes on the commands:
-
-- `SKIP_GALAXY` saves some time because you already have those roles installed
-- `ANSIBLE_TAGS` runs only the relevant roles
-- `--provision` is so that it runs the `dev.yml` playbook and its roles tagged `wordpress`
-
-</template>
-</CodeSwitcher>
 
 If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 

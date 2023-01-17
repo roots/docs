@@ -24,26 +24,11 @@ At this point, you should also generate your salts and keys and save them to you
 
 Deploy with a single command:
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
 Run the following from any directory within your project:
 
 ```bash
 $ trellis deploy <environment>
 ```
-
-</template>
-<template v-slot:manual>
-
-Run the following from your project's `trellis` directory:
-
-```bash
-$ ansible-playbook deploy.yml -e "site=<domain> env=<environment>"
-```
-
-</template>
-</CodeSwitcher>
 
 ::: warning Note
 **Trellis does not automatically install WordPress on remote servers**.
@@ -168,31 +153,14 @@ wordpress_sites:
 
 Deploy command:
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
-
 Run the following from any directory within your project:
 
 ```bash
 $ trellis deploy <environment>
 ```
 
-</template>
-<template v-slot:manual>
-
-Run the following from your project's `trellis` directory:
-
-```bash
-$ ansible-playbook deploy.yml -e "site=example.com env=production"
-```
-
-</template>
-</CodeSwitcher>
-
 ## Rollbacks
 
-<CodeSwitcher :languages="{cli:'Trellis CLI',manual:'Manual'}">
-<template v-slot:cli>
 
 Run the following from any directory within your project:
 
@@ -201,20 +169,6 @@ $ trellis rollback <environment>
 ```
 
 You may manually specify a different release using `--release=12345678901234`.
-
-</template>
-<template v-slot:manual>
-
-Run the following from your project's `trellis` directory:
-
-```bash
-$ ansible-playbook rollback.yml -e "site=<domain> env=<environment>
-```
-
-You may manually specify a different release using `--extra-vars='release=12345678901234'`.
-
-</template>
-</CodeSwitcher>
 
 By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
 
