@@ -1,5 +1,6 @@
 ---
 description: There are many ways to add private or paid WordPress plugins to your Bedrock-based project. In this guide, we go over using private Git repositories.
+author: MWDelaney
 ---
 
 # Private or Commercial WordPress Plugins as Composer Dependencies
@@ -136,7 +137,3 @@ In your Bedrock site’s `composer.json`
 Run `composer update` in your Bedrock directory to get your new plugin.
 
 [**Join the discussion on Roots Discourse**](https://discourse.roots.io/t/private-or-commercial-plugins-as-composer-dependencies/13247)
-
-* * *
-
-This guide was contributed by [@MWDelaney](https://discourse.roots.io/u/MWDelaney)

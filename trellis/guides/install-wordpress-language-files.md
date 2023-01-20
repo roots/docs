@@ -1,5 +1,6 @@
 ---
 description: How to install WordPress language files on a Trellis site.
+author: strarsis
 ---
 
 # How to Install WordPress Languages Files
