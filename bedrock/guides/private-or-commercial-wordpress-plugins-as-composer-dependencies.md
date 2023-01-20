@@ -15,7 +15,7 @@ There are many ways to add private or paid plugins to your Bedrock-based project
 
 For the purposes of this document we will focus only on the first option: **private Git repositories**. We welcome contributed guides covering these methods or others.
 
-**Note:** We recommend hosting private and commercial plugins in private Git repositories. GitHub [offers private repositories](https://github.com/pricing) at affordable prices and BitBucket includes them in its [limited free plan](https://bitbucket.org/product/pricing). The following guide assumes you’re using a GitHub private repository.
+**Note:** We recommend hosting private and commercial plugins in private Git repositories. GitHub [offers private repositories](https://github.com/pricing) for free and BitBucket includes them in its [limited free plan](https://bitbucket.org/product/pricing). The following guide assumes you’re using a GitHub private repository.
 
 ## Create a private GitHub repository for your plugin
 
