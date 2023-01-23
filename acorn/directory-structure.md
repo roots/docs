@@ -51,13 +51,13 @@ root/                     # → Base directory for your Acorn application (e.g.,
 You can automatically set up the traditional structure via wp-cli.
 
 ```bash
-wp acorn vendor:publish --tag=acorn:init
+wp acorn acorn:init storage && wp acorn vendor:publish --tag=acorn
 ```
 
 Alternatively, you can choose to only copy the config files.
 
 ```bash
-wp acorn vendor:publish --tag=acorn:config
+wp acorn vendor:publish --tag=acorn
 ```
 
 ## Advanced
