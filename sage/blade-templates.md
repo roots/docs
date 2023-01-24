@@ -1,10 +1,66 @@
 ---
-description: Want to use Laravel's Blade templating engine in a WordPress theme? Sage's theme templates use Blade, allowing for DRY templates.
+description: Blade is a templating engine from Laravel that's included in Acorn. It allows for template inheritance, sharing data across multiple views, and much more.
 ---
 
 # Blade Templates
 
 Sage uses [Laravel's Blade](https://laravel.com/docs/8.x/blade) templating engine.
+
+::: tip
+The Blade templating language is described in much more depth in the [Laravel docs](https://laravel.com/docs/8.x/blade), which we recommend you read for a full understanding of how it works. Nearly everything described there should work in Sage.
+:::
+
+The following are some of the Blade features you're liking to find yourself using regularly.
+
+## Including
+
+One of the primary features of Blade is the `@include` directive (which also has a few useful variants). `@include` allows you to us a Blade file in any other Blade file, and creates a new scope for each included file.
+
+Variables define in a given view will cascade down to views that it `@includes`, but you can also pass data directly to Blade templates by passing a keyed array as the second argument to the `@include()` directive.
+The key names will become the variable names that their values are assigned to.
+
+```html
+@include('partials.example-partial', ['variableName' => 'Variable Value']
+
+<!-- /resources/views/partials/example-partial.blade.php -->
+
+<h1>{{ $variableName }}</h1>
+<!-- <h1>Variable Value</h1> -->
+```
+
+## Layouts
+
+A layout is a special kind of template that can be extended. It's useful when you have a lot of HTML content surrounding something you want to be dynamic—for instance the header and footer of a site.
+
+```html
+<!-- resources/views/layouts/app.blade.php -->
+<html>
+  <body>
+    <header>
+    @section('header')
+      @include('partials.nav.primary')
+    @show
+    </header>
+    <main>
+      @yield('content')
+    </main>
+  </body>
+</html>
+
+<!-- resources/views/page.blade.php -->
+@extends('layouts.app')
+@section('header')
+  @parent
+  @include('partials.nav.page')
+@endsection
+
+@section('content')
+  <h1>{{ $title }}</h1>
+  <div>{!! $content !!}}</div>
+@endsection
+```
+
+The extending view (`page.blade.php` in this case) can then "insert" its content into these sections to be rendered.
 
 ## Passing data to templates
 
@@ -27,10 +83,10 @@ The key names will become the variable names that their values are assigned to.
 
 If you need to clear or compile Blade templates, you can do so with WP-CLI:
 
-```shell script
-# compile all Blade templates
+```bash
+# Compile all Blade templates
 $ wp acorn view:cache
 
-# clear all Blade templates
+# Clear all Blade templates
 $ wp acorn view:clear
 ```

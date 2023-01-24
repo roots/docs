@@ -26,8 +26,16 @@ This should be set to `false` during production.
 
 When an exception gets thrown in the browser, it is passed to [whoops](https://github.com/filp/whoops), an error handler framework. If you are familiar with Laravel, you will more than likely recognize the exception page prior to the adaption of Ignition.
 
-### Reporting Exceptions
+### Reporting exceptions
 
 Exception reporting can be used to log exceptions to storage or send them to an external service such as Sentry. By default, exceptions will be logged to disk located in the `storage/logs` folder.
 
 Check out the documentation on [logging](logging.md) to learn more about log implementation.
+
+### Disabling the exception handler
+
+Acorn's `acorn/throw_error_exception` filter can be used to disable the exception handler:
+
+```php
+add_filter('acorn/throw_error_exception', '__return_false');
+```

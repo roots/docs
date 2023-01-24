@@ -16,11 +16,11 @@ Acorn brings elements of the Laravel ecosystem to any WordPress plugin or theme.
 
 To put it simply, Acorn provides a way to gracefully load a Laravel application container inside of WordPress while respecting the WordPress lifecycle and template hierarchy.
 
-This means you get access to Laravel's artisan commands through the use of [`wp acorn`](wp-cli.md). You can utilize Blade for [on-the-fly rendering](blade.md) of your Blade views. You gain access to [third-party packages](available-packages.md#user-contributed) built specifically for Acorn. And we provide some first-party components as well, such as [view composers](/acorn/docs/blade#composers) and [assets management](assets-management.md).
+This means you get access to Laravel's artisan commands through the use of [`wp acorn`](wp-cli.md). You can utilize [Blade templates](blade.md). You gain access to [third-party packages](available-packages.md#user-contributed) built specifically for Acorn. And we provide some first-party components as well, such as [view composers](/acorn/docs/blade#composers) and [assets management](assets-management.md).
 
 ## Installing Acorn with Composer
 
-Install Acorn on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
+We recommend that you install Acorn on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
 
 ```sh
 $ composer require roots/acorn
@@ -34,16 +34,9 @@ We also recommend adding Acorn's `postAutoloadDump` function to Composer's `post
 ]
 ```
 
-## Installing Acorn as a plugin
+If you don't use Bedrock and you are using a Sage-based theme, you can install Acorn with Composer from your theme directory.
 
-Although not officially supported, the following options _should_ work. Please file a [bug report](https://github.com/roots/docs/issues/new?assignees=&labels=&template=bug_report.md) for future consideration if you run into issues.
-
-- **Install as mu-plugin.**
-  Download the [most recent version of Acorn](https://github.com/roots/acorn/releases/latest) and extract to your `mu-plugins` directory. Make sure you have a mechanism in place to autoload it, such as [`bedrock-autoloader`](https://github.com/roots/bedrock-autoloader).
-- **Install as a normal plugin.** 
-  Download the [most recent version of Acorn](https://github.com/roots/acorn/releases/latest) and extract to your `plugins` directory. Make sure to activate the plugin, or it won't work.
-
-## Server Requirements
+## Server requirements
 
 Acorn's server requirements are minimal, and mostly come from WordPress and [Laravel 8's requirements](https://laravel.com/docs/8.x/deployment#server-requirements).
 
