@@ -98,4 +98,4 @@ $ trellis deploy <environment>
 
 ## Resources
 
-- [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/guides/using-trellis-to-provision-and-deploy-to-digitalocean-droplets/)
+- [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/trellis/docs/deploy-to-digitalocean/)

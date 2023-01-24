@@ -101,10 +101,4 @@ installation process automatically.
 ### Nothing
 That's right... nothing! You might not care about a local development
 environment. Or you might only want to use Trellis for deploying to managed servers
-like Kinsta. Trellis is quite flexible and supports these uses cases as well.
-
-See our [Deploying to Kinsta with Trellis](https://roots.io/guides/deploying-to-kinsta-with-trellis/) guide for
-an example of this workflow.
-
-Or you can even Vagrant locally and then deploy to a managed host such as
-Kinsta.
+like. Trellis is quite flexible and supports these uses cases as well.

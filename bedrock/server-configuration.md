@@ -8,7 +8,7 @@ Bedrock can run on any webserver that supports Composer and PHP >= 7.1. The docu
 
 ## Nginx configuration for Bedrock
 
-If you aren't using a Nginx-based setup that already supports Bedrock, such as [Valet](https://roots.io/guides/wordpress-local-development-on-os-x-with-valet-and-bedrock/) or [Trellis](https://roots.io/trellis/), you'll need to configure Nginx with the following rules:
+If you aren't using a Nginx-based setup that already supports Bedrock, such as Valet or [Trellis](https://roots.io/trellis/), you'll need to configure Nginx with the following rules:
 
 ```
 server {

@@ -175,5 +175,3 @@ By default Trellis stores 5 previous releases, not including the current release
 ## Deploying to other hosts
 
 Trellis can deploy to other hosts that support SSH, Composer, and WP-CLI, along with updating the web root path.
-
-- [Deploying to Kinsta with Trellis](https://roots.io/guides/deploying-to-kinsta-with-trellis/)
