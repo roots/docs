@@ -24,13 +24,12 @@ By default, Sage is configured to:
 
 ### Soil
 
-Also seen in `setup.php` is out of the box theme support for [Soil](https://roots.io/plugins/soil/) _(recently updated!)_, a WordPress plugin containing a collection of modules applying theme-agnostic front-end modifications including:
+Also seen in `setup.php` is out of the box theme support for [Soil](https://roots.io/products/soil/) _(recently updated!)_, a WordPress plugin containing a collection of modules applying theme-agnostic front-end modifications including:
 
 - Cleaner WordPress markup
 - Disable REST API
 - Disable asset versioning
 - Disable trackbacks
-- Google Analytics integration
 - Move all Javascript to the footer
 - Cleaner NavWalker for navigation menus
 - Prettier search URLs converting from `/?s=query` to `/search/query/`
@@ -38,9 +37,4 @@ Also seen in `setup.php` is out of the box theme support for [Soil](https://root
 
 ### `theme.json`
 
-Sage ships with a starter `theme.json` for you to start customizing.
-
-#### `theme.json` guides
-
-- https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/
-- https://fullsiteediting.com/lessons/adding-full-site-editing-features-to-classic-themes/
+Sage ships with a starter `theme.json` that is generated from the build based on your Tailwind config. See the [Gutenberg docs](/sage/docs/gutenberg/) for further information.

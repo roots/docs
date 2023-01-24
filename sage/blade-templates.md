@@ -4,7 +4,7 @@ description: Want to use Laravel's Blade templating engine in a WordPress theme?
 
 # Blade Templates
 
-Sage uses [Laravel's Blade](https://laravel.com/docs/7.x/blade) templating engine.
+Sage uses [Laravel's Blade](https://laravel.com/docs/8.x/blade) templating engine.
 
 ## Passing data to templates
 

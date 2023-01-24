@@ -18,7 +18,7 @@ Reference [the `theme.json` documentation](https://developer.wordpress.org/block
 
 Due to Sage including a `theme.json` file, this means [trying to use `add_theme_support()` to configure the editor](https://developer.wordpress.org/block-editor/developers/themes/theme-support/) will not work.
 
-In Sage's Bud config (`bud.config.mjs`), there a section for generating `theme.json`. This is where you'll want to make any changes to your `theme.json` file.
+In Sage's Bud config (`bud.config.js`), there a section for generating `theme.json`. This is where you'll want to make any changes to your `theme.json` file.
 
 ### Default color palette
 

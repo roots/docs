@@ -88,7 +88,7 @@ Because that variable is scoped to `example.blade.php`, we'll also see the follo
     it from example.blade.php -->
 ```
 
-## Data Sources
+## Data sources
 
 We've seen how data can be bound to views, but we only returned a hard-coded string.
 Usually you'll want something more involved than that.
@@ -97,7 +97,7 @@ Usually you'll want something more involved than that.
 
 Composers are executed in a context where WordPress functions like `get_the_ID()` and `the_post()` will return expected values, so you can retrieve data from WordPress much like you normally would. 
 
-### Inherited Data
+### Inherited data
 
 Inside of a Composer, you can easily access data that has been passed to or inherited by the view through the `data` property:
 
@@ -186,7 +186,3 @@ class Example extends Composer
 <h1>{{ $roots }}</h1>
 <!-- <h1>An amazing stack!</h1> -->
 ```
-
-## Additional Resources
-
-- [Working with View Composers in Sage 10](https://roots.io/working-with-composers-in-sage-10/) - This is from an earlier version and some of the terminology and code is outdated, but the concepts and explanations are still relevant.

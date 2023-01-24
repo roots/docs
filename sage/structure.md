@@ -41,44 +41,31 @@ themes/your-theme-name/   # → Root of your Sage based theme
 └── bud.config.js         # → Bud configuration
 ```
 
-## The Root Directory
+## The root directory
 
-### The App Directory
+### The `app/` directory
 
-The `app` directory contains the core code and functionality of your theme. Almost everything other than your views and assets will take place in this directory.
+The majority of your theme functionality lives in the `app` directory. By default, this directory is namespaced under `App` and is automatically loaded by Composer using the [PSR-4 autoloading standard](https://www.php-fig.org/psr/psr-4/). See our blog post on [Namespacing and Autoloading](/namespacing-and-autoloading/) if you aren't familiar with these methods.
 
-### The Public Directory
+This directory is covered more in [Functionality](/sage/docs/functionality/).
+
+### The `public/` directory
 
 The `public` directory contains the compiled assets for your theme. This directory will never be manually modified.
 
-### The Node Modules Directory
+### The `node_modules/` directory
 
 The `node_modules` directory contains your [Node](https://nodejs.org/) dependencies used to build your assets during development or for production. This folder is automatically generated and should not be modified.
 
-::: danger Do Not Upload
-Not under any circumstance should there ever be a need to upload this folder or any of its contents to a live production server. It's a security risk, and a waste of time.
+::: danger Don&rsquo;t upload node_modules
+Under no circumstances should there ever be a need to upload this folder or any of its contents to a live production server. It is a security risk.
 :::
 
-### The Resources Directory
+### The `resources/` directory
 
 The `resources` directory contains your Blade views as well as the un-compiled assets of your theme such as CSS, JavaScript, images, and fonts.
 
-### The Vendor Directory
+### The `vendor/` directory
 
 The `vendor` directory contains your [Composer](https://getcomposer.org/) dependencies and autoloader. This directory is automatically generated and should not be modified.
 
-## The App Directory
-
-The majority of your theme functionality lives in the `app` directory. By default, this directory is namespaced under `App` and is automaticaally loaded by Composer using the [PSR-4 autoloading standard](https://www.php-fig.org/psr/psr-4/).
-
-The `app` directory contains multiple additional directories such as `View` and `Providers` as well as configuration (`setup.php`) and filters (`filters.php`).
-
-### The View Directory
-
-The `View` folder contains functionality pertaining to your Blade templates including Composers and Components.
-
-### The Providers Directory
-
-The `Providers` directory contain all of the [service providers](https://laravel.com/docs/8.x/providers) for your theme. If you are familiar with Laravel, this allows you to bind services to the Acorn container to take advantage of the Laravel ecosystem within your theme.
-
-This functionality can also be extracted into packages.

@@ -6,12 +6,12 @@ description: To deploy a Sage theme you'll need to run `composer install` on the
 
 To deploy a Sage theme you'll need to make sure two things are covered:
 
-1. Run `composer install` from the theme directory on the remote server
+1. Run `composer install` from the theme directory on the remote server if you have Acorn installed in your theme directory
 2. Copy over built theme assets (the `public/` folder)
 
 Generate production ready assets with `yarn build`.
 
-## Server Requirements
+## Server requirements
 
 - WordPress >= 5.9
 - PHP >= 7.4
@@ -23,19 +23,29 @@ Generate production ready assets with `yarn build`.
 - Tokenizer PHP Extension
 - XML PHP Extension
 
-## Server Configuration
+## Server configuration
 
-::: tip Using Trellis?
-If you are using Trellis to provision your production environment, you can **skip** this section.
+::: tip Using Trellis or Radicle?
+If you are using [Trellis](/trellis/) to provision your production environment, or you are using [Radicle](/products/radicle/), you can **skip** this section.
 :::
 
-### Securing Blade Templates
+### Securing Blade templates
 
 Due to the nature of WordPress, any file residing in the theme folder is publicly accessible. By default, webservers will return any requests made to a `*.blade.php` template as plain-text.
 
 **This can create an opening for potential security riskes as well as unwanted snooping.**
 
 To prevent this from happening, we will need to add configuration to the web server to deny access to the file extension.
+
+#### Nginx
+
+If you are using Nginx, add the following to your site configuration before the final location directive:
+
+```php
+location ~* \.(blade\.php)$ {
+    deny all;
+}
+```
 
 #### Apache
 
@@ -54,16 +64,6 @@ If you are using Apache, add the following to your virtual host configuration or
         Deny from all
     </IfModule>
 </FilesMatch>
-```
-
-#### Nginx
-
-If you are using Nginx, add the following to your site configuration before the final location directive:
-
-```php
-location ~* \.(blade\.php)$ {
-    deny all;
-}
 ```
 
 ## Deploying Sage with Trellis

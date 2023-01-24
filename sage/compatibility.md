@@ -4,11 +4,14 @@ description: A list of currently known compatibility issues with any WordPress p
 
 # Compatibility
 
+This is a list of currently known compatibility issues with any WordPress plugins and Sage.
+
 ## Adding support for plugins
 
-- WooCommerce: [https://github.com/generoi/sage-woocommerce](https://github.com/generoi/sage-woocommerce)
+### WooCommerce 
+
+WooCommerce support for Sage can be added by using the [generoi/sage-woocommerce](https://github.com/generoi/sage-woocommerce) package.
 
 ## Known issues with plugins
 
-- [Disqus Comment System](https://github.com/roots/sage/issues/2035#issuecomment-369673419) is not compatible with Sage.
-    There is a [Laravel-based solution](https://github.com/yajra/laravel-disqus) which may work (untested).
+- Disqus Comment System is [not compatible with Sage](https://github.com/roots/sage/issues/2035#issuecomment-369673419). There is a [Laravel-based solution](https://github.com/yajra/laravel-disqus) which may work (untested).

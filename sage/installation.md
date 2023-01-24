@@ -58,12 +58,12 @@ $ composer create-project roots/sage your-theme-name dev-main
 
 You must build theme assets in order to access your site. Failing to build the assets will result in the error:
 
-```
+```plaintext
 The manifest [/path/to/sage/public/manifest.json] cannot be found.
 ```
 
 ### Running the first build
 
 - Run `yarn` from the theme directory to install dependencies
-- Update `bud.config.mjs` with your local dev URL
+- Update `bud.config.js` with your local dev URL
 - `yarn build` — Compile assets

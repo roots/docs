@@ -2,13 +2,13 @@
 description: Sage 10 comes with Tailwind CSS out of the box, but can be replaced with Bootstrap or any other CSS framework.
 ---
 
-# CSS Frameworks
+# Replacing Tailwind CSS with Bootstrap
 
 Sage 10 ships with [Tailwind CSS](https://tailwindcss.com), but many users may wish to use Bootstrap, or another CSS framework. 
 
 ## Removing Tailwind CSS
 
-### 1) Remove the Tailwind dependencies
+### 1. Remove Tailwind dependencies
 
 Remove the `@roots/bud-tailwindcss` extension:
 
@@ -16,7 +16,7 @@ Remove the `@roots/bud-tailwindcss` extension:
 yarn remove @roots/bud-tailwindcss
 ```
 
-### 2) Remove Tailwind from your CSS entry-point
+### 2. Remove Tailwind from your CSS
 
 Open `resources/styles/app.css` and **delete** the following lines:
 
@@ -26,13 +26,13 @@ Open `resources/styles/app.css` and **delete** the following lines:
 @import 'tailwindcss/utilities';
 ```
 
-### 3) Delete Tailwind config file
+### 3. Delete the Tailwind config file
 
 Delete `tailwind.config.cjs` from your theme.
 
-### 4) Remove the Tailwind `theme.json` generator from the Bud config
+### 4. Remove the Tailwind `theme.json` generator from the Bud config
 
-Open `bud.config.mjs` from your theme and remove the following lines:
+Open `bud.config.js` from your theme and remove the following lines:
 
 ```diff
 -      .useTailwindColors()
@@ -40,10 +40,9 @@ Open `bud.config.mjs` from your theme and remove the following lines:
 -      .useTailwindFontSize()
 ```
 
+## Adding Bootstrap
 
-## Add Bootstrap
-
-### 1) Install native support for Sass
+### 1. Install native support for Sass
 
 Add the `@roots/bud-sass` extension:
 
@@ -52,7 +51,7 @@ yarn add @roots/bud-sass --dev
 ```
 **Note:** Verify that all Bud packages and the `@roots/sage` package versions are the same in your `package.json` to prevent build errors.
 
-### 2) Install Bootstrap
+### 2. Install Bootstrap
 
 Add Bootstrap as a dependency:
 
@@ -68,7 +67,7 @@ To avoid an ugly error message in Bud about missing dependencies, add Popper as 
 yarn add @popperjs/core --dev
 ```
 
-### 3) Import Bootstrap's Javascript
+### 3. Import Bootstrap's Javascript
 
 Open `resources/scripts/app.js` and add:
 
@@ -77,7 +76,7 @@ Open `resources/scripts/app.js` and add:
 import 'bootstrap';
 ```
 
-### 4) Import Bootstrap styles
+### 4. Import Bootstrap styles
 
 In the `resources/styles` directory, rename `app.css` to `app.scss` and rename `editor.css` to `editor.scss`.
 
