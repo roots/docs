@@ -1,3 +1,11 @@
+---
+authors:
+  - ben
+  - Log1x
+  - MWDelaney
+  - TangRufus
+---
+
 # Existing Projects
 
 The majority of the Trellis documentation focuses on setting up new projects. If you are collaborating on, or taking over an existing project, the process is a little different.

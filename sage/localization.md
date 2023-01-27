@@ -1,5 +1,11 @@
 ---
 description: How to generate language files for your WordPress theme created with Sage with an additional build script, and how to load them.
+authors:
+  - alwaysblank
+  - ben
+  - bonakor
+  - jure
+  - Log1x
 ---
 
 # Localization

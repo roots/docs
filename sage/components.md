@@ -1,5 +1,11 @@
 ---
 description: Components provide an alternative mental model for handling views and data that is especially conducive to the development of views that are frequently reused.
+authors:
+  - alwaysblank
+  - bbuilds
+  - ben
+  - code23_isaac
+  - Log1x
 ---
 
 # Components

@@ -1,5 +1,10 @@
 ---
 description: Bedrock has a main configuration file that contains what wp-config.php usually world. There's also environment specific configuration files.
+authors:
+  - ben
+  - Log1x
+  - mZoo
+  - swalkinshaw
 ---
 
 # Configuration

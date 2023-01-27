@@ -1,5 +1,13 @@
 ---
 description: Accessing your WordPress databases in Trellis with Sequel Pro or TablePlus just requires some initial configuration. phpMyAdmin not necessary.
+authors:
+  - ben
+  - huubl
+  - Log1x
+  - MWDelaney
+  - mZoo
+  - swalkinshaw
+  - TangRufus
 ---
 
 # Database Access

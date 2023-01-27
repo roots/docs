@@ -1,5 +1,7 @@
 ---
 description: Using Trellis with a theme built on Sage.
+authors:
+  - swalkinshaw
 ---
 
 # Sage Integration

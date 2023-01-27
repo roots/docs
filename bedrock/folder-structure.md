@@ -1,5 +1,10 @@
 ---
 description: Bedrock's organization is similar to putting WordPress in its own subdirectory. wp-content is renamed to app, and WordPress core is in the wp directory.
+authors:
+  - ben
+  - Log1x
+  - mZoo
+  - swalkinshaw
 ---
 
 # Folder Structure

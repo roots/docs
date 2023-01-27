@@ -1,3 +1,12 @@
+---
+authors:
+  - ben
+  - LucasDemea
+  - MWDelaney
+  - swalkinshaw
+  - techieshark
+---
+
 # Vagrant
 
 ## Providers

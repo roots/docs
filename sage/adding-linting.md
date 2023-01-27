@@ -1,5 +1,7 @@
 ---
 description: How to add ESLint, Prettier, and Stylelint to your Sage 10 theme.
+authors:
+  - ben
 ---
 
 # Adding ESLint, Prettier, and Stylelint

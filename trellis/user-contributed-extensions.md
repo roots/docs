@@ -1,5 +1,13 @@
 ---
 description: Extensions (or roles), developed by the community, that complement Trellis.
+authors:
+  - ben
+  - Log1x
+  - MWDelaney
+  - strarsis
+  - swalkinshaw
+  - TangRufus
+  - Xilonz
 ---
 
 # User Contributed Extensions

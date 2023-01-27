@@ -1,5 +1,10 @@
 ---
-description: Lorem ipsum...
+description: The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.
+authors:
+  - alwaysblank
+  - ben
+  - jure
+  - Log1x
 ---
 
 # Theme Structure

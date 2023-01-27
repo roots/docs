@@ -1,5 +1,9 @@
 ---
 description: Acorn's asset management system simplifies handling assets and integrates with build processes for automated tasks. Includes helper functions like `asset()` and `bundle()` for easier asset management.
+authors:
+  - alwaysblank
+  - ben
+  - QWp6t
 ---
 
 # Assets Management

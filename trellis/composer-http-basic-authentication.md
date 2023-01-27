@@ -1,5 +1,9 @@
 ---
-description: Configuring composer HTTP basic authentication for private packages.
+description: Configuring Composer HTTP basic authentication for private packages.
+authors:
+  - ben
+  - swalkinshaw
+  - TangRufus
 ---
 
 # Composer HTTP Basic Authentication

@@ -1,5 +1,7 @@
 ---
 description: How to use the blade-icons package with Sage 10.
+authors:
+  - ben
 ---
 
 # How to use blade-icons

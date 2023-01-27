@@ -1,5 +1,9 @@
 ---
 description: Blade is a templating engine from Laravel that's included in Acorn. It allows for template inheritance, sharing data across multiple views, and much more.
+authors:
+  - alwaysblank
+  - ben
+  - Log1x
 ---
 
 # Blade Templates

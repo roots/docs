@@ -1,5 +1,7 @@
 ---
 description: Provision and deploy to DigitalOcean servers with Trellis.
+authors:
+  - ben
 ---
 
 # Deploy to DigitalOcean

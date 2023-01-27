@@ -1,5 +1,7 @@
 ---
 description: Guide to installing and using Python with Trellis
+authors:
+  - swalkinshaw
 ---
 
 # Python and Trellis

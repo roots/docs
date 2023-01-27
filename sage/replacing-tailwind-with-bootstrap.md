@@ -1,5 +1,10 @@
 ---
 description: Sage 10 comes with Tailwind CSS out of the box, but can be replaced with Bootstrap or any other CSS framework.
+authors:
+  - ben
+  - code23_isaac
+  - diomededavid
+  - MWDelaney
 ---
 
 # Replacing Tailwind CSS with Bootstrap
