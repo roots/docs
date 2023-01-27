@@ -25,7 +25,7 @@ Most of the PHP code in Sage is namespaced and autoloaded, so make sure to use n
     Filters included by default:
   - `excerpt_more` — add "… Continued" to excerpts.
 
-- `app/Providers` — The place for any [Service Providers](https://laravel.com/docs/8.x/providers) you care to define for your theme.
+- `app/Providers` — The place for any [Service Providers](https://laravel.com/docs/9.x/providers) you care to define for your theme.
     Comes with `ThemeServiceProvider` that adds no functionality but provides a template for your own Service Providers.
     
 - `app/View` — The place for view-related code, i.e. Composers and Components.

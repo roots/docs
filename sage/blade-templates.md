@@ -8,10 +8,10 @@ authors:
 
 # Blade Templates
 
-Sage uses [Laravel's Blade](https://laravel.com/docs/8.x/blade) templating engine.
+Sage uses [Laravel's Blade](https://laravel.com/docs/9.x/blade) templating engine.
 
 ::: tip
-The Blade templating language is described in much more depth in the [Laravel docs](https://laravel.com/docs/8.x/blade), which we recommend you read for a full understanding of how it works. Nearly everything described there should work in Sage.
+The Blade templating language is described in much more depth in the [Laravel docs](https://laravel.com/docs/9.x/blade), which we recommend you read for a full understanding of how it works. Nearly everything described there should work in Sage.
 :::
 
 The following are some of the Blade features you're liking to find yourself using regularly.
