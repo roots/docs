@@ -1,5 +1,9 @@
 ---
 description: Bedrock can be used with most local development setups. Some setups that support Bedrock out of the box are Trellis and Laravel Valet.
+authors:
+  - ben
+  - Log1x
+  - swalkinshaw
 ---
 
 # Local Development

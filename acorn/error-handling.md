@@ -1,5 +1,9 @@
 ---
-description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs` folder.
+description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs`
+authors:
+  - ben
+  - jure
+  - Log1x
 ---
 
 # Error Handling

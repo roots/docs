@@ -1,5 +1,15 @@
 ---
 description: Trellis offers SSL/HTTPS with Let's Encrypt, along with manually provided certificates and self-signed certificates for local development environments.
+authors:
+  - aitor
+  - ben
+  - dalepgrant
+  - fullyint
+  - joshf
+  - Log1x
+  - MWDelaney
+  - runofthemill
+  - swalkinshaw
 ---
 
 # SSL

@@ -1,5 +1,10 @@
 ---
 description: Composers allow you to pass scoped data to views of any kind--templates, partials, etc.
+authors:
+  - alwaysblank
+  - ben
+  - code23_isaac
+  - Log1x
 ---
 
 # Composers

@@ -1,5 +1,13 @@
 ---
 description: Steps to enable and use Ansible Vault with a Trellis project. Trellis uses a vault.yml file for variables with sensitive data such as passwords.
+authors:
+  - ben
+  - fullyint
+  - Log1x
+  - MWDelaney
+  - mZoo
+  - swalkinshaw
+  - TangRufus
 ---
 
 # Vault

@@ -1,5 +1,14 @@
 ---
 description: Trellis uses MailHog on development to capture outgoing email. Mail setup on remote servers is handled by variables in the mail.yml file.
+authors:
+  - ben
+  - fullyint
+  - jbicha
+  - Log1x
+  - MWDelaney
+  - mZoo
+  - swalkinshaw
+  - TangRufus
 ---
 
 # Mail

@@ -1,5 +1,10 @@
 ---
 description: Composer is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
+authors:
+  - ben
+  - Log1x
+  - swalkinshaw
+  - TangRufus
 ---
 
 # Composer

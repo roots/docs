@@ -1,5 +1,12 @@
 ---
 description: Trellis installation and new project instructions.
+authors:
+  - ben
+  - Log1x
+  - MWDelaney
+  - nikitasol
+  - swalkinshaw
+  - TangRufus
 ---
 
 # Installation

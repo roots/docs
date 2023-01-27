@@ -1,5 +1,7 @@
 ---
 description: Acorn v3 introduces some minimal breaking changes that require updates when coming from Acorn v2.
+authors:
+  - ben
 ---
 
 # Upgrading Acorn

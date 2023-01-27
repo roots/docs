@@ -1,5 +1,12 @@
 ---
 description: Deploying Bedrock requires that `composer install` is run as part of the deployment process.
+authors:
+  - alwaysblank
+  - ben
+  - knowler
+  - Log1x
+  - noplanman
+  - swalkinshaw
 ---
 
 # Deployment

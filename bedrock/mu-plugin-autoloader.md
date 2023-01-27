@@ -1,5 +1,9 @@
 ---
 description: Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins which enables using mu-plugins through Composer.
+authors:
+  - ben
+  - Log1x
+  - swalkinshaw
 ---
 
 # Must-use Plugin Autoloader

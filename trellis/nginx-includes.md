@@ -1,5 +1,11 @@
 ---
 description: Trellis allows you to implement Nginx customizations by placing files in specifically named subdirectories within a directory named includes.d.
+authors:
+  - alwaysblank
+  - ben
+  - fullyint
+  - Log1x
+  - swalkinshaw
 ---
 
 # Nginx Includes

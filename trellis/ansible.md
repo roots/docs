@@ -1,5 +1,7 @@
 ---
 description: Learn more about Trellis by understanding key Ansible concepts
+authors:
+  - swalkinshaw
 ---
 
 # How Trellis uses Ansible
