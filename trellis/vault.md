@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2023-01-27 17:40
 date_published: 2015-11-01 14:32
 description: Steps to enable and use Ansible Vault with a Trellis project. Trellis uses a vault.yml file for variables with sensitive data such as passwords.
 title: Vault
@@ -88,14 +88,26 @@ Without your password, either entered as a string or stored in your `vault_passw
 
 Should you lose access to your vault password, you you can either spin up a new server, or recreate or regenerate the `group_vars/(environment)/vault.yml` files and, on the servers, manually update the following to match new vault strings:
 
-  * admin root (sudo) password
-    * `sudo passwd admin`
-  * root mysql password
-    * `UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='root' AND Host='localhost';`
-    * `flush privileges;`
-  * wordpress database passwords
-    * `UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='example_com' AND Host='localhost';`
-    * `flush privileges;`
+### admin root (sudo) password
+
+```
+sudo passwd admin
+```
+
+### root mysql password
+
+```
+UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='root' AND Host='localhost';
+
+flush privileges;
+```
+
+### WordPress database passwords
+```
+UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='example_com' AND Host='localhost';
+
+flush privileges;
+```
 
 ## Additional resources
 
