@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2023-01-13 13:12
 description: Acorn v3 introduces some minimal breaking changes that require updates when coming from Acorn v2.
+title: Upgrading Acorn
 authors:
   - ben
 ---

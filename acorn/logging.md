@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 16:52
+date_published: 2021-10-21 13:21
 description: Acorn allows you to use Laravel's logging services for logging messages to files, the system error log, and even Slack.
+title: Logging
 authors:
   - ben
 ---

@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-01 19:29
 description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over theme assets built with `yarn build`.
+title: Deploying Sage
 authors:
   - alwaysblank
   - ben

@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-06 07:42
 description: Passwords that can be configured in Trellis include the MySQL root password, sudoer password, admin password, and WordPress site database passwords.
+title: Passwords
 authors:
   - alwaysblank
   - ben

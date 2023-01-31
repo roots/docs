@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-10-21 13:21
 description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs`
+title: Error Handling
 authors:
   - ben
   - jure

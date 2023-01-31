@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2022-03-18 20:49
 description: How to use the blade-icons package with Sage 10.
+title: How to use blade-icons
 authors:
   - ben
 ---

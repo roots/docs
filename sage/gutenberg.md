@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-10-21 13:21
 description: Sage includes a `theme.json` file that is based on the Tailwind config and includes the default color palette, font families, and font sizes from Tailwind.
+title: Gutenberg
 authors:
   - alwaysblank
   - ben

@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2019-01-07 10:05
 description: Provision and deploy to DigitalOcean servers with Trellis.
+title: Deploy to DigitalOcean
 authors:
   - ben
 ---

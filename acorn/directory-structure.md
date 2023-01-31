@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-11-19 11:58
 description: Acorn by default has a zero-config setup. You can also use the traditional Laravel-style structure which will publish a `config/` directory.
+title: Directory Structure
 authors:
   - alwaysblank
   - ben

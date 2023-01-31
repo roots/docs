@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-06 07:42
 description: Bedrock has a main configuration file that contains what wp-config.php usually world. There's also environment specific configuration files.
+title: Configuring Bedrock
 authors:
   - ben
   - Log1x

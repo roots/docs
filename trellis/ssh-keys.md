@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-06 07:42
 description: Documentation on using SSH keys in Trellis for connecting to remote machines or the guest VM. Use SSH keys from GitHub users to quickly add keys.
+title: SSH Keys
 authors:
   - ben
   - fullyint

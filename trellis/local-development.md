@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-10-15 12:24
 description: Trellis uses Vagrant for local development environments. Our Vagrantfile uses Ansible to provision a virtual machine running your WordPress site.
+title: Local Development
 authors:
   - ben
   - fullyint

@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2022-02-28 22:16
 description: Learn more about Trellis by understanding key Ansible concepts
+title: How Trellis uses Ansible
 authors:
   - swalkinshaw
 ---

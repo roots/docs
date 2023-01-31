@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-10-21 13:21
 description: The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.
+title: Theme Structure
 authors:
   - alwaysblank
   - ben

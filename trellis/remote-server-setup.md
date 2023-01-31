@@ -1,5 +1,8 @@
 ---
-description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 20.04 LTS. You can't run Trellis on a shared host.
+date_modified: 2023-01-27 13:17
+date_published: 2015-10-15 12:27
+description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 22.04 LTS. You can't run Trellis on a shared host.
+title: Remote Server Setup
 authors:
   - ben
   - fullyint
@@ -34,7 +37,7 @@ $ trellis init
 
 ## Server requirements
 
-1. You need a server running a bare/stock version of Ubuntu 20.04 LTS (Focal). If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 20.04 option.
+1. You need a server running a bare/stock version of Ubuntu 22.04 LTS. If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 22.04 option.
 
 ::: warning Shared hosts
 Trellis **cannot be used** on a shared host. Trellis requires a dedicated server if

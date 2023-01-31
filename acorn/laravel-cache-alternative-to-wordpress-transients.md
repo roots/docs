@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-30 17:32
+date_published: 2023-01-30 17:32
 description: Acorn allows you to use Laravel's cache, which can be used as an alternative to the WordPress Transients API.
+title: Laravel Cache as an Alternative to WordPress Transients
 authors:
   - ben
 ---

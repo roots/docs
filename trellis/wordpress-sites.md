@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2016-03-28 21:10
 description: Everything in Trellis is built around the concept of "sites". Trellis will automatically configure everything needed to host a WordPress site.
+title: WordPress Sites
 authors:
   - ben
   - dalepgrant

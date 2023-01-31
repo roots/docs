@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-01 18:19
 description: Sage uses Bud to compile and optimize assets, and to provide a simple interface for doing so.
+title: Compiling Assets
 authors:
   - alwaysblank
   - ben

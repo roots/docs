@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-06 07:42
 description: Trellis offers built-in caching with FastCGI and Nginx microcaching. No WordPress plugin required, configurable for skipping cache on pages for eCommerce.
+title: FastCGI Caching
 authors:
   - ben
   - catgofire

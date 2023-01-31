@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-06 07:42
 description: Extensions (or roles), developed by the community, that complement Trellis.
+title: User Contributed Extensions
 authors:
   - ben
   - Log1x

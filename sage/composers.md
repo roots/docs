@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-10-21 13:21
 description: Composers allow you to pass scoped data to views of any kind--templates, partials, etc.
+title: Composers
 authors:
   - alwaysblank
   - ben

@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-09-06 16:48
 description: Configuring Composer HTTP basic authentication for private packages.
+title: Composer HTTP Basic Authentication
 authors:
   - ben
   - swalkinshaw

@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2020-02-20 09:25
 description: If a plugin or theme works with a regular WordPress install and *not* with Bedrock, it's almost always a problem with the theme or plugin.
+title: Compatibility
 authors:
   - alwaysblank
   - ben

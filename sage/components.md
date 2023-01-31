@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-10-21 13:21
 description: Components provide an alternative mental model for handling views and data that is especially conducive to the development of views that are frequently reused.
+title: Components
 authors:
   - alwaysblank
   - bbuilds

@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2021-11-19 11:58
 description: A list of available WP-CLI commands provided by Acorn. Similar to Laravel's `artisan` CLI.
+title: WP-CLI
 authors:
   - alwaysblank
   - ben

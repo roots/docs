@@ -1,5 +1,8 @@
 ---
+date_modified: 2023-01-27 13:17
+date_published: 2015-09-06 07:42
 description: Tips on troubleshooting a Trellis installation. A look at how to debug Ansible, and solutions to some issues including unresponsive machines.
+title: Troubleshooting
 authors:
   - ben
   - fullyint
