@@ -46,7 +46,9 @@ You can also remove the theme support added for Sage if you are working on a Sag
 -add_theme_support('sage');
 ```
 
-Some setups may require one additional change if you run into the following error:
+#### Target class [sage.view] does not exist
+
+Some setups may require changes if you run into the following error:
 
 ```plaintext
 Target class [sage.view] does not exist
@@ -90,3 +92,13 @@ namespace App\Providers;
 ```
 
 Reference the [Acorn v3 upgrade pull request on the Sage repo](https://github.com/roots/sage/pull/3097) to see a full diff.
+
+#### Target class [assets.manifest] does not exist
+
+Some setups may require changes if you run into the following error:
+
+```plaintext
+Target class [assets.manifest] does not exist
+```
+
+This error can be fixed by copying over the latest changes to the [`config/app.php` file](https://github.com/roots/acorn/blob/67cce76e6ca13e28acaced3333d77e2f779b07a3/config/app.php) from Acorn.
