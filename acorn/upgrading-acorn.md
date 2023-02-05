@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2023-02-05 09:38
 date_published: 2023-01-13 13:12
 description: Acorn v3 introduces some minimal breaking changes that require updates when coming from Acorn v2.
 title: Upgrading Acorn
@@ -34,10 +34,36 @@ The `-W` flag is required to upgrade the included Laravel dependencies.
 Acorn v2 is typically booted in your WordPress theme's `functions.php` file. Look for the line that includes `\Roots\bootloader()`, and replace it with `\Roots\bootloader()->boot()`.
 
 ```diff
+-\Roots\bootloader();
++\Roots\bootloader()->boot();
+```
+
+We highly recommend removing the exception from bootloader to prevent service providers from silently skipping on local dev, a change that was introduced in Acorn v3.1.0 ([PR #266](https://github.com/roots/acorn/pull/266)) and Sage v10.5.1 ([PR #3121](https://github.com/roots/sage/pull/3121/files)). Replace the original bootloader method:
+
+```php
 try {
--    \Roots\bootloader();
-+    \Roots\bootloader()->boot();
+    \Roots\bootloader()->boot();
+} catch (Throwable $e) {
+    wp_die('You need to install Acorn to use this theme.'),
+    ...
 }
+```
+
+With the new one:
+
+```php
+if (! function_exists('\Roots\bootloader')) {
+    wp_die(
+        __('You need to install Acorn to use this theme.', 'sage'),
+        '',
+        [
+            'link_url' => 'https://roots.io/acorn/docs/installation/',
+            'link_text' => __('Acorn Docs: Installation', 'sage'),
+        ]
+    );
+}
+
+\Roots\bootloader()->boot();
 ```
 
 You can also remove the theme support added for Sage if you are working on a Sage-based WordPress theme:
