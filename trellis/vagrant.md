@@ -13,13 +13,12 @@ authors:
 # Vagrant
 
 ## Providers
-Trellis supports most of Vagrant's common [providers](https://www.vagrantup.com/docs/providers) automatically. By default we recommend VirtualBox since it's free and open source. However, if you prefer some of the commercial products like VMWare or Parallels, feel free to use them.
+Trellis supports most of Vagrant's common [providers](https://www.vagrantup.com/docs/providers) automatically. By default we recommend VirtualBox since it's free and open source. However, if you need or prefer one of the commercial providers (eg: VMWare or Parallels), they can be used as well.
 
-This main exception here is for developers on Macs with Apple Silicon (M1)
-chips. Because these are ARM-based CPUs, VirtualBox won't work; it's limited to
+This main exception here is for developers on Macs with Apple Silicon chips. Because these are ARM-based CPUs, VirtualBox won't work; it's limited to
 x86 CPUs like Intel and AMD.
 
-### Parallels (Apple Silicon (M1) Macs)
+### Parallels (Apple Silicon Macs)
 Currently Parallels is the best solution for running virtual machines on Apple
 Silicon based Macs. Unfortunately, Parallels is a paid and commercial product
 unlike VirtualBox. Parallels **Pro** is required as well which has a yearly
@@ -49,10 +48,24 @@ you want. Note: this file is Git ignored.
 ## Vagrantfile
 The example `Vagrantfile` in this project can be kept in this folder or moved anywhere else such as a project/site folder. Generally, if you want to have multiple sites on 1 Vagrant VM, you should keep the `Vagrantfile` where it is (in the trellis dir). If you want to have 1 Vagrant VM _per_ project/site, you should make copies of the `Vagrantfile` and put them into each project's dir. You'd then run `vagrant up` from the project-specific directory.
 
-## NFS
+## Synced folders
+Trellis uses Vagrant's [synced folder](https://developer.hashicorp.com/vagrant/docs/synced-folders) feature to sync folders from your local machine (like your Trellis project itself) to the virtual machine. Vagrant supports different types of mount options for synced folders like NFS, SMB, and Virtualbox's native option.
+
+By default, Trellis tries to default to NFS because it offers the best performance for macOS users. To change the mount type for synced folders, you can change the `vagrant_mount_type` [configuration option](#configuration):
+
+```yaml
+vagrant_mount_type: nfs
+```
+
+Whenever you change the mount type on an existing Vagrant box, you need to run `vagrant reload` for the changes to take affect (or destroy and create a new one).
+
+We suggest trying differet options and seeing what works best for you.
+
+### NFS
 For more NFS details and troubleshooting, see the official [Vagrant docs](https://www.vagrantup.com/docs/synced-folders/nfs).
 
-## Mount types
-The shared folder mount type can be set in the `vagrant.default.yml` file. While `nfs` is the default mount type, it has been observed important I/O performance gains on Linux hosts, by using `virtuabox` mount type instead, up to 9x faster write and 25x faster read.
+### Virtualbox
+While `nfs` is the default mount type, the `virtualbox` method might offer better I/O performance on Linux hosts (up to 9x faster writes and 25x faster reads).
+`virtuabox` is also much simpler than `nfs` since it's built-into VirtualBox and requires no other software or configuration.
 
- We suggest you try by yourself and see what works best for you. Just switch the mount type and `vagrant reload`. See [this issue](https://github.com/roots/trellis/issues/1428) for details and tests results.
+See [this issue](https://github.com/roots/trellis/issues/1428) for details and tests results.
