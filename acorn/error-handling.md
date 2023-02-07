@@ -29,9 +29,19 @@ This should be set to `false` during production.
 
 ## The Exception Handler
 
-### Whoops
+By default, Acorn utilizes the Symfony exception handler. This provides an easier to read stack trace on the errors thrown in your application. While this generic error screen is useful, we recommend using [Ignition](https://github.com/spatie/laravel-ignition) during development.
 
-When an exception gets thrown in the browser, it is passed to [whoops](https://github.com/filp/whoops), an error handler framework. If you are familiar with Laravel, you will more than likely recognize the exception page prior to the adaption of Ignition.
+### Ignition
+
+If you're familiar with Laravel, you may have heard of Ignition. Ignition provides a beautiful and helpful error page for your application.
+
+Not only does it provide useful hints pertaining to your error, it also allows you to publicly share your error using [Flare](https://flareapp.io/). This can be very useful when it comes to submitting bug reports or requesting help on Discourse.
+
+To use Ignition, simply require it alongside Acorn as a dev-dependency:
+
+```sh
+$ composer require spatie/laravel-ignition -D
+```
 
 ### Reporting exceptions
 
