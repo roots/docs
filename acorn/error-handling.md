@@ -39,7 +39,7 @@ Not only does it provide useful hints pertaining to your error, it also allows y
 
 To use Ignition, simply require it alongside Acorn as a dev-dependency:
 
-```sh
+```shell
 $ composer require spatie/laravel-ignition -D
 ```
 
