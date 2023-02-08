@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-08 09:27
+date_modified: 2023-02-08 09:46
 date_published: 2021-10-21 13:21
 description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs`
 title: Error Handling
@@ -36,8 +36,13 @@ Not only does it provide useful hints pertaining to your error, it also allows y
 To use Ignition, simply require it alongside Acorn as a dev-dependency:
 
 ```shell
-$ composer require spatie/laravel-ignition -D
+$ composer require spatie/laravel-ignition --dev
 ```
+
+::: warning
+PHP >= 8.1 is a requirement to use Ignition with Acorn v3
+:::
+
 
 ### Reporting exceptions
 
