@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-06 22:34
+date_modified: 2023-02-08 09:27
 date_published: 2021-10-21 13:21
 description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs`
 title: Error Handling
@@ -19,15 +19,11 @@ When working in a development environment, Acorn automatically registers an exce
 
 ## Configuration
 
-The `debug` option in your `config/app.php` is solely responsible for whether or not an exception is handled by Acorn. By default, this option is set to respect the value of `wp_get_environment_type() === 'development'`.
+The `debug` option in your `config/app.php` is solely responsible for whether or not an exception is handled by Acorn. [By default](https://github.com/roots/acorn/blob/ad4f632dca909e09ef2783b8a2b8e3ce40334bcd/config/app.php#L46), this option is set to be enabled when `WP_DEBUG && WP_DEBUG_DISPLAY` are enabled in your WordPress config.
 
-During local development, it is highly advised to ensure this variable is set to `true` to properly render exceptions thrown by Blade views and other errors further down the stack.
+During local development, it is highly advised to ensure that `WP_DEBUG` is enabled to properly render exceptions thrown by Blade views and other errors further down the stack.
 
-::: warning Warning
-This should be set to `false` during production.
-:::
-
-## The Exception Handler
+## The exception handler
 
 By default, Acorn utilizes the Symfony exception handler. This provides an easier to read stack trace on the errors thrown in your application. While this generic error screen is useful, we recommend using [Ignition](https://github.com/spatie/laravel-ignition) during development.
 
