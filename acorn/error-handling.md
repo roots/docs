@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-08 09:46
+date_modified: 2023-02-12 13:02
 date_published: 2021-10-21 13:21
 description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs`
 title: Error Handling
@@ -10,8 +10,6 @@ authors:
 ---
 
 # Error Handling
-
-[[toc]]
 
 ## Introduction
 
@@ -31,18 +29,16 @@ By default, Acorn utilizes the Symfony exception handler. This provides an easie
 
 If you're familiar with Laravel, you may have heard of Ignition. Ignition provides a beautiful and helpful error page for your application.
 
-Not only does it provide useful hints pertaining to your error, it also allows you to publicly share your error using [Flare](https://flareapp.io/). This can be very useful when it comes to submitting bug reports or requesting help on Discourse.
+Not only does it provide useful hints pertaining to your error, it also allows you to publicly share your error using [Flare](https://flareapp.io/). This can be very useful when it comes to submitting bug reports or requesting help on [Roots Discourse](https://discourse.roots.io/).
 
-To use Ignition, simply require it alongside Acorn as a dev-dependency:
+To use Ignition, simply require it alongside Acorn as a dev-dependency, and then clear the services and packages files:
 
 ```shell
 $ composer require spatie/laravel-ignition --dev
+$ wp acorn optimize:clear
 ```
 
-::: warning
-PHP >= 8.1 is a requirement to use Ignition with Acorn v3
-:::
-
+![Screenshot of Ignition's error page on an Acorn WordPress site](https://cdn.roots.io/app/uploads/wp_debug-acorn-ignition.png)
 
 ### Reporting exceptions
 
