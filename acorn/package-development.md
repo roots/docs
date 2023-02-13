@@ -39,20 +39,6 @@ Once your package is created, clone your new git repo somewhere on your machine 
 
 Replace `./packages/vendor-name/example-package` above with the path to your local package, along with the correct names.
 
-Next, make sure to add your new package to the Acorn providers array from the `composer.json` file used for your site/theme:
-
-```diff
-  "extra": {
-    "acorn": {
-      "providers": [
--       "App\\Providers\\ThemeServiceProvider"
-+       "App\\Providers\\ThemeServiceProvider",
-+       "VendorName\\ExamplePackage\\Providers\\ExampleServiceProvider"
-      ]
-    }
-  }
-```
-
 Then run the Acorn WP-CLI command to discover your package: 
 
 ```shell
