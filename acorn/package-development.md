@@ -2,6 +2,7 @@
 date_modified: 2023-02-13 12:38
 date_published: 2021-10-21 13:21
 title: Package Development
+description: Use the Acorn Example Package as a template for creating your own Acorn packages.
 authors:
   - ben
   - Log1x
@@ -64,5 +65,5 @@ $ wp acorn package:discover
 ```
 
 ::: warning
-We have plans to [automate replacing the placeholders in the example package](https://github.com/roots/acorn-example-package/issues/2) in the future
+We have plans to [automate replacing the placeholders in the example package](https://github.com/roots/acorn/issues/271) in the future
 :::
