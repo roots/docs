@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2023-02-16 20:55
 date_published: 2015-09-06 07:42
 description: Bedrock separates config from code with environment variables. There's a single place (.env) for settings that aren't committed to your repository.
 title: Environment Variables
@@ -41,3 +41,7 @@ Although it isn't required (if not defined elsewhere, Bedrock will default to `p
 - `development`
 
 Make sure that these are set correctly in your different environments.
+
+### WP_ENVIRONMENT_TYPE
+
+Bedrock also infers [`WP_ENVIRONMENT_TYPE`](https://developer.wordpress.org/reference/functions/wp_get_environment_type/) based on `WP_ENV`.  `WP_ENVIRONMENT_TYPE` was introduced in WordPress 5.5.0.
