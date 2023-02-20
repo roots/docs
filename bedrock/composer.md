@@ -1,8 +1,8 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2023-02-20 14:45
 date_published: 2015-09-06 07:42
 description: Composer is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
-title: Composer
+title: WordPress Dependencies with Composer
 authors:
   - ben
   - Log1x
@@ -10,44 +10,35 @@ authors:
   - TangRufus
 ---
 
-# Composer
+# WordPress Dependencies with Composer
 
-[Composer](http://getcomposer.org) is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
+Bedrock uses [Composer](http://getcomposer.org) to manage dependencies. Any 3rd party library is considered a dependency, including WordPress itself and any plugins.
 
-See these resources for more extensive documentation:
-
-- [Using Composer with WordPress](https://roots.io/using-composer-with-wordpress/)
-- [WordPress Plugins with Composer](https://roots.io/wordpress-plugins-with-composer/)
-- [Using Composer With WordPress](https://roots.io/screencasts/using-composer-with-wordpress/) (screencast)
-- [Private or Commercial WordPress Plugins as Composer Dependencies](https://roots.io/bedrock/docs/private-or-commercial-wordpress-plugins-as-composer-dependencies/)
-
-## Plugins
+## Adding WordPress plugins with Composer
 
 [WordPress Packagist](http://wpackagist.org/) is already registered in the `composer.json` file so any plugins from the [WordPress Plugin Directory](http://wordpress.org/plugins/) can easily be required.
 
-To add a plugin, add it under the `require` directive or use `composer require <namespace>/<packagename>` from the command line. If it's from WordPress Packagist then the namespace is always `wpackagist-plugin`.
+To add a plugin, add it under the `require` directive or use `composer require <namespace>/<packagename>` from the command line. If the plugin is from WordPress.org, then the namespace is always `wpackagist-plugin`:
 
-Example: `"wpackagist-plugin/akismet": "dev-trunk"`
+```shell
+$ composer require wpackagist-plugin/akismet
+```
 
-Whenever you add a new plugin or update the WP version, run `composer update` to install your new packages.
-
-`plugins`, and `mu-plugins` are Git ignored by default since Composer manages them. If you want to add something to those folders that *isn't* managed by Composer, you need to update `.gitignore` to whitelist them:
+`plugins` and `mu-plugins` are ignored in Git by default since Composer manages them. If you want to add something to those folders that *isn't* managed by Composer, you need to update `.gitignore` to allow them to be added to your repository:
 
 `!web/app/plugins/plugin-name`
 
-::: warning Note
-Some plugins may create files or folders outside of their given scope, or even make modifications to `wp-config.php` and other files in the `app` directory. These files should be added to your `.gitignore` file as they are managed by the plugins themselves, which are managed via Composer. Any modifications to `wp-config.php` that are needed should be moved into `config/application.php`.
-:::
+### Force a plugin to be a mu-plugin
 
-### Force plugin to be mu-plugin
+To force a regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, you can update the `installer-paths` config to tell Bedrock to install it in the `mu-plugins` directory.
 
-To force a regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, you can update the `installer-paths` config to tell Bedrock to install it in the `mu-plugins` directory:
+In the following example, Akismet will be installed in the `mu-plugins` directory:
 
 ```yaml
 ...
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "advanced-custom-fields/advanced-custom-fields-pro"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/akismet"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
@@ -56,40 +47,59 @@ To force a regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, y
 ...
 ```
 
-**Configuring multiple mu-plugins**
+#### Configuring multiple mu-plugins
 
-To configure more than one regular `wordpress-plugin` to be treated as a `wordpress-muplugin`, add additional strings to the same array value for the `web/app/mu-plugins/{$name}/` json key, for example:
+To configure more than one regular plugin to be installed to `mu-plugins`, add additional strings to the same array value for the `web/app/mu-plugins/{$name}/` JSON key, for example:
 
 ```yaml
 ...
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin", 
-        "advanced-custom-fields/advanced-custom-fields-pro",
-        "wpackagist-plugin/gutenberg",
-        "wpackagist-plugin/wordpress-seo",
-        "wpackagist-plugin/wp-ses"
+        "wpackagist-plugin/akismet",
+        "wpackagist-plugin/turn-comments-off"
       ],
 ...
 ```
 
+## Updating WordPress and WordPress plugin versions with Composer
 
-## Updating WP and plugin versions
+Updating your WordPress version, or the version of any plugin, is just a matter of changing the version number in the `composer.json` file and then running `composer install` will pull down the new version.
 
-Updating your WordPress version (or any plugin) is just a matter of changing the version number in the `composer.json` file.
+You can also re-require the dependencies to install the latest versions:
 
-Then running `composer update` will pull down the new version.
+```shell
+$ composer require roots/wordpress
+$ composer require wpackagist-plugin/akismet
+```
 
-### Automating updates
+### Automating WordPress updates
 
-[Dependabot](https://dependabot.com/) can be used to automate updates of your Composer dependencies in Bedrock, including WordPress itself.
+Tools like [Dependabot](https://dependabot.com/) and [Renovate](https://www.mend.io/free-developer-tools/renovate/) can be used to automate updates of your Composer dependencies in Bedrock, including WordPress itself.
 
-## Themes
+The Bedrock repo [uses Renovate to bump WordPress versions](https://github.com/roots/bedrock/blob/e14658bbae2c64df9605168a9c7932e5e10a9dd8/.github/renovate.json) when new versions become available.
+
+## Adding WordPress themes with Composer
 
 Themes can also be managed by Composer but should only be done so under two conditions:
 
 1. You're using a parent theme that won't be modified at all
 2. You want to separate out your main theme and use that as a standalone package
 
-Under most circumstances, we recommend NOT doing #2 and instead keeping your main theme as part of your app's repository.
+Under most circumstances, we recommend keeping your main theme as part of your repository.
 
-Just like plugins, WPackagist maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wpackagist-theme` namespace.
+Just like plugins, WPackagist maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wpackagist-theme` namespace:
+
+```shell
+$ composer require wpackagist-theme/twentytwentythree
+```
+
+## Recommended resources
+
+[WordPress with Composer resources](https://roots.io/composer-wordpress-resources/) for more extensive documentation and background information:
+
+- [📝 Composer in WordPress from Rarst](https://composer.rarst.net/)
+- [📝 `roots/wordpress` Composer Package](https://roots.io/announcing-the-roots-wordpress-composer-package/)
+- [📝 Using Composer with WordPress](https://roots.io/using-composer-with-wordpress/)
+- [📝 WordPress Plugins with Composer](https://roots.io/wordpress-plugins-with-composer/)
+- [🎥 Using Composer With WordPress screencast](https://www.youtube.com/watch?v=2cFRQA1_GY0) (2013)
+- [📝 Private or Commercial WordPress Plugins as Composer Dependencies](https://roots.io/bedrock/docs/private-or-commercial-wordpress-plugins-as-composer-dependencies/)
