@@ -66,6 +66,6 @@ For more NFS details and troubleshooting, see the official [Vagrant docs](https:
 
 ### Virtualbox
 While `nfs` is the default mount type, the `virtualbox` method might offer better I/O performance on Linux hosts (up to 9x faster writes and 25x faster reads).
-`virtuabox` is also much simpler than `nfs` since it's built-into VirtualBox and requires no other software or configuration.
+`virtualbox` is also much simpler than `nfs` since it's built-into VirtualBox and requires no other software or configuration.
 
 See [this issue](https://github.com/roots/trellis/issues/1428) for details and tests results.
