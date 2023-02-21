@@ -15,7 +15,7 @@ The Sage extension in bud.js, the build tool used in Sage, also contains a `@fon
 
 ## Add your fonts
 
-The first step to setting up a font in Sage is to add the `woff2` file to the `resources/fonts/` directory. Since [woff2 usage](https://caniuse.com/?search=woff2) usage is so high, you probably don't need to consider any other font file formats.
+The first step to setting up a font in Sage is to add the `woff2` file to the `resources/fonts/` directory. Since [woff2 usage](https://caniuse.com/?search=woff2) is so high, you probably don't need to consider any other font file formats.
 
 For this example, we're going to download [Public Sans from the google-webfonts-helper](https://gwfh.mranftl.com/fonts/public-sans?subsets=latin). The [google-webfonts-helper](https://gwfh.mranftl.com/) is a good resource for quickly grabbing font files and their CSS from Google Fonts.
 
