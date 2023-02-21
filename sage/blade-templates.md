@@ -97,3 +97,7 @@ $ wp acorn view:cache
 # Clear all Blade templates
 $ wp acorn view:clear
 ```
+
+## Additional resources
+
+* [Rendering Blade views for blocks, emails, and more](/acorn/docs/rendering-blade-views/)
