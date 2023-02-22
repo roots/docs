@@ -17,11 +17,11 @@ Sage uses [Laravel's Blade](https://laravel.com/docs/9.x/blade) templating engin
 The Blade templating language is described in much more depth in the [Laravel docs](https://laravel.com/docs/9.x/blade), which we recommend you read for a full understanding of how it works. Nearly everything described there should work in Sage.
 :::
 
-The following are some of the Blade features you're liking to find yourself using regularly.
+The following are some of the Blade features you're likely to find yourself using regularly.
 
 ## Including
 
-One of the primary features of Blade is the `@include` directive (which also has a few useful variants). `@include` allows you to us a Blade file in any other Blade file, and creates a new scope for each included file.
+One of the primary features of Blade is the `@include` directive (which also has a few useful variants). `@include` allows you to use a Blade file in any other Blade file, and creates a new scope for each included file.
 
 Variables define in a given view will cascade down to views that it `@includes`, but you can also pass data directly to Blade templates by passing a keyed array as the second argument to the `@include()` directive.
 The key names will become the variable names that their values are assigned to.
