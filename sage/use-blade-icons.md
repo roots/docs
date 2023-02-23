@@ -77,7 +77,7 @@ $ composer require blade-ui-kit/blade-heroicons
 
 Now Heroicons can be referenced in any of the supported methods from inside your Blade views:
 
-```
+```php
 <x-heroicon-s-menu />
 
 @svg('heroicon-s-menu')
