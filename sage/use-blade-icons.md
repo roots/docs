@@ -24,13 +24,13 @@ Besides being able to use your own SVG's, you can also add one of the many third
 
 From the same directory where you've installed Acorn (typically your site root or your Sage theme folder), add `blade-icons` as a Composer dependency:
 
-```sh
+```shell
 $ composer require blade-ui-kit/blade-icons
 ```
 
 Then publish the configuration file:
 
-```sh
+```shell
 $ wp acorn vendor:publish --tag=blade-icons
 ```
 
@@ -59,7 +59,7 @@ Add a new directory inside `resources/images/` named `icons/` and place your SVG
 
 From your Blade views you can now use the provided Blade component, or the `@svg` directive:
 
-```php
+```blade
 <x-icon-example-icon />
 
 @svg('example-icon')
@@ -71,13 +71,13 @@ From your Blade views you can now use the provided Blade component, or the `@svg
 
 To add aditional icon sets, require them as Composer dependencies the same as you did for the `blade-icons` package. In this example, we'll add the `blade-heroicons` package:
 
-```sh
+```shell
 $ composer require blade-ui-kit/blade-heroicons
 ```
 
 Now Heroicons can be referenced in any of the supported methods from inside your Blade views:
 
-```
+```blade
 <x-heroicon-s-menu />
 
 @svg('heroicon-s-menu')
