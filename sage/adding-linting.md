@@ -35,7 +35,7 @@ Add `scripts` to `package.json` for better access to linting your scripts and st
 ...
 ```
 
-Then create new files for `.eslintrc.js`, `.prettierrc`, and `.stylelintrc`.
+Then create new files for `.eslintrc.cjs`, `.prettierrc`, and `.stylelintrc`.
 
 `.eslintrc.cjs`:
 
