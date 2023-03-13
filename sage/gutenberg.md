@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2021-10-21 13:21
-description: Sage includes a `theme.json` file that is based on the Tailwind config and includes the default color palette, font families, and font sizes from Tailwind.
+description: Sage includes a `theme.json` generator that is based on the Tailwind config and includes the default color palette, font families, and font sizes from Tailwind.
 title: Gutenberg
 authors:
   - alwaysblank
@@ -17,7 +17,7 @@ Included in that file is a simple example to get you on the right track.
 
 ## theme.json generator
 
-Sage includes a `theme.json` file for configuring the WordPress editor. It's generated during [asset builds](compiling-assets.md) automatically and accounts for settings from the Tailwind config (`tailwind.config.js`).
+Sage includes a `theme.json` file for configuring the WordPress editor. It's generated during [asset builds](compiling-assets.md) automatically and accounts for settings from the Tailwind config (`tailwind.config.cjs`).
 
 ::: tip theme.json spec
 Reference [the `theme.json` documentation](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) for the full specification.
@@ -27,14 +27,4 @@ Due to Sage including a `theme.json` file, this means [trying to use `add_theme_
 
 In Sage's Bud config (`bud.config.js`), there a section for generating `theme.json`. This is where you'll want to make any changes to your `theme.json` file.
 
-### Default color palette
-
-Rather than [manually defining the the editor colors](https://developer.wordpress.org/themes/advanced-topics/theme-json/#color) in your Sage-based WordPress themes by adding them to `theme.json`, your color palette as defined by your Tailwind config will be used by default for the WordPress editor.
-
-Tailwind’s [default color palette](https://tailwindcss.com/docs/customizing-colors) is a good starting point for sites that don’t already have color/branding guidelines to follow.
-
-### Sizes and font families
-
-In addition to including Tailwind’s color palette for the WordPress editor, Sage will also configure the editor with Tailwind’s font families and font sizes.
-
-Be sure to take a look at [Bud’s documentation on this feature](https://bud.js.org/extensions/sage/theme.json/) for further information.
+Tailwind CSS colors, font families, and sizes are generated on the theme build for `theme.json`. See the [Sage docs on Tailwind CSS](/sage/docs/tailwind-css/) for more information.
