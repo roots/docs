@@ -43,12 +43,13 @@ It will also copy any files in the `images` or `fonts` directories under `/resou
 
 Use the `@asset` directive to call images from template files:
 
-```php
+```blade
 <img src="@asset('images/example.jpg')">
 ```
 
 ### Images in CSS
 CSS files and images are sibling folders, so you can reference images in CSS:
+
 ```css
 .background {
   background-image: url("../images/image.jpg");
@@ -61,6 +62,7 @@ In your PHP, you can make use of the `\Roots\asset()` function, which is what po
 
 ```php
 $asset = \Roots\asset('images/example.jpg');
+
 // The public URI of the asset
 echo $asset;
 echo $asset->uri();

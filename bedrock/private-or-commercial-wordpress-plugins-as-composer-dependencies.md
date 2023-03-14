@@ -28,7 +28,7 @@ For the purposes of this document we will focus only on the first option: **priv
 [Create the repository](https://help.github.com/articles/create-a-repo/) as normal and clone the empty repository to your computer.
 
 ```shell
-git clone git@github.com:YourGitHubUsername/example-plugin.git
+$ git clone git@github.com:YourGitHubUsername/example-plugin.git
 ```
 
 ## Create `composer.json`
@@ -69,7 +69,7 @@ Run each of the following commands from your repository directory:
 Add all of your plugin’s files to Git.
 
 ```shell
-git add .
+$ git add .
 ```    
 
 Commit your changes
@@ -79,7 +79,7 @@ Include the plugin’s version number in your commit message so that you can eas
 :::
 
 ```shell
-git commit .
+$ git commit .
 ```
 
 ## Tag the release
@@ -89,13 +89,13 @@ Composer will need a way to know the version of a plugin. Fortunately, it unders
 Let’s assume you’re pushing SearchWP version 2.9.14. That means we’ll be creating the 2.9.14 tag. Remember, tags are tied to commits, so be sure to commit all your changes _before_ creating the tag.
 
 ```shell
-git tag 2.9.14
+$ git tag 2.9.14
 ```
 
 Push your changes, and your tags to GitHub:
 
 ```shell
-git push --tags
+$ git push --tags
 ```    
 
 ::: tip

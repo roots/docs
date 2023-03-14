@@ -46,7 +46,7 @@ If you have unencrypted `vault.yml` files in your project's git history (e.g., p
 `trellis-cli` automatically generates your vault files and a vault password, but does not encrypt your vaults. To encrypt vaults created by `trellis-cli` run the following from any directory within your project:
 
 
-```bash
+```shell
 $ trellis vault encrypt
 ```
 
@@ -91,19 +91,19 @@ Should you lose access to your vault password, you you can either spin up a new 
 ### admin root (sudo) password
 
 ```
-sudo passwd admin
+$ sudo passwd admin
 ```
 
 ### root mysql password
 
-```
+```sql
 UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='root' AND Host='localhost';
 
 flush privileges;
 ```
 
 ### WordPress database passwords
-```
+```sql
 UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='example_com' AND Host='localhost';
 
 flush privileges;

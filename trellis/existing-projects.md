@@ -45,15 +45,15 @@ If you need to [provision this project's remote servers](remote-server-setup.md)
 Review the project's `trellis/group_vars/development/wordpress_sites.yml` and note its URL:
 
 ```yaml
-    wordpress_sites:
-      example.com:
-        site_hosts:
-          - canonical: example.test # <-- this is the development URL
+wordpress_sites:
+  example.com:
+    site_hosts:
+      - canonical: example.test # <-- this is the development URL
 ```
 
 ## Clone Your Project
 
-```bash
+```shell
 $ git clone git@github.com:YourOrganization/example.com.git
 ```
 
@@ -76,7 +76,7 @@ If any of the `vault.yml` files look like the example above, follow the [vault i
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis up
 ```
 
@@ -92,25 +92,25 @@ For easy access during the import process, place the database export in your loc
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis ssh development
 ```
 
 Navigate to the web root:
 
-```bash
+```shell
 $ cd /srv/www/example.com/current
 ```
 
 Import the database with wp-cli:
 
-```bash
+```shell
 $ wp db import example.com.sql
 ```
 
 If the export is not from another development environment, search-and-replace the site's URL with wp-cli:
 
-```bash
+```shell
 $ wp search-replace http://example.com http://example.test
 ```
 

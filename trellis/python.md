@@ -56,8 +56,8 @@ using Python from Homebrew will cause more problems long-term due to its newer
 
 After Python is installed and working, you'll also need to ensure pip is installed. If `pip` or `pip3` does not exist, it can be installed like this:
 
-```bash
-python3 -m ensurepip
+```shell
+$ python3 -m ensurepip
 ```
 
 ### Ubuntu
@@ -68,8 +68,8 @@ only. There's no "unversioned" `python`.
 The [`python-is-python3`](https://packages.ubuntu.com/focal/python-is-python3) package
 exists solely as an easy way to symlink `/usr/bin/python` to `python3`.
 
-```bash
-sudo apt-get install -y python3 python-is-python3 python3-pip
+```shell
+$ sudo apt-get install -y python3 python-is-python3 python3-pip
 ```
 
 ### Windows

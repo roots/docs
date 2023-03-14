@@ -23,7 +23,7 @@ Generally a Component consists of:
 
 The easiest way to create a component is with WP-CLI:
 
-```shell script
+```shell
 $ wp acorn make:component ExampleComponent
 ```
 
@@ -39,13 +39,13 @@ These would need to be created manually
 
 A Component in action in a Blade template will look something like this:
 
-```html
+```blade
 <x-example-component title="Example Component" :image-id="$image"/>
 ```
 
 The template for that Component might look like this:
 
-```html
+```blade
 <div {{ $attributes }}>
     <h3>{!! $title !!}</h3>
     @if($imageElement)
@@ -95,18 +95,21 @@ Component constructor arguments should be specified using `camelCase`, while `ke
 
 
 In the above example
-```html
+
+```blade
 <x-example-component title="A Component"/>
 ```
+
 will work, but
-```html
+
+```blade
 <x-example-component theTitle="A Component"/>
 ```
 will throw an error.
 
 The attributes used to pass data to your Component tag can be in any order, so long as the names are correct:
 
-```html
+```blade
 <x-example-component title="The Title" :image-id="$image"/>
 <x-example-component :image-id="$image" title="The Title"/>
 ```
@@ -118,7 +121,7 @@ These are equivalent.
 By default, anything passed to an attribute on a Component tag will be treated as a string.
 So if you do this:
 
-```html
+```blade
 <x-example-component title="$variable"/>
 ```
 
@@ -126,7 +129,7 @@ Your component will treat that as a string containing `$variable`, _not_ whateve
 
 If you need to pass non-string data, just prefix your attribute with a colon, and its value will be evaluated as PHP:
 
-```html
+```blade
 <x-example-component :title="$variable"/>
 <x-example-component :title="get_my_title()"/>
 <x-example-component :title="TITLE_CONSTANT"/>
@@ -134,7 +137,8 @@ If you need to pass non-string data, just prefix your attribute with a colon, an
 
 ::: warning Note
 Because your argument is now evaluated as PHP, you _don't_ want to pass a simple string, or PHP will try and evaluate it:
-```html
+
+```blade
 <x-example-component :title="Uh oh"/>
 ```
 This will throw an error when it tries to evaluate `Uh oh` as PHP.
@@ -155,7 +159,7 @@ In the Component tag, you use attributes to pass data to your component, but you
 These attributes will be put in an "attribute bag" which you can then access in your Component view with the special `$attributes` variable.
 If you echo the variable it will print out each attribute and its value, which is very useful for things like passing CSS selectors to your Components:
 
-```html
+```blade
 <x-example-component title="Styled Component" 
     class="bg-color-red text-color-white"/>
 <!-- yields... -->

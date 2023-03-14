@@ -24,7 +24,7 @@ Acorn v3 requires PHP >= 8.0.2.
 Update the `roots/acorn` dependency in your `composer.json` file to `^3.0`:
 
 ```shell
-composer require roots/acorn ^3.0 -W
+$ composer require roots/acorn ^3.0 -W
 ```
 
 The `-W` flag is required to upgrade the included Laravel dependencies.

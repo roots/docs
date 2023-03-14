@@ -37,7 +37,7 @@ wordpress_sites:
 
 You could organize your `nginx-includes` templates in corresponding subdirectories:
 
-```bash
+```shell
 trellis/
   nginx-includes/
     site1/
@@ -49,7 +49,7 @@ trellis/
 
 You could also have an "all" directory, which would apply conf to all sites:
 
-```bash
+```shell
 trellis/
   nginx-includes/
     all/
@@ -58,7 +58,7 @@ trellis/
 
 The above directory structure would be templated to the remote server as follows:
 
-```bash
+```shell
 /
   etc/
     nginx/
@@ -109,7 +109,7 @@ You will need to inform Trellis of the child templates you have created.
 
 Use the `nginx_conf` variable to designate your child template for `nginx.conf.j2`. Given that this template applies to all sites, it would be appropriate to define the variable in a `group_vars/<environment>/main.yml` file (including `group_vars/all/main.yml`).
 
-```bash
+```yaml
 nginx_conf: nginx-includes/nginx.conf.child
 ```
 
@@ -144,7 +144,7 @@ Create your child templates at the paths you designated in the `nginx_conf` and 
 
 Here is an example child template that replaces the `http_begin` block in the `nginx.conf.j2` base template.
 
-```
+```jinja
 {% extends 'roles/nginx/templates/nginx.conf.j2' %}
 
 {% block http_begin -%}
@@ -159,7 +159,7 @@ The path for your base template – referenced in your `extends` statement – m
 
 The first block in the example child template below augments the content of the `fastcgi_basic` block from the `wordpress-site.conf.j2` base template. It inserts <code>{{ super() }}</code>, which represents the original block content from the base template, then adds an extra `fastcgi_param`. The second block in the example rewrites the `redirects_https` block, omitting the `ssl_enabled` conditional and adding a new `listen 8080` directive.
 
-```
+```jinja
 {% extends 'roles/wordpress-setup/templates/wordpress-site.conf.j2' %}
 
     {% block fastcgi_basic -%}
@@ -249,7 +249,7 @@ Create your site templates at the paths you designated in the `nginx_sites_confs
 
 Here is an example site template that hosts nginx default page, listening on `example.com` non-standard port 8080.
 
-```
+```nginx
 # {{ ansible_managed }}
 
 server {

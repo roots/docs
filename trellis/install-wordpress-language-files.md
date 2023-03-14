@@ -144,11 +144,12 @@ By default, for each new release the languages would have to be reinstalled, dur
 For preventing this "translation downtime" and for making a language update instead of install possible, the `languages` folder can be added to `project_copy_folders`, so it is copied between releases.
 
 `group_vars/all/main.yml`:
-````
+
+```yaml
 project_copy_folders:
   - vendor
   - web/app/languages # copy languages between releases
-````
+```
 
 ## Language fallback
 

@@ -72,7 +72,7 @@ class ExampleComposer extends Composer
 
 Because that variable is scoped to `example.blade.php`, we'll also see the following behavior:
 
-```html
+```blade
 <!-- resources/views/content.blade.php -->
 {{ $roots }}
 <!-- Throws an error because the variable is not defined -->
@@ -80,7 +80,7 @@ Because that variable is scoped to `example.blade.php`, we'll also see the follo
 @include('partials.example')
 ```
 
-```html
+```blade
 <!-- resources/views/partials/example.blade.php -->
 <h1>{{ $roots }}</h1>
 <!-- <h1>Tools for modern WordPress development</h1> -->
@@ -88,7 +88,7 @@ Because that variable is scoped to `example.blade.php`, we'll also see the follo
 @include('partials.example2')
 ```
 
-```html
+```blade
 <!-- resources/views/partials/example2.blade.php -->
 <div>{{ $roots }}</div>
 <!-- <div>Tools for modern WordPress development</div> -->
@@ -126,7 +126,7 @@ class Example2 extends Composer
 }
 ```
 
-```html
+```blade
 <!-- resources/views/partials/example2.blade.php -->
 <div>{{ $better_roots }}</div>
 <!-- <div>Resources for *awesome* WordPress development</div> -->
@@ -148,7 +148,7 @@ In other words:
 
 You've seen `with()` used above to pass data to views, but it has a more aggressive sibling calling `override()` which does the same thing--except that it will replace data inherited by, or passed to, the view while `with()` will not.
 
-```html
+```blade
 <!-- /resources/views/page.blade.php -->
 @include('partials.example', ['roots' => "Resources for modern WordPress development"])
 
@@ -169,7 +169,8 @@ class Example extends Composer
     }
 }
 ```
-```html
+
+```blade
 <!-- /resources/views/partials/example.blade.php -->
 <h1>{{ $roots }}</h1>
 <!-- <h1>Resources for modern WordPress development</h1> -->
@@ -177,6 +178,7 @@ class Example extends Composer
 ```
 
 Using `override()`:
+
 ```php
 
 class Example extends Composer
@@ -189,7 +191,8 @@ class Example extends Composer
     }
 }
 ```
-```html
+
+```blade
 <!-- /resources/views/partials/example.blade.php -->
 <h1>{{ $roots }}</h1>
 <!-- <h1>An amazing stack!</h1> -->

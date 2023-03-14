@@ -18,7 +18,7 @@ Bedrock can run on any webserver that supports Composer and PHP >= 7.1. The docu
 
 If you aren't using a Nginx-based setup that already supports Bedrock, such as Valet or [Trellis](https://roots.io/trellis/), you'll need to configure Nginx with the following rules:
 
-```
+```nginx
 server {
   listen 80;
   server_name example.com;
@@ -43,14 +43,14 @@ Multisite installations on Nginx need additional rewrites depending on the type 
 
 #### Subdomain multisite rewrites
 
-```
+```nginx
 rewrite ^/(wp-.*.php)$ /wp/$1 last;
 rewrite ^/(wp-(content|admin|includes).*) /wp/$1 last;
 ```
 
 #### Subfolder multisite rewrites
 
-```
+```nginx
 if (!-e $request_filename) {
   rewrite /wp-admin$ $scheme://$host$uri/ permanent;
   rewrite ^(/[^/]+)?(/wp-.*) /wp$2 last;
@@ -62,7 +62,7 @@ if (!-e $request_filename) {
 
 Make sure the `DocumentRoot` is set to the `web` folder:
 
-```
+```apache
 <VirtualHost *:80>
         DocumentRoot /var/www/html/bedrock/web
 
@@ -86,7 +86,7 @@ Make sure the `DocumentRoot` is set to the `web` folder:
 
 You can also add the suggested `.htaccess` file from WordPress at `web/.htaccess`:
 
-```php
+```apache
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -105,7 +105,7 @@ If you're using a [supported WordPress host](deployment.md#supported-wordpress-h
 
 Sometimes you can't change the document root on hosted web server. In this case, you can create an `.htaccess` file at the root of your project with the following content:
 
-```php
+```apache
 RewriteEngine on
 
 RewriteCond %{REQUEST_URI} !web/

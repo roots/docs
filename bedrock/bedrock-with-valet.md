@@ -24,8 +24,8 @@ $ wp package install aaemnnosttv/wp-cli-valet-command:@stable
 To create a new Bedrock site for Valet, navigate to Valet sites directory and use the `wp valet` command:
 
 ```shell
-cd ~/Sites/valet
-wp valet new bedrock --project=bedrock
+$ cd ~/Sites/valet
+$ wp valet new bedrock --project=bedrock
 ```
 
 You should now be able to access your new site at `https://bedrock.test`.

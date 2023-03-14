@@ -11,8 +11,6 @@ authors:
 
 # Installation
 
-[[toc]]
-
 ## What is Bedrock?
 
 Bedrock is a [WordPress boilerplate](https://roots.io/bedrock/).
@@ -35,7 +33,7 @@ Bedrock is a [WordPress boilerplate](https://roots.io/bedrock/).
 
 Create a new Bedrock project:
 
-```bash
+```shell
 $ composer create-project roots/bedrock
 ```
 
@@ -62,6 +60,6 @@ $ composer create-project roots/bedrock
 
 Bedrock is multisite network compatible, but needs the [roots/multisite-url-fixer](https://github.com/roots/multisite-url-fixer) mu-plugin on subdomain installs to make sure admin URLs function properly. This plugin is not _needed_ on subdirectory installs but will work well with them. From your Bedrock directory:
 
-```bash
+```shell
 $ composer require roots/multisite-url-fixer
 ```

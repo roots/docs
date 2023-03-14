@@ -15,8 +15,6 @@ authors:
 
 # Installation
 
-[[toc]]
-
 ## What is Sage?
 
 Sage is a [WordPress starter theme](https://roots.io/sage/).
@@ -36,7 +34,7 @@ WSL is required in order to use Sage. Build commands must be ran from a [WSL env
 
 Sage relies on Node.js based tools to manage dependencies and build assets. We recommend using [Volta](https://github.com/volta-cli/volta) to install and manage Node.js. We also recommend using [Yarn](https://yarnpkg.com/). [After installing Volta](https://docs.volta.sh/guide/getting-started):
 
-```bash
+```shell
 # Install the latest Node.js LTS release
 $ volta install node
 
@@ -54,14 +52,14 @@ See the [Acorn installation](/acorn/docs/installation/) docs for additional deta
 
 Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
 
-```sh
+```shell
 # From your WordPress themes directory, run:
 $ composer create-project roots/sage your-theme-name
 ```
 
 To install the latest development version of Sage, add `dev-main` to the end of the command:
 
-```sh
+```shell
 $ composer create-project roots/sage your-theme-name dev-main
 ```
 

@@ -31,7 +31,7 @@ The Trellis [installation instructions](installation.md) are optimized for a qui
 If you're using trellis-cli, just re-run the following command to ensure your
 project is initialized and the dependencies are installed:
 
-```bash
+```shell
 $ trellis init
 ```
 
@@ -72,7 +72,7 @@ Now you're ready to provision your server. Ansible connects to the remote server
 via SSH so run the following command from your local machine:
 
 
-```bash
+```shell
 $ trellis provision <environment>
 ```
 
@@ -82,7 +82,7 @@ Re-provisioning is always assumed to be a safe operation. When you make changes 
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis provision <environment>
 ```
 
@@ -90,7 +90,7 @@ You can also provision with specific tags to only run the relevant roles:
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis provision --tags users <environment>
 ```
 
@@ -102,7 +102,7 @@ Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis deploy <environment>
 ```
 

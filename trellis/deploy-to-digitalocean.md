@@ -21,7 +21,7 @@ To provision a server, Trellis requires a server running a bare/stock version of
 
 Trellis CLI comes a `trellis droplet create` command to automatically create a DigtalOcean droplet for a specified environment:
 
-```sh
+```shell
 $ trellis droplet create production
 ```
 
@@ -33,7 +33,7 @@ If the `DIGITALOCEAN_ACCESS_TOKEN` environment variable is not set, the command 
 
 ### Quick start (region and size will be prompted)
 
-```sh
+```shell
 $ trellis droplet create production
 ```
 
@@ -45,7 +45,7 @@ The remote server playbook will run and provision your droplet with PHP, Nginx, 
 
 The command help file can be accessed by passing the `--help` flag:
 
-```sh
+```shell
 $ trellis droplet create --help
 ```
 
@@ -114,7 +114,7 @@ After creating a new droplet, your local project will have a modified hosts file
 
 Once your server is provisioned you’ll want to perform the first deploy. If you try to visit your site before deploying you’ll see a server 500 error.
 
-```
+```shell
 $ trellis deploy production
 ```
 

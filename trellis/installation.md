@@ -14,8 +14,6 @@ authors:
 
 # Installation
 
-[[toc]]
-
 ## What is Trellis?
 [Trellis](https://roots.io/trellis/) is a tool to create WordPress web servers and deploy WordPress sites.
 
@@ -129,7 +127,7 @@ following as well:
 
 Install [trellis-cli](https://github.com/roots/trellis-cli) via [Homebrew](https://brew.sh/):
 
-```bash
+```shell
 $ brew install roots/tap/trellis-cli
 ```
 
@@ -138,19 +136,19 @@ $ brew install roots/tap/trellis-cli
 To create a new project, first, pick a descriptive name (and use it in place of the default `example.com`).
 We recommend the domain of the site for convenience.
 
-```bash
+```shell
 $ trellis new example.com
 ```
 
 Or to explicitly set the site name and host, use the following:
 
-```bash
-trellis new --name example.com --host www.example.com ~/path/to/my/project
+```shell
+$ trellis new --name example.com --host www.example.com ~/path/to/my/project
 ```
 
 After you've created a project, the folder structure for a Trellis project will look like this:
 
-```bash
+```shell
 example.com/      # → Root folder for the project
 ├── trellis/      # → Your server configuration (a customized install of Trellis)
 └── site/         # → A Bedrock-based WordPress site

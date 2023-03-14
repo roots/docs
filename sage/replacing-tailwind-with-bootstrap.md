@@ -20,7 +20,7 @@ Sage 10 ships with [Tailwind CSS](https://tailwindcss.com), but many users may w
 
 Remove the `@roots/bud-tailwindcss` extension:
 
-```sh
+```shell
 yarn remove @roots/bud-tailwindcss
 ```
 
@@ -54,7 +54,7 @@ Open `bud.config.js` from your theme and remove the following lines:
 
 Add the `@roots/bud-sass` extension:
 
-```sh
+```shell
 yarn add @roots/bud-sass --dev
 ```
 **Note:** Verify that all Bud packages and the `@roots/sage` package versions are the same in your `package.json` to prevent build errors.
@@ -63,7 +63,7 @@ yarn add @roots/bud-sass --dev
 
 Add Bootstrap as a dependency:
 
-```sh
+```shell
 yarn add bootstrap --dev
 ```
 
@@ -71,7 +71,7 @@ yarn add bootstrap --dev
 
 To avoid an ugly error message in Bud about missing dependencies, add Popper as a dependency:
 
-```sh
+```shell
 yarn add @popperjs/core --dev
 ```
 

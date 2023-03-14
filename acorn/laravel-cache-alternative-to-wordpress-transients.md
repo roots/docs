@@ -44,5 +44,5 @@ Cache::forget('key');
 You can also use Acorn's WP-CLI integration to interact with the cache:
 
 ```shell
-wp acorn cache:clear
+$ wp acorn cache:clear
 ```

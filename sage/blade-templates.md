@@ -26,7 +26,7 @@ One of the primary features of Blade is the `@include` directive (which also has
 Variables define in a given view will cascade down to views that it `@includes`, but you can also pass data directly to Blade templates by passing a keyed array as the second argument to the `@include()` directive.
 The key names will become the variable names that their values are assigned to.
 
-```html
+```blade
 @include('partials.example-partial', ['variableName' => 'Variable Value']
 
 <!-- /resources/views/partials/example-partial.blade.php -->
@@ -39,7 +39,7 @@ The key names will become the variable names that their values are assigned to.
 
 A layout is a special kind of template that can be extended. It's useful when you have a lot of HTML content surrounding something you want to be dynamic—for instance the header and footer of a site.
 
-```html
+```blade
 <!-- resources/views/layouts/app.blade.php -->
 <html>
   <body>
@@ -77,7 +77,7 @@ With Composers, you can bind data to _any_ Blade template file.
 You can also pass data directly to Blade templates when `@include`ing them by passing a keyed array as the second argument to the `@include()` directive.
 The key names will become the variable names that their values are assigned to.
 
-```html
+```blade
 @include('partials.example-partial', ['variableName' => 'Variable Value'])
 
 <!-- /resources/views/partials/example-partial.blade.php -->
@@ -90,7 +90,7 @@ The key names will become the variable names that their values are assigned to.
 
 If you need to clear or compile Blade templates, you can do so with WP-CLI:
 
-```bash
+```shell
 # Compile all Blade templates
 $ wp acorn view:cache
 

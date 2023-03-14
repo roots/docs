@@ -62,7 +62,7 @@ Because your debugger is located on your computer and not the server, Xdebug wou
 
 First, let's look at the command we'll be using to create the tunnel:
 
-```bash
+```shell
 $ trellis xdebug-tunnel <action> <host>
 ```
 
@@ -84,7 +84,7 @@ some_inventory_hostname
 
 You would execute:
 
-```bash
+```shell
 $ trellis xdebug-tunnel open some_inventory_hostname
 ```
 
@@ -92,7 +92,7 @@ This script runs the `xdebug-tunnel.yml` playbook with the necessary variables t
 
 To close the tunnel, as well as disable Xdebug, run:
 
-```bash
+```shell
 $ trellis xdebug-tunnel close some_inventory_hostname
 ```
 
@@ -110,12 +110,12 @@ If you don't use inventory aliases in your host files, you can also use an ip ad
 
 You can do this:
 
-```bash
+```shell
 $ trellis xdebug-tunnel open 12.34.56.78
 ```
 
 You must specify the `host` exactly the same when opening and closing the tunnel. It would cause an error to open the tunnel with a `host` of `some_inventory_hostname` then close with a host of `12.34.56.78`. This is because the tunnel socket is created using the host parameter you pass:
 
-```bash
+```shell
 /tmp/trellis-xdebug-{{ provided host }}
 ```

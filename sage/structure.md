@@ -12,8 +12,6 @@ authors:
 
 # Theme Structure
 
-[[toc]]
-
 ## Introduction
 
 The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.

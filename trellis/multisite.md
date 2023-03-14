@@ -72,7 +72,7 @@ wordpress_sites:
 
 After provisioning your remote server and deploying your sites, you'll need to install WordPress as a final step in your staging and production environments. SSH into your server as the `web` user with `ssh web@<domain>` and in the `/srv/www/<domain>/current/` directories run the following WP-CLI command to install WordPress:
 
-```bash
+```shell
 $ wp core multisite-install --title="site title" --admin_user="username" --admin_password="password" --admin_email="you@example.com"
 ```
 
@@ -94,7 +94,7 @@ site_hosts:
 
 For subdomains in development, you'll need DNS entries for every subdomain/host. The [Landrush](https://github.com/phinze/landrush) Vagrant plugin is how you can do this. Install it via:
 
-```bash
+```shell
 $ vagrant plugin install landrush
 ```
 
@@ -114,7 +114,7 @@ See issue [#511](https://github.com/roots/trellis/issues/511) for more details.
 If something goes wrong with Landrush such as not being able to resolve a
 website from the guest:
 
-```bash
+```shell
 $ vagrant landrush list
 ```
 

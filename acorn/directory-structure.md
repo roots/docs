@@ -15,7 +15,7 @@ authors:
 
 Out of the box, Acorn will [use its own configs](https://github.com/roots/acorn/tree/main/config), and it will keep the application cache and logs in the standard WordPress cache directory:
 
-```bash
+```shell
 [wp-content]/          # wp-content directory ("app" if you're using Bedrock)
 ├── cache/
 │   └── /acorn/        # Private application storage ("storage" directory)
@@ -41,7 +41,7 @@ If you've installed Acorn from your Bedrock project root, Acorn's `config/` dire
 There are no conflicts with the `config/` directory if you've installed Acorn from your theme.
 :::
 
-```bash
+```shell
 root/              # Base directory for your Acorn application (e.g., "sage")
 ├── app/           # Core application code
 ├── config/        # Application configuration
@@ -64,14 +64,14 @@ If you have a `config/` directory, you can drop your desired config files in the
 
 You can automatically set up the traditional structure via WP-CLI:
 
-```bash
-wp acorn acorn:init storage && wp acorn vendor:publish --tag=acorn
+```shell
+$ wp acorn acorn:init storage && wp acorn vendor:publish --tag=acorn
 ```
 
 Alternatively, you can choose to only copy the config files.
 
-```bash
-wp acorn vendor:publish --tag=acorn
+```shell
+$ wp acorn vendor:publish --tag=acorn
 ```
 
 ## Advanced directory modifications

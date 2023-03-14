@@ -11,8 +11,6 @@ authors:
 
 # Configuration
 
-[[toc]]
-
 ## Introduction
 
 All of the configuration for Sage lives inside of `app/setup.php`. Each option is documented allowing for you to easily familiarize yourself with the options configured out of the box.

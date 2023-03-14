@@ -138,12 +138,12 @@ The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args 
 
 Remember to import your SSH key password into Keychain. For macOS Monterey (12.0) and later, you should run:
 
-```bash
+```shell
 $ ssh-add --apple-use-keychain
 ```
 
 For versions prior, you need to run:
 
-```bash
+```shell
 $ ssh-add -K
 ```

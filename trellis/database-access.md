@@ -21,12 +21,12 @@ Accessing your databases with client software like [Sequel Pro](https://www.sequ
 Run the following from any directory within your project:
 
 For Sequel Pro (or Sequel Ace):
-```bash
+```shell
 $ trellis db open --app=sequel-pro production example.com
 ```
 
 For TablePlus
-```bash
+```shell
 $ trellis db open --app=tableplus production example.com
 ```
 

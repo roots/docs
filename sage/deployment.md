@@ -49,7 +49,7 @@ To prevent this from happening, we will need to add configuration to the web ser
 
 If you are using Nginx, add the following to your site configuration before the final location directive:
 
-```php
+```nginx
 location ~* \.(blade\.php)$ {
     deny all;
 }
@@ -59,7 +59,7 @@ location ~* \.(blade\.php)$ {
 
 If you are using Apache, add the following to your virtual host configuration or the `.htaccess` file at the root of your web application:
 
-```php
+```apache
 <FilesMatch ".+\.(blade\.php)$">
     # Apache 2.4
     <IfModule mod_authz_core.c>

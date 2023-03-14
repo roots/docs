@@ -36,7 +36,7 @@ Deploy with a single command:
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis deploy <environment>
 ```
 
@@ -165,7 +165,7 @@ Deploy command:
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis deploy <environment>
 ```
 
@@ -174,7 +174,7 @@ $ trellis deploy <environment>
 
 Run the following from any directory within your project:
 
-```bash
+```shell
 $ trellis rollback <environment>
 ```
 

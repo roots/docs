@@ -31,13 +31,13 @@ If you are running into `ERR_EMPTY_RESPONSE` when trying to access your local de
 
 Try:
 
-```bash
+```shell
 $ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
 ```
 
 Then run:
 
-```bash
+```shell
 $ vagrant hostmanager
 ```
 
@@ -46,7 +46,7 @@ $ vagrant hostmanager
 
 Halt all VMs and remove VM-related entries from your `/etc/hosts` file, particularly entries similar to the example below. You may want to backup the hosts file before editing.
 
-```bash
+```shell
 192.168.50.5  example.test  # VAGRANT: 22c9...
 ```
 
@@ -74,7 +74,7 @@ See [Troubleshooting Let's Encrypt](ssl.md#troubleshooting-let-s-encrypt).
 
 Error message looks something like:
 
-```bash
+```shell
 Command: ["modifyvm", "5a403eac-5619-4020-ba14-b72fd8d5b530", "--natpf1", "delete", "ssh"]
 
 Stderr: VBoxManage: error: An unexpected process (PID=0x00003FAA) has tried to lock the machine 'trellis-playbooks', while only the process started by LaunchVMProcess (PID=0x00003C31) is allowed
@@ -105,7 +105,7 @@ If you have trouble with SSH connections to your server, consider the tips below
 
 SSH will automatically look for and try a default set of SSH keys, along with keys loaded in your `ssh-agent`. However, the SSH server will only let your SSH client try a limited number of keys before disconnecting (default: 6). If you have many SSH keys and the correct key is not being selected, you can force your SSH client to try only the correct key. Add this to your `~/.ssh/config` (with the correct path to your key):
 
-```bash
+```shell
 Host example.com
   IdentitiesOnly yes
   IdentityFile /users/username/.ssh/id_ed25519
@@ -117,7 +117,7 @@ Your server may occasionally offer a different host key than what your local mac
 
 **Example 1**
 
-```bash
+```shell
 TASK [setup] *******************************************************************
 System info:
   Ansible 2.2.1.0; Darwin
@@ -131,7 +131,7 @@ fatal: [xxx.xxx.xxx.xxx]: UNREACHABLE! => {"changed": false, "unreachable": true
 
 **Example 2**
 
-```bash
+```shell
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -144,7 +144,7 @@ SHA256:lv86hFykjn8pnOWE2WDWJo8Mzf6FTDMx/yWXOqzK5PU.
 
 If this change in host keys is expected, then clear the old host key from your `known_hosts` by running the following command (with your real IP or host name).
 
-```bash
+```shell
 $ ssh-keygen -R 12.34.56.78
 ```
 
@@ -162,13 +162,13 @@ Similarly, the `sshd` role may cause your server's SSH client to require stronge
 
 SSH connection issues are often difficult to resolve without verbose output. Use the `-vvvv` option with your `ansible-playbook` command:
 
-```bash
+```shell
 $ ansible-playbook server.yml -e env=production -vvvv
 ```
 
 You may also use `-v`, `-vv`, and `-vvv` with manual SSH connections:
 
-```bash
+```shell
 $ ssh -v root@12.34.56.78
 ```
 
@@ -176,7 +176,7 @@ $ ssh -v root@12.34.56.78
 
 If your `ansible-playbook` command is failing its SSH connection, it can be helpful to try a manual SSH connection to narrow down the problem. If manual SSH fails, try again with `-v` for [verbose output](#verbose-output).
 
-```bash
+```shell
 $ ssh -v root@12.34.56.78
 ```
 
@@ -186,8 +186,8 @@ The `sshd` role will most likely cause your SSH server to discontinue using some
 
 ### NET::ERR_CERT_INVALID for Mac Users
 If you are running Trellis on MacOS and receiving a `NET::ERR_CERT_INVALID` error on your local dev domain, you may want to try using the `vagrant-trellis-cert` plugin using the following commands:
-```bash
-cd trellis
-vagrant plugin install vagrant-trellis-cert
-vagrant trellis-cert trust
+```shell
+$ cd trellis
+$ vagrant plugin install vagrant-trellis-cert
+$ vagrant trellis-cert trust
 ```

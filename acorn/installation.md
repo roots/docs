@@ -11,8 +11,6 @@ authors:
 
 # Installation
 
-[[toc]]
-
 ## What is Acorn?
 
 Acorn is a way to use [Laravel components inside of WordPress](https://roots.io/acorn/).
@@ -29,7 +27,7 @@ This means you get access to Laravel's artisan commands through the use of [`wp 
 
 We recommend that you install Acorn on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
 
-```sh
+```shell
 $ composer require roots/acorn
 ```
 

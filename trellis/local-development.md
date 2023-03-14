@@ -48,7 +48,7 @@ Re-provisioning is always assumed to be a safe operation. When you make changes 
 
 Run the following from your project's `trellis` directory:
 
-```bash
+```shell
 $ trellis provision development
 ```
 
@@ -56,13 +56,13 @@ You can also provision with specific tags to only run the relevant roles:
 
 Run the following from your project's `trellis` directory:
 
-```bash
+```shell
 $ trellis provision --tags=users development
 ```
 
 If you added a *new* WordPress site (or manually added new synced directories to Vagrant), you'll need to reload the VM as well:
 
-```bash
+```shell
 $ vagrant reload
 ```
 
