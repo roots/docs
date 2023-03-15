@@ -60,7 +60,7 @@ your_server_hostname
 your_server_hostname
 ```
 
-Each host is under two groups: `production` and `web`. These groups can be used
+Each host is under two groups: the environment (`production` in this case) and `web`. These groups can be used
 for any semantic grouping you want, but in Trellis you at least need those two
 built-in ones.
 
