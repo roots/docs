@@ -9,7 +9,7 @@ authors:
 
 # How Trellis uses Ansible
 Since Trellis is powered by Ansible, the best way to understand Trellis is to understand Ansible itself.
-Even knowing a just key Ansible concepts will help you learn Trellis and how to
+Even knowing a few just key Ansible concepts will help you learn Trellis and how to
 customize it to fit your needs.
 
 Ansible's own [documentation](https://docs.ansible.com/ansible/latest/user_guide/index.html) is very comprehensive and should be considered as an extension of Trellis' documentation.
