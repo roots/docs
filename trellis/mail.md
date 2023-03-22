@@ -60,7 +60,10 @@ All of these offer around 10k+ emails for free per month. Once you have SMTP cre
 - `mail_smtp_server`: hostname:port
 - `mail_hostname`: hostname for mail delivery
 - `mail_user`: username
-- `mail_password`: password or API key (define in `group_vars/all/vault.yml`)
+- `mail_password`: password or "API key" (define in `group_vars/all/vault.yml`)
+
+**Note:** Trellis sends emails through SMTP, which requires a username and password. Some email service providers refer to  `mail_password` as an "API key", even though it is not actually used to access the email service provider's API. If you prefer to send email through your email service provider's API (instead of via SMTP), you will need to use a plugin.  
+
 
 ### Example
 
