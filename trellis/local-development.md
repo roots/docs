@@ -14,11 +14,18 @@ authors:
 ---
 
 # Local Development
-Development environments are handled by [Vagrant](https://www.vagrantup.com/) in Trellis. For other options, see [below](#other-non-vagrant-options).
+Trellis has two official integrations for development environments using virtual machines:
+
+* [Vagrant](#vagrant)
+* [CLI `vm`](#cli-vm)
+
+Other options include:
+* [Laravel Valet](#laravel-valet)
+* [Manual virtual machines](#manual-virtual-machines)
+* [Nothing!](#nothing)
 
 ## Vagrant
 Trellis integrates with Vagrant to automatically run the [Ansible provisioner](https://www.vagrantup.com/docs/provisioning/ansible) via the default [`Vagrantfile`](https://github.com/roots/trellis/blob/master/Vagrantfile). Provisioning in development uses the `dev.yml` Ansible playbook to create a Vagrant virtual machine running your WordPress site.
-
 
 Follow these steps to get a development server running:
 1. Configure your site(s) based on the [WordPress Sites docs](wordpress-sites.md) and read the [development specific](wordpress-sites.md#development) ones.
@@ -68,6 +75,102 @@ $ vagrant reload
 
 ### More
 See the [Vagrant](../vagrant) page for more Vagrant specific configuration details.
+
+## CLI `vm`
+::: tip
+New in trellis-cli `v1.10.0`: experimental VM support built-in! See our
+[blog](https://roots.io/introducing-lima-to-trellis-for-faster-local-development/#adding-lima-support-to-trellis)
+for the announcement.
+:::
+
+Trellis' [CLI](#cli.md) now includes built-in integration for managing virtual machines in development as an alternative to Vagrant.
+
+VM support is powered by [Lima](https://github.com/lima-vm/lima) which is an open source tool to run Linux virtual machines on macOS.
+Lima isn't just a replacement for Vagrant, it also replaces the Vagrant VM provider like VirtualBox or Parallels too.
+
+The VM integration with Lima uses macOS's Virtualization.Framework ("vz") which offers near-native performance and that includes file syncing via `virtiofs`.
+
+### Requirements:
+* macOS 13 (Ventura)
+* Intel or Apple Silicon
+* Lima >= 0.15
+
+### Usage:
+There's 5 new commands:
+
+* `trellis vm start` - create or start a VM
+* `trellis vm stop` - stop a running VM
+* `trellis vm delete` - delete a stopped VM
+* `trellis vm shell` - open a shell/terminal on the VM
+* `trellis vm sudoers` - configure sudoers to avoid the need for `sudo`
+
+Run `trellis vm <command> -h` for details on each command.
+
+For default use cases, `trellis vm start` can be run without any customization first. It will create a new virtual machine (using Lima) from a generated config file (`project/trellis/.trellis/lima/config/<name>.yml`). The site's `local_path` will be automatically mounted on the VM and your `/etc/hosts` file will be updated.
+
+Note: run `trellis vm sudoers -h` to make `/etc/hosts` file updates passwordless:
+```bash
+$ trellis vm sudoers | sudo tee /etc/sudoers.d/trellis
+```
+
+Under the hood, those commands wrap equivalent `limactl` features. Just like the previous Vagrant integration, you can always run `limactl` directly to manage your VMs.
+
+### Configuration:
+For the common use case, the default configuration should be all that's needed which is why config options are limited to start with. We will offer more customization over time.
+
+The CLI [config file](cli.md#configuration) (global or project level) supports a new `vm` option. The only useful config option right now is `ubuntu` for setting the Ubuntu version.
+
+Here's an example of specifying 20.04:
+
+```yml
+vm:
+  ubuntu: 20.04
+```
+
+Note: this must be changed _before_ creating the VM, otherwise you'll need to delete it first and re-create it.
+
+### Integration details
+When you first run `trellis vm start`, the CLI will do the following:
+
+1. Generate a Lima config file (`.trellis/lima/example.com.yml`) based on your Trellis project's development site
+2. Create the Lima instance by running `limactl start --name=example.com .trellis/lima/example.com.yml`
+3. Generate an Ansible inventory/hosts file for the VM (`.trellis/lima/inventory`)
+4. Add your sites hosts to your `/etc/hosts` file
+
+Knowing how the CLI and Lima interact can help with troubleshooting and debugging. Issues with the VM itself are usually related to Lima, and the underlying `limactl` command can be run manually to try and isolate the issue.
+
+Tip: run `limactl list` to see all Lima instances and their statuses.
+
+### Ansible inventory
+As detailed above, trellis-cli will automatically generate and manage a VM specific inventory file.
+There is no need to manually edit the `hosts/development` file as it won't be used.
+
+Commands like `trellis provision` will automatically detect and specify the Lima inventory file. If you need to run an Ansible command manually against the VM host, the `--inventory-file` flag needs to be set:
+```bash
+ansible-playbook dev.yml --inventory-file=.trellis/lima/inventory
+```
+
+#### SSH port
+One reason why the inventory file needs to be generated each time a VM is created or started is due to SSH port forwarding.
+Lima will find a free _local_ port and use it to forward to port 22 on the VM.
+The inventory file references this forwarded port and Ansible will use that for its SSH connection.
+
+It's recommended to use `trellis vm shell` to SSH to the VM and open a shell/terminal since you don't need to worry about hosts or ports.
+
+To connect manually via SSH, run `limactl show-ssh -f config <instance name>` or `limactl show-ssh <instance name>` to view the SSH config in various formats.
+
+### Vagrant migration
+If you are migrating from Vagrant to Lima, or want to try both together at the same time, you may need to manually edit your `/etc/hosts` file.
+
+Both Vagrant and trellis-cli will automatically manage entries to `/etc/hosts`, but only for their own VMs. So if you're trying out the different VM solutions on the _same_ project, there will be conflicting hosts. The Vagrant specific hosts block (within vagrant hosts-manager comments) should be deleted:
+
+```plain
+## vagrant-hostmanager-start-{id}
+192.168.50.5 example.test www.example.test
+## vagrant-hostmanager-end-{id}
+```
+
+There is no need to edit your `hosts/development` file unless you were manually using it in a non-standard setup. As mentioned in the [Ansible inventory](#ansible-inventory) section above, trellis-cli generates a separate inventory file.
 
 ## Other non-Vagrant options
 While Trellis offers integrated Vagrant development environments, it is
