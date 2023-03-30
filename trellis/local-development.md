@@ -111,5 +111,4 @@ installation process automatically.
 
 ### Nothing
 That's right... nothing! You might not care about a local development
-environment. Or you might only want to use Trellis for deploying to managed servers
-like. Trellis is quite flexible and supports these uses cases as well.
+environment. Or you might only want to use Trellis for deploying to managed servers. Trellis is quite flexible and supports these uses cases as well.
