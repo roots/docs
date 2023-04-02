@@ -29,7 +29,7 @@ In Sage's Bud config (`bud.config.js`), there a section for generating `theme.js
 
 ### Default color palette
 
-Rather than [manually defining the the editor colors](https://developer.wordpress.org/themes/advanced-topics/theme-json/#color) in your Sage-based WordPress themes by adding them to `theme.json`, your color palette as defined by your Tailwind config will be used by default for the WordPress editor.
+Rather than [manually defining the the editor colors](https://developer.wordpress.org/themes/advanced-topics/theme-json/#color) by adding them to `theme.json`, your Tailwind config will be used to generate colors for the Wordpress editor.
 
 Tailwind’s [default color palette](https://tailwindcss.com/docs/customizing-colors) is a good starting point for sites that don’t already have color/branding guidelines to follow.
 
@@ -41,7 +41,7 @@ Be sure to take a look at [Bud’s documentation on this feature](https://bud.js
 
 ## Using Tailwind's colors from the block editor on the front-end
 
-While Sage makes Tailwind's colors available the the block editor, it doesn't include an approach out of the box for dealing with the front-end styling for the editor classes.
+While Sage makes Tailwind's colors available in the block editor, it doesn't include an approach out of the box for dealing with the front-end styling for the editor classes.
 
 You will need to decide how you want to handle the front-end styling for those classes. For example, you might want to add the following to one of your stylesheets:
 
