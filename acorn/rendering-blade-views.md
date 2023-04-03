@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-21 11:30
+date_modified: 2023-04-03 13:18
 date_published: 2023-02-21 11:30
 description: Learn how to render Blade views from anywhere in your WordPress site.
 title: Rendering Blade Views
@@ -23,7 +23,7 @@ In the following example we'll render a `vendor/example` block with `resources/v
 ```php
 register_block_type('vendor/example', [
     'render_callback' => function ($attributes, $content) {
-        echo view('blocks/example', compact('attributes', 'content'));
+        return view('blocks/example', compact('attributes', 'content'));
     },
 ]);
 ```
@@ -49,7 +49,7 @@ In the following example we'll render the `core/buttons` block with `resources/v
 add_filter('register_block_type_args', function ($args, $name) {
     if ($name === 'core/buttons') {
         $args['render_callback'] = function ($attributes, $content) {
-            echo view('blocks/buttons', compact('attributes', 'content'));
+            return view('blocks/buttons', compact('attributes', 'content'));
         };
     }
 
