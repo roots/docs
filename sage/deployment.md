@@ -34,7 +34,7 @@ Generate production ready assets with `yarn build`.
 ## Server configuration
 
 ::: tip Using Trellis or Radicle?
-If you are using [Trellis](/trellis/) to provision your production environment, or you are using [Radicle](/products/radicle/), you can **skip** this section.
+If you are using [Trellis](/trellis/) to provision your production environment, or you are using [Radicle](/radicle/), you can **skip** this section.
 :::
 
 ### Securing Blade templates

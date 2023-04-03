@@ -36,7 +36,7 @@ Out of the box, Acorn will [use its own configs](https://github.com/roots/acorn/
 Acorn also supports a more traditional Laravel-esque structure. We recommend this approach if you are adding Acorn/Laravel packages and want to have more control over your app.
 
 ::: tip
-If you've installed Acorn from your Bedrock project root, Acorn's `config/` directory will conflict with Bedrock's. We recommend using [Radicle](/products/radicle/) to avoid this.
+If you've installed Acorn from your Bedrock project root, Acorn's `config/` directory will conflict with Bedrock's. We recommend using [Radicle](/radicle/) to avoid this.
 <br><br>
 There are no conflicts with the `config/` directory if you've installed Acorn from your theme.
 :::
