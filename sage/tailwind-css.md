@@ -29,7 +29,7 @@ In Sage's Bud config (`bud.config.js`), there a section for generating `theme.js
 
 ### Default color palette
 
-Rather than [manually defining the the editor colors](https://developer.wordpress.org/themes/advanced-topics/theme-json/#color) by adding them to `theme.json`, your Tailwind config will be used to generate colors for the Wordpress editor.
+Rather than [manually defining the the editor colors](https://developer.wordpress.org/themes/advanced-topics/theme-json/#color) by adding them to `theme.json`, your Tailwind config will be used to generate colors for the WordPress editor.
 
 Tailwind’s [default color palette](https://tailwindcss.com/docs/customizing-colors) is a good starting point for sites that don’t already have color/branding guidelines to follow.
 
