@@ -76,7 +76,7 @@ Unlike many other solutions for WordPress server hosting, Trellis aims to have
 [parity between your development and production environments](https://roots.io/twelve-factor-10-dev-prod-parity/). Trellis comes setup to run locally with Vagrant so you can test your WordPress sites with full confidence that they'll work once you deploy to production.
 
 #### CLI
-Trellis has its own [CLI](https://github.com/roots/trellis-cli) that makes managing your local and remote servers much
+Trellis has its own [CLI](cli.md) that makes managing your local and remote servers much
 easier. It also enables powerful CI/CD workflows like our [setup-trellis-cli](https://github.com/roots/setup-trellis-cli/)
 GitHub action for continuous deploys.
 
@@ -88,7 +88,7 @@ with a single command thanks to trellis-cli too.
 </details>
 
 ### Software installed
-Trellis provisions a base Ubuntu 20.04 server by installing and configuring the following software:
+Trellis provisions a base Ubuntu 22.04 server by installing and configuring the following software:
 
 * PHP 8.0+
 * Nginx (including HTTP2/ and optional FastCGI micro-caching)
