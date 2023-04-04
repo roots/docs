@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-03-26 07:42
 date_published: 2023-03-26 07:42
-description: A command-line interface (CLI) to manage Trellis projects via the trellis command.
+description: A command-line interface (CLI) to manage Trellis projects via the `trellis` command.
 title: CLI
 authors:
   - swalkinshaw
@@ -23,13 +23,15 @@ and much more.
 
 ### Quick Install (macOS, Linux, WSL via Homebrew)
 
-`brew install roots/tap/trellis-cli`
+```shell
+brew install roots/tap/trellis-cli
+```
 
 ### Script
 
 We also offer a quick script version:
 
-```bash
+```shell
 # You might need sudo before bash
 curl -sL https://roots.io/trellis/cli/get | bash
 
@@ -48,7 +50,7 @@ trellis-cli provides binary releases for a variety of OSes. These binary version
 
 ### Dev/unstable install (macOS, Linux, WSL via Homebrew)
 
-```bash
+```shell
 # Cleanup previous versions (if installed)
 brew uninstall roots/tap/trellis-cli
 
@@ -170,6 +172,6 @@ vm:
 ```
 
 Example env var usage:
-```bash
+```shell
 TRELLIS_ASK_VAULT_PASS=true trellis provision production
 ```
