@@ -17,7 +17,7 @@ authors:
 Trellis has two official integrations for development environments using virtual machines:
 
 * [Vagrant](#vagrant)
-* [CLI `vm`](#cli-vm)
+* [Trellis CLI](#trellis-cli)
 
 Other options include:
 * [Laravel Valet](#laravel-valet)
@@ -76,14 +76,14 @@ $ vagrant reload
 ### More
 See the [Vagrant](../vagrant) page for more Vagrant specific configuration details.
 
-## CLI `vm`
+## Trellis CLI
 ::: tip
 New in trellis-cli `v1.10.0`: experimental VM support built-in! See our
 [blog](https://roots.io/introducing-lima-to-trellis-for-faster-local-development/#adding-lima-support-to-trellis)
 for the announcement.
 :::
 
-Trellis' [CLI](#cli.md) now includes built-in integration for managing virtual machines in development as an alternative to Vagrant.
+Trellis' [CLI](cli.md) now includes built-in integration for managing virtual machines in development as an alternative to Vagrant.
 
 VM support is powered by [Lima](https://github.com/lima-vm/lima) which is an open source tool to run Linux virtual machines on macOS.
 Lima isn't just a replacement for Vagrant, it also replaces the Vagrant VM provider like VirtualBox or Parallels too.
