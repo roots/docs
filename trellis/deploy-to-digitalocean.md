@@ -2,12 +2,12 @@
 date_modified: 2023-01-27 13:17
 date_published: 2019-01-07 10:05
 description: Provision and deploy to DigitalOcean servers with Trellis.
-title: Deploy to DigitalOcean
+title: Deploying Trellis to DigitalOcean
 authors:
   - ben
 ---
 
-# Deploy to DigitalOcean
+# Deploying Trellis to DigitalOcean
 
 [DigitalOcean](https://roots.io/r/digitalocean) is a cloud infrastructure provider that offers virtual servers called droplets starting at $5/month that can handle most normal WordPress sites when provisioned with Trellis.
 

@@ -78,7 +78,7 @@ Unlike many other solutions for WordPress server hosting, Trellis aims to have
 #### CLI
 Trellis has its own [CLI](cli.md) that makes managing your local and remote servers much
 easier. It also enables powerful CI/CD workflows like our [setup-trellis-cli](https://github.com/roots/setup-trellis-cli/)
-GitHub action for continuous deploys.
+[GitHub action that can be used for continuous deploys](/trellis/docs/deploy-with-github-actions/).
 
 #### Zero-downtime deploys
 Trellis has atomic, zero-downtime deploys built-in that are completely
