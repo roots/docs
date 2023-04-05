@@ -1,13 +1,13 @@
 ---
-date_modified: 2023-03-26 07:42
-date_published: 2023-03-26 07:42
+date_modified: 2023-04-05 07:42
+date_published: 2023-04-05 07:42
 description: A command-line interface (CLI) to manage Trellis projects via the `trellis` command.
-title: CLI
+title: Trellis CLI
 authors:
   - swalkinshaw
 ---
 
-# CLI
+# Trellis CLI
 
 trellis-cli is a command-line interface (CLI) to manage Trellis projects via the `trellis` command. The CLI provides a more consistent and integrated experience and includes:
 
