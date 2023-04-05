@@ -164,7 +164,7 @@ If you are migrating from Vagrant to Lima, or want to try both together at the s
 
 Both Vagrant and trellis-cli will automatically manage entries to `/etc/hosts`, but only for their own VMs. So if you're trying out the different VM solutions on the _same_ project, there will be conflicting hosts. The Vagrant specific hosts block (within vagrant hosts-manager comments) should be deleted:
 
-```plain
+```plaintext
 ## vagrant-hostmanager-start-{id}
 192.168.50.5 example.test www.example.test
 ## vagrant-hostmanager-end-{id}
