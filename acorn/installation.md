@@ -1,11 +1,12 @@
 ---
-date_modified: 2023-01-27 16:52
+date_modified: 2024-04-18 13:53
 date_published: 2021-11-19 11:58
 description: Install Acorn by running `composer require roots/acorn` in the root of your Composer-based WordPress project.
 title: Installing Acorn
 authors:
   - alwaysblank
   - ben
+  - csorrentino
   - QWp6t
 ---
 
@@ -31,12 +32,15 @@ We recommend that you install Acorn on your WordPress install managed by Compose
 $ composer require roots/acorn
 ```
 
-We also recommend adding Acorn's `postAutoloadDump` function to Composer's `post-autoload-dump` event in `composer.json`:
+We also recommend adding Acorn's `postAutoloadDump` function to Composer's `post-autoload-dump` event in the `scripts` section of `composer.json`:
 
 ```json
-"post-autoload-dump": [
-  "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
-]
+"scripts": {
+  //...
+  "post-autoload-dump": [
+    "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+  ]
+}
 ```
 
 If you don't use Bedrock and you are using a Sage-based theme, you can install Acorn with Composer from your theme directory.
