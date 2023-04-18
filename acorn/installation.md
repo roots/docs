@@ -31,12 +31,15 @@ We recommend that you install Acorn on your WordPress install managed by Compose
 $ composer require roots/acorn
 ```
 
-We also recommend adding Acorn's `postAutoloadDump` function to Composer's `post-autoload-dump` event in `composer.json`:
+We also recommend adding Acorn's `postAutoloadDump` function to Composer's `post-autoload-dump` event in the `scripts` section of `composer.json`:
 
 ```json
-"post-autoload-dump": [
-  "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
-]
+"scripts": {
+  //...
+  "post-autoload-dump": [
+    "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+  ]
+}
 ```
 
 If you don't use Bedrock and you are using a Sage-based theme, you can install Acorn with Composer from your theme directory.
