@@ -41,7 +41,7 @@ If you are using [Trellis](/trellis/) to provision your production environment, 
 
 Due to the nature of WordPress, any file residing in the theme folder is publicly accessible. By default, webservers will return any requests made to a `*.blade.php` template as plain-text.
 
-**This can create an opening for potential security riskes as well as unwanted snooping.**
+**This can create an opening for potential security risks as well as unwanted snooping.**
 
 To prevent this from happening, we will need to add configuration to the web server to deny access to the file extension.
 
