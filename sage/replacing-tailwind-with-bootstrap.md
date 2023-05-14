@@ -48,6 +48,12 @@ Open `bud.config.js` from your theme and remove the following lines:
 -      .useTailwindFontSize()
 ```
 
+### 5. Remove tailwind types from `jsconfig.json`
+
+```diff
+-      "@roots/bud-tailwindcss",
+```
+
 ## Adding Bootstrap
 
 ### 1. Install native support for Sass
