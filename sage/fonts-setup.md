@@ -33,6 +33,10 @@ resources
 
 ## Add the CSS
 
+::: tip `@roots/bud-sass` users will need to modify the following example
+[`url()` imports in SASS behave differently to CSS](https://bud.js.org/extensions/bud-sass#url-imports). We recommend prefixing aliases with a tilde (eg. `url('~@fonts/...')`), and adding your `fonts` directory to [`bud.assets()`](https://bud.js.org/docs/bud.assets).
+:::
+
 You can place the CSS for your web fonts wherever you'd like. We recommend creating a `styles/common/fonts.css` file and then importing it from `app.css` and `editor.css`:
 
 ```css
