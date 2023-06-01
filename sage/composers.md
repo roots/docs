@@ -139,7 +139,7 @@ However, if your Composer will target only a single view, you can save yourself 
 Sage will attempt to match Composers to views based on some simple file path logic:
 If your view and Composer share the same path segments and name, they'll be automatically bound together.
 
-For example, if your view is a partial at `/resources/views/partials/page-header.blade.php`, a Composer at `/app/View/Composers/PageHeader.php` will be automatically bound to it.
+For example, if your view is a partial at `/resources/views/partials/page-header.blade.php`, a Composer at `/app/View/Composers/Partials/PageHeader.php` will be automatically bound to it.
 In other words:
 - Match paths below `/resources/views` and `/app/View`.
 - Convert the `kebab-case` of view file names to the `PascalCase` of Composers.
