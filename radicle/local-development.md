@@ -13,7 +13,9 @@ Radicle comes with configuration for two local development setups out of the box
 * [Lando](https://lando.dev/)
 * [Trellis](https://roots.io/trellis/)
 
-Neither of these are a requirement, and any local development tool can be used with Radicle as long as you set your document root to the `public` directory. You will also need to:
+[Laravel Valet](https://laravel.com/docs/10.x/valet) also supports Radicle sites with no config required.
+
+These tools aren't a requirement to use Radicle. Any local development tool can be used with as long as you set your document root to the `public` directory. You will also need to:
 
 1. Run `yarn && yarn build`
 1. Run `composer install`
