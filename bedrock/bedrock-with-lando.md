@@ -1,10 +1,11 @@
 ---
-date_modified: 2023-02-19 12:16
+date_modified: 2023-06-04 16:40
 date_published: 2023-02-19 12:16
 description: How to configure Lando, a local development tool, for a Bedrock-based WordPress site.
 title: Bedrock with Lando
 authors:
   - ben
+  - james0r
 ---
 
 # Bedrock with Lando
