@@ -29,6 +29,9 @@ name: bedrock
 recipe: wordpress
 config:
   webroot: web
+services:
+  appserver:
+    type: php:8.2 # Bedrock requires PHP >= 8.0
 ```
 
 ## Configure environment variables
