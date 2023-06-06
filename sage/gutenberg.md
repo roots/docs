@@ -1,11 +1,12 @@
 ---
-date_modified: 2023-03-13 11:45
+date_modified: 2023-06-05 20:00
 date_published: 2021-10-21 13:21
 description: How to work with Gutenberg, the WordPress block editor, with the Sage starter theme.
 title: Gutenberg
 authors:
   - alwaysblank
   - ben
+  - joshf
   - Log1x
   - strarsis
 ---
@@ -26,7 +27,7 @@ If you wish to include the `app.css` stylesheet to the block editor, you can do 
 ```php
 add_action('after_setup_theme', function () {
     add_theme_support('editor-styles');
-    add_editor_style(asset('app.css'));
+    add_editor_style(asset('app.css')->relativePath(get_theme_file_path()));
 });
 ```
 
