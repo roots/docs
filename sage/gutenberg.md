@@ -1,11 +1,12 @@
 ---
-date_modified: 2023-03-13 11:45
+date_modified: 2023-06-05 20:00
 date_published: 2021-10-21 13:21
 description: How to work with Gutenberg, the WordPress block editor, with the Sage starter theme.
 title: Gutenberg
 authors:
   - alwaysblank
   - ben
+  - joshf
   - Log1x
   - strarsis
 ---
