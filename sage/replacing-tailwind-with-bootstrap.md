@@ -9,6 +9,7 @@ authors:
   - diomededavid
   - MWDelaney
   - kellymears
+  - talss89
 ---
 
 # Replacing Tailwind CSS with Bootstrap
@@ -57,14 +58,9 @@ Open `bud.config.js` from your theme and remove the following lines:
 
 ## Adding Bootstrap
 
-### 1. Install native support for Sass
+### 1. Setup support for Sass
 
-Add the `@roots/bud-sass` extension:
-
-```shell
-yarn add @roots/bud-sass --dev
-```
-**Note:** Verify that all Bud packages and the `@roots/sage` package versions are the same in your `package.json` to prevent build errors.
+[See the Sass setup guide](/sage/docs/sass/)
 
 ### 2. Install Bootstrap
 
@@ -91,47 +87,10 @@ import 'bootstrap';
 
 ### 4. Import Bootstrap styles
 
-In the `resources/styles` directory, rename `app.css` to `app.scss` and rename `editor.css` to `editor.scss`.
-
-Open your theme's newly renamed `resources/styles/app.scss` and add the following lines:
+Open your theme's `resources/styles/app.scss` file add the following lines:
 
 ```css
 @import 'bootstrap/scss/bootstrap';
 ```
 
 **Note:** You may wish to import only the parts of Bootstrap you plan to use in your theme. You can learn more about importing just the parts you need [here](https://getbootstrap.com/docs/5.1/customize/sass/#importing).
-
-### 5. Configure Stylelint (optional)
-
-Install `@roots/bud-stylelint`:
-
-```shell
-yarn add @roots/bud-stylelint --dev
-```
-
-Create a Stylelint config file at `.stylelintrc.cjs`:
-
-```javascript
-module.exports = {
-  extends: ['@roots/bud-sass/config/stylelint'],
-  rules: {
-    'import-notation': null,
-    'no-empty-source': null,
-  },
-};
-```
-
-#### Maintaining Stylelint config
-
-When bud.js updates you will automatically be upgraded to the latest versions of `stylelint-config-standard` and `stylelint-config-recommended-scss`. This may cause issues if you are now breaking a newly defined or changed rule. You will either want to make changes to your application or add an override to `module.exports.rules`.
-
-**This is normal**. The preset is just supposed to be a base for your own config. There is nothing wrong with overriding rules to suit your preferences or your application's needs.
-
-You could also:
-
-* Not use the `@roots/bud-sass/config/stylelint` preset and maintain your own config entirely. This will give you maximum control over when updates are applied.
-* Make an issue with `stylelint-config-standard` or `stylelint-config-recommended-scss` if you disagree with the change.
-
-What you shouldn't do:
-
-* Make an issue in `roots/bud` (We want to override upstream configurations as little as possible so as to provide a predictable starting point for a large number of diverse projects).
