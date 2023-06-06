@@ -31,6 +31,10 @@ app.css -> app.scss
 editor.css -> editor.scss
 ```
 
+::: tip
+**Note:** [`url()` imports in Sass behave differently than CSS](https://bud.js.org/extensions/bud-sass#url-imports). We recommend prefixing aliases with a tilde (eg. `url('~@images/...')`). We also recommend adding the `fonts` directory to [`bud.assets()`](https://bud.js.org/docs/bud.assets).
+:::
+
 ## Configure Stylelint (optional)
 
 Install `@roots/bud-stylelint`:
