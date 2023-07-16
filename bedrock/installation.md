@@ -39,7 +39,7 @@ $ composer create-project roots/bedrock
 
 ## Getting Started
 
-- Update environment variables in the `.env` file:
+- Create a `.env` file with the following environment variables (see `.env.example` as an example):
   - Database variables
     - `DB_NAME` - Database name
     - `DB_USER` - Database user
