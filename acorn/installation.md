@@ -47,6 +47,7 @@ Acorn's server requirements are minimal, and mostly come from WordPress and [Lar
 
 - PHP >=8.0
 - WordPress >= 5.4
+- [WP-CLI](https://wp-cli.org/)
 - BCMath PHP Extension
 - Ctype PHP Extension
 - Fileinfo PHP Extension
