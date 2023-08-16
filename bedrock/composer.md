@@ -66,7 +66,7 @@ To configure more than one regular plugin to be installed to `mu-plugins`, add a
 
 Updating your WordPress version, or the version of any plugin, is just a matter of changing the version number in the `composer.json` file and `composer.lock`.
 
-This is best acheived by re-require the dependencies to install the latest versions or specific versions:
+This is best achieved by re-require the dependencies to install the latest versions or specific versions:
 
 ```shell
 $ composer require roots/wordpress -W
