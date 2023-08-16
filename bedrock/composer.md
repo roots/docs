@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-20 14:45
+date_modified: 2023-08-16 12:45
 date_published: 2015-09-06 07:42
 description: Composer is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
 title: WordPress Dependencies with Composer
@@ -8,6 +8,7 @@ authors:
   - Log1x
   - swalkinshaw
   - TangRufus
+  - EHLOVader
 ---
 
 # WordPress Dependencies with Composer
@@ -63,13 +64,14 @@ To configure more than one regular plugin to be installed to `mu-plugins`, add a
 
 ## Updating WordPress and WordPress plugin versions with Composer
 
-Updating your WordPress version, or the version of any plugin, is just a matter of changing the version number in the `composer.json` file and then running `composer install` will pull down the new version.
+Updating your WordPress version, or the version of any plugin, is just a matter of changing the version number in the `composer.json` file and `composer.lock`.
 
-You can also re-require the dependencies to install the latest versions:
+This is best acheived by re-require the dependencies to install the latest versions or specific versions:
 
 ```shell
-$ composer require roots/wordpress
+$ composer require roots/wordpress -W
 $ composer require wpackagist-plugin/akismet
+$ composer require roots/wordpress:6.1 -W
 ```
 
 ### Automating WordPress updates
