@@ -1,10 +1,11 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2023-09-27 14:05
 date_published: 2021-09-08 00:29
 description: How to install WordPress language files on a Trellis site.
 title: How to Install WordPress Languages Files
 authors:
   - strarsis
+  - hooley
 ---
 
 # How to Install WordPress Languages Files
@@ -31,7 +32,7 @@ There are some custom Composer installers which simply download the latest langu
 
 At the time of writing there is no way yet for locking-in languages of core, plugins and themes (for all plugins and themes), so we are stuck with installing the latest language available.
 
-The best approach is using the official mechanisms, which would be the `wp language` subcommandwp` version!
+The best approach is using the official mechanisms, which would be the `wp language` subcommand.
 
 ### Setup deploy hooks
 
