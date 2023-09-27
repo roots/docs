@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-06-05 20:00
+date_modified: 2023-09-27 22:00
 date_published: 2021-10-21 13:21
 description: How to work with Gutenberg, the WordPress block editor, with the Sage starter theme.
 title: Gutenberg
@@ -46,3 +46,9 @@ Due to Sage including a `theme.json` file, this means [trying to use `add_theme_
 In Sage's Bud config (`bud.config.js`), there a section for generating `theme.json`. This is where you'll want to make any changes to your `theme.json` file.
 
 Tailwind CSS colors, font families, and sizes are generated on the theme build for `theme.json`. See the [Sage docs on Tailwind CSS](/sage/docs/tailwind-css/) for more information.
+
+## Editor styling workflows
+
+### `bud-wp-editor-query`
+
+[`bud-wp-editor-query`](https://github.com/talss89/bud-wp-editor-query) can be used to extract editor styles by using `@media (wp-editor)`.
