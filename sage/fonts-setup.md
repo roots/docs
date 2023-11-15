@@ -47,7 +47,7 @@ Define your `@font-face` in `styles/common/fonts.css`:
   font-family: 'Public Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('@fonts/public-sans-v14-latin-regular.woff2') format('woff2'),
+  src: url('~@fonts/public-sans-v14-latin-regular.woff2') format('woff2'),
 }
 ```
 
