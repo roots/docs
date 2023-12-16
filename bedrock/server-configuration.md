@@ -76,6 +76,7 @@ Make sure the `DocumentRoot` is set to the `web` folder:
                 RewriteEngine On
                 RewriteBase /
                 RewriteRule ^index.php$ - [L]
+                RewriteRule ^(wp-.*.php)$ /wp/$1 [L]
                 RewriteRule ^(wp-(content|admin|includes).*)$ wp/$1 [L]
                 RewriteCond %{REQUEST_FILENAME} !-f
                 RewriteCond %{REQUEST_FILENAME} !-d
