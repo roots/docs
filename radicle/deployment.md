@@ -12,6 +12,7 @@ You will need to make sure that your deployment process handles the following:
 
 1. Run `yarn && yarn build` from the project root
 1. Copy contents of `public/dist/` folder to your server (produced from `yarn build`)
+1. Run `composer install`
 1. Run `wp acorn optimize`
 1. Run `wp acorn icons:cache` (if using Blade Icons)
 1. Run `wp login install --activate` (if wanting to use the WP-CLI login command)
