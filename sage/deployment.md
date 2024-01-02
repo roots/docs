@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-01-02 16:30
 date_published: 2015-09-01 19:29
 description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over theme assets built with `yarn build`.
 title: Deploying Sage
@@ -22,7 +22,7 @@ Generate production ready assets with `yarn build`.
 ## Server requirements
 
 - WordPress >= 5.9
-- PHP >= 7.4
+- PHP >= 8.0
 - BCMath PHP Extension
 - Ctype PHP Extension
 - Fileinfo PHP Extension
@@ -85,8 +85,7 @@ If you use [Trellis](https://roots.io/trellis/), you can build your assets local
 
 ## Deploying Sage on WP Engine
 
-We do not officially recommend or support this and suggest using a WordPress host that supports SSH, Git, Composer, and the latest PHP versions.
-There is no current guidance for how to run Sage 10 on WP Engine, but the [Sage 9 on WP Engine](https://discourse.roots.io/t/sage-9-on-wpengine/9090) thread on Roots Discourse may point you in the right direction.
+See the instructions from [`wpengine/example-sage-theme`](https://github.com/wpengine/example-sage-theme).
 
 ## Deploying Sage via FTP
 
