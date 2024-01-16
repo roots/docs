@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-05 09:38
+date_modified: 2024-01-16 11:38
 date_published: 2023-01-13 13:12
 description: Acorn v3 introduces some minimal breaking changes that require updates when coming from Acorn v2.
 title: Upgrading Acorn
@@ -9,13 +9,25 @@ authors:
 
 # Upgrading Acorn
 
+## Upgrading to v4.x from v3.x
+
+Acorn v4 includes Laravel v10 components, whereas Acorn v3 includes Laravel v9 components.
+
+### Upgrading dependencies
+
+Acorn v4 requires PHP >= 8.1.
+
+Update the `roots/acorn` dependency in your `composer.json` file to `^4.0`:
+
+```shell
+$ composer require roots/acorn ^4.0 -W
+```
+
+The `-W` flag is required to upgrade the included Laravel dependencies.
+
 ## Upgrading to v3.x from v2.x
 
 Acorn v3 includes Laravel v9 components, whereas Acorn v2 includes Laravel v8 components.
-
-::: tip
-Estimated upgrade time: 15 minutes
-:::
 
 ### Upgrading dependencies
 

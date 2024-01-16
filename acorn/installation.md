@@ -47,9 +47,9 @@ If you don't use Bedrock and you are using a Sage-based theme, you can install A
 
 ## Server requirements
 
-Acorn's server requirements are minimal, and mostly come from WordPress and [Laravel 9's requirements](https://laravel.com/docs/9.x/deployment#server-requirements).
+Acorn's server requirements are minimal, and mostly come from WordPress and [Laravel 9's requirements](https://laravel.com/docs/10.x/deployment#server-requirements).
 
-- PHP >=8.0
+- PHP >=8.1
 - WordPress >= 5.4
 - [WP-CLI](https://wp-cli.org/)
 - BCMath PHP Extension
