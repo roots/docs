@@ -179,7 +179,7 @@ these options mean you're using Trellis for your production servers but
 something else entirely in development which is why it's not recommended.
 
 ### Laravel Valet
-[Valet](https://laravel.com/docs/9.x/valet) can be used in development if you're
+[Valet](https://laravel.com/docs/10.x/valet) can be used in development if you're
 already using it for Laravel projects or want a lighter-weight solution than a
 full virtual machine.
 

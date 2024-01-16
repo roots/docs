@@ -90,7 +90,7 @@ class ExampleComponent extends Component
 The names of the arguments in the definition of your Component's `__construct()` method must match the names of the attributes you use to pass data to your Component tag.
 
 ::: warning Note
-Component constructor arguments should be specified using `camelCase`, while `kebab-case` should be used when referencing the argument names in your HTML attributes. [Laravel documentation](https://laravel.com/docs/9.x/blade#casing)
+Component constructor arguments should be specified using `camelCase`, while `kebab-case` should be used when referencing the argument names in your HTML attributes. [Laravel documentation](https://laravel.com/docs/10.x/blade#casing)
 :::
 
 
