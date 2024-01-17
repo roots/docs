@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-01-17 08:22
 date_published: 2015-09-01 19:02
 description: Use setup.php in Sage to enable/disable theme features and set configuration values. Register navigation menus, sidebars, define theme support and more.
 title: Configuration
@@ -26,19 +26,6 @@ By default, Sage is configured to:
 - Add theme support for common functionality.
 - Register a default navigation menu called `primary_navigation`.
 - Register a primary and footer Sidebar widget area.
-
-### Soil
-
-Also seen in `setup.php` is out of the box theme support for [Soil](https://roots.io/products/soil/) _(recently updated!)_, a WordPress plugin containing a collection of modules applying theme-agnostic front-end modifications including:
-
-- Cleaner WordPress markup
-- Disable REST API
-- Disable asset versioning
-- Disable trackbacks
-- Move all Javascript to the footer
-- Cleaner NavWalker for navigation menus
-- Prettier search URLs converting from `/?s=query` to `/search/query/`
-- Root relative URLs
 
 ### `theme.json`
 
