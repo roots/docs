@@ -14,7 +14,7 @@ authors:
 
 ## Configuring a Lando recipe for Bedrock
 
-After [installing Bedrock](/bedrock/docs/installation/), you can either use `lando init` to create the receipe, or you can just drop in the contents of the receipe file that you will find below within a file called `.lando.yml`.
+After [installing Bedrock](/bedrock/docs/installation/), you can either use `lando init` to create the recipe, or you can just drop in the contents of the recipe file that you will find below within a file called `.lando.yml`.
 
 To use the CLI, run `lando init --recipe wordpress` and answer the following prompts:
 
