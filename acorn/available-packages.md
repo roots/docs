@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-11-02 10:00
+date_modified: 2024-01-24 16:30
 date_published: 2021-11-19 11:58
 description: A list of known community packages for the Acorn and Sage ecosystem, such as adding WooCommerce support to Sage.
 title: Community Packages
@@ -11,13 +11,18 @@ authors:
 
 # Available Packages
 
-## Community Packages
+| Package | Description |
+| ----------- | ----------- |
+| [`roots/acorn-prettify`](https://github.com/roots/acorn-prettify) | A collection of modules to apply theme-agnostic front-end modifications to your Acorn-powered WordPress sites |
+
+## Community packages
 
 | Package | Description |
 | ----------- | ----------- |
 | [`blavetstudio/sage-woocommerce-subscriptions`](https://github.com/blavetstudio/sage-woocommerce-subscriptions) | Add WooCommerce Subscriptions support to Sage 10 |
 | [`generoi/sage-cachetags`](https://github.com/generoi/sage-cachetags) | A sage package for tracking what data rendered pages rely on using Cache Tags |
 | [`generoi/sage-woocommerce`](https://github.com/generoi/sage-woocommerce) | Add WooCommerce support to Sage 10 |
+| [`leocolomb/wp-acorn-cache`](https://github.com/LeoColomb/wp-acorn-cache) | A WordPress cache manager powered by Laravel through Acorn |
 | [`log1x/acf-composer`](https://github.com/log1x/acf-composer) | ACF Composer is the ultimate tool for creating fields, blocks, widgets, and option pages using ACF Builder alongside Sage 10 |
 | [`log1x/acorn-disable-media-pages`](https://github.com/log1x/acorn-disable-media-pages) | Disable media attachment pages on WordPress sites using Acorn |
 | [`log1x/pagi`](https://github.com/log1x/pagi) | A better WordPress pagination utilizing Laravel's Pagination |
