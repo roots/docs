@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-03-28 07:00
+date_modified: 2024-01-30 17:00
 date_published: 2023-03-28 07:00
 title: Installing Radicle
 authors:
@@ -27,7 +27,7 @@ Since the release of Acorn, we've preferred to use a more [traditional Laravel-e
 ## Server requirements
 
 * Your document root must be configurable (_most_ local development tools and webhosts should support this)
-* PHP >= 8.0 with the following extensions: BCMath, Ctype, Fileinfo, JSON, Mbstring, Tokenizer, XML
+* PHP >= 8.1 with the following extensions: BCMath, Ctype, Fileinfo, JSON, Mbstring, Tokenizer, XML
 * Composer
 * WP-CLI
 
