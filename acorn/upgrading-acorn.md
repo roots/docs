@@ -1,7 +1,7 @@
 ---
 date_modified: 2024-01-16 11:38
 date_published: 2023-01-13 13:12
-description: Acorn v3 introduces some minimal breaking changes that require updates when coming from Acorn v2.
+description: Acorn v4 introduces some minimal breaking changes that may require updates when coming from Acorn v3.
 title: Upgrading Acorn
 authors:
   - ben
@@ -24,6 +24,35 @@ $ composer require roots/acorn ^4.0 -W
 ```
 
 The `-W` flag is required to upgrade the included Laravel dependencies.
+
+### Breaking changes
+
+The breaking changes this time are minimal and should not impact most users.
+
+View Composer `Arrayable` trait uses property [`Composer::$except`](https://github.com/roots/acorn/blob/70d179955cddc61f0c6101717af2fdf88cf38831/src/Roots/Acorn/View/Composer.php#L35-L54) instead of `Arrayable::$ignore`.
+
+```diff
+ class Alert extends Composer
+ {
+     use Arrayable;
+ 
+-    $ignore = ['token'];
++    $except = ['token'];
+ }
+```
+
+Asset Contract adds [`relativePath()` method](https://github.com/roots/acorn/blob/70d179955cddc61f0c6101717af2fdf88cf38831/src/Roots/Acorn/Assets/Contracts/Asset.php#L38). So if you're implementing this contract, you'll need to update it. (Most users will not be impacted by this.)
+
+```diff
+ class MyAsset implements Asset
+ {
++    relativePath(string $base_path): string
++    {
++        // ...
++    }
+ }
+```
+
 
 ## Upgrading to v3.x from v2.x
 
