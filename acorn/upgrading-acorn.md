@@ -29,6 +29,13 @@ The `-W` flag is required to upgrade the included Laravel dependencies.
 
 The breaking changes this time are minimal and should not impact most users.
 
+Service providers should now extend Illuminate:
+
+ ```diff
+- use Roots\Acorn\ServiceProvider;
++ use Illuminate\Support\ServiceProvider;
+```
+
 View Composer `Arrayable` trait uses property [`Composer::$except`](https://github.com/roots/acorn/blob/70d179955cddc61f0c6101717af2fdf88cf38831/src/Roots/Acorn/View/Composer.php#L35-L54) instead of `Arrayable::$ignore`.
 
 ```diff
