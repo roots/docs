@@ -14,12 +14,12 @@ authors:
 To provision a server, Trellis requires a server running a bare/stock version of the latest Ubuntu LTS release.
 
 ::: tip
-ℹ️ If you [signup for DigitalOcean](https://roots.io/r/digitalocean) through the Roots referral link you will receive a free $100 in credit for 2 months, and you help cover the costs of our hosting.
+ℹ️ If you [signup for DigitalOcean](https://roots.io/r/digitalocean) through the Roots referral link you will receive a free $200 in credit for 2 months, and you help cover the costs of our hosting.
 ::: 
 
 ## Creating a new DigitalOcean droplet
 
-Trellis CLI comes a `trellis droplet create` command to automatically create a DigtalOcean droplet for a specified environment:
+Trellis CLI comes with a `trellis droplet create` command to automatically create a DigitalOcean droplet for a specified environment:
 
 ```shell
 $ trellis droplet create production
