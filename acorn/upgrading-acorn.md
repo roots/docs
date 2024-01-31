@@ -27,7 +27,9 @@ The `-W` flag is required to upgrade the included Laravel dependencies.
 
 ### Breaking changes
 
-The breaking changes this time are minimal and should not impact most users.
+If you previously published Acorn's config(s), you will need to update them based on the configs in the [Acorn repo](https://github.com/roots/acorn/tree/main/config) ([history](https://github.com/roots/acorn/commits/main/config?since=2023-11-01&until=2024-01-31)]. You mainly need the [new provider stuff](https://github.com/roots/acorn/blob/v4.0.0/config/app.php#L160-L169) if you published `config/app.php`.
+
+Other breaking changes this time are minimal and should not impact most users.
 
 Service providers should now extend Illuminate:
 
