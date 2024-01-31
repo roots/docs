@@ -10,7 +10,7 @@ authors:
 # Logging
 
 ::: tip
-We recommend referencing the [Laravel docs on Logging](https://laravel.com/docs/9.x/logging)
+We recommend referencing the [Laravel docs on Logging](https://laravel.com/docs/10.x/logging)
 :::
 
 The location of your application logs depends on your [directory structure](/acorn/docs/directory-structure/).

@@ -12,7 +12,7 @@ Radicle uses Acorn which allows you to register Laravel routes from the `config/
 
 By default, a route is registered for `/welcome/` which serves the Blade template located at `resources/views/welcome.blade.php`.
 
-See [Laravel's routing documentation](https://laravel.com/docs/9.x/routing) for information on registering routes.
+See [Laravel's routing documentation](https://laravel.com/docs/10.x/routing) for information on registering routes.
 
 ::: tip
 Acorn's router support is still considered experimental due to limited support of Laravel's router functionality. Once Acorn supports [modifying the current kernel implementation](https://github.com/roots/acorn/issues/276), Radicle will include the default Laravel HTTP kernel along with an example of implementing a route with middleware support.

@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-01-02 16:30
+date_modified: 2024-01-18 13:30
 date_published: 2015-09-01 19:29
 description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over theme assets built with `yarn build`.
 title: Deploying Sage
@@ -22,7 +22,7 @@ Generate production ready assets with `yarn build`.
 ## Server requirements
 
 - WordPress >= 5.9
-- PHP >= 8.0
+- PHP >= 8.1
 - BCMath PHP Extension
 - Ctype PHP Extension
 - Fileinfo PHP Extension

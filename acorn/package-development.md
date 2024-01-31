@@ -17,7 +17,7 @@ Creating Acorn packages is useful for when you want to reuse specific functional
 Packages are installed by Composer, just like Acorn is.
 
 ::: tip
-We recommend referencing the [Laravel docs on Packages](https://laravel.com/docs/9.x/packages)
+We recommend referencing the [Laravel docs on Packages](https://laravel.com/docs/10.x/packages)
 :::
 
 ## Creating an Acorn package
