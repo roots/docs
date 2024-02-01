@@ -36,6 +36,9 @@ If you previously published Acorn's config(s), you will need to update them base
 ```diff
 + use Roots\Acorn\ServiceProvider;
 
+-    'timezone' => get_option('timezone_string', 'UTC'),
++    'timezone' => get_option('timezone_string') ?: 'UTC',
+
 -    'providers' => [
 +    'providers' => ServiceProvider::defaultProviders()->merge([
 -
