@@ -34,6 +34,8 @@ If any packages/dependencies have conflicts while updating, try removing and the
 If you previously published Acorn's config(s), you will need to update them based on the configs in the [Acorn repo](https://github.com/roots/acorn/tree/main/config) ([history](https://github.com/roots/acorn/commits/main/config?since=2023-11-01&until=2024-01-31)). You mainly need the [new provider changes](https://github.com/roots/acorn/blob/v4.0.0/config/app.php#L160-L169) if you published `config/app.php`.
 
 ```diff
++ use Roots\Acorn\ServiceProvider;
+
 -    'providers' => [
 +    'providers' => ServiceProvider::defaultProviders()->merge([
 -
@@ -48,16 +50,16 @@ If you previously published Acorn's config(s), you will need to update them base
 -        Roots\Acorn\Providers\RouteServiceProvider::class,
 -        Roots\Acorn\View\ViewServiceProvider::class,
 
- 
+
          /*
           * Package Service Providers...
           */
- 
+
          /*
           * Application Service Providers...
           */
          // App\Providers\ThemeServiceProvider::class,
- 
+
 -    ],
 +    ])->toArray(),
 ```
@@ -68,7 +70,7 @@ The breaking changes this time are minimal and should not impact most users.
 
 Service providers should now extend Illuminate:
 
- ```diff
+```diff
 - use Roots\Acorn\ServiceProvider;
 + use Illuminate\Support\ServiceProvider;
 ```
@@ -79,7 +81,7 @@ View Composer `Arrayable` trait uses property [`Composer::$except`](https://gith
  class Alert extends Composer
  {
      use Arrayable;
- 
+
 -    $ignore = ['token'];
 +    $except = ['token'];
  }
@@ -96,7 +98,6 @@ Asset Contract adds [`relativePath()` method](https://github.com/roots/acorn/blo
 +    }
  }
 ```
-
 
 ## Upgrading to v3.x from v2.x
 
