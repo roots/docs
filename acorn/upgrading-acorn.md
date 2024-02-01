@@ -25,6 +25,10 @@ $ composer require roots/acorn ^4.0 -W
 
 The `-W` flag is required to upgrade the included Laravel dependencies.
 
+::: warning
+If any packages/dependencies have conflicts while updating, try removing and then re-requiring them after Acorn is bumped to 4.x.
+:::
+
 ### Config changes
 
 If you previously published Acorn's config(s), you will need to update them based on the configs in the [Acorn repo](https://github.com/roots/acorn/tree/main/config) ([history](https://github.com/roots/acorn/commits/main/config?since=2023-11-01&until=2024-01-31)). You mainly need the [new provider changes](https://github.com/roots/acorn/blob/v4.0.0/config/app.php#L160-L169) if you published `config/app.php`.
