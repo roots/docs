@@ -85,6 +85,17 @@ Now Heroicons can be referenced in any of the supported methods from inside your
 {{ svg('heroicon-s-menu) }}
 ```
 
+## Caching icons in production
+
+When deploying your Sage template using Trellis, it's recommended to enable icon caching to optimize performance. To do this, modify the `deploy_build_after` hook within your `deploy-hooks/build-after.yml` file.
+
+```yml
+- name: Cache Blade UI Icons
+  command: wp acorn icons:cache
+  args:
+    chdir: "{{ deploy_helper.new_release_path }}"
+```
+
 ## Additional information
 
 The [blade-icons README](https://github.com/blade-ui-kit/blade-icons) covers how to pass attributes, set default classes, and more.
