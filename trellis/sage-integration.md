@@ -19,7 +19,7 @@ Trellis includes an *example* `build-before` deploy hook designed to work with S
 For Sage users, simply uncomment that built-in example hook file and deploy away. Assets will be compiled *locally* and then copied to the remote server.
 
 ## Other themes
-The Sage example deploy hook can also serve as s blueprint for many other themes that need to run an `npm` or `yarn` command for compiling assets.
+The Sage example deploy hook can also serve as a blueprint for many other themes that need to run an `npm` or `yarn` command for compiling assets.
 
 ## NVM
 If you use [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions for running themes locally, the easiest way to use it is via `$NVM_DIR/nvm-exec`.
