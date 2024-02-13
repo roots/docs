@@ -178,7 +178,11 @@ Run the following from any directory within your project:
 $ trellis rollback <environment>
 ```
 
-You may manually specify a different release using `--release=12345678901234`.
+You may manually specify a different release using `--release=12345678901234` as such:
+
+```shell
+$ trellis rollback --release=12345678901234 <environment>
+```
 
 By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
 
