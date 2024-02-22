@@ -81,3 +81,9 @@ server {
 In the example above, the full path is based on a macOS machine and requires the username to be changed to the one you are using. You will need to modify this path for Windows and Linux setups to reflect the full path to the `app/bedrock/web` directory.
 
 You will need to restart your site after making these changes, and then your site will be accessible at `https://bedrock.local`.
+
+## Change WordPress-Password from MD5 to Bcrypt
+
+Bedrock’s structure limits access to non-public files and offers more secure passwords through wp-password-bcrypt. The password you have set during the Local setup is hashed using MD5, prohibiting you from accesing wp-admin. Therefore you have to reset your password once to gain access.
+
+In WordPress, there is more than one way to reset your password. You can check out ![this Guide](https://localwp.com/help-docs/troubleshooting/reset-a-local-sites-wordpress-admin-password/#reset-a-current-user-s-password) to learn more.
