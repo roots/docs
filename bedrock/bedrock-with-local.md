@@ -77,7 +77,21 @@ server {
 -   root   "{{root}}";
 +   root   "/Users/username/Local Sites/bedrock/app/bedrock/web";
 ```
+Or you can do this instead
+```diff
+-   root   "{{root}}";
++   root "{{root}}/web";
+```
 
+This how it should look like in the file ( Apache config - file is located at `~/Local Sites/bedrock/conf/apache/site.conf.hbs`)
+
+```hbs
+<VirtualHost *:{{port}}>
+	ServerAdmin webmaster@localhost
+	DocumentRoot "{{root}}/web"
+  [...]
+</VirtualHost> 
+```
 In the example above, the full path is based on a macOS machine and requires the username to be changed to the one you are using. You will need to modify this path for Windows and Linux setups to reflect the full path to the `app/bedrock/web` directory.
 
 You will need to restart your site after making these changes, and then your site will be accessible at `https://bedrock.local`.
