@@ -50,6 +50,14 @@ Open `bud.config.js` from your theme and remove the following lines:
 -      .useTailwindFontSize()
 ```
 
+And replace with the following line:
+
+```diff
++      .enable()
+```
+
+See [Managing theme.json](https://bud.js.org/extensions/sage/theme.json) in the Bud extension docs for more details.
+
 ### 5. Remove Tailwind types from `jsconfig.json`
 
 ```diff
