@@ -38,7 +38,3 @@ add_filter('acorn/router/do_parse_request', function ($do_parse) {
     return $do_parse;
 });
 ```
-
-::: tip
-The Radicle roadmap includes plans for adding better SEO support to Laravel routes that integrates them with Yoast and The SEO Framework. This functionality will be packaged as a Composer dependency that's separate from Radicle.
-:::

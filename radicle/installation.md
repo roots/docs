@@ -41,10 +41,6 @@ After you've accepted the invitation to the GitHub repository, navigate to the [
 Are you building new sites often? Create your own private repo with the Radicle codebase and modify it to fit your needs. Radicle should be treated as a boilerplate/starting point, and not a framework.
 :::
 
-::: tip
-The Radicle roadmap includes plans for adding better SEO support to Laravel routes that integrates them with Yoast and The SEO Framework. This functionality will be packaged as a Composer dependency that's separate from Radicle.
-:::
-
 Although it is possible to retrofit an existing project with Radicle, we recommend using Radicle on a new project.
 
 Unzip the contents of the latest Radicle release into your new project's directory. Make sure all of the hidden files (such as `.gitignore`) are included in your project directory.

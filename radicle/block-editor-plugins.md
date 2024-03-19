@@ -10,10 +10,6 @@ authors:
 
 Editor plugins are used for most editor functionality that aren't directly related to a custom block.
 
-::: tip
-The Radicle roadmap includes more editor examples for additional blocks and editor plugins
-:::
-
 ## Asset locations
 
 Block editor plugins live in the `resources/scripts/editor/` directory.
