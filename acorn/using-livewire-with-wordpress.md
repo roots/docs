@@ -27,6 +27,12 @@ Once installed, Livewire requires you have an `APP_KEY` set in your environment.
 $ wp acorn key:generate
 ```
 
+After the key has been generated, Acorn needs to rediscover packages. You can do this using Acorn's CLI:
+
+```bash
+$ wp acorn package:discover
+```
+
 ## Enqueueing Livewire
 
 Adding the Livewire styles and scripts can be done using the `@livewireStyles` and `@livewireScripts` directives.
