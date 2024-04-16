@@ -108,4 +108,4 @@ Beware of how large your stylesheets will get if you are using all of the Tailwi
 
 The ideal setup is to remove _all_ classes that you aren't using from Tailwind, and only configure Tailwind with the classes that are required for your project.
 
-In the future, we might an add a more streamlined approach to doing this to Bud's `theme.json` generator. For now, deciding how you want the front-end CSS to work for Tailwind generated classes is up to you.
+In the future, we might add a more streamlined approach to doing this to Bud's `theme.json` generator. For now, deciding how you want the front-end CSS to work for Tailwind generated classes is up to you.
