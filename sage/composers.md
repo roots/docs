@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-02-22 22:22
 date_published: 2021-10-21 13:21
 description: Composers allow you to pass scoped data to views of any kind--templates, partials, etc.
 title: Composers
@@ -26,28 +26,28 @@ Composers are autoloaded, which means their naming needs to conform to the [PSR-
 If you're using WP-CLI, you can create composers from the command line:
 
 ```shell script
-wp acorn make:composer ExampleComposer
+wp acorn make:composer Example
 ```
 
-This would create a Composer called `ExampleComposer` in `app/View/Composers/`.
+This would create a Composer called `Example` in `app/View/Composers/`.
 
 If you're not using WP-CLI, the most basic Composer looks like this:
 
 ```php
-// app/View/Composers/ExampleComposer.php
+// app/View/Composers/Example.php
 
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class ExampleComposer extends Composer
+class Example extends Composer
 {}
 ```
 
 This composer doesn't do anything yet, though, so let's give it some functionality.
 
 ```php
-class ExampleComposer extends Composer
+class Example extends Composer
 {
     /**
      * This tells the Composer that it should bind data to the 'example'
