@@ -1,9 +1,10 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-04-24 13:00
 date_published: 2022-03-18 20:49
 description: How to use the blade-icons package with Sage 10.
 title: How to use blade-icons
 authors:
+  - altan
   - ben
 ---
 
@@ -83,6 +84,19 @@ Now Heroicons can be referenced in any of the supported methods from inside your
 @svg('heroicon-s-menu')
 
 {{ svg('heroicon-s-menu) }}
+```
+
+## Caching icons in production
+
+It's recommended to enable icon caching to optimize performance by running `wp acorn icons:cache` during deployment.
+
+If you are using Trellis, modify the `deploy_build_after` hook within your `deploy-hooks/build-after.yml` file:
+
+```yml
+- name: Cache Blade UI Icons
+  command: wp acorn icons:cache
+  args:
+    chdir: "{{ deploy_helper.new_release_path }}"
 ```
 
 ## Additional information
