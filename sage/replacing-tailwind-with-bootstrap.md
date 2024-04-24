@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-05-16 10:00
+date_modified: 2024-04-24 13:00
 date_published: 2022-02-24 10:25
 description: Sage 10 comes with Tailwind CSS out of the box, but can be replaced with Bootstrap or any other CSS framework.
 title: Replacing Tailwind CSS with Bootstrap
@@ -10,6 +10,7 @@ authors:
   - MWDelaney
   - kellymears
   - talss89
+  - taylorgorman
 ---
 
 # Replacing Tailwind CSS with Bootstrap
@@ -49,6 +50,14 @@ Open `bud.config.js` from your theme and remove the following lines:
 -      .useTailwindFontFamily()
 -      .useTailwindFontSize()
 ```
+
+And replace with the following line:
+
+```diff
++      .enable()
+```
+
+See [Managing theme.json](https://bud.js.org/extensions/sage/theme.json) in the Bud extension docs for more details.
 
 ### 5. Remove Tailwind types from `jsconfig.json`
 
