@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-02-02 10:00
+date_modified: 2024-04-24 13:00
 date_published: 2021-11-19 11:58
 description: Install Acorn by running `composer require roots/acorn` in the root of your Composer-based WordPress project.
 title: Installing Acorn
@@ -32,22 +32,16 @@ We recommend that you install Acorn on your WordPress install managed by Compose
 $ composer require roots/acorn
 ```
 
-We also recommend adding Acorn's `postAutoloadDump` function to Composer's `post-autoload-dump` event in the `scripts` section of `composer.json`:
-
-```json
-"scripts": {
-  //...
-  "post-autoload-dump": [
-    "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
-  ]
-}
-```
-
-If you don't use Bedrock and you are using a Sage-based theme, you can install Acorn with Composer from your theme directory.
+If you don't use Composer to manage your WordPress install and you are using a Sage-based theme, you can install Acorn with Composer from your theme directory. Navigate to your theme folder and then run the command above.
 
 ## Booting Acorn
 
-If you aren't using [Sage](https://roots.io/sage/) or [Radicle](https://roots.io/radicle/), you can boot Acorn in your own theme or plugin:
+Acorn must be booted in order to use it. [Sage](https://roots.io/sage/) and [Radicle](https://roots.io/radicle/) already handle booting Acorn.
+
+<details>
+<summary>Boot Acorn in your own theme or plugin</summary>
+
+Add the following in your theme's `functions.php` file, or in your main plugin file:
 
 ```php
 <?php
@@ -66,17 +60,44 @@ if (! function_exists('\Roots\bootloader')) {
 add_action('after_setup_theme', fn () => \Roots\bootloader()->boot());
 ```
 
+</details>
+
+## Add the autoload dump script
+
+Acorn has a function that should be added to the `scripts` section of your `composer.json` file for the `post-autoload-dump` event. To automatically configure this script, run the following command:
+
+```shell
+$ wp acorn acorn:install
+```
+
+Select **Yes** when prompted to install the Acorn autoload dump script.
+
+::: warning
+`wp acorn` commands won't work if your theme/plugin that boots Acorn hasn't been activated and will result in the following message: 
+
+**Error: 'acorn' is not a registered wp command.**
+:::
+
+<details>
+<summary>Manually adding Acorn's post autoload dump function</summary>
+
+Open `composer.json` and add Acorn's `postAutoloadDump` function to Composer's `post-autoload-dump` event in the `scripts`:
+
+```json
+"scripts": {
+  //...
+  "post-autoload-dump": [
+    "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+  ]
+}
+```
+
+</details>
+
 ## Server requirements
 
 Acorn's server requirements are minimal, and mostly come from WordPress and [Laravel 10's requirements](https://laravel.com/docs/10.x/deployment#server-requirements).
 
-- PHP >=8.1
+- PHP >=8.1 with extensions: BCMath, Ctype, Fileinfo, JSON, Mbstring, Tokenizer, XML
 - WordPress >= 5.4
 - [WP-CLI](https://wp-cli.org/)
-- BCMath PHP Extension
-- Ctype PHP Extension
-- Fileinfo PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
