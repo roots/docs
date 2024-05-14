@@ -38,12 +38,6 @@ Create a new WordPress theme using Sage with Composer from your WordPress themes
 composer create-project roots/sage your-theme-name
 ```
 
-To install the latest development version of Sage, add `dev-main` to the end of the command:
-
-```shell
-composer create-project roots/sage your-theme-name dev-main
-```
-
 ### 2. Edit `bud.config.js` to match your environment
 
 Modify the `bud.config.js` file in your new Sage-based theme's directory to match the theme's directory name and local development URL, if applicable.
@@ -65,7 +59,7 @@ app.setPublicPath('/app/themes/sage/public/');
 .setProxyUrl('http://example.test')
 ```
 
-### 3. Build assets
+### 3. Build the theme assets
 
 From your new Sage-based theme's directory, run:
 
@@ -85,7 +79,7 @@ That's it! You're ready to activate your theme in WordPress and start developing
 
 ## What Next?
 
-From here you might want to [explore the structure of your new Sage theme](/sage/docs/theme-structure/), or [learn how to use Blade templates](/sage/docs/blade-templates/), or how to [compile assets](/sage/docs/compiling-assets/). These documents are meant to be referenced as you work with Sage, so feel free to jump around as needed.
+From here you might want to [explore the structure of your new Sage-based theme](/sage/docs/theme-structure/), or [learn how to use Blade templates](/sage/docs/blade-templates/), or how to [compile assets](/sage/docs/compiling-assets/). These documents are meant to be referenced as you work with Sage, so feel free to jump around as needed.
 
 ## What is Sage?
 
