@@ -18,29 +18,14 @@ authors:
 
 ## System Requirements
 
+* [Node.js](https://nodejs.org/)
+* [Composer](https://getcomposer.org/download/)
+
 ::: warning Windows users
 WSL is required in order to use Sage. Build commands must be run from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
 :::
 
-### Node.js
-
-Sage requires Node.js based tools to manage dependencies and build assets. We recommend using [Volta](https://github.com/volta-cli/volta) to install and manage Node.js. We also recommend using [Yarn](https://yarnpkg.com/).
-
-To install Node.js and Yarn with Volta, run the following command:
-
-```shell
-volta install node && npm install --global yarn
-```
-
-### Composer
-
-Sage requires Composer to manage PHP dependencies. If your platform supports [Homebrew](https://brew.sh/), you can install Composer with:
-
-```shell
-brew install composer
-```
-
-Otherwise, [see Composer's documentation](https://getcomposer.org/download/) for installation instructions.
+<!-- For help setting up your development environment, see the [Local Development Environment](/sage/docs/local-development-environment/) guide. -->
 
 ## Create a new theme with Sage
 
