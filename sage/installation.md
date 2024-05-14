@@ -14,16 +14,7 @@ authors:
   - MWDelaney
 ---
 
-## What is Sage?
-
-Sage is a [WordPress starter theme](https://roots.io/sage/).
-
-## Why use Sage?
-
-- Clean, efficient theme templating utilizing [Laravel Blade](https://laravel.com/docs/master/blade).
-- Lightning fast frontend development workflow powered by [Bud](https://bud.js.org/).
-- Out of the box support for [Tailwind CSS](https://tailwindcss.com/).
-- Harness the power of [Laravel](https://laravel.com) and its available packages thanks to [Acorn](https://github.com/roots/acorn).
+# Installing Sage
 
 ## System Requirements
 
@@ -51,7 +42,7 @@ brew install composer
 
 Otherwise, [see Composer's documentation](https://getcomposer.org/download/) for installation instructions.
 
-## Installing Sage
+## Create a new theme with Sage
 
 ### 1. Create a new Sage-based WordPress theme with Composer
 
@@ -68,30 +59,16 @@ To install the latest development version of Sage, add `dev-main` to the end of 
 composer create-project roots/sage your-theme-name dev-main
 ```
 
-### 2. Install Acorn
+### 2. Edit `bud.config.js` to match your environment
 
-::: note This step is required
-Sage requires the [Acorn](https://roots.io/acorn/) but doesn't ship with it included. This is to give you the flexibility to include it in a way that works best for your environment.
-:::
-
-To install Acorn as part of Sage (this is the most common use case for theme development), run the following command from your Sage-based theme's directory:
-
-```shell
-composer require roots/acorn
-```
-
-See the [Acorn installation](/acorn/docs/installation/) docs for additional details.
-
-### 3. Edit `bud.config.js`
-
-Modify the `bud.config.js` file in the theme directory to match your theme's directory name and local development URL, if applicable.
+Modify the `bud.config.js` file in your new Sage-based theme's directory to match the theme's directory name and local development URL, if applicable.
 
 ```javascript
 // bud.config.js
 
 /**
  * Around line 26, update the following path 
- * to match your theme's directory name:
+ * to match your theme's directory:
 */
 
 app.setPublicPath('/app/themes/sage/public/');
@@ -103,9 +80,9 @@ app.setPublicPath('/app/themes/sage/public/');
 .setProxyUrl('http://example.test')
 ```
 
-### 4. Build assets
+### 3. Build assets
 
-From your theme directory, run:
+From your new Sage-based theme's directory, run:
 
 ```shell
 yarn && yarn build
@@ -119,6 +96,19 @@ The manifest [/path/to/sage/public/manifest.json] cannot be found.
 
 :::
 
+That's it! You're ready to activate your theme in WordPress and start developing!
+
 ## What Next?
 
 From here you might want to [explore the structure of your new Sage theme](/sage/docs/theme-structure/), or [learn how to use Blade templates](/sage/docs/blade-templates/), or how to [compile assets](/sage/docs/compiling-assets/). These documents are meant to be referenced as you work with Sage, so feel free to jump around as needed.
+
+## What is Sage?
+
+Sage is a [WordPress starter theme](https://roots.io/sage/).
+
+## Why use Sage?
+
+- Clean, efficient theme templating utilizing [Laravel Blade](https://laravel.com/docs/master/blade).
+- Lightning fast frontend development workflow powered by [Bud](https://bud.js.org/).
+- Out of the box support for [Tailwind CSS](https://tailwindcss.com/).
+- Harness the power of [Laravel](https://laravel.com) and its available packages thanks to [Acorn](https://github.com/roots/acorn).
