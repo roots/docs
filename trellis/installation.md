@@ -10,6 +10,7 @@ authors:
   - nikitasol
   - swalkinshaw
   - TangRufus
+  - MWDelaney
 ---
 
 # Installation
