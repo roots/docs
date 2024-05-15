@@ -64,18 +64,13 @@ See [Local Development](/trellis/docs/local-development-environment/) for more i
 
 ## What's Next?
 
+### Configure your environments
+
+Trellis pre-configures most of your site's settings, but you'll need to fill in a few gaps in the [WordPress Sites](/trellis/docs/wordpress-sites/) configuration.
+
 ### Encrypt your vault files
 
 You probably want to encrypt your vault files, which hold automatically-generated passwords and other sensitive information. Check out the [Vault](/trellis/docs/vault/) documentation for more information.
-
-::: note Shut down your development environment
-
-Before you encrypt your vault files, make sure to shut down your development environment with `trellis down`.
-:::
-
-```shell
-trellis vault encrypt
-```
 
 ### Provision your `production` server
 
