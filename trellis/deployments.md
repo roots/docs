@@ -16,6 +16,11 @@ authors:
 
 Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed.
 
+::: note Trellis deploys from Git
+
+Trellis deploys your site from a Git repository. Make sure the `repo` and `branch` keys are set correctly in your `group_vars/<environment>/wordpress_sites.yml` file and that your project is commited to the repository.
+:::
+
 ## Configuration
 
 First, you need to have at least one [WordPress site](wordpress-sites.md) configured and your remote server provisioned and working according to the [remote server setup](remote-server-setup.md).
@@ -189,3 +194,7 @@ By default Trellis stores 5 previous releases, not including the current release
 ## Deploying to other hosts
 
 Trellis can deploy to other hosts that support SSH, Composer, and WP-CLI, along with updating the web root path.
+
+## Resources
+
+- [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/trellis/docs/deploy-to-digitalocean/)
