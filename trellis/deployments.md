@@ -14,11 +14,11 @@ authors:
 
 # Deployments
 
-Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed.
+Trellis allows zero-downtime WordPress deployment out of the box with a little configuration. Hooks let you customize what happens at each step of the deploy process.
 
 ::: note Trellis deploys from Git
 
-Trellis deploys your site from a Git repository. Make sure the `repo` and `branch` keys are set correctly in your `group_vars/<environment>/wordpress_sites.yml` file and that your project is commited to the repository.
+Trellis deploys your site from a Git repository. Make sure the `repo` and `branch` keys are set correctly in your `group_vars/<environment>/wordpress_sites.yml` file and that your project is commited to the repository. [Read more about WordPress Sites](/trellis/docs/wordpress-sites/).
 :::
 
 ## Configuration
@@ -27,29 +27,48 @@ First, you need to have at least one [WordPress site](wordpress-sites.md) config
 
 For deploys, there's a couple more settings needed:
 
-- `repo` (required) - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/bedrock.git`)
-- `repo_subtree_path` (optional) - relative path to your Bedrock/WP directory in your repo if its not the root (like `site` in [roots-example-project](https://github.com/roots/roots-example-project.com))
-- `branch` (optional) - the git branch to deploy (default: `master`)
+- `repo` - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/example.com.git`)
+- `branch` - the git branch to deploy (default: `master`)
 
 Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml` as detailed in the [docs](wordpress-sites.md).
 
-At this point, you should also generate your salts and keys and save them to your `vault.yml` file.
-
 ## Deploying
-
-Deploy with a single command:
 
 Run the following from any directory within your project:
 
 ```shell
-$ trellis deploy <environment>
+trellis deploy <environment>
 ```
 
 ::: warning Note
-**Trellis does not automatically install WordPress on remote servers**.
+**Trellis does not automatically "install" WordPress on remote servers**.
 
 It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
 :::
+
+## Rollbacks
+
+Run the following from any directory within your project:
+
+```shell
+trellis rollback <environment>
+```
+
+Manually specify a different release using `--release=12345678901234` as such:
+
+```shell
+trellis rollback --release=12345678901234 <environment>
+```
+
+By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
+
+## Resources
+
+- [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/trellis/docs/deploy-to-digitalocean/)
+
+## What's Next?
+
+Keep reading to learn about [hooks](#hooks) and how to customize your deploys.
 
 ## Default flow
 
@@ -171,30 +190,5 @@ Deploy command:
 Run the following from any directory within your project:
 
 ```shell
-$ trellis deploy <environment>
+trellis deploy <environment>
 ```
-
-## Rollbacks
-
-
-Run the following from any directory within your project:
-
-```shell
-$ trellis rollback <environment>
-```
-
-You may manually specify a different release using `--release=12345678901234` as such:
-
-```shell
-$ trellis rollback --release=12345678901234 <environment>
-```
-
-By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
-
-## Deploying to other hosts
-
-Trellis can deploy to other hosts that support SSH, Composer, and WP-CLI, along with updating the web root path.
-
-## Resources
-
-- [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/trellis/docs/deploy-to-digitalocean/)

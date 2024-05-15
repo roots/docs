@@ -44,7 +44,6 @@ Modify your project's `group_vars/<environment>/wordpress_sites.yml` file to mat
 
 Run the following command from your local machine:
 
-
 ```shell
 trellis provision <environment>
 ```
