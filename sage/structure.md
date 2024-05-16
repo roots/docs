@@ -18,7 +18,7 @@ The default Sage structure is intended to provide a sane starting point for both
 
 Where a file or class is located is ultimately decided by you. As long as Composer can autoload the class or you have modified the necessary paths in your [configuration](configuration.md), things should work as expected.
 
-```php
+```shell
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── Providers/        # → Service providers
@@ -74,4 +74,3 @@ The `resources` directory contains your Blade views as well as the un-compiled a
 ### The `vendor/` directory
 
 The `vendor` directory contains your [Composer](https://getcomposer.org/) dependencies and autoloader. This directory is automatically generated and should not be modified.
-
