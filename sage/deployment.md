@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-01-18 13:30
+date_modified: 2024-05-22 11:15
 date_published: 2015-09-01 19:29
 description: Compile your assets, install your dependencies, and copy your Sage-based theme to your server. Remember that PHP versions must match between environments.
 title: Deploying Sage

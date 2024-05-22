@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-05-22 11:15
 date_published: 2015-10-15 12:27
 description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 22.04 LTS. You can't run Trellis on a shared host.
 title: Remote Server Setup

@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-04-14 12:23
+date_modified: 2024-05-22 11:15
 date_published: 2015-08-29 18:09
 description: Install Sage 10, a WordPress starter theme, by running `composer create-project roots/sage`.
 title: Installing Sage

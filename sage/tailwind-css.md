@@ -1,10 +1,11 @@
 ---
-date_modified: 2023-03-13 11:00
+date_modified: 2024-05-22 11:15
 date_published: 2023-03-13 11:00
 description: Sage includes Tailwind CSS support, including generating the Tailwind color palette, font families, and sizes for `theme.json` which is used by the block editor.
 title: Tailwind CSS
 authors:
   - ben
+  - MWDelaney
 ---
 
 # Tailwind CSS

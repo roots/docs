@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-05-22 11:15
 date_published: 2021-10-21 13:21
 description: The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.
 title: Theme Structure
@@ -8,6 +8,7 @@ authors:
   - ben
   - jure
   - Log1x
+  - MWDelaney
 ---
 
 # Theme Structure

@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-05-22 11:15
 date_published: 2015-10-15 12:29
 description: Installing Bedrock requires PHP 8.0+ and Composer. After setting environment variables and the document root you can access your WordPress installation.
 title: Installing Bedrock
