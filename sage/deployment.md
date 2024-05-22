@@ -29,6 +29,7 @@ authors:
 
 ::: warning PHP versions must match
 Make sure the PHP version of your development environment matches the PHP version of your production environment, or your composer dependencies may not work correctly.
+:::
 
 ### 1. Build Assets
 
