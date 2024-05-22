@@ -16,10 +16,21 @@ authors:
 
 # Installing Sage
 
+## What is Sage?
+
+Sage is a [WordPress starter theme](https://roots.io/sage/).
+
+## Why use Sage?
+
+- Clean, efficient theme templating utilizing [Laravel Blade](https://laravel.com/docs/master/blade).
+- Lightning fast frontend development workflow powered by [Bud](https://bud.js.org/).
+- Out of the box support for [Tailwind CSS](https://tailwindcss.com/).
+- Harness the power of [Laravel](https://laravel.com) and its available packages thanks to [Acorn](https://github.com/roots/acorn).
+
 ## System Requirements
 
-* [Node.js](https://nodejs.org/)
-* [Composer](https://getcomposer.org/download/)
+- [Node.js](https://nodejs.org/)
+- [Composer](https://getcomposer.org/download/)
 
 ::: warning Windows users
 WSL is required in order to use Sage. Build commands must be run from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
@@ -80,14 +91,3 @@ That's it! You're ready to activate your theme in WordPress and start developing
 ## What Next?
 
 From here you might want to [explore the structure of your new Sage-based theme](/sage/docs/theme-structure/), or [learn how to use Blade templates](/sage/docs/blade-templates/), or how to [compile assets](/sage/docs/compiling-assets/). These documents are meant to be referenced as you work with Sage, so feel free to jump around as needed.
-
-## What is Sage?
-
-Sage is a [WordPress starter theme](https://roots.io/sage/).
-
-## Why use Sage?
-
-- Clean, efficient theme templating utilizing [Laravel Blade](https://laravel.com/docs/master/blade).
-- Lightning fast frontend development workflow powered by [Bud](https://bud.js.org/).
-- Out of the box support for [Tailwind CSS](https://tailwindcss.com/).
-- Harness the power of [Laravel](https://laravel.com) and its available packages thanks to [Acorn](https://github.com/roots/acorn).
