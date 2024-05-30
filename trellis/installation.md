@@ -22,6 +22,18 @@ authors:
   * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
   * [Parallels](https://www.parallels.com/products/desktop/download/) (for Apple Silicon M1, M2, M3, etc. Macs)
 
+### Additional requirements for Windows users
+* [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install)
+* Vagrant must be installed in WSL2
+* VirtualBox must be installed in Windows
+* The following must be set in your WSL `.bashrc` or `.zshrc` file:
+  * `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS` = `1`
+  * `export PATH=“$PATH:/mnt/c/Program Files/Oracle/VirtualBox`
+
+::: warning Windows users
+WSL is required in order to use Trellis. All Trellis commands must be run from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
+:::
+
 ## Install Trellis CLI
 
 ```shell
