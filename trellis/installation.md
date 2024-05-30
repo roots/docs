@@ -27,7 +27,7 @@ authors:
 * Vagrant must be installed in WSL
 * VirtualBox must be installed in Windows
 * The following must be set in your WSL `~/.bashrc` or `~/.zshrc` file:
-  * `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS` = `1`
+  * `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS = 1`
   * `export PATH=“$PATH:/mnt/c/Program Files/Oracle/VirtualBox`
 
 ::: warning Windows users
