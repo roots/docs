@@ -15,8 +15,10 @@ See [Laravel's routing documentation](https://laravel.com/docs/10.x/routing) to 
 
 Acorn allows you to use Laravel's routing functionality on your WordPress sites, and will automatically handle Laravel routes defined in the `routes/web.php` file if it exists.
 
+Routes are an easier way to implement virtual pages in WordPress.
+
 ::: warning
-Routes are an easier way to implement virtual pages in WordPress. Since registered routes are dynamic, WordPress is not aware of how to handle some functionality including such as setting the canonical URL, setting the `<title>`, and adding SEO-related meta data. Make sure to take this into consideration when adding routes to your site.
+Since registered routes are dynamic, WordPress is not aware of how to handle some functionality such as setting the canonical URL, setting the `<title>`, and adding SEO-related meta data. Make sure to take this into consideration when adding routes to your site.
 :::
 
 ## Basic routing example
