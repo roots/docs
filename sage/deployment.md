@@ -1,25 +1,19 @@
 ---
-date_modified: 2024-01-18 13:30
+date_modified: 2024-05-22 11:15
 date_published: 2015-09-01 19:29
-description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over theme assets built with `yarn build`.
+description: Compile your assets, install your dependencies, and copy your Sage-based theme to your server. Remember that PHP versions must match between environments.
 title: Deploying Sage
 authors:
   - alwaysblank
   - ben
   - kero
   - Log1x
+  - MWDelaney
 ---
 
 # Deployment
 
-To deploy a Sage theme you'll need to make sure two things are covered:
-
-1. Run `composer install` from the theme directory on the remote server if you have Acorn installed in your theme directory
-2. Copy over built theme assets (the `public/` folder)
-
-Generate production ready assets with `yarn build`.
-
-## Server requirements
+## (Remote) system requirements
 
 - WordPress >= 5.9
 - PHP >= 8.1
@@ -30,6 +24,32 @@ Generate production ready assets with `yarn build`.
 - Mbstring PHP Extension
 - Tokenizer PHP Extension
 - XML PHP Extension
+
+## Deploying a Sage-based WordPress theme
+
+::: warning PHP versions must match
+Make sure the PHP version of your development environment matches the PHP version of your production environment, or your composer dependencies may not work correctly.
+:::
+
+### 1. Build Assets
+
+Compile your CSS, Javascript, image, and font assets for production:
+  
+```shell
+yarn build
+```
+
+### 2. Install Composer dependencies
+
+Install Composer dependencies:
+
+```shell
+composer install
+```
+
+### 3. Copy files to your server
+
+Copy all files and folders in your theme except the `node_modules` directory to your server.
 
 ## Server configuration
 

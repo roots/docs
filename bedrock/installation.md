@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-05-22 11:15
 date_published: 2015-10-15 12:29
 description: Installing Bedrock requires PHP 8.0+ and Composer. After setting environment variables and the document root you can access your WordPress installation.
 title: Installing Bedrock
@@ -7,24 +7,12 @@ authors:
   - ben
   - Log1x
   - swalkinshaw
+  - MWDelaney
 ---
 
 # Installation
 
-## What is Bedrock?
-
-Bedrock is a [WordPress boilerplate](https://roots.io/bedrock/).
-
-### Why use Bedrock?
-
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
-- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
-
-## Requirements
+## System requirements
 
 - PHP >= 8.0
 - [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
@@ -34,10 +22,10 @@ Bedrock is a [WordPress boilerplate](https://roots.io/bedrock/).
 Create a new Bedrock project:
 
 ```shell
-$ composer create-project roots/bedrock
+composer create-project roots/bedrock
 ```
 
-## Getting Started
+## Create your `.env` file
 
 - Create a `.env` file with the following environment variables (see `.env.example` as an example):
   - Database variables
@@ -61,5 +49,18 @@ $ composer create-project roots/bedrock
 Bedrock is multisite network compatible, but needs the [roots/multisite-url-fixer](https://github.com/roots/multisite-url-fixer) mu-plugin on subdomain installs to make sure admin URLs function properly. This plugin is not _needed_ on subdirectory installs but will work well with them. From your Bedrock directory:
 
 ```shell
-$ composer require roots/multisite-url-fixer
+composer require roots/multisite-url-fixer
 ```
+
+## What is Bedrock?
+
+Bedrock is a [WordPress boilerplate](https://roots.io/bedrock/).
+
+### Why use Bedrock?
+
+- Better folder structure
+- Dependency management with [Composer](https://getcomposer.org)
+- Easy WordPress configuration with environment specific files
+- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
+- Autoloader for mu-plugins (use regular plugins as mu-plugins)
+- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
