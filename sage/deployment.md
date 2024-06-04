@@ -1,35 +1,35 @@
 ---
-date_modified: 2024-01-18 13:30
+date_modified: 2024-06-04 16:00
 date_published: 2015-09-01 19:29
-description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over theme assets built with `yarn build`.
+description: Compile your assets, install your dependencies, and copy your Sage-based theme to your server. Remember that PHP versions must match between environments.
 title: Deploying Sage
 authors:
   - alwaysblank
   - ben
   - kero
   - Log1x
+  - MWDelaney
 ---
 
 # Deployment
 
-To deploy a Sage theme you'll need to make sure two things are covered:
+::: warning PHP versions must match
+Make sure the PHP version of your development environment matches the PHP version of your production environment, or you may hit a fatal error due to your Composer dependencies requiring a different PHP version.
+:::
 
-1. Run `composer install` from the theme directory on the remote server if you have Acorn installed in your theme directory
-2. Copy over built theme assets (the `public/` folder)
+## Deploying a Sage-based WordPress theme
 
-Generate production ready assets with `yarn build`.
+1. Build theme assets (`yarn build`)
+2. Install Composer dependencies (`composer install --no-dev  --optimize-autoloader`)
+3. Upload all files and folders in your theme except the `node_modules` directory to your host
 
-## Server requirements
+## Optimization
 
-- WordPress >= 5.9
-- PHP >= 8.1
-- BCMath PHP Extension
-- Ctype PHP Extension
-- Fileinfo PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
+Similar to deploying a Laravel app, Acorn supports an `optimize` command that will cache your configuration and views. This command should be ran as part of your deployment process:
+
+```shell
+wp acorn optimize
+```
 
 ## Server configuration
 
@@ -86,9 +86,3 @@ If you use [Trellis](https://roots.io/trellis/), you can build your assets local
 ## Deploying Sage on WP Engine
 
 See the instructions from [`wpengine/example-sage-theme`](https://github.com/wpengine/example-sage-theme).
-
-## Deploying Sage via FTP
-
-If you don't have permission to run `composer` on the production server and/or are using a shared hosting service, you may want to deploy Sage with FTP. 
-To do so, [compile your assets for production](compiling-assets.md) and run `composer install --no-dev` in your theme directory. 
-Upload all files and folders in your theme except the `node_modules` directory to your host.
