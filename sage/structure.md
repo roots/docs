@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-05-22 11:15
 date_published: 2021-10-21 13:21
 description: The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.
 title: Theme Structure
@@ -8,6 +8,7 @@ authors:
   - ben
   - jure
   - Log1x
+  - MWDelaney
 ---
 
 # Theme Structure
@@ -18,7 +19,7 @@ The default Sage structure is intended to provide a sane starting point for both
 
 Where a file or class is located is ultimately decided by you. As long as Composer can autoload the class or you have modified the necessary paths in your [configuration](configuration.md), things should work as expected.
 
-```php
+```shell
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── Providers/        # → Service providers
@@ -74,4 +75,3 @@ The `resources` directory contains your Blade views as well as the un-compiled a
 ### The `vendor/` directory
 
 The `vendor` directory contains your [Composer](https://getcomposer.org/) dependencies and autoloader. This directory is automatically generated and should not be modified.
-
