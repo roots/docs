@@ -1,7 +1,7 @@
 ---
-date_modified: 2023-01-27 17:40
+date_modified: 2024-06-04 17:00
 date_published: 2015-11-01 14:32
-description: Steps to enable and use Ansible Vault with a Trellis project. Trellis uses a vault.yml file for variables with sensitive data such as passwords.
+description: Steps to enable and use Ansible Vault with a Trellis project. Trellis uses a `vault.yml` file for variables with sensitive data such as passwords.
 title: Vault
 authors:
   - ben
@@ -15,7 +15,10 @@ authors:
 
 # Vault
 
-Some Ansible variables contain sensitive data such as passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html#vault) to avoid exposing sensitive data in your project repo. Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
+Some project variables contain sensitive data like passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using to avoid exposing sensitive data in your project repository.
+
+<details>
+<summary>vault.yml example</summary>
 
 To briefly demonstrate what vault does, consider this example `vault.yml` file.
 
@@ -36,22 +39,41 @@ $ANSIBLE_VAULT;1.1;AES256
 6237663637353638653266616562616535623465636265316231613331 etc.
 ```
 
-## Steps to enable Ansible Vault
+</details>
+
+## Encrypt your vault files
+
+```shell
+trellis vault encrypt
+```
 
 ::: danger
 If you have unencrypted `vault.yml` files in your project's git history (e.g., passwords in plain text), you will most likely want to change the variable values in your `vault.yml` files before encrypting them and committing them to your repo.
 :::
 
-### Encrypt files
-`trellis-cli` automatically generates your vault files and a vault password, but does not encrypt your vaults. To encrypt vaults created by `trellis-cli` run the following from any directory within your project:
+::: warning Don't forget your vault password
+Trellis automatically generates a vault password for you at `trellis/.vault_pass`. This file **will not** be added to your Git repository.
+:::
 
+Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
+
+## View an encrypted vault file
+
+You can view a vault file in your terminal with the following command:
 
 ```shell
-$ trellis vault encrypt
+trellis vault view <environment>
+```
+
+## Edit an encrypted vault file
+
+You can edit a vault file in your terminal with the following command:
+
+```shell
+trellis vault edit group_vars/<environment>/vault.yml
 ```
 
 ## Other vault commands
-
 
 `trellis-cli` provides a few basic commands that mirror with the official [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) ones.
 
@@ -74,7 +96,7 @@ Here are a few tips for working with [variables and vault](http://docs.ansible.c
 
 ## Sharing a project with vault-encrypted files
 
-Your repo with vault-encrypted files is secure from anyone being able to see or use the sensitive data in the `vault.yml` files. To grant a colleague access to the data, you will need to give your colleague your vault password to use in repeating the two password steps in the [Steps to Enable Ansible Vault](vault.md#steps-to-enable-ansible-vault) above. It is still recommended to always keep your project in a private repo.
+Your repo with vault-encrypted files is secure from anyone being able to see or use the sensitive data in the `vault.yml` files. To grant a colleague access to the data, you will need to give your colleague your vault password to use in repeating the two password steps in the [Steps to Enable Ansible Vault](#encrypt-your-vault-files) above. It is still recommended to always keep your project in a private repo.
 
 ## Disabling Ansible Vault
 
@@ -84,14 +106,14 @@ It is not recommended to disable Ansible Vault but you can disable it at any tim
 
 Without your password, either entered as a string or stored in your `vault_password_file` file (usually `.vault_pass` and configured in the `ansible.cfg` file), you will not be able to access the encrypted files. The `vault_password_file` should not ever be publicly accessible, or committed to version control. It's a good practice to backup this file on another physical or virtual drive, ideally also encrypted.
 
-## Access Recovery
+## Access recovery
 
 Should you lose access to your vault password, you you can either spin up a new server, or recreate or regenerate the `group_vars/(environment)/vault.yml` files and, on the servers, manually update the following to match new vault strings:
 
 ### admin root (sudo) password
 
-```
-$ sudo passwd admin
+```shell
+sudo passwd admin
 ```
 
 ### root mysql password
@@ -103,6 +125,7 @@ flush privileges;
 ```
 
 ### WordPress database passwords
+
 ```sql
 UPDATE mysql.user SET Password=PASSWORD('password_in_vault_file') WHERE USER='example_com' AND Host='localhost';
 

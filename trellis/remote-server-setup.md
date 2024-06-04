@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-06-04 17:00
 date_published: 2015-10-15 12:27
 description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 22.04 LTS. You can't run Trellis on a shared host.
 title: Remote Server Setup
@@ -10,45 +10,29 @@ authors:
   - MWDelaney
   - nicbovee
   - swalkinshaw
+  - MWDelaney
 ---
 
 # Remote Server Setup
 
-Setting up remote servers (usually staging or production environments) is similar to the [local development setup](local-development.md) with a few additional requirements and steps.
+Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/)) to host your staging and production environments.
 
-In development, Trellis handles everything for you. It automatically creates a server (Vagrant virtual machine), provisions it, installs WordPress, and syncs your local files to the VM.
-For remote servers, the workflow is a little different with two new separate concepts:
-
-- [Provision](#provision)
-- [Deploy](#deploy)
-
-Before getting to those, there's some additional requirements as well.
-
-## Dependencies
-
-The Trellis [installation instructions](installation.md) are optimized for a quick start using Vagrant. For deploying and provisioning remote servers, we need to ensure all of Trellis' dependencies (mainly Ansible) are installed on your local/host machine.
-
-If you're using trellis-cli, just re-run the following command to ensure your
-project is initialized and the dependencies are installed:
-
-```shell
-$ trellis init
-```
+::: warning
+**Trellis cannot provision shared or managed hosts.** Trellis requires a bare server if you want to use it for provisioning.
+:::
 
 ## Server requirements
 
-1. You need a server running a bare/stock version of Ubuntu 22.04 LTS. If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 22.04 option.
+* Ubuntu 22.04 LTS
+* SSH access to the server
 
-::: warning Shared hosts
-Trellis **cannot be used** on a shared host. Trellis requires a dedicated server if
-you want to use it for provisioning and deployments.
-:::
+You need a server running a bare/stock version of Ubuntu 22.04 LTS. If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 22.04 option.
 
-2. You need to be able to connect to your Ubuntu server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts like DigitalOcean offer to automatically add your SSH key when creating a server so take advantage of that. Or follow a guide such as [this one](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2).
+You need to be able to connect to your Ubuntu server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts offer to automatically add your SSH key when creating a server, so take advantage of that. 
 
 Once you have a Ubuntu server up and running, you can provision it.
 
-## Provision
+## Provisioning
 
 Provisioning a server means to set it up with the necessary software and configuration to run a WordPress site. For Trellis this means things like: installing MariaDB, installing Nginx, configuring Nginx, creating a database, etc.
 
@@ -71,9 +55,8 @@ you'll likely be creating a `production` or `staging` environment.
 Now you're ready to provision your server. Ansible connects to the remote server
 via SSH so run the following command from your local machine:
 
-
 ```shell
-$ trellis provision <environment>
+trellis provision <environment>
 ```
 
 ### Re-provisioning
@@ -83,7 +66,7 @@ Re-provisioning is always assumed to be a safe operation. When you make changes 
 Run the following from any directory within your project:
 
 ```shell
-$ trellis provision <environment>
+trellis provision <environment>
 ```
 
 You can also provision with specific tags to only run the relevant roles:
@@ -91,21 +74,5 @@ You can also provision with specific tags to only run the relevant roles:
 Run the following from any directory within your project:
 
 ```shell
-$ trellis provision --tags users <environment>
+trellis provision --tags users <environment>
 ```
-
-## Deploy
-
-In development it's easy to get your site/codebase onto the VM through synced folders. However for remote servers, we need to deploy first.
-
-Deploys are done in Trellis by running the `deploy.yml` playbook. This gets your codebase onto the server by cloning it from a Git repository. It also takes cares of things like: running Composer, creating config files, reloading Nginx, etc.
-
-Run the following from any directory within your project:
-
-```shell
-$ trellis deploy <environment>
-```
-
-## Resources
-
-- [Using Trellis to Provision and Deploy to DigitalOcean Droplets](https://roots.io/trellis/docs/deploy-to-digitalocean/)

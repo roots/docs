@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-06-04 16:30
 date_published: 2015-09-07 20:44
 description: Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed. Hooks let you customize what happens at each step of the atomic deploy process.
 title: Deployments
@@ -14,41 +14,58 @@ authors:
 
 # Deployments
 
-Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed.
+Trellis allows zero-downtime WordPress deployment out of the box with a little configuration. Hooks let you customize what happens at each step of the deploy process.
 
-## Configuration
+Trellis deploys your site from a Git repository. In your `wordpress_sites.yml` file, found in the `group_vars/<environment>` directory, make sure the `repo` and `branch` keys are set correctly:
 
-First, you need to have at least one [WordPress site](wordpress-sites.md) configured and your remote server provisioned and working according to the [remote server setup](remote-server-setup.md).
+- `repo` - Git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:org/repo-name.git`)
+- `branch` - Git branch to deploy (default: `master`)
 
-For deploys, there's a couple more settings needed:
+```diff
+wordpress_sites:
+  example.com:
+    ...
+-   repo: git@github.com:example/example.com.git
++   repo: git@github.com:org/repo-name.git
+-   branch: master
++   branch: main
+```
 
-- `repo` (required) - git URL of your Bedrock-based WordPress project (in SSH format: `git@github.com:roots/bedrock.git`)
-- `repo_subtree_path` (optional) - relative path to your Bedrock/WP directory in your repo if its not the root (like `site` in [roots-example-project](https://github.com/roots/roots-example-project.com))
-- `branch` (optional) - the git branch to deploy (default: `master`)
+[Read more about WordPress Sites in Trellis](/trellis/docs/wordpress-sites/)
 
-Those variables should be added to the corresponding site in `group_vars/<environment>/wordpress_sites.yml` as detailed in the [docs](wordpress-sites.md).
-
-At this point, you should also generate your salts and keys and save them to your `vault.yml` file.
+::: tip
+Using DigitalOcean? Read our guide on [deploying Trellis to DigitalOcean](https://roots.io/trellis/docs/deploy-to-digitalocean/)
+:::
 
 ## Deploying
-
-Deploy with a single command:
 
 Run the following from any directory within your project:
 
 ```shell
-$ trellis deploy <environment>
+trellis deploy <environment>
 ```
 
 ::: warning Note
-**Trellis does not automatically install WordPress on remote servers**.
+**Trellis does not automatically "install" WordPress on remote servers**.
 
 It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
 :::
 
-## Default flow
+## Rollbacks
 
-By default, Trellis deploys are configured for Bedrock-based sites and take care of everything needed. The hooks below are for more advanced customization purposes.
+Run the following from any directory within your project:
+
+```shell
+trellis rollback <environment>
+```
+
+Manually specify a different release using `--release=12345678901234` as such:
+
+```shell
+trellis rollback --release=12345678901234 <environment>
+```
+
+By default Trellis stores five previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
 
 ## Hooks
 
@@ -128,64 +145,3 @@ deploy_build_after:
 The second example above demonstrates overriding the `deploy_build_after` hook that Trellis already uses by default. The first include file in this hook's list is `roles/deploy/hooks/build-after.yml`, which is the task file Trellis usually executes. If you omit a hook's default file when overriding an existing hook variable, the default file's tasks will no longer execute.
 
 The second include file in the `deploy_build_after` example above, `deploy-hooks/build-after.yml`, is an example of adding a custom task file that would run on every deploy, regardless the site being deployed. The third include file, <code>deploy-hooks/sites/{{ site }}-build-after.yml</code>, demonstrates how you could use a `{{ site }}` variable to include a file based on the name of the site being deployed, e.g., `example.com-build-after.yml`.
-
-### SSH keys
-
-Before you can deploy a site to a remote server, your SSH keys need to be working. Trellis takes advantage of SSH forwarding so your remote server does not need to generate an SSH key and add it to GitHub/Bitbucket.
-
-The chain works like this: `local machine` -&gt; SSH via Ansible -&gt; `remote server` -&gt; Git clone -&gt; `remote Git repository`
-
-See the [SSH Keys docs](ssh-keys.md) on how to get your SSH key added to the `web` user which is the user Trellis deploys with.
-
-### Example
-
-Here's an example of all the configuration needed to deploy a site and what the commands would look like.
-
-Configuration:
-
-```yaml
-# group_vars/production/wordpress_sites.yml
-
-wordpress_sites:
-  mysite.com:
-    site_hosts:
-      - canonical: mysite.com
-    local_path: ../site
-    repo: git@github.com:me/mysite.git
-    repo_subtree_path: site
-    multisite:
-      enabled: false
-    ssl:
-      enabled: false
-    cache:
-      enabled: false
-```
-
-Deploy command:
-
-Run the following from any directory within your project:
-
-```shell
-$ trellis deploy <environment>
-```
-
-## Rollbacks
-
-
-Run the following from any directory within your project:
-
-```shell
-$ trellis rollback <environment>
-```
-
-You may manually specify a different release using `--release=12345678901234` as such:
-
-```shell
-$ trellis rollback --release=12345678901234 <environment>
-```
-
-By default Trellis stores 5 previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
-
-## Deploying to other hosts
-
-Trellis can deploy to other hosts that support SSH, Composer, and WP-CLI, along with updating the web root path.
