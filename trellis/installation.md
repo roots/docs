@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-05-22 11:15
+date_modified: 2024-06-04 17:00
 date_published: 2015-10-15 12:20
 description: Trellis installation and new project instructions.
 title: Installing Trellis
@@ -89,7 +89,7 @@ with a single command thanks to trellis-cli too.
 
 Trellis provisions a base Ubuntu 22.04 server by installing and configuring the following software:
 
-* PHP 8.0+
+* PHP 8.1+
 * Nginx (including HTTP2/ and optional FastCGI micro-caching)
 * MariaDB (a drop-in MySQL replacement)
 * SSL support (scores an A+ on the [Qualys SSL Server Test](https://www.ssllabs.com/ssltest/))
@@ -105,21 +105,30 @@ In addition to configuring common services like ntp, sshd, etc.
 ## System requirements
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
-* A Vagrant [provider](https://developer.hashicorp.com/vagrant/docs/providers):
+* [Vagrant provider](https://developer.hashicorp.com/vagrant/docs/providers)
   * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
   * [Parallels](https://www.parallels.com/products/desktop/download/) (for Apple Silicon M1, M2, M3, etc. Macs)
 
-### Additional requirements for Windows users
-* [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install)
-* Vagrant must be installed in WSL
-* VirtualBox must be installed in Windows
-* The following must be set in your WSL `~/.bashrc` or `~/.zshrc` file:
-  * `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS = 1`
-  * `export PATH=“$PATH:/mnt/c/Program Files/Oracle/VirtualBox`
+::: tip macOS users
+Want to skip the Vagrant and Vagrant provider requirements? [**Try Lima as an alternative**](/introducing-lima-to-trellis-for-faster-local-development/)
+:::
 
 ::: warning Windows users
 WSL is required in order to use Trellis. All Trellis commands must be run from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
 :::
+
+<details>
+<summary>Additional requirements for Windows users</summary>
+
+* [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install)
+* Vagrant must be installed in WSL
+* VirtualBox must be installed in Windows
+* The following must be set in your WSL shell configuration file (`~/.bashrc`):
+  * `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS = 1`
+  * `export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"`
+* All Trellis commands must be run WSL  
+
+</details>
 
 ## Install Trellis CLI
 
@@ -157,31 +166,29 @@ Check out the following files to review the basic site configuration:
 trellis up
 ```
 
-This command will start the Vagrant environment and provision the server. Once it's done, you can visit your developmentsite at the URL you chose when you ran `trellis new`.
+This command will start the Vagrant environment and provision the server. Once it's done, you can visit your development site at the URL you chose when you ran `trellis new`.
 
-See [Local Development](/trellis/docs/local-development-environment/) for more information.
+[Read more about Local Development](/trellis/docs/local-development/)
 
-## What's Next?
-
-### Configure your environments
+## Configure your environments
 
 Trellis pre-configures most of your site's settings, but you'll need to fill in a few gaps in the [WordPress Sites](/trellis/docs/wordpress-sites/) configuration.
 
-### Encrypt your vault files
+## Encrypt your vault files
 
-You probably want to encrypt your vault files, which hold automatically-generated passwords and other sensitive information. Check out the [Vault](/trellis/docs/vault/) documentation for more information.
+You probably want to encrypt your vault files, which hold automatically-generated passwords and other sensitive information. [Read more about Vault](/trellis/docs/vault/)
 
-### Provision your `production` server
+## Provision your production server
 
-Before deploying to production, you'll need to provision your server. Check out [Provisioning](/trellis/docs/remote-server-setup//) for details.
+Before deploying to production, you'll need to provision your server. [Read more about provisioning](/trellis/docs/remote-server-setup/)
 
 ```shell
 trellis provision production
 ```
 
-### Deploy to `production`
+## Deploy to production
 
-When you're ready to deploy your site to production, check out the [Deployments](/trellis/docs/deployments) for details.
+Ready to deploy your site to production? [Read more about deployments](/trellis/docs/deployments/)
 
 ```shell
 trellis deploy production example.com
