@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-05-22 11:15
 date_published: 2015-10-15 12:20
 description: Trellis installation and new project instructions.
 title: Installing Trellis
@@ -10,36 +10,39 @@ authors:
   - nikitasol
   - swalkinshaw
   - TangRufus
+  - MWDelaney
 ---
 
 # Installation
 
 ## What is Trellis?
+
 [Trellis](https://roots.io/trellis/) is a tool to create WordPress web servers and deploy WordPress sites.
 
 Trellis lets you create and manage servers that are production ready, performance optimized and based on best practices that are continuously improved. Trellis is self-hosting done right since you benefit from the community and experience of Roots.
 
 ### Why use Trellis?
+
 You’ll get a complete WordPress server [running all the software](#software-installed) you need configured according to the best practices that are fully customizable.
 
 <details>
 <summary>Trellis features</summary>
 
 #### Ansible
+
 Trellis is powered by [Ansible](https://docs.ansible.com/ansible/latest/index.html) for configuration management. You don’t have to use brittle and confusing Bash scripts or worry about commands you found to copy and paste.
 
 You get the benefit of Ansible [documentation](https://docs.ansible.com/ansible/latest/user_guide/index.html), its extensive library of [modules and plugins](https://docs.ansible.com/ansible/latest/collections/all_plugins.html), and the community ecosystem of [Galaxy roles](https://galaxy.ansible.com/).
 
 #### Local development
-Trellis comes with [Vagrant](https://www.vagrantup.com/) support for local
-development environments that run on isolated virtual machines. This means you
-don't have to worry about polluting your local OS with software that might break
+
+Trellis comes with [Vagrant](https://www.vagrantup.com/) support for local development environments that run on isolated virtual machines. This means you don't have to worry about polluting your local OS with software that might break
 or conflict with other tools you use.
 
-However, using Vagrant is optional and you're free to use other local dev tools
-as well, or even none at all.
+However, using Vagrant is optional and you're free to use other local dev tools as well, or even none at all.
 
 #### Customizable
+
 While Trellis gives you everything for a standard WordPress server out of the
 box, it's completely customizable as well. This is what makes Trellis different
 from managed hosting or even tools like SpinupWP that automatically setup
@@ -50,44 +53,40 @@ code" so you can easily see exactly what Trellis installs on your server and
 customize if you want.
 
 #### Portable without vendor-lock in
-Trellis servers can be run on _any_ hosting platform; traditional dedicated
-server hosting or cloud platforms. All Trellis needs is a server running a plain
-Ubuntu operating system.
 
-This means you can easily migrate hosting providers making your infrastructure
-much more flexible and portable. You can even "disconnect" your server from
-Trellis if you want and just manage your server manually. Trellis isn't required
-to keep your server running (but we do recommend it!).
+Trellis servers can be run on _any_ hosting platform; traditional dedicated server hosting or cloud platforms. All Trellis needs is a server running a plain Ubuntu operating system.
+
+This means you can easily migrate hosting providers making your infrastructure much more flexible and portable. You can even "disconnect" your server from Trellis if you want and just manage your server manually. Trellis isn't required to keep your server running (but we do recommend it!).
 
 #### Cost effective
+
 Managed WP hosting can make your life easier, but it can also be
 extremely expensive and is often overkill for simpler WordPress sites.
 
-Trellis lets you run performant sites on extremely cheap servers ($5-10/month)
-and even supports running multiple sites on a single server for more efficiency.
+Trellis lets you run performant sites on extremely cheap servers ($5-10/month) and even supports running multiple sites on a single server for more efficiency.
 
 #### Community backed
-Since Trellis is open-source, we get the leverage of Roots and our community to
-continuously improve the defaults over time. We are constantly learning better
-settings and defaults for WordPress servers, and then we apply them to Trellis.
+
+Since Trellis is open-source, we get the leverage of Roots and our community to continuously improve the defaults over time. We are constantly learning better settings and defaults for WordPress servers, and then we apply them to Trellis.
 
 #### Development and production parity
-Unlike many other solutions for WordPress server hosting, Trellis aims to have
-[parity between your development and production environments](https://roots.io/twelve-factor-10-dev-prod-parity/). Trellis comes setup to run locally with Vagrant so you can test your WordPress sites with full confidence that they'll work once you deploy to production.
+
+Unlike many other solutions for WordPress server hosting, Trellis aims to have [parity between your development and production environments](https://roots.io/twelve-factor-10-dev-prod-parity/). Trellis comes setup to run locally with Vagrant so you can test your WordPress sites with full confidence that they'll work once you deploy to production.
 
 #### CLI
-Trellis has its own [CLI](cli.md) that makes managing your local and remote servers much
-easier. It also enables powerful CI/CD workflows like our [setup-trellis-cli](https://github.com/roots/setup-trellis-cli/)
-[GitHub action that can be used for continuous deploys](/trellis/docs/deploy-with-github-actions/).
+
+Trellis has its own [CLI](cli.md) that makes managing your local and remote servers much easier. It also enables powerful CI/CD workflows like our [setup-trellis-cli](https://github.com/roots/setup-trellis-cli/) [GitHub action that can be used for continuous deploys](/trellis/docs/deploy-with-github-actions/).
 
 #### Zero-downtime deploys
+
 Trellis has atomic, zero-downtime deploys built-in that are completely
 configurable with a powerful hook system. You can deploy and rollback releases
 with a single command thanks to trellis-cli too.
 
 </details>
 
-### Software installed
+### Trellis servers are production-ready
+
 Trellis provisions a base Ubuntu 22.04 server by installing and configuring the following software:
 
 * PHP 8.0+
@@ -103,47 +102,37 @@ Trellis provisions a base Ubuntu 22.04 server by installing and configuring the 
 
 In addition to configuring common services like ntp, sshd, etc.
 
-## Requirements
+## System requirements
 
-Trellis relies on a few other software tools. Make sure all dependencies have been installed before moving on:
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* A Vagrant [provider](https://developer.hashicorp.com/vagrant/docs/providers):
+  * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+  * [Parallels](https://www.parallels.com/products/desktop/download/) (for Apple Silicon M1, M2, M3, etc. Macs)
 
-- [Python 3](./python.md)
-- [trellis-cli](https://github.com/roots/trellis-cli)
+### Additional requirements for Windows users
+* [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install)
+* Vagrant must be installed in WSL
+* VirtualBox must be installed in Windows
+* The following must be set in your WSL `~/.bashrc` or `~/.zshrc` file:
+  * `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS = 1`
+  * `export PATH=“$PATH:/mnt/c/Program Files/Oracle/VirtualBox`
 
-### Local development requirements
-If you want to use Trellis' built-in Vagrant integration, you'll need the
-following as well:
-
-- [Vagrant](https://www.vagrantup.com/downloads.html) >= 2.1.0
-- a Vagrant [provider](https://www.vagrantup.com/docs/providers):
-  - x86 (Intel based Macs, Linux, Windows PCs): [VirtualBox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
-  - Apple Silicon (M1 based Macs): See our [Parallels page](vagrant.md#parallels-apple-silicon-m1-macs)
-
-::: warning Note for Windows users
-**All commands must be run from WSL ([Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)).**
+::: warning Windows users
+WSL is required in order to use Trellis. All Trellis commands must be run from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
 :::
 
-## Install trellis-cli
-
-Install [trellis-cli](https://github.com/roots/trellis-cli) via [Homebrew](https://brew.sh/):
+## Install Trellis CLI
 
 ```shell
-$ brew install roots/tap/trellis-cli
+brew install roots/tap/trellis-cli
 ```
 
-## Create a project
+## Create a new project with Trellis
 
-To create a new project, first, pick a descriptive name (and use it in place of the default `example.com`).
-We recommend the domain of the site for convenience.
-
-```shell
-$ trellis new example.com
-```
-
-Or to explicitly set the site name and host, use the following:
+Choose a descriptive project name (and use it in place of the default example.com). We recommend the domain of the site for uniqueness.
 
 ```shell
-$ trellis new --name example.com --host www.example.com ~/path/to/my/project
+trellis new example.com
 ```
 
 After you've created a project, the folder structure for a Trellis project will look like this:
@@ -157,17 +146,43 @@ example.com/      # → Root folder for the project
         └── wp/   # → WordPress core (don't touch! - managed by Composer)
 ```
 
-Assuming you used the CLI, you'll also have your first WordPress site automatically configured based on the
-project folder (or name and host provided).
+Check out the following files to review the basic site configuration:
 
-Check out the following files to see the basic site configuration:
 * `trellis/group_vars/development/wordpress_sites.yml`
 * `trellis/group_vars/production/wordpress_sites.yml`
 
-## What's next?
-Now that you have a project created and the basics configured, you can explore the following steps:
+## Start your development environment
 
-* Review your [sites and learn how to customize them](./wordpress-sites.md)
-* Run your [local development server with Vagrant](./local-development.md)
-* [Provision](./remote-server-setup.md) and [deploy](./deployments.md) a remote staging or production server
-* Run `trellis --help` to explore all the commands available in the CLI
+```shell
+trellis up
+```
+
+This command will start the Vagrant environment and provision the server. Once it's done, you can visit your developmentsite at the URL you chose when you ran `trellis new`.
+
+See [Local Development](/trellis/docs/local-development-environment/) for more information.
+
+## What's Next?
+
+### Configure your environments
+
+Trellis pre-configures most of your site's settings, but you'll need to fill in a few gaps in the [WordPress Sites](/trellis/docs/wordpress-sites/) configuration.
+
+### Encrypt your vault files
+
+You probably want to encrypt your vault files, which hold automatically-generated passwords and other sensitive information. Check out the [Vault](/trellis/docs/vault/) documentation for more information.
+
+### Provision your `production` server
+
+Before deploying to production, you'll need to provision your server. Check out [Provisioning](/trellis/docs/remote-server-setup//) for details.
+
+```shell
+trellis provision production
+```
+
+### Deploy to `production`
+
+When you're ready to deploy your site to production, check out the [Deployments](/trellis/docs/deployments) for details.
+
+```shell
+trellis deploy production example.com
+```
