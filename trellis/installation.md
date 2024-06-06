@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-06-04 17:00
+date_modified: 2024-06-06 17:00
 date_published: 2015-10-15 12:20
 description: Trellis installation and new project instructions.
 title: Installing Trellis
@@ -104,14 +104,18 @@ In addition to configuring common services like ntp, sshd, etc.
 
 ## System requirements
 
-* [Vagrant](https://www.vagrantup.com/downloads.html)
-* [Vagrant provider](https://developer.hashicorp.com/vagrant/docs/providers)
-  * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-  * [Parallels](https://www.parallels.com/products/desktop/download/) (for Apple Silicon M1, M2, M3, etc. Macs)
+Trellis normally requires Vagrant and a Vagrant provider, such as VirtualBox or Parallels, for local development environments.
 
-::: tip macOS users
-Want to skip the Vagrant and Vagrant provider requirements? [**Try Lima as an alternative**](/introducing-lima-to-trellis-for-faster-local-development/)
-:::
+For machines with Apple silicon (M1, M2, M3, etc. Macs), Lima is a newer alternative that doesn't require using Vagrant.
+
+| Software Required<sup>*</sup> | System
+| ----------------- | ------
+| [Lima](/introducing-lima-to-trellis-for-faster-local-development/) | macOS with Apple silicon
+| [Vagrant](https://www.vagrantup.com/downloads.html) &amp; [Parallels](https://prf.hn/l/KzkNLZB)<sup>**</sup> | macOS with Apple silicon
+| [Vagrant](https://www.vagrantup.com/downloads.html) &amp; [VirtualBox](https://www.virtualbox.org/wiki/Downloads)<sup>**</sup> | Linux, macOS, Windows
+
+<small>*Only required if you are using Trellis for a local development environment</small><br>
+<small>**Or any other [Vagrant provider](https://developer.hashicorp.com/vagrant/docs/providers)</small>
 
 ::: warning Windows users
 WSL is required in order to use Trellis. All Trellis commands must be run from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
