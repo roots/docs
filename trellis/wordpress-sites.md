@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-06-19 13:17
 date_published: 2016-03-28 21:10
 description: Everything in Trellis is built around the concept of "sites". Trellis will automatically configure everything needed to host a WordPress site.
 title: WordPress Sites
@@ -97,7 +97,7 @@ example.com:
 - `local_path` - path targeting Bedrock-based site directory (*required*)
 - `current_path` - symlink to latest release (default: `current`)
 - `db_create` - whether to auto create a database or not (default: `true`)
-- `packagist_token` - Token to use to authenticate with Packagist.com for private Composer repositories (optional)
+- `composer_authentications` - Composer auth setup. Useful for configuring access to private repositories. See the [Composer HTTP Basic Authentication docs](https://roots.io/trellis/docs/composer-http-basic-authentication/) (optional)
 - `ssl` - SSL options. See the [SSL docs](ssl.md)
 - `multisite` - Multisite options. See the [Multisite docs](multisite.md)
 - `cache` - Nginx FastCGI cache options. See the [Cache docs](fastcgi-caching.md)
