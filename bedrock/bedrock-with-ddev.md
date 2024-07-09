@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-19 12:16
+date_modified: 2024-07-09 18:30
 date_published: 2023-02-19 12:16
 description: How to configure DDEV, a local PHP development tool, for a Bedrock-based WordPress site.
 title: Bedrock with DDEV
@@ -31,6 +31,7 @@ DB_PASSWORD='db'
 DB_HOST='db'
 
 WP_HOME="${DDEV_PRIMARY_URL}"
+WP_SITEURL="${DDEV_PRIMARY_URL}/wp"
 ```
 
-After configuring the environment variables, run `ddev start`. Your site will be accessible at `https://ddev.ddev.site/`.
+After configuring the environment variables, run `ddev start`. Your site will be accessible at `https://ddevtest.ddev.site/`.
