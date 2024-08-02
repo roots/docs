@@ -206,6 +206,8 @@ namespace App\Providers;
 }
 ```
 
+After doing so, you may need to delete [Acorn's application cache directory](https://roots.io/acorn/docs/directory-structure/). By default, this is located in `[wp-content|app]/cache/acorn/`. 
+
 Reference the [Acorn v3 upgrade pull request on the Sage repo](https://github.com/roots/sage/pull/3097) to see a full diff.
 
 #### Target class [assets.manifest] does not exist
