@@ -1,10 +1,11 @@
 ---
-date_modified: 2024-01-16 11:38
+date_modified: 2024-08-02 13:45
 date_published: 2023-01-13 13:12
 description: Acorn v4 introduces some minimal breaking changes that may require updates when coming from Acorn v3.
 title: Upgrading Acorn
 authors:
   - ben
+  - joshf
 ---
 
 # Upgrading Acorn
@@ -205,6 +206,8 @@ namespace App\Providers;
     }
 }
 ```
+
+After doing so, you may need to delete [Acorn's application cache directory](https://roots.io/acorn/docs/directory-structure/). By default, this is located in `[wp-content|app]/cache/acorn/`. 
 
 Reference the [Acorn v3 upgrade pull request on the Sage repo](https://github.com/roots/sage/pull/3097) to see a full diff.
 
