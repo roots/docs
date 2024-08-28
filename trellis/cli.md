@@ -109,18 +109,20 @@ For subcommand documentation, run `trellis <command> -h`.
 | `xdebug-tunnel` | Commands for managing Xdebug tunnels |
 
 ## Configuration
-There are three ways to set configuration settings for trellis-cli and they are
+There are four ways to set configuration settings for trellis-cli and they are
 loaded in this order of precedence:
 
-1. global config
-2. project config
-3. env variables
+1. global config (`$HOME/.config/trellis/cli.yml`)
+2. project config (`trellis.cli.yml`)
+3. project config local override (`trellis.cli.local.yml`)
+4. env variables
 
 The global CLI config (defaults to `$HOME/.config/trellis/cli.yml`)
 and will be loaded first (if it exists).
 
 Next, if a project is detected, the project CLI config will be loaded if it
-exists at `.trellis/cli.yml`.
+exists at `trellis.cli.yml` (within your `trellis` directory).
+A Git ignored local override config is also supported at `trellis.cli.local.yml`.
 
 Finally, env variables prefixed with `TRELLIS_` will be used as
 overrides if they match a supported configuration setting. The prefix will be
@@ -146,7 +148,7 @@ Current supported settings:
 | Setting | Description | Type | Default |
 | --- | --- | -- | -- |
 | `manager` | VM manager (Options: `auto` (depends on OS), `lima`)| string | "auto" |
-| `ubuntu` | Ubuntu OS version (Options: `18.04`, `20.04`, `22.04`)| string | `22.04` |
+| `ubuntu` | Ubuntu OS version (Options: `18.04`, `20.04`, `22.04`, `24.04`)| string | `24.04` |
 | `hosts_resolver` | VM hosts resolver (Options: `hosts_file`)| string | `hosts_file` |
 | `images` | Custom OS image | object | Set based on `ubuntu` version |
 
