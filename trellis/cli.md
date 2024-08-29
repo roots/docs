@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-04-05 07:42
+date_modified: 2024-08-28 20:42
 date_published: 2023-04-05 07:42
 description: A command-line interface (CLI) to manage Trellis projects via the `trellis` command.
 title: Trellis CLI
