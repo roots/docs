@@ -144,16 +144,16 @@ With the new one:
 ```php
 if (! function_exists('\Roots\bootloader')) {
     wp_die(
-        __('You need to install Acorn to use this theme.', 'sage'),
+        __('You need to install Acorn to use this site.', 'radicle'),
         '',
         [
             'link_url' => 'https://roots.io/acorn/docs/installation/',
-            'link_text' => __('Acorn Docs: Installation', 'sage'),
+            'link_text' => __('Acorn Docs: Installation', 'radicle'),
         ]
     );
 }
 
-\Roots\bootloader()->boot();
+add_action('after_setup_theme', fn () => \Roots\bootloader()->boot(), 0);
 ```
 
 You can also remove the theme support added for Sage if you are working on a Sage-based WordPress theme:
