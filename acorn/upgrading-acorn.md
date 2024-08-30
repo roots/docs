@@ -144,11 +144,11 @@ With the new one:
 ```php
 if (! function_exists('\Roots\bootloader')) {
     wp_die(
-        __('You need to install Acorn to use this site.', 'radicle'),
+        __('You need to install Acorn to use this theme.', 'sage'),
         '',
         [
             'link_url' => 'https://roots.io/acorn/docs/installation/',
-            'link_text' => __('Acorn Docs: Installation', 'radicle'),
+            'link_text' => __('Acorn Docs: Installation', 'sage'),
         ]
     );
 }
