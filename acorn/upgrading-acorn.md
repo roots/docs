@@ -1,10 +1,11 @@
 ---
-date_modified: 2024-08-02 13:45
+date_modified: 2024-08-30 08:45
 date_published: 2023-01-13 13:12
 description: Acorn v4 introduces some minimal breaking changes that may require updates when coming from Acorn v3.
 title: Upgrading Acorn
 authors:
   - ben
+  - chrillep
   - joshf
 ---
 
@@ -153,7 +154,7 @@ if (! function_exists('\Roots\bootloader')) {
     );
 }
 
-\Roots\bootloader()->boot();
+add_action('after_setup_theme', fn () => \Roots\bootloader()->boot(), 0);
 ```
 
 You can also remove the theme support added for Sage if you are working on a Sage-based WordPress theme:
