@@ -1,10 +1,11 @@
 ---
-date_modified: 2024-08-02 13:45
+date_modified: 2024-08-30 08:45
 date_published: 2023-01-13 13:12
 description: Acorn v4 introduces some minimal breaking changes that may require updates when coming from Acorn v3.
 title: Upgrading Acorn
 authors:
   - ben
+  - chrillep
   - joshf
 ---
 
