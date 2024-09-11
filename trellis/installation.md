@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-06-04 17:00
+date_modified: 2024-09-11 10:00
 date_published: 2015-10-15 12:20
 description: Trellis installation and new project instructions.
 title: Installing Trellis
