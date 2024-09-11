@@ -87,7 +87,7 @@ with a single command thanks to trellis-cli too.
 
 ### Trellis servers are production-ready
 
-Trellis provisions a base Ubuntu 22.04 server by installing and configuring the following software:
+Trellis provisions a base Ubuntu 24.04 server by installing and configuring the following software:
 
 * PHP 8.1+
 * Nginx (including HTTP2/ and optional FastCGI micro-caching)

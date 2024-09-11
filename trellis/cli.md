@@ -170,7 +170,7 @@ open:
 virtualenv_integration: true
 vm:
   manager: auto
-  ubuntu: 22.04
+  ubuntu: 24.04
 ```
 
 Example env var usage:

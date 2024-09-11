@@ -1,7 +1,7 @@
 ---
 date_modified: 2024-06-04 17:00
 date_published: 2015-10-15 12:27
-description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 22.04 LTS. You can't run Trellis on a shared host.
+description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 24.04 LTS. You can't run Trellis on a shared host.
 title: Remote Server Setup
 authors:
   - ben
@@ -23,10 +23,10 @@ Trellis can be used for setting up remote servers (offered by VPS/cloud service 
 
 ## Server requirements
 
-* Ubuntu 22.04 LTS
+* Ubuntu 24.04 LTS
 * SSH access to the server
 
-You need a server running a bare/stock version of Ubuntu 22.04 LTS. If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 22.04 option.
+You need a server running a bare/stock version of Ubuntu 24.04 LTS. If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 24.04 option.
 
 You need to be able to connect to your Ubuntu server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts offer to automatically add your SSH key when creating a server, so take advantage of that. 
 
