@@ -29,6 +29,12 @@ From the same directory where you've installed Acorn (typically your site root o
 $ composer require blade-ui-kit/blade-icons
 ```
 
+Remove the cached bootstrap files:
+
+```shell
+$ wp acorn optimize:clear
+```
+
 Then publish the configuration file:
 
 ```shell
