@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-10-12 16:15
 date_published: 2015-09-06 07:42
 description: Extensions (or roles), developed by the community, that complement Trellis.
 title: User Contributed Extensions
@@ -40,6 +40,4 @@ Issues with extensions should be opened in their respective repositories.
 - [trellis_install_wp_cli_via_composer](https://github.com/ItinerisLtd/trellis_install_wp_cli_via_composer) - Install WP-CLI via composer on Trellis servers
 - [tiller-circleci-orb](https://github.com/ItinerisLtd/tiller-circleci-orb/) - Deploy Trellis, Bedrock and Sage(optional) via CircleCI
 - [trellis-cyberduck](https://github.com/ItinerisLtd/trellis-cyberduck) - Trellis commands for Cyberduck
-- tiller (abandoned, functionality was replaced by [tiller-circleci-orb](https://github.com/ItinerisLtd/tiller-circleci-orb/)) - Deploy Trellis, Bedrock and Sage via AWS CodeBuild
-- enveigle (abandoned, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Deceive Ansible to template Trellis .env files to local Bedrock
-- cognomen (abandoned, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Generate WP CLI aliases for Trellis projects
+- [trellis-matomo](https://github.com/E-VANCE/trellis-matomo) - Install the latest on-premise version of Matomo with Trellis 
