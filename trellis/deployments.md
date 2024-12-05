@@ -51,6 +51,9 @@ trellis deploy <environment>
 It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
 :::
 
+If deploying changes to an existing project's .gitignore, it may be necessary to deploy _twice in a row_ for previously ignored files to be deployed as expected. You may see this if you previously managed one plugin via composer, such that you issued a .gitignore directive for it, and then later switch that plugin from composer-managed to directly source controlled.
+
+
 ## Rollbacks
 
 Run the following from any directory within your project:
