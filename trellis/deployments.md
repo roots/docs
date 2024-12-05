@@ -54,7 +54,7 @@ It's normal and expected to see the WordPress install screen the first time you 
 ::: warning Note
 **About zero-downtime deploys**.
 
-Each deploy, Trellis makes a new folder. The "deploy" is effected by symlinking, see below Hooks. This is also how rollbacks work. Database migrations to a new schema are not included as part of a Trellis deploy. This means that if you need to migrate your database (for example, to account for new plugins), you may need to expect downtime depending on how you manage your database. Modify your deploy process to account for database migrations as with any other framework.
+Database migrations to a new schema are not included as part of a Trellis deploy. This means that if you need to migrate your database (for example, to account for new plugins), you may need to expect downtime depending on how you manage your database. Modify your deploy process to account for database migrations as with any other framework.
 :::
 
 ## Rollbacks
