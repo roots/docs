@@ -26,13 +26,12 @@ This means you get access to Laravel's artisan commands through the use of [`wp 
 
 ## Installing Acorn with Composer
 
-We recommend that you install Acorn on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
+Install Acorn with Composer:
 
 ```shell
 $ composer require roots/acorn
 ```
 
-If you don't use Composer to manage your WordPress install and you are using a Sage-based theme, you can install Acorn with Composer from your theme directory. Navigate to your theme folder and then run the command above.
 
 ## Booting Acorn
 
