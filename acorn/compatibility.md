@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-09-09 13:00
+date_modified: 2025-02-20 14:30
 date_published: 2024-04-26 10:35
 description: Known compatibility issues with any WordPress plugins and Acorn.
 title: Compatibility
