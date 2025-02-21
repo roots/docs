@@ -1,11 +1,12 @@
 ---
-date_modified: 2024-06-04 16:30
+date_modified: 2025-02-21 17:30
 date_published: 2015-09-07 20:44
 description: Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed. Hooks let you customize what happens at each step of the atomic deploy process.
 title: Deployments
 authors:
   - ben
   - dalepgrant
+  - dougjq
   - Log1x
   - MWDelaney
   - swalkinshaw
@@ -49,6 +50,12 @@ trellis deploy <environment>
 **Trellis does not automatically "install" WordPress on remote servers**.
 
 It's normal and expected to see the WordPress install screen the first time you deploy. It's up to you to either import an existing database or install a fresh site.
+:::
+
+::: warning Note
+**About zero-downtime deploys**.
+
+Database migrations to a new schema are not included as part of a Trellis deploy. This means that if you need to migrate your database (for example, to account for new plugins), you may need to expect downtime depending on how you manage your database. Modify your deploy process to account for database migrations as with any other framework.
 :::
 
 ## Rollbacks
