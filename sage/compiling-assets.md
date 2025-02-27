@@ -58,11 +58,15 @@ CSS files and images are sibling folders, so you can reference images in CSS:
 #### Get the URL of the asset
 
 ```php
+use Illuminate\Support\Facades\Vite;
+
 $asset = Vite::asset('resources/images/example.svg');
 ```
 
 #### Get the contents of the asset
 
 ```php
+use Illuminate\Support\Facades\Vite;
+
 $asset = Vite::content('resources/images/example.svg');
 ```
