@@ -1,7 +1,7 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-02-27 13:40
 date_published: 2015-09-01 18:19
-description: Sage uses Bud to compile and optimize assets, and to provide a simple interface for doing so.
+description: Sage uses Vite to compile and optimize assets, and includes a plugin for HMR in the block editor.
 title: Compiling Assets
 authors:
   - alwaysblank
@@ -13,22 +13,18 @@ authors:
 
 # Compiling Assets
 
-[Bud](https://github.com/roots/bud) is the primary project responsible for the asset workflow in Sage.
+[Vite](https://vitejs.dev/) is front-end build tool used in Sage.
 
-Bud is a wrapper for [Webpack](https://webpack.github.io/), and handles compiling stylesheets, checking for JavaScript errors, copying images and fonts, and concatenating and minifying files.
-
-It also provides a fluent API that some find to be easier to interact with than Webpack itself.
+Sage also uses the Laravel Vite plugin, along with Laravel's Vite facade for referencing Vite assets in PHP and Blade template files. Because of this, [Laravel's Vite documentation](https://laravel.com/docs/12.x/vite) also applies to Sage.
 
 ## Available build commands
 
-- `yarn build` — Build assets
-- `yarn dev` — Build assets when file changes are made, start dev session
+- `npm run build` — Build assets
+- `npm run dev` — Start dev server (requires updating `vite.config.js` with your local dev URL)
 
 ## Theme assets
 
-What files are built and how is controlled from the `bud.config.js` file in the root of the theme.
-
-In-depth discussion of how to configure Bud can be found in the [Bud documentation](https://bud.js.org/), but Sage ships with a configuration that should provide a sufficient starting point—and depending on your use case, may not need any additional configuration.
+What files are built and how is controlled from the `vite.config.js` file in the root of the theme.
 
 The configuration will generate the following files:
 
@@ -39,37 +35,34 @@ The configuration will generate the following files:
 
 It will also copy any files in the `images` or `fonts` directories under `/resources/assets/` into the `public` directory with the other compiled files, but does not optimize or compress them.
 
-### Images in template files
+### Assets in Blade template files
 
-Use the `@asset` directive to call images from template files:
+Use the [`Vite::asset` method](https://laravel.com/docs/12.x/vite#blade-processing-static-assets) to call assets from Blade template files:
 
 ```blade
-<img src="@asset('images/example.jpg')">
+<img src="{{ Vite::asset('resources/images/example.svg') }}">
 ```
 
-### Images in CSS
+### Assets in CSS
+
 CSS files and images are sibling folders, so you can reference images in CSS:
 
 ```css
 .background {
-  background-image: url("../images/image.jpg");
+  background-image: url("../images/example.svg");
 }
 ```
 
 ### Assets in PHP
 
-In your PHP, you can make use of the `\Roots\asset()` function, which is what powers the `@asset` directive.
+#### Get the URL of the asset
 
 ```php
-$asset = \Roots\asset('images/example.jpg');
+$asset = Vite::asset('resources/images/example.svg');
+```
 
-// The public URI of the asset
-echo $asset;
-echo $asset->uri();
+#### Get the contents of the asset
 
-// The server path of the asset
-echo $asset->path();
-
-// The contents of the asset 
-echo $asset->contents();
+```php
+$asset = Vite::content('resources/images/example.svg');
 ```

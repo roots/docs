@@ -1,7 +1,7 @@
 ---
-date_modified: 2023-02-20 11:30
+date_modified: 2025-02-27 14:30
 date_published: 2023-02-20 11:30
-description: How to setup fonts in Sage 10 for both the front-end and the WordPress editor with `theme.json`.
+description: How to setup fonts in Sage for both the front-end and the WordPress editor with `theme.json`.
 title: How to Setup Fonts
 authors:
   - ben
@@ -9,9 +9,7 @@ authors:
 
 # How to Setup Fonts
 
-Sage 10 includes an empty `resources/fonts/` directory for you to use for any fonts you want to use in your theme.
-
-The Sage extension in bud.js, the build tool used in Sage, also contains a `@fonts` alias that can be used to reference assets in the `fonts/` directory.
+Sage includes an empty `resources/fonts/` directory for you to use for any fonts you want to use in your theme.
 
 ## Add your fonts
 
@@ -21,25 +19,25 @@ For this example, we're going to download [Public Sans from the google-webfonts-
 
 ```plaintext
 resources
+├── css
+│   ├── app.css
+│   └── editor.css
 ├── fonts
 │   └── public-sans-v14-latin-regular.woff2
 ├── images
-├── scripts
-├── styles
-│   ├── app.css
-│   └── editor.css
+├── js
 └── views
 ```
 
 ## Add the CSS
 
-You can place the CSS for your web fonts wherever you'd like. We recommend creating a `styles/common/fonts.css` file and then importing it from `app.css` and `editor.css`:
+You can place the CSS for your web fonts wherever you'd like. We recommend creating a `css/fonts.css` file and then importing it from `app.css` and `editor.css`:
 
 ```css
-@import 'common/fonts';
+@import './fonts.css';
 ```
 
-Define your `@font-face` in `styles/common/fonts.css`:
+Define your `@font-face` in `css/fonts.css`:
 
 ```css
 @font-face {
@@ -47,41 +45,19 @@ Define your `@font-face` in `styles/common/fonts.css`:
   font-family: 'Public Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('@fonts/public-sans-v14-latin-regular.woff2') format('woff2'),
+  src: url('@fonts/public-sans-v18-latin-regular.woff2') format('woff2'),
 }
 ```
 
-## Add the font to your Tailwind config
+## Add the font to your Tailwind colors
 
-Open `tailwind.config.cjs` and add the new font family:
+Open `app.css` and add the new font family:
 
-```diff
-module.exports = {
-  content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js}'],
-  theme: {
-    extend: {
-      colors: {},
-+      fontFamily: {
-+        sans: 'Public Sans, sans-serif',
-+      },
-    },
-  },
-  plugins: [],
-};
+```css
+
+@theme {
+  --font-sans: "Public Sans", sans-serif;
+}
 ```
 
-## Configure `theme.json` to use the font
-
-[Bud generates the `theme.json` file in Sage](https://bud.js.org/extensions/sage/theme.json/), and `theme.json` can be configured for the new font:
-
-```javascript
-...
-    .wpjson
-      .setOption('styles', {
-        typography: {
-          fontFamily: 'var(--wp--preset--font-family--sans)',
-        },
-      })
-      .settings({
-...
-```
+See the [Tailwind CSS docs on customizing fonts](https://tailwindcss.com/docs/font-family#customizing-your-theme) for more information.

@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-06-04 16:00
+date_modified: 2025-02-27 14:00
 date_published: 2015-09-01 19:29
 description: Compile your assets, install your dependencies, and copy your Sage-based theme to your server. Remember that PHP versions must match between environments.
 title: Deploying Sage
@@ -19,7 +19,7 @@ Make sure the PHP version of your development environment matches the PHP versio
 
 ## Deploying a Sage-based WordPress theme
 
-1. Build theme assets (`yarn build`)
+1. Build theme assets (`npm run build`)
 2. Install Composer dependencies (`composer install --no-dev  --optimize-autoloader`)
 3. Upload all files and folders in your theme except the `node_modules` directory to your host
 
