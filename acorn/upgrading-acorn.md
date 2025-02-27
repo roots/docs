@@ -13,7 +13,7 @@ authors:
 
 ## Upgrading to v5.x from v4.x
 
-Acorn v5 includes Laravel v11 components, whereas Acorn v4 includes Laravel v10 components.
+Acorn v5 includes Laravel v12 components, whereas Acorn v4 includes Laravel v10 components.
 
 ### Upgrading dependencies
 
