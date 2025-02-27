@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-19 12:16
+date_modified: 2025-01-22 23:17
 date_published: 2023-02-19 12:16
 description: How to configure Local, a local WordPress development tool, for a Bedrock-based WordPress site.
 title: Bedrock with Local
@@ -42,8 +42,7 @@ Your folder structure should now look like this:
 .
 ├── app
 │   ├── bedrock
-│   ├── public
-│   └── sql
+│   └── public
 ├── conf
 │   ├── mysql
 │   ├── nginx
