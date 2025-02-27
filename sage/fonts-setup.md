@@ -21,6 +21,7 @@ For this example, we're going to download [Public Sans from the google-webfonts-
 resources
 ├── css
 │   ├── app.css
+│   ├── fonts.css    # Create this file
 │   └── editor.css
 ├── fonts
 │   └── public-sans-v14-latin-regular.woff2
@@ -49,7 +50,7 @@ Define your `@font-face` in `css/fonts.css`:
 }
 ```
 
-## Add the font to your Tailwind colors
+## Add the font to your Tailwind theme
 
 Open `app.css` and add the new font family:
 
