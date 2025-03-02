@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-05-30 10:00
+date_modified: 2025-03-03 07:00
 date_published: 2023-03-28 07:00
 title: Installing Radicle
 authors:
@@ -12,7 +12,7 @@ authors:
 
 [Radicle](/radicle/) is an opinionated starting point for WordPress projects with the Roots stack.
 
-Radicle includes the preferred setup of Acorn, Bedrock, Bud, Sage, and Trellis from the creators of Roots.
+Radicle includes the preferred setup of Acorn, Bedrock, Sage, and Trellis from the creators of Roots.
 
 ### Why use Radicle?
 
