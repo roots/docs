@@ -11,6 +11,64 @@ authors:
 
 # Upgrading Acorn
 
+## Upgrading to v5.x from v4.x
+
+Acorn v5 includes Laravel v12 components, whereas Acorn v4 includes Laravel v10 components.
+
+### Upgrading dependencies
+
+Acorn v5 requires PHP >= 8.2.
+
+Update the `roots/acorn` dependency in your `composer.json` file to `^5.0`:
+
+```shell
+$ composer require roots/acorn ^5.0 -W
+```
+
+The `-W` flag is required to upgrade the included Laravel dependencies.
+
+::: warning
+If any packages/dependencies have conflicts while updating, try removing and then re-requiring them after Acorn is bumped to 5.x.
+:::
+
+### Breaking changes
+
+The most significant change in v5 is how Acorn is booted. The `bootloader()` helper has been deprecated in favor of using `Application::configure()`. This change aligns Acorn with Laravel 11's new application configuration system, providing a more fluent and powerful way to configure your application.
+
+You'll need to import the Application class at the top of your file:
+
+```php
+use Roots\Acorn\Application;
+```
+
+Then update your bootstrapping code:
+
+```diff
+- add_action('after_setup_theme', fn () => \Roots\bootloader()->boot(), 0);
++ add_action('after_setup_theme', function () {
++     Application::configure()
++         ->withProviders([
++             App\Providers\ThemeServiceProvider::class,
++         ])
++         ->boot();
++ }, 0);
+```
+
+If you have previously registered service providers through either `composer.json` (`extra.acorn.providers`) or `config/app.php`, you'll need to migrate these to the new configuration method. All providers should now be registered using `withProviders()` when configuring the application. Remove any provider configurations from your composer.json and config files, and instead register them directly in your bootstrapping code:
+
+```php
+Application::configure()
+    ->withProviders([
+        App\Providers\ThemeServiceProvider::class,
+        App\Providers\ExampleServiceProvider::class,
+    ])
+    ->boot();
+```
+
+### Config changes
+
+If you have published Acorn's configs, you should review and update them based on the latest versions in the [Acorn repo](https://github.com/roots/acorn/tree/main/config).
+
 ## Upgrading to v4.x from v3.x
 
 Acorn v4 includes Laravel v10 components, whereas Acorn v3 includes Laravel v9 components.
@@ -208,7 +266,7 @@ namespace App\Providers;
 }
 ```
 
-After doing so, you may need to delete [Acorn's application cache directory](https://roots.io/acorn/docs/directory-structure/). By default, this is located in `[wp-content|app]/cache/acorn/`. 
+After doing so, you may need to delete [Acorn's application cache directory](https://roots.io/acorn/docs/directory-structure/). By default, this is located in `[wp-content|app]/cache/acorn/`.
 
 Reference the [Acorn v3 upgrade pull request on the Sage repo](https://github.com/roots/sage/pull/3097) to see a full diff.
 

@@ -26,13 +26,12 @@ This means you get access to Laravel's artisan commands through the use of [`wp 
 
 ## Installing Acorn with Composer
 
-We recommend that you install Acorn on your WordPress install managed by Composer, such as with [Bedrock](https://roots.io/bedrock/):
+Install Acorn with Composer:
 
 ```shell
 $ composer require roots/acorn
 ```
 
-If you don't use Composer to manage your WordPress install and you are using a Sage-based theme, you can install Acorn with Composer from your theme directory. Navigate to your theme folder and then run the command above.
 
 ## Booting Acorn
 
@@ -46,7 +45,9 @@ Add the following in your theme's `functions.php` file, or in your main plugin f
 ```php
 <?php
 
-if (! function_exists('\Roots\bootloader')) {
+use Roots\Acorn\Application;
+
+if (! class_exists(\Roots\Acorn\Application::class)) {
     wp_die(
         __('You need to install Acorn to use this site.', 'domain'),
         '',
@@ -57,10 +58,56 @@ if (! function_exists('\Roots\bootloader')) {
     );
 }
 
-add_action('after_setup_theme', fn () => \Roots\bootloader()->boot(), 0);
-```
+add_action('after_setup_theme', function () {
+    Application::configure()
+        ->withProviders([
+            App\Providers\ThemeServiceProvider::class,
+        ])
+        ->boot();
+}, 0);
 
 </details>
+
+### Advanced booting
+
+Acorn provides several additional configuration methods that can be chained before booting. Here's a comprehensive example with explanations:
+
+```php
+add_action('after_setup_theme', function () {
+    Application::configure()
+        ->withProviders([
+            // Register your service providers
+            App\Providers\ThemeServiceProvider::class,
+        ])
+        ->withMiddleware(function (Middleware $middleware) {
+            // Configure HTTP middleware for WordPress requests
+            $middleware->wordpress([
+                Illuminate\Cookie\Middleware\EncryptCookies::class,
+                Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+                Illuminate\Session\Middleware\StartSession::class,
+                Illuminate\View\Middleware\ShareErrorsFromSession::class,
+                Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+                Illuminate\Routing\Middleware\SubstituteBindings::class,
+            ]);
+
+            // You can also configure middleware for web and API routes
+            // $middleware->web([...]);
+            // $middleware->api([...]);
+        })
+        ->withExceptions(function (Exceptions $exceptions) {
+            // Configure exception handling
+            // $exceptions->reportable(function (\Throwable $e) {
+            //     Log::error($e->getMessage());
+            // });
+        })
+        ->withRouting(
+            // Configure routing with named parameters
+            web: base_path('routes/web.php'),    // Laravel-style web routes
+            api: base_path('routes/api.php'),    // API routes
+            wordpress: true,                     // Enable WordPress request handling
+        )
+        ->boot();
+}, 0);
 
 ## Add the autoload dump script
 
@@ -73,7 +120,7 @@ $ wp acorn acorn:install
 Select **Yes** when prompted to install the Acorn autoload dump script.
 
 ::: warning
-`wp acorn` commands won't work if your theme/plugin that boots Acorn hasn't been activated and will result in the following message: 
+`wp acorn` commands won't work if your theme/plugin that boots Acorn hasn't been activated and will result in the following message:
 
 **Error: 'acorn' is not a registered wp command.**
 :::
@@ -98,6 +145,6 @@ Open `composer.json` and add Acorn's `postAutoloadDump` function to Composer's `
 
 Acorn's server requirements are minimal, and mostly come from WordPress and [Laravel 10's requirements](https://laravel.com/docs/10.x/deployment#server-requirements).
 
-- PHP >=8.1 with extensions: BCMath, Ctype, Fileinfo, JSON, Mbstring, Tokenizer, XML
+- PHP >=8.2 with extensions: BCMath, Ctype, Fileinfo, JSON, Mbstring, Tokenizer, XML
 - WordPress >= 5.4
 - [WP-CLI](https://wp-cli.org/)
