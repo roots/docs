@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-05-22 11:15
+date_modified: 2025-02-27 13:50
 date_published: 2021-10-21 13:21
 description: The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.
 title: Theme Structure
@@ -26,26 +26,26 @@ themes/your-theme-name/   # → Root of your Sage based theme
 │   ├── View/             # → View models
 │   ├── filters.php       # → Theme filters
 │   └── setup.php         # → Theme setup
-├── composer.json         # → Autoloading for `app/` files
 ├── public/               # → Built theme assets (never edit)
-├── functions.php         # → Theme bootloader
-├── index.php             # → Theme template wrapper
-├── node_modules/         # → Node.js packages (never edit)
-├── package.json          # → Node.js dependencies and scripts
 ├── resources/            # → Theme assets and templates
+│   ├── css/              # → Theme stylesheets
 │   ├── fonts/            # → Theme fonts
 │   ├── images/           # → Theme images
-│   ├── scripts/          # → Theme javascript
-│   ├── styles/           # → Theme stylesheets
+│   ├── js/               # → Theme JavaScript
 │   └── views/            # → Theme templates
 │       ├── components/   # → Component templates
 │       ├── forms/        # → Form templates
 │       ├── layouts/      # → Base templates
 │       └── partials/     # → Partial templates
+├── vendor/               # → Composer packages (never edit)
+├── composer.json         # → Autoloading for `app/` files
+├── functions.php         # → Theme bootloader
+├── index.php             # → Theme template wrapper
+├── node_modules/         # → Node packages (never edit)
+├── package.json          # → Node dependencies and scripts
 ├── screenshot.png        # → Theme screenshot for WP admin
 ├── style.css             # → Theme meta information
-├── vendor/               # → Composer packages (never edit)
-└── bud.config.js         # → Bud configuration
+└── vite.config.js        # → Vite configuration
 ```
 
 ## The root directory
