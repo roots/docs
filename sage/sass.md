@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-02-27 14:10
+date_modified: 2025-03-05 09:10
 date_published: 2023-06-06 17:30
 description: Setup support for Sass in Sage by adding @roots/bud-sass and renaming css files to scss
 title: How to Use Sass
@@ -62,4 +62,11 @@ Modify `vite.config.js` to remove the Tailwind plugin, reference the new file ex
 +      disableTailwindFontSizes: true,
      }),
    ],
+```
+
+Modify the `@vite()` directive in `resourves/views/layouts/app.blade.php` to use `app.scss` instead of `app.css`:
+
+```diff
+-    @vite(['resources/css/app.css', 'resources/js/app.js'])
++    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 ```
