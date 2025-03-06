@@ -24,7 +24,7 @@ Any styles added to `editor.css` will only be applied to the block editor.
 Sage's `editor.css` expects the block editor to be iframed. If you have any blocks that don't support version 3, then the block editor won't be iframed.
 :::
 
-<small>([Reference]((https://developer.wordpress.org/block-editor/reference-guides/block-api/block-api-versions/#version-3-wordpress-6-3)))</small>
+<small>([Reference](https://developer.wordpress.org/block-editor/reference-guides/block-api/block-api-versions/#version-3-wordpress-6-3))</small>
 
 ## `theme.json` generator
 
