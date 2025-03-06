@@ -1,9 +1,10 @@
 ---
-date_modified: 2024-03-05 16:41
+date_modified: 2025-03-06 07:00
 date_published: 2024-03-05 16:41
 description: Use Laravel Livewire Components alongside your WordPress theme or plugin using Acorn.
 title: Using Livewire with WordPress
 authors:
+  - ben
   - Log1x
 ---
 
@@ -11,7 +12,7 @@ authors:
 
 With the release of Acorn v4 came the final implementations needed for [Livewire](https://livewire.laravel.com/) support alongside your Acorn-powered WordPress themes and plugins.
 
-In this guide, we will walk through installing Livewire and using a component in a [Sage 10](https://roots.io/sage/) theme.
+In this guide, we will walk through installing Livewire and using a component in a [Sage 11](https://roots.io/sage/) theme.
 
 ## Installing Livewire
 
@@ -31,20 +32,32 @@ $ wp acorn key:generate
 
 Adding the Livewire styles and scripts can be done using the `@livewireStyles` and `@livewireScripts` directives.
 
-This can be done by [manually inserting](https://livewire.laravel.com/docs/installation#manually-including-livewires-frontend-assets) them inside of `app.blade.php` or by rendering them inside of WordPress hooks using the `Blade` facade.
+This can be done by [manually inserting](https://livewire.laravel.com/docs/installation#manually-including-livewires-frontend-assets) them inside of `resources/views/layouts/app.blade.php`:
 
-For this example, we will do it using hooks inside of `app/setup.php`:
+```plaintext
+<head>
+    ...
+    @livewireStyles
+</head>
+<body>
+    ...
+    @livewireScripts
+</body>
+```
 
-```php
-use Illuminate\Support\Facades\Blade;
+## Update Acorn's configuration
 
-add_filter('wp_head', function () {
-    echo Blade::render('@livewireStyles');
-});
+Find where `Application::configure` is used in your setup. On a Sage theme, this would be `functions.php`. On a Radicle setup, this would be in `mu-plugins/00-acorn-boot.php`.
 
-add_filter('wp_footer', function () {
-    echo Blade::render('@livewireScripts');
-});
+Add `->withRouting(wordpress: true)`:
+
+```diff
+ Application::configure()
+     ->withProviders([
+         App\Providers\ThemeServiceProvider::class,
+     ])
++    ->withRouting(wordpress: true)
+     ->boot();
 ```
 
 ## Creating a Component
