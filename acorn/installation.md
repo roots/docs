@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-08-30 08:45
+date_modified: 2025-03-07 09:00
 date_published: 2021-11-19 11:58
 description: Install Acorn by running `composer require roots/acorn` in the root of your Composer-based WordPress project.
 title: Installing Acorn
@@ -65,6 +65,7 @@ add_action('after_setup_theme', function () {
         ])
         ->boot();
 }, 0);
+```
 
 </details>
 
@@ -108,6 +109,7 @@ add_action('after_setup_theme', function () {
         )
         ->boot();
 }, 0);
+```
 
 ## Add the autoload dump script
 

@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-07-09 12:00
+date_modified: 2025-03-07 09:00
 date_published: 2024-06-03 15:00
 description: Acorn allows you to use Laravel's routing functionality on your WordPress sites.
 title: Routing
@@ -51,6 +51,23 @@ Create `resources/views/welcome.blade.php` with the following:
   <h1>Welcome</h1>
 @endsection
 ```
+
+## Update Acorn's configuration
+
+Find where `Application::configure` is used in your setup. On a Sage theme, this would be `functions.php`. On a Radicle setup, this would be in `mu-plugins/00-acorn-boot.php`.
+
+Add `->withRouting(web: base_path('routes/web.php'))`:
+
+```diff
+ Application::configure()
+     ->withProviders([
+         App\Providers\ThemeServiceProvider::class,
+     ])
++    ->withRouting(web: base_path('routes/web.php'))
+     ->boot();
+```
+
+See [Advanced booting](/acorn/docs/installation/#advanced-booting) for more examples.
 
 ## Configuring SEO elements
 

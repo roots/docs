@@ -60,6 +60,8 @@ Add `->withRouting(wordpress: true)`:
      ->boot();
 ```
 
+See [Advanced booting](/acorn/docs/installation/#advanced-booting) for more examples.
+
 ## Creating a Component
 
 For this example, we will create a simple searchable **Post List** component. Start by generating the component using Acorn's CLI:
