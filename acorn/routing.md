@@ -54,7 +54,7 @@ Create `resources/views/welcome.blade.php` with the following:
 
 ## Update Acorn's configuration
 
-Find where `Application::configure` is used in your setup. On a Sage theme, this would be `functions.php`. On a Radicle setup, this would be in `mu-plugins/00-acorn-boot.php`.
+Find where `Application::configure` is used in your setup. On a Sage theme, this would be `functions.php`.
 
 Add `->withRouting(web: base_path('routes/web.php'))`:
 
