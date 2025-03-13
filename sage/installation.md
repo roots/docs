@@ -29,14 +29,12 @@ $ composer create-project roots/sage your-theme-name dev-main
 
 ## Build assets
 
+- Edit the `base` path in `vite.config.js`
+- Run `npm install` from the theme directory to install dependencies
+- Run `npm run build` to compile assets
+
 You must build theme assets in order to access your site. Failing to build the assets will result in the error:
 
 ```plaintext
 Vite manifest not found at [/path/to/sage/public/build/manifest.json] cannot be found.
 ```
-
-### Running the first build
-
-- Run `npm install` from the theme directory to install dependencies
-- Update `vite.config.js` with your local dev URL
-- `npm run build` — Compile assets
