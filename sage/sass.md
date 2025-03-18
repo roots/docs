@@ -70,3 +70,22 @@ Modify the `@vite()` directive in `resourves/views/layouts/app.blade.php` to use
 -    @vite(['resources/css/app.css', 'resources/js/app.js'])
 +    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 ```
+
+Modify the `block_editor_settings_all` filter in `app/setup.php` to use `editor.scss` instead of `editor.css`;
+
+```diff
+add_filter('block_editor_settings_all', function ($settings) {
+-    $style = Vite::asset('resources/css/editor.css');
++    $style = Vite::asset('resources/css/editor.scss');
+
+    $settings['styles'][] = [
+        'css' => Vite::isRunningHot()
+            ? "@import url('{$style}')"
+-           : Vite::content('resources/css/editor.css'),
++           : Vite::content('resources/css/editor.scss'),
+    ];
+
+    return $settings;
+});
+
+```
