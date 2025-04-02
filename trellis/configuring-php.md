@@ -38,7 +38,7 @@ To target PHP 8.4, duplicate and rename so that your folder looks like this:
              └── version-specific-defaults.yml
 ```
 
-In your `8.4.yml` file you can then set the extensions you'd like to use:
+In your `8.4.yml` file you can then set the extensions you'd like to use. Include all extensions from the defaults file unless you have a good reason not to, remembering that [WP requires some extensions](https://make.wordpress.org/hosting/handbook/server-environment/#php-extensions) to work.
 
 ```yaml
 php_extensions_default:
