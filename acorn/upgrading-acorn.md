@@ -65,6 +65,21 @@ Application::configure()
     ->boot();
 ```
 
+### Routing
+
+Acorn v5 introduces support for Laravel’s routing features within WordPress. If you previously used Livewire, you may encounter an error such as `Route [livewire.update] not defined`, or experience other routing-related issues.
+
+To resolve this, and to enable routing, ensure your application is properly configured by adding the `withRouting` method:
+
+```diff
+Application::configure()
+    ->withProviders([
+        App\Providers\ThemeServiceProvider::class,
+    ])
++   ->withRouting(wordpress: true)
+    ->boot();
+```
+
 ### Config changes
 
 If you have published Acorn's configs, you should review and update them based on the latest versions in the [Acorn repo](https://github.com/roots/acorn/tree/main/config).
