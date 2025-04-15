@@ -79,10 +79,7 @@ add_filter('block_editor_settings_all', function ($settings) {
 +    $style = Vite::asset('resources/css/editor.scss');
 
     $settings['styles'][] = [
-        'css' => Vite::isRunningHot()
-            ? "@import url('{$style}')"
--           : Vite::content('resources/css/editor.css'),
-+           : Vite::content('resources/css/editor.scss'),
+        'css' => "@import url('{$style}')",
     ];
 
     return $settings;
