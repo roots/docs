@@ -1,10 +1,11 @@
 ---
-date_modified: 2025-03-05 09:10
+date_modified: 2025-04-15 11:15
 date_published: 2023-06-06 17:30
 description: Setup support for Sass in Sage by adding @roots/bud-sass and renaming css files to scss
 title: How to Use Sass
 authors:
   - ben
+  - carlosfaria
   - code23_isaac
   - diomededavid
   - MWDelaney
