@@ -9,6 +9,7 @@ authors:
   - fullyint
   - Log1x
   - swalkinshaw
+  - dalepgrant
 ---
 
 # Nginx Includes
@@ -72,7 +73,20 @@ The above directory structure would be templated to the remote server as follows
 
 To explicitly walk through the example, consider just the `site1` site key in the `wordpress_sites` list. The corresponding `nginx-includes/site1/` directory contains two confs which are templated to the remote's `/etc/nginx/includes.d/site1/`. The primary Nginx conf for `site1` will have a statement `include includes.d/site1/*.conf;`, thus including `rewrites.conf` and `proxy.conf`.
 
-This `include` directive is located inside the primary `server` block, just before the primary `location` block. Explore the [Child templates](#child-templates) section below for more options if this default does not satisfy your needs.
+Only the directories that match sites in your `wordpress_sites.yml` will be templated to the remote by default, with the addition of `all/`. To add to or change the additional folder(s), as of [#1573](https://github.com/roots/trellis/pull/1573) you can override `nginx_includes_extra_folders` in `group_vars/all/main.yml`:
+
+```yaml
+# single dir example.
+nginx_includes_extra_folders: example # default 'all'
+
+# multiple dir example.
+nginx_includes_extra_folders:
+  - all # keep the default
+  - example
+  - another
+```
+
+You will also need to edit the `include` directive, located inside the primary `server` block, just before the primary `location` block. Explore the [Child templates](#child-templates) section below for more options if this default does not satisfy your needs.
 
 ::: warning Note
 This default `include` directive per site will not recurse subdirectories within `includes.d/site1` so if you place templates in `nginx-includes/site1/somedir/*.conf.j2`, they will be templated to the remote's `includes.d/site1/somedir/*.conf` but will not be included by default. See the [Child templates](#child-templates) section below for how you could include such confs.
@@ -80,7 +94,7 @@ This default `include` directive per site will not recurse subdirectories within
 
 ### File cleanup
 
-By default, Trellis will remove from the remote's `includes.d` directory any `*.conf` file that lacks a corresponding template in your local machine's `nginx-includes`. If you prefer to leave all conf files on the remote, you may disable this file cleanup by defining `nginx_includes_d_cleanup: false` in `group_vars/all/main.yml`.
+By default, Trellis will remove from the remote's `includes.d` directory any `*.conf` file that lacks a corresponding template in your local machine's `nginx-includes`. If removing config files results in an empty directory, that directory is not removed. If you prefer to leave all conf files on the remote, you may disable this file cleanup by defining `nginx_includes_d_cleanup: false` in `group_vars/all/main.yml`.
 
 ### Deprecated templates directory
 
