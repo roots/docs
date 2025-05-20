@@ -10,6 +10,7 @@ authors:
   - Log1x
   - swalkinshaw
   - techieshark
+  - dalepgrant
 ---
 
 # SSH Keys
