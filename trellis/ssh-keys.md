@@ -125,8 +125,16 @@ users:
 
 The example above also demonstrates the option of creating `another_user` whose primary group is `some_group`, but who is also in `some_other_group`, and who has public SSH keys for `swalkinshaw`.
 
+## Removing keys
+
+Removing a key and re-provisioning the server will remove the key in the `authorized_keys` file as of [#1576](https://github.com/roots/trellis/pull/1576).
+
+```shell
+$ trellis provision --extra-vars reset_user_ssh_keys=true production
+```
+
 ::: tip Note
-Removing a key and re-provisioning the server will remove the key in the `authorized_keys` file on the remote as of [#1576](https://github.com/roots/trellis/pull/1576). Use `trellis provision --extra-vars reset_user_ssh_keys=true production`.
+This will first replace all keys on the remote with the _first found_ key from your defined users before re-adding the rest. Make sure you have access with the first key listed in your user dictionary before running this _just in case_ the process is interrupted.
 :::
 
 ## Cloning remote repo using SSH agent forwarding
