@@ -127,7 +127,7 @@ The example above also demonstrates the option of creating `another_user` whose 
 
 ## Removing keys
 
-Removing a key and re-provisioning the server will remove the key in the `authorized_keys` file as of [#1576](https://github.com/roots/trellis/pull/1576).
+Removing a key from the configuration and re-provisioning the server does not remove the key from the server's `authorized_keys` file by default. To reset SSH keys, Trellis supports an opt-in "single use" `reset_user_ssh_keys` variable (as of [#1576](https://github.com/roots/trellis/pull/1576)):
 
 ```shell
 $ trellis provision --extra-vars reset_user_ssh_keys=true production
