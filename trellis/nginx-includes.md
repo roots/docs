@@ -9,6 +9,7 @@ authors:
   - fullyint
   - Log1x
   - swalkinshaw
+  - dalepgrant
 ---
 
 # Nginx Includes
@@ -27,7 +28,9 @@ Append `--tags nginx-includes` to your command to run only the relevant portion 
 
 ### Default
 
-By default in Trellis, a WordPress site's Nginx conf will include any `nginx-includes` files found in a subdirectory named after the site. To illustrate, suppose you have two sites managed by Trellis, defined in `wordpress_sites` as follows:
+By default in Trellis, a WordPress site's Nginx conf will include any `nginx-includes` files found in a subdirectory named after the site. Only the directories that match sites in your `wordpress_sites.yml` will be templated to the remote by default, with the addition of `all/`.
+
+To illustrate, suppose you have two sites managed by Trellis, defined in `wordpress_sites` as follows:
 
 ```yaml
 wordpress_sites:
@@ -80,7 +83,7 @@ This default `include` directive per site will not recurse subdirectories within
 
 ### File cleanup
 
-By default, Trellis will remove from the remote's `includes.d` directory any `*.conf` file that lacks a corresponding template in your local machine's `nginx-includes`. If you prefer to leave all conf files on the remote, you may disable this file cleanup by defining `nginx_includes_d_cleanup: false` in `group_vars/all/main.yml`.
+By default, Trellis will remove from the remote's `includes.d` directory any `*.conf` file that lacks a corresponding template in your local machine's `nginx-includes`. If removing config files results in an empty directory, that directory is not removed. If you prefer to leave all conf files on the remote, you may disable this file cleanup by defining `nginx_includes_d_cleanup: false` in `group_vars/all/main.yml`.
 
 ### Deprecated templates directory
 
