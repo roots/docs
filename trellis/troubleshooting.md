@@ -8,6 +8,7 @@ authors:
   - fullyint
   - Log1x
   - swalkinshaw
+  - dalepgrant
 ---
 
 # Troubleshooting
@@ -190,4 +191,11 @@ If you are running Trellis on MacOS and receiving a `NET::ERR_CERT_INVALID` erro
 $ cd trellis
 $ vagrant plugin install vagrant-trellis-cert
 $ vagrant trellis-cert trust
+```
+
+## APT sources
+You may need to clean the APT sources to update a package, for example when [updating MariaDB mirrors](https://github.com/roots/trellis/issues/1575). You can set `apt_clean_sources: true` in `group_vars/all/main.yml` to run every provision, or to run this for one provision only, use:
+
+```shell
+$ trellis provision --extra-vars apt_clean_sources=true production
 ```
