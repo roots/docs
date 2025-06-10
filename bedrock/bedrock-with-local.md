@@ -68,7 +68,7 @@ WP_HOME='https://bedrock.local'
 
 ## Set the webroot in Local's site config
 
-Local's site config is located at `~/Local Sites/bedrock/conf/nginx/site.conf.hbs`. Open this file and append `/web` to Bedrock's web directory:
+Local's site config is located at `~/Local Sites/bedrock/conf/nginx/site.conf.hbs`. Open this file and append `/web` to the server root:
 
 ```diff
 server {
