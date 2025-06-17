@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-07-28 12:30
+date_modified: 2025-06-17 19:15
 date_published: 2021-11-19 11:58
 description: A list of known community packages for the Acorn and Sage ecosystem, such as adding WooCommerce support to Sage.
 title: Community Packages
@@ -14,6 +14,7 @@ authors:
 | Package | Description |
 | ----------- | ----------- |
 | [`roots/acorn-mail`](https://github.com/roots/acorn-mail) | A simple package handling WordPress SMTP using Acorn's mail configuration |
+| [`roots/acorn-post-types`](https://github.com/roots/acorn-post-types) | Simple post types and taxonomies using Extended CPTs |
 | [`roots/acorn-prettify`](https://github.com/roots/acorn-prettify) | A collection of modules to apply theme-agnostic front-end modifications to your Acorn-powered WordPress sites |
 
 ## Community packages
