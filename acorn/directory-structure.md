@@ -1,11 +1,12 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-07-22 13:34
 date_published: 2021-11-19 11:58
 description: Acorn by default has a zero-config setup. You can also use the traditional Laravel-style structure which will publish a `config/` directory.
 title: Directory Structure
 authors:
   - alwaysblank
   - ben
+  - rafaucau
   - QWp6t
 ---
 
@@ -76,13 +77,11 @@ $ wp acorn vendor:publish --tag=acorn
 
 ## Advanced directory modifications
 
-You can modify the path for any Acorn directory by using the `acorn/paths.{$path}` filters, where `$path` is one of the following:
+You can modify the path for any Acorn directory by defining the following constants:
 
-- `base`
-- `app`
-- `config`
-- `storage`
-- `resources`
-- `public`
-
-The base path may also be set by defining the `ACORN_BASEPATH` constant. This is useful for setting it when filters are unavailable, such as in wp-config.php.
+- `ACORN_BASEPATH`
+- `ACORN_APP_PATH`
+- `ACORN_CONFIG_PATH`
+- `ACORN_STORAGE_PATH`
+- `ACORN_RESOURCES_PATH`
+- `ACORN_PUBLIC_PATH`
