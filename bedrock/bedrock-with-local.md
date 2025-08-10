@@ -1,10 +1,11 @@
 ---
-date_modified: 2025-01-22 23:17
+date_modified: 2025-08-10 15:15
 date_published: 2023-02-19 12:16
 description: How to configure Local, a local WordPress development tool, for a Bedrock-based WordPress site.
 title: Bedrock with Local
 authors:
   - ben
+  - ethanclevenger91
 ---
 
 # Bedrock with Local
@@ -68,15 +69,13 @@ WP_HOME='https://bedrock.local'
 
 ## Set the webroot in Local's site config
 
-Local's site config is located at `~/Local Sites/bedrock/conf/nginx/site.conf.hbs`. Open this file and replace `{{root}}` with the full path to Bedrock's web directory:
+Local's site config is located at `~/Local Sites/bedrock/conf/nginx/site.conf.hbs`. Open this file and append `/web` to the server root:
 
 ```diff
 server {
     listen {{port}};
 -   root   "{{root}}";
-+   root   "/Users/username/Local Sites/bedrock/app/bedrock/web";
++   root   "{{root}}/web";
 ```
-
-In the example above, the full path is based on a macOS machine and requires the username to be changed to the one you are using. You will need to modify this path for Windows and Linux setups to reflect the full path to the `app/bedrock/web` directory.
 
 You will need to restart your site after making these changes, and then your site will be accessible at `https://bedrock.local`.
