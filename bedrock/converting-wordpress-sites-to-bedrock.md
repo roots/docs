@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-10-24 12:00
 date_published: 2025-10-24 12:00
-description: 
+description: Convert traditional WordPress sites to Bedrock with Lithify. Automate database updates and file path changes for Bedrock.
 title: Converting WordPress Sites to Bedrock
 authors:
   - ben
