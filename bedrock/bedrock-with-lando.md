@@ -41,7 +41,7 @@ Bedrock requires [environment variables to be configured](https://roots.io/bedro
 
 The `.env` file must be configured with Lando's database settings along with your home URL. Update the following values in your `.env` file:
 
-```plaintext
+```dotenv
 DB_NAME='wordpress'
 DB_USER='wordpress'
 DB_PASSWORD='wordpress'

@@ -55,7 +55,7 @@ Bedrock requires [environment variables to be configured](https://roots.io/bedro
 
 The `.env` file in the `app/bedrock/` directory must be configured with Local's database settings along with your home URL. Update the following values in your `.env` file:
 
-```plaintext
+```dotenv
 DB_NAME='example'
 DB_USER='root'
 DB_PASSWORD='password'

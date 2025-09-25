@@ -34,7 +34,7 @@ Adding the Livewire styles and scripts can be done using the `@livewireStyles` a
 
 This can be done by [manually inserting](https://livewire.laravel.com/docs/installation#manually-including-livewires-frontend-assets) them inside of `resources/views/layouts/app.blade.php`:
 
-```plaintext
+```blade
 <head>
     ...
     @livewireStyles

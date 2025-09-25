@@ -24,7 +24,7 @@ Bedrock requires [environment variables to be configured](https://roots.io/bedro
 
 The `.env` file must be configured with DDEV's database settings along with your home URL. Update the following values in your `.env` file:
 
-```plaintext
+```dotenv
 DB_NAME='db'
 DB_USER='db'
 DB_PASSWORD='db'
