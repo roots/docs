@@ -86,7 +86,7 @@ Run `trellis vault` to see usage details.
 
 ## Working with vault variables
 
-Here are a few tips for working with [variables and vault](http://docs.ansible.com/ansible/playbooks_best_practices.html#variables-and-vaults) in Trellis.
+Here are a few tips for working with [variables and vault](https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html#variables-and-vaults) in Trellis.
 
 - Variables with sensitive data such as passwords are defined in files named `vault.yml`.
 - Each environment has its own `vault.yml` file: `group_vars/<environment>/vault.yml`.
