@@ -52,7 +52,7 @@ If you have unencrypted `vault.yml` files in your project's git history (e.g., p
 :::
 
 ::: warning Don't forget your vault password
-Trellis automatically generates a vault password for you at `trellis/.vault_pass`. This file **will not** be added to your Git repository.
+Trellis automatically generates a vault password for you at `trellis/.vault_pass` (this file **will not** be added to your Git repository), and adds a reference to it to the `ansible.cfg` file.
 :::
 
 Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
