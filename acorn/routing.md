@@ -99,5 +99,5 @@ add_filter('pre_get_document_title', function ($title) {
 If you're using routes then you should enable [Laravel's route cache](https://laravel.com/docs/10.x/routing#route-caching) during your deployment process:
 
 ```shell
-wp acorn route:cache
+$ wp acorn route:cache
 ```

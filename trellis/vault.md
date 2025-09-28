@@ -44,7 +44,7 @@ $ANSIBLE_VAULT;1.1;AES256
 ## Encrypt your vault files
 
 ```shell
-trellis vault encrypt
+$ trellis vault encrypt
 ```
 
 ::: danger
@@ -62,7 +62,7 @@ Your Trellis commands will be exactly the same as before enabling vault, not req
 You can view a vault file in your terminal with the following command:
 
 ```shell
-trellis vault view <environment>
+$ trellis vault view <environment>
 ```
 
 ## Edit an encrypted vault file
@@ -70,7 +70,7 @@ trellis vault view <environment>
 You can edit a vault file in your terminal with the following command:
 
 ```shell
-trellis vault edit group_vars/<environment>/vault.yml
+$ trellis vault edit group_vars/<environment>/vault.yml
 ```
 
 ## Other vault commands
@@ -113,7 +113,7 @@ Should you lose access to your vault password, you you can either spin up a new 
 ### admin root (sudo) password
 
 ```shell
-sudo passwd admin
+$ sudo passwd admin
 ```
 
 ### root mysql password

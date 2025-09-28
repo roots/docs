@@ -22,7 +22,7 @@ Delete the contents of `resources/css/app.css` and `resources/css/editor.css`.
 Add the `sass` extension:
 
 ```shell
-npm install -D sass
+$ npm install -D sass
 ```
 
 In the `resources/css` directory, rename `app.css` to `app.scss` and rename `editor.css` to `editor.scss`.

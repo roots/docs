@@ -24,7 +24,7 @@ and much more.
 ### Quick Install (macOS, Linux, WSL via Homebrew)
 
 ```shell
-brew install roots/tap/trellis-cli
+$ brew install roots/tap/trellis-cli
 ```
 
 ### Script
@@ -33,10 +33,10 @@ We also offer a quick script version:
 
 ```shell
 # You might need sudo before bash
-curl -sL https://roots.io/trellis/cli/get | bash
+$ curl -sL https://roots.io/trellis/cli/get | bash
 
 # Sets bindir or installation directory, Defaults to '/usr/local/bin'
-curl -sL https://roots.io/trellis/cli/get | bash -s -- -b /path/to/my/bin
+$ curl -sL https://roots.io/trellis/cli/get | bash -s -- -b /path/to/my/bin
 ```
 
 ### Manual Install
@@ -52,13 +52,13 @@ trellis-cli provides binary releases for a variety of OSes. These binary version
 
 ```shell
 # Cleanup previous versions (if installed)
-brew uninstall roots/tap/trellis-cli
+$ brew uninstall roots/tap/trellis-cli
 
 # Install
-brew install --HEAD roots/tap/trellis-cli-dev
+$ brew install --HEAD roots/tap/trellis-cli-dev
 
 # Upgrade
-brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
+$ brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
 ```
 
 ### Windows Install
@@ -175,5 +175,5 @@ vm:
 
 Example env var usage:
 ```shell
-TRELLIS_ASK_VAULT_PASS=true trellis provision production
+$ TRELLIS_ASK_VAULT_PASS=true trellis provision production
 ```

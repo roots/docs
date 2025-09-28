@@ -133,7 +133,7 @@ WSL is required in order to use Trellis. All Trellis commands must be run from a
 ## Install Trellis CLI
 
 ```shell
-brew install roots/tap/trellis-cli
+$ brew install roots/tap/trellis-cli
 ```
 
 ## Create a new project with Trellis
@@ -141,7 +141,7 @@ brew install roots/tap/trellis-cli
 Choose a descriptive project name (and use it in place of the default example.com). We recommend the domain of the site for uniqueness.
 
 ```shell
-trellis new example.com
+$ trellis new example.com
 ```
 
 After you've created a project, the folder structure for a Trellis project will look like this:
@@ -163,7 +163,7 @@ Check out the following files to review the basic site configuration:
 ## Start your development environment
 
 ```shell
-trellis up
+$ trellis up
 ```
 
 This command will start the Vagrant environment and provision the server. Once it's done, you can visit your development site at the URL you chose when you ran `trellis new`.
@@ -183,7 +183,7 @@ You probably want to encrypt your vault files, which hold automatically-generate
 Before deploying to production, you'll need to provision your server. [Read more about provisioning](/trellis/docs/remote-server-setup/)
 
 ```shell
-trellis provision production
+$ trellis provision production
 ```
 
 ## Deploy to production
@@ -191,5 +191,5 @@ trellis provision production
 Ready to deploy your site to production? [Read more about deployments](/trellis/docs/deployments/)
 
 ```shell
-trellis deploy production example.com
+$ trellis deploy production example.com
 ```

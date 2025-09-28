@@ -24,7 +24,7 @@ See [how to use Sass](./sass.md) before you follow this guide
 Add Bootstrap as a dependency:
 
 ```shell
-npm install --save bootstrap @popperjs/core
+$ npm install --save bootstrap @popperjs/core
 ```
 
 Add Bootstrap to `resources/css/app.scss`:

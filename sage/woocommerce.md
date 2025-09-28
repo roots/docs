@@ -20,7 +20,7 @@ authors:
 The [`generoi/sage-woocommerce`](https://github.com/generoi/sage-woocommerce) package adds functionality to allow Blade templates to work on Acorn and Sage powered WordPress sites:
 
 ```shell
-composer require generoi/sage-woocommerce
+$ composer require generoi/sage-woocommerce
 ```
 
 ### Publish the templates to your theme
@@ -28,7 +28,7 @@ composer require generoi/sage-woocommerce
 Add the required `single-product.blade.php` and `archive-product.blade.php` views to your theme:
 
 ```shell
-wp acorn vendor:publish --tag="woocommerce-template-views"
+$ wp acorn vendor:publish --tag="woocommerce-template-views"
 ```
 
 You can now edit these templates from `resources/views/woocommerce/`.

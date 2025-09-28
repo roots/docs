@@ -34,7 +34,7 @@ $ composer create-project roots/bedrock
 
 Your folder structure should now look like this:
 
-```shell
+```plaintext
 # @ ~/DevKinsta/
 .
 ├── kinsta

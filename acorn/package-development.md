@@ -43,7 +43,9 @@ Then run the Acorn WP-CLI command to discover your package:
 
 ```shell
 $ wp acorn package:discover
+```
 
+```plaintext
   INFO  Discovering packages.
 
   vendor-name/example-package ...... DONE

@@ -28,7 +28,7 @@ Make sure the PHP version of your development environment matches the PHP versio
 Similar to deploying a Laravel app, Acorn supports an `optimize` command that will cache your configuration and views. This command should be run as part of your deployment process:
 
 ```shell
-wp acorn optimize
+$ wp acorn optimize
 ```
 
 ## Server configuration

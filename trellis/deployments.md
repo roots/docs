@@ -43,7 +43,7 @@ Using DigitalOcean? Read our guide on [deploying Trellis to DigitalOcean](https:
 Run the following from any directory within your project:
 
 ```shell
-trellis deploy <environment>
+$ trellis deploy <environment>
 ```
 
 ::: warning Note
@@ -63,13 +63,13 @@ Database migrations to a new schema are not included as part of a Trellis deploy
 Run the following from any directory within your project:
 
 ```shell
-trellis rollback <environment>
+$ trellis rollback <environment>
 ```
 
 Manually specify a different release using `--release=12345678901234` as such:
 
 ```shell
-trellis rollback --release=12345678901234 <environment>
+$ trellis rollback --release=12345678901234 <environment>
 ```
 
 By default Trellis stores five previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.
