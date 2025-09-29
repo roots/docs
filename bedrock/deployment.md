@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2015-10-15 16:17
 description: Bedrock deployments require running `composer install` to fetch dependencies. Learn deployment workflows for various hosting platforms and CI/CD tools.
-title: Deploying Bedrock
+title: Deploying WordPress with Bedrock
 authors:
   - alwaysblank
   - ben
@@ -12,7 +12,7 @@ authors:
   - swalkinshaw
 ---
 
-# Deployment
+# Deploying WordPress with Bedrock
 
 Running `composer install` from the Bedrock folder must be part of your deployment process.
 

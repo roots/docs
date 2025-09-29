@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2021-10-21 13:21
 description: Use composers to pass scoped data to any Blade view in Sage. Bind variables to templates, partials, and components for organized theme development.
-title: Composers
+title: View Composers in Sage WordPress Theme
 authors:
   - alwaysblank
   - ben
@@ -10,7 +10,7 @@ authors:
   - Log1x
 ---
 
-# Composers
+# View Composers in Sage WordPress Theme
 
 Composers, also sometimes called View Composers, are essentially identical to the [Laravel system of the same name](https://laravel.com/docs/7.x/views#view-composers).
 They allow you to pass data to views (blade templates), scoping that data to that view (and any views it subsequently includes).

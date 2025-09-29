@@ -2,7 +2,7 @@
 date_modified: 2023-06-06 15:00
 date_published: 2016-11-27 11:34
 description: Access Trellis WordPress databases using GUI tools like Sequel Pro or TablePlus. Configure SSH tunnels for secure connections without phpMyAdmin.
-title: Database Access
+title: WordPress Database Access with Trellis
 authors:
   - ben
   - huubl
@@ -13,7 +13,7 @@ authors:
   - TangRufus
 ---
 
-# Database Access
+# WordPress Database Access with Trellis
 
 Accessing your databases with client software like [Sequel Pro](https://www.sequelpro.com/), [Sequel Ace](https://sequel-ace.com/) and [TablePlus](http://tableplus.com/) is straight forward with [`trellis-cli`](https://github.com/roots/trellis-cli). Run the following from any directory within your project:
 

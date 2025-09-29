@@ -2,12 +2,12 @@
 date_modified: 2025-04-01 00:00
 date_published: 2025-04-01 00:00
 description: Configure PHP settings in Trellis by overriding default values. Adjust memory limits, max execution time, upload sizes, and other PHP directives per site.
-title: Configuring PHP
+title: Configuring PHP Settings in Trellis
 authors:
   - dalepgrant
 ---
 
-# Configuring PHP
+# Configuring PHP Settings in Trellis
 Trellis will setup PHP and extensions suitable for a WordPress environment out of the box, but you may want to customise for your own setups. For example, you may want to change the version of PHP or add an extension.
 
 ::: tip Note

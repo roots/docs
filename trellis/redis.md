@@ -2,12 +2,12 @@
 date_modified: 2025-10-24 12:00
 date_published: 2025-10-24 12:00
 description: Enable Redis in Trellis for WordPress object caching. Improve site performance by caching database queries and reducing load on MySQL database servers.
-title: Redis
+title: Redis Object Caching for WordPress in Trellis
 authors:
   - ben
 ---
 
-# Redis
+# Redis Object Caching for WordPress in Trellis
 
 Trellis supports two types of caching that work together:
 - [**FastCGI Cache**](/trellis/docs/fastcgi-caching/) - Full page caching at the nginx level

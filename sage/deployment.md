@@ -2,7 +2,7 @@
 date_modified: 2025-02-27 14:00
 date_published: 2015-09-01 19:29
 description: Deploy Sage themes by building assets for production, running `composer install` for dependencies, and ensuring PHP version consistency across environments.
-title: Deploying Sage
+title: Deploying the Sage WordPress Theme
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - MWDelaney
 ---
 
-# Deployment
+# Deploying the Sage WordPress Theme
 
 ::: warning PHP versions must match
 Make sure the PHP version of your development environment matches the PHP version of your production environment, or you may hit a fatal error due to your Composer dependencies requiring a different PHP version.

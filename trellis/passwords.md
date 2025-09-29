@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
 description: Manage passwords in Trellis for MySQL root, admin users, sudoer access, and WordPress databases. Store securely in Ansible Vault for production environments.
-title: Passwords
+title: Password Management in Trellis
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - swalkinshaw
 ---
 
-# Passwords
+# Password Management in Trellis
 
 There are a few places you'll want to set/change passwords:
 

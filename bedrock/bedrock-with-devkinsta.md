@@ -2,12 +2,12 @@
 date_modified: 2023-02-19 12:16
 date_published: 2023-02-19 12:16
 description: Set up DevKinsta for Bedrock WordPress development. Configure site settings and document root to work with Bedrock's unique `wp/` and `app/` directories.
-title: Bedrock with DevKinsta
+title: Bedrock Development with DevKinsta
 authors:
   - ben
 ---
 
-# Bedrock with DevKinsta
+# Bedrock Development with DevKinsta
 
 [DevKinsta](https://kinsta.com/devkinsta/?kaid=OFDHAJIXUDIV) is a local WordPress development environment. In this guide you will learn how to setup a Bedrock-based WordPress site with DevKinsta.
 

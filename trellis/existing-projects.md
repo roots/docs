@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2018-08-23 09:56
-title: Existing Projects
-description: Get started on existing Trellis projects: clone the repository, install dependencies, set up Ansible Vault, and provision your local development environment.
+title: Adding Trellis to Existing WordPress Projects
+description: Get started on existing Trellis projects. Clone the repository, install dependencies, set up Ansible Vault, and provision your local development environment.
 authors:
   - ben
   - Log1x
@@ -10,7 +10,7 @@ authors:
   - TangRufus
 ---
 
-# Existing Projects
+# Adding Trellis to Existing WordPress Projects
 
 The majority of the Trellis documentation focuses on setting up new projects. If you are collaborating on, or taking over an existing project, the process is a little different.
 

@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2018-12-21 18:24
 description: Configure Nginx or Apache for Bedrock by setting document root to `web/` directory. Includes complete server configuration examples and rewrite rules.
-title: Server Configuration
+title: Server Configuration for Bedrock
 authors:
   - ben
   - Lachlan_Arthur
@@ -10,7 +10,7 @@ authors:
   - swalkinshaw
 ---
 
-# Server Configuration
+# Server Configuration for Bedrock
 
 Bedrock can run on any webserver that supports Composer and PHP >= 7.1. The document root for your site must be pointed to Bedrock's `web` folder.
 

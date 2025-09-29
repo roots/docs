@@ -2,13 +2,13 @@
 date_modified: 2024-04-24 13:00
 date_published: 2022-03-18 20:49
 description: Install and use blade-icons in Sage for SVG icon components in Blade templates. Simplifies icon management with clean component syntax.
-title: How to Use blade-icons
+title: How to Use blade-icons with Sage
 authors:
   - altan
   - ben
 ---
 
-# How to use blade-icons
+# How to Use blade-icons with Sage
 
 The [blade-icons](https://github.com/blade-ui-kit/blade-icons) package allows you to easily use SVG's in your Blade views.
 

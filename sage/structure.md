@@ -2,7 +2,7 @@
 date_modified: 2025-02-27 13:50
 date_published: 2021-10-21 13:21
 description: Sage's directory structure provides organized folders for scalable development. `resources/` for views, `app/` for functionality, `config/` for settings.
-title: Theme Structure
+title: Sage WordPress Theme Structure
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - MWDelaney
 ---
 
-# Theme Structure
+# Sage WordPress Theme Structure
 
 ## Introduction
 

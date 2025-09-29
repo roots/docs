@@ -2,12 +2,12 @@
 date_modified: 2025-02-27 14:30
 date_published: 2023-02-20 11:30
 description: Set up custom fonts in Sage using `theme.json`. Define font families that work in both theme frontend and WordPress block editor for consistent typography.
-title: How to Setup Fonts
+title: Setting Up Custom Fonts in Sage
 authors:
   - ben
 ---
 
-# How to Setup Fonts
+# Setting Up Custom Fonts in Sage
 
 Sage includes an empty `resources/fonts/` directory for you to use for any fonts you want to use in your theme.
 

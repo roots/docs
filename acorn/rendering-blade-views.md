@@ -2,7 +2,7 @@
 date_modified: 2023-04-03 13:18
 date_published: 2023-02-21 11:30
 description: Render Blade templates anywhere in WordPress using the `view()` helper function. Examples for Gutenberg blocks, ACF blocks, and email notifications.
-title: Rendering Blade Views
+title: Rendering Blade Views in WordPress
 authors:
   - ben
   - chuckienorton
@@ -10,7 +10,7 @@ authors:
   - talss89
 ---
 
-# Rendering Blade Views
+# Rendering Blade Views in WordPress
 
 You can use the `view()` helper function from Acorn to render Blade templates anywhere in your WordPress site.
 

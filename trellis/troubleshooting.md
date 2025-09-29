@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
 description: Troubleshoot Trellis installations with debugging tips for Ansible errors, solutions for unresponsive machines, and fixes for common provisioning problems.
-title: Troubleshooting
+title: Troubleshooting Common Trellis Issues
 authors:
   - ben
   - fullyint
@@ -11,7 +11,7 @@ authors:
   - dalepgrant
 ---
 
-# Troubleshooting
+# Troubleshooting Common Trellis Issues
 
 ## Debugging
 

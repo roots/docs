@@ -2,12 +2,12 @@
 date_modified: 2023-01-27 13:17
 date_published: 2022-02-28 22:16
 description: Understand how Trellis leverages Ansible for WordPress automation. Learn key concepts like playbooks, roles, tasks, and variables used for server management.
-title: How Trellis uses Ansible
+title: How Trellis Uses Ansible for WordPress
 authors:
   - swalkinshaw
 ---
 
-# How Trellis uses Ansible
+# How Trellis Uses Ansible for WordPress
 Since Trellis is powered by Ansible, the best way to understand Trellis is to understand Ansible itself.
 Even knowing a few just key Ansible concepts will help you learn Trellis and how to
 customize it to fit your needs.

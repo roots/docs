@@ -2,14 +2,14 @@
 date_modified: 2023-01-27 13:17
 date_published: 2020-02-20 09:25
 description: If plugins or themes work with regular WordPress but not Bedrock, it's usually due to hardcoded paths, not Bedrock itself. Solutions included.
-title: Compatibility
+title: WordPress Plugin Compatibility with Bedrock
 authors:
   - alwaysblank
   - ben
   - QWp6t
 ---
 
-# Compatibility
+# WordPress Plugin Compatibility with Bedrock
 
 Bedrock does certain things a bit differently than the default WordPress installation, but it does so by leveraging functionality that WordPress Core provides.
 

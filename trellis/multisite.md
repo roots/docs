@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
 description: Set up WordPress multisite on Trellis by configuring Bedrock for multisite installation before provisioning. Supports subdomain and subdirectory networks.
-title: Multisite
+title: WordPress Multisite Setup with Trellis
 authors:
   - ben
   - evance
@@ -17,7 +17,7 @@ authors:
   - swalkinshaw
 ---
 
-# Multisite
+# WordPress Multisite Setup with Trellis
 
 Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere before calling `Config::apply()` in Bedrock's `config/application.php` and **before** provisioning your server:
 

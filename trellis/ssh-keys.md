@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
 description: Configure SSH keys in Trellis for secure server access. Add keys manually or automatically import SSH keys from GitHub users for team member access.
-title: SSH Keys
+title: SSH Key Management in Trellis
 authors:
   - ben
   - fullyint
@@ -13,7 +13,7 @@ authors:
   - dalepgrant
 ---
 
-# SSH Keys
+# SSH Key Management in Trellis
 
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or virtual machine in development).
 

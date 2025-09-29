@@ -2,14 +2,14 @@
 date_modified: 2023-02-19 12:16
 date_published: 2018-12-28 13:54
 description: Bedrock supports various local development tools including Trellis, Laravel Valet, Local, DDEV, Lando, and DevKinsta for flexible WordPress development.
-title: Local Development
+title: Local WordPress Development with Bedrock
 authors:
   - ben
   - Log1x
   - swalkinshaw
 ---
 
-# Local Development
+# Local WordPress Development with Bedrock
 
 Bedrock can be used with most local development setups. [Trellis](https://roots.io/trellis/) is our WordPress LEMP stack that supports Bedrock out of the box. We also have guides for using Bedrock with some popular setups:
 

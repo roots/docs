@@ -2,13 +2,13 @@
 date_modified: 2023-06-04 16:40
 date_published: 2023-02-19 12:16
 description: Set up Lando for Bedrock WordPress development. Configure webroot to `web/` directory and adjust Lando settings for Bedrock's unique folder structure.
-title: Bedrock with Lando
+title: Bedrock Local Development with Lando
 authors:
   - ben
   - james0r
 ---
 
-# Bedrock with Lando
+# Bedrock Local Development with Lando
 
 [Lando](https://lando.dev/) is a local development environment. In this guide you will learn how to setup a Bedrock-based WordPress site with Lando.
 

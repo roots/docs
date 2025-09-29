@@ -2,13 +2,13 @@
 date_modified: 2025-07-18 14:30
 date_published: 2024-04-26 10:35
 description: Known compatibility issues between WordPress plugins and Acorn, including solutions and workarounds for common integration conflicts.
-title: Compatibility
+title: WordPress Plugin Compatibility with Acorn
 authors:
   - ben
   - dalepgrant
 ---
 
-# Compatibility
+# WordPress Plugin Compatibility with Acorn
 
 Acorn is installed via Composer and includes many dependencies, that also include their own dependencies. WordPress plugin authors often include their own dependencies in a way that can conflict with Acorn. 
 

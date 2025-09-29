@@ -2,7 +2,7 @@
 date_modified: 2025-09-26 07:00
 date_published: 2015-09-06 07:42
 description: Trellis uses Mailpit in development to capture outgoing emails. Configure production mail delivery with SMTP settings in the `mail.yml` configuration file.
-title: Mail
+title: WordPress Mail Configuration in Trellis
 authors:
   - ben
   - fullyint
@@ -14,7 +14,7 @@ authors:
   - TangRufus
 ---
 
-# Mail
+# WordPress Mail Configuration in Trellis
 
 Trellis' mail functionality is separated between development and staging/production since you usually want different behaviour out of them.
 

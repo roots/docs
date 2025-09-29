@@ -8,7 +8,7 @@ authors:
   - swalkinshaw
 ---
 
-# Deploying Trellis WordPress Sites with GitHub Actions
+# Deploying Trellis with GitHub Actions
 
 The [`roots/setup-trellis-cli` GitHub Action](https://github.com/roots/setup-trellis-cli) can be used for setting up continuous deploys for Trellis based WordPress sites.
 

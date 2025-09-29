@@ -2,7 +2,7 @@
 date_modified: 2025-04-03 09:00
 date_published: 2021-11-19 11:58
 description: Install Acorn by running `composer require roots/acorn` in your WordPress project root. Requires Composer-based WordPress like Bedrock.
-title: Installing Acorn
+title: Installing Acorn in WordPress
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - joshf
 ---
 
-# Installation
+# Installing Acorn in WordPress
 
 ## What is Acorn?
 

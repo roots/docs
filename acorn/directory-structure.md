@@ -2,7 +2,7 @@
 date_modified: 2025-07-22 13:34
 date_published: 2021-11-19 11:58
 description: Acorn works with zero configuration by default. Optionally publish config files to use Laravel's familiar directory structure in WordPress.
-title: Directory Structure
+title: Acorn Application Directory Structure
 authors:
   - alwaysblank
   - ben
@@ -10,7 +10,7 @@ authors:
   - QWp6t
 ---
 
-# Directory Structure
+# Acorn Application Directory Structure
 
 ## Zero-config setup
 

@@ -2,7 +2,7 @@
 date_modified: 2023-02-05 13:25
 date_published: 2022-01-05 21:44
 description: Configure Vagrant for Trellis local development. Adjust virtual machine settings, networking configuration, and allocated resources in the `Vagrantfile`.
-title: Vagrant
+title: Using Vagrant for Local Development with Trellis
 authors:
   - ben
   - LucasDemea
@@ -11,7 +11,7 @@ authors:
   - techieshark
 ---
 
-# Vagrant
+# Using Vagrant for Local Development with Trellis
 
 ## Providers
 Trellis supports most of Vagrant's common [providers](https://www.vagrantup.com/docs/providers) automatically. By default we recommend VirtualBox since it's free and open source. However, if you need or prefer one of the commercial providers (eg: VMWare or Parallels), they can be used as well.

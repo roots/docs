@@ -2,7 +2,7 @@
 date_modified: 2025-02-27 15:48
 date_published: 2015-09-06 07:42
 description: Trellis offers built-in FastCGI caching with Nginx microcaching. No WordPress plugin required, with configurable cache skipping for eCommerce pages.
-title: FastCGI Caching
+title: FastCGI Caching for WordPress in Trellis
 authors:
   - ben
   - catgofire
@@ -11,7 +11,7 @@ authors:
   - vdrnn
 ---
 
-# FastCGI Caching
+# FastCGI Caching for WordPress in Trellis
 
 You can enable caching for your site by changing the cache settings under each site key. Using caching provides substantial speed improvement once pages are cached. The full settings looks like this:
 

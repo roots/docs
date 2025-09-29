@@ -2,7 +2,7 @@
 date_modified: 2025-02-27 14:00
 date_published: 2021-10-21 13:21
 description: Sage includes full WordPress block editor support with HMR for editor styles, ensuring consistent styling between editor and frontend with `theme.json` integration.
-title: Gutenberg
+title: Gutenberg Block Editor Support in Sage
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - strarsis
 ---
 
-# Block Editor (Gutenberg)
+# Gutenberg Block Editor Support in Sage
 
 Sage includes two assets that are enqueued when working with the WordPress block editor, also known as Gutenberg:
 

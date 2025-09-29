@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2015-10-15 12:24
 description: Trellis uses Lima VM's for local development. Trellis uses Ansible to automatically provision virtual machines running complete WordPress environments.
-title: Local Development
+title: Local WordPress Development with Trellis
 authors:
   - ben
   - fullyint
@@ -13,7 +13,7 @@ authors:
   - TangRufus
 ---
 
-# Local Development
+# Local WordPress Development with Trellis
 Trellis has two official integrations for development environments using virtual machines:
 
 * [Vagrant](#vagrant)

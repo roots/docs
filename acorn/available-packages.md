@@ -2,14 +2,14 @@
 date_modified: 2025-06-17 19:15
 date_published: 2021-11-19 11:58
 description: Explore community-developed packages for Acorn and Sage. WooCommerce integration, additional Laravel features, and third-party extensions.
-title: Community Packages
+title: Community Packages for Acorn
 authors:
   - alwaysblank
   - ben
   - QWp6t
 ---
 
-# Available Packages
+# Community Packages for Acorn
 
 | Package | Description |
 | ----------- | ----------- |

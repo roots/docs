@@ -2,14 +2,14 @@
 date_modified: 2023-01-27 13:17
 date_published: 2018-02-07 09:46
 description: Sage uses Laravel's Blade for powerful templating. Learn template inheritance with `@extends`, layouts with `@yield`, and passing data to WordPress views.
-title: Blade Templates
+title: Using Blade Templates in Sage
 authors:
   - alwaysblank
   - ben
   - Log1x
 ---
 
-# Blade Templates
+# Using Blade Templates in Sage
 
 Sage uses [Laravel's Blade](https://laravel.com/docs/10.x/blade) templating engine.
 

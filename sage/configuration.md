@@ -2,14 +2,14 @@
 date_modified: 2024-01-17 08:22
 date_published: 2015-09-01 19:02
 description: Configure Sage theme features in `setup.php`. Register menus, define sidebars, enable theme support for WordPress features, and set configuration values.
-title: Configuration
+title: Configuring the Sage WordPress Theme
 authors:
   - alwaysblank
   - ben
   - Log1x
 ---
 
-# Configuration
+# Configuring the Sage WordPress Theme
 
 ## Introduction
 

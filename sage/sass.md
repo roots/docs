@@ -1,8 +1,8 @@
 ---
 date_modified: 2025-04-15 11:15
 date_published: 2023-06-06 17:30
-description: Enable Sass in Sage by installing `@roots/bud-sass` via npm and renaming `app.css` to `app.scss` for advanced CSS preprocessing with variables and mixins.
-title: How to Use Sass
+description: Enable Sass in Sage by renaming `app.css` to `app.scss` for advanced CSS preprocessing with variables and mixins.
+title: Using Sass with Sage WordPress Theme
 authors:
   - ben
   - carlosfaria
@@ -13,7 +13,7 @@ authors:
   - talss89
 ---
 
-# How to Use Sass with Sage
+# Using Sass with Sage WordPress Theme
 
 Remove Tailwind CSS dependencies: `npm uninstall -D @tailwindcss/vite tailwindcss`
 

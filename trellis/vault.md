@@ -2,7 +2,7 @@
 date_modified: 2024-06-04 17:00
 date_published: 2015-11-01 14:32
 description: Enable Ansible Vault in Trellis to encrypt sensitive data in `vault.yml`. Store passwords, API keys, and confidential variables securely in version control.
-title: Vault
+title: Ansible Vault for Encrypting Secrets in Trellis
 authors:
   - ben
   - fullyint
@@ -13,7 +13,7 @@ authors:
   - TangRufus
 ---
 
-# Vault
+# Ansible Vault for Encrypting Secrets in Trellis
 
 Some project variables contain sensitive data like passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using to avoid exposing sensitive data in your project repository.
 

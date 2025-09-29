@@ -2,7 +2,7 @@
 date_modified: 2025-02-21 17:30
 date_published: 2015-09-07 20:44
 description: Trellis provides zero-downtime WordPress deployment with atomic deploys. Customize each deployment step with hooks for builds, migrations, and cleanup tasks.
-title: Deployments
+title: WordPress Deployments with Trellis
 authors:
   - ben
   - dalepgrant
@@ -13,7 +13,7 @@ authors:
   - TangRufus
 ---
 
-# Deployments
+# WordPress Deployments with Trellis
 
 Trellis allows zero-downtime WordPress deployment out of the box with a little configuration. Hooks let you customize what happens at each step of the deploy process.
 

@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
 description: Enable HTTPS in Trellis with automatic Let's Encrypt certificates, manually provided SSL certificates, or self-signed certificates for local development.
-title: SSL
+title: SSL Certificates with Let's Encrypt in Trellis
 authors:
   - aitor
   - ben
@@ -15,7 +15,7 @@ authors:
   - swalkinshaw
 ---
 
-# SSL
+# SSL Certificates with Let's Encrypt in Trellis
 
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.
 

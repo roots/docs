@@ -2,7 +2,7 @@
 date_modified: 2024-09-11 10:00
 date_published: 2015-10-15 12:27
 description: Set up remote servers for Trellis requiring bare Ubuntu 24.04 LTS installation on VPS or dedicated servers. Shared hosting is not supported.
-title: Remote Server Setup
+title: Remote Server Setup for WordPress with Trellis
 authors:
   - ben
   - fullyint
@@ -13,7 +13,7 @@ authors:
   - MWDelaney
 ---
 
-# Remote Server Setup
+# Remote Server Setup for WordPress with Trellis
 
 Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/)) to host your staging and production environments.
 
