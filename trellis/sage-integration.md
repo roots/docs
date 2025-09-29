@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2020-04-07 23:23
-description: Using Trellis with a theme built on Sage.
+description: Use Trellis with Sage themes for complete WordPress development stack. Trellis handles server provisioning and deployment for Sage-based theme development.
 title: Sage Integration
 authors:
   - swalkinshaw

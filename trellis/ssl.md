@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
-description: Trellis offers SSL/HTTPS with Let's Encrypt, along with manually provided certificates and self-signed certificates for local development environments.
+description: Enable HTTPS in Trellis with automatic Let's Encrypt certificates, manually provided SSL certificates, or self-signed certificates for local development.
 title: SSL
 authors:
   - aitor

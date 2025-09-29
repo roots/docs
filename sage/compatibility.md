@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-04-26 10:35
 date_published: 2018-04-25 13:52
-description: A list of currently known compatibility issues with any WordPress plugins and the Sage starter theme.
+description: Known compatibility issues between WordPress plugins and Sage starter theme, including solutions, workarounds, and alternative plugin recommendations.
 title: Compatibility
 authors:
   - alwaysblank

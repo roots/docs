@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2018-02-07 09:46
-description: Blade is a templating engine from Laravel that's included in Acorn. It allows for template inheritance, sharing data across multiple views, and much more.
+description: Sage uses Laravel's Blade for powerful templating. Learn template inheritance with `@extends`, layouts with `@yield`, and passing data to WordPress views.
 title: Blade Templates
 authors:
   - alwaysblank

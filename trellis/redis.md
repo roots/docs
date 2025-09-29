@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-10-24 12:00
 date_published: 2025-10-24 12:00
-description: Trellis includes Redis support for object caching.
+description: Enable Redis in Trellis for WordPress object caching. Improve site performance by caching database queries and reducing load on MySQL database servers.
 title: Redis
 authors:
   - ben

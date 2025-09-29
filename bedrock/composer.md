@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-08-16 12:45
 date_published: 2015-09-06 07:42
-description: Composer is used to manage dependencies. Bedrock considers any 3rd party library as a dependency including WordPress itself and any plugins.
+description: Bedrock treats WordPress core, plugins, and themes as Composer dependencies. Use WPackagist to require plugins and automate updates efficiently.
 title: WordPress Dependencies with Composer
 authors:
   - ben

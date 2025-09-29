@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2018-08-02 14:04
-description: There are many ways to add private or paid WordPress plugins to your Bedrock-based project. In this guide, we go over using private Git repositories.
+description: Add paid and private plugins to Bedrock through Composer using private Git repositories, custom Composer repos, or services like WordPress Packagist.
 title: Private or Commercial WordPress Plugins as Composer Dependencies
 authors:
   - MWDelaney

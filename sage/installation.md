@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-02-27 13:45
 date_published: 2015-08-29 18:09
-description: Install Sage 11, a WordPress starter theme, by running `composer create-project roots/sage`.
+description: Install Sage WordPress starter theme by running `composer create-project roots/sage`. Start modern WordPress theme development with Sage foundation.
 title: Installing Sage
 authors:
   - alwaysblank

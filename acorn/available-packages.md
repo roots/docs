@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-06-17 19:15
 date_published: 2021-11-19 11:58
-description: A list of known community packages for the Acorn and Sage ecosystem, such as adding WooCommerce support to Sage.
+description: Explore community-developed packages for Acorn and Sage. WooCommerce integration, additional Laravel features, and third-party extensions.
 title: Community Packages
 authors:
   - alwaysblank

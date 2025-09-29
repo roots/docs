@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2022-02-28 22:16
-description: Learn more about Trellis by understanding key Ansible concepts
+description: Understand how Trellis leverages Ansible for WordPress automation. Learn key concepts like playbooks, roles, tasks, and variables used for server management.
 title: How Trellis uses Ansible
 authors:
   - swalkinshaw

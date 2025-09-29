@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2021-10-21 13:21
-description: Components provide an alternative mental model for handling views and data that is especially conducive to the development of views that are frequently reused.
+description: Components in Sage provide a structured approach for creating reusable view elements with scoped data, ideal for frequently reused theme components.
 title: Components
 authors:
   - alwaysblank

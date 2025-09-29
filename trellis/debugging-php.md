@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2016-11-07 16:30
-description: Use Xdebug in Trellis to debug your PHP. Trellis is configured with Xdebug and ready to rock out of the box in development.
+description: Debug WordPress PHP code with Trellis's built-in Xdebug support in development. Configure your IDE for step debugging, breakpoints, and inspection.
 title: Debugging PHP
 authors:
   - ben

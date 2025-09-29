@@ -1,7 +1,7 @@
 ---
 date_modified: 2024-07-09 18:30
 date_published: 2023-02-19 12:16
-description: How to configure DDEV, a local PHP development tool, for a Bedrock-based WordPress site.
+description: Set up DDEV for Bedrock WordPress development using Docker. Configure docroot to `web/` directory and adjust DDEV services for Bedrock's structure.
 title: Bedrock with DDEV
 authors:
   - ben

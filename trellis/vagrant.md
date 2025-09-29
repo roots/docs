@@ -1,6 +1,7 @@
 ---
 date_modified: 2023-02-05 13:25
 date_published: 2022-01-05 21:44
+description: Configure Vagrant for Trellis local development. Adjust virtual machine settings, networking configuration, and allocated resources in the `Vagrantfile`.
 title: Vagrant
 authors:
   - ben

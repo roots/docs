@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-03-07 09:00
 date_published: 2024-06-03 15:00
-description: Acorn allows you to use Laravel's routing functionality on your WordPress sites.
+description: Add Laravel's routing system to WordPress with Acorn. Create custom routes with parameters, controllers, and middleware for advanced applications.
 title: Routing
 authors:
   - ben

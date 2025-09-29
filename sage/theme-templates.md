@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-01 19:12
-description: The `resources/views/` directory contains files that you can further extend with the normal WordPress template hierarchy.
+description: Sage's `resources/views/` directory contains Blade templates following WordPress template hierarchy. Extend templates using standard WordPress conventions.
 title: Theme Templates
 authors:
   - alwaysblank

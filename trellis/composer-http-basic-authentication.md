@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2021-09-06 16:48
-description: Configuring Composer HTTP basic authentication for private packages.
+description: Set up Composer HTTP basic authentication in Trellis to access private packages, commercial plugins, and authenticated repositories during deployment.
 title: Composer HTTP Basic Authentication
 authors:
   - ben

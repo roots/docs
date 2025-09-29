@@ -2,7 +2,7 @@
 date_modified: 2023-02-13 12:38
 date_published: 2021-10-21 13:21
 title: Package Development
-description: Use the Acorn Example Package as a template for creating your own Acorn packages.
+description: Use the Acorn Example Package as a template for creating custom packages and reusable functionality for WordPress with Laravel architecture.
 authors:
   - ben
   - Log1x

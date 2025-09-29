@@ -1,7 +1,7 @@
 ---
 date_modified: 2024-01-17 08:22
 date_published: 2015-09-01 19:02
-description: Use setup.php in Sage to enable/disable theme features and set configuration values. Register navigation menus, sidebars, define theme support and more.
+description: Configure Sage theme features in `setup.php`. Register menus, define sidebars, enable theme support for WordPress features, and set configuration values.
 title: Configuration
 authors:
   - alwaysblank

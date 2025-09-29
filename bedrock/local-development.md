@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-02-19 12:16
 date_published: 2018-12-28 13:54
-description: Bedrock can be used with most local development setups. Some setups that support Bedrock out of the box are Trellis and Laravel Valet.
+description: Bedrock supports various local development tools including Trellis, Laravel Valet, Local, DDEV, Lando, and DevKinsta for flexible WordPress development.
 title: Local Development
 authors:
   - ben

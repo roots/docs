@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-01 19:05
-description: The `app/` directory contains all the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
+description: The `app/` directory contains theme functionality. Sage is a starter theme, so modify files in `app/` to implement custom features for your WordPress site.
 title: Theme Functionality
 authors:
   - alwaysblank

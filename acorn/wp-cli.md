@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2021-11-19 11:58
-description: A list of available WP-CLI commands provided by Acorn. Similar to Laravel's `artisan` CLI.
+description: Acorn provides WP-CLI commands similar to Laravel's `artisan` for managing WordPress. Clear caches, compile views, and run administrative tasks.
 title: WP-CLI
 authors:
   - alwaysblank

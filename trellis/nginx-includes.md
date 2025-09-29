@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2020-02-05 16:24
-description: Trellis allows you to implement Nginx customizations by placing files in specifically named subdirectories within a directory named includes.d.
+description: Customize Nginx configuration in Trellis by placing files in `includes.d/` subdirectories. Add custom rules, headers, and configuration per WordPress site.
 title: Nginx Includes
 authors:
   - alwaysblank

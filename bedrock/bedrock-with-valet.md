@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-03-08 8:55
 date_published: 2023-02-19 12:16
-description: How to configure Valet, a local development tool, for a Bedrock-based WordPress site.
+description: Set up Laravel Valet for Bedrock WordPress development on macOS. Configure Valet drivers and local domains for seamless development workflow.
 title: Bedrock with Valet
 authors:
   - ben

@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-04-01 00:00
 date_published: 2025-04-01 00:00
-description: Trellis allows you to configure PHP by setting or overriding variables.
+description: Configure PHP settings in Trellis by overriding default values. Adjust memory limits, max execution time, upload sizes, and other PHP directives per site.
 title: Configuring PHP
 authors:
   - dalepgrant

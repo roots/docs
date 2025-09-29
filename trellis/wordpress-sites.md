@@ -1,7 +1,7 @@
 ---
 date_modified: 2024-06-19 13:17
 date_published: 2016-03-28 21:10
-description: Everything in Trellis is built around the concept of "sites". Trellis will automatically configure everything needed to host a WordPress site.
+description: Configure WordPress sites in Trellis through `wordpress_sites.yml`. Define domains, SSL certificates, cache configuration, and host multiple WordPress sites.
 title: WordPress Sites
 authors:
   - ben

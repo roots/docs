@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2021-10-21 13:21
-description: Composers allow you to pass scoped data to views of any kind--templates, partials, etc.
+description: Use composers to pass scoped data to any Blade view in Sage. Bind variables to templates, partials, and components for organized theme development.
 title: Composers
 authors:
   - alwaysblank

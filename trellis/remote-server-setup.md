@@ -1,7 +1,7 @@
 ---
 date_modified: 2024-09-11 10:00
 date_published: 2015-10-15 12:27
-description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 24.04 LTS. You can't run Trellis on a shared host.
+description: Set up remote servers for Trellis requiring bare Ubuntu 24.04 LTS installation on VPS or dedicated servers. Shared hosting is not supported.
 title: Remote Server Setup
 authors:
   - ben

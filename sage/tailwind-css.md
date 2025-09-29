@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-02-27 14:00
 date_published: 2023-03-13 11:00
-description: Sage includes Tailwind CSS support, including generating the Tailwind color palette, font families, and sizes for `theme.json` which is used by the block editor.
+description: Sage generates `theme.json` from Tailwind configuration automatically, making Tailwind color palette, font families, and sizes available in WordPress block editor.
 title: Tailwind CSS
 authors:
   - ben

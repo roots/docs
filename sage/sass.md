@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-04-15 11:15
 date_published: 2023-06-06 17:30
-description: Setup support for Sass in Sage by adding @roots/bud-sass and renaming css files to scss
+description: Enable Sass in Sage by installing `@roots/bud-sass` via npm and renaming `app.css` to `app.scss` for advanced CSS preprocessing with variables and mixins.
 title: How to Use Sass
 authors:
   - ben

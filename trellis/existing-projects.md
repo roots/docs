@@ -2,7 +2,7 @@
 date_modified: 2023-01-27 13:17
 date_published: 2018-08-23 09:56
 title: Existing Projects
-description: How to work on an existing Trellis project.
+description: Get started on existing Trellis projects: clone the repository, install dependencies, set up Ansible Vault, and provision your local development environment.
 authors:
   - ben
   - Log1x

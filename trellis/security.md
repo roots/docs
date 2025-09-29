@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
-description: Trellis can optionally disable the SSH root login, and setup an admin user and admin user sudoer password for connecting and running commands.
+description: Secure Trellis WordPress servers by disabling root SSH login, creating admin users with sudo access, and configuring secure password authentication.
 title: Security
 authors:
   - ben

@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-02-12 13:02
 date_published: 2021-10-21 13:21
-description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs`
+description: Acorn handles exceptions automatically in development mode, logging errors to `storage/logs` and rendering detailed stack traces with Ignition or Symfony.
 title: Error Handling
 authors:
   - ben

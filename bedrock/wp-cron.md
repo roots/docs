@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
-description: Bedrock allows you to disable the internal WP Cron with DISABLE_WP_CRON. If you enable this setting you'll need to manually set a cron job
+description: Disable WordPress's unreliable internal cron with `DISABLE_WP_CRON` in Bedrock and set up proper system cron jobs for scheduled tasks.
 title: WP Cron
 authors:
   - ben

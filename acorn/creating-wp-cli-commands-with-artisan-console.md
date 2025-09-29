@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-09-28 00:00
 date_published: 2025-09-28 00:00
-description: Learn how to create custom WP-CLI commands using Laravel's Artisan Console system with Acorn.
+description: Create custom WP-CLI commands using Laravel's Artisan Console system with Acorn. Extend WordPress CLI with powerful Laravel functionality.
 title: Creating WP-CLI Commands with Artisan Console
 authors:
   - ben

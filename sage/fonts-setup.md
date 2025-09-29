@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-02-27 14:30
 date_published: 2023-02-20 11:30
-description: How to setup fonts in Sage for both the front-end and the WordPress editor with `theme.json`.
+description: Set up custom fonts in Sage using `theme.json`. Define font families that work in both theme frontend and WordPress block editor for consistent typography.
 title: How to Setup Fonts
 authors:
   - ben

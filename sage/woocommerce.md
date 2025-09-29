@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-06-26 11:00
 date_published: 2025-06-26 11:00
-description: How to Setup WooCommerce with Sage
+description: Set up WooCommerce in Sage themes for eCommerce functionality. Configure templates, declare theme support, and integrate WooCommerce styling with Sage.
 title: How to Setup WooCommerce
 authors:
   - aitor

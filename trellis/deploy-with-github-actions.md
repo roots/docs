@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-04-05 11:00
 date_published: 2023-04-05 11:00
-description: Deploy Trellis WordPress sites with GitHub Actions using setup-trellis-cli.
+description: Deploy Trellis WordPress sites with GitHub Actions using `setup-trellis-cli`.
 title: Deploying Trellis with GitHub Actions
 authors:
   - ben

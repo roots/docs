@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2019-01-07 10:05
-description: Provision and deploy to DigitalOcean servers with Trellis.
+description: Deploy Trellis WordPress sites to DigitalOcean servers. Set up droplets, configure server settings, and automate WordPress deployment to DigitalOcean.
 title: Deploying Trellis to DigitalOcean
 authors:
   - ben

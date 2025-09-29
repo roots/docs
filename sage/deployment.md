@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-02-27 14:00
 date_published: 2015-09-01 19:29
-description: Compile your assets, install your dependencies, and copy your Sage-based theme to your server. Remember that PHP versions must match between environments.
+description: Deploy Sage themes by building assets for production, running `composer install` for dependencies, and ensuring PHP version consistency across environments.
 title: Deploying Sage
 authors:
   - alwaysblank

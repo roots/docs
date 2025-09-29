@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-07-18 14:30
 date_published: 2024-04-26 10:35
-description: Known compatibility issues with any WordPress plugins and Acorn.
+description: Known compatibility issues between WordPress plugins and Acorn, including solutions and workarounds for common integration conflicts.
 title: Compatibility
 authors:
   - ben

@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-08-10 15:15
 date_published: 2023-02-19 12:16
-description: How to configure Local, a local WordPress development tool, for a Bedrock-based WordPress site.
+description: Configure Local by Flywheel for Bedrock WordPress development. Adjust document root to `web/` directory and configure Local for Bedrock's structure.
 title: Bedrock with Local
 authors:
   - ben

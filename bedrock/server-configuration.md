@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2018-12-21 18:24
-description: The document root for your site must be pointed to Bedrock's web folder. See example server configurations for running Bedrock on Nginx or Apache.
+description: Configure Nginx or Apache for Bedrock by setting document root to `web/` directory. Includes complete server configuration examples and rewrite rules.
 title: Server Configuration
 authors:
   - ben
