@@ -119,6 +119,9 @@ You should run migrations as part of your deployment process. Add this to your d
 
 ```bash
 $ wp acorn optimize
+```
+
+```bash
 $ wp acorn migrate --force
 ```
 

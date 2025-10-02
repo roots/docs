@@ -21,11 +21,15 @@ Before you can start using queues, you need to create the necessary database tab
 
 Create the migration files for queue functionality:
 
-```bash
-# Generate the jobs table migration
-$ wp acorn queue:table
+#### Generate the jobs table migration
 
-# Generate the job batches table (optional, for batch processing)
+```bash
+$ wp acorn queue:table
+```
+
+#### Generate the job batches table (optional, for batch processing)
+
+```bash
 $ wp acorn queue:batches-table
 ```
 
@@ -119,6 +123,10 @@ class ProcessImageOptimization implements ShouldQueue
         // Your image optimization logic here
         // For example, using an image optimization library
 
+        // Mark as processed using post meta
+        update_post_meta($this->attachmentId, '_processed', true);
+        update_post_meta($this->attachmentId, '_processed_at', current_time('timestamp'));
+
         Log::info("Successfully optimized image: {$this->attachmentId}");
     }
 
@@ -177,80 +185,30 @@ To process jobs in the queue, you need to run a queue worker.
 
 ### Running a queue worker
 
+#### Process jobs continuously
+
 ```bash
-# Process jobs continuously
 $ wp acorn queue:work
+```
 
-# Process jobs from a specific queue
+#### Process jobs from a specific queue
+
+```bash
 $ wp acorn queue:work --queue=high,default
+```
 
-# Process a single job and exit
+#### Process a single job and exit
+
+```bash
 $ wp acorn queue:work --once
+```
 
-# Process jobs for a specific duration
+#### Process jobs for a specific duration
+
+```bash
 $ wp acorn queue:work --stop-when-empty
 ```
 
-### Queue worker options
-
-| Option | Description |
-|--------|-------------|
-| `--queue` | Specify queue priorities (comma-separated) |
-| `--once` | Process a single job and exit |
-| `--stop-when-empty` | Stop when the queue is empty |
-| `--max-jobs` | Number of jobs to process before stopping |
-| `--max-time` | Maximum time in seconds to run |
-| `--sleep` | Seconds to sleep when no jobs are available |
-| `--timeout` | Timeout for each job in seconds |
-
-### Production deployment
-
-For production environments, use a process supervisor like Supervisor or systemd to keep queue workers running:
-
-```ini
-# /etc/supervisor/conf.d/acorn-worker.conf
-[program:acorn-worker]
-process_name=%(program_name)s_%(process_num)02d
-command=wp acorn queue:work --sleep=3 --tries=3 --max-time=3600
-directory=/srv/www/example.com/current
-autostart=true
-autorestart=true
-stopasgroup=true
-killasgroup=true
-user=www-data
-numprocs=2
-redirect_stderr=true
-stdout_logfile=/var/log/acorn-worker.log
-```
-
-## Batch processing
-
-For processing multiple related jobs, use batch processing:
-
-```php
-use Illuminate\Bus\Batch;
-use Illuminate\Support\Facades\Bus;
-use App\Jobs\ProcessImageOptimization;
-
-$attachmentIds = [123, 456, 789];
-
-$batch = Bus::batch([])
-    ->then(function (Batch $batch) {
-        Log::info('All images optimized successfully');
-    })
-    ->catch(function (Batch $batch, \Throwable $e) {
-        Log::error('Batch processing failed: ' . $e->getMessage());
-    })
-    ->finally(function (Batch $batch) {
-        Log::info('Batch processing complete');
-    })
-    ->name('Image Optimization Batch')
-    ->dispatch();
-
-foreach ($attachmentIds as $id) {
-    $batch->add(new ProcessImageOptimization($id));
-}
-```
 
 ## Managing failed jobs
 
@@ -262,148 +220,46 @@ When jobs fail after all retry attempts, they're moved to the `failed_jobs` tabl
 $ wp acorn queue:failed
 ```
 
-### Retry failed jobs
+### Retry all failed jobs
 
 ```bash
-# Retry all failed jobs
 $ wp acorn queue:retry all
+```
 
-# Retry specific job
+### Retry specific job
+
+```bash
 $ wp acorn queue:retry 5
+```
 
-# Retry multiple jobs
+### Retry multiple jobs
+
+```bash
 $ wp acorn queue:retry 5 6 7
 ```
 
-### Clear failed jobs
+### Remove all failed jobs
 
 ```bash
-# Remove all failed jobs
 $ wp acorn queue:flush
+```
 
-# Remove a specific failed job
+### Remove a specific failed job
+
+```bash
 $ wp acorn queue:forget 5
 ```
 
-## Common use cases
 
-### Email queue
-
-```php
-namespace App\Jobs;
-
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\WelcomeEmail;
-
-class SendWelcomeEmail implements ShouldQueue
-{
-    protected $user;
-
-    public function __construct($userId)
-    {
-        $this->user = get_user_by('id', $userId);
-    }
-
-    public function handle(): void
-    {
-        if (!$this->user) {
-            return;
-        }
-
-        Mail::to($this->user->user_email)
-            ->send(new WelcomeEmail($this->user));
-    }
-}
-```
-
-### API synchronization
+## Dispatching jobs
 
 ```php
-namespace App\Jobs;
+// In a controller or WordPress hook
+use App\Jobs\ProcessImageOptimization;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\Http;
+// Dispatch immediately
+ProcessImageOptimization::dispatch($attachmentId);
 
-class SyncProductToApi implements ShouldQueue
-{
-    public $tries = 5;
-    public $backoff = [60, 120, 300, 600, 1200];
-
-    protected $productId;
-
-    public function __construct($productId)
-    {
-        $this->productId = $productId;
-    }
-
-    public function handle(): void
-    {
-        $product = wc_get_product($this->productId);
-
-        if (!$product) {
-            return;
-        }
-
-        $response = Http::post('https://api.example.com/products', [
-            'sku' => $product->get_sku(),
-            'name' => $product->get_name(),
-            'price' => $product->get_price(),
-            'stock' => $product->get_stock_quantity(),
-        ]);
-
-        if (!$response->successful()) {
-            throw new \Exception('API sync failed: ' . $response->body());
-        }
-    }
-}
-```
-
-### Scheduled report generation
-
-```php
-namespace App\Jobs;
-
-use Illuminate\Contracts\Queue\ShouldQueue;
-
-class GenerateMonthlyReport implements ShouldQueue
-{
-    public $timeout = 600; // 10 minutes
-
-    public function handle(): void
-    {
-        $startDate = now()->startOfMonth()->subMonth();
-        $endDate = now()->startOfMonth()->subDay();
-
-        // Generate report data
-        $orders = wc_get_orders([
-            'date_created' => $startDate->timestamp . '...' . $endDate->timestamp,
-            'status' => ['completed', 'processing'],
-            'limit' => -1,
-        ]);
-
-        // Process and save report
-        $reportData = $this->processOrderData($orders);
-        $this->saveReport($reportData);
-
-        // Email to administrators
-        wp_mail(
-            get_option('admin_email'),
-            'Monthly Sales Report',
-            'Your monthly report has been generated.',
-            ['Content-Type: text/html; charset=UTF-8']
-        );
-    }
-
-    protected function processOrderData($orders): array
-    {
-        // Report generation logic
-        return [];
-    }
-
-    protected function saveReport($data): void
-    {
-        // Save report to database or file
-    }
-}
+// Dispatch with delay
+ProcessImageOptimization::dispatch($attachmentId)->delay(now()->addMinutes(5));
 ```

@@ -146,157 +146,53 @@ class SeoAuditCommand extends Command
 
 ## Command signature syntax
 
-The `$signature` property uses a specific syntax to define your command:
-
-### Basic command
 ```php
+// Basic command
 protected $signature = 'newsletter:send';
-```
 
-### With arguments
-```php
+// With arguments
 protected $signature = 'user:create {name} {email}';
-```
 
-### With optional arguments
-```php
-protected $signature = 'user:create {name} {email?}';
-```
-
-### With options
-```php
-protected $signature = 'seo:audit
-                        {--post-type=post : Post type to audit}
-                        {--limit=20 : Number of posts to audit}';
-```
-
-### With option shortcuts
-```php
-protected $signature = 'cache:clear {--f|force : Force cache clearing}';
+// With options
+protected $signature = 'seo:audit {--post-type=post}';
 ```
 
 ## Running your commands
 
 Once created, your commands are automatically available through WP-CLI:
 
+#### Run your SEO audit command
+
 ```bash
-# Run your SEO audit command
 $ wp acorn seo:audit
+```
 
-# Run with options
+#### Run with options
+
+```bash
 $ wp acorn seo:audit --post-type=page --limit=50
+```
 
-# Get help for a command
+#### Get help for a command
+
+```bash
 $ wp acorn help seo:audit
 ```
 
-### Example output
-
-Here's what the SEO audit command output looks like:
-
-```
-Post #1056: Announcing Allow SVG
-https://roots.io/announcing-allow-svg/
-  ! SEO title too short (20 chars, recommended 30-60)
-  ℹ Content too short (233 words, recommended 300+)
-  ℹ No images or featured image
-
-Post #1053: Announcing Acorn Post Types
-https://roots.io/announcing-acorn-post-types/
-  ! SEO title too short (27 chars, recommended 30-60)
-  ℹ Content too short (196 words, recommended 300+)
-  ℹ No images or featured image
-
-Post #1037: Sage v11 and Acorn v5 Released
-https://roots.io/sage-v11-and-acorn-v5-released/
-  ! Meta description too short (76 chars, recommended 120-160)
-  ℹ No images or featured image
-```
-
-## Console output components
-
-Acorn provides various output components for better user experience:
-
-### Basic output
-```php
-$this->info('Success message');
-$this->error('Error message');
-$this->warn('Warning message');
-$this->line('Regular text');
-```
-
-### Interactive components
-```php
-// Ask for input
-$name = $this->components->ask('What is your name?');
-
-// Ask with default
-$email = $this->components->ask('Email address?', 'admin@example.com');
-
-// Confirmation
-$confirmed = $this->components->confirm('Continue?');
-
-// Choice selection
-$role = $this->components->choice('Select role', ['admin', 'editor', 'author']);
-```
-
-### Progress bars
-```php
-$users = get_users();
-$progress = $this->output->createProgressBar(count($users));
-$progress->start();
-
-foreach ($users as $user) {
-    // Process user
-    $progress->advance();
-}
-
-$progress->finish();
-```
-
-### Tables
-```php
-$this->table(['Name', 'Email'], [
-    ['John Doe', 'john@example.com'],
-    ['Jane Smith', 'jane@example.com'],
-]);
-```
-
-## Integration with WordPress
-
-Your commands have full access to WordPress functions and data:
+## Console output
 
 ```php
 public function handle()
 {
-    // WordPress functions
+    $this->info('Success message');
+    $this->error('Error message');
+
+    // Ask for input
+    $name = $this->components->ask('What is your name?');
+
+    // Use WordPress functions
     $posts = get_posts(['numberposts' => 10]);
 
-    // WordPress options
-    $siteTitle = get_option('blogname');
-
-    // Custom post types
-    $products = get_posts(['post_type' => 'product']);
-
-    // User data
-    $users = get_users(['role' => 'subscriber']);
-}
-```
-
-## Error handling
-
-Always include proper error handling in your commands:
-
-```php
-public function handle()
-{
-    try {
-        // Command logic here
-        $this->components->info('Operation completed successfully!');
-        return 0; // Success
-    } catch (\Exception $e) {
-        $this->components->error('Operation failed: ' . $e->getMessage());
-        return 1; // Error
-    }
+    return 0; // Success
 }
 ```

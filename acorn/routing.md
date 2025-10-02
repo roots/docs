@@ -94,6 +94,38 @@ add_filter('pre_get_document_title', function ($title) {
 });
 ```
 
+## Advanced routing features
+
+For more complex applications, you can use:
+
+- **[Controllers and Middleware](controllers-and-middleware.md)** - Organize route logic with controllers and filter requests with middleware
+- **[Eloquent Models](eloquent-models.md)** - Work with WordPress data using Laravel's ORM in your controllers
+
+### Using controllers
+
+Instead of defining route logic directly in your routes file, you can organize it into controller classes:
+
+```php
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+
+Route::get('/api/posts', [PostController::class, 'index']);
+Route::get('/api/posts/{id}', [PostController::class, 'show']);
+```
+
+### Applying middleware
+
+Protect routes with middleware for authentication, rate limiting, and more:
+
+```php
+Route::middleware('auth')->group(function () {
+    Route::post('/api/posts', [PostController::class, 'store']);
+    Route::put('/api/posts/{id}', [PostController::class, 'update']);
+});
+```
+
 ## Route caching
 
 If you're using routes then you should enable [Laravel's route cache](https://laravel.com/docs/10.x/routing#route-caching) during your deployment process:
