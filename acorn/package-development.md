@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-02-13 12:38
+date_modified: 2025-10-06 17:00
 date_published: 2021-10-21 13:21
 title: Developing Packages for Acorn
 description: Use the Acorn Example Package as a template for creating custom packages and reusable functionality for WordPress with Laravel architecture.
@@ -17,7 +17,7 @@ Creating Acorn packages is useful for when you want to reuse specific functional
 Packages are installed by Composer, just like Acorn is.
 
 ::: tip
-We recommend referencing the [Laravel docs on Packages](https://laravel.com/docs/10.x/packages)
+We recommend referencing the [Laravel docs on Packages](https://laravel.com/docs/12.x/packages)
 :::
 
 ## Creating an Acorn package
@@ -38,6 +38,12 @@ Once your package is created, clone your new git repo somewhere on your machine 
 ```
 
 Replace `./packages/vendor-name/example-package` above with the path to your local package, along with the correct names.
+
+Then require the package in your project:
+
+```shell
+$ composer require vendor-name/example-package`
+```
 
 Then run the Acorn WP-CLI command to discover your package: 
 
