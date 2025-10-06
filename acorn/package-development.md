@@ -42,7 +42,7 @@ Replace `./packages/vendor-name/example-package` above with the path to your loc
 Then require the package in your project:
 
 ```shell
-$ composer require vendor-name/example-package`
+$ composer require vendor-name/example-package
 ```
 
 Then run the Acorn WP-CLI command to discover your package: 
