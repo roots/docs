@@ -1,16 +1,17 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-10-16 10:00
 date_published: 2015-09-06 07:42
 description: Configure SSH keys in Trellis for secure server access. Add keys manually or automatically import SSH keys from GitHub users for team member access.
 title: SSH Key Management in Trellis
 authors:
   - ben
+  - dalepgrant
+  - evance
   - fullyint
   - knowler
   - Log1x
   - swalkinshaw
   - techieshark
-  - dalepgrant
 ---
 
 # SSH Key Management in Trellis
