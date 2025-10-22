@@ -204,16 +204,6 @@ example.com:
     provider: self-signed
 ```
 
-You can tell your browsers to trust these self signed certificates by using the vagrant-trellis-cert plugin. This also fixes issues with MacOS Catalina where the 'certificate not trusted' error screens are not possible to bypass. From your trellis folder, run:
-
-```shell
-$ vagrant plugin install vagrant-trellis-cert
-```
-
-```shell
-$ vagrant trellis-cert trust
-```
-
 ## HSTS
 
 Trellis sets [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) headers for better security. HSTS will ensure all traffic to your site is being served over HTTPS automatically.

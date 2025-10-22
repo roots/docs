@@ -20,7 +20,7 @@ Each Trellis playbook uses a specific SSH user to connect to your remote machine
 
 | Playbook     | Default User      | User Variable | Task                     |
 | ------------ | ----------------- | ------------- | ------------------------ |
-| `dev.yml`    | `vagrant`         | -             | create development VMs   |
+| `dev.yml`    | Your local username | -             | create development VMs   |
 | `server.yml` | `root` or `admin` | `admin_user`  | provision remote servers |
 | `deploy.yml` | `web`             | `web_user`    | deploy WordPress sites   |
 

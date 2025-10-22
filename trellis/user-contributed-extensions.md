@@ -31,8 +31,6 @@ Issues with extensions should be opened in their respective repositories.
 - [trellis-purge-kinsta-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy) - Purge Kinsta cache when Trellis deploys Bedrock
 - [trellis-cve-2018-6389](https://github.com/ItinerisLtd/trellis-cve-2018-6389) - Mitigate CVE-2018-6389 WordPress load-scripts / load-styles attacks
 - [trellis-disable-xml-rpc](https://github.com/ItinerisLtd/trellis-disable-xml-rpc) -  Disable WordPress XML RPC on Trellis sites
-- [vagrant-trellis-sequel](https://typist.tech/portfolio-item/vagrant-trellis-sequel/) — Open Trellis databases in Sequel Pro with a single command
-- [vagrant-trellis-cert](https://typist.tech/portfolio-item/vagrant-trellis-cert/) — Trust all Trellis self-signed certificates with single command
 - [trellis-purge-wp-rocket-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-wp-rocket-cache-during-deploy) - Purge WP Rocket cache when Trellis deploys Bedrock
 - [trellis_flush_rewrite_rules_during_deploy](https://github.com/ItinerisLtd/trellis_flush_rewrite_rules_during_deploy) - Resets WordPress' rewrite rules (based on registered post types, etc) during Trellis deploys
 - [trellis-slack-webhook-notify-during-deploy
