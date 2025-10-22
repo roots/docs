@@ -40,7 +40,7 @@ wordpress_sites:
 
 You could organize your `nginx-includes` templates in corresponding subdirectories:
 
-```shell
+```plaintext
 trellis/
   nginx-includes/
     site1/
@@ -52,7 +52,7 @@ trellis/
 
 You could also have an "all" directory, which would apply conf to all sites:
 
-```shell
+```plaintext
 trellis/
   nginx-includes/
     all/
@@ -61,7 +61,7 @@ trellis/
 
 The above directory structure would be templated to the remote server as follows:
 
-```shell
+```plaintext
 /
   etc/
     nginx/

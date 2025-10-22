@@ -25,6 +25,9 @@ To create a new Bedrock site for Valet, navigate to Valet sites directory and us
 
 ```shell
 $ cd ~/Sites/valet
+```
+
+```shell
 $ wp valet new bedrock --project=bedrock
 ```
 
@@ -65,6 +68,9 @@ Config::define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 
 ```shell
 $ valet link test.bedrock-multisite
+```
+
+```shell
 $ valet link site2.bedrock-multisite
 ```
 

@@ -31,11 +31,10 @@ If you're familiar with Laravel, you may have heard of Ignition. Ignition provid
 
 Not only does it provide useful hints pertaining to your error, it also allows you to publicly share your error using [Flare](https://flareapp.io/). This can be very useful when it comes to submitting bug reports or requesting help on [Roots Discourse](https://discourse.roots.io/).
 
-To use Ignition, simply require it alongside Acorn as a dev-dependency, and then clear the services and packages files:
+To use Ignition, simply require it alongside Acorn as a dev-dependency:
 
 ```shell
 $ composer require spatie/laravel-ignition --dev
-$ wp acorn optimize:clear
 ```
 
 ![Screenshot of Ignition's error page on an Acorn WordPress site](https://cdn.roots.io/app/uploads/wp_debug-acorn-ignition.png)

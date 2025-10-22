@@ -15,6 +15,9 @@ authors:
 
 ```shell
 $ ddev config --project-type=wordpress --docroot=web --create-docroot
+```
+
+```shell
 $ ddev composer create roots/bedrock
 ```
 

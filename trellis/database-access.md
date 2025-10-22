@@ -17,12 +17,14 @@ authors:
 
 Accessing your databases with client software like [Sequel Pro](https://www.sequelpro.com/), [Sequel Ace](https://sequel-ace.com/) and [TablePlus](http://tableplus.com/) is straight forward with [`trellis-cli`](https://github.com/roots/trellis-cli). Run the following from any directory within your project:
 
-For Sequel Pro (or Sequel Ace):
+## Sequel Pro (or Sequel Ace):
+
 ```shell
 $ trellis db open --app=sequel-pro production example.com
 ```
 
-For TablePlus
+## TablePlus
+
 ```shell
 $ trellis db open --app=tableplus production example.com
 ```

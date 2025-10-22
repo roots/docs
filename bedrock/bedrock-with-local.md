@@ -22,11 +22,8 @@ Create a new site from the Local interface. In this guide, we'll use `bedrock` a
 
 From your new Local site, click **Open site shell** and navigate up one folder so that you're in the `bedrock/app` folder. On macOS or Linux, you could run the following command:
 
-```shell
-# Navigate one folder up
-$ cd ..
 
-# or, navigate directly to the app/ folder
+```shell
 $ cd ~/Local\ Sites/bedrock/app
 ```
 
@@ -38,7 +35,7 @@ $ composer create-project roots/bedrock
 
 Your folder structure should now look like this:
 
-```shell
+```plaintext
 # @ ~/Local Sites/bedrock
 .
 ├── app

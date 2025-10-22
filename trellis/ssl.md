@@ -208,6 +208,9 @@ You can tell your browsers to trust these self signed certificates by using the 
 
 ```shell
 $ vagrant plugin install vagrant-trellis-cert
+```
+
+```shell
 $ vagrant trellis-cert trust
 ```
 

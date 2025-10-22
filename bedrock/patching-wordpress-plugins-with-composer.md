@@ -41,7 +41,13 @@ The easiest method is to make changes to the plugin and generate a diff. First i
 
 ```shell
 $ cd web/app/plugins/example-plugin
+```
+
+```shell
 $ git init
+```
+
+```shell
 $ git add . && git commit -m "Base plugin"
 ```
 
@@ -49,6 +55,9 @@ Make your changes to the plugin files, then generate the patch and clean up:
 
 ```shell
 $ git diff > ../../../../patches/example-plugin-fix.patch
+```
+
+```shell
 $ rm -rf .git
 ```
 

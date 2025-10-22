@@ -19,7 +19,7 @@ The default Sage structure is intended to provide a sane starting point for both
 
 Where a file or class is located is ultimately decided by you. As long as Composer can autoload the class or you have modified the necessary paths in your [configuration](configuration.md), things should work as expected.
 
-```shell
+```plaintext
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── Providers/        # → Service providers

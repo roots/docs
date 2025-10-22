@@ -32,11 +32,7 @@ $ brew install roots/tap/trellis-cli
 We also offer a quick script version:
 
 ```shell
-# You might need sudo before bash
 $ curl -sL https://roots.io/trellis/cli/get | bash
-
-# Sets bindir or installation directory, Defaults to '/usr/local/bin'
-$ curl -sL https://roots.io/trellis/cli/get | bash -s -- -b /path/to/my/bin
 ```
 
 ### Manual Install
@@ -51,13 +47,14 @@ trellis-cli provides binary releases for a variety of OSes. These binary version
 ### Dev/unstable install (macOS, Linux, WSL via Homebrew)
 
 ```shell
-# Cleanup previous versions (if installed)
 $ brew uninstall roots/tap/trellis-cli
+```
 
-# Install
+```shell
 $ brew install --HEAD roots/tap/trellis-cli-dev
+```
 
-# Upgrade
+```shell
 $ brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
 ```
 

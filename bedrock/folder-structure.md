@@ -12,7 +12,7 @@ authors:
 
 # Bedrock WordPress Folder Structure
 
-```shell
+```plaintext
 ├── composer.json             # → Manage versions of WordPress, plugins & dependencies
 ├── config                    # → WordPress configuration files
 │   ├── application.php       # → Primary WP config file (wp-config.php equivalent)

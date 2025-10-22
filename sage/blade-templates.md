@@ -90,11 +90,15 @@ The key names will become the variable names that their values are assigned to.
 
 If you need to clear or compile Blade templates, you can do so with WP-CLI:
 
-```shell
-# Compile all Blade templates
-$ wp acorn view:cache
+### Compile all Blade templates
 
-# Clear all Blade templates
+```shell
+$ wp acorn view:cache
+```
+
+### Clear all Blade templates
+
+```shell
 $ wp acorn view:clear
 ```
 

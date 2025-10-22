@@ -68,8 +68,14 @@ Updating your WordPress version, or the version of any plugin, is best achieved 
 
 ```shell
 $ composer require roots/wordpress -W
+```
+
+```shell
 $ composer require wpackagist-plugin/akismet
-$ composer require roots/wordpress:6.1 -W
+```
+
+```shell
+$ composer require roots/wordpress:6.8.3 -W
 ```
 
 ### Automating WordPress updates

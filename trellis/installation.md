@@ -146,7 +146,7 @@ $ trellis new example.com
 
 After you've created a project, the folder structure for a Trellis project will look like this:
 
-```shell
+```plaintext
 example.com/      # → Root folder for the project
 ├── trellis/      # → Your server configuration (a customized install of Trellis)
 └── site/         # → A Bedrock-based WordPress site

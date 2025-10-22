@@ -25,7 +25,7 @@ Composers are autoloaded, which means their naming needs to conform to the [PSR-
 
 If you're using WP-CLI, you can create composers from the command line:
 
-```shell script
+```shell
 wp acorn make:composer ExampleComposer
 ```
 
