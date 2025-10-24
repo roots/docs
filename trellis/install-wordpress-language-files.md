@@ -93,7 +93,8 @@ Ideally the language is removed before updating as this removes an unnecessary u
 
 ### Initial deploy (non-setup site)
 Many `wp` commands including `wp language` don't work on a WordPress site that is installed but not had been set up yet.
-```
+
+```plaintext
 Error: The site you have requested is not installed.
 Run `wp core install` to create database tables.
 ```
