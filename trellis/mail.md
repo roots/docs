@@ -76,7 +76,7 @@ mail_password: '{{ vault_mail_password }}' # Define this in group_vars/all/vault
 
 If your SMTP settings are invalid, WordPress will return the following error message:
 
-```
+```plaintext
 Could not instantiate mail function.
 ```
 

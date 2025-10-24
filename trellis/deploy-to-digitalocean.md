@@ -52,7 +52,7 @@ $ trellis droplet create --help
 <details>
 <summary>trellis droplet create --help</summary>
 
-```
+```plaintext
 Usage: trellis droplet create [options] ENVIRONMENT
 
 Creates a droplet (server) on DigitalOcean for the environment specified.
