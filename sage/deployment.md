@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-02-27 14:00
+date_modified: 2025-10-30 11:30
 date_published: 2015-09-01 19:29
 description: Deploy Sage themes by building assets for production, running `composer install` for dependencies, and ensuring PHP version consistency across environments.
 title: Deploying the Sage WordPress Theme
@@ -82,7 +82,3 @@ If you use [Trellis](https://roots.io/trellis/), you can build your assets local
 ## Deploying Sage on Kinsta
 
 [Kinsta supports Bedrock and Trellis](https://kinsta.com/blog/bedrock-trellis/?kaid=OFDHAJIXUDIV), so deploying Sage with Trellis on [Kinsta](https://kinsta.com/?kaid=OFDHAJIXUDIV) is possible by following a few extra steps.
-
-## Deploying Sage on WP Engine
-
-See the instructions from [`wpengine/example-sage-theme`](https://github.com/wpengine/example-sage-theme).
