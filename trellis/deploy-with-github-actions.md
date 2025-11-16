@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-04-05 11:00
+date_modified: 2025-11-16 11:00
 date_published: 2023-04-05 11:00
 description: Deploy Trellis WordPress sites with GitHub Actions using `setup-trellis-cli`.
 title: Deploying Trellis with GitHub Actions
@@ -51,4 +51,4 @@ The setup-trellis-cli repo contains some example workflows including:
 
 These examples are configured to deploy a Trellis site to the production environment when the `main` branch is pushed to. Copy the relevant example to your repo at `.github/workflows/deploy.yml`.
 
-If you site uses a Sage-based theme, make sure to modify the `cache-dependency-path` to point to the `yarn.lock` file in your theme directory.
+If you site uses a Sage-based theme, make sure to modify the `cache-dependency-path` to point to the `package-lock.json` file in your theme directory.
