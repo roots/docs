@@ -1,8 +1,8 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-11-24 13:00
 date_published: 2015-09-06 07:42
 description: Enable HTTPS in Trellis with automatic Let's Encrypt certificates, manually provided SSL certificates, or self-signed certificates for local development.
-title: SSL Certificates with Let's Encrypt in Trellis
+title: SSL Certificates in Trellis
 authors:
   - aitor
   - ben
@@ -11,11 +11,12 @@ authors:
   - joshf
   - Log1x
   - MWDelaney
+  - qwatts-dev
   - runofthemill
   - swalkinshaw
 ---
 
-# SSL Certificates with Let's Encrypt in Trellis
+# SSL Certificates in Trellis
 
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.
 
@@ -203,6 +204,56 @@ example.com:
     enabled: true
     provider: self-signed
 ```
+
+#### Lima
+
+Lima does not support automated SSL handling yet, but you can follow these manual steps to have macOS trust the self-signed certificate.
+
+1. Enter the Lima VM from your Trellis project directory:
+
+```shell
+$ trellis vm shell
+```
+
+2. Copy the generated certificate somewhere readable:
+
+```shell
+$ sudo cp /etc/nginx/ssl/example.com.cert /tmp/
+```
+
+3. Exit the VM:
+
+```shell
+$ exit
+```
+
+4. Copy the certificate from the VM to your host machine
+
+Note: you will need the VM’s name.. If you don’t remember your Lima VM name, you can list all VMs:
+
+```shell
+$ limactl list
+```
+
+Then copy the cert using your Lima instance name:
+
+```shell
+$ limactl copy <lima-vm-name>:/tmp/example.com.cert ~/Downloads/
+```
+
+5. Move the certificate somewhere that makes sense to you:
+
+```shell
+$ mkdir -p ~/.ssh/lima && mv ~/Downloads/example.com.cert ~/.ssh/lima/
+```
+
+6. Trust the certificate on macOS:
+
+```shell
+$ security add-trusted-cert -k ~/Library/Keychains/login.keychain-db ~/.ssh/lima/example.com.cert
+```
+
+After this, your local site should load in the browser without warnings.
 
 ## HSTS
 
