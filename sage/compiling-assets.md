@@ -45,11 +45,11 @@ Use the [`Vite::asset` method](https://laravel.com/docs/12.x/vite#blade-processi
 
 ### Assets in CSS
 
-CSS files and images are sibling folders, so you can reference images in CSS:
+You can reference images in CSS using the included Vite alias for images.
 
 ```css
 .background {
-  background-image: url("../images/example.svg");
+  background-image: url("@images/example.svg");
 }
 ```
 
