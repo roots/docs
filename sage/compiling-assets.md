@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-02-27 13:40
+date_modified: 2025-12-11 11:00
 date_published: 2015-09-01 18:19
 description: Sage uses Vite for fast asset compilation with HMR support. Includes custom plugin for hot module replacement in WordPress block editor during development.
 title: Compiling Assets in Sage with Vite
@@ -8,6 +8,7 @@ authors:
   - ben
   - kero
   - Log1x
+  - octoxan
   - toddsantoro
 ---
 
