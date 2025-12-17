@@ -26,7 +26,11 @@ Add the following to `app/setup.php`:
 
 ```php
 add_action('after_setup_theme', function () {
-    load_theme_textdomain('sage', get_template_directory() . '/resources/lang');
+    if ( version_compare( $GLOBALS['wp_version'], '6.7', '<' ) ) {
+        load_theme_textdomain( 'sage', get_template_directory() . '/resources/lang' );
+    } else {
+        load_textdomain( 'sage', get_template_directory() . '/resources/lang/' . determine_locale() . '.mo' );
+    }
 });
 ```
 
