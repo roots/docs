@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-06-01 10:20
+date_modified: 2025-12-22 13:00
 date_published: 2018-04-24 09:47
 description: Generate translation files for Sage themes with custom build scripts. Create and load language files for multilingual WordPress sites with proper loading.
 title: Localizing the Sage WordPress Theme
