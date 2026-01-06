@@ -27,7 +27,6 @@ Compatibility issues that arise in Acorn with other WordPress plugins are most o
 
 Composer patches can sometimes be used to work around issues with plugins.
 
-* **Cloudflare** includes an older version of `psr/log`. There is a [pending PR to resolve this issue](https://github.com/cloudflare/Cloudflare-WordPress/pull/541).
 * **Gravity Forms** merge tags JS causes an error on the admin notifications page. [@tombroucke provided a workaround in roots/acorn#198](https://github.com/roots/acorn/issues/198#issuecomment-1365942893).
 * **Gravity Forms: Entry Automation FTP Extension** includes `league/flysystem` v1.1.4 which is incompatible with Acorn.
 * **WooCommerce PayPal Payments** includes an older version of `psr/log`.
