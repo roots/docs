@@ -60,7 +60,7 @@ add_filter('register_block_type_args', function ($args, $name) {
 ### block.json `render` field with Blade templates
 
 If you're registering blocks using `block.json` with a `render` field pointing to a Blade template (e.g. `"render": "file:./render.blade.php"`), you can automatically handle the rendering with a single filter:
-```
+```php
 add_filter('register_block_type_args', function (array $args, string $name): array {
     if (empty($args['render_callback']) || ! ($args['render_callback'] instanceof \Closure)) {
         return $args;
