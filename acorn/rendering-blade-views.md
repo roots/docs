@@ -57,6 +57,30 @@ add_filter('register_block_type_args', function ($args, $name) {
 }, 10, 2);
 ```
 
+### block.json `render` field with Blade templates
+
+If you're registering blocks using `block.json` with a `render` field pointing to a Blade template (e.g. `"render": "file:./render.blade.php"`), you can automatically handle the rendering with a single filter:
+```
+add_filter('register_block_type_args', function (array $args, string $name): array {
+    if (empty($args['render_callback']) || ! ($args['render_callback'] instanceof \Closure)) {
+        return $args;
+    }
+
+    $reflector = new \ReflectionFunction($args['render_callback']);
+    $renderCallbackVariables = $reflector->getStaticVariables();
+    
+    if (array_key_exists('template_path', $renderCallbackVariables) && str_ends_with($renderCallbackVariables['template_path'], '.blade.php')) {
+        $args['render_callback'] = function ($attributes, $content, $block) use ($renderCallbackVariables) {
+            return view()
+                ->file($renderCallbackVariables['template_path'], compact('attributes', 'content', 'block'))
+                ->render();
+        };
+    }
+
+    return $args;
+}, 1, 2);
+```
+
 ## Rendering emails with Blade templates
 
 The following example uses the `resources/views/emails/welcome.blade.php` template file customizing the new WordPress user notification emails:
