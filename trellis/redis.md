@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-10-24 12:00
+date_modified: 2026-02-16 13:00
 date_published: 2025-10-24 12:00
 description: Enable Redis in Trellis for WordPress object caching. Improve site performance by caching database queries and reducing load on MySQL database servers.
 title: Redis Object Caching for WordPress in Trellis
@@ -111,7 +111,7 @@ Install a Memcached object cache plugin:
 composer require wpackagist-plugin/memcached
 ```
 
-2. The plugin typically auto-activates when it detects Memcached is available.
+2. Activate the plugin
 
 ## Configuration Examples
 
