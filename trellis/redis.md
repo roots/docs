@@ -107,11 +107,7 @@ Install a Memcached object cache plugin:
 
 1. **Memcached Object Cache**: [https://wordpress.org/plugins/memcached/](https://wordpress.org/plugins/memcached/)
 
-```bash
-composer require wpackagist-plugin/memcached
-```
-
-2. Activate the plugin
+Memcached Object Cache is a drop-in plugin. Follow the README's instructions for installation.
 
 ## Configuration Examples
 
