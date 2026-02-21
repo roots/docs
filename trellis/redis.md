@@ -105,9 +105,28 @@ wp redis enable
 
 Install a Memcached object cache plugin:
 
-1. **Memcached Object Cache**: [https://wordpress.org/plugins/memcached/](https://wordpress.org/plugins/memcached/)
+1. **Memcached Object Cache**: [automattic/wp-memcached](https://github.com/Automattic/wp-memcached)
 
-Memcached Object Cache is a drop-in plugin. Follow the README's instructions for installation.
+```bash
+# `reference` and `url` must be pinned to the same commit or tag
+# Do not reference to a branch
+#
+# For a different commit or tag, inspect that revision's `composer.json` in the
+# `automattic/wp-memcached` repository and copy its `require` section here so the
+# requirements match the version you're pinning
+# Replace `composer/installers` with `"koodimonni/composer-dropin-installer":"^1.4"`
+composer repo add wp-memcached '{"type":"package","package":{"name":"automattic/wp-memcached","type":"wordpress-dropin","version":"dev-master","dist":{"type":"file","url":"https://raw.githubusercontent.com/Automattic/wp-memcached/bb3b9f689dd99df66454b93ece34093556dc37f9/object-cache.php","reference":"bb3b9f689dd99df66454b93ece34093556dc37f9"},"require":{"koodimonni/composer-dropin-installer":"^1.4","php":">=7.4.0","ext-memcache":"*"}}}' --before wpackagist
+
+# Configure the install location
+composer config allow-plugins.koodimonni/composer-dropin-installer true
+composer config --json extra.dropin-paths '{"web/app/":["type:wordpress-dropin"]}'
+
+# Omit `--ignore-platform-req=ext-memcache` if already installed
+composer require automattic/wp-memcached:dev-master --ignore-platform-req=ext-memcache
+
+# Untrack the plugin because it is now managed by Composer
+echo 'web/app/object-cache.php' >> .gitignore
+```
 
 ## Configuration Examples
 
