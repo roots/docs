@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-02-20 20:00
+date_modified: 2026-03-02 12:00
 date_published: 2025-10-24 12:00
 description: Enable Redis in Trellis for WordPress object caching. Improve site performance by caching database queries and reducing load on MySQL database servers.
 title: Redis Object Caching for WordPress in Trellis
@@ -87,45 +87,65 @@ object_cache:
 
 ### For Redis Object Cache
 
-Install a Redis object cache plugin in your WordPress site:
+Install [MilliCache](https://github.com/MilliPress/MilliCache) in your WordPress site:
 
-1. **Redis Object Cache** (recommended): [https://wordpress.org/plugins/redis-cache/](https://wordpress.org/plugins/redis-cache/)
+1. Require the package:
 
 ```bash
-composer require wpackagist-plugin/redis-cache
+composer require millipress/millicache
 ```
 
-2. After deployment, activate the plugin and enable object caching:
+2. After deployment, activate the plugin:
 
 ```bash
-wp plugin activate redis-cache
-wp redis enable
+wp plugin activate millicache
+```
+
+3. Verify the object cache is working:
+
+```bash
+wp millicache test
+```
+
+```bash
+wp millicache status
 ```
 
 ### For Memcached Object Cache
 
-Install a Memcached object cache plugin:
+Install [Memcached Object Cache](https://github.com/Automattic/wp-memcached):
 
-1. **Memcached Object Cache**: [automattic/wp-memcached](https://github.com/Automattic/wp-memcached)
+::: tip
+`reference` and `url` must be pinned to the same commit or tag. Do not reference a branch.
+
+For a different commit or tag, inspect that revision's `composer.json` in the `automattic/wp-memcached` repository and copy its `require` section here so the requirements match the version you're pinning. Replace `composer/installers` with `"koodimonni/composer-dropin-installer":"^1.4"`.
+:::
+
+1. Add the package repository:
 
 ```bash
-# `reference` and `url` must be pinned to the same commit or tag
-# Do not reference to a branch
-#
-# For a different commit or tag, inspect that revision's `composer.json` in the
-# `automattic/wp-memcached` repository and copy its `require` section here so the
-# requirements match the version you're pinning
-# Replace `composer/installers` with `"koodimonni/composer-dropin-installer":"^1.4"`
 composer repo add wp-memcached '{"type":"package","package":{"name":"automattic/wp-memcached","type":"wordpress-dropin","version":"dev-master","dist":{"type":"file","url":"https://raw.githubusercontent.com/Automattic/wp-memcached/bb3b9f689dd99df66454b93ece34093556dc37f9/object-cache.php","reference":"bb3b9f689dd99df66454b93ece34093556dc37f9"},"require":{"koodimonni/composer-dropin-installer":"^1.4","php":">=7.4.0","ext-memcache":"*"}}}' --before wpackagist
+```
 
-# Configure the install location
+2. Configure the install location:
+
+```bash
 composer config allow-plugins.koodimonni/composer-dropin-installer true
+```
+
+```bash
 composer config --json extra.dropin-paths '{"web/app/":["type:wordpress-dropin"]}'
+```
 
-# Omit `--ignore-platform-req=ext-memcache` if already installed
+3. Require the package (omit `--ignore-platform-req=ext-memcache` if already installed):
+
+```bash
 composer require automattic/wp-memcached:dev-master --ignore-platform-req=ext-memcache
+```
 
-# Untrack the plugin because it is now managed by Composer
+4. Untrack the drop-in because it is now managed by Composer:
+
+```bash
 echo 'web/app/object-cache.php' >> .gitignore
 ```
 
