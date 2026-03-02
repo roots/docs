@@ -87,6 +87,26 @@ object_cache:
 
 ### For Redis Object Cache
 
+Install a Redis object cache plugin in your WordPress site:
+
+1. [Redis Object Cache](https://wordpress.org/plugins/redis-cache/)
+
+```bash
+composer require wpackagist-plugin/redis-cache
+```
+
+2. After deployment, activate the plugin and enable object caching:
+
+```bash
+wp plugin activate redis-cache
+```
+
+```bash
+wp redis enable
+```
+
+### For Redis Full-Site Cache
+
 Install [MilliCache](https://github.com/MilliPress/MilliCache) in your WordPress site:
 
 1. Require the package:
