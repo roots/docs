@@ -13,29 +13,17 @@ jobs:
 
       - name: Check for multi-line bash code blocks
         run: |
-          status=0
+          fail=0
           while IFS= read -r file; do
-            # Extract bash code blocks and check for multiple non-empty lines
-            awk '
+            # Strip leading ./ so GitHub annotations link to the correct file
+            clean="${file#./}"
+            awk -v file="$clean" '
               /^```bash/ { in_block=1; lines=0; start=NR; next }
               /^```/ && in_block {
                 if (lines > 1) {
-                  printf "::error file=%s,line=%d::%s\n", FILENAME, start, "Bash code block has multiple commands. Each block must contain exactly one command."
+                  printf "::error file=%s,line=%d::Bash code block has multiple commands. Each block must contain exactly one command.\n", file, start
                   found=1
                 }
-                in_block=0; next
-              }
-              in_block && /^[^#]/ && !/^[[:space:]]*$/ { lines++ }
-            ' "$file"
-          done < <(find . -name '*.md' -not -path './.git/*' -not -name 'CLAUDE.md')
-
-          # Run again to set exit code
-          fail=0
-          while IFS= read -r file; do
-            awk '
-              /^```bash/ { in_block=1; lines=0; next }
-              /^```/ && in_block {
-                if (lines > 1) { found=1 }
                 in_block=0; next
               }
               in_block && /^[^#]/ && !/^[[:space:]]*$/ { lines++ }
