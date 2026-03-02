@@ -24,10 +24,12 @@ authors:
 | Package | Description |
 | ----------- | ----------- |
 | [`blavetstudio/sage-woocommerce-subscriptions`](https://github.com/blavetstudio/sage-woocommerce-subscriptions) | Add WooCommerce Subscriptions support to Sage 10 |
+| [`digitalnodecom/substrate`](https://github.com/digitalnodecom/substrate) | AI MCP for Development with Bedrock, Acorn, Sage |
 | [`generoi/sage-cachetags`](https://github.com/generoi/sage-cachetags) | A sage package for tracking what data rendered pages rely on using Cache Tags |
 | [`generoi/sage-woocommerce`](https://github.com/generoi/sage-woocommerce) | Add WooCommerce support to Sage 10 |
 | [`istogram/wp-api-content-migration`](https://github.com/istogram/wp-api-content-migration) | Migrate WordPress content using the WP REST API |
 | [`leocolomb/wp-acorn-cache`](https://github.com/LeoColomb/wp-acorn-cache) | A WordPress cache manager powered by Laravel through Acorn |
+| [`millipress/acorn-millicache`](https://github.com/MilliPress/Acorn-MilliCache) | MilliCache integration for Roots Acorn and Bedrock projects |
 | [`log1x/acf-composer`](https://github.com/log1x/acf-composer) | ACF Composer is the ultimate tool for creating fields, blocks, widgets, and option pages using ACF Builder alongside Sage 10 |
 | [`log1x/acorn-disable-media-pages`](https://github.com/log1x/acorn-disable-media-pages) | Disable media attachment pages on WordPress sites using Acorn |
 | [`log1x/pagi`](https://github.com/log1x/pagi) | A better WordPress pagination utilizing Laravel's Pagination |
