@@ -1,0 +1,53 @@
+name: Lint bash code blocks
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+
+jobs:
+  check-bash-blocks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for multi-line bash code blocks
+        run: |
+          status=0
+          while IFS= read -r file; do
+            # Extract bash code blocks and check for multiple non-empty lines
+            awk '
+              /^```bash/ { in_block=1; lines=0; start=NR; next }
+              /^```/ && in_block {
+                if (lines > 1) {
+                  printf "::error file=%s,line=%d::%s\n", FILENAME, start, "Bash code block has multiple commands. Each block must contain exactly one command."
+                  found=1
+                }
+                in_block=0; next
+              }
+              in_block && /^[^#]/ && !/^[[:space:]]*$/ { lines++ }
+            ' "$file"
+          done < <(find . -name '*.md' -not -path './.git/*')
+
+          # Run again to set exit code
+          fail=0
+          while IFS= read -r file; do
+            awk '
+              /^```bash/ { in_block=1; lines=0; next }
+              /^```/ && in_block {
+                if (lines > 1) { found=1 }
+                in_block=0; next
+              }
+              in_block && /^[^#]/ && !/^[[:space:]]*$/ { lines++ }
+              END { if (found) exit 1 }
+            ' "$file" || fail=1
+          done < <(find . -name '*.md' -not -path './.git/*')
+
+          if [ "$fail" -eq 1 ]; then
+            echo ""
+            echo "Error: Found bash code blocks with multiple commands."
+            echo "Each bash code block must contain exactly one command."
+            exit 1
+          fi
+
+          echo "All bash code blocks contain a single command."
