@@ -309,13 +309,17 @@ This setup uses three different cache systems:
 Monitor Redis usage:
 
 ```bash
-# Redis CLI
 redis-cli
+```
 
-# Inside Redis CLI
-INFO memory
-INFO stats
+```bash
+redis-cli INFO memory
+```
 
-# Monitor real-time commands
+```bash
+redis-cli INFO stats
+```
+
+```bash
 redis-cli MONITOR
 ```

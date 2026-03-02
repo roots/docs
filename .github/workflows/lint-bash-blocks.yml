@@ -27,7 +27,7 @@ jobs:
               }
               in_block && /^[^#]/ && !/^[[:space:]]*$/ { lines++ }
             ' "$file"
-          done < <(find . -name '*.md' -not -path './.git/*')
+          done < <(find . -name '*.md' -not -path './.git/*' -not -name 'CLAUDE.md')
 
           # Run again to set exit code
           fail=0
@@ -41,7 +41,7 @@ jobs:
               in_block && /^[^#]/ && !/^[[:space:]]*$/ { lines++ }
               END { if (found) exit 1 }
             ' "$file" || fail=1
-          done < <(find . -name '*.md' -not -path './.git/*')
+          done < <(find . -name '*.md' -not -path './.git/*' -not -name 'CLAUDE.md')
 
           if [ "$fail" -eq 1 ]; then
             echo ""

@@ -28,6 +28,9 @@ Create a new Bedrock installation:
 
 ```bash
 $ composer create-project roots/bedrock example.com
+```
+
+```bash
 $ cd example.com
 ```
 
@@ -65,6 +68,9 @@ Activate Lithify and run the conversion command:
 
 ```bash
 $ wp plugin activate lithify
+```
+
+```bash
 $ wp lithify
 ```
 
