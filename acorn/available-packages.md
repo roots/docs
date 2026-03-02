@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-06-17 19:15
+date_modified: 2026-03-01 12:00
 date_published: 2021-11-19 11:58
 description: Explore community-developed packages for Acorn and Sage. WooCommerce integration, additional Laravel features, and third-party extensions.
 title: Community Packages for Acorn
@@ -13,6 +13,8 @@ authors:
 
 | Package | Description |
 | ----------- | ----------- |
+| [`roots/acorn-ai`](https://github.com/roots/acorn-ai) | WordPress Abilities API integration and AI support for Acorn |
+| [`roots/acorn-fse-helper`](https://github.com/roots/acorn-fse-helper) | Bootstrap FSE support in Acorn-based WordPress themes |
 | [`roots/acorn-mail`](https://github.com/roots/acorn-mail) | A simple package handling WordPress SMTP using Acorn's mail configuration |
 | [`roots/acorn-post-types`](https://github.com/roots/acorn-post-types) | Simple post types and taxonomies using Extended CPTs |
 | [`roots/acorn-prettify`](https://github.com/roots/acorn-prettify) | A collection of modules to apply theme-agnostic front-end modifications to your Acorn-powered WordPress sites |
