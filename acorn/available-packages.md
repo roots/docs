@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-01 12:00
+date_modified: 2026-03-03 12:00
 date_published: 2021-11-19 11:58
 description: Explore community-developed packages for Acorn and Sage. WooCommerce integration, additional Laravel features, and third-party extensions.
 title: Community Packages for Acorn
@@ -23,6 +23,7 @@ authors:
 
 | Package | Description |
 | ----------- | ----------- |
+| [`40q/40q-seo-assistant`](https://github.com/40Q/40q-seo-assistant) | Editor-side SEO metadata suggestions for WordPress powered by Acorn |
 | [`blavetstudio/sage-woocommerce-subscriptions`](https://github.com/blavetstudio/sage-woocommerce-subscriptions) | Add WooCommerce Subscriptions support to Sage 10 |
 | [`digitalnodecom/substrate`](https://github.com/digitalnodecom/substrate) | AI MCP for Development with Bedrock, Acorn, Sage |
 | [`generoi/sage-cachetags`](https://github.com/generoi/sage-cachetags) | A sage package for tracking what data rendered pages rely on using Cache Tags |
