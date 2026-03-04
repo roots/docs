@@ -285,11 +285,15 @@ This signals workers to exit after finishing their current job, allowing Supervi
 
 You can pause and resume queue processing without stopping the worker processes:
 
-```bash
-# Pause processing
-$ wp acorn queue:pause
+#### Pause processing
 
-# Resume processing
+```bash
+$ wp acorn queue:pause
+```
+
+#### Resume processing
+
+```bash
 $ wp acorn queue:resume
 ```
 
