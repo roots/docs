@@ -105,6 +105,12 @@ wp plugin activate redis-cache
 wp redis enable
 ```
 
+3. If your Redis server requires a password, add the following to your Bedrock config (`config/application.php`):
+
+```php
+Config::define('WP_REDIS_PASSWORD', env('WP_REDIS_PASSWORD'));
+```
+
 ### For Redis Full-Site Cache
 
 Install [MilliCache](https://github.com/MilliPress/MilliCache) in your WordPress site:
