@@ -18,6 +18,7 @@ authors:
 | [`roots/acorn-mail`](https://github.com/roots/acorn-mail) | A simple package handling WordPress SMTP using Acorn's mail configuration |
 | [`roots/acorn-post-types`](https://github.com/roots/acorn-post-types) | Simple post types and taxonomies using Extended CPTs |
 | [`roots/acorn-prettify`](https://github.com/roots/acorn-prettify) | A collection of modules to apply theme-agnostic front-end modifications to your Acorn-powered WordPress sites |
+| [`roots/acorn-user-roles`](https://github.com/roots/acorn-user-roles) | Simple user role management for Acorn |
 
 ## Community packages
 
