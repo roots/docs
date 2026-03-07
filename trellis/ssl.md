@@ -373,6 +373,8 @@ Our HTTPS implementation uses all performance optimizations possible to ensure y
 - 1400 byte TLS records
 - Longer keepalives
 
+HTTP/3 requires UDP port 443 to be open. If you have a cloud or hardware firewall in front of your server (eg: AWS security groups, DigitalOcean cloud firewalls), ensure it allows UDP/443 inbound traffic.
+
 See [Is TLS Fast Yet?](https://istlsfastyet.com/) for more information on fast TLS/SSL.
 
 ## Browser support
