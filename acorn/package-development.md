@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-10-06 17:00
+date_modified: 2026-03-05 12:00
 date_published: 2021-10-21 13:21
 title: Developing Packages for Acorn
 description: Use the Acorn Example Package as a template for creating custom packages and reusable functionality for WordPress with Laravel architecture.
@@ -23,6 +23,24 @@ We recommend referencing the [Laravel docs on Packages](https://laravel.com/docs
 ## Creating an Acorn package
 
 From the [roots/acorn-example-package](https://github.com/roots/acorn-example-package) repo, click the **Use this template** button to create a new repo with the template.
+
+After cloning your new repo, run the configure script to replace the placeholder names with your own:
+
+```shell
+$ php configure.php
+```
+
+The script will prompt you for your vendor name, package name, namespace, and other details. You can also run it non-interactively:
+
+```shell
+$ php configure.php --no-interaction --author-name="Your Name" --author-email="you@example.com" --vendor-slug="your-vendor" --vendor-namespace="YourVendor" --package-slug="your-package" --class-name="YourPackage" --package-description="Your package description"
+```
+
+To preview changes without modifying any files, use `--dry-run`:
+
+```shell
+$ php configure.php --dry-run
+```
 
 ## Developing an Acorn package
 
@@ -58,6 +76,6 @@ $ wp acorn package:discover
   roots/sage ....................... DONE
 ```
 
-::: warning
-We have plans to [automate replacing the placeholders in the example package](https://github.com/roots/acorn/issues/271) in the future
+::: tip
+If you haven't already, run `php configure.php` from the root of your package to replace the placeholder names
 :::
