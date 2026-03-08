@@ -1,7 +1,7 @@
 ---
-date_modified: 2025-04-16 10:45
+date_modified: 2026-03-08 10:00
 date_published: 2015-10-15 12:29
-description: Install Bedrock with PHP 8.1+ and Composer. Configure environment variables in `.env` file and set document root to `web/` directory to access WordPress.
+description: Install Bedrock with PHP 8.3+ and Composer. Configure environment variables in `.env` file and set document root to `web/` directory to access WordPress.
 title: Installing the Bedrock WordPress Boilerplate
 authors:
   - ben
@@ -25,7 +25,7 @@ Bedrock is a [WordPress boilerplate](https://roots.io/bedrock/).
 
 ## Requirements
 
-- PHP >= 8.1
+- PHP >= 8.3
 - [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
 
 ## Installing Bedrock with Composer
