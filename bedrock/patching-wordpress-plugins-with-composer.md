@@ -93,9 +93,12 @@ Add your patches to the `extra.patches` section of `composer.json`:
 ```json
 "extra": {
   "patches": {
-    "vendor/package-name": {
-      "Brief description of patch": "patches/example-plugin-fix.patch"
-    }
+    "vendor/package-name": [
+      {
+        "description": "Brief description of patch",
+        "url": "patches/example-plugin-fix.patch"
+      }
+    ]
   }
 }
 ```
