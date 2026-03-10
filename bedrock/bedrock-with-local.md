@@ -2,13 +2,13 @@
 date_modified: 2026-03-10 17:00
 date_published: 2023-02-19 12:16
 description: How to configure Local, a local WordPress development tool, for a Bedrock-based WordPress site.
-title: Bedrock with Local
+title: Using Bedrock with Local
 authors:
   - ben
   - ethanclevenger91
 ---
 
-# Bedrock with Local
+# Using Bedrock with Local
 
 [Local](https://localwp.com/), previously known as Local by Flywheel, is one of the many local development tools available for WordPress developers. In this guide you will learn how to configure Local for a Bedrock-based WordPress site.
 
