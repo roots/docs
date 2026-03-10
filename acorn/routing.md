@@ -98,7 +98,7 @@ add_filter('pre_get_document_title', function ($title) {
 
 For more complex applications, you can use:
 
-- **[Controllers and Middleware](controllers-and-middleware.md)** - Organize route logic with controllers and filter requests with middleware
+- **[Controllers, Middleware, and HTTP Kernel](controllers-middleware-kernel.md)** - Organize route logic with controllers, filter requests with middleware, and customize the HTTP kernel
 - **[Eloquent Models](eloquent-models.md)** - Work with WordPress data using Laravel's ORM in your controllers
 
 ### Using controllers

@@ -1,13 +1,13 @@
 ---
 date_modified: 2025-10-01 00:00
 date_published: 2025-10-01 00:00
-description: Build robust APIs and handle requests with Laravel controllers and middleware in WordPress using Acorn. Clean separation of concerns with validation, authentication, and response formatting.
-title: Controllers and Middleware in WordPress
+description: Build robust APIs and handle requests with Laravel controllers, middleware, and custom HTTP kernels in WordPress using Acorn. Clean separation of concerns with validation, authentication, and response formatting.
+title: Controllers, Middleware, and HTTP Kernel in WordPress
 authors:
   - ben
 ---
 
-# Controllers and Middleware in WordPress
+# Controllers, Middleware, and HTTP Kernel in WordPress
 
 Acorn brings Laravel's controller and middleware system to WordPress, enabling you to build robust APIs, handle complex request logic, and implement clean separation of concerns. Controllers organize your route logic, while middleware provides a convenient mechanism for filtering HTTP requests.
 
@@ -199,4 +199,54 @@ use App\Http\Middleware\AuthenticateAdmin;
 
 Route::post('/api/posts', [PostController::class, 'store'])
     ->middleware(AuthenticateAdmin::class);
+```
+
+## Customizing the HTTP kernel
+
+For most middleware needs, use the `withMiddleware()` method when [booting Acorn](/acorn/docs/installation/#advanced-booting). If you need more control, you can override the HTTP kernel entirely.
+
+### Creating a custom kernel
+
+Create a custom kernel class that extends Acorn's HTTP kernel. When overriding properties like `$middleware`, make sure to include any defaults you still need — setting the property replaces the parent's values entirely:
+
+```php
+<?php
+
+namespace App\Http;
+
+use Roots\Acorn\Http\Kernel as AcornHttpKernel;
+
+class Kernel extends AcornHttpKernel
+{
+    public function __construct(\Illuminate\Contracts\Foundation\Application $app, \Illuminate\Routing\Router $router)
+    {
+        $this->middleware[] = \Illuminate\Foundation\Http\Middleware\TrimStrings::class;
+
+        parent::__construct($app, $router);
+    }
+}
+```
+
+### Registering the custom kernel
+
+Override the kernel singleton by rebinding it before `boot()`. The kernel is resolved during boot, so the binding must be in place before that happens:
+
+```php
+use Roots\Acorn\Application;
+
+add_action('after_setup_theme', function () {
+    $builder = Application::configure()
+        ->withProviders()
+        ->withRouting(
+            web: base_path('routes/web.php'),
+            wordpress: true,
+        );
+
+    app()->singleton(
+        \Illuminate\Contracts\Http\Kernel::class,
+        \App\Http\Kernel::class
+    );
+
+    $builder->boot();
+}, 0);
 ```
