@@ -1,13 +1,14 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-04-24 13:00
 date_published: 2022-03-18 20:49
-description: How to use the blade-icons package with Sage 10.
-title: How to use blade-icons
+description: Install and use blade-icons in Sage for SVG icon components in Blade templates. Simplifies icon management with clean component syntax.
+title: How to Use blade-icons with Sage
 authors:
+  - altan
   - ben
 ---
 
-# How to use blade-icons
+# How to Use blade-icons with Sage
 
 The [blade-icons](https://github.com/blade-ui-kit/blade-icons) package allows you to easily use SVG's in your Blade views.
 
@@ -83,6 +84,19 @@ Now Heroicons can be referenced in any of the supported methods from inside your
 @svg('heroicon-s-menu')
 
 {{ svg('heroicon-s-menu) }}
+```
+
+## Caching icons in production
+
+It's recommended to enable icon caching to optimize performance by running `wp acorn icons:cache` during deployment.
+
+If you are using Trellis, modify the `deploy_build_after` hook within your `deploy-hooks/build-after.yml` file:
+
+```yml
+- name: Cache Blade UI Icons
+  command: wp acorn icons:cache
+  args:
+    chdir: "{{ deploy_helper.new_release_path }}"
 ```
 
 ## Additional information

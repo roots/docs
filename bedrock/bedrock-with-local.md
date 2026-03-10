@@ -1,13 +1,14 @@
 ---
-date_modified: 2023-02-19 12:16
+date_modified: 2026-03-10 17:00
 date_published: 2023-02-19 12:16
-description: How to configure Local, a local WordPress development tool, for a Bedrock-based WordPress site.
-title: Bedrock with Local
+description: Configure Local for Bedrock WordPress development. Adjust document root to `web/` directory and configure Local for Bedrock's structure.
+title: Using Bedrock with Local
 authors:
   - ben
+  - ethanclevenger91
 ---
 
-# Bedrock with Local
+# Using Bedrock with Local
 
 [Local](https://localwp.com/), previously known as Local by Flywheel, is one of the many local development tools available for WordPress developers. In this guide you will learn how to configure Local for a Bedrock-based WordPress site.
 
@@ -19,45 +20,33 @@ Create a new site from the Local interface. In this guide, we'll use `bedrock` a
 
 ## Installing Bedrock from the terminal
 
-From your new Local site, click **Open site shell** and navigate up one folder so that you're in the `bedrock/app` folder. On macOS or Linux, you could run the following command:
+From your new Local site, click **Open site shell**. When the terminal opens, you should be under `/Local Sites/bedrock/app/public`. 
+
+First, remove the default WordPress installation that is in the public folder:
 
 ```shell
-# Navigate one folder up
-$ cd ..
-
-# or, navigate directly to the app/ folder
-$ cd ~/Local\ Sites/bedrock/app
+rm -rf *
+rm .htaccess
 ```
 
-Once you are in the `app/` folder for your Local site, either install Bedrock with Composer or clone your existing git repository into this directory:
+This will remove all content of the public folder.
 
+Now install Bedrock with Composer into the public directory or clone your existing git repository into this directory:
 ```shell
-$ composer create-project roots/bedrock
-```
-
-Your folder structure should now look like this:
-
-```shell
-# @ ~/Local Sites/bedrock
-.
-├── app
-│   ├── bedrock
-│   ├── public
-│   └── sql
-├── conf
-│   ├── mysql
-│   ├── nginx
-│   └── php
-└── logs
-    ├── nginx
-    └── php
+composer create-project roots/bedrock .
 ```
 
 ## Configure environment variables
 
-Bedrock requires [environment variables to be configured](https://roots.io/bedrock/docs/installation/#getting-started) in order to get started.
+Bedrock requires environment variables to be configured in order to get started.
 
-The `.env` file in the `app/bedrock/` directory must be configured with Local's database settings along with your home URL. Update the following values in your `.env` file:
+First, copy the example environment file:
+
+```shell
+cp .env.example .env
+```
+
+The `.env` file must be configured with Local's database settings along with your home URL. Update the following values in your `.env` file:
 
 ```plaintext
 DB_NAME='local'
@@ -67,17 +56,17 @@ DB_PASSWORD='root'
 WP_HOME='https://bedrock.local'
 ```
 
+For Local WP these are the default DB credentials. If you changed them manually, then you need to change them here accordingly. The `WP_HOME` should be the website URL we configured in Local - in our case here it's `bedrock.local`.
+
 ## Set the webroot in Local's site config
 
-Local's site config is located at `~/Local Sites/bedrock/conf/nginx/site.conf.hbs`. Open this file and replace `{{root}}` with the full path to Bedrock's web directory:
+Local's site config is located at `~/Local Sites/bedrock/conf/nginx/site.conf.hbs`. Open this file and append `/web` to the server root:
 
 ```diff
 server {
     listen {{port}};
 -   root   "{{root}}";
-+   root   "/Users/username/Local Sites/bedrock/app/bedrock/web";
++   root   "{{root}}/web";
 ```
-
-In the example above, the full path is based on a macOS machine and requires the username to be changed to the one you are using. You will need to modify this path for Windows and Linux setups to reflect the full path to the `app/bedrock/web` directory.
 
 You will need to restart your site after making these changes, and then your site will be accessible at `https://bedrock.local`.

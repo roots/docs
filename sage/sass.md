@@ -1,10 +1,11 @@
 ---
-date_modified: 2023-06-06 17:30
+date_modified: 2025-04-15 11:15
 date_published: 2023-06-06 17:30
-description: Setup support for Sass in Sage by adding @roots/bud-sass and renaming css files to scss
-title: Using Sass
+description: Enable Sass in Sage by renaming `app.css` to `app.scss` for advanced CSS preprocessing with variables and mixins.
+title: Using Sass with Sage WordPress Theme
 authors:
   - ben
+  - carlosfaria
   - code23_isaac
   - diomededavid
   - MWDelaney
@@ -12,60 +13,77 @@ authors:
   - talss89
 ---
 
-# Setting up Support for Sass
+# Using Sass with Sage WordPress Theme
 
-Add the `@roots/bud-sass` extension:
+Remove Tailwind CSS dependencies: `npm uninstall -D @tailwindcss/vite tailwindcss`
+
+Delete the contents of `resources/css/app.css` and `resources/css/editor.css`.
+
+Add the `sass` extension:
 
 ```shell
-yarn add @roots/bud-sass --dev
+$ npm install -D sass
 ```
 
-::: warning
-**Note:** Verify that all Bud packages and the `@roots/sage` package versions are the same in your `package.json` to prevent build errors.
-:::
-
-In the `resources/styles` directory, rename `app.css` to `app.scss` and rename `editor.css` to `editor.scss`.
+In the `resources/css` directory, rename `app.css` to `app.scss` and rename `editor.css` to `editor.scss`.
 
 ```plaintext
-app.css -> app.scss
+app.css    -> app.scss
 editor.css -> editor.scss
 ```
 
-::: tip
-**Note:** [`url()` imports in Sass behave differently than CSS](https://bud.js.org/extensions/bud-sass#url-imports). We recommend prefixing aliases with a tilde (eg. `url('~@images/...')`). We also recommend adding the `fonts` directory to [`bud.assets()`](https://bud.js.org/docs/bud.assets).
-:::
+Modify `vite.config.js` to remove the Tailwind plugin, reference the new file extensions, and disable the Tailwind CSS `theme.json` generation:
 
-## Configure Stylelint (optional)
+```diff
+ import { defineConfig } from 'vite'
+-import tailwindcss from '@tailwindcss/vite';
+ import laravel from 'laravel-vite-plugin'
+ import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
-Install `@roots/bud-stylelint`:
+ export default defineConfig({
+   base: '/app/themes/sage/public/build/',
+   plugins: [
+-    tailwindcss(),
+     laravel({
+       input: [
+-        'resources/css/app.css',
++        'resources/css/app.scss',
+         'resources/js/app.js',
+-        'resources/css/editor.css',
++        'resources/css/editor.scss',
+         'resources/js/editor.js',
+       ],
 
-```shell
-yarn add @roots/bud-stylelint --dev
+     wordpressThemeJson({
+-      disableTailwindColors: false,
+-      disableTailwindFonts: false,
+-      disableTailwindFontSizes: false,
++      disableTailwindColors: true,
++      disableTailwindFonts: true,
++      disableTailwindFontSizes: true,
+     }),
+   ],
 ```
 
-Create a Stylelint config file at `.stylelintrc.cjs`:
+Modify the `@vite()` directive in `resourves/views/layouts/app.blade.php` to use `app.scss` instead of `app.css`:
 
-```javascript
-module.exports = {
-  extends: ['@roots/bud-sass/config/stylelint'],
-  rules: {
-    'import-notation': null,
-    'no-empty-source': null,
-  },
-};
+```diff
+-    @vite(['resources/css/app.css', 'resources/js/app.js'])
++    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 ```
 
-### Maintaining Stylelint config
+Modify the `block_editor_settings_all` filter in `app/setup.php` to use `editor.scss` instead of `editor.css`;
 
-When bud.js updates you will automatically be upgraded to the latest versions of `stylelint-config-standard` and `stylelint-config-recommended-scss`. This may cause issues if you are now breaking a newly defined or changed rule. You will either want to make changes to your application or add an override to `module.exports.rules`.
+```diff
+add_filter('block_editor_settings_all', function ($settings) {
+-    $style = Vite::asset('resources/css/editor.css');
++    $style = Vite::asset('resources/css/editor.scss');
 
-**This is normal**. The preset is just supposed to be a base for your own config. There is nothing wrong with overriding rules to suit your preferences or your application's needs.
+    $settings['styles'][] = [
+        'css' => "@import url('{$style}')",
+    ];
 
-You could also:
+    return $settings;
+});
 
-* Not use the `@roots/bud-sass/config/stylelint` preset and maintain your own config entirely. This will give you maximum control over when updates are applied.
-* Make an issue with `stylelint-config-standard` or `stylelint-config-recommended-scss` if you disagree with the change.
-
-What you shouldn't do:
-
-* Make an issue in `roots/bud` (We want to override upstream configurations as little as possible so as to provide a predictable starting point for a large number of diverse projects).
+```

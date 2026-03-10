@@ -1,14 +1,14 @@
 ---
 date_modified: 2023-09-27 14:05
 date_published: 2021-09-08 00:29
-description: How to install WordPress language files on a Trellis site.
-title: How to Install WordPress Languages Files
+description: Configure WordPress language file installation in Trellis for multi-language sites. Automate translation downloads for core, plugins, and themes.
+title: Installing WordPress Language Files in Trellis
 authors:
   - strarsis
   - hooley
 ---
 
-# How to Install WordPress Languages Files
+# Installing WordPress Language Files in Trellis
 
 ## Current state of language management
 
@@ -93,7 +93,8 @@ Ideally the language is removed before updating as this removes an unnecessary u
 
 ### Initial deploy (non-setup site)
 Many `wp` commands including `wp language` don't work on a WordPress site that is installed but not had been set up yet.
-```
+
+```plaintext
 Error: The site you have requested is not installed.
 Run `wp core install` to create database tables.
 ```

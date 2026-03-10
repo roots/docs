@@ -1,13 +1,13 @@
 ---
 date_modified: 2023-02-19 12:16
 date_published: 2023-02-19 12:16
-description: How to configure DevKinsta, a local WordPress development tool, for a Bedrock-based WordPress site.
-title: Bedrock with DevKinsta
+description: Set up DevKinsta for Bedrock WordPress development. Configure site settings and document root to work with Bedrock's unique `wp/` and `app/` directories.
+title: Bedrock Development with DevKinsta
 authors:
   - ben
 ---
 
-# Bedrock with DevKinsta
+# Bedrock Development with DevKinsta
 
 [DevKinsta](https://kinsta.com/devkinsta/?kaid=OFDHAJIXUDIV) is a local WordPress development environment. In this guide you will learn how to setup a Bedrock-based WordPress site with DevKinsta.
 
@@ -34,7 +34,7 @@ $ composer create-project roots/bedrock
 
 Your folder structure should now look like this:
 
-```shell
+```plaintext
 # @ ~/DevKinsta/
 .
 ├── kinsta
@@ -55,7 +55,7 @@ Bedrock requires [environment variables to be configured](https://roots.io/bedro
 
 The `.env` file in the `app/bedrock/` directory must be configured with Local's database settings along with your home URL. Update the following values in your `.env` file:
 
-```plaintext
+```dotenv
 DB_NAME='example'
 DB_USER='root'
 DB_PASSWORD='password'

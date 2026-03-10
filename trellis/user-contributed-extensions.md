@@ -1,8 +1,8 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2024-10-12 16:15
 date_published: 2015-09-06 07:42
-description: Extensions (or roles), developed by the community, that complement Trellis.
-title: User Contributed Extensions
+description: Explore community-developed Ansible roles and extensions for Trellis that add functionality and features beyond the core WordPress server management.
+title: User Contributed Extensions for Trellis
 authors:
   - ben
   - Log1x
@@ -13,7 +13,7 @@ authors:
   - Xilonz
 ---
 
-# User Contributed Extensions
+# User Contributed Extensions for Trellis
 
 Extensions (or roles), developed by the community, that complement Trellis.
 
@@ -31,8 +31,6 @@ Issues with extensions should be opened in their respective repositories.
 - [trellis-purge-kinsta-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy) - Purge Kinsta cache when Trellis deploys Bedrock
 - [trellis-cve-2018-6389](https://github.com/ItinerisLtd/trellis-cve-2018-6389) - Mitigate CVE-2018-6389 WordPress load-scripts / load-styles attacks
 - [trellis-disable-xml-rpc](https://github.com/ItinerisLtd/trellis-disable-xml-rpc) -  Disable WordPress XML RPC on Trellis sites
-- [vagrant-trellis-sequel](https://typist.tech/portfolio-item/vagrant-trellis-sequel/) — Open Trellis databases in Sequel Pro with a single command
-- [vagrant-trellis-cert](https://typist.tech/portfolio-item/vagrant-trellis-cert/) — Trust all Trellis self-signed certificates with single command
 - [trellis-purge-wp-rocket-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-wp-rocket-cache-during-deploy) - Purge WP Rocket cache when Trellis deploys Bedrock
 - [trellis_flush_rewrite_rules_during_deploy](https://github.com/ItinerisLtd/trellis_flush_rewrite_rules_during_deploy) - Resets WordPress' rewrite rules (based on registered post types, etc) during Trellis deploys
 - [trellis-slack-webhook-notify-during-deploy
@@ -40,6 +38,4 @@ Issues with extensions should be opened in their respective repositories.
 - [trellis_install_wp_cli_via_composer](https://github.com/ItinerisLtd/trellis_install_wp_cli_via_composer) - Install WP-CLI via composer on Trellis servers
 - [tiller-circleci-orb](https://github.com/ItinerisLtd/tiller-circleci-orb/) - Deploy Trellis, Bedrock and Sage(optional) via CircleCI
 - [trellis-cyberduck](https://github.com/ItinerisLtd/trellis-cyberduck) - Trellis commands for Cyberduck
-- tiller (abandoned, functionality was replaced by [tiller-circleci-orb](https://github.com/ItinerisLtd/tiller-circleci-orb/)) - Deploy Trellis, Bedrock and Sage via AWS CodeBuild
-- enveigle (abandoned, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Deceive Ansible to template Trellis .env files to local Bedrock
-- cognomen (abandoned, functionality was merged into [trellis-cli](https://github.com/roots/trellis-cli)) - Generate WP CLI aliases for Trellis projects
+- [trellis-matomo](https://github.com/E-VANCE/trellis-matomo) - Install the latest on-premise version of Matomo with Trellis 

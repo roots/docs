@@ -1,20 +1,20 @@
 ---
-date_modified: 2023-06-04 16:40
+date_modified: 2026-03-08 10:00
 date_published: 2023-02-19 12:16
-description: How to configure Lando, a local development tool, for a Bedrock-based WordPress site.
-title: Bedrock with Lando
+description: Set up Lando for Bedrock WordPress development. Configure webroot to `web/` directory and adjust Lando settings for Bedrock's unique folder structure.
+title: Bedrock Local Development with Lando
 authors:
   - ben
   - james0r
 ---
 
-# Bedrock with Lando
+# Bedrock Local Development with Lando
 
 [Lando](https://lando.dev/) is a local development environment. In this guide you will learn how to setup a Bedrock-based WordPress site with Lando.
 
 ## Configuring a Lando recipe for Bedrock
 
-After [installing Bedrock](/bedrock/docs/installation/), you can either use `lando init` to create the receipe, or you can just drop in the contents of the receipe file that you will find below within a file called `.lando.yml`.
+After [installing Bedrock](/bedrock/docs/installation/), you can either use `lando init` to create the recipe, or you can just drop in the contents of the recipe file that you will find below within a file called `.lando.yml`.
 
 To use the CLI, run `lando init --recipe wordpress` and answer the following prompts:
 
@@ -32,7 +32,7 @@ config:
   webroot: web
 services:
   appserver:
-    type: php:8.2 # Bedrock requires PHP >= 8.0
+    type: php:8.3 # Bedrock requires PHP >= 8.3
 ```
 
 ## Configure environment variables
@@ -41,7 +41,7 @@ Bedrock requires [environment variables to be configured](https://roots.io/bedro
 
 The `.env` file must be configured with Lando's database settings along with your home URL. Update the following values in your `.env` file:
 
-```plaintext
+```dotenv
 DB_NAME='wordpress'
 DB_USER='wordpress'
 DB_PASSWORD='wordpress'

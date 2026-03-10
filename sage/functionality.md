@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-01 19:05
-description: The `app/` directory contains all the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
-title: Theme Functionality
+description: The `app/` directory contains theme functionality. Sage is a starter theme, so modify files in `app/` to implement custom features for your WordPress site.
+title: Adding Theme Functionality in Sage
 authors:
   - alwaysblank
   - ben
@@ -10,7 +10,7 @@ authors:
   - Log1x
 ---
 
-# Functionality
+# Adding Theme Functionality in Sage
 
 The `app/` directory contains all the theme functionality. Since Sage is a starter theme, it’s okay for you to modify files within `app/` to meet the needs of the site you’re building.
 
@@ -28,7 +28,7 @@ Most of the PHP code in Sage is namespaced and autoloaded, so make sure to use n
     Filters included by default:
   - `excerpt_more` — add "… Continued" to excerpts.
 
-- `app/Providers` — The place for any [Service Providers](https://laravel.com/docs/9.x/providers) you care to define for your theme.
+- `app/Providers` — The place for any [Service Providers](https://laravel.com/docs/10.x/providers) you care to define for your theme.
     Comes with `ThemeServiceProvider` that adds no functionality but provides a template for your own Service Providers.
     
 - `app/View` — The place for view-related code, i.e. Composers and Components.

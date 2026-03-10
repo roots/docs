@@ -1,20 +1,20 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2018-02-07 09:46
-description: Blade is a templating engine from Laravel that's included in Acorn. It allows for template inheritance, sharing data across multiple views, and much more.
-title: Blade Templates
+description: Sage uses Laravel's Blade for powerful templating. Learn template inheritance with `@extends`, layouts with `@yield`, and passing data to WordPress views.
+title: Using Blade Templates in Sage
 authors:
   - alwaysblank
   - ben
   - Log1x
 ---
 
-# Blade Templates
+# Using Blade Templates in Sage
 
-Sage uses [Laravel's Blade](https://laravel.com/docs/9.x/blade) templating engine.
+Sage uses [Laravel's Blade](https://laravel.com/docs/10.x/blade) templating engine.
 
 ::: tip
-The Blade templating language is described in much more depth in the [Laravel docs](https://laravel.com/docs/9.x/blade), which we recommend you read for a full understanding of how it works. Nearly everything described there should work in Sage.
+The Blade templating language is described in much more depth in the [Laravel docs](https://laravel.com/docs/10.x/blade), which we recommend you read for a full understanding of how it works. Nearly everything described there should work in Sage.
 :::
 
 The following are some of the Blade features you're likely to find yourself using regularly.
@@ -90,11 +90,15 @@ The key names will become the variable names that their values are assigned to.
 
 If you need to clear or compile Blade templates, you can do so with WP-CLI:
 
-```shell
-# Compile all Blade templates
-$ wp acorn view:cache
+### Compile all Blade templates
 
-# Clear all Blade templates
+```shell
+$ wp acorn view:cache
+```
+
+### Clear all Blade templates
+
+```shell
 $ wp acorn view:clear
 ```
 

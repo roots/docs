@@ -1,35 +1,35 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-10-30 11:30
 date_published: 2015-09-01 19:29
-description: To deploy a Sage theme you'll need to run `composer install` on the remote server, and copy over theme assets built with `yarn build`.
-title: Deploying Sage
+description: Deploy Sage themes by building assets for production, running `composer install` for dependencies, and ensuring PHP version consistency across environments.
+title: Deploying the Sage WordPress Theme
 authors:
   - alwaysblank
   - ben
   - kero
   - Log1x
+  - MWDelaney
 ---
 
-# Deployment
+# Deploying the Sage WordPress Theme
 
-To deploy a Sage theme you'll need to make sure two things are covered:
+::: warning PHP versions must match
+Make sure the PHP version of your development environment matches the PHP version of your production environment, or you may hit a fatal error due to your Composer dependencies requiring a different PHP version.
+:::
 
-1. Run `composer install` from the theme directory on the remote server if you have Acorn installed in your theme directory
-2. Copy over built theme assets (the `public/` folder)
+## Deploying a Sage-based WordPress theme
 
-Generate production ready assets with `yarn build`.
+1. Build theme assets (`npm run build`)
+2. Install Composer dependencies (`composer install --no-dev  --optimize-autoloader`)
+3. Upload all files and folders in your theme except the `node_modules` directory to your host
 
-## Server requirements
+## Optimization
 
-- WordPress >= 5.9
-- PHP >= 7.4
-- BCMath PHP Extension
-- Ctype PHP Extension
-- Fileinfo PHP Extension
-- JSON PHP Extension
-- Mbstring PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
+Similar to deploying a Laravel app, Acorn supports an `optimize` command that will cache your configuration and views. This command should be run as part of your deployment process:
+
+```shell
+$ wp acorn optimize
+```
 
 ## Server configuration
 
@@ -82,14 +82,3 @@ If you use [Trellis](https://roots.io/trellis/), you can build your assets local
 ## Deploying Sage on Kinsta
 
 [Kinsta supports Bedrock and Trellis](https://kinsta.com/blog/bedrock-trellis/?kaid=OFDHAJIXUDIV), so deploying Sage with Trellis on [Kinsta](https://kinsta.com/?kaid=OFDHAJIXUDIV) is possible by following a few extra steps.
-
-## Deploying Sage on WP Engine
-
-We do not officially recommend or support this and suggest using a WordPress host that supports SSH, Git, Composer, and the latest PHP versions.
-There is no current guidance for how to run Sage 10 on WP Engine, but the [Sage 9 on WP Engine](https://discourse.roots.io/t/sage-9-on-wpengine/9090) thread on Roots Discourse may point you in the right direction.
-
-## Deploying Sage via FTP
-
-If you don't have permission to run `composer` on the production server and/or are using a shared hosting service, you may want to deploy Sage with FTP. 
-To do so, [compile your assets for production](compiling-assets.md) and run `composer install --no-dev` in your theme directory. 
-Upload all files and folders in your theme except the `node_modules` directory to your host.

@@ -1,8 +1,8 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-11-24 13:00
 date_published: 2015-09-06 07:42
-description: Trellis offers SSL/HTTPS with Let's Encrypt, along with manually provided certificates and self-signed certificates for local development environments.
-title: SSL
+description: Enable HTTPS in Trellis with automatic Let's Encrypt certificates, manually provided SSL certificates, or self-signed certificates for local development.
+title: SSL Certificates in Trellis
 authors:
   - aitor
   - ben
@@ -11,11 +11,12 @@ authors:
   - joshf
   - Log1x
   - MWDelaney
+  - qwatts-dev
   - runofthemill
   - swalkinshaw
 ---
 
-# SSL
+# SSL Certificates in Trellis
 
 HTTPS is now more important than ever. Strong encryption through HTTPS creates a safer and more secure web while protecting your site's users.
 
@@ -31,7 +32,7 @@ Trellis has features to make it as easy, cheap, and painless as possible to use 
 
 There are three supported certificate *providers* in Trellis:
 
-- [Let's Encrypt](#let-s-encrypt)
+- [Let's Encrypt](#lets-encrypt)
 - [Manual](#manual)
 - [Self-signed](#self-signed)
 
@@ -103,18 +104,6 @@ In the example above, Trellis will try to automatically create 1 certificate wit
 All you need to do is make sure those DNS records exist and point to the web server's IP. Trellis takes care of the rest.
 
 If you want "www" subdomains to redirect to your canonical domain, they MUST be included in redirects.
-
-#### Setting the contact email
-
-LE requires at least one email address be provided as a contact email. Contact emails are used by LE to send expiry notices when a certificate is coming up for renewal.
-
-```yaml
-# groups_vars/all/main.yml (example)
-
-letsencrypt_contact_emails:
-  - changeme@example.com
-  - "{{ mail_admin }}" # defined in groups_vars/all/mail.yml
-```
 
 #### Challenges
 
@@ -204,12 +193,55 @@ example.com:
     provider: self-signed
 ```
 
-You can tell your browsers to trust these self signed certificates by using the vagrant-trellis-cert plugin. This also fixes issues with MacOS Catalina where the 'certificate not trusted' error screens are not possible to bypass. From your trellis folder, run:
+#### Lima
+
+Lima does not support automated SSL handling yet, but you can follow these manual steps to have macOS trust the self-signed certificate.
+
+1. Enter the Lima VM from your Trellis project directory:
 
 ```shell
-$ vagrant plugin install vagrant-trellis-cert
-$ vagrant trellis-cert trust
+$ trellis vm shell
 ```
+
+2. Copy the generated certificate somewhere readable:
+
+```shell
+$ sudo cp /etc/nginx/ssl/example.com.cert /tmp/
+```
+
+3. Exit the VM:
+
+```shell
+$ exit
+```
+
+4. Copy the certificate from the VM to your host machine
+
+Note: you will need the VM’s name.. If you don’t remember your Lima VM name, you can list all VMs:
+
+```shell
+$ limactl list
+```
+
+Then copy the cert using your Lima instance name:
+
+```shell
+$ limactl copy <lima-vm-name>:/tmp/example.com.cert ~/Downloads/
+```
+
+5. Move the certificate somewhere that makes sense to you:
+
+```shell
+$ mkdir -p ~/.ssh/lima && mv ~/Downloads/example.com.cert ~/.ssh/lima/
+```
+
+6. Trust the certificate on macOS:
+
+```shell
+$ security add-trusted-cert -k ~/Library/Keychains/login.keychain-db ~/.ssh/lima/example.com.cert
+```
+
+After this, your local site should load in the browser without warnings.
 
 ## HSTS
 

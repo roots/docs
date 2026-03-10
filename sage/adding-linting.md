@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-03-12 19:25
 date_published: 2023-01-23 19:40
-description: How to add ESLint, Prettier, and Stylelint to your Sage 10 theme.
+description: Set up ESLint, Prettier, and Stylelint in Sage to enforce code quality standards, consistent formatting, and best practices for theme development.
 title: Adding ESLint, Prettier, and Stylelint
 authors:
   - ben

@@ -1,16 +1,17 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-02-27 13:50
 date_published: 2021-10-21 13:21
-description: The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.
-title: Theme Structure
+description: Sage's directory structure provides organized folders for scalable development. `resources/` for views, `app/` for functionality, `config/` for settings.
+title: Sage WordPress Theme Structure
 authors:
   - alwaysblank
   - ben
   - jure
   - Log1x
+  - MWDelaney
 ---
 
-# Theme Structure
+# Sage WordPress Theme Structure
 
 ## Introduction
 
@@ -18,33 +19,33 @@ The default Sage structure is intended to provide a sane starting point for both
 
 Where a file or class is located is ultimately decided by you. As long as Composer can autoload the class or you have modified the necessary paths in your [configuration](configuration.md), things should work as expected.
 
-```php
+```plaintext
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── Providers/        # → Service providers
 │   ├── View/             # → View models
 │   ├── filters.php       # → Theme filters
 │   └── setup.php         # → Theme setup
-├── composer.json         # → Autoloading for `app/` files
 ├── public/               # → Built theme assets (never edit)
-├── functions.php         # → Theme bootloader
-├── index.php             # → Theme template wrapper
-├── node_modules/         # → Node.js packages (never edit)
-├── package.json          # → Node.js dependencies and scripts
 ├── resources/            # → Theme assets and templates
+│   ├── css/              # → Theme stylesheets
 │   ├── fonts/            # → Theme fonts
 │   ├── images/           # → Theme images
-│   ├── scripts/          # → Theme javascript
-│   ├── styles/           # → Theme stylesheets
+│   ├── js/               # → Theme JavaScript
 │   └── views/            # → Theme templates
 │       ├── components/   # → Component templates
 │       ├── forms/        # → Form templates
 │       ├── layouts/      # → Base templates
 │       └── partials/     # → Partial templates
+├── vendor/               # → Composer packages (never edit)
+├── composer.json         # → Autoloading for `app/` files
+├── functions.php         # → Theme bootloader
+├── index.php             # → Theme template wrapper
+├── node_modules/         # → Node packages (never edit)
+├── package.json          # → Node dependencies and scripts
 ├── screenshot.png        # → Theme screenshot for WP admin
 ├── style.css             # → Theme meta information
-├── vendor/               # → Composer packages (never edit)
-└── bud.config.js         # → Bud configuration
+└── vite.config.js        # → Vite configuration
 ```
 
 ## The root directory
@@ -74,4 +75,3 @@ The `resources` directory contains your Blade views as well as the un-compiled a
 ### The `vendor/` directory
 
 The `vendor` directory contains your [Composer](https://getcomposer.org/) dependencies and autoloader. This directory is automatically generated and should not be modified.
-

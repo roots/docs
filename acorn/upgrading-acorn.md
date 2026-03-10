@@ -1,21 +1,185 @@
 ---
-date_modified: 2023-02-05 09:38
+date_modified: 2024-08-30 08:45
 date_published: 2023-01-13 13:12
-description: Acorn v3 introduces some minimal breaking changes that require updates when coming from Acorn v2.
-title: Upgrading Acorn
+description: Acorn v4 includes minimal breaking changes from v3. Review required configuration updates, deprecated features, and new functionality available.
+title: Upgrading Acorn to the Latest Version
 authors:
   - ben
+  - chrillep
+  - joshf
 ---
 
-# Upgrading Acorn
+# Upgrading Acorn to the Latest Version
+
+## Upgrading to v5.x from v4.x
+
+Acorn v5 includes Laravel v12 components, whereas Acorn v4 includes Laravel v10 components.
+
+### Upgrading dependencies
+
+Acorn v5 requires PHP >= 8.2.
+
+Update the `roots/acorn` dependency in your `composer.json` file to `^5.0`:
+
+```shell
+$ composer require roots/acorn ^5.0 -W
+```
+
+The `-W` flag is required to upgrade the included Laravel dependencies.
+
+::: warning
+If any packages/dependencies have conflicts while updating, try removing and then re-requiring them after Acorn is bumped to 5.x.
+:::
+
+### Breaking changes
+
+The most significant change in v5 is how Acorn is booted. The `bootloader()` helper has been deprecated in favor of using `Application::configure()`. This change aligns Acorn with Laravel 11's new application configuration system, providing a more fluent and powerful way to configure your application.
+
+You'll need to import the Application class at the top of your file:
+
+```php
+use Roots\Acorn\Application;
+```
+
+Then update your bootstrapping code:
+
+```diff
+- add_action('after_setup_theme', fn () => \Roots\bootloader()->boot(), 0);
++ add_action('after_setup_theme', function () {
++     Application::configure()
++         ->withProviders([
++             App\Providers\ThemeServiceProvider::class,
++         ])
++         ->boot();
++ }, 0);
+```
+
+If you have previously registered service providers through either `composer.json` (`extra.acorn.providers`) or `config/app.php`, you'll need to migrate these to the new configuration method. All providers should now be registered using `withProviders()` when configuring the application. Remove any provider configurations from your composer.json and config files, and instead register them directly in your bootstrapping code:
+
+```php
+Application::configure()
+    ->withProviders([
+        App\Providers\ThemeServiceProvider::class,
+        App\Providers\ExampleServiceProvider::class,
+    ])
+    ->boot();
+```
+
+### Routing
+
+Acorn v5 introduces support for Laravel’s routing features within WordPress. If you previously used Livewire, you may encounter an error such as `Route [livewire.update] not defined`, or experience other routing-related issues.
+
+To resolve this, and to enable routing, ensure your application is properly configured by adding the `withRouting` method:
+
+```diff
+Application::configure()
+    ->withProviders([
+        App\Providers\ThemeServiceProvider::class,
+    ])
++   ->withRouting(wordpress: true)
+    ->boot();
+```
+
+### Config changes
+
+If you have published Acorn's configs, you should review and update them based on the latest versions in the [Acorn repo](https://github.com/roots/acorn/tree/main/config).
+
+## Upgrading to v4.x from v3.x
+
+Acorn v4 includes Laravel v10 components, whereas Acorn v3 includes Laravel v9 components.
+
+### Upgrading dependencies
+
+Acorn v4 requires PHP >= 8.1.
+
+Update the `roots/acorn` dependency in your `composer.json` file to `^4.0`:
+
+```shell
+$ composer require roots/acorn ^4.0 -W
+```
+
+The `-W` flag is required to upgrade the included Laravel dependencies.
+
+::: warning
+If any packages/dependencies have conflicts while updating, try removing and then re-requiring them after Acorn is bumped to 4.x.
+:::
+
+### Config changes
+
+If you previously published Acorn's config(s), you will need to update them based on the configs in the [Acorn repo](https://github.com/roots/acorn/tree/main/config) ([history](https://github.com/roots/acorn/commits/main/config?since=2023-11-01&until=2024-01-31)). You mainly need the [new provider changes](https://github.com/roots/acorn/blob/v4.0.0/config/app.php#L160-L169) if you published `config/app.php`.
+
+```diff
++ use Roots\Acorn\ServiceProvider;
+
+-    'timezone' => get_option('timezone_string', 'UTC'),
++    'timezone' => get_option('timezone_string') ?: 'UTC',
+
+-    'providers' => [
++    'providers' => ServiceProvider::defaultProviders()->merge([
+-
+-        /*
+-         * Framework Service Providers...
+-         */
+-        Illuminate\Auth\AuthServiceProvider::class,
+-        Illuminate\Broadcasting\BroadcastServiceProvider::class,
+-        Illuminate\Bus\BusServiceProvider::class,
+-        // ...
+-        Roots\Acorn\Providers\AcornServiceProvider::class,
+-        Roots\Acorn\Providers\RouteServiceProvider::class,
+-        Roots\Acorn\View\ViewServiceProvider::class,
+
+
+         /*
+          * Package Service Providers...
+          */
+
+         /*
+          * Application Service Providers...
+          */
+         // App\Providers\ThemeServiceProvider::class,
+
+-    ],
++    ])->toArray(),
+```
+
+### Breaking changes
+
+The breaking changes this time are minimal and should not impact most users.
+
+Service providers should now extend Illuminate:
+
+```diff
+- use Roots\Acorn\ServiceProvider;
++ use Illuminate\Support\ServiceProvider;
+```
+
+View Composer `Arrayable` trait uses property [`Composer::$except`](https://github.com/roots/acorn/blob/70d179955cddc61f0c6101717af2fdf88cf38831/src/Roots/Acorn/View/Composer.php#L35-L54) instead of `Arrayable::$ignore`.
+
+```diff
+ class Alert extends Composer
+ {
+     use Arrayable;
+
+-    $ignore = ['token'];
++    $except = ['token'];
+ }
+```
+
+Asset Contract adds [`relativePath()` method](https://github.com/roots/acorn/blob/70d179955cddc61f0c6101717af2fdf88cf38831/src/Roots/Acorn/Assets/Contracts/Asset.php#L38). So if you're implementing this contract, you'll need to update it. (Most users will not be impacted by this.)
+
+```diff
+ class MyAsset implements Asset
+ {
++    relativePath(string $base_path): string
++    {
++        // ...
++    }
+ }
+```
 
 ## Upgrading to v3.x from v2.x
 
 Acorn v3 includes Laravel v9 components, whereas Acorn v2 includes Laravel v8 components.
-
-::: tip
-Estimated upgrade time: 15 minutes
-:::
 
 ### Upgrading dependencies
 
@@ -63,7 +227,7 @@ if (! function_exists('\Roots\bootloader')) {
     );
 }
 
-\Roots\bootloader()->boot();
+add_action('after_setup_theme', fn () => \Roots\bootloader()->boot(), 0);
 ```
 
 You can also remove the theme support added for Sage if you are working on a Sage-based WordPress theme:
@@ -116,6 +280,8 @@ namespace App\Providers;
     }
 }
 ```
+
+After doing so, you may need to delete [Acorn's application cache directory](https://roots.io/acorn/docs/directory-structure/). By default, this is located in `[wp-content|app]/cache/acorn/`.
 
 Reference the [Acorn v3 upgrade pull request on the Sage repo](https://github.com/roots/sage/pull/3097) to see a full diff.
 

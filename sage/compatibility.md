@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-04-26 10:35
 date_published: 2018-04-25 13:52
-description: A list of currently known compatibility issues with any WordPress plugins and the Sage starter theme.
-title: Compatibility
+description: Known compatibility issues between WordPress plugins and Sage starter theme, including solutions, workarounds, and alternative plugin recommendations.
+title: WordPress Plugin Compatibility with Sage
 authors:
   - alwaysblank
   - ben
@@ -10,7 +10,7 @@ authors:
   - Log1x
 ---
 
-# Compatibility
+# WordPress Plugin Compatibility with Sage
 
 A list of currently known compatibility issues with any WordPress plugins and Sage. Also take a look at the [Acorn compatibility](/acorn/docs/compatibility/) docs.
 

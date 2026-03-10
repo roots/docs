@@ -1,13 +1,13 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2020-04-07 23:23
-description: Using Trellis with a theme built on Sage.
-title: Sage Integration
+description: Use Trellis with Sage themes for complete WordPress development stack. Trellis handles server provisioning and deployment for Sage-based theme development.
+title: Sage Theme Integration with Trellis
 authors:
   - swalkinshaw
 ---
 
-# Sage Integration
+# Sage Theme Integration with Trellis
 Trellis is designed to be theme-agnostic and is not tied to Roots' Sage theme at all.
 That doesn't mean it's hard though; all that's needed is a way to compile assets.
 
@@ -19,7 +19,7 @@ Trellis includes an *example* `build-before` deploy hook designed to work with S
 For Sage users, simply uncomment that built-in example hook file and deploy away. Assets will be compiled *locally* and then copied to the remote server.
 
 ## Other themes
-The Sage example deploy hook can also serve as s blueprint for many other themes that need to run an `npm` or `yarn` command for compiling assets.
+The Sage example deploy hook can also serve as a blueprint for many other themes that need to run an `npm` or `yarn` command for compiling assets.
 
 ## NVM
 If you use [nvm](https://github.com/nvm-sh/nvm) to manage Node.js versions for running themes locally, the easiest way to use it is via `$NVM_DIR/nvm-exec`.

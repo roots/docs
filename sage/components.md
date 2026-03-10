@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2021-10-21 13:21
-description: Components provide an alternative mental model for handling views and data that is especially conducive to the development of views that are frequently reused.
-title: Components
+description: Components in Sage provide a structured approach for creating reusable view elements with scoped data, ideal for frequently reused theme components.
+title: Creating Blade Components in Sage
 authors:
   - alwaysblank
   - bbuilds
@@ -11,7 +11,7 @@ authors:
   - Log1x
 ---
 
-# Components
+# Creating Blade Components in Sage
 
 Fundamentally, Components don't do anything you couldn't also accomplish with [partials](blade-templates.md) and [Composers](composers.md), but they provide system of interaction and a mental model that can be more intuitive.
 Like Composers and Blade templates, Components are an extension of the Laravel feature, so the [Laravel documentation](https://laravel.com/docs/7.x/blade#components) applies.
@@ -90,7 +90,7 @@ class ExampleComponent extends Component
 The names of the arguments in the definition of your Component's `__construct()` method must match the names of the attributes you use to pass data to your Component tag.
 
 ::: warning Note
-Component constructor arguments should be specified using `camelCase`, while `kebab-case` should be used when referencing the argument names in your HTML attributes. [Laravel documentation](https://laravel.com/docs/9.x/blade#casing)
+Component constructor arguments should be specified using `camelCase`, while `kebab-case` should be used when referencing the argument names in your HTML attributes. [Laravel documentation](https://laravel.com/docs/10.x/blade#casing)
 :::
 
 

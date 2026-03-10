@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2019-01-07 10:05
-description: Provision and deploy to DigitalOcean servers with Trellis.
+description: Deploy Trellis WordPress sites to DigitalOcean servers. Set up droplets, configure server settings, and automate WordPress deployment to DigitalOcean.
 title: Deploying Trellis to DigitalOcean
 authors:
   - ben
@@ -14,12 +14,12 @@ authors:
 To provision a server, Trellis requires a server running a bare/stock version of the latest Ubuntu LTS release.
 
 ::: tip
-ℹ️ If you [signup for DigitalOcean](https://roots.io/r/digitalocean) through the Roots referral link you will receive a free $100 in credit for 2 months, and you help cover the costs of our hosting.
+ℹ️ If you [signup for DigitalOcean](https://roots.io/r/digitalocean) through the Roots referral link you will receive a free $200 in credit for 2 months, and you help cover the costs of our hosting.
 ::: 
 
 ## Creating a new DigitalOcean droplet
 
-Trellis CLI comes a `trellis droplet create` command to automatically create a DigtalOcean droplet for a specified environment:
+Trellis CLI comes with a `trellis droplet create` command to automatically create a DigitalOcean droplet for a specified environment:
 
 ```shell
 $ trellis droplet create production
@@ -52,13 +52,12 @@ $ trellis droplet create --help
 <details>
 <summary>trellis droplet create --help</summary>
 
-```
+```plaintext
 Usage: trellis droplet create [options] ENVIRONMENT
 
 Creates a droplet (server) on DigitalOcean for the environment specified.
 
 Only remote servers (for staging and production) are currently supported.
-Development should be managed separately through Vagrant.
 
 This command requires a DigitalOcean personal access token.
 Link: https://cloud.digitalocean.com/account/api/tokens/new

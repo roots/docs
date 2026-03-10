@@ -1,16 +1,16 @@
 ---
 date_modified: 2023-01-27 16:52
 date_published: 2021-10-21 13:21
-description: Acorn allows you to use Laravel's logging services for logging messages to files, the system error log, and even Slack.
-title: Logging
+description: Acorn provides Laravel's logging services for WordPress. Configure multiple channels and send logs to files, syslog, Slack, and custom handlers.
+title: Laravel Logging in WordPress
 authors:
   - ben
 ---
 
-# Logging
+# Laravel Logging in WordPress
 
 ::: tip
-We recommend referencing the [Laravel docs on Logging](https://laravel.com/docs/9.x/logging)
+We recommend referencing the [Laravel docs on Logging](https://laravel.com/docs/12.x/logging)
 :::
 
 The location of your application logs depends on your [directory structure](/acorn/docs/directory-structure/).

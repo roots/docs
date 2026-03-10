@@ -1,13 +1,13 @@
 ---
-date_modified: 2023-04-05 07:42
+date_modified: 2024-09-11 10:00
 date_published: 2023-04-05 07:42
-description: A command-line interface (CLI) to manage Trellis projects via the `trellis` command.
-title: Trellis CLI
+description: Use the Trellis CLI to manage WordPress projects via the `trellis` command. Simplifies provisioning servers, deploying sites, and common Trellis tasks.
+title: Trellis CLI Command-Line Interface
 authors:
   - swalkinshaw
 ---
 
-# Trellis CLI
+# Trellis CLI Command-Line Interface
 
 trellis-cli is a command-line interface (CLI) to manage Trellis projects via the `trellis` command. The CLI provides a more consistent and integrated experience and includes:
 
@@ -24,7 +24,7 @@ and much more.
 ### Quick Install (macOS, Linux, WSL via Homebrew)
 
 ```shell
-brew install roots/tap/trellis-cli
+$ brew install roots/tap/trellis-cli
 ```
 
 ### Script
@@ -32,11 +32,7 @@ brew install roots/tap/trellis-cli
 We also offer a quick script version:
 
 ```shell
-# You might need sudo before bash
-curl -sL https://roots.io/trellis/cli/get | bash
-
-# Sets bindir or installation directory, Defaults to '/usr/local/bin'
-curl -sL https://roots.io/trellis/cli/get | bash -s -- -b /path/to/my/bin
+$ curl -sL https://roots.io/trellis/cli/get | bash
 ```
 
 ### Manual Install
@@ -51,14 +47,15 @@ trellis-cli provides binary releases for a variety of OSes. These binary version
 ### Dev/unstable install (macOS, Linux, WSL via Homebrew)
 
 ```shell
-# Cleanup previous versions (if installed)
-brew uninstall roots/tap/trellis-cli
+$ brew uninstall roots/tap/trellis-cli
+```
 
-# Install
-brew install --HEAD roots/tap/trellis-cli-dev
+```shell
+$ brew install --HEAD roots/tap/trellis-cli-dev
+```
 
-# Upgrade
-brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
+```shell
+$ brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
 ```
 
 ### Windows Install
@@ -89,7 +86,6 @@ For subcommand documentation, run `trellis <command> -h`.
 | `db` | Commands for database management |
 | `deploy` | Deploys a site to the specified environment |
 | `dotenv` | Template .env files to local system |
-| `down` | Stops the Vagrant machine by running `vagrant halt`|
 | `droplet` | Commands for DigitalOcean Droplets |
 | `exec` | Exec runs a command in the Trellis virtualenv |
 | `galaxy` | Commands for Ansible Galaxy |
@@ -102,25 +98,26 @@ For subcommand documentation, run `trellis <command> -h`.
 | `provision` | Provisions the specified environment |
 | `rollback` | Rollsback the last deploy of the site on the specified environment |
 | `ssh` | Connects to host via SSH |
-| `up` | Starts and provisions the Vagrant environment by running `vagrant up` |
 | `valet` | Commands for Laravel Valet |
 | `vault` | Commands for Ansible Vault |
 | `vm` | Commands for managing development virtual machines |
 | `xdebug-tunnel` | Commands for managing Xdebug tunnels |
 
 ## Configuration
-There are three ways to set configuration settings for trellis-cli and they are
+There are four ways to set configuration settings for trellis-cli and they are
 loaded in this order of precedence:
 
-1. global config
-2. project config
-3. env variables
+1. global config (`$HOME/.config/trellis/cli.yml`)
+2. project config (`trellis.cli.yml`)
+3. project config local override (`trellis.cli.local.yml`)
+4. env variables
 
 The global CLI config (defaults to `$HOME/.config/trellis/cli.yml`)
 and will be loaded first (if it exists).
 
 Next, if a project is detected, the project CLI config will be loaded if it
-exists at `.trellis/cli.yml`.
+exists at `trellis.cli.yml` (within your `trellis` directory).
+A Git ignored local override config is also supported at `trellis.cli.local.yml`.
 
 Finally, env variables prefixed with `TRELLIS_` will be used as
 overrides if they match a supported configuration setting. The prefix will be
@@ -146,7 +143,7 @@ Current supported settings:
 | Setting | Description | Type | Default |
 | --- | --- | -- | -- |
 | `manager` | VM manager (Options: `auto` (depends on OS), `lima`)| string | "auto" |
-| `ubuntu` | Ubuntu OS version (Options: `18.04`, `20.04`, `22.04`)| string | `22.04` |
+| `ubuntu` | Ubuntu OS version (Options: `18.04`, `20.04`, `22.04`, `24.04`)| string | `24.04` |
 | `hosts_resolver` | VM hosts resolver (Options: `hosts_file`)| string | `hosts_file` |
 | `images` | Custom OS image | object | Set based on `ubuntu` version |
 
@@ -168,10 +165,10 @@ open:
 virtualenv_integration: true
 vm:
   manager: auto
-  ubuntu: 22.04
+  ubuntu: 24.04
 ```
 
 Example env var usage:
 ```shell
-TRELLIS_ASK_VAULT_PASS=true trellis provision production
+$ TRELLIS_ASK_VAULT_PASS=true trellis provision production
 ```
