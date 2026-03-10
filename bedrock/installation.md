@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-08 10:00
+date_modified: 2026-03-08 16:09
 date_published: 2015-10-15 12:29
 description: Install Bedrock with PHP 8.3+ and Composer. Configure environment variables in `.env` file and set document root to `web/` directory to access WordPress.
 title: Installing the Bedrock WordPress Boilerplate
@@ -52,6 +52,7 @@ $ composer create-project roots/bedrock
     - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
     - Generate with [our WordPress salts generator](https://roots.io/salts.html)
 - Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
+- Run the test suite with `composer test` (see [Testing Bedrock with Pest](/bedrock/docs/testing/))
 - Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
 - Access WordPress admin at `https://example.com/wp/wp-admin/`
 
