@@ -1,7 +1,7 @@
 ---
 date_modified: 2026-03-10 17:00
 date_published: 2023-02-19 12:16
-description: How to configure Local, a local WordPress development tool, for a Bedrock-based WordPress site.
+description: Configure Local for Bedrock WordPress development. Adjust document root to `web/` directory and configure Local for Bedrock's structure.
 title: Using Bedrock with Local
 authors:
   - ben
