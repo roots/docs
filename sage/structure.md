@@ -1,8 +1,8 @@
 ---
 date_modified: 2025-02-27 13:50
 date_published: 2021-10-21 13:21
-description: The default Sage structure is intended to provide a sane starting point for both small and large WordPress sites alike.
-title: Theme Structure
+description: Sage's directory structure provides organized folders for scalable development. `resources/` for views, `app/` for functionality, `config/` for settings.
+title: Sage WordPress Theme Structure
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - MWDelaney
 ---
 
-# Theme Structure
+# Sage WordPress Theme Structure
 
 ## Introduction
 
@@ -19,7 +19,7 @@ The default Sage structure is intended to provide a sane starting point for both
 
 Where a file or class is located is ultimately decided by you. As long as Composer can autoload the class or you have modified the necessary paths in your [configuration](configuration.md), things should work as expected.
 
-```shell
+```plaintext
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── Providers/        # → Service providers

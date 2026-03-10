@@ -1,25 +1,26 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-10-16 10:00
 date_published: 2015-09-06 07:42
-description: Documentation on using SSH keys in Trellis for connecting to remote machines or the guest VM. Use SSH keys from GitHub users to quickly add keys.
-title: SSH Keys
+description: Configure SSH keys in Trellis for secure server access. Add keys manually or automatically import SSH keys from GitHub users for team member access.
+title: SSH Key Management in Trellis
 authors:
   - ben
+  - dalepgrant
+  - evance
   - fullyint
   - knowler
   - Log1x
   - swalkinshaw
   - techieshark
-  - dalepgrant
 ---
 
-# SSH Keys
+# SSH Key Management in Trellis
 
 Each Trellis playbook uses a specific SSH user to connect to your remote machines (or virtual machine in development).
 
 | Playbook     | Default User      | User Variable | Task                     |
 | ------------ | ----------------- | ------------- | ------------------------ |
-| `dev.yml`    | `vagrant`         | -             | create development VMs   |
+| `dev.yml`    | Your local username | -             | create development VMs   |
 | `server.yml` | `root` or `admin` | `admin_user`  | provision remote servers |
 | `deploy.yml` | `web`             | `web_user`    | deploy WordPress sites   |
 
@@ -141,7 +142,7 @@ This will first replace all keys on the remote with the _first found_ key from y
 
 All the SSH connections discussed above apply to Trellis connecting from your local machine to your server. It is a different type of connection, however, when Trellis clones a remote private repo during deployment. In this case, your remote server is allowed to forward your local machine's SSH credentials to the remote repo to authorize the connection.
 
-The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args = -o ForwardAgent=yes`. You should not need auth tokens or private keys for the `web_user`. If you run into trouble cloning a remote repo during deploy, see [Using SSH agent forwarding](https://developer.github.com/guides/using-ssh-agent-forwarding/) for tips and troubleshooting.
+The Trellis `ansible.cfg` file enables this SSH agent forwarding with `ssh_args = -o ForwardAgent=yes`. You should not need auth tokens or private keys for the `web_user`. If you run into trouble cloning a remote repo during deploy, see [Using SSH agent forwarding](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding) for tips and troubleshooting.
 
 ### macOS/OS X users
 

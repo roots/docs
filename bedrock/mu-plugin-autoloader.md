@@ -1,15 +1,15 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
-description: Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins which enables using mu-plugins through Composer.
-title: Must-use Plugin Autoloader
+description: Bedrock's autoloader lets you install regular plugins as must-use plugins via Composer, ensuring critical plugins always load without user control.
+title: WordPress Must-use Plugin Autoloader
 authors:
   - ben
   - Log1x
   - swalkinshaw
 ---
 
-# Must-use Plugin Autoloader
+# WordPress Must-use Plugin Autoloader
 
 Bedrock includes an autoloader that enables standard plugins to be required just like must-use plugins.
 

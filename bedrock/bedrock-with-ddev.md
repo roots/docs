@@ -1,13 +1,13 @@
 ---
 date_modified: 2024-07-09 18:30
 date_published: 2023-02-19 12:16
-description: How to configure DDEV, a local PHP development tool, for a Bedrock-based WordPress site.
-title: Bedrock with DDEV
+description: Set up DDEV for Bedrock WordPress development using Docker. Configure docroot to `web/` directory and adjust DDEV services for Bedrock's structure.
+title: Bedrock Local Development with DDEV
 authors:
   - ben
 ---
 
-# Bedrock with DDEV
+# Bedrock Local Development with DDEV
 
 [DDEV](https://ddev.readthedocs.io/en/stable/) is a local PHP development environment. In this guide you will learn how to setup a Bedrock-based WordPress site with DDEV.
 
@@ -15,6 +15,9 @@ authors:
 
 ```shell
 $ ddev config --project-type=wordpress --docroot=web --create-docroot
+```
+
+```shell
 $ ddev composer create roots/bedrock
 ```
 
@@ -24,7 +27,7 @@ Bedrock requires [environment variables to be configured](https://roots.io/bedro
 
 The `.env` file must be configured with DDEV's database settings along with your home URL. Update the following values in your `.env` file:
 
-```plaintext
+```dotenv
 DB_NAME='db'
 DB_USER='db'
 DB_PASSWORD='db'

@@ -1,16 +1,17 @@
 ---
-date_modified: 2023-04-03 13:18
+date_modified: 2026-02-02 12:00
 date_published: 2023-02-21 11:30
-description: Learn how to render Blade views from anywhere in your WordPress site.
-title: Rendering Blade Views
+description: Render Blade templates anywhere in WordPress using the `view()` helper function. Examples for Gutenberg blocks, ACF blocks, and email notifications.
+title: Rendering Blade Views in WordPress
 authors:
   - ben
   - chuckienorton
+  - rafaucau
   - strarsis
   - talss89
 ---
 
-# Rendering Blade Views
+# Rendering Blade Views in WordPress
 
 You can use the `view()` helper function from Acorn to render Blade templates anywhere in your WordPress site.
 
@@ -55,6 +56,31 @@ add_filter('register_block_type_args', function ($args, $name) {
 
     return $args;
 }, 10, 2);
+```
+
+### block.json `render` field with Blade templates
+
+If you're registering blocks using `block.json` with a `render` field pointing to a Blade template (e.g. `"render": "file:./render.blade.php"`), you can automatically handle the rendering with a single filter:
+
+```php
+add_filter('register_block_type_args', function (array $args, string $name): array {
+    if (empty($args['render_callback']) || ! ($args['render_callback'] instanceof \Closure)) {
+        return $args;
+    }
+
+    $reflector = new \ReflectionFunction($args['render_callback']);
+    $renderCallbackVariables = $reflector->getStaticVariables();
+    
+    if (array_key_exists('template_path', $renderCallbackVariables) && str_ends_with($renderCallbackVariables['template_path'], '.blade.php')) {
+        $args['render_callback'] = function ($attributes, $content, $block) use ($renderCallbackVariables) {
+            return view()
+                ->file($renderCallbackVariables['template_path'], compact('attributes', 'content', 'block'))
+                ->render();
+        };
+    }
+
+    return $args;
+}, 1, 2);
 ```
 
 ## Rendering emails with Blade templates

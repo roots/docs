@@ -1,8 +1,8 @@
 ---
 date_modified: 2024-09-11 10:00
 date_published: 2015-10-15 12:27
-description: Using Trellis on a remote server requires a server running a bare/stock version of Ubuntu 24.04 LTS. You can't run Trellis on a shared host.
-title: Remote Server Setup
+description: Set up remote servers for Trellis requiring bare Ubuntu 24.04 LTS installation on VPS or dedicated servers. Shared hosting is not supported.
+title: Remote Server Setup for WordPress with Trellis
 authors:
   - ben
   - fullyint
@@ -13,7 +13,7 @@ authors:
   - MWDelaney
 ---
 
-# Remote Server Setup
+# Remote Server Setup for WordPress with Trellis
 
 Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/)) to host your staging and production environments.
 
@@ -36,7 +36,7 @@ Once you have a Ubuntu server up and running, you can provision it.
 
 Provisioning a server means to set it up with the necessary software and configuration to run a WordPress site. For Trellis this means things like: installing MariaDB, installing Nginx, configuring Nginx, creating a database, etc.
 
-Trellis has two main [playbooks](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html): `dev.yml` and `server.yml`. As mentioned in local development, Vagrant automatically runs the `dev.yml` playbook for us.
+Trellis has two main [playbooks](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html): `dev.yml` and `server.yml`. As mentioned in local development, Trellis automatically runs the `dev.yml` playbook for us.
 
 For remote servers, you provision a server via the `server.yml` playbook. This leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet.
 
@@ -56,7 +56,7 @@ Now you're ready to provision your server. Ansible connects to the remote server
 via SSH so run the following command from your local machine:
 
 ```shell
-trellis provision <environment>
+$ trellis provision <environment>
 ```
 
 ### Re-provisioning
@@ -66,7 +66,7 @@ Re-provisioning is always assumed to be a safe operation. When you make changes 
 Run the following from any directory within your project:
 
 ```shell
-trellis provision <environment>
+$ trellis provision <environment>
 ```
 
 You can also provision with specific tags to only run the relevant roles:
@@ -74,5 +74,5 @@ You can also provision with specific tags to only run the relevant roles:
 Run the following from any directory within your project:
 
 ```shell
-trellis provision --tags users <environment>
+$ trellis provision --tags users <environment>
 ```

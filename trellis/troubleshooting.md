@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
-description: Tips on troubleshooting a Trellis installation. A look at how to debug Ansible, and solutions to some issues including unresponsive machines.
-title: Troubleshooting
+description: Troubleshoot Trellis installations with debugging tips for Ansible errors, solutions for unresponsive machines, and fixes for common provisioning problems.
+title: Troubleshooting Common Trellis Issues
 authors:
   - ben
   - fullyint
@@ -11,7 +11,7 @@ authors:
   - dalepgrant
 ---
 
-# Troubleshooting
+# Troubleshooting Common Trellis Issues
 
 ## Debugging
 
@@ -24,74 +24,13 @@ Golden rule to debugging any failed command with Ansible:
 
 Example: if a Git clone task failed during deploys, then SSH into the server as the `web` user (which is what deploys use) and run the manual command such as `git clone <repo>`. This will give you a much better clue as to what's going wrong.
 
-<hr>
-
-## ERR_EMPTY_RESPONSE
-
-If you are running into `ERR_EMPTY_RESPONSE` when trying to access your local development site:
-
-Try:
-
-```shell
-$ SKIP_GALAXY=true ANSIBLE_TAGS=wordpress vagrant reload --provision
-```
-
-Then run:
-
-```shell
-$ vagrant hostmanager
-```
-
-
-## Unresponsive machines or 404s
-
-Halt all VMs and remove VM-related entries from your `/etc/hosts` file, particularly entries similar to the example below. You may want to backup the hosts file before editing.
-
-```shell
-192.168.50.5  example.test  # VAGRANT: 22c9...
-```
-
-Then `vagrant up` any VMs you need running and double-check that appropriate entries appear in your hosts file.
-
-A tidy hosts file would reduce the likelihood of 404s, although it's not a guarantee.
-
-<hr>
-
-## Sequel Pro permission denied error
-
-Are you getting `Permission denied (publickey)` when trying to connect to your Vagrant box with Sequel Pro?
-
-Use the insecure private key inside the `.vagrant` folder. [See thread on Roots Discourse](https://discourse.roots.io/t/sequel-pro-ssh-to-vagrant/4683/26).
-
-<hr>
-
 ## Let's Encrypt SSL certificates
 
 See [Troubleshooting Let's Encrypt](ssl.md#troubleshooting-let-s-encrypt).
 
-<hr>
-
-## There was an error while executing `VBoxManage`, a CLI used by Vagrant
-
-Error message looks something like:
-
-```shell
-Command: ["modifyvm", "5a403eac-5619-4020-ba14-b72fd8d5b530", "--natpf1", "delete", "ssh"]
-
-Stderr: VBoxManage: error: An unexpected process (PID=0x00003FAA) has tried to lock the machine 'trellis-playbooks', while only the process started by LaunchVMProcess (PID=0x00003C31) is allowed
-VBoxManage: error: Details: code E_ACCESSDENIED (0x80070005), component Machine, interface IMachine, callee nsISupports
-VBoxManage: error: Context: "LockMachine(a->session, LockType_Write)" at line 471 of file VBoxManageModifyVM.cpp
-```
-
-The solution is to open up your Activity Monitor and quit any `vagrant` or `ruby` processes.
-
-<hr>
-
 ## Composer install: host key verification failed
 
-Sometimes a task that installs Composer dependencies gives an error `host key verification failed`. This can happen when the `known_hosts` file on your Vagrant VM or remote host is missing a key for one of the host `repositories` in the related `composer.json` file. Ensure that each host from `composer.json` has a key listed in `group_vars/all/known_hosts.yml` then try your `vagrant provision` or `./bin/deploy.sh` command again.
-
-<hr>
+Sometimes a task that installs Composer dependencies gives an error `host key verification failed`. This can happen when the `known_hosts` file on your Lima VM or remote host is missing a key for one of the host `repositories` in the related `composer.json` file. Ensure that each host from `composer.json` has a key listed in `group_vars/all/known_hosts.yml` then try your `trellis provision development` or `trellis deploy` command again.
 
 ## SSH connections
 
@@ -106,7 +45,7 @@ If you have trouble with SSH connections to your server, consider the tips below
 
 SSH will automatically look for and try a default set of SSH keys, along with keys loaded in your `ssh-agent`. However, the SSH server will only let your SSH client try a limited number of keys before disconnecting (default: 6). If you have many SSH keys and the correct key is not being selected, you can force your SSH client to try only the correct key. Add this to your `~/.ssh/config` (with the correct path to your key):
 
-```shell
+```plaintext
 Host example.com
   IdentitiesOnly yes
   IdentityFile /users/username/.ssh/id_ed25519
@@ -118,7 +57,7 @@ Your server may occasionally offer a different host key than what your local mac
 
 **Example 1**
 
-```shell
+```plaintext
 TASK [setup] *******************************************************************
 System info:
   Ansible 2.2.1.0; Darwin
@@ -132,7 +71,7 @@ fatal: [xxx.xxx.xxx.xxx]: UNREACHABLE! => {"changed": false, "unreachable": true
 
 **Example 2**
 
-```shell
+```plaintext
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -184,14 +123,6 @@ $ ssh -v root@12.34.56.78
 ### `Ciphers`, `KexAlgorithms`, or `MACs`
 
 The `sshd` role will most likely cause your SSH server to discontinue using some older and weaker protocols. If your connections involve older systems that do not support the stronger protocols configured by the `sshd` role, see [`Ciphers`, `KexAlgorithms`, and `MACs`](https://github.com/roots/trellis/tree/master/roles/sshd#ciphers-kexalgorithms-and-macs) for how to add back in any protocols you need.
-
-### NET::ERR_CERT_INVALID for Mac Users
-If you are running Trellis on MacOS and receiving a `NET::ERR_CERT_INVALID` error on your local dev domain, you may want to try using the `vagrant-trellis-cert` plugin using the following commands:
-```shell
-$ cd trellis
-$ vagrant plugin install vagrant-trellis-cert
-$ vagrant trellis-cert trust
-```
 
 ## APT sources
 You may need to clean the APT sources to update a package, for example when [updating MariaDB mirrors](https://github.com/roots/trellis/issues/1575). You can set `apt_clean_sources: true` in `group_vars/all/main.yml` to run every provision, or to run this for one provision only, use:

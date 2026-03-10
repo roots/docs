@@ -1,8 +1,8 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2025-09-26 07:00
 date_published: 2015-09-06 07:42
-description: Trellis uses MailHog on development to capture outgoing email. Mail setup on remote servers is handled by variables in the mail.yml file.
-title: Mail
+description: Trellis uses Mailpit in development to capture outgoing emails. Configure production mail delivery with SMTP settings in the `mail.yml` configuration file.
+title: WordPress Mail Configuration in Trellis
 authors:
   - ben
   - fullyint
@@ -14,7 +14,7 @@ authors:
   - TangRufus
 ---
 
-# Mail
+# WordPress Mail Configuration in Trellis
 
 Trellis' mail functionality is separated between development and staging/production since you usually want different behaviour out of them.
 
@@ -25,23 +25,23 @@ Dealing with emails in development is never fun. The two common solutions are:
 - Ignore it and hope it works fine on production
 - Set up real SMTP credentials to send emails
 
-Enter [MailHog](https://github.com/mailhog/MailHog). It’s a simple tool which captures outgoing email and lets you view them from a web UI. And after that you can optionally "release" them which would actually send the email.
+Enter [Mailpit](https://github.com/axllent/mailpit). It's a simple tool which captures outgoing email and lets you view them from a web UI. And after that you can optionally "release" them which would actually send the email.
 
-![Mailhog Preview](https://cdn.roots.io/app/uploads/trellis-mailhog-preview.png)
+![Mailpit Preview](https://cdn.roots.io/app/uploads/trellis-mailpit-preview.png)
 
-MailHog is automatically set up in development. You can access it at `http://example.test:8025` (replacing the domain with yours that you set up for the WP site host).
+Mailpit is automatically set up in development. You can access it at `http://example.test:8025` (replacing the domain with yours that you set up for the WP site host).
 
 ::: warning Note
-Mail will be automatically captured but you won't ever see it unless you access the MailHog UI at the address above.
+Mail will be automatically captured but you won't ever see it unless you access the Mailpit UI at the address above.
 :::
 
-Another benefit of using MailHog is that if you are using real SMTP credentials in development, you can ensure you don’t accidentally send emails to real email addresses which might exist in your database.
+Another benefit of using Mailpit is that if you are using real SMTP credentials in development, you can ensure you don't accidentally send emails to real email addresses which might exist in your database.
 
 ::: warning Note
 This is not the case if you have an active WordPress plugin that is configured to send mail. You'll need to disable the mail plugin on development to ensure you don't accidentally send emails to real email addresses. You could also hook into `phpmailer_init` in WordPress for non-production environments to prevent emails from being sent out. Using a service like [Mailtrap](https://mailtrap.io/) is another option.\*\*
 :::
 
-Trellis is using the [MailHog role on Ansible Galaxy](https://galaxy.ansible.com/geerlingguy/mailhog/). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
+Trellis is using the [Mailpit role](https://github.com/roots/ansible-role-mailpit). See that `README` for any extra configuration options although none should be required as Trellis integrates it automatically.
 
 ## Remote servers (staging/production)
 
@@ -76,7 +76,7 @@ mail_password: '{{ vault_mail_password }}' # Define this in group_vars/all/vault
 
 If your SMTP settings are invalid, WordPress will return the following error message:
 
-```
+```plaintext
 Could not instantiate mail function.
 ```
 

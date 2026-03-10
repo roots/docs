@@ -1,8 +1,8 @@
 ---
 date_modified: 2025-02-27 14:30
 date_published: 2022-02-24 10:25
-description: How to Use Bootstrap with Sage.
-title: How to Use Bootstrap
+description: Add Bootstrap CSS framework to Sage themes. Install Bootstrap via npm and integrate Bootstrap styles, grid system, and components into WordPress theme development.
+title: How to Use Bootstrap with Sage
 authors:
   - ben
   - code23_isaac
@@ -24,7 +24,7 @@ See [how to use Sass](./sass.md) before you follow this guide
 Add Bootstrap as a dependency:
 
 ```shell
-npm install --save bootstrap @popperjs/core
+$ npm install --save bootstrap @popperjs/core
 ```
 
 Add Bootstrap to `resources/css/app.scss`:

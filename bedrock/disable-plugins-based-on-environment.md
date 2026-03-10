@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-04-04 11:30
 date_published: 2018-05-15 12:00
-description: How to disable WordPress plugins on certain environments, such as local development, by using Bedrock Plugin Disabler.
+description: Use Bedrock Plugin Disabler to prevent specific plugins from loading in certain environments. Disable debug tools in production or heavy plugins locally.
 title: Disable Plugins Based on Environment
 authors:
   - ben

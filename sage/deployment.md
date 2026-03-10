@@ -1,8 +1,8 @@
 ---
-date_modified: 2025-02-27 14:00
+date_modified: 2025-10-30 11:30
 date_published: 2015-09-01 19:29
-description: Compile your assets, install your dependencies, and copy your Sage-based theme to your server. Remember that PHP versions must match between environments.
-title: Deploying Sage
+description: Deploy Sage themes by building assets for production, running `composer install` for dependencies, and ensuring PHP version consistency across environments.
+title: Deploying the Sage WordPress Theme
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - MWDelaney
 ---
 
-# Deployment
+# Deploying the Sage WordPress Theme
 
 ::: warning PHP versions must match
 Make sure the PHP version of your development environment matches the PHP version of your production environment, or you may hit a fatal error due to your Composer dependencies requiring a different PHP version.
@@ -28,7 +28,7 @@ Make sure the PHP version of your development environment matches the PHP versio
 Similar to deploying a Laravel app, Acorn supports an `optimize` command that will cache your configuration and views. This command should be run as part of your deployment process:
 
 ```shell
-wp acorn optimize
+$ wp acorn optimize
 ```
 
 ## Server configuration
@@ -82,7 +82,3 @@ If you use [Trellis](https://roots.io/trellis/), you can build your assets local
 ## Deploying Sage on Kinsta
 
 [Kinsta supports Bedrock and Trellis](https://kinsta.com/blog/bedrock-trellis/?kaid=OFDHAJIXUDIV), so deploying Sage with Trellis on [Kinsta](https://kinsta.com/?kaid=OFDHAJIXUDIV) is possible by following a few extra steps.
-
-## Deploying Sage on WP Engine
-
-See the instructions from [`wpengine/example-sage-theme`](https://github.com/wpengine/example-sage-theme).
