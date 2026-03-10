@@ -52,6 +52,7 @@ The `.env` file must be configured with Local's database settings along with you
 DB_NAME='local'
 DB_USER='root'
 DB_PASSWORD='root'
+
 WP_HOME='https://bedrock.local'
 ```
 
@@ -60,6 +61,7 @@ For Local WP these are the default DB credentials. If you changed them manually,
 ## Set the webroot in Local's site config
 
 Local's site config is located at `~/Local Sites/bedrock/conf/nginx/site.conf.hbs`. Open this file and append `/web` to the server root:
+
 ```diff
 server {
     listen {{port}};
