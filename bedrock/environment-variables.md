@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-02-16 20:55
 date_published: 2015-09-06 07:42
-description: Bedrock separates config from code with environment variables. There's a single place (.env) for settings that aren't committed to your repository.
-title: Environment Variables
+description: Bedrock uses `.env` files for environment-specific settings like database credentials. Keep sensitive data out of Git with environment variables.
+title: WordPress Environment Variables in Bedrock
 authors:
   - alwaysblank
   - ben
@@ -11,7 +11,7 @@ authors:
   - tristanbes
 ---
 
-# Environment Variables
+# WordPress Environment Variables in Bedrock
 
 Bedrock tries to separate config from code as much as possible and environment variables are used to achieve this. The benefit is there's a single place (`.env`) to keep settings like database or other 3rd party credentials that aren't committed to your repository.
 

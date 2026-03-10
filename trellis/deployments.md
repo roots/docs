@@ -1,8 +1,8 @@
 ---
 date_modified: 2025-02-21 17:30
 date_published: 2015-09-07 20:44
-description: Trellis offers zero-downtime WordPress deployment out of the box with little configuration needed. Hooks let you customize what happens at each step of the atomic deploy process.
-title: Deployments
+description: Trellis provides zero-downtime WordPress deployment with atomic deploys. Customize each deployment step with hooks for builds, migrations, and cleanup tasks.
+title: WordPress Deployments with Trellis
 authors:
   - ben
   - dalepgrant
@@ -13,7 +13,7 @@ authors:
   - TangRufus
 ---
 
-# Deployments
+# WordPress Deployments with Trellis
 
 Trellis allows zero-downtime WordPress deployment out of the box with a little configuration. Hooks let you customize what happens at each step of the deploy process.
 
@@ -43,7 +43,7 @@ Using DigitalOcean? Read our guide on [deploying Trellis to DigitalOcean](https:
 Run the following from any directory within your project:
 
 ```shell
-trellis deploy <environment>
+$ trellis deploy <environment>
 ```
 
 ::: warning Note
@@ -63,13 +63,13 @@ Database migrations to a new schema are not included as part of a Trellis deploy
 Run the following from any directory within your project:
 
 ```shell
-trellis rollback <environment>
+$ trellis rollback <environment>
 ```
 
 Manually specify a different release using `--release=12345678901234` as such:
 
 ```shell
-trellis rollback --release=12345678901234 <environment>
+$ trellis rollback --release=12345678901234 <environment>
 ```
 
 By default Trellis stores five previous releases, not including the current release. See `deploy_keep_releases` in [Options - Remote Servers](wordpress-sites.md) to change this setting.

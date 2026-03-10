@@ -1,8 +1,8 @@
 ---
 date_modified: 2026-03-10 17:00
 date_published: 2015-11-01 14:32
-description: Steps to enable and use Ansible Vault with a Trellis project. Trellis uses a `vault.yml` file for variables with sensitive data such as passwords.
-title: Vault
+description: Enable Ansible Vault in Trellis to encrypt sensitive data in `vault.yml`. Store passwords, API keys, and confidential variables securely in version control.
+title: Ansible Vault for Encrypting Secrets in Trellis
 authors:
   - ben
   - fullyint
@@ -13,7 +13,7 @@ authors:
   - TangRufus
 ---
 
-# Vault
+# Ansible Vault for Encrypting Secrets in Trellis
 
 Some project variables contain sensitive data like passwords. Trellis keeps these variable definitions in separate files named `vault.yml`. We strongly recommend that you encrypt these `vault.yml` files using to avoid exposing sensitive data in your project repository.
 
@@ -44,7 +44,7 @@ $ANSIBLE_VAULT;1.1;AES256
 ## Encrypt your vault files
 
 ```shell
-trellis vault encrypt
+$ trellis vault encrypt
 ```
 
 ::: danger
@@ -52,17 +52,23 @@ If you have unencrypted `vault.yml` files in your project's git history (e.g., p
 :::
 
 ::: warning Don't forget your vault password
-Trellis automatically generates a vault password for you at `trellis/.vault_pass`. This file **will not** be added to your Git repository.
+Trellis automatically generates a vault password for you at `trellis/.vault_pass` (this file **will not** be added to your Git repository), and adds a reference to it to the `ansible.cfg` file.
 :::
 
 Your Trellis commands will be exactly the same as before enabling vault, not requiring any extra flags.
+
+### Adding additional vault files for encryption
+
+```shell
+$ trellis vault encrypt -f path/to/file.yml
+```
 
 ## View an encrypted vault file
 
 You can view a vault file in your terminal with the following command:
 
 ```shell
-trellis vault view <environment>
+$ trellis vault view <environment>
 ```
 
 ## Edit an encrypted vault file
@@ -70,7 +76,7 @@ trellis vault view <environment>
 You can edit a vault file in your terminal with the following command:
 
 ```shell
-trellis vault edit group_vars/<environment>/vault.yml
+$ trellis vault edit group_vars/<environment>/vault.yml
 ```
 
 ## Other vault commands
@@ -113,7 +119,7 @@ Should you lose access to your vault password, you you can either spin up a new 
 ### admin root (sudo) password
 
 ```shell
-sudo passwd admin
+$ sudo passwd admin
 ```
 
 ### root mysql password

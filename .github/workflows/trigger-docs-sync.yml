@@ -1,0 +1,19 @@
+name: Trigger docs sync
+
+on:
+  push:
+    branches: [docs]
+    paths:
+      - 'acorn/**'
+      - 'bedrock/**'
+      - 'sage/**'
+      - 'trellis/**'
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger docs sync on roots.dev
+        run: gh workflow run docs-sync.yml --repo roots/roots.dev
+        env:
+          GH_TOKEN: ${{ secrets.ROOTS_DEV_TOKEN }}

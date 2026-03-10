@@ -1,8 +1,8 @@
 ---
 date_modified: 2025-06-26 11:00
 date_published: 2025-06-26 11:00
-description: How to Setup WooCommerce with Sage
-title: How to Setup WooCommerce
+description: Set up WooCommerce in Sage themes for eCommerce functionality. Configure templates, declare theme support, and integrate WooCommerce styling with Sage.
+title: Setting Up WooCommerce with Sage Theme
 authors:
   - aitor
   - csorrentino
@@ -11,7 +11,7 @@ authors:
   - YourRightWebsite
 ---
 
-# How to Setup WooCommerce
+# Setting Up WooCommerce with Sage Theme
 
 [WooCommerce](https://woocommerce.com/) is compatible with Sage's Blade templates with the correct setup.
 
@@ -20,7 +20,7 @@ authors:
 The [`generoi/sage-woocommerce`](https://github.com/generoi/sage-woocommerce) package adds functionality to allow Blade templates to work on Acorn and Sage powered WordPress sites:
 
 ```shell
-composer require generoi/sage-woocommerce
+$ composer require generoi/sage-woocommerce
 ```
 
 ### Publish the templates to your theme
@@ -28,7 +28,7 @@ composer require generoi/sage-woocommerce
 Add the required `single-product.blade.php` and `archive-product.blade.php` views to your theme:
 
 ```shell
-wp acorn vendor:publish --tag="woocommerce-template-views"
+$ wp acorn vendor:publish --tag="woocommerce-template-views"
 ```
 
 You can now edit these templates from `resources/views/woocommerce/`.

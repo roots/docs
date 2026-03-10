@@ -1,7 +1,7 @@
 ---
 date_modified: 2025-03-06 07:00
 date_published: 2024-03-05 16:41
-description: Use Laravel Livewire Components alongside your WordPress theme or plugin using Acorn.
+description: Use Laravel Livewire with Acorn to create reactive, dynamic components in WordPress themes and plugins without complex JavaScript frameworks.
 title: Using Livewire with WordPress
 authors:
   - ben

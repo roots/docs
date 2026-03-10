@@ -1,15 +1,15 @@
 ---
-date_modified: 2023-02-12 13:02
+date_modified: 2026-03-07 12:00
 date_published: 2021-10-21 13:21
-description: Acorn automatically handles logging and rendering thrown exceptions in dev. Logs default to the the `storage/logs`
-title: Error Handling
+description: Acorn handles exceptions automatically in development mode, logging errors to `storage/logs` and rendering detailed stack traces.
+title: Error Handling in Acorn Applications
 authors:
   - ben
   - jure
   - Log1x
 ---
 
-# Error Handling
+# Error Handling in Acorn Applications
 
 ## Introduction
 
@@ -23,28 +23,15 @@ During local development, it is highly advised to ensure that `WP_DEBUG` is enab
 
 ## The exception handler
 
-By default, Acorn utilizes the Symfony exception handler. This provides an easier to read stack trace on the errors thrown in your application. While this generic error screen is useful, we recommend using [Ignition](https://github.com/spatie/laravel-ignition) during development.
+Laravel includes a built-in debug/exception page that provides a detailed and easy to read stack trace on errors thrown in your application.
 
-### Ignition
-
-If you're familiar with Laravel, you may have heard of Ignition. Ignition provides a beautiful and helpful error page for your application.
-
-Not only does it provide useful hints pertaining to your error, it also allows you to publicly share your error using [Flare](https://flareapp.io/). This can be very useful when it comes to submitting bug reports or requesting help on [Roots Discourse](https://discourse.roots.io/).
-
-To use Ignition, simply require it alongside Acorn as a dev-dependency, and then clear the services and packages files:
-
-```shell
-$ composer require spatie/laravel-ignition --dev
-$ wp acorn optimize:clear
-```
-
-![Screenshot of Ignition's error page on an Acorn WordPress site](https://cdn.roots.io/app/uploads/wp_debug-acorn-ignition.png)
+![Screenshot of the error page on an Acorn WordPress site](https://cdn.roots.io/app/uploads/wp_debug-acorn.png)
 
 ### Reporting exceptions
 
 Exception reporting can be used to log exceptions to storage or send them to an external service such as Sentry. By default, exceptions will be logged to disk located in the `storage/logs` folder.
 
-Check out the documentation on [logging](logging.md) to learn more about log implementation.
+Check out the documentation on [logging](/acorn/docs/logging/) to learn more about log implementation.
 
 ### Disabling the exception handler
 

@@ -1,15 +1,15 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2016-11-07 16:30
-description: Use Xdebug in Trellis to debug your PHP. Trellis is configured with Xdebug and ready to rock out of the box in development.
-title: Debugging PHP
+description: Debug WordPress PHP code with Trellis's built-in Xdebug support in development. Configure your IDE for step debugging, breakpoints, and inspection.
+title: Debugging PHP in Trellis with Xdebug
 authors:
   - ben
   - Log1x
   - swalkinshaw
 ---
 
-# Debugging PHP
+# Debugging PHP in Trellis with Xdebug
 
 There are many ways to go about debugging a PHP application, and one of the most effective ways is using a debugger. One of the most powerful tools in the PHP community to go about doing this is [Xdebug](https://en.wikipedia.org/wiki/Xdebug).
 
@@ -38,7 +38,7 @@ You can see all the available configuration options in `roles/xdebug/defaults/ma
 
 While we default to installing Xdebug in development, installing it in any other environment is "opt-in." **It is not recommended to use Xdebug in production**, but it _can_ be extremely useful in debugging production-like environments.
 
-For example, if there's an issue you're encountering in Production, but cannot reproduce in Development (aka, your Vagrant environment), it's likely the problem lies with something specific to your VPS provider.
+For example, if there's an issue you're encountering in Production, but cannot reproduce in Development, it's likely the problem lies with something specific to your VPS provider.
 
 Duplicating your production environment and sanitizing the data using something like [WP Hammer](https://github.com/10up/wp-hammer) will allow you to debug your production environmment without affecting it. This is where trellis-cli's `xdebug-tunnel` commands comes in.
 
@@ -70,7 +70,7 @@ The argument `action` can be `open` or `close` and `host` is the hostname, IP, o
 
 Provided this hosts file:
 
-```
+```plaintext
 # let's pretend hosts/staging
 
 some_inventory_hostname ansible_ssh_host=12.34.56.78
@@ -100,7 +100,7 @@ This will remove the `/etc/php/8.0/fpm/conf.d/20-xdebug.ini` symlink, effectivel
 
 If you don't use inventory aliases in your host files, you can also use an ip address directly instead of the alias. For example, if your hosts file looks like this:
 
-```
+```plaintext
 [staging]
 12.34.56.78
 

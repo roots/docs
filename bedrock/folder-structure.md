@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
-description: Bedrock's organization is similar to putting WordPress in its own subdirectory. wp-content is renamed to app, and WordPress core is in the wp directory.
-title: Folder Structure
+description: Bedrock organizes WordPress differently. `wp-content` renamed to `app/`, WordPress core isolated in `wp/` directory for improved project structure.
+title: Bedrock WordPress Folder Structure
 authors:
   - ben
   - Log1x
@@ -10,9 +10,9 @@ authors:
   - swalkinshaw
 ---
 
-# Folder Structure
+# Bedrock WordPress Folder Structure
 
-```shell
+```plaintext
 ├── composer.json             # → Manage versions of WordPress, plugins & dependencies
 ├── config                    # → WordPress configuration files
 │   ├── application.php       # → Primary WP config file (wp-config.php equivalent)

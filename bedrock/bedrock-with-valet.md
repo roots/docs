@@ -1,13 +1,13 @@
 ---
 date_modified: 2023-03-08 8:55
 date_published: 2023-02-19 12:16
-description: How to configure Valet, a local development tool, for a Bedrock-based WordPress site.
-title: Bedrock with Valet
+description: Set up Laravel Valet for Bedrock WordPress development on macOS. Configure Valet drivers and local domains for seamless development workflow.
+title: Using Bedrock with Laravel Valet
 authors:
   - ben
 ---
 
-# Bedrock with Valet
+# Using Bedrock with Laravel Valet
 
 [Laravel Valet](https://laravel.com/docs/10.x/valet) is a local development environment. In this guide you will learn how to setup a Bedrock-based WordPress site with Valet.
 
@@ -25,6 +25,9 @@ To create a new Bedrock site for Valet, navigate to Valet sites directory and us
 
 ```shell
 $ cd ~/Sites/valet
+```
+
+```shell
 $ wp valet new bedrock --project=bedrock
 ```
 
@@ -65,6 +68,9 @@ Config::define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 
 ```shell
 $ valet link test.bedrock-multisite
+```
+
+```shell
 $ valet link site2.bedrock-multisite
 ```
 

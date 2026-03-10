@@ -1,8 +1,8 @@
 ---
 date_modified: 2024-09-11 10:00
 date_published: 2015-10-15 12:20
-description: Trellis installation and new project instructions.
-title: Installing Trellis
+description: Install Trellis for WordPress projects. Complete setup instructions covering requirements, dependencies, project initialization, and initial configuration.
+title: Installing Trellis for WordPress
 authors:
   - ben
   - Log1x
@@ -13,7 +13,7 @@ authors:
   - MWDelaney
 ---
 
-# Installation
+# Installing Trellis for WordPress
 
 ## What is Trellis?
 
@@ -36,10 +36,10 @@ You get the benefit of Ansible [documentation](https://docs.ansible.com/ansible/
 
 #### Local development
 
-Trellis comes with [Vagrant](https://www.vagrantup.com/) support for local development environments that run on isolated virtual machines. This means you don't have to worry about polluting your local OS with software that might break
+Trellis comes with [Lima](https://lima-vm.io/) support for local development environments that run on isolated virtual machines. This means you don't have to worry about polluting your local OS with software that might break
 or conflict with other tools you use.
 
-However, using Vagrant is optional and you're free to use other local dev tools as well, or even none at all.
+However, using Lima is optional and you're free to use other local dev tools as well, or even none at all.
 
 #### Customizable
 
@@ -71,7 +71,7 @@ Since Trellis is open-source, we get the leverage of Roots and our community to 
 
 #### Development and production parity
 
-Unlike many other solutions for WordPress server hosting, Trellis aims to have [parity between your development and production environments](https://roots.io/twelve-factor-10-dev-prod-parity/). Trellis comes setup to run locally with Vagrant so you can test your WordPress sites with full confidence that they'll work once you deploy to production.
+Unlike many other solutions for WordPress server hosting, Trellis aims to have [parity between your development and production environments](https://roots.io/twelve-factor-10-dev-prod-parity/). Trellis comes setup to run locally with Lima so you can test your WordPress sites with full confidence that they'll work once you deploy to production.
 
 #### CLI
 
@@ -89,7 +89,7 @@ with a single command thanks to trellis-cli too.
 
 Trellis provisions a base Ubuntu 24.04 server by installing and configuring the following software:
 
-* PHP 8.1+
+* PHP 8.3+
 * Nginx (including HTTP2/ and optional FastCGI micro-caching)
 * MariaDB (a drop-in MySQL replacement)
 * SSL support (scores an A+ on the [Qualys SSL Server Test](https://www.ssllabs.com/ssltest/))
@@ -104,36 +104,16 @@ In addition to configuring common services like ntp, sshd, etc.
 
 ## System requirements
 
-* [Vagrant](https://www.vagrantup.com/downloads.html)
-* [Vagrant provider](https://developer.hashicorp.com/vagrant/docs/providers)
-  * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-  * [Parallels](https://www.parallels.com/products/desktop/download/) (for Apple Silicon M1, M2, M3, etc. Macs)
-
-::: tip macOS users
-Want to skip the Vagrant and Vagrant provider requirements? [**Try Lima as an alternative**](/introducing-lima-to-trellis-for-faster-local-development/)
-:::
+* macOS or Linux
 
 ::: warning Windows users
-WSL is required in order to use Trellis. All Trellis commands must be run from a [WSL environment](https://docs.microsoft.com/en-us/windows/wsl/).
+Windows is not supported at this time.
 :::
-
-<details>
-<summary>Additional requirements for Windows users</summary>
-
-* [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install)
-* Vagrant must be installed in WSL
-* VirtualBox must be installed in Windows
-* The following must be set in your WSL shell configuration file (`~/.bashrc`):
-  * `VAGRANT_WSL_ENABLE_WINDOWS_ACCESS = 1`
-  * `export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"`
-* All Trellis commands must be run WSL  
-
-</details>
 
 ## Install Trellis CLI
 
 ```shell
-brew install roots/tap/trellis-cli
+$ brew install roots/tap/trellis-cli
 ```
 
 ## Create a new project with Trellis
@@ -141,12 +121,12 @@ brew install roots/tap/trellis-cli
 Choose a descriptive project name (and use it in place of the default example.com). We recommend the domain of the site for uniqueness.
 
 ```shell
-trellis new example.com
+$ trellis new example.com
 ```
 
 After you've created a project, the folder structure for a Trellis project will look like this:
 
-```shell
+```plaintext
 example.com/      # → Root folder for the project
 ├── trellis/      # → Your server configuration (a customized install of Trellis)
 └── site/         # → A Bedrock-based WordPress site
@@ -163,10 +143,10 @@ Check out the following files to review the basic site configuration:
 ## Start your development environment
 
 ```shell
-trellis up
+$ trellis vm up
 ```
 
-This command will start the Vagrant environment and provision the server. Once it's done, you can visit your development site at the URL you chose when you ran `trellis new`.
+This command will start the Lima environment and provision the server. Once it's done, you can visit your development site at the URL you chose when you ran `trellis new`.
 
 [Read more about Local Development](/trellis/docs/local-development/)
 
@@ -183,7 +163,7 @@ You probably want to encrypt your vault files, which hold automatically-generate
 Before deploying to production, you'll need to provision your server. [Read more about provisioning](/trellis/docs/remote-server-setup/)
 
 ```shell
-trellis provision production
+$ trellis provision production
 ```
 
 ## Deploy to production
@@ -191,5 +171,5 @@ trellis provision production
 Ready to deploy your site to production? [Read more about deployments](/trellis/docs/deployments/)
 
 ```shell
-trellis deploy production example.com
+$ trellis deploy production example.com
 ```

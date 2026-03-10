@@ -1,14 +1,14 @@
 ---
 date_modified: 2025-08-10 15:15
 date_published: 2023-02-19 12:16
-description: How to configure Local, a local WordPress development tool, for a Bedrock-based WordPress site.
-title: Bedrock with Local
+description: Configure Local by Flywheel for Bedrock WordPress development. Adjust document root to `web/` directory and configure Local for Bedrock's structure.
+title: Using Bedrock with Local by Flywheel
 authors:
   - ben
   - ethanclevenger91
 ---
 
-# Bedrock with Local
+# Using Bedrock with Local by Flywheel
 
 [Local](https://localwp.com/), previously known as Local by Flywheel, is one of the many local development tools available for WordPress developers. In this guide you will learn how to configure Local for a Bedrock-based WordPress site.
 
@@ -22,11 +22,8 @@ Create a new site from the Local interface. In this guide, we'll use `bedrock` a
 
 From your new Local site, click **Open site shell** and navigate up one folder so that you're in the `bedrock/app` folder. On macOS or Linux, you could run the following command:
 
-```shell
-# Navigate one folder up
-$ cd ..
 
-# or, navigate directly to the app/ folder
+```shell
 $ cd ~/Local\ Sites/bedrock/app
 ```
 
@@ -38,7 +35,7 @@ $ composer create-project roots/bedrock
 
 Your folder structure should now look like this:
 
-```shell
+```plaintext
 # @ ~/Local Sites/bedrock
 .
 ├── app

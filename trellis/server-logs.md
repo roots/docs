@@ -1,15 +1,15 @@
 ---
 date_modified: 2023-01-31 17:40
 date_published: 2018-04-24 09:59
-description: Server logs for Trellis sites can be found at `/srv/www/example.com/logs/`.
-title: Server Logs
+description: Trellis site logs are located at `/srv/www/example.com/logs/` including Nginx access logs, error logs, and PHP-FPM logs for troubleshooting issues.
+title: Accessing Server Logs in Trellis
 authors:
   - ben
   - Log1x
   - swalkinshaw
 ---
 
-# Server Logs
+# Accessing Server Logs in Trellis
 
 ## Accessing logs
 

@@ -1,8 +1,8 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2015-09-06 07:42
-description: Steps to running a multisite WordPress installation on Trellis. Multisite must be setup in your Bedrock configuration prior to provisioning.
-title: Multisite
+description: Set up WordPress multisite on Trellis by configuring Bedrock for multisite installation before provisioning. Supports subdomain and subdirectory networks.
+title: WordPress Multisite Setup with Trellis
 authors:
   - ben
   - evance
@@ -17,7 +17,7 @@ authors:
   - swalkinshaw
 ---
 
-# Multisite
+# WordPress Multisite Setup with Trellis
 
 Trellis assumes your WordPress configuration already has multisite set up. If not, ensure the following values are placed somewhere before calling `Config::apply()` in Bedrock's `config/application.php` and **before** provisioning your server:
 
@@ -89,33 +89,3 @@ site_hosts:
     redirects:
       - www.subdomain.example.com
 ```
-
-## Subdomains locally
-
-For subdomains in development, you'll need DNS entries for every subdomain/host. The [Landrush](https://github.com/phinze/landrush) Vagrant plugin is how you can do this. Install it via:
-
-```shell
-$ vagrant plugin install landrush
-```
-
-Landrush spins up a small DNS server that allows us to use wildcard subdomains, a requirement for subdomain multisite installs.
-
-Some users may have external DNS issues when using Landrush. If you encounter this, add this to your `Vagrantfile`:
-
-```ruby
-config.landrush.guest_redirect_dns = false
-```
-
-See issue [#511](https://github.com/roots/trellis/issues/511) for more details.
-
-
-### Debugging Landrush
-
-If something goes wrong with Landrush such as not being able to resolve a
-website from the guest:
-
-```shell
-$ vagrant landrush list
-```
-
-And remove any extraneous entries and try again.

@@ -1,13 +1,13 @@
 ---
 date_modified: 2024-09-11 10:00
 date_published: 2023-04-05 07:42
-description: A command-line interface (CLI) to manage Trellis projects via the `trellis` command.
-title: Trellis CLI
+description: Use the Trellis CLI to manage WordPress projects via the `trellis` command. Simplifies provisioning servers, deploying sites, and common Trellis tasks.
+title: Trellis CLI Command-Line Interface
 authors:
   - swalkinshaw
 ---
 
-# Trellis CLI
+# Trellis CLI Command-Line Interface
 
 trellis-cli is a command-line interface (CLI) to manage Trellis projects via the `trellis` command. The CLI provides a more consistent and integrated experience and includes:
 
@@ -24,7 +24,7 @@ and much more.
 ### Quick Install (macOS, Linux, WSL via Homebrew)
 
 ```shell
-brew install roots/tap/trellis-cli
+$ brew install roots/tap/trellis-cli
 ```
 
 ### Script
@@ -32,11 +32,7 @@ brew install roots/tap/trellis-cli
 We also offer a quick script version:
 
 ```shell
-# You might need sudo before bash
-curl -sL https://roots.io/trellis/cli/get | bash
-
-# Sets bindir or installation directory, Defaults to '/usr/local/bin'
-curl -sL https://roots.io/trellis/cli/get | bash -s -- -b /path/to/my/bin
+$ curl -sL https://roots.io/trellis/cli/get | bash
 ```
 
 ### Manual Install
@@ -51,14 +47,15 @@ trellis-cli provides binary releases for a variety of OSes. These binary version
 ### Dev/unstable install (macOS, Linux, WSL via Homebrew)
 
 ```shell
-# Cleanup previous versions (if installed)
-brew uninstall roots/tap/trellis-cli
+$ brew uninstall roots/tap/trellis-cli
+```
 
-# Install
-brew install --HEAD roots/tap/trellis-cli-dev
+```shell
+$ brew install --HEAD roots/tap/trellis-cli-dev
+```
 
-# Upgrade
-brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
+```shell
+$ brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
 ```
 
 ### Windows Install
@@ -89,7 +86,6 @@ For subcommand documentation, run `trellis <command> -h`.
 | `db` | Commands for database management |
 | `deploy` | Deploys a site to the specified environment |
 | `dotenv` | Template .env files to local system |
-| `down` | Stops the Vagrant machine by running `vagrant halt`|
 | `droplet` | Commands for DigitalOcean Droplets |
 | `exec` | Exec runs a command in the Trellis virtualenv |
 | `galaxy` | Commands for Ansible Galaxy |
@@ -102,7 +98,6 @@ For subcommand documentation, run `trellis <command> -h`.
 | `provision` | Provisions the specified environment |
 | `rollback` | Rollsback the last deploy of the site on the specified environment |
 | `ssh` | Connects to host via SSH |
-| `up` | Starts and provisions the Vagrant environment by running `vagrant up` |
 | `valet` | Commands for Laravel Valet |
 | `vault` | Commands for Ansible Vault |
 | `vm` | Commands for managing development virtual machines |
@@ -175,5 +170,5 @@ vm:
 
 Example env var usage:
 ```shell
-TRELLIS_ASK_VAULT_PASS=true trellis provision production
+$ TRELLIS_ASK_VAULT_PASS=true trellis provision production
 ```

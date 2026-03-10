@@ -1,14 +1,14 @@
 ---
 date_modified: 2025-10-24 12:00
 date_published: 2025-10-24 12:00
-description: Convert traditional WordPress sites to Bedrock with Lithify. Automate database updates and file path changes for Bedrock.
+description: Convert traditional WordPress sites to Bedrock using Lithify. Automatically updates database references and file paths for Bedrock's directory structure.
 title: Converting WordPress Sites to Bedrock
 authors:
   - ben
   - MWDelaney
 ---
 
-# Converting WordPress sites to Bedrock with Lithify
+# Converting WordPress Sites to Bedrock
 
 [Lithify](https://github.com/MWDelaney/lithify) is a WordPress plugin that adds a WP-CLI command to convert traditional WordPress sites into Bedrock-style installations. Created by [MWDelaney](https://github.com/MWDelaney), Lithify automates the database changes needed to make your existing WordPress site work with Bedrock's improved folder structure.
 
@@ -28,6 +28,9 @@ Create a new Bedrock installation:
 
 ```bash
 $ composer create-project roots/bedrock example.com
+```
+
+```bash
 $ cd example.com
 ```
 
@@ -65,6 +68,9 @@ Activate Lithify and run the conversion command:
 
 ```bash
 $ wp plugin activate lithify
+```
+
+```bash
 $ wp lithify
 ```
 
