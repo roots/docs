@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-10 12:00
+date_modified: 2026-03-11 12:00
 date_published: 2021-09-06 16:48
 description: Set up Composer authentication in Trellis to access private packages, commercial plugins, and authenticated repositories during deployment.
 title: Composer Authentication
@@ -38,6 +38,7 @@ Trellis supports authentication for multiple Composer repositories, via the Ansi
 | `gitlab-oauth` | GitLab OAuth token |
 | `gitlab-token` | GitLab personal/deploy token |
 | `bitbucket-oauth` | Bitbucket OAuth consumer key/secret |
+| `custom-headers` | Custom HTTP header authentication |
 
 ## HTTP Basic
 
@@ -116,6 +117,30 @@ vault_wordpress_sites:
   example.com:
     composer_authentications:
       - { type: bitbucket-oauth, hostname: bitbucket.org, consumer_key: my-consumer-key, consumer_secret: my-consumer-secret }
+```
+
+## Custom Headers
+
+For private repositories that use custom HTTP headers for authentication:
+
+```yaml
+# group_vars/<env>/vault.yml
+
+vault_wordpress_sites:
+  example.com:
+    composer_authentications:
+      - { type: custom-headers, hostname: repo.example.org, headers: ["API-TOKEN: my-api-token"] }
+```
+
+Multiple headers can be specified:
+
+```yaml
+# group_vars/<env>/vault.yml
+
+vault_wordpress_sites:
+  example.com:
+    composer_authentications:
+      - { type: custom-headers, hostname: repo.example.org, headers: ["API-TOKEN: my-api-token", "X-CUSTOM-HEADER: value"] }
 ```
 
 ## Multiple repositories
