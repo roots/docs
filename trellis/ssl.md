@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-11-24 13:00
+date_modified: 2026-03-06 13:00
 date_published: 2015-09-06 07:42
 description: Enable HTTPS in Trellis with automatic Let's Encrypt certificates, manually provided SSL certificates, or self-signed certificates for local development.
 title: SSL Certificates in Trellis
@@ -367,11 +367,13 @@ example.com:
 
 Our HTTPS implementation uses all performance optimizations possible to ensure your sites remain fast despite the small overhead of SSL. This includes the following features:
 
-- HTTP/2 support (fallback to HTTP/1.1 for older browsers)
+- HTTP/3 support with QUIC (fallback to HTTP/2 and HTTP/1.1 for older browsers)
 - SSL session cache
 - OCSP stapling
 - 1400 byte TLS records
 - Longer keepalives
+
+HTTP/3 requires UDP port 443 to be open. If you have a cloud or hardware firewall in front of your server (eg: AWS security groups, DigitalOcean cloud firewalls), ensure it allows UDP/443 inbound traffic.
 
 See [Is TLS Fast Yet?](https://istlsfastyet.com/) for more information on fast TLS/SSL.
 
