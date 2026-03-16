@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-08-16 12:45
 date_published: 2015-09-06 07:42
-description: Bedrock treats WordPress core, plugins, and themes as Composer dependencies. Use WPackagist to require plugins and automate updates efficiently.
+description: Bedrock treats WordPress core, plugins, and themes as Composer dependencies. Use WP Composer to require plugins and automate updates efficiently.
 title: WordPress Dependencies with Composer
 authors:
   - ben
@@ -17,12 +17,12 @@ Bedrock uses [Composer](http://getcomposer.org) to manage dependencies. Any 3rd 
 
 ## Adding WordPress plugins with Composer
 
-[WordPress Packagist](http://wpackagist.org/) is already registered in the `composer.json` file so any plugins from the [WordPress Plugin Directory](http://wordpress.org/plugins/) can easily be required.
+[WP Composer](https://wp-composer.com/) is already registered in the `composer.json` file so any plugins from the [WordPress Plugin Directory](http://wordpress.org/plugins/) can easily be required.
 
-To add a plugin, add it under the `require` directive or use `composer require <namespace>/<packagename>` from the command line. If the plugin is from WordPress.org, then the namespace is always `wpackagist-plugin`:
+To add a plugin, add it under the `require` directive or use `composer require <namespace>/<packagename>` from the command line. If the plugin is from WordPress.org, then the namespace is always `wp-plugin`:
 
 ```shell
-$ composer require wpackagist-plugin/akismet
+$ composer require wp-plugin/akismet
 ```
 
 `plugins` and `mu-plugins` are ignored in Git by default since Composer manages them. If you want to add something to those folders that *isn't* managed by Composer, you need to update `.gitignore` to allow them to be added to your repository:
@@ -39,7 +39,7 @@ In the following example, Akismet will be installed in the `mu-plugins` director
 ...
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/akismet"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wp-plugin/akismet"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
@@ -56,8 +56,8 @@ To configure more than one regular plugin to be installed to `mu-plugins`, add a
 ...
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin", 
-        "wpackagist-plugin/akismet",
-        "wpackagist-plugin/turn-comments-off"
+        "wp-plugin/akismet",
+        "wp-plugin/turn-comments-off"
       ],
 ...
 ```
@@ -71,7 +71,7 @@ $ composer require roots/wordpress -W
 ```
 
 ```shell
-$ composer require wpackagist-plugin/akismet
+$ composer require wp-plugin/akismet
 ```
 
 ```shell
@@ -93,10 +93,10 @@ Themes can also be managed by Composer but should only be done so under two cond
 
 Under most circumstances, we recommend keeping your main theme as part of your repository.
 
-Just like plugins, WPackagist maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wpackagist-theme` namespace:
+Just like plugins, WP Composer maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wp-theme` namespace:
 
 ```shell
-$ composer require wpackagist-theme/twentytwentythree
+$ composer require wp-theme/twentytwentythree
 ```
 
 ## Recommended resources
