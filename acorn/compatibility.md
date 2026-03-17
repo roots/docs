@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-10-19 17:30
+date_modified: 2026-03-17 16:35
 date_published: 2024-04-26 10:35
 description: Known compatibility issues between WordPress plugins and Acorn, including solutions and workarounds for common integration conflicts.
 title: WordPress Plugin Compatibility with Acorn
@@ -32,7 +32,6 @@ Composer patches can sometimes be used to work around issues with plugins.
 * **WooCommerce PayPal Payments** includes an older version of `psr/log`.
 * **WooCommerce UPS Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/4e76aee9a30cc0d3228cf6146eec64e0).
 * **WooCommerce USPS Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/4e76aee9a30cc0d3228cf6146eec64e0).
-* **WPForms >=1.9.5** includes an older version of `psr/log`. Currently, the latest compatible version is 1.9.4.2.
 
 For more information on how to use Composer patches to resolve plugin conflicts, see [Patching WordPress Plugins with Composer](/bedrock/docs/patching-wordpress-plugins-with-composer/).
 
