@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-01-27 13:17
 date_published: 2018-08-02 14:04
-description: Add paid and private plugins to Bedrock through Composer using private Git repositories, custom Composer repos, or services like WP Composer.
+description: Add paid and private plugins to Bedrock through Composer using private Git repositories, custom Composer repos, or services like WP Packages.
 title: Private or Commercial WordPress Plugins as Composer Dependencies
 authors:
   - MWDelaney
@@ -10,7 +10,7 @@ authors:
 
 # Private or Commercial WordPress Plugins as Composer Dependencies
 
-Bedrock (and by extension Trellis) uses Composer to manage its dependencies, which includes WordPress themes and plugins. This is great for version control as many WordPress plugins are easily available via [WP Composer](https://wp-composer.com/), but what happens when you need to add a private, commercial, or paid plugin to your site? This guide will explain a simple way to add private plugins to your site via Composer.
+Bedrock (and by extension Trellis) uses Composer to manage its dependencies, which includes WordPress themes and plugins. This is great for version control as many WordPress plugins are easily available via [WP Packages](https://wp-packages.org/), but what happens when you need to add a private, commercial, or paid plugin to your site? This guide will explain a simple way to add private plugins to your site via Composer.
 
 There are many ways to add private or paid plugins to your Bedrock-based project. Popular methods include:
 

@@ -150,7 +150,7 @@ For a different commit or tag, inspect that revision's `composer.json` in the `a
 1. Add the package repository:
 
 ```bash
-composer repo add wp-memcached '{"type":"package","package":{"name":"automattic/wp-memcached","type":"wordpress-dropin","version":"dev-master","dist":{"type":"file","url":"https://raw.githubusercontent.com/Automattic/wp-memcached/bb3b9f689dd99df66454b93ece34093556dc37f9/object-cache.php","reference":"bb3b9f689dd99df66454b93ece34093556dc37f9"},"require":{"koodimonni/composer-dropin-installer":"^1.4","php":">=7.4.0","ext-memcache":"*"}}}' --before wp-composer
+composer repo add wp-memcached '{"type":"package","package":{"name":"automattic/wp-memcached","type":"wordpress-dropin","version":"dev-master","dist":{"type":"file","url":"https://raw.githubusercontent.com/Automattic/wp-memcached/bb3b9f689dd99df66454b93ece34093556dc37f9/object-cache.php","reference":"bb3b9f689dd99df66454b93ece34093556dc37f9"},"require":{"koodimonni/composer-dropin-installer":"^1.4","php":">=7.4.0","ext-memcache":"*"}}}' --before wp-packages
 ```
 
 2. Configure the install location:

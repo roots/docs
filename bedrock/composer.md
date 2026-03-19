@@ -1,7 +1,7 @@
 ---
 date_modified: 2023-08-16 12:45
 date_published: 2015-09-06 07:42
-description: Bedrock treats WordPress core, plugins, and themes as Composer dependencies. Use WP Composer to require plugins and automate updates efficiently.
+description: Bedrock treats WordPress core, plugins, and themes as Composer dependencies. Use WP Packages to require plugins and automate updates efficiently.
 title: WordPress Dependencies with Composer
 authors:
   - ben
@@ -17,7 +17,7 @@ Bedrock uses [Composer](http://getcomposer.org) to manage dependencies. Any 3rd 
 
 ## Adding WordPress plugins with Composer
 
-[WP Composer](https://wp-composer.com/) is already registered in the `composer.json` file so any plugins from the [WordPress Plugin Directory](http://wordpress.org/plugins/) can easily be required.
+[WP Packages](https://wp-packages.org/) is already registered in the `composer.json` file so any plugins from the [WordPress Plugin Directory](http://wordpress.org/plugins/) can easily be required.
 
 To add a plugin, add it under the `require` directive or use `composer require <namespace>/<packagename>` from the command line. If the plugin is from WordPress.org, then the namespace is always `wp-plugin`:
 
@@ -93,7 +93,7 @@ Themes can also be managed by Composer but should only be done so under two cond
 
 Under most circumstances, we recommend keeping your main theme as part of your repository.
 
-Just like plugins, WP Composer maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wp-theme` namespace:
+Just like plugins, WP Packages maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wp-theme` namespace:
 
 ```shell
 $ composer require wp-theme/twentytwentythree
