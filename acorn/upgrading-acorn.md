@@ -1,7 +1,7 @@
 ---
 date_modified: 2026-03-22 12:00
 date_published: 2023-01-13 13:12
-description: Acorn v4 includes minimal breaking changes from v3. Review required configuration updates, deprecated features, and new functionality available.
+description: Learn how to upgrade Acorn to the latest version with guidance on breaking changes, dependency requirements, and configuration updates.
 title: Upgrading Acorn to the Latest Version
 authors:
   - ben
