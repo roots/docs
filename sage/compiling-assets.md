@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-12-11 11:00
+date_modified: 2026-03-22 12:00
 date_published: 2015-09-01 18:19
 description: Sage uses Vite for fast asset compilation with HMR support. Includes custom plugin for hot module replacement in WordPress block editor during development.
 title: Compiling Assets in Sage with Vite
@@ -16,7 +16,7 @@ authors:
 
 [Vite](https://vitejs.dev/) is front-end build tool used in Sage.
 
-Sage also uses the Laravel Vite plugin, along with Laravel's Vite facade for referencing Vite assets in PHP and Blade template files. Because of this, [Laravel's Vite documentation](https://laravel.com/docs/12.x/vite) also applies to Sage.
+Sage also uses the Laravel Vite plugin, along with Laravel's Vite facade for referencing Vite assets in PHP and Blade template files. Because of this, [Laravel's Vite documentation](https://laravel.com/docs/13.x/vite) also applies to Sage.
 
 ## Available build commands
 
@@ -38,7 +38,7 @@ It will also copy any files in the `images` or `fonts` directories under `/resou
 
 ### Assets in Blade template files
 
-Use the [`Vite::asset` method](https://laravel.com/docs/12.x/vite#blade-processing-static-assets) to call assets from Blade template files:
+Use the [`Vite::asset` method](https://laravel.com/docs/13.x/vite#blade-processing-static-assets) to call assets from Blade template files:
 
 ```blade
 <img src="{{ Vite::asset('resources/images/example.svg') }}">

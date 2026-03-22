@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-10-01 00:00
+date_modified: 2026-03-22 12:00
 date_published: 2025-10-01 00:00
 description: Use Laravel's Eloquent ORM in WordPress with Acorn. Create models for WordPress posts, users, and custom tables with relationships, scopes, and clean query syntax.
 title: Using Eloquent Models in WordPress
@@ -11,7 +11,7 @@ authors:
 
 Acorn brings Laravel's powerful Eloquent ORM to WordPress, allowing you to interact with WordPress data using clean, expressive syntax. Create models for posts, users, custom tables, and more with relationships, scopes, and all the Eloquent features you love.
 
-We recommend referencing the [Laravel docs on Eloquent](https://laravel.com/docs/12.x/eloquent) for a complete understanding of the ORM.
+We recommend referencing the [Laravel docs on Eloquent](https://laravel.com/docs/13.x/eloquent) for a complete understanding of the ORM.
 
 ## Creating your first model
 

@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-10-01 00:00
+date_modified: 2026-03-22 12:00
 date_published: 2025-10-01 00:00
 description: Build robust APIs and handle requests with Laravel controllers, middleware, and custom HTTP kernels in WordPress using Acorn. Clean separation of concerns with validation, authentication, and response formatting.
 title: Controllers, Middleware, and HTTP Kernel in WordPress
@@ -11,7 +11,7 @@ authors:
 
 Acorn brings Laravel's controller and middleware system to WordPress, enabling you to build robust APIs, handle complex request logic, and implement clean separation of concerns. Controllers organize your route logic, while middleware provides a convenient mechanism for filtering HTTP requests.
 
-We recommend referencing the [Laravel docs on Controllers](https://laravel.com/docs/12.x/controllers) and [Middleware](https://laravel.com/docs/12.x/middleware) for a complete understanding.
+We recommend referencing the [Laravel docs on Controllers](https://laravel.com/docs/13.x/controllers) and [Middleware](https://laravel.com/docs/13.x/middleware) for a complete understanding.
 
 ## Creating controllers
 
