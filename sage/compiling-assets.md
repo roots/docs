@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-12-11 11:00
+date_modified: 2026-03-22 11:00
 date_published: 2015-09-01 18:19
 description: Sage uses Vite for fast asset compilation with HMR support. Includes custom plugin for hot module replacement in WordPress block editor during development.
 title: Compiling Assets in Sage with Vite
@@ -34,7 +34,7 @@ The configuration will generate the following files:
 - `editor.css` - Styles used by the editor when creating/editing posts.
 - `editor.js` - JavaScript for the block editor, i.e. block styles and variants.
 
-It will also copy any files in the `images` or `fonts` directories under `/resources/assets/` into the `public` directory with the other compiled files, but does not optimize or compress them.
+It will also copy any files in the `images` or `fonts` directories under `/resources/` into the `public` directory with the other compiled files, but does not optimize or compress them. This is handled by the `assets` option on `laravel-vite-plugin` in `vite.config.js`.
 
 ### Assets in Blade template files
 
