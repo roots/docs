@@ -53,7 +53,7 @@ Modify `vite.config.js` to remove the Tailwind plugin, reference the new file ex
 +        'resources/css/editor.scss',
          'resources/js/editor.js',
        ],
-+      assets: ['resources/images/**', 'resources/fonts/**'],
+       assets: ['resources/images/**', 'resources/fonts/**'],
 
      wordpressThemeJson({
 -      disableTailwindColors: false,
