@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-04-15 11:15
+date_modified: 2026-03-22 11:15
 date_published: 2023-06-06 17:30
 description: Enable Sass in Sage by renaming `app.css` to `app.scss` for advanced CSS preprocessing with variables and mixins.
 title: Using Sass with Sage WordPress Theme
@@ -53,6 +53,7 @@ Modify `vite.config.js` to remove the Tailwind plugin, reference the new file ex
 +        'resources/css/editor.scss',
          'resources/js/editor.js',
        ],
+       assets: ['resources/images/**', 'resources/fonts/**'],
 
      wordpressThemeJson({
 -      disableTailwindColors: false,
