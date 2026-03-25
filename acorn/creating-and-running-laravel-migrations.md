@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-08-06 14:00
+date_modified: 2026-03-22 12:00
 date_published: 2025-08-06 14:00
 description: Use Laravel's migration system in WordPress through Acorn. Create, modify, and manage custom database tables with Artisan migration commands.
 title: Creating and Running Laravel Migrations
@@ -11,7 +11,7 @@ authors:
 
 Acorn brings Laravel's powerful migration system to WordPress, allowing you to version control your database schema and manage custom tables with ease. Each migration contains instructions for creating or modifying database tables.
 
-We recommend referencing the [Laravel docs on Database Migrations](https://laravel.com/docs/12.x/migrations) for a complete understanding of the migration system.
+We recommend referencing the [Laravel docs on Database Migrations](https://laravel.com/docs/13.x/migrations) for a complete understanding of the migration system.
 
 ## Creating your first migration
 

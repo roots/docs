@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-09-29 00:00
+date_modified: 2026-03-22 12:00
 date_published: 2025-09-29 00:00
 description: Use Laravel's queue system in WordPress through Acorn. Process background jobs, handle async tasks, and schedule recurring operations efficiently.
 title: Creating and Processing Laravel Queues
@@ -11,7 +11,7 @@ authors:
 
 Acorn brings Laravel's robust queue system to WordPress, enabling you to defer time-consuming tasks like image processing, email sending, or API calls to background jobs. This improves your application's response time and user experience by handling heavy operations asynchronously.
 
-We recommend referencing the [Laravel docs on Queues](https://laravel.com/docs/12.x/queues) for a complete understanding of the queue system.
+We recommend referencing the [Laravel docs on Queues](https://laravel.com/docs/13.x/queues) for a complete understanding of the queue system.
 
 ## Setting up the queue system
 

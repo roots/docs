@@ -1,7 +1,7 @@
 ---
-date_modified: 2024-08-30 08:45
+date_modified: 2026-03-22 12:00
 date_published: 2023-01-13 13:12
-description: Acorn v4 includes minimal breaking changes from v3. Review required configuration updates, deprecated features, and new functionality available.
+description: Learn how to upgrade Acorn to the latest version with guidance on breaking changes, dependency requirements, and configuration updates.
 title: Upgrading Acorn to the Latest Version
 authors:
   - ben
@@ -10,6 +10,86 @@ authors:
 ---
 
 # Upgrading Acorn to the Latest Version
+
+## Upgrading to v6.x from v5.x
+
+Acorn v6 includes Laravel v13 components, whereas Acorn v5 includes Laravel v12 components.
+
+### Upgrading dependencies
+
+Acorn v6 requires PHP >= 8.3.
+
+Update the `roots/acorn` dependency in your `composer.json` file to `^6.0`:
+
+```shell
+$ composer require roots/acorn ^6.0 -W
+```
+
+The `-W` flag is required to upgrade the included Laravel dependencies.
+
+::: warning
+If any packages/dependencies have conflicts while updating, try removing and then re-requiring them after Acorn is bumped to 6.x.
+:::
+
+### Breaking changes
+
+#### Cache, session, and Redis prefix separators
+
+The default prefix/cookie separators have changed from underscores to hyphens to match Laravel 13 defaults. This means:
+
+- **Cache prefix**: `laravel_cache_` → `laravel-cache-`
+- **Session cookie**: `laravel_session` → `laravel-session`
+- **Redis prefix**: `laravel_database_` → `laravel-database-`
+
+This will **invalidate existing caches and log out all sessions** unless you have explicitly set these values via environment variables (`CACHE_PREFIX`, `SESSION_COOKIE`, `REDIS_PREFIX`).
+
+To preserve existing behavior, add these to your `.env`:
+
+```env
+CACHE_PREFIX=your_app_name_cache_
+SESSION_COOKIE=your_app_name_session
+REDIS_PREFIX=your_app_name_database_
+```
+
+#### Mail configuration
+
+The SMTP `encryption` key has been replaced with `scheme`:
+
+```diff
+  'smtp' => [
+      'transport' => 'smtp',
+-     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
++     'scheme' => env('MAIL_SCHEME'),
+  ],
+```
+
+If you are using the `MAIL_ENCRYPTION` environment variable, rename it to `MAIL_SCHEME`.
+
+#### Logging configuration
+
+The stderr channel's `with` key has been renamed to `handler_with`:
+
+```diff
+  'stderr' => [
+      'driver' => 'monolog',
+      'handler' => StreamHandler::class,
+-     'with' => [
++     'handler_with' => [
+          'stream' => 'php://stderr',
+      ],
+  ],
+```
+
+### Config changes
+
+If you have published Acorn's configs, you should review and update them based on the latest versions in the [Acorn repo](https://github.com/roots/acorn/tree/main/config). Notable changes include:
+
+- **cache.php**: New `serializable_classes` option
+- **session.php**: New `serialization` option
+- **database.php**: New Redis retry/backoff keys, SQLite `transaction_mode`, SSL CA guard updated for PHP 8.5
+- **mail.php**: New `resend` and `roundrobin` mailers, `retry_after` on failover, `markdown` section removed
+- **services.php**: Postmark and Resend env variable names updated
+- **All configs**: `(string)` casts added to `env()` calls per Laravel 13 conventions
 
 ## Upgrading to v5.x from v4.x
 

@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-10-27 10:00
+date_modified: 2026-03-22 12:00
 date_published: 2025-10-27 10:00
 title: Laravel Redis Configuration for Acorn
 description: Configure Redis with Laravel and Acorn in WordPress. Enable high-performance caching using PhpRedis or Predis with your WordPress sites.
@@ -12,7 +12,7 @@ authors:
 
 Acorn provides [Laravel integration with WordPress](/acorn/), which means that Laravel's Redis setup can be configured to work on your WordPress sites.
 
-We recommend referencing the [Laravel docs on Redis](https://laravel.com/docs/12.x/redis) for a complete understanding of the integration.
+We recommend referencing the [Laravel docs on Redis](https://laravel.com/docs/13.x/redis) for a complete understanding of the integration.
 
 ## Requirements
 
