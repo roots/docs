@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-09-29 00:00
+date_modified: 2026-03-04 00:00
 date_published: 2025-09-29 00:00
 description: Use Laravel's queue system in WordPress through Acorn. Process background jobs, handle async tasks, and schedule recurring operations efficiently.
 title: Creating and Processing Laravel Queues
@@ -250,16 +250,57 @@ $ wp acorn queue:flush
 $ wp acorn queue:forget 5
 ```
 
+## Running queues in production
 
-## Dispatching jobs
+### Keeping the worker running with Supervisor
 
-```php
-// In a controller or WordPress hook
-use App\Jobs\ProcessImageOptimization;
+In production, use a process monitor like [Supervisor](http://supervisord.org/) to keep the queue worker running permanently:
 
-// Dispatch immediately
-ProcessImageOptimization::dispatch($attachmentId);
+```ini
+[program:acorn-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=wp acorn queue:work --sleep=3 --tries=3 --max-time=3600
+directory=/path/to/your/site
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+numprocs=1
+redirect_stderr=true
+stdout_logfile=/path/to/your/site/worker.log
+stopwaitsecs=3600
+```
 
-// Dispatch with delay
-ProcessImageOptimization::dispatch($attachmentId)->delay(now()->addMinutes(5));
+### Restarting workers during deployment
+
+Long-running `queue:work` processes keep the application booted in memory, so they won't pick up code changes after a deployment. Use `queue:restart` to gracefully restart all workers:
+
+```bash
+$ wp acorn queue:restart
+```
+
+This signals workers to exit after finishing their current job, allowing Supervisor to start fresh instances with the updated code. Add this to your deployment script to ensure workers always run the latest version of your code.
+
+### Pausing and resuming workers
+
+You can pause and resume queue processing without stopping the worker processes:
+
+#### Pause processing
+
+```bash
+$ wp acorn queue:pause
+```
+
+#### Resume processing
+
+```bash
+$ wp acorn queue:resume
+```
+
+### Monitoring queue sizes
+
+Monitor queue sizes to detect backlogs:
+
+```bash
+$ wp acorn queue:monitor
 ```
