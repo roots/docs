@@ -45,7 +45,7 @@ This will **invalidate existing caches and log out all sessions** unless you hav
 
 To preserve existing behavior, add these to your `.env`:
 
-```env
+```plaintext
 CACHE_PREFIX=your_app_name_cache_
 SESSION_COOKIE=your_app_name_session
 REDIS_PREFIX=your_app_name_database_
