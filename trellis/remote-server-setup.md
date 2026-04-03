@@ -15,7 +15,7 @@ authors:
 
 # Remote Server Setup for WordPress with Trellis
 
-Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/) and [Hetzner Cloud](https://hetzner.cloud/?ref=V6DnI7GDHM4N)) to host your staging and production environments.
+Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/) and [Hetzner Cloud](/trellis/docs/deploy-to-hetzner-cloud/)) to host your staging and production environments.
 
 ::: tip
 ℹ️ Sign up for [Hetzner Cloud](https://hetzner.cloud/?ref=V6DnI7GDHM4N) through the Roots referral link to receive $20 in cloud credits.
