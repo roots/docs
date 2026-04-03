@@ -13,7 +13,7 @@ trellis-cli is a command-line interface (CLI) to manage Trellis projects via the
 
 * Automatic Python Virtualenv integration for easier dependency management
 * Smart autocompletion (based on your defined environments and sites)
-* One-command DigitalOcean droplet creation
+* One-command cloud server creation (DigitalOcean, Hetzner Cloud)
 * Better Ansible Vault support for encrypting files
 * (New) Built-in virtual machine support for development environments
 
@@ -82,21 +82,22 @@ For subcommand documentation, run `trellis <command> -h`.
 | Command | Description |
 | --- | --- |
 | `alias` | Generate WP CLI aliases for remote environments |
-| `check` | Checks if Trellis requirements are met |
+| `check` | Checks if the required and optional Trellis dependencies are installed |
 | `db` | Commands for database management |
 | `deploy` | Deploys a site to the specified environment |
 | `dotenv` | Template .env files to local system |
-| `droplet` | Commands for DigitalOcean Droplets |
+| `server` | Commands for cloud server management (DigitalOcean, Hetzner Cloud) |
 | `exec` | Exec runs a command in the Trellis virtualenv |
 | `galaxy` | Commands for Ansible Galaxy |
 | `info` | Displays information about this Trellis project |
 | `init` | Initializes an existing Trellis project |
 | `key` | Commands for managing SSH keys |
-| `logs` | Tails the Nginx log files |
+| `logs` | Tails the Nginx log files for an environment |
 | `new` | Creates a new Trellis project |
 | `open` | Opens user-defined URLs (and more) which can act as shortcuts/bookmarks specific to your Trellis projects |
 | `provision` | Provisions the specified environment |
-| `rollback` | Rollsback the last deploy of the site on the specified environment |
+| `rollback` | Rollback the last deploy of the site on the specified environment |
+| `shell-init` | Prints a script which can be eval'd to set up Trellis' virtualenv integration in various shells |
 | `ssh` | Connects to host via SSH |
 | `valet` | Commands for Laravel Valet |
 | `vault` | Commands for Ansible Vault |
@@ -137,7 +138,13 @@ Current supported settings:
 | `load_plugins` | Load external CLI plugins | boolean | true |
 | `open` | List of name -> URL shortcuts | map[string]string | none |
 | `virtualenv_integration` | Enable automated virtualenv integration | boolean | true |
+| `server` | Options for cloud server management | Object | see below |
 | `vm` | Options for dev virtual machines | Object | see below |
+
+### `server`
+| Setting | Description | Type | Default |
+| --- | --- | -- | -- |
+| `provider` | Cloud provider (Options: `digitalocean`, `hetzner`)| string | `digitalocean` |
 
 ### `vm`
 | Setting | Description | Type | Default |
@@ -162,6 +169,8 @@ load_plugins: true
 open:
   site: "https://mysite.com"
   admin: "https://mysite.com/wp/wp-admin"
+server:
+  provider: digitalocean
 virtualenv_integration: true
 vm:
   manager: auto
