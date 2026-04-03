@@ -15,7 +15,26 @@ authors:
 
 # Remote Server Setup for WordPress with Trellis
 
-Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/)) to host your staging and production environments.
+Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/) and [Hetzner Cloud](https://hetzner.cloud/?ref=V6DnI7GDHM4N)) to host your staging and production environments.
+
+::: tip
+ℹ️ Sign up for [Hetzner Cloud](https://hetzner.cloud/?ref=V6DnI7GDHM4N) through the Roots referral link to receive $20 in cloud credits.
+:::
+
+Trellis CLI includes a `trellis server create` command that can automatically create and provision a server on a supported cloud provider:
+
+```shell
+$ trellis server create production
+```
+
+This command requires a cloud provider API token. If the token environment variable is not set, the command will prompt for one.
+
+| Provider | Environment Variable | Token Link |
+| --- | --- | --- |
+| DigitalOcean | `DIGITALOCEAN_ACCESS_TOKEN` | [Create a DigitalOcean token](https://cloud.digitalocean.com/account/api/tokens/new) |
+| Hetzner Cloud | `HCLOUD_TOKEN` | [Create a Hetzner API token](https://docs.hetzner.com/cloud/api/getting-started/generating-api-token/) |
+
+See the [CLI docs](/trellis/docs/cli/) for more details on configuring your cloud provider.
 
 ::: warning
 **Trellis cannot provision shared or managed hosts.** Trellis requires a bare server if you want to use it for provisioning.
