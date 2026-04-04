@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-09-26 07:00
+date_modified: 2026-04-04 07:00
 date_published: 2015-09-06 07:42
 description: Trellis uses Mailpit in development to capture outgoing emails. Configure production mail delivery with SMTP settings in the `mail.yml` configuration file.
 title: WordPress Mail Configuration in Trellis
@@ -45,7 +45,7 @@ Trellis is using the [Mailpit role](https://github.com/roots/ansible-role-mailpi
 
 ## Remote servers (staging/production)
 
-Outgoing mail is done by the sSMTP role. sSMTP is a lightweight SMTP mail relay basically. In order to send external emails, you'll need to configure an SMTP server.
+Outgoing mail is handled by [msmtp](https://marlam.de/msmtp/), a lightweight SMTP client. Trellis uses the [msmtp role](https://github.com/roots/ansible-role-msmtp) to configure it. In order to send external emails, you'll need to configure an SMTP server.
 
 We always suggest using an external email service rather than your own because it's very difficult to set up a proper email server.
 
@@ -62,8 +62,7 @@ All of these offer around 10k+ emails for free per month. Once you have SMTP cre
 - `mail_user`: username
 - `mail_password`: password or "API key" (define in `group_vars/all/vault.yml`)
 
-**Note:** Trellis sends emails through SMTP, which requires a username and password. Some email service providers refer to  `mail_password` as an "API key", even though it is not actually used to access the email service provider's API. If you prefer to send email through your email service provider's API (instead of via SMTP), you will need to use a plugin.  
-
+**Note:** Trellis sends emails through SMTP, which requires a username and password. Some email service providers refer to `mail_password` as an "API key", even though it is not actually used to access the email service provider's API. If you prefer to send email through your email service provider's API (instead of via SMTP), you will need to use a plugin.
 
 ### Example
 
@@ -81,7 +80,3 @@ Could not instantiate mail function.
 ```
 
 To fix this error, update your SMTP settings so that they're valid and then re-provision the remote server.
-
-### Revaliases
-
-By default some system daemons, like `cron` send email from the hostname like this: `root@mydroplet-ubuntu-s-1cpu-1gb-nyc3`. To avoid blocked or spammed messages, configure sSMTP "revaliases" in `trellis/roles/ssmtp/defaults/main.yml`, and deploy the `mail` tasks, which will populate the `/etc/ssmtp/revaliases` file on the server.
