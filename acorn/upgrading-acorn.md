@@ -65,6 +65,12 @@ The SMTP `encryption` key has been replaced with `scheme`:
 
 If you are using the `MAIL_ENCRYPTION` environment variable, rename it to `MAIL_SCHEME`.
 
+If you use [`roots/acorn-mail`](https://github.com/roots/acorn-mail), bump it to `^2.0` — earlier versions read the removed `encryption` key and will silently ignore `MAIL_SCHEME`:
+
+```shell
+$ composer require roots/acorn-mail ^2.0
+```
+
 #### Logging configuration
 
 The stderr channel's `with` key has been renamed to `handler_with`:
