@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2026-04-21 10:00
 date_published: 2022-02-28 22:16
 description: Install and configure Python for using Trellis. Python is required for Ansible automation that powers WordPress server provisioning and deployment.
 title: Python Requirements for Trellis
@@ -62,10 +62,10 @@ $ python3 -m ensurepip
 
 ### Ubuntu
 
-Ubuntu 20.04 comes default with Python 3 available as `python3`
+Ubuntu 26.04 comes default with Python 3 available as `python3`
 only. There's no "unversioned" `python`.
 
-The [`python-is-python3`](https://packages.ubuntu.com/focal/python-is-python3) package
+The [`python-is-python3`](https://packages.ubuntu.com/resolute/python-is-python3) package
 exists solely as an easy way to symlink `/usr/bin/python` to `python3`.
 
 ```shell

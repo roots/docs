@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-04-03 10:00
+date_modified: 2026-04-21 10:00
 date_published: 2019-01-07 10:05
 description: Deploy Trellis WordPress sites to DigitalOcean servers. Create servers, configure settings, and automate WordPress deployment to DigitalOcean.
 title: Deploying Trellis to DigitalOcean
@@ -11,7 +11,7 @@ authors:
 
 [DigitalOcean](https://roots.io/r/digitalocean) is a cloud infrastructure provider that offers virtual servers (droplets) that can handle most normal WordPress sites when provisioned with Trellis.
 
-To provision a server, Trellis requires a server running a bare/stock version of Ubuntu 24.04 LTS.
+To provision a server, Trellis requires a server running a bare/stock version of Ubuntu 26.04 LTS.
 
 ::: tip
 ℹ️ If you [signup for DigitalOcean](https://roots.io/r/digitalocean) through the Roots referral link you will receive a free $200 in credit for 2 months, and you help cover the costs of our hosting.
@@ -90,7 +90,7 @@ Arguments:
 Options:
       --provider        Cloud provider (digitalocean, hetzner)
       --region          Region to create the server in
-      --image           (default: ubuntu-24-04-x64) Server image (ie: Linux distribution)
+      --image           (default: ubuntu-26-04-x64) Server image (ie: Linux distribution)
       --size            Server size/type
       --skip-provision  Skip provision after server is created
       --ssh-key         Path to SSH public key to be added on the server
