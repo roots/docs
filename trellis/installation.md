@@ -107,7 +107,7 @@ In addition to configuring common services like ntp, sshd, etc.
 * macOS or Linux
 
 ::: warning Windows users
-Windows is not supported at this time.
+Windows is not supported at this time. A community-maintained fork of trellis-cli with Windows/WSL support is available at [qwatts-dev/trellis-cli](https://github.com/qwatts-dev/trellis-cli).
 :::
 
 ## Install Trellis CLI

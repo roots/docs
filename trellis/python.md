@@ -72,10 +72,6 @@ exists solely as an easy way to symlink `/usr/bin/python` to `python3`.
 $ sudo apt-get install -y python3 python-is-python3 python3-pip
 ```
 
-### Windows
-
-Roots recommends using WSL when using Windows. Since WSL uses Ubuntu, follow the [Ubuntu section](#ubuntu) above.
-
 ## Installing and managing dependencies
 
 Once you have Python working, the next step is ensuring you can install Trellis'

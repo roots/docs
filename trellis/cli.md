@@ -21,7 +21,7 @@ and much more.
 
 ## Installation
 
-### Quick Install (macOS, Linux, WSL via Homebrew)
+### Quick Install (macOS, Linux via Homebrew)
 
 ```shell
 $ brew install roots/tap/trellis-cli
@@ -44,7 +44,7 @@ trellis-cli provides binary releases for a variety of OSes. These binary version
 3. Find the `trellis` binary in the unpacked directory, and move it to its desired destination (eg: `mv trellis_1.2.0_Darwin_x86_64/trellis /usr/local/bin/trellis`)
 4. Make sure the above path is in your `$PATH`
 
-### Dev/unstable install (macOS, Linux, WSL via Homebrew)
+### Dev/unstable install (macOS, Linux via Homebrew)
 
 ```shell
 $ brew uninstall roots/tap/trellis-cli
@@ -57,19 +57,6 @@ $ brew install --HEAD roots/tap/trellis-cli-dev
 ```shell
 $ brew upgrade --fetch-HEAD roots/tap/trellis-cli-dev
 ```
-
-### Windows Install
-trellis-cli does offer a native Windows exe but we [recommend you use
-WSL](https://docs.roots.io/trellis/master/installation/#local-development-requirements) for Trellis. The above install methods will work for WSL as well.
-
-If you do want to use the native Windows exe, you'll need to do the following
-setup after downloading the Windows build:
-
-1. Open system properties
-2. Open environment variables
-3. Under system variables add new variable, `TRELLIS`, pointing to the location of the `trellis.exe` file, like `C:\trellis_1.0.0`
-4. Edit path from system variables and add new named `%TRELLIS%`
-5. Save the changes
 
 ## Usage
 
