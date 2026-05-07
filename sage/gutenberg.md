@@ -31,9 +31,9 @@ Sage's `editor.css` expects the block editor to be iframed. If you have any bloc
 Sage includes a `theme.json` file for configuring the WordPress editor. It's generated during [asset builds](compiling-assets.md) automatically and accounts for settings from your Tailwind setup.
 
 ::: tip theme.json spec
-Reference [the `theme.json` documentation](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-json/) for the full specification.
+Reference [the `theme.json` documentation](https://developer.wordpress.org/block-editor/how-to-guides/themes/global-settings-and-styles/) for the full specification.
 :::
 
-Due to Sage including a `theme.json` file, this means [trying to use `add_theme_support()` to configure the editor](https://developer.wordpress.org/block-editor/developers/themes/theme-support/) will not work.
+Due to Sage including a `theme.json` file, this means [trying to use `add_theme_support()` to configure the editor](https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/) will not work.
 
 Tailwind CSS colors, font families, and sizes are generated on the theme build for `theme.json`. See the [Sage docs on Tailwind CSS](/sage/docs/tailwind-css/) for more information. This can be disabled in `vite.config.js`.

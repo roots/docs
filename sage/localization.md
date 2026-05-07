@@ -16,7 +16,7 @@ authors:
 
 ## Generating language files
 
-Run `yarn translate:pot` from your theme directory to generate the language files. Then open the generated `.pot` file with [Poedit](https://poedit.net/), select "Create new translation", save `.mo` & `.po` files in the `resources/lang` folder with the correct name syntax (eg. `fr_FR`, `en_US`).
+Run `yarn translate:pot` from your theme directory to generate the language files. Then open the generated `.pot` file with [Poedit](https://poedit.com/), select "Create new translation", save `.mo` & `.po` files in the `resources/lang` folder with the correct name syntax (eg. `fr_FR`, `en_US`).
 
 When adding/removing translations in templates, run `yarn translate:update`, then select "Catalog > Update from a POT file" in Poedit.
 

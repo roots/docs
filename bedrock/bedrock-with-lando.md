@@ -52,7 +52,7 @@ WP_HOME='https://bedrock.lndo.site'
 
 ## Setup trusted certificates
 
-Make sure to follow the instructions in the Lando docs for [Trusting the CA](https://docs.lando.dev/core/v3/security.html#trusting-the-ca) to avoid warnings on your browser when visiting your site.
+Make sure to follow the instructions in the Lando docs for [Trusting the CA](https://docs.lando.dev/config/security.html#trusting-the-ca) to avoid warnings on your browser when visiting your site.
 
 ## Start your Lando site
 

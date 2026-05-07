@@ -12,7 +12,7 @@ Since Trellis is powered by Ansible, the best way to understand Trellis is to un
 Even knowing a few just key Ansible concepts will help you learn Trellis and how to
 customize it to fit your needs.
 
-Ansible's own [documentation](https://docs.ansible.com/ansible/latest/user_guide/index.html) is very comprehensive and should be considered as an extension of Trellis' documentation.
+Ansible's own [documentation](https://docs.ansible.com/projects/ansible/latest/user_guide/index.html) is very comprehensive and should be considered as an extension of Trellis' documentation.
 
 However, since Ansible itself is unopinionated, this will explore some key
 concepts and how they apply to Trellis.
@@ -44,7 +44,7 @@ Roles in Trellis usually contain one of more of these subfolders:
 
 ## Inventory
 In Ansible,
-[inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#intro-inventory) is a list of defined hosts in your infrastructure.
+[inventory](https://docs.ansible.com/projects/ansible/latest/user_guide/intro_inventory.html#intro-inventory) is a list of defined hosts in your infrastructure.
 
 For most Trellis projects, this list of hosts is usually one development
 virtual machine, one staging server (optional), and one production server.
@@ -89,7 +89,7 @@ We can apply two things we learned above:
 2. group vars can be used to define environment specific values
 
 Taking advantage of Ansible's [variable
-precendence](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#understanding-variable-precedence), we'll just override the variable by re-defining it in `group_vars/development/php.yml`:
+precendence](https://docs.ansible.com/projects/ansible/latest/user_guide/playbooks_variables.html#understanding-variable-precedence), we'll just override the variable by re-defining it in `group_vars/development/php.yml`:
 
 ```yaml
 php_max_execution_time: 500

@@ -51,9 +51,9 @@ We always suggest using an external email service rather than your own because i
 
 Some suggested services:
 
-- [Sendgrid](https://sendgrid.com/)
-- [Mailgun](http://www.mailgun.com/)
-- [Amazon SES](http://aws.amazon.com/ses/)
+- [Sendgrid](https://www.twilio.com/en-us/sendgrid)
+- [Mailgun](https://www.mailgun.com/)
+- [Amazon SES](https://aws.amazon.com/ses/)
 
 All of these offer around 10k+ emails for free per month. Once you have SMTP credentials, configure them in `group_vars/all/mail.yml`.
 

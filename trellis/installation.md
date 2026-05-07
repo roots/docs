@@ -30,9 +30,9 @@ You’ll get a complete WordPress server [running all the software](#software-in
 
 #### Ansible
 
-Trellis is powered by [Ansible](https://docs.ansible.com/ansible/latest/index.html) for configuration management. You don’t have to use brittle and confusing Bash scripts or worry about commands you found to copy and paste.
+Trellis is powered by [Ansible](https://docs.ansible.com/projects/ansible/latest/index.html) for configuration management. You don’t have to use brittle and confusing Bash scripts or worry about commands you found to copy and paste.
 
-You get the benefit of Ansible [documentation](https://docs.ansible.com/ansible/latest/user_guide/index.html), its extensive library of [modules and plugins](https://docs.ansible.com/ansible/latest/collections/all_plugins.html), and the community ecosystem of [Galaxy roles](https://galaxy.ansible.com/).
+You get the benefit of Ansible [documentation](https://docs.ansible.com/projects/ansible/latest/user_guide/index.html), its extensive library of [modules and plugins](https://docs.ansible.com/ansible/latest/collections/all_plugins.html), and the community ecosystem of [Galaxy roles](https://galaxy.ansible.com/).
 
 #### Local development
 

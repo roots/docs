@@ -38,9 +38,9 @@ If you have trouble with SSH connections to your server, consider the tips below
 
 ### SSH keys
 
-- [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-- [Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
-- [Your local `ssh-agent` must be running](https://developer.github.com/guides/using-ssh-agent-forwarding/#your-local-ssh-agent-must-be-running) (macOS users: remember to run `ssh-add -K`)
+- [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [Testing your SSH connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
+- [Your local `ssh-agent` must be running](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding#your-local-ssh-agent-must-be-running) (macOS users: remember to run `ssh-add -K`)
 - How to designate [SSH keys](ssh-keys.md) in Trellis
 
 SSH will automatically look for and try a default set of SSH keys, along with keys loaded in your `ssh-agent`. However, the SSH server will only let your SSH client try a limited number of keys before disconnecting (default: 6). If you have many SSH keys and the correct key is not being selected, you can force your SSH client to try only the correct key. Add this to your `~/.ssh/config` (with the correct path to your key):

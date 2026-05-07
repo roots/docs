@@ -22,7 +22,7 @@ e.g. to use PHP 8.1: `php_version: "8.1"`
 As of [#1560](https://github.com/roots/trellis/pull/1560) Trellis supports 7.4 & 8.1 up to 8.4. Newer versions may work when released but may not have been tested by the community yet - you can help by testing yourself and reporting your progress on [Roots Discourse](https://discourse.roots.io/).
 
 ## Changing the default extensions
-Trellis will look for a version-specific override file before falling back to the default PHP extensions. If you'd like to change the extensions installed on your environments, duplicate the [`roles/php/vars/version-specific-defaults.yml`](https://github.com/roots/trellis/blob/master/roles/php/vars.yml) file and rename it to the version of PHP you are targetting.
+Trellis will look for a version-specific override file before falling back to the default PHP extensions. If you'd like to change the extensions installed on your environments, duplicate the [`roles/php/vars/version-specific-defaults.yml`](https://github.com/roots/trellis/blob/master/roles/php/vars/version-specific-defaults.yml) file and rename it to the version of PHP you are targetting.
 
 ### Example
 To target PHP 8.4, duplicate and rename so that your folder looks like this:

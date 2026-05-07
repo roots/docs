@@ -9,12 +9,12 @@ authors:
 
 # Deploying Trellis to DigitalOcean
 
-[DigitalOcean](https://roots.io/r/digitalocean) is a cloud infrastructure provider that offers virtual servers (droplets) that can handle most normal WordPress sites when provisioned with Trellis.
+[DigitalOcean](https://www.digitalocean.com/?refcode=09f11cfb5bac) is a cloud infrastructure provider that offers virtual servers (droplets) that can handle most normal WordPress sites when provisioned with Trellis.
 
 To provision a server, Trellis requires a server running a bare/stock version of Ubuntu 24.04 LTS.
 
 ::: tip
-ℹ️ If you [signup for DigitalOcean](https://roots.io/r/digitalocean) through the Roots referral link you will receive a free $200 in credit for 2 months, and you help cover the costs of our hosting.
+ℹ️ If you [signup for DigitalOcean](https://www.digitalocean.com/?refcode=09f11cfb5bac) through the Roots referral link you will receive a free $200 in credit for 2 months, and you help cover the costs of our hosting.
 ::: 
 
 ## Creating a new server
@@ -122,10 +122,3 @@ $ trellis deploy production
 ```
 
 After the first deploy is done, you can now either install WordPress by visiting the site or even import an existing database.
-
-## Performance
-
-If you enable the [FastCGI caching in Trellis](/trellis/docs/fastcgi-caching/) then you’ll be able to squeeze quite a bit of performance out of a small DigitalOcean droplet.
-
-<p><iframe src="https://share.loader.io/reports/19a5726e5f296a96c431f8609dd427cd/widget/results/6ebcd76c5963361fc0acf413364709e1" frameborder="0" style="width: 100%; height: 300px;"></iframe></p>
-<p><a href="http://loader.io/reports/19a5726e5f296a96c431f8609dd427cd/results/6ebcd76c5963361fc0acf413364709e1">View on loader.io</a></p>

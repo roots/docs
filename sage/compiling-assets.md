@@ -14,7 +14,7 @@ authors:
 
 # Compiling Assets in Sage with Vite
 
-[Vite](https://vitejs.dev/) is front-end build tool used in Sage.
+[Vite](https://vite.dev/) is front-end build tool used in Sage.
 
 Sage also uses the Laravel Vite plugin, along with Laravel's Vite facade for referencing Vite assets in PHP and Blade template files. Because of this, [Laravel's Vite documentation](https://laravel.com/docs/13.x/vite) also applies to Sage.
 

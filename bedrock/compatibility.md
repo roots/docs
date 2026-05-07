@@ -21,7 +21,7 @@ Common issues include:
 
 - Assuming the content directory is `wp-content`.
 - Assuming WordPress is not in a subdirectory.
-- [Trying to include wp-load.php](http://ottopress.com/2010/dont-include-wp-load-please/).
+- [Trying to include wp-load.php](https://ottopress.com/2010/dont-include-wp-load-please/).
 
 If you reach a WordPress error page on a non-development environment that says `"Sorry, you are not allowed to access this page."`, then the plugin or theme could be conflicting with Bedrock's use of `DISALLOW_FILE_MODS`.
 

@@ -15,7 +15,7 @@ Bedrock (and by extension Trellis) uses Composer to manage its dependencies, whi
 There are many ways to add private or paid plugins to your Bedrock-based project. Popular methods include:
 
 * Private Git repositories
-* [SatisPress](https://github.com/blazersix/satispress)
+* [SatisPress](https://github.com/cedaro/satispress)
 * [Private Packagist](https://packagist.com/)
 * [Toran Proxy](https://toranproxy.com/)
 
@@ -25,7 +25,7 @@ For the purposes of this document we will focus only on the first option: **priv
 
 ## Create a private GitHub repository for your plugin
 
-[Create the repository](https://help.github.com/articles/create-a-repo/) as normal and clone the empty repository to your computer.
+[Create the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) as normal and clone the empty repository to your computer.
 
 ```shell
 $ git clone git@github.com:YourGitHubUsername/example-plugin.git
@@ -99,7 +99,7 @@ $ git push --tags
 ```    
 
 ::: tip
-Tags pushed to GitHub will automatically be turned into “Releases,” a feature of GitHub. You can also [create releases](https://help.github.com/articles/creating-releases/) manually on the GitHub website.
+Tags pushed to GitHub will automatically be turned into “Releases,” a feature of GitHub. You can also [create releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) manually on the GitHub website.
 :::
 
 ## Edit your Bedrock `composer.json` file, add your repository and plugin
@@ -141,4 +141,4 @@ In your Bedrock site’s `composer.json`
 
 Run `composer update` in your Bedrock directory to get your new plugin.
 
-[**Join the discussion on Roots Discourse**](https://discourse.roots.io/t/private-or-commercial-plugins-as-composer-dependencies/13247)
+[**Join the discussion on Roots Discourse**](https://discourse.roots.io/t/private-or-commercial-wordpress-plugins-as-composer-dependencies/13247)
