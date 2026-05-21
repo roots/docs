@@ -31,6 +31,7 @@ Composer patches can sometimes be used to work around issues with plugins.
 * **Gravity Forms** merge tags JS causes an error on the admin notifications page. [@tombroucke provided a workaround in roots/acorn#198](https://github.com/roots/acorn/issues/198#issuecomment-1365942893).
 * **Gravity Forms: Entry Automation FTP Extension** includes `league/flysystem` v1.1.4 which is incompatible with Acorn.
 * **WooCommerce PayPal Payments** includes an older version of `psr/log`.
+* **WooCommerce Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/1f19f793b1f43348fe619ad9cbd6ba8f).
 * **WooCommerce UPS Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/4e76aee9a30cc0d3228cf6146eec64e0).
 * **WooCommerce USPS Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/4e76aee9a30cc0d3228cf6146eec64e0).
 
