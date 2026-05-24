@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2026-05-23 19:30
 date_published: 2015-09-06 07:42
 description: Troubleshoot Trellis installations with debugging tips for Ansible errors, solutions for unresponsive machines, and fixes for common provisioning problems.
 title: Troubleshooting Common Trellis Issues
@@ -23,6 +23,25 @@ Golden rule to debugging any failed command with Ansible:
 4. SSH into your server and manually run the command where Ansible failed.
 
 Example: if a Git clone task failed during deploys, then SSH into the server as the `web` user (which is what deploys use) and run the manual command such as `git clone <repo>`. This will give you a much better clue as to what's going wrong.
+
+## Lima VM won't start after reboot
+
+If `trellis vm start` fails with this error after rebooting your machine:
+
+```plaintext
+FATA[0000] errors inspecting instance: [vz driver is running but host agent is not]
+```
+
+Lima's host agent crashed during shutdown without cleaning up its `vz.pid` file. On the next boot, the PID inside gets reassigned to an unrelated process, so Lima's liveness check returns a false positive and refuses to start.
+
+Remove the stale pidfile and start again:
+
+```shell
+$ rm ~/.lima/example.com/vz.pid
+$ trellis vm start
+```
+
+Replace `example.com` with your site's domain.
 
 ## Let's Encrypt SSL certificates
 
