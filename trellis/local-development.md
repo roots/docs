@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2026-04-21 10:00
 date_published: 2015-10-15 12:24
 description: Trellis uses Lima VM's for local development. Trellis uses Ansible to automatically provision virtual machines running complete WordPress environments.
 title: Local WordPress Development with Trellis
@@ -86,11 +86,11 @@ For the common use case, the default configuration should be all that's needed w
 
 The CLI [config file](cli.md#configuration) (global or project level) supports a new `vm` option. The only useful config option right now is `ubuntu` for setting the Ubuntu version.
 
-Here's an example of specifying 20.04:
+Here's an example of specifying 24.04:
 
 ```yml
 vm:
-  ubuntu: 20.04
+  ubuntu: 24.04
 ```
 
 Note: this must be changed _before_ creating the VM, otherwise you'll need to delete it first and re-create it.

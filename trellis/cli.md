@@ -137,7 +137,7 @@ Current supported settings:
 | Setting | Description | Type | Default |
 | --- | --- | -- | -- |
 | `manager` | VM manager (Options: `auto` (depends on OS), `lima`)| string | "auto" |
-| `ubuntu` | Ubuntu OS version (Options: `18.04`, `20.04`, `22.04`, `24.04`)| string | `24.04` |
+| `ubuntu` | Ubuntu OS version (Options: `22.04`, `24.04`, `26.04`)| string | `26.04` |
 | `hosts_resolver` | VM hosts resolver (Options: `hosts_file`)| string | `hosts_file` |
 | `images` | Custom OS image | object | Set based on `ubuntu` version |
 
@@ -161,7 +161,7 @@ server:
 virtualenv_integration: true
 vm:
   manager: auto
-  ubuntu: 24.04
+  ubuntu: 26.04
 ```
 
 Example env var usage:

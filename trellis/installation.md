@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-06 13:00
+date_modified: 2026-04-21 10:00
 date_published: 2015-10-15 12:20
 description: Install Trellis for WordPress projects. Complete setup instructions covering requirements, dependencies, project initialization, and initial configuration.
 title: Installing Trellis for WordPress
@@ -87,7 +87,7 @@ with a single command thanks to trellis-cli too.
 
 ### Trellis servers are production-ready
 
-Trellis provisions a base Ubuntu 24.04 server by installing and configuring the following software:
+Trellis provisions a base Ubuntu 26.04 server by installing and configuring the following software:
 
 * PHP 8.3+
 * Nginx (including HTTP/2, HTTP/3, and optional FastCGI micro-caching)

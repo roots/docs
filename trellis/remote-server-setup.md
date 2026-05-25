@@ -1,7 +1,7 @@
 ---
-date_modified: 2024-09-11 10:00
+date_modified: 2026-04-21 10:00
 date_published: 2015-10-15 12:27
-description: Set up remote servers for Trellis requiring bare Ubuntu 24.04 LTS installation on VPS or dedicated servers. Shared hosting is not supported.
+description: Set up remote servers for Trellis requiring bare Ubuntu 26.04 LTS installation on VPS or dedicated servers. Shared hosting is not supported.
 title: Remote Server Setup for WordPress with Trellis
 authors:
   - ben
@@ -42,10 +42,10 @@ See the [CLI docs](/trellis/docs/cli/) for more details on configuring your clou
 
 ## Server requirements
 
-* Ubuntu 24.04 LTS
+* Ubuntu 26.04 LTS
 * SSH access to the server
 
-You need a server running a bare/stock version of Ubuntu 24.04 LTS. If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 24.04 option.
+You need a server running a bare/stock version of Ubuntu 26.04 LTS. If you're using a host such as DigitalOcean that lets you pick an OS to start with, then select the Ubuntu 26.04 option.
 
 You need to be able to connect to your Ubuntu server from your local computer via SSH. We *highly* suggest doing this via SSH keys so you don't have to specify a password every time. Many hosts offer to automatically add your SSH key when creating a server, so take advantage of that. 
 
