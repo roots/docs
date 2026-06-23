@@ -1,10 +1,11 @@
 ---
-date_modified: 2026-03-06 13:00
+date_modified: 2026-06-23 13:00
 date_published: 2015-10-15 12:20
 description: Install Trellis for WordPress projects. Complete setup instructions covering requirements, dependencies, project initialization, and initial configuration.
 title: Installing Trellis for WordPress
 authors:
   - ben
+  - knowler
   - Log1x
   - MWDelaney
   - nikitasol
@@ -143,7 +144,7 @@ Check out the following files to review the basic site configuration:
 ## Start your development environment
 
 ```shell
-$ trellis vm up
+$ trellis vm start
 ```
 
 This command will start the Lima environment and provision the server. Once it's done, you can visit your development site at the URL you chose when you ran `trellis new`.
