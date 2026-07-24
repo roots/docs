@@ -1,10 +1,11 @@
 ---
-date_modified: 2026-05-03 12:00
+date_modified: 2026-07-24 23:00
 date_published: 2026-05-03 12:00
 description: Audit WordPress plugins and themes for known vulnerabilities with Composer using WP Sec Adv, a security advisory repository sourced from Wordfence Intelligence.
 title: Auditing WordPress Vulnerabilities with Composer
 authors:
   - ben
+  - tangrufus
 ---
 
 # Auditing WordPress Vulnerabilities with Composer
@@ -45,11 +46,10 @@ Not every advisory requires immediate action. Composer lets you acknowledge spec
 ```json
 {
   "config": {
-    "audit": {
-      "ignore": {
-        "CVE-2026-3589": {
-          "apply": "block",
-          "reason": "Waiting for upstream fix in v1.2.3. Allow during updates but still report in audits"
+    "policy": {
+      "advisories": {
+        "ignore-id": {
+          "CVE-2026-3589": "Waiting for upstream fix in v1.2.3. Allow during updates but still report in audits"
         }
       }
     }
