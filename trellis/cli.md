@@ -1,5 +1,5 @@
 ---
-date_modified: 2024-09-11 10:00
+date_modified: 2026-11-03 10:00
 date_published: 2023-04-05 07:42
 description: Use the Trellis CLI to manage WordPress projects via the `trellis` command. Simplifies provisioning servers, deploying sites, and common Trellis tasks.
 title: Trellis CLI Command-Line Interface

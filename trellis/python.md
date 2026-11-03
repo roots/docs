@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-04-21 10:00
+date_modified: 2026-11-03 10:00
 date_published: 2022-02-28 22:16
 description: Install and configure Python for using Trellis. Python is required for Ansible automation that powers WordPress server provisioning and deployment.
 title: Python Requirements for Trellis

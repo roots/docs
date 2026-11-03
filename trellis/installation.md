@@ -97,7 +97,7 @@ Trellis provisions a base Ubuntu 26.04 server by installing and configuring the 
 * Let's Encrypt for free SSL certificates
 * Composer
 * WP-CLI
-* sSMTP (mail delivery)
+* msmtp (mail delivery)
 * Memcached
 * Fail2ban and ferm
 
