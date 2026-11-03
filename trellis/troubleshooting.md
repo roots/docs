@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-05-23 19:30
+date_modified: 2026-11-03 10:00
 date_published: 2015-09-06 07:42
 description: Troubleshoot Trellis installations with debugging tips for Ansible errors, solutions for unresponsive machines, and fixes for common provisioning problems.
 title: Troubleshooting Common Trellis Issues
@@ -144,7 +144,7 @@ $ ssh -v root@12.34.56.78
 The `sshd` role will most likely cause your SSH server to discontinue using some older and weaker protocols. If your connections involve older systems that do not support the stronger protocols configured by the `sshd` role, see [`Ciphers`, `KexAlgorithms`, and `MACs`](https://github.com/roots/trellis/tree/master/roles/sshd#ciphers-kexalgorithms-and-macs) for how to add back in any protocols you need.
 
 ## APT sources
-You may need to clean the APT sources to update a package, for example when [updating MariaDB mirrors](https://github.com/roots/trellis/issues/1575). You can set `apt_clean_sources: true` in `group_vars/all/main.yml` to run every provision, or to run this for one provision only, use:
+You may need to clean stale APT sources to update a package, for example after a repository has moved. Trellis v1.33.0 and later remove repositories for other MariaDB versions and the legacy `.list` files for the nginx, MariaDB and PHP repositories on their own. You can set `apt_clean_sources: true` in `group_vars/all/main.yml` to run every provision, or to run this for one provision only, use:
 
 ```shell
 $ trellis provision --extra-vars apt_clean_sources=true production

@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2026-11-03 10:00
 date_published: 2015-10-15 12:24
 description: Trellis uses Lima VM's for local development. Trellis uses Ansible to automatically provision virtual machines running complete WordPress environments.
 title: Local WordPress Development with Trellis
@@ -86,14 +86,22 @@ For the common use case, the default configuration should be all that's needed w
 
 The CLI [config file](cli.md#configuration) (global or project level) supports a new `vm` option. The only useful config option right now is `ubuntu` for setting the Ubuntu version.
 
-Here's an example of specifying 20.04:
+Here's an example of specifying 24.04:
 
 ```yml
 vm:
-  ubuntu: 20.04
+  ubuntu: 24.04
 ```
 
 Note: this must be changed _before_ creating the VM, otherwise you'll need to delete it first and re-create it.
+
+::: warning
+Ubuntu 26.04 requires Trellis v1.33.0 or later. If your project uses an older version of Trellis, set `ubuntu: 24.04`, or update Trellis first.
+:::
+
+::: tip
+The first boot of a new Ubuntu 26.04 VM takes about 2 minutes longer while it waits for the network to come up. Later starts are fast.
+:::
 
 ### Integration details
 When you first run `trellis vm start`, the CLI will do the following:
