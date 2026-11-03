@@ -11,7 +11,7 @@ authors:
 
 # WordPress Theme Templates in Sage
 
-The `resources/views/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy):
+The `resources/views/` directory contains files that you can further extend with the normal [WordPress Template Hierarchy](https://developer.wordpress.org/themes/classic-themes/basics/template-hierarchy/):
 
 - `404.blade.php` – Error 404 page
 - `index.blade.php` – Archive page (used by blog page, category archives, author archives and more)
@@ -43,7 +43,7 @@ These files include templates from the `resources/views/partials/` directory whi
 
 ## Extending templates
 
-The normal [WordPress Template Hierarchy](http://codex.wordpress.org/Template_Hierarchy) is still intact. Here’s some examples:
+The normal [WordPress Template Hierarchy](https://developer.wordpress.org/themes/classic-themes/basics/template-hierarchy/) is still intact. Here’s some examples:
 
 - Copy `index.blade.php` to `author.blade.php` for customizing author archives
 - Copy `index.blade.php` to `home.blade.php` for customizing the Home page if you’re showing the latest posts (under Reading Settings) instead of a static front page

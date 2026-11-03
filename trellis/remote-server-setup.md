@@ -18,7 +18,7 @@ authors:
 Trellis can be used for setting up remote servers (offered by VPS/cloud service providers such as [DigitalOcean](/trellis/docs/deploy-to-digitalocean/) and [Hetzner Cloud](/trellis/docs/deploy-to-hetzner-cloud/)) to host your staging and production environments.
 
 ::: tip
-ℹ️ Sign up for [Hetzner Cloud](https://hetzner.cloud/?ref=V6DnI7GDHM4N) through the Roots referral link to receive $20 in cloud credits.
+ℹ️ Sign up for [Hetzner Cloud](https://console.hetzner.com/refer?pk_campaign=referral-invite&pk_medium=referral-program&pk_source=reflink&pk_content=V6DnI7GDHM4N) through the Roots referral link to receive $20 in cloud credits.
 :::
 
 Trellis CLI includes a `trellis server create` command that can automatically create and provision a server on a supported cloud provider:
@@ -55,7 +55,7 @@ Once you have a Ubuntu server up and running, you can provision it.
 
 Provisioning a server means to set it up with the necessary software and configuration to run a WordPress site. For Trellis this means things like: installing MariaDB, installing Nginx, configuring Nginx, creating a database, etc.
 
-Trellis has two main [playbooks](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html): `dev.yml` and `server.yml`. As mentioned in local development, Trellis automatically runs the `dev.yml` playbook for us.
+Trellis has two main [playbooks](https://docs.ansible.com/projects/ansible/latest/user_guide/playbooks_intro.html): `dev.yml` and `server.yml`. As mentioned in local development, Trellis automatically runs the `dev.yml` playbook for us.
 
 For remote servers, you provision a server via the `server.yml` playbook. This leaves you with a server *prepared* to run a WordPress site, but without the actual codebase yet.
 

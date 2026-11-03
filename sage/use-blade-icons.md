@@ -10,13 +10,13 @@ authors:
 
 # How to Use blade-icons with Sage
 
-The [blade-icons](https://github.com/blade-ui-kit/blade-icons) package allows you to easily use SVG's in your Blade views.
+The [blade-icons](https://github.com/driesvints/blade-icons) package allows you to easily use SVG's in your Blade views.
 
 Besides being able to use your own SVG's, you can also add one of the many third party icon sets, such as:
 
 * [Blade Bootstrap Icons](https://github.com/davidhsianturi/blade-bootstrap-icons)
 * [Blade Font Awesome](https://github.com/owenvoke/blade-fontawesome)
-* [Blade Heroicons](https://github.com/blade-ui-kit/blade-heroicons)
+* [Blade Heroicons](https://github.com/driesvints/blade-heroicons)
 * [Blade Simple Icons](https://github.com/ublabs/blade-simple-icons)
 
 [![Screenshot of blade-icons home page](https://cdn.roots.io/app/uploads/use-blade-icons.png)](https://blade-ui-kit.com/blade-icons)
@@ -101,4 +101,4 @@ If you are using Trellis, modify the `deploy_build_after` hook within your `depl
 
 ## Additional information
 
-The [blade-icons README](https://github.com/blade-ui-kit/blade-icons) covers how to pass attributes, set default classes, and more.
+The [blade-icons README](https://github.com/driesvints/blade-icons) covers how to pass attributes, set default classes, and more.

@@ -13,11 +13,11 @@ authors:
 
 # WordPress Dependencies with Composer
 
-Bedrock uses [Composer](http://getcomposer.org) to manage dependencies. Any 3rd party library is considered a dependency, including WordPress itself and any plugins.
+Bedrock uses [Composer](https://getcomposer.org/) to manage dependencies. Any 3rd party library is considered a dependency, including WordPress itself and any plugins.
 
 ## Adding WordPress plugins with Composer
 
-[WP Packages](https://wp-packages.org/) is already registered in the `composer.json` file so any plugins from the [WordPress Plugin Directory](http://wordpress.org/plugins/) can easily be required.
+[WP Packages](https://wp-packages.org/) is already registered in the `composer.json` file so any plugins from the [WordPress Plugin Directory](https://wordpress.org/plugins/) can easily be required.
 
 To add a plugin, add it under the `require` directive or use `composer require <namespace>/<packagename>` from the command line. If the plugin is from WordPress.org, then the namespace is always `wp-plugin`:
 

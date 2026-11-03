@@ -81,7 +81,7 @@ $ trellis vault edit group_vars/<environment>/vault.yml
 
 ## Other vault commands
 
-`trellis-cli` provides a few basic commands that mirror with the official [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) ones.
+`trellis-cli` provides a few basic commands that mirror with the official [Ansible Vault](https://docs.ansible.com/projects/ansible/latest/user_guide/vault.html) ones.
 
 - `trellis vault encrypt <args>`
 - `trellis vault view <args>`
@@ -98,7 +98,7 @@ Here are a few tips for working with [variables and vault](https://docs.ansible.
 - Each environment has its own `vault.yml` file: `group_vars/<environment>/vault.yml`.
 - There is also one `vault.yml` file applicable to all environments: `group_vars/all/vault.yml`.
 - Variables named with the `vault_` prefix are defined in the `vault.yml` files.
-- To view or edit an encrypted `vault.yml` file, use either `trellis vault view <file>` or `trellis vault edit <file>`. Avoid using the `decrypt` command. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo. You may want to employ a pre-commit hook ([example](https://www.reinteractive.net/posts/167-ansible-real-life-good-practices)) for added prevention.
+- To view or edit an encrypted `vault.yml` file, use either `trellis vault view <file>` or `trellis vault edit <file>`. Avoid using the `decrypt` command. Any time you decrypt a file, you risk forgetting to re-encrypt the file before committing changes to your repo. You may want to employ a pre-commit hook ([example](https://reinteractive.com/articles/ansible-best-practices)) for added prevention.
 
 ## Sharing a project with vault-encrypted files
 

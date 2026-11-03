@@ -46,7 +46,7 @@ While using the system Python on macOS should work fine, the main downside is
 that the versions are only updated when macOS itself has a new major version.
 
 If you want to have more control over Python versions, we recommend using a tool
-like [pyenv](https://github.com/pyenv/pyenv) or [asdf](https://github.com/danhper/asdf-python)
+like [pyenv](https://github.com/pyenv/pyenv) or [asdf](https://github.com/asdf-community/asdf-python)
 to install specific versions globally (or even per project if that's needed).
 
 We **do not recommend** installing Python from Homebrew. This might be
@@ -71,10 +71,6 @@ exists solely as an easy way to symlink `/usr/bin/python` to `python3`.
 ```shell
 $ sudo apt-get install -y python3 python-is-python3 python3-pip
 ```
-
-### Windows
-
-Roots recommends using WSL when using Windows. Since WSL uses Ubuntu, follow the [Ubuntu section](#ubuntu) above.
 
 ## Installing and managing dependencies
 

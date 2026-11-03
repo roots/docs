@@ -1,5 +1,5 @@
 ---
-date_modified: 2023-01-27 13:17
+date_modified: 2026-05-23 19:30
 date_published: 2015-09-06 07:42
 description: Troubleshoot Trellis installations with debugging tips for Ansible errors, solutions for unresponsive machines, and fixes for common provisioning problems.
 title: Troubleshooting Common Trellis Issues
@@ -24,6 +24,25 @@ Golden rule to debugging any failed command with Ansible:
 
 Example: if a Git clone task failed during deploys, then SSH into the server as the `web` user (which is what deploys use) and run the manual command such as `git clone <repo>`. This will give you a much better clue as to what's going wrong.
 
+## Lima VM won't start after reboot
+
+If `trellis vm start` fails with this error after rebooting your machine:
+
+```plaintext
+FATA[0000] errors inspecting instance: [vz driver is running but host agent is not]
+```
+
+Lima's host agent crashed during shutdown without cleaning up its `vz.pid` file. On the next boot, the PID inside gets reassigned to an unrelated process, so Lima's liveness check returns a false positive and refuses to start.
+
+Remove the stale pidfile and start again:
+
+```shell
+$ rm ~/.lima/example.com/vz.pid
+$ trellis vm start
+```
+
+Replace `example.com` with your site's domain.
+
 ## Let's Encrypt SSL certificates
 
 See [Troubleshooting Let's Encrypt](ssl.md#troubleshooting-let-s-encrypt).
@@ -38,9 +57,9 @@ If you have trouble with SSH connections to your server, consider the tips below
 
 ### SSH keys
 
-- [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-- [Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
-- [Your local `ssh-agent` must be running](https://developer.github.com/guides/using-ssh-agent-forwarding/#your-local-ssh-agent-must-be-running) (macOS users: remember to run `ssh-add -K`)
+- [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [Testing your SSH connection](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection)
+- [Your local `ssh-agent` must be running](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding#your-local-ssh-agent-must-be-running) (macOS users: remember to run `ssh-add -K`)
 - How to designate [SSH keys](ssh-keys.md) in Trellis
 
 SSH will automatically look for and try a default set of SSH keys, along with keys loaded in your `ssh-agent`. However, the SSH server will only let your SSH client try a limited number of keys before disconnecting (default: 6). If you have many SSH keys and the correct key is not being selected, you can force your SSH client to try only the correct key. Add this to your `~/.ssh/config` (with the correct path to your key):

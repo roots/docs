@@ -98,7 +98,7 @@ You may use child templates to override any `block` in the two Nginx conf templa
 - [`roles/nginx/templates/nginx.conf.j2`](https://github.com/roots/trellis/blob/master/roles/nginx/templates/nginx.conf.j2) is templated to the server as `/etc/nginx/nginx.conf`
 - [`roles/wordpress-setup/templates/wordpress-site.conf.j2`](https://github.com/roots/trellis/blob/master/roles/wordpress-setup/templates/wordpress-site.conf.j2) is templated to the server as `/etc/nginx/sites-available/example.com.conf` (per each site)
 
-Create your child templates following the [Jinja template inheritance](http://jinja.pocoo.org/docs/latest/templates/#template-inheritance) docs and the guidelines below.
+Create your child templates following the [Jinja template inheritance](https://jinja.palletsprojects.com/en/stable/templates/#template-inheritance) docs and the guidelines below.
 
 ::: tip
 Once you have set up your child templates, append `--tags nginx-includes` to your command to run only the Nginx conf portions of the playbook.
@@ -138,7 +138,7 @@ wordpress_sites:
 
 ### Create a Child Template
 
-Create your child templates at the paths you designated in the `nginx_conf` and `nginx_wordpress_site_conf` variables described above. [Child templates](http://jinja.pocoo.org/docs/latest/templates/#child-template) must include two elements:
+Create your child templates at the paths you designated in the `nginx_conf` and `nginx_wordpress_site_conf` variables described above. [Child templates](https://jinja.palletsprojects.com/en/stable/templates/#child-template) must include two elements:
 
 - an `{% extends 'base_template' %}` statement
 - one or more `{% block block_name %}` blocks
@@ -188,7 +188,7 @@ server {
 {% endblock -%}
 ```
 
-You'll notice that these blocks use indentation and [whitespace control](http://jinja.pocoo.org/docs/latest/templates/#whitespace-control) (e.g., `-%}`) parallel to their counterparts in the base template `wordpress-site.conf.j2`. This will achieve the best formatting of templated conf files on the server.
+You'll notice that these blocks use indentation and [whitespace control](https://jinja.palletsprojects.com/en/stable/templates/#whitespace-control) (e.g., `-%}`) parallel to their counterparts in the base template `wordpress-site.conf.j2`. This will achieve the best formatting of templated conf files on the server.
 
 ## Sites templates
 
@@ -246,7 +246,7 @@ The example above designates a site template in the `nginx-includes` path on you
 
 ### Create a site template
 
-Create your site templates at the paths you designated in the `nginx_sites_confs` variable described above. Templates should start with an <code># {{ ansible_managed }}</code> statement to indicate that the file is [managed by ansible](http://docs.ansible.com/ansible/intro_configuration.html#ansible-managed).
+Create your site templates at the paths you designated in the `nginx_sites_confs` variable described above. Templates should start with an <code># {{ ansible_managed }}</code> statement to indicate that the file is [managed by ansible](https://docs.ansible.com/projects/ansible/latest/reference_appendices/config.html).
 
 #### Template example
 

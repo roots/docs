@@ -1,10 +1,11 @@
 ---
-date_modified: 2026-04-21 10:00
+date_modified: 2026-11-03 10:00
 date_published: 2015-10-15 12:20
 description: Install Trellis for WordPress projects. Complete setup instructions covering requirements, dependencies, project initialization, and initial configuration.
 title: Installing Trellis for WordPress
 authors:
   - ben
+  - knowler
   - Log1x
   - MWDelaney
   - nikitasol
@@ -30,9 +31,9 @@ You’ll get a complete WordPress server [running all the software](#software-in
 
 #### Ansible
 
-Trellis is powered by [Ansible](https://docs.ansible.com/ansible/latest/index.html) for configuration management. You don’t have to use brittle and confusing Bash scripts or worry about commands you found to copy and paste.
+Trellis is powered by [Ansible](https://docs.ansible.com/projects/ansible/latest/index.html) for configuration management. You don’t have to use brittle and confusing Bash scripts or worry about commands you found to copy and paste.
 
-You get the benefit of Ansible [documentation](https://docs.ansible.com/ansible/latest/user_guide/index.html), its extensive library of [modules and plugins](https://docs.ansible.com/ansible/latest/collections/all_plugins.html), and the community ecosystem of [Galaxy roles](https://galaxy.ansible.com/).
+You get the benefit of Ansible [documentation](https://docs.ansible.com/projects/ansible/latest/user_guide/index.html), its extensive library of [modules and plugins](https://docs.ansible.com/ansible/latest/collections/all_plugins.html), and the community ecosystem of [Galaxy roles](https://galaxy.ansible.com/).
 
 #### Local development
 
@@ -107,7 +108,7 @@ In addition to configuring common services like ntp, sshd, etc.
 * macOS or Linux
 
 ::: warning Windows users
-Windows is not supported at this time.
+Windows is not supported at this time. A community-maintained fork of trellis-cli with Windows/WSL support is available at [qwatts-dev/trellis-cli](https://github.com/qwatts-dev/trellis-cli).
 :::
 
 ## Install Trellis CLI
@@ -143,7 +144,7 @@ Check out the following files to review the basic site configuration:
 ## Start your development environment
 
 ```shell
-$ trellis vm up
+$ trellis vm start
 ```
 
 This command will start the Lima environment and provision the server. Once it's done, you can visit your development site at the URL you chose when you ran `trellis new`.

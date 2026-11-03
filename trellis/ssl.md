@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-06 13:00
+date_modified: 2026-05-03 12:00
 date_published: 2015-09-06 07:42
 description: Enable HTTPS in Trellis with automatic Let's Encrypt certificates, manually provided SSL certificates, or self-signed certificates for local development.
 title: SSL Certificates in Trellis
@@ -75,7 +75,7 @@ example.com:
 There is one main difference between LE and other certificate authorities: their certificates expire every *90 days*. Trellis automates by running a cron-job so you never have to manually renew them or worry about them expiring like a paid certificate.
 
 ::: warning Note
-Let's Encrypt is ending support for v1 of their ACME protocol. If you are using a Trellis version older than `v1.2.0`, please see [here](https://discourse.roots.io/t/trellis-and-lets-encrypt-v1-end-of-life/) for more details.
+Let's Encrypt is ending support for v1 of their ACME protocol. If you are using a Trellis version older than `v1.2.0`, please see [here](https://discourse.roots.io/t/trellis-and-lets-encrypt-v1-end-of-life/16816) for more details.
 :::
 
 #### DNS records
@@ -195,57 +195,36 @@ example.com:
 
 #### Lima
 
-Lima does not support automated SSL handling yet, but you can follow these manual steps to have macOS trust the self-signed certificate.
-
-1. Enter the Lima VM from your Trellis project directory:
+Trust the Lima VM's self-signed certificate so browsers and host-side tooling stop showing warnings:
 
 ```shell
-$ trellis vm shell
+$ trellis vm trust
 ```
 
-2. Copy the generated certificate somewhere readable:
+This pulls the cert and key out of the VM, exports them to `~/.local/share/trellis/ssl/<vm>-<hash>/`, and trusts the cert in the macOS login keychain and every Firefox profile. Re-runs are safe: if the cert is already trusted, the command reports it and does nothing.
+
+Firefox support requires `certutil` (install via `brew install nss` on macOS or `apt install libnss3-tools` on Linux). On Linux, pass `--trust-system` to also add the cert to the system trust store.
+
+Available flags:
+
+- `--site` — only trust the cert for the named site
+- `--no-export-key` — skip exporting the private key to the host
+
+To reverse trust entries added by this project:
 
 ```shell
-$ sudo cp /etc/nginx/ssl/example.com.cert /tmp/
+$ trellis vm untrust
 ```
 
-3. Exit the VM:
+To print the host paths of the exported cert and key per site:
 
 ```shell
-$ exit
+$ trellis vm trust paths
 ```
-
-4. Copy the certificate from the VM to your host machine
-
-Note: you will need the VM’s name.. If you don’t remember your Lima VM name, you can list all VMs:
-
-```shell
-$ limactl list
-```
-
-Then copy the cert using your Lima instance name:
-
-```shell
-$ limactl copy <lima-vm-name>:/tmp/example.com.cert ~/Downloads/
-```
-
-5. Move the certificate somewhere that makes sense to you:
-
-```shell
-$ mkdir -p ~/.ssh/lima && mv ~/Downloads/example.com.cert ~/.ssh/lima/
-```
-
-6. Trust the certificate on macOS:
-
-```shell
-$ security add-trusted-cert -k ~/Library/Keychains/login.keychain-db ~/.ssh/lima/example.com.cert
-```
-
-After this, your local site should load in the browser without warnings.
 
 ## HSTS
 
-Trellis sets [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) headers for better security. HSTS will ensure all traffic to your site is being served over HTTPS automatically.
+Trellis sets [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security) headers for better security. HSTS will ensure all traffic to your site is being served over HTTPS automatically.
 
 There are a few defaults set which you can override if need be:
 
