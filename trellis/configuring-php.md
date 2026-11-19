@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-04-01 00:00
+date_modified: 2026-11-19 10:00
 date_published: 2025-04-01 00:00
 description: Configure PHP settings in Trellis by overriding default values. Adjust memory limits, max execution time, upload sizes, and other PHP directives per site.
 title: Configuring PHP Settings in Trellis
@@ -15,6 +15,8 @@ If you make a change to the PHP settings, you will need to [reprovision](https:/
 :::
 
 ## Change the version of PHP
+Trellis uses PHP 8.4 by default as of [#1702](https://github.com/roots/trellis/pull/1702). Older versions of Trellis default to PHP 8.3.
+
 In [`group_vars/all/main.yml`](https://github.com/roots/trellis/blob/master/group_vars/all/main.yml), set the value of `php_version` to the version you're working with.
 
 e.g. to use PHP 8.1: `php_version: "8.1"`
