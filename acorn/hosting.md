@@ -37,14 +37,18 @@ Avoid `wp-content/uploads/` unless it's the only writable location your host off
 
 If the codebase is read-only after deploy, point `ACORN_STORAGE_PATH` at a writable directory outside the web root, or at `/tmp` if WP-CLI and web requests share it. `/tmp` is usually cleared on restarts and deploys.
 
-You can also precompile views with `wp acorn view:cache` during deploy. View loaders, the `file` cache store and file logs still write at runtime, so you'll still need a writable storage directory. To serve precompiled views from a read-only path, publish Acorn's `config/view.php` and set:
+You can also precompile views and their loaders with `wp acorn view:cache` during deploy. The `file` cache store and file logs still write at runtime, so point those at a writable path or use another driver. To serve precompiled views from a read-only path, publish Acorn's `config/view.php` and set:
 
 ```php
 'relative_hash' => true,
 'check_cache_timestamps' => false,
 ```
 
-This lets views compiled at a different absolute path match, and stops Blade from recompiling when a deploy changes file modification times.
+`relative_hash` names compiled views after their path relative to the Acorn base directory, so views compiled at a different absolute path still match. Views outside the base directory, like a parent theme's when Acorn boots from a child theme, are still tied to their absolute path. `check_cache_timestamps` stops Blade from recompiling when a deploy changes file modification times.
+
+::: warning
+On multisite, the default storage directory is shared by every site in the network. If sites use different themes, two views with the same relative path, like `resources/views/index.blade.php`, compile to the same file with `relative_hash` enabled, and `view:cache` clears the whole compiled directory before compiling. Give each site its own `VIEW_COMPILED_PATH` or storage path before precompiling.
+:::
 
 ## CLI and web see different files
 
