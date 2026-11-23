@@ -94,6 +94,7 @@ You can change the path of any Acorn directory with an environment variable or a
 | `ACORN_PUBLIC_PATH` | Built assets (`public/`) |
 | `ACORN_LANG_PATH` | Translation files (`lang/`) |
 | `ACORN_DATABASE_PATH` | Migrations, seeders and factories (`database/`) |
+| `ACORN_BOOTSTRAP_PATH` | Cached bootstrap files (`packages.php`, `services.php`, and the config, route, and event caches); defaults to `[storage]/framework` |
 
 Environment variable values can be absolute, or relative to the Acorn base directory (your theme directory with Sage, the project root with Radicle). Constant values are used as is, so use absolute paths.
 
@@ -129,5 +130,7 @@ Everything Acorn writes lives under the storage directory by default. You can mo
 | `APP_CONFIG_CACHE` | `[storage]/framework/cache/config.php` |
 | `APP_ROUTES_CACHE` | `[storage]/framework/cache/routes-v7.php` |
 | `APP_EVENTS_CACHE` | `[storage]/framework/cache/events.php` |
+
+To move all of the `APP_*_CACHE` files at once, set `ACORN_BOOTSTRAP_PATH` instead. They're written to its `cache/` directory.
 
 The `APP_*_CACHE` values can be absolute, or relative to the Acorn base directory. `VIEW_COMPILED_PATH` is read by Acorn's default `config/view.php`; if you've published your own `config/view.php`, set the `compiled` option there instead.
