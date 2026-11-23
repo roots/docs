@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-05-05 16:35
+date_modified: 2026-11-23 12:00
 date_published: 2024-04-26 10:35
 description: Known compatibility issues between WordPress plugins and Acorn, including solutions and workarounds for common integration conflicts.
 title: WordPress Plugin Compatibility with Acorn
@@ -22,6 +22,10 @@ Compatibility issues that arise in Acorn with other WordPress plugins are most o
 * [Mozart](https://github.com/coenjacobs/mozart)
 
 **Acorn has no responsibility to fix compatibility issues that are the result of plugins that don't wrap their dependencies with their own namespace.**
+
+::: tip
+Running into errors about read-only filesystems, permissions, or caches that won't clear on a managed WordPress host? See [Hosting Acorn](/acorn/docs/hosting/).
+:::
 
 ## Known issues with plugins
 

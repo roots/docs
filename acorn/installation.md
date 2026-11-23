@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-22 12:00
+date_modified: 2026-11-23 12:00
 date_published: 2021-11-19 11:58
 description: Install Acorn by running `composer require roots/acorn` in your WordPress project root. Requires Composer-based WordPress like Bedrock.
 title: Installing Acorn in WordPress
@@ -151,3 +151,4 @@ Acorn's server requirements are minimal, and mostly come from WordPress and [Lar
 - PHP >=8.3 with extensions: Ctype, cURL, DOM, Fileinfo, Filter, Hash, Mbstring, OpenSSL, PCRE, PDO, Session, Tokenizer, XML
 - WordPress >= 5.4
 - [WP-CLI](https://wordpress.org/cli/)
+- A writable storage directory for compiled views, caches and logs. By default this is `[wp-content]/cache/acorn/`. See [Hosting Acorn](/acorn/docs/hosting/) if your host restricts where PHP can write.
