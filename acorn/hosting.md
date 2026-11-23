@@ -44,11 +44,7 @@ You can also precompile views and their loaders with `wp acorn view:cache` durin
 'check_cache_timestamps' => false,
 ```
 
-`relative_hash` names compiled views after their path relative to the Acorn base directory, so views compiled at a different absolute path still match. Views outside the base directory, like a parent theme's when Acorn boots from a child theme, are still tied to their absolute path. `check_cache_timestamps` stops Blade from recompiling when a deploy changes file modification times.
-
-::: warning
-On multisite, the default storage directory is shared by every site in the network. If sites use different themes, two views with the same relative path, like `resources/views/index.blade.php`, compile to the same file with `relative_hash` enabled, and `view:cache` clears the whole compiled directory before compiling. Give each site its own `VIEW_COMPILED_PATH` or storage path before precompiling.
-:::
+`relative_hash` names compiled views after their path relative to `wp-content` (or the Acorn base directory when it's outside `wp-content`), so views compiled at a different absolute path still match. `check_cache_timestamps` stops Blade from recompiling when a deploy changes file modification times. With `relative_hash` enabled, separate WordPress installs need separate compiled view paths.
 
 ## CLI and web see different files
 
