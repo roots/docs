@@ -111,7 +111,7 @@ Add it before the `Config::apply()` call. Create the directory ahead of time, an
 
 Acorn uses the first of these that applies:
 
-1. A `storage` path passed to `Application::configure()->withPaths()`
+1. A `storage` path passed to `Application::configure()->withPaths()` (this doesn't move the cached bootstrap files under `framework/cache/`; pass a `bootstrap` path as well)
 2. The `ACORN_STORAGE_PATH` environment variable
 3. The `ACORN_STORAGE_PATH` constant
 4. An existing `storage/` directory in the Acorn base directory or the active theme

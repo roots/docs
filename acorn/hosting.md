@@ -56,11 +56,14 @@ Without Bedrock, add it to `wp-config.php`:
 define('ACORN_STORAGE_PATH', '/path/to/writable/storage');
 ```
 
-You can also pass it when booting Acorn in your theme's `functions.php`. Prefer the constant or environment variable on read-only filesystems, because Acorn still tries to create the zero-config `[wp-content]/cache/acorn/` directory before `withPaths()` is applied:
+You can also pass it when booting Acorn in your theme's `functions.php`. Prefer the constant or environment variable on read-only filesystems, because Acorn still tries to create the zero-config `[wp-content]/cache/acorn/` directory before `withPaths()` is applied. Passing `storage` to `withPaths()` also doesn't move Acorn's cached bootstrap files, so pass `bootstrap` too:
 
 ```php
 Application::configure()
-    ->withPaths(storage: '/path/to/writable/storage')
+    ->withPaths(
+        storage: '/path/to/writable/storage',
+        bootstrap: '/path/to/writable/storage/framework',
+    )
     ->withProviders([
         App\Providers\ThemeServiceProvider::class,
     ])
