@@ -1,10 +1,11 @@
 ---
-date_modified: 2024-10-12 16:15
+date_modified: 2026-11-24 03:00
 date_published: 2015-09-06 07:42
 description: Explore community-developed Ansible roles and extensions for Trellis that add functionality and features beyond the core WordPress server management.
 title: User Contributed Extensions for Trellis
 authors:
   - ben
+  - codepuncher
   - Log1x
   - MWDelaney
   - strarsis
@@ -29,6 +30,7 @@ Issues with extensions should be opened in their respective repositories.
 - [trellis-db-push-and-pull](https://github.com/hamedb89/trellis-db-push-and-pull) — Push and pull databases with Trellis and Ansible playbooks
 - [trellis-backup-during-deploy](https://github.com/ItinerisLtd/trellis-backup-during-deploy) - Backup WordPress database during Trellis deploys
 - [trellis-purge-kinsta-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-kinsta-cache-during-deploy) - Purge Kinsta cache when Trellis deploys Bedrock
+- [trellis-wordfence-kinsta](https://github.com/ItinerisLtd/trellis-wordfence-kinsta) - Persist the `wordfence-waf.php` file between deployments on Kinsta
 - [trellis-cve-2018-6389](https://github.com/ItinerisLtd/trellis-cve-2018-6389) - Mitigate CVE-2018-6389 WordPress load-scripts / load-styles attacks
 - [trellis-disable-xml-rpc](https://github.com/ItinerisLtd/trellis-disable-xml-rpc) -  Disable WordPress XML RPC on Trellis sites
 - [trellis-purge-wp-rocket-cache-during-deploy](https://github.com/ItinerisLtd/trellis-purge-wp-rocket-cache-during-deploy) - Purge WP Rocket cache when Trellis deploys Bedrock
