@@ -46,3 +46,13 @@ You can also use Acorn's WP-CLI integration to interact with the cache:
 ```shell
 $ wp acorn cache:clear
 ```
+
+::: tip
+On multisite, each site gets its own file cache, so `cache:clear` only clears the current site. Use `--url` to target a site, or loop over all of them:
+
+```shell
+$ wp site list --field=url | xargs -I{} wp acorn cache:clear --url={}
+```
+
+Redis, database, and Memcached stores are cleared for the whole network. If Acorn shares a Redis database with your object cache, `cache:clear` flushes that too, so give Acorn its own database.
+:::
