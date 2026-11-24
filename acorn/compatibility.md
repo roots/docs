@@ -38,6 +38,7 @@ Composer patches can sometimes be used to work around issues with plugins.
 * **WooCommerce Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/1f19f793b1f43348fe619ad9cbd6ba8f).
 * **WooCommerce UPS Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/4e76aee9a30cc0d3228cf6146eec64e0).
 * **WooCommerce USPS Shipping** includes an older version of `psr/log`. [Patch available](https://gist.github.com/retlehs/4e76aee9a30cc0d3228cf6146eec64e0).
+* **WPML** with languages in subdirectories adds the language to Livewire's script and update URLs. [Change Acorn's root URL](/acorn/docs/routing/#changing-the-root-url) to fix it.
 
 For more information on how to use Composer patches to resolve plugin conflicts, see [Patching WordPress Plugins with Composer](/bedrock/docs/patching-wordpress-plugins-with-composer/).
 
