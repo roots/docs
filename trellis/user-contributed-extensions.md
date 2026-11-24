@@ -1,10 +1,11 @@
 ---
-date_modified: 2024-10-12 16:15
+date_modified: 2026-11-24 03:00
 date_published: 2015-09-06 07:42
 description: Explore community-developed Ansible roles and extensions for Trellis that add functionality and features beyond the core WordPress server management.
 title: User Contributed Extensions for Trellis
 authors:
   - ben
+  - codepuncher
   - Log1x
   - MWDelaney
   - strarsis
