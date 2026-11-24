@@ -15,7 +15,7 @@ If you make a change to the PHP settings, you will need to [reprovision](https:/
 :::
 
 ## Change the version of PHP
-Trellis uses PHP 8.4 by default as of [#1702](https://github.com/roots/trellis/pull/1702). Older versions of Trellis default to PHP 8.3.
+Trellis uses PHP 8.4 by default as of v1.34.0. Earlier versions default to PHP 8.3.
 
 In [`group_vars/all/main.yml`](https://github.com/roots/trellis/blob/master/group_vars/all/main.yml), set the value of `php_version` to the version you're working with.
 
