@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-11-03 10:00
+date_modified: 2026-11-24 00:00
 date_published: 2023-04-05 07:42
 description: Use the Trellis CLI to manage WordPress projects via the `trellis` command. Simplifies provisioning servers, deploying sites, and common Trellis tasks.
 title: Trellis CLI Command-Line Interface
@@ -72,6 +72,7 @@ For subcommand documentation, run `trellis <command> -h`.
 | `check` | Checks if the required and optional Trellis dependencies are installed |
 | `db` | Commands for database management |
 | `deploy` | Deploys a site to the specified environment |
+| `doctor` | Checks whether your servers are patched and up to date |
 | `dotenv` | Template .env files to local system |
 | `server` | Commands for cloud server management (DigitalOcean, Hetzner Cloud) |
 | `exec` | Exec runs a command in the Trellis virtualenv |
