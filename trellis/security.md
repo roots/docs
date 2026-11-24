@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-05 00:00
+date_modified: 2026-11-24 00:00
 date_published: 2015-09-06 07:42
 description: Secure Trellis WordPress servers by disabling root SSH login, creating admin users with sudo access, configuring secure password authentication, and hardening WordPress runtime file permissions.
 title: WordPress Security Features in Trellis
@@ -39,6 +39,20 @@ Add the following to `group_vars/all/main.yml` (or an environment-specific file 
 wordpress_runtime_hardened: true
 ```
 
+Then provision the server and deploy each site:
+
+```bash
+trellis provision production
+```
+
+```bash
+trellis deploy production example.com
+```
+
+The deploy is required: it sets the `.env` and writable path permissions the runtime user needs, and the site will error until it runs.
+
+Hardening requires Trellis v1.34.0 or later. Deploys fail on earlier versions when hardening is enabled.
+
 ### Configuration options
 
 | Variable | Default | Description |
@@ -53,6 +67,8 @@ wordpress_runtime_hardened: true
 
 For stronger isolation, use a dedicated user instead of `www-data`. The user and group must exist on the server before hardening is enabled — the playbook will fail fast if they don't.
 
+The runtime user must also be a member of `web_group` (`www-data` by default). Deploys run as `web_user` without root, so `.env` and per-release writable paths are made readable and writable by that group instead of being owned by the runtime user. Provisioning fails if the runtime user isn't in the group.
+
 Define the user in `group_vars/all/users.yml`:
 
 ```yaml
@@ -60,6 +76,7 @@ users:
   - name: php-app
     groups:
       - php-app
+      - www-data
     keys: []
 ```
 
@@ -83,6 +100,13 @@ wordpress_sites:
       - current/web/app/cache
 ```
 
+Paths are relative to the site root (`/srv/www/example.com`):
+
+- Paths in `current/` are per release. Each deploy makes them writable by `web_group`, including anything created in them during the deploy.
+- All other paths, such as `shared/uploads`, are owned by the runtime user. Provisioning sets these up.
+
+Sites using [Acorn](/acorn/docs/installation/) need `current/web/app/cache`, where Acorn compiles Blade views and stores its cache.
+
 ### Cron user
 
 By default, WP-CLI cron jobs continue to run as the `web_user` even when hardening is enabled. To run cron as the runtime user instead:
@@ -92,3 +116,5 @@ wordpress_runtime_cron_as_runtime_user: true
 ```
 
 This only takes effect when `wordpress_runtime_hardened` is also `true`.
+
+Sites using Acorn should enable this. Otherwise cron runs as `web_user` and can create cache files the runtime user can't write to.
