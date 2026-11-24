@@ -1,5 +1,5 @@
 ---
-date_modified: 2025-10-30 11:30
+date_modified: 2026-11-23 12:00
 date_published: 2015-09-01 19:29
 description: Deploy Sage themes by building assets for production, running `composer install` for dependencies, and ensuring PHP version consistency across environments.
 title: Deploying the Sage WordPress Theme
@@ -30,6 +30,8 @@ Similar to deploying a Laravel app, Acorn supports an `optimize` command that wi
 ```shell
 $ wp acorn optimize
 ```
+
+`optimize` writes its caches to Acorn's [storage directory](/acorn/docs/directory-structure/). Run it on every server that handles web requests, as a user that can write to that directory, and make sure WP-CLI and PHP-FPM share the same storage directory. If your host doesn't give you WP-CLI access, or the codebase is read-only after deploy, see [Hosting Acorn](/acorn/docs/hosting/).
 
 ## Server configuration
 
