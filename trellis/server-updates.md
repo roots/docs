@@ -177,6 +177,8 @@ Kernel updates from unattended-upgrades don't take effect until the server reboo
 cat /var/run/reboot-required
 ```
 
+Trellis v1.34.0 and later check this for you: provisioning and deploys end with a warning when a server needs a reboot.
+
 To upgrade the rest of the system's packages manually, run:
 
 ```bash
