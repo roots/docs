@@ -1,5 +1,5 @@
 ---
-date_modified: 2026-03-22 12:00
+date_modified: 2026-11-23 12:00
 date_published: 2025-10-01 00:00
 description: Use Laravel's Eloquent ORM in WordPress with Acorn. Create models for WordPress posts, users, and custom tables with relationships, scopes, and clean query syntax.
 title: Using Eloquent Models in WordPress
@@ -176,6 +176,22 @@ foreach ($post->meta as $meta) {
     echo $meta->meta_key . ': ' . $meta->meta_value;
 }
 ```
+
+### Pagination
+
+```blade
+@php($posts = App\Models\Post::published()->paginate(10))
+
+{{ $posts->links() }}
+```
+
+On pages and single posts, WordPress redirects `?page=2` back to the first page. Use a different page name there:
+
+```php
+Post::published()->paginate(10, pageName: 'pg');
+```
+
+If you publish the pagination views, replace `__(` with `trans(` in them.
 
 ## Custom tables
 
