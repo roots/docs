@@ -23,7 +23,7 @@ Acorn brings elements of the Laravel ecosystem to any WordPress plugin or theme.
 
 To put it simply, Acorn provides a way to gracefully load a Laravel application container inside of WordPress while respecting the WordPress lifecycle and template hierarchy.
 
-This means you get access to Laravel's artisan commands through the use of [`wp acorn`](wp-cli.md). You can utilize [Blade templates](blade.md). You gain access to [third-party packages](available-packages.md#user-contributed) built specifically for Acorn. And we provide some first-party components as well, such as [view composers](/acorn/docs/blade#composers) and [assets management](/sage/docs/compiling-assets/).
+This means you get access to Laravel's artisan commands through the use of [`wp acorn`](wp-cli.md). You can utilize [Blade templates](rendering-blade-views.md). You gain access to [third-party packages](available-packages.md#user-contributed) built specifically for Acorn. And we provide some first-party components as well, such as [view composers](/sage/docs/composers/) and [assets management](/sage/docs/compiling-assets/).
 
 ## Installing Acorn with Composer
 
