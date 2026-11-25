@@ -60,6 +60,7 @@ In turn, the class might look like this:
 namespace App\View\Components;
 
 use Roots\Acorn\View\Component;
+use Illuminate\View\View;
 
 class ExampleComponent extends Component
 {
@@ -79,10 +80,25 @@ class ExampleComponent extends Component
         if (!is_numeric($this->imageId)) {
             return false;
         }
-        
+
         return wp_get_attachment_image($this->imageId, 'medium_large');
     }
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View
+    {
+        return view('components.example-component');
+        // or a view string:
+        // return <<<'blade'
+        //     <div>
+        //         <strong>Hello World!</strong>
+        //     </div>
+        // blade;
+    }
 }
+
 ```
 
 ## Argument and attribute names
