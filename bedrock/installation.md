@@ -33,7 +33,7 @@ Bedrock is a [WordPress boilerplate](https://roots.io/bedrock/).
 Create a new Bedrock project:
 
 ```shell
-$ composer create-project roots/bedrock
+$ composer create-project --prefer-source --remove-vcs roots/bedrock
 ```
 
 ## Getting Started
